@@ -99,7 +99,7 @@ backfill:
   minimum_appearances_per_repeated_matter: 3
 
 consent_calibration:
-  status: not_established
+  status: pdf_reader
   meeting_event_id: 6865
   meeting_date: "2026-08-18"
   agenda_pages_with_consent: "3-7"
@@ -133,6 +133,11 @@ consent_calibration:
   observed_consent_values: [0]
   observed_regular_values: [0]
   mapping_usable: false
+  pdf_reader:
+    enabled: true
+    heading: APPROVAL OF CONSENT CALENDAR
+    end_heading: ITEMS REMOVED FROM CONSENT CALENDAR
+    match_rule: normalized_item_title_within_heading_bounds
   evidence_capture:
     captured_at: "2026-09-04T20:35:52.561476Z"
     content_sha256: 9badbe727708a003f497d810f63cba11c74c05b41151d01b4c0928e0fa02d83b
