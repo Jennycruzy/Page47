@@ -48,6 +48,7 @@ class CityConfig:
     detail_parameters: JSONObject
     storage_root: Path
     backfill: BackfillConfig
+    consent_calibration: JSONObject
 
 
 def as_json_value(value: object) -> JSONValue:
@@ -154,6 +155,7 @@ def load_city_config(path: Path) -> CityConfig:
                 backfill, "minimum_appearances_per_repeated_matter", minimum=2
             ),
         ),
+        consent_calibration=required_mapping(root, "consent_calibration"),
     )
 
 

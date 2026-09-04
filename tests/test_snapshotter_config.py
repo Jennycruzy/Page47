@@ -32,3 +32,6 @@ def test_seattle_configuration_uses_the_verified_bodies_and_detail_switches() ->
     assert config.backfill.max_matter_pages == 250
     assert config.backfill.minimum_repeated_matters == 20
     assert config.backfill.minimum_appearances_per_repeated_matter == 3
+    assert config.consent_calibration["mapping_usable"] is False
+    assert config.consent_calibration["observed_consent_values"] == [0]
+    assert config.consent_calibration["observed_regular_values"] == [0]

@@ -98,6 +98,46 @@ backfill:
   minimum_repeated_matters: 20
   minimum_appearances_per_repeated_matter: 3
 
+consent_calibration:
+  status: not_established
+  meeting_event_id: 6865
+  meeting_date: "2026-08-18"
+  agenda_pages_with_consent: "3-7"
+  agenda_page_with_regular_items: 8
+  agenda_url: https://legistar2.granicus.com/seattle/meetings/2026/8/6865_A_City_Council_26-08-18_Full_Council_Meeting_Agenda.pdf
+  api_detail_url: https://webapi.legistar.com/v1/seattle/events/6865?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1
+  visible_consent_event_item_ids:
+    - 125441
+    - 125442
+    - 125370
+    - 125371
+    - 125372
+    - 125373
+    - 125374
+    - 125375
+    - 125376
+    - 125377
+    - 125378
+    - 125379
+    - 125380
+    - 125381
+    - 125382
+    - 125383
+    - 125384
+    - 125385
+    - 125386
+  visible_regular_event_item_ids:
+    - 125389
+    - 125408
+    - 125409
+  observed_consent_values: [0]
+  observed_regular_values: [0]
+  mapping_usable: false
+  evidence_capture:
+    captured_at: "2026-09-04T20:35:52.561476Z"
+    content_sha256: 9badbe727708a003f497d810f63cba11c74c05b41151d01b4c0928e0fa02d83b
+    storage_key: runtime/evidence/seattle/bodies/9badbe727708a003f497d810f63cba11c74c05b41151d01b4c0928e0fa02d83b.body
+
 evidence:
   preflight: docs/preflight.json
   api_examples: https://webapi.legistar.com/Home/Examples

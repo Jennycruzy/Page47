@@ -40,6 +40,7 @@ The preflight command performs bounded live discovery and stores the public resp
 - [Preflight audit](docs/audits/phase-0.md)
 - [Snapshotter audit](docs/audits/phase-1.md)
 - [Historical record audit](docs/audits/phase-2.md)
+- [Consent calibration audit](docs/audits/phase-3.md)
 - [Seattle configuration](config/cities/seattle.yaml)
 - [AWS discovery response cache](docs/evidence/preflight/index.json)
 
