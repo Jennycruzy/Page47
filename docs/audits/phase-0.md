@@ -4,13 +4,13 @@ Status: complete with recorded blockers. No city-specific behavior uses an unver
 
 ## Evidence
 
-- `docs/preflight.json` was captured on `2026-09-04T15:41:36.590826Z` UTC from the Lightsail host using Python `3.12.3` and its attached IAM role.
+- `docs/preflight.json` was captured on `2026-09-04T16:43:21.622317Z` UTC from the Lightsail host using Python `3.12.3` and its attached IAM role.
 - `docs/evidence/preflight/index.json` records `181` final HTTP attempts, their status, capture time, SHA-256, storage key, and selected response headers. No response in this run returned an ETag; the missing header is recorded by the absence of `etag` in each header map.
 - `config/preflight.json` contains the candidate client list, bounded request settings, AWS regions, and cost inputs.
 - `scripts/preflight.py` is the reproducible entry point. The live command was:
 
   ```text
-  PYTHONPATH=/home/ubuntu/page47-preflight/src python3 /home/ubuntu/page47-preflight/scripts/preflight.py --config /home/ubuntu/page47-preflight/config/preflight.json --output /home/ubuntu/page47-preflight/docs/preflight-final.json
+  /home/ubuntu/page47-preflight/.venv/bin/python /home/ubuntu/page47-preflight/scripts/preflight.py --config /home/ubuntu/page47-preflight/config/preflight.json --output /home/ubuntu/page47-preflight/docs/preflight-current.json
   ```
 
 - The official API help page was read during investigation and cached as a response. It specifies integer `1` for the event-detail switches, which corrected the first probe before the final run.
@@ -30,9 +30,9 @@ The oldest date above is an observed sample boundary, not a claim that every ear
 
 ## AWS result
 
-- The instance has `boto3 1.34.46` and Python `3.12.3`.
-- `bedrock:ListFoundationModels` returned `AccessDeniedException` in every requested region, so no model ID was recorded or assumed.
-- The installed SDK did not contain the `bedrock-agentcore-control` service model, and the `bedrock-agentcore` Python package was not installed. AgentCore availability is therefore unverified.
+- The instance has `boto3 1.43.88`, `bedrock-agentcore 1.22.0`, and Python `3.12.3`.
+- The Bedrock service model is present, but `ListFoundationModels` returned `AccessDeniedException` in every requested region, so no model ID was recorded or assumed.
+- Both AgentCore service models are present. The SDK's region metadata is empty for the control service, so the probe calls the endpoint directly; every requested region returned `AccessDeniedException` for `ListAgentRuntimes`. This proves the endpoint was reached, but the role cannot list runtimes yet.
 - The fixed fourteen-day estimate is `$3.3203`: `$3.2667` for the `$7/month` Lightsail bundle and `$0.0537` for the configured storage estimate. Model cost remains uncomputed because model IDs and pricing were not verified.
 
 ## Gaps
@@ -44,7 +44,7 @@ The oldest date above is an observed sample boundary, not a claim that every ear
 
 ## Blockers
 
-Before any model-dependent work or deployment, the Lightsail IAM role needs permission to list and invoke the selected Bedrock models, and the host needs the current `bedrock-agentcore` package plus the corresponding AgentCore control permissions. The selected city's terms also need a human review.
+Before any model-dependent work or deployment, the Lightsail IAM role needs permission to list and invoke the selected Bedrock models and to inspect and deploy AgentCore runtimes. The selected city's terms also need a human review.
 
 ## Exit criteria
 

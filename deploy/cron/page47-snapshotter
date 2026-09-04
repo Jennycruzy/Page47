@@ -1,0 +1,1 @@
+*/15 * * * * /home/ubuntu/page47-preflight/deploy/run_snapshotter.sh >> /home/ubuntu/page47-preflight/logs/snapshotter.log 2>&1

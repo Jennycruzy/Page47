@@ -1,0 +1,78 @@
+city: Seattle, Washington
+client: seattle
+
+api:
+  base_url: https://webapi.legistar.com/v1
+  accept_header: "*/*"
+  page_size: 100
+  max_pages: 20
+  timeout_seconds: 30
+  lookahead_days: 30
+  include_cancelled: false
+  detail_parameters:
+    EventItems: 1
+    AgendaNote: 1
+    MinutesNote: 1
+    EventItemAttachments: 1
+
+watched_bodies:
+  - id: 138
+    name: City Council
+  - id: 211
+    name: Council Briefing
+  - id: 268
+    name: Libraries, Education, and Neighborhoods Committee
+  - id: 270
+    name: Public Safety Committee
+  - id: 278
+    name: Housing, Arts, and Civil Rights Committee
+  - id: 279
+    name: Human Services, Labor, and Economic Development Committee
+  - id: 280
+    name: Land Use and Sustainability Committee
+  - id: 282
+    name: Transportation, Waterfront, and Seattle Center Committee
+  - id: 283
+    name: Governance and Utilities Committee
+
+event_fields:
+  id: EventId
+  date: EventDate
+  body_id: EventBodyId
+  body_name: EventBodyName
+  agenda_file: EventAgendaFile
+  agenda_last_published: EventAgendaLastPublishedUTC
+  agenda_status: EventAgendaStatusName
+  items: EventItems
+
+item_fields:
+  id: EventItemId
+  matter_id: EventItemMatterId
+  title: EventItemTitle
+  consent: EventItemConsent
+  agenda_sequence: EventItemAgendaSequence
+  agenda_number: EventItemAgendaNumber
+  action_name: EventItemActionName
+  action_text: EventItemActionText
+  passed_flag_name: EventItemPassedFlagName
+  version: EventItemVersion
+  agenda_note: EventItemAgendaNote
+  minutes_note: EventItemMinutesNote
+  last_modified: EventItemLastModifiedUtc
+  attachments: EventItemMatterAttachments
+
+attachment_fields:
+  id: MatterAttachmentId
+  name: MatterAttachmentName
+  url: MatterAttachmentHyperlink
+  last_modified: MatterAttachmentLastModifiedUtc
+  matter_version: MatterAttachmentMatterVersion
+  supporting_document: MatterAttachmentIsSupportingDocument
+
+storage:
+  root: runtime/evidence/seattle
+
+evidence:
+  preflight: docs/preflight.json
+  api_examples: https://webapi.legistar.com/Home/Examples
+  event_detail_help: https://webapi.legistar.com/Help/Api/GET-v1-Client-Events-EventId_EventItems_AgendaNote_MinutesNote_EventItemAttachments

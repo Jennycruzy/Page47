@@ -2,73 +2,87 @@
   "aws": {
     "agentcore": {
       "control_service": "bedrock-agentcore-control",
-      "python_package_version": null,
+      "python_package_version": "1.22.0",
       "regions": {
         "eu-central-1": {
-          "reason": "installed boto3 does not contain the AgentCore control service model",
-          "sdk_service_model_present": false,
-          "status": "unverified"
+          "error": "An error occurred (AccessDeniedException) when calling the ListAgentRuntimes operation: User: <aws-arn-redacted> is not authorized to perform: bedrock-agentcore:ListAgentRuntimes on resource: <aws-arn-redacted> because no identity-based policy allows the bedrock-agentcore:ListAgentRuntimes action",
+          "error_type": "AccessDeniedException",
+          "sdk_region_metadata_present": false,
+          "sdk_service_model_present": true,
+          "status": "permission_blocked"
         },
         "eu-north-1": {
-          "reason": "installed boto3 does not contain the AgentCore control service model",
-          "sdk_service_model_present": false,
-          "status": "unverified"
+          "error": "An error occurred (AccessDeniedException) when calling the ListAgentRuntimes operation: User: <aws-arn-redacted> is not authorized to perform: bedrock-agentcore:ListAgentRuntimes on resource: <aws-arn-redacted> because no identity-based policy allows the bedrock-agentcore:ListAgentRuntimes action",
+          "error_type": "AccessDeniedException",
+          "sdk_region_metadata_present": false,
+          "sdk_service_model_present": true,
+          "status": "permission_blocked"
         },
         "eu-west-1": {
-          "reason": "installed boto3 does not contain the AgentCore control service model",
-          "sdk_service_model_present": false,
-          "status": "unverified"
+          "error": "An error occurred (AccessDeniedException) when calling the ListAgentRuntimes operation: User: <aws-arn-redacted> is not authorized to perform: bedrock-agentcore:ListAgentRuntimes on resource: <aws-arn-redacted> because no identity-based policy allows the bedrock-agentcore:ListAgentRuntimes action",
+          "error_type": "AccessDeniedException",
+          "sdk_region_metadata_present": false,
+          "sdk_service_model_present": true,
+          "status": "permission_blocked"
         },
         "eu-west-2": {
-          "reason": "installed boto3 does not contain the AgentCore control service model",
-          "sdk_service_model_present": false,
-          "status": "unverified"
+          "error": "An error occurred (AccessDeniedException) when calling the ListAgentRuntimes operation: User: <aws-arn-redacted> is not authorized to perform: bedrock-agentcore:ListAgentRuntimes on resource: <aws-arn-redacted> because no identity-based policy allows the bedrock-agentcore:ListAgentRuntimes action",
+          "error_type": "AccessDeniedException",
+          "sdk_region_metadata_present": false,
+          "sdk_service_model_present": true,
+          "status": "permission_blocked"
         },
         "us-east-1": {
-          "reason": "installed boto3 does not contain the AgentCore control service model",
-          "sdk_service_model_present": false,
-          "status": "unverified"
+          "error": "An error occurred (AccessDeniedException) when calling the ListAgentRuntimes operation: User: <aws-arn-redacted> is not authorized to perform: bedrock-agentcore:ListAgentRuntimes on resource: <aws-arn-redacted> because no identity-based policy allows the bedrock-agentcore:ListAgentRuntimes action",
+          "error_type": "AccessDeniedException",
+          "sdk_region_metadata_present": false,
+          "sdk_service_model_present": true,
+          "status": "permission_blocked"
         },
         "us-west-2": {
-          "reason": "installed boto3 does not contain the AgentCore control service model",
-          "sdk_service_model_present": false,
-          "status": "unverified"
+          "error": "An error occurred (AccessDeniedException) when calling the ListAgentRuntimes operation: User: <aws-arn-redacted> is not authorized to perform: bedrock-agentcore:ListAgentRuntimes on resource: <aws-arn-redacted> because no identity-based policy allows the bedrock-agentcore:ListAgentRuntimes action",
+          "error_type": "AccessDeniedException",
+          "sdk_region_metadata_present": false,
+          "sdk_service_model_present": true,
+          "status": "permission_blocked"
         }
       },
-      "runtime_service": "bedrock-agentcore"
+      "runtime_service": "bedrock-agentcore",
+      "sdk_control_service_model_present": true,
+      "sdk_runtime_service_model_present": true
     },
-    "agentcore_python_package_available": false,
+    "agentcore_python_package_available": true,
     "boto3_available": true,
     "foundation_models": {
       "eu-central-1": {
         "error": "An error occurred (AccessDeniedException) when calling the ListFoundationModels operation: User: <aws-arn-redacted> is not authorized to perform: bedrock:ListFoundationModels because no identity-based policy allows the bedrock:ListFoundationModels action",
         "error_type": "AccessDeniedException",
-        "status": "unavailable"
+        "status": "permission_blocked"
       },
       "eu-north-1": {
         "error": "An error occurred (AccessDeniedException) when calling the ListFoundationModels operation: User: <aws-arn-redacted> is not authorized to perform: bedrock:ListFoundationModels because no identity-based policy allows the bedrock:ListFoundationModels action",
         "error_type": "AccessDeniedException",
-        "status": "unavailable"
+        "status": "permission_blocked"
       },
       "eu-west-1": {
         "error": "An error occurred (AccessDeniedException) when calling the ListFoundationModels operation: User: <aws-arn-redacted> is not authorized to perform: bedrock:ListFoundationModels because no identity-based policy allows the bedrock:ListFoundationModels action",
         "error_type": "AccessDeniedException",
-        "status": "unavailable"
+        "status": "permission_blocked"
       },
       "eu-west-2": {
         "error": "An error occurred (AccessDeniedException) when calling the ListFoundationModels operation: User: <aws-arn-redacted> is not authorized to perform: bedrock:ListFoundationModels because no identity-based policy allows the bedrock:ListFoundationModels action",
         "error_type": "AccessDeniedException",
-        "status": "unavailable"
+        "status": "permission_blocked"
       },
       "us-east-1": {
         "error": "An error occurred (AccessDeniedException) when calling the ListFoundationModels operation: User: <aws-arn-redacted> is not authorized to perform: bedrock:ListFoundationModels because no identity-based policy allows the bedrock:ListFoundationModels action",
         "error_type": "AccessDeniedException",
-        "status": "unavailable"
+        "status": "permission_blocked"
       },
       "us-west-2": {
         "error": "An error occurred (AccessDeniedException) when calling the ListFoundationModels operation: User: <aws-arn-redacted> is not authorized to perform: bedrock:ListFoundationModels because no identity-based policy allows the bedrock:ListFoundationModels action",
         "error_type": "AccessDeniedException",
-        "status": "unavailable"
+        "status": "permission_blocked"
       }
     },
     "python_version": "3.12.3",
@@ -82,12 +96,12 @@
     ]
   },
   "blockers": [
-    "No Bedrock model list succeeded with the available AWS permissions",
-    "AgentCore availability was not verified with the available SDK and permissions",
+    "No Bedrock model list succeeded because the AWS role lacks permission",
+    "AgentCore endpoints were reached but the AWS role lacks permission",
     "City terms-of-use review remains manual for each candidate"
   ],
   "cache_index": "evidence/preflight/index.json",
-  "captured_at": "2026-09-04T15:41:36.590826Z",
+  "captured_at": "2026-09-04T16:43:21.622317Z",
   "cost_arithmetic": {
     "budget_usd": 50.0,
     "fixed_cost_subtotal_usd": 3.3203,
@@ -196,11 +210,11 @@
         ],
         "event_field_population": {
           "EventAgendaFile": {
-            "present": 19,
+            "present": 20,
             "sample_records": 20
           },
           "EventAgendaLastPublishedUTC": {
-            "present": 19,
+            "present": 20,
             "sample_records": 20
           },
           "EventAgendaStatusName": {
@@ -326,56 +340,56 @@
           "attempts": [
             {
               "attempt": 1,
-              "elapsed_ms": 851.42,
+              "elapsed_ms": 865.56,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 2,
-              "elapsed_ms": 976.11,
+              "elapsed_ms": 859.76,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 3,
-              "elapsed_ms": 998.85,
+              "elapsed_ms": 853.74,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 4,
-              "elapsed_ms": 1013.75,
+              "elapsed_ms": 857.56,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 5,
-              "elapsed_ms": 903.58,
+              "elapsed_ms": 948.31,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 6,
-              "elapsed_ms": 855.98,
+              "elapsed_ms": 881.91,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 7,
-              "elapsed_ms": 966.17,
+              "elapsed_ms": 883.27,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 8,
-              "elapsed_ms": 866.29,
+              "elapsed_ms": 920.8,
               "error_type": null,
               "retry_after": null,
               "status": 200
@@ -690,56 +704,56 @@
           "attempts": [
             {
               "attempt": 1,
-              "elapsed_ms": 871.23,
+              "elapsed_ms": 887.97,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 2,
-              "elapsed_ms": 817.09,
+              "elapsed_ms": 955.45,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 3,
-              "elapsed_ms": 819.3,
+              "elapsed_ms": 881.4,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 4,
-              "elapsed_ms": 863.17,
+              "elapsed_ms": 845.38,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 5,
-              "elapsed_ms": 887.76,
+              "elapsed_ms": 883.89,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 6,
-              "elapsed_ms": 849.76,
+              "elapsed_ms": 974.28,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 7,
-              "elapsed_ms": 875.04,
+              "elapsed_ms": 829.89,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 8,
-              "elapsed_ms": 787.59,
+              "elapsed_ms": 925.21,
               "error_type": null,
               "retry_after": null,
               "status": 200
@@ -980,56 +994,56 @@
           "attempts": [
             {
               "attempt": 1,
-              "elapsed_ms": 863.46,
+              "elapsed_ms": 846.04,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 2,
-              "elapsed_ms": 894.21,
+              "elapsed_ms": 866.42,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 3,
-              "elapsed_ms": 911.52,
+              "elapsed_ms": 921.62,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 4,
-              "elapsed_ms": 852.62,
+              "elapsed_ms": 923.67,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 5,
-              "elapsed_ms": 884.32,
+              "elapsed_ms": 980.8,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 6,
-              "elapsed_ms": 843.07,
+              "elapsed_ms": 884.49,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 7,
-              "elapsed_ms": 871.62,
+              "elapsed_ms": 859.85,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 8,
-              "elapsed_ms": 794.53,
+              "elapsed_ms": 841.26,
               "error_type": null,
               "retry_after": null,
               "status": 200
@@ -1280,56 +1294,56 @@
           "attempts": [
             {
               "attempt": 1,
-              "elapsed_ms": 887.44,
+              "elapsed_ms": 846.41,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 2,
-              "elapsed_ms": 923.62,
+              "elapsed_ms": 810.74,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 3,
-              "elapsed_ms": 897.43,
+              "elapsed_ms": 871.19,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 4,
-              "elapsed_ms": 930.64,
+              "elapsed_ms": 948.52,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 5,
-              "elapsed_ms": 975.11,
+              "elapsed_ms": 904.09,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 6,
-              "elapsed_ms": 840.96,
+              "elapsed_ms": 923.97,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 7,
-              "elapsed_ms": 926.88,
+              "elapsed_ms": 858.42,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 8,
-              "elapsed_ms": 913.48,
+              "elapsed_ms": 869.94,
               "error_type": null,
               "retry_after": null,
               "status": 200
@@ -1590,56 +1604,56 @@
           "attempts": [
             {
               "attempt": 1,
-              "elapsed_ms": 901.29,
+              "elapsed_ms": 916.45,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 2,
-              "elapsed_ms": 896.01,
+              "elapsed_ms": 845.56,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 3,
-              "elapsed_ms": 977.26,
+              "elapsed_ms": 839.82,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 4,
-              "elapsed_ms": 966.21,
+              "elapsed_ms": 862.79,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 5,
-              "elapsed_ms": 838.89,
+              "elapsed_ms": 862.45,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 6,
-              "elapsed_ms": 841.21,
+              "elapsed_ms": 926.08,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 7,
-              "elapsed_ms": 822.33,
+              "elapsed_ms": 855.77,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 8,
-              "elapsed_ms": 906.61,
+              "elapsed_ms": 907.87,
               "error_type": null,
               "retry_after": null,
               "status": 200
@@ -1890,56 +1904,56 @@
           "attempts": [
             {
               "attempt": 1,
-              "elapsed_ms": 905.53,
+              "elapsed_ms": 870.44,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 2,
-              "elapsed_ms": 942.01,
+              "elapsed_ms": 871.69,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 3,
-              "elapsed_ms": 854.49,
+              "elapsed_ms": 981.08,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 4,
-              "elapsed_ms": 886.23,
+              "elapsed_ms": 945.38,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 5,
-              "elapsed_ms": 860.01,
+              "elapsed_ms": 906.95,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 6,
-              "elapsed_ms": 897.38,
+              "elapsed_ms": 988.01,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 7,
-              "elapsed_ms": 866.91,
+              "elapsed_ms": 924.66,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 8,
-              "elapsed_ms": 942.06,
+              "elapsed_ms": 866.7,
               "error_type": null,
               "retry_after": null,
               "status": 200
@@ -2179,56 +2193,56 @@
           "attempts": [
             {
               "attempt": 1,
-              "elapsed_ms": 868.34,
+              "elapsed_ms": 836.09,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 2,
-              "elapsed_ms": 840.58,
+              "elapsed_ms": 834.3,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 3,
-              "elapsed_ms": 833.88,
+              "elapsed_ms": 941.56,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 4,
-              "elapsed_ms": 866.42,
+              "elapsed_ms": 946.05,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 5,
-              "elapsed_ms": 890.02,
+              "elapsed_ms": 833.63,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 6,
-              "elapsed_ms": 846.0,
+              "elapsed_ms": 967.56,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 7,
-              "elapsed_ms": 879.52,
+              "elapsed_ms": 821.32,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 8,
-              "elapsed_ms": 879.38,
+              "elapsed_ms": 916.94,
               "error_type": null,
               "retry_after": null,
               "status": 200
@@ -2499,56 +2513,56 @@
           "attempts": [
             {
               "attempt": 1,
-              "elapsed_ms": 898.51,
+              "elapsed_ms": 934.12,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 2,
-              "elapsed_ms": 887.55,
+              "elapsed_ms": 894.19,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 3,
-              "elapsed_ms": 838.15,
+              "elapsed_ms": 859.43,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 4,
-              "elapsed_ms": 843.98,
+              "elapsed_ms": 824.66,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 5,
-              "elapsed_ms": 795.24,
+              "elapsed_ms": 871.36,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 6,
-              "elapsed_ms": 896.53,
+              "elapsed_ms": 829.41,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 7,
-              "elapsed_ms": 870.03,
+              "elapsed_ms": 872.64,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 8,
-              "elapsed_ms": 861.45,
+              "elapsed_ms": 917.77,
               "error_type": null,
               "retry_after": null,
               "status": 200
@@ -2809,56 +2823,56 @@
           "attempts": [
             {
               "attempt": 1,
-              "elapsed_ms": 892.0,
+              "elapsed_ms": 897.66,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 2,
-              "elapsed_ms": 877.94,
+              "elapsed_ms": 834.12,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 3,
-              "elapsed_ms": 876.72,
+              "elapsed_ms": 803.08,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 4,
-              "elapsed_ms": 836.45,
+              "elapsed_ms": 932.94,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 5,
-              "elapsed_ms": 873.85,
+              "elapsed_ms": 844.16,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 6,
-              "elapsed_ms": 890.72,
+              "elapsed_ms": 891.59,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 7,
-              "elapsed_ms": 860.57,
+              "elapsed_ms": 841.74,
               "error_type": null,
               "retry_after": null,
               "status": 200
             },
             {
               "attempt": 8,
-              "elapsed_ms": 871.17,
+              "elapsed_ms": 836.93,
               "error_type": null,
               "retry_after": null,
               "status": 200
@@ -2905,7 +2919,7 @@
     ]
   },
   "runtime": {
-    "executable": "/usr/bin/python3",
+    "executable": "/home/ubuntu/page47-preflight/.venv/bin/python",
     "platform": "Linux-7.0.0-1011-aws-x86_64-with-glibc2.39",
     "python": "3.12.3"
   },

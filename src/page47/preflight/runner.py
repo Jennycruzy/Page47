@@ -15,16 +15,32 @@ from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
-from types import ModuleType
-from typing import Final, cast
+from typing import Final, Protocol, cast
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urlparse
 from urllib.request import Request, urlopen
 
-
 type JSONScalar = None | bool | int | float | str
 type JSONValue = JSONScalar | list[JSONValue] | dict[str, JSONValue]
 type JSONObject = dict[str, JSONValue]
+
+
+class AwsClient(Protocol):
+    """The small, validated surface used from an AWS service client."""
+
+    def list_foundation_models(self) -> object: ...
+
+    def list_agent_runtimes(self, *, maxResults: int) -> object: ...
+
+
+class AwsSession(Protocol):
+    """The small, typed surface used from a boto3 session."""
+
+    def client(self, service_name: str, *, region_name: str) -> AwsClient: ...
+
+    def get_available_services(self) -> list[str]: ...
+
+    def get_available_regions(self, service_name: str) -> list[str]: ...
 
 EVENT_FIELDS: Final[tuple[str, ...]] = (
     "EventId",
@@ -76,6 +92,9 @@ MATTER_FIELDS: Final[tuple[str, ...]] = (
     "MatterLastModifiedUtc",
 )
 USER_AGENT: Final[str] = "Page47-preflight/0.1 (public-record research)"
+CAPTURED_HEADERS: Final[frozenset[str]] = frozenset(
+    {"etag", "last-modified", "content-type", "retry-after", "content-length"}
+)
 AWS_ACCOUNT_PATTERN: Final[re.Pattern[str]] = re.compile(r"(?<!\d)\d{12}(?!\d)")
 AWS_ARN_PATTERN: Final[re.Pattern[str]] = re.compile(r"arn:aws:[^\s,]+")
 
@@ -125,6 +144,21 @@ def as_objects(value: JSONValue, context: str) -> list[JSONObject]:
     return objects
 
 
+def json_list(values: Sequence[JSONValue]) -> list[JSONValue]:
+    """Widen a typed sequence before placing it inside a JSON value."""
+
+    return list(values)
+
+
+def json_object(values: Mapping[str, JSONValue]) -> JSONObject:
+    """Widen a typed mapping before placing it inside a JSON object."""
+
+    output: JSONObject = {}
+    for key, value in values.items():
+        output[key] = value
+    return output
+
+
 def nonempty(value: JSONValue | object) -> bool:
     """Treat null and empty containers/text as absent, while preserving numeric zero."""
 
@@ -164,6 +198,12 @@ def integer_value(value: JSONValue | object) -> int | None:
     if isinstance(value, int):
         return value
     return None
+
+
+def number_value(value: JSONValue | object, context: str) -> float:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError(f"Expected a number for {context}")
+    return float(value)
 
 
 def redacted_error(error: Exception) -> str:
@@ -210,7 +250,7 @@ class EvidenceCache:
             "sha256": body_hash,
             "bytes": len(result.body),
             "storage_key": str(body_path.relative_to(self.root.parent.parent)),
-            "headers": result.headers,
+            "headers": json_object(result.headers),
         }
         if result.error_type is not None:
             record["error_type"] = result.error_type
@@ -230,7 +270,10 @@ def fetch(url: str, timeout_seconds: float, cache: EvidenceCache) -> FetchResult
     """Fetch one public URL and record both successes and failures."""
 
     captured_at = utc_now()
-    request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json, text/html"})
+    request = Request(
+        url,
+        headers={"User-Agent": USER_AGENT, "Accept": "application/json, text/html"},
+    )
     status: int | None = None
     headers: dict[str, str] = {}
     body = b""
@@ -242,7 +285,7 @@ def fetch(url: str, timeout_seconds: float, cache: EvidenceCache) -> FetchResult
             headers = {
                 key.lower(): value
                 for key, value in response.headers.items()
-                if key.lower() in {"etag", "last-modified", "content-type", "retry-after", "content-length"}
+                if key.lower() in CAPTURED_HEADERS
             }
             body = response.read()
     except HTTPError as error:
@@ -250,7 +293,7 @@ def fetch(url: str, timeout_seconds: float, cache: EvidenceCache) -> FetchResult
         headers = {
             key.lower(): value
             for key, value in error.headers.items()
-            if key.lower() in {"etag", "last-modified", "content-type", "retry-after", "content-length"}
+            if key.lower() in CAPTURED_HEADERS
         }
         body = error.read()
         error_type = type(error).__name__
@@ -263,7 +306,9 @@ def fetch(url: str, timeout_seconds: float, cache: EvidenceCache) -> FetchResult
     return result
 
 
-def fetch_json(url: str, timeout_seconds: float, cache: EvidenceCache) -> tuple[FetchResult, JSONValue | None]:
+def fetch_json(
+    url: str, timeout_seconds: float, cache: EvidenceCache
+) -> tuple[FetchResult, JSONValue | None]:
     result = fetch(url, timeout_seconds, cache)
     if result.status != 200:
         return result, None
@@ -356,7 +401,7 @@ def probe_rate_limit(
     timeout_seconds: float,
     cache: EvidenceCache,
 ) -> JSONObject:
-    attempts: list[JSONObject] = []
+    attempts: list[JSONValue] = []
     throttled_after: int | None = None
     for attempt in range(1, count + 1):
         url = api_url(base_url, client, "events", **{"$top": "1"})
@@ -420,7 +465,12 @@ def probe_city(
     timeout_seconds = float(timeout_value)
 
     result: JSONObject = {"slug": slug, "name": name, "status": "unverified"}
-    events_url = api_url(base_url, slug, "events", **{"$top": str(event_scan_size), "$orderby": "EventId desc"})
+    events_url = api_url(
+        base_url,
+        slug,
+        "events",
+        **{"$top": str(event_scan_size), "$orderby": "EventId desc"},
+    )
     events_result, events_value = fetch_json(events_url, timeout_seconds, cache)
     result["events_request"] = {
         "status": events_result.status,
@@ -440,7 +490,12 @@ def probe_city(
         result["status"] = "empty"
         return result
 
-    matters_url = api_url(base_url, slug, "matters", **{"$top": str(sample_size), "$orderby": "MatterId desc"})
+    matters_url = api_url(
+        base_url,
+        slug,
+        "matters",
+        **{"$top": str(sample_size), "$orderby": "MatterId desc"},
+    )
     matters_result, matters_value = fetch_json(matters_url, timeout_seconds, cache)
     matters: list[JSONObject] = []
     if matters_value is not None:
@@ -494,7 +549,12 @@ def probe_city(
         if detail_events_with_items >= event_detail_sample_size:
             break
 
-    earliest_events_url = api_url(base_url, slug, "events", **{"$top": str(sample_size), "$orderby": "EventId asc"})
+    earliest_events_url = api_url(
+        base_url,
+        slug,
+        "events",
+        **{"$top": str(sample_size), "$orderby": "EventId asc"},
+    )
     earliest_result, earliest_value = fetch_json(earliest_events_url, timeout_seconds, cache)
     earliest_events: list[JSONObject] = []
     if earliest_value is not None:
@@ -503,8 +563,15 @@ def probe_city(
         except ValueError:
             earliest_events = []
 
-    earliest_matters_url = api_url(base_url, slug, "matters", **{"$top": str(sample_size), "$orderby": "MatterId asc"})
-    earliest_matters_result, earliest_matters_value = fetch_json(earliest_matters_url, timeout_seconds, cache)
+    earliest_matters_url = api_url(
+        base_url,
+        slug,
+        "matters",
+        **{"$top": str(sample_size), "$orderby": "MatterId asc"},
+    )
+    earliest_matters_result, earliest_matters_value = fetch_json(
+        earliest_matters_url, timeout_seconds, cache
+    )
     earliest_matters: list[JSONObject] = []
     if earliest_matters_value is not None:
         try:
@@ -513,7 +580,9 @@ def probe_city(
             earliest_matters = []
 
     attachments = extract_attachments(detail_items)
-    result["status"] = "viable" if matters_result.status == 200 and detail_events_with_items else "partial"
+    result["status"] = (
+        "viable" if matters_result.status == 200 and detail_events_with_items else "partial"
+    )
     result["event_count_sampled"] = len(events)
     result["event_field_population"] = count_fields(events, EVENT_FIELDS)
     result["event_item_count_sampled"] = len(detail_items)
@@ -533,13 +602,15 @@ def probe_city(
         "matter_intro_dates": values_for(earliest_matters, "MatterIntroDate"),
         "request_status": earliest_matters_result.status,
     }
-    result["event_detail_requests"] = detail_requests
-    result["public_site_hosts_observed"] = public_hosts(events)
+    result["event_detail_requests"] = json_list(detail_requests)
+    result["public_site_hosts_observed"] = json_list(public_hosts(events))
     result["terms_review"] = {
         "status": "manual_review_required",
         "evidence": [
-            "The API response exposed public record URLs, but no terms document was identified automatically.",
-            "The selected city must be checked against its public-site terms before production use.",
+            "The API response exposed public record URLs, but no terms document was "
+            "identified automatically.",
+            "The selected city must be checked against its public-site terms before "
+            "production use.",
         ],
     }
     result["rate_limit_probe"] = probe_rate_limit(
@@ -575,16 +646,29 @@ def sdk_strings(value: object, context: str) -> list[str]:
     return strings
 
 
+def aws_error_status(error: Exception) -> str:
+    """Separate missing permission from an unavailable AWS interface."""
+
+    if type(error).__name__ == "AccessDeniedException" or "AccessDeniedException" in str(error):
+        return "permission_blocked"
+    return "unavailable"
+
+
 def probe_aws(aws_config: JSONObject) -> JSONObject:
     regions_value = aws_config.get("discovery_regions")
-    if not isinstance(regions_value, list) or not all(isinstance(item, str) for item in regions_value):
+    if not isinstance(regions_value, list) or not all(
+        isinstance(item, str) for item in regions_value
+    ):
         raise ValueError("AWS discovery_regions must be a list of strings")
     regions = cast(list[str], regions_value)
     service_value = aws_config.get("bedrock_service")
     control_value = aws_config.get("agentcore_control_service")
     runtime_value = aws_config.get("agentcore_runtime_service")
     package_value = aws_config.get("agentcore_python_package")
-    if not all(isinstance(item, str) for item in (service_value, control_value, runtime_value, package_value)):
+    if not all(
+        isinstance(item, str)
+        for item in (service_value, control_value, runtime_value, package_value)
+    ):
         raise ValueError("AWS service names are incomplete")
     bedrock_service = cast(str, service_value)
     control_service = cast(str, control_value)
@@ -594,7 +678,7 @@ def probe_aws(aws_config: JSONObject) -> JSONObject:
         "python_version": platform.python_version(),
         "boto3_available": importlib.util.find_spec("boto3") is not None,
         "agentcore_python_package_available": importlib.util.find_spec(package_name) is not None,
-        "regions_requested": regions,
+        "regions_requested": json_list(regions),
         "foundation_models": {},
         "agentcore": {},
     }
@@ -608,7 +692,7 @@ def probe_aws(aws_config: JSONObject) -> JSONObject:
         output["blocker"] = f"boto3 import failed: {redacted_error(error)}"
         return output
 
-    session = boto3.Session()
+    session = cast(AwsSession, boto3.Session())
     model_results: JSONObject = {}
     for region in regions:
         try:
@@ -624,10 +708,13 @@ def probe_aws(aws_config: JSONObject) -> JSONObject:
                 model_id = model.get("modelId")
                 if isinstance(model_id, str):
                     model_ids.append(model_id)
-            model_results[region] = {"status": "available", "model_ids": sorted(model_ids)}
+            model_results[region] = {
+                "status": "available",
+                "model_ids": json_list(sorted(model_ids)),
+            }
         except Exception as error:
             model_results[region] = {
-                "status": "unavailable",
+                "status": aws_error_status(error),
                 "error_type": type(error).__name__,
                 "error": redacted_error(error),
             }
@@ -642,27 +729,32 @@ def probe_aws(aws_config: JSONObject) -> JSONObject:
         "control_service": control_service,
         "runtime_service": runtime_service,
         "python_package_version": package_version,
+        "sdk_control_service_model_present": control_service in session.get_available_services(),
+        "sdk_runtime_service_model_present": runtime_service in session.get_available_services(),
         "regions": {},
     }
     control_regions = session.get_available_regions(control_service)
+    control_model_present = control_service in session.get_available_services()
     for region in regions:
         region_result: JSONObject = {
-            "sdk_service_model_present": region in control_regions,
+            "sdk_service_model_present": control_model_present,
+            "sdk_region_metadata_present": region in control_regions,
             "status": "unverified",
         }
-        if region not in control_regions:
-            region_result["reason"] = "installed boto3 does not contain the AgentCore control service model"
+        if not control_model_present:
+            region_result["reason"] = (
+                "installed boto3 does not contain the AgentCore control service model"
+            )
             agentcore_regions = cast(dict[str, JSONValue], agentcore_result["regions"])
             agentcore_regions[region] = region_result
             continue
         try:
             control_client = session.client(control_service, region_name=region)
-            list_method = getattr(control_client, "list_agent_runtimes")
-            raw_response = list_method(maxResults=1)
+            raw_response = control_client.list_agent_runtimes(maxResults=1)
             sdk_object(raw_response, f"{control_service} list response")
             region_result["status"] = "available"
         except Exception as error:
-            region_result["status"] = "unavailable"
+            region_result["status"] = aws_error_status(error)
             region_result["error_type"] = type(error).__name__
             region_result["error"] = redacted_error(error)
         agentcore_regions = cast(dict[str, JSONValue], agentcore_result["regions"])
@@ -672,27 +764,30 @@ def probe_aws(aws_config: JSONObject) -> JSONObject:
 
 
 def cost_arithmetic(cost: JSONObject) -> JSONObject:
-    budget = cost.get("budget_usd")
-    days = cost.get("measurement_days")
-    lightsail = cost.get("lightsail_monthly_usd")
-    storage_gb = cost.get("storage_gb_assumption")
-    storage_rate = cost.get("storage_monthly_usd_per_gb")
-    if not all(isinstance(value, (int, float)) for value in (budget, days, lightsail, storage_gb, storage_rate)):
-        raise ValueError("Cost arithmetic settings are incomplete")
-    fixed_cost = float(lightsail) * float(days) / 30.0
-    storage_cost = float(storage_gb) * float(storage_rate) * float(days) / 30.0
+    budget = number_value(cost.get("budget_usd"), "budget_usd")
+    days = number_value(cost.get("measurement_days"), "measurement_days")
+    lightsail = number_value(cost.get("lightsail_monthly_usd"), "lightsail_monthly_usd")
+    storage_gb = number_value(cost.get("storage_gb_assumption"), "storage_gb_assumption")
+    storage_rate = number_value(
+        cost.get("storage_monthly_usd_per_gb"), "storage_monthly_usd_per_gb"
+    )
+    fixed_cost = lightsail * days / 30.0
+    storage_cost = storage_gb * storage_rate * days / 30.0
     return {
         "status": "partial_model_cost_blocked",
-        "budget_usd": float(budget),
+        "budget_usd": budget,
         "measurement_days": int(days),
         "lightsail_cost_usd": round(fixed_cost, 4),
         "storage_cost_usd": round(storage_cost, 4),
         "fixed_cost_subtotal_usd": round(fixed_cost + storage_cost, 4),
         "model_cost_formula": (
             "triage input tokens × triage input price + triage output tokens × triage output price "
-            "+ candidate multimodal tokens × multimodal prices + investigation tokens × investigation prices"
+            "+ candidate multimodal tokens × multimodal prices + investigation tokens × "
+            "investigation prices"
         ),
-        "model_cost_status": "not computed until a real model list and current prices are available",
+        "model_cost_status": (
+            "not computed until a real model list and current prices are available"
+        ),
         "source_urls": [
             "https://aws.amazon.com/lightsail/pricing/",
             "https://aws.amazon.com/bedrock/pricing/",
@@ -716,7 +811,11 @@ def run(config_path: Path, output_path: Path) -> JSONObject:
         for reference in references:
             if not isinstance(reference, str):
                 raise ValueError("official_reference_urls must contain strings")
-            fetched = fetch(reference, float(legistar.get("timeout_seconds", 20)), cache)
+            fetched = fetch(
+                reference,
+                number_value(legistar.get("timeout_seconds", 20), "timeout_seconds"),
+                cache,
+            )
             reference_results.append(
                 {
                     "url": reference,
@@ -745,8 +844,8 @@ def run(config_path: Path, output_path: Path) -> JSONObject:
         },
         "legistar": {
             "base_url": legistar.get("base_url"),
-            "official_references": reference_results,
-            "clients": city_results,
+            "official_references": json_list(reference_results),
+            "clients": json_list(city_results),
         },
         "aws": aws_result,
         "cost_arithmetic": cost_arithmetic(cost_config),
@@ -760,20 +859,36 @@ def run(config_path: Path, output_path: Path) -> JSONObject:
     blockers: list[str] = []
     if len(viable) < 2:
         blockers.append("Fewer than two Legistar clients met the viable probe criteria")
-    if not any(
-        isinstance(item, dict) and item.get("status") == "available"
+    foundation_statuses = [
+        item.get("status")
         for item in cast(dict[str, JSONValue], aws_result.get("foundation_models", {})).values()
-    ):
-        blockers.append("No Bedrock model list succeeded with the available AWS permissions")
+        if isinstance(item, dict)
+    ]
+    if "available" not in foundation_statuses:
+        if "permission_blocked" in foundation_statuses:
+            blockers.append("No Bedrock model list succeeded because the AWS role lacks permission")
+        else:
+            blockers.append("No Bedrock model list succeeded with the available AWS interfaces")
     agentcore = aws_result.get("agentcore")
-    if not isinstance(agentcore, dict) or not any(
-        isinstance(item, dict) and item.get("status") == "available"
-        for item in cast(dict[str, JSONValue], agentcore.get("regions", {})).values()
-    ):
-        blockers.append("AgentCore availability was not verified with the available SDK and permissions")
+    agentcore_statuses = (
+        [
+            item.get("status")
+            for item in cast(dict[str, JSONValue], agentcore.get("regions", {})).values()
+            if isinstance(item, dict)
+        ]
+        if isinstance(agentcore, dict)
+        else []
+    )
+    if "available" not in agentcore_statuses:
+        if "permission_blocked" in agentcore_statuses:
+            blockers.append("AgentCore endpoints were reached but the AWS role lacks permission")
+        else:
+            blockers.append(
+                "AgentCore availability was not verified with the available AWS interfaces"
+            )
     blockers.append("City terms-of-use review remains manual for each candidate")
     result["viable_clients_count"] = len(viable)
-    result["blockers"] = blockers
+    result["blockers"] = json_list(blockers)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     cache.write_index()
@@ -790,7 +905,12 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     result = run(args.config, args.output)
-    print(json.dumps({"captured_at": result["captured_at"], "blockers": result["blockers"]}, indent=2))
+    print(
+        json.dumps(
+            {"captured_at": result["captured_at"], "blockers": result["blockers"]},
+            indent=2,
+        )
+    )
     return 0
 
 
