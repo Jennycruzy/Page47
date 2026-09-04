@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Examples</title>
+    <link href="/Content/css?v=1lHFDfiO53gH0Ynpd0nepOHHGQbGG8xGB5iFOphD8n01" rel="stylesheet"/>
+
+    <script src="/bundles/modernizr?v=w9fZKPSiHtN4N4FRqV7jn-3kGoQY5hHpkwFv5TfMrus1"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Legistar Web API</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/Help">API</a></li>
+                    <li><a href="/Home/Examples">Examples</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h2>Examples</h2>
+
+        <p>These examples will help you get started with the Legistar Web API.  To use the URLs below, replace {Client} with your client name.  Some clients require use of an <a href="#tokens">API Token</a>.</p>
+
+        <p>To see all agenda matters, the endpoint is: <pre>https://webapi.legistar.com/v1/{Client}/matters</pre></p>
+
+        <p>Note that queries replies are limited to 1000 responses.  Even with this limit, some calls may return a large amount of data.  To make this query more performant by limiting reults to a smaller set of items or to obtain more items via a second query, use ODATA parameters to page the output like this:
+            <pre>https://webapi.legistar.com/v1/{Client}/matters?$top=10&$skip=0
+https://webapi.legistar.com/v1/{Client}/matters?$top=10&$skip=10</pre>
+        </p>
+
+        <p>
+            ODATA can also use filters to find more specific data.  For instance, this query will return only events during the month of September, 2014:
+            <pre>https://webapi.legistar.com/v1/{Client}/events?$filter=EventDate+ge+datetime%272014-09-01%27+and+EventDate+lt+datetime%272014-10-01%27</pre>
+        </p>
+
+        <p>The basics of the ODATA URL setup are here: <a href="https://www.odata.org/documentation/odata-version-3-0/url-conventions/">https://www.odata.org/documentation/odata-version-3-0/url-conventions/</a></p>
+
+        <p>The ODATA documentation does not cover all features, including the convenience method datetime’2014-09-01’ shown above.</p>
+
+        <p>
+            To see actions taken on a Matter (like a vote), look at the <a href="/Help/Api/GET-v1-Client-Matters-MatterId-Histories_AgendaNote_MinutesNote">Matter Histories</a> endpoint.  Filtering these items by MatterHistoryActionBodyName can help to limit the found actions to just those votes performed by a certain group, for instance just to votes made by the Common Council on a matter 1234:
+            <pre>https://webapi.legistar.com/v1/{Client}/matters/1234/histories?$filter=MatterHistoryPassedFlag%20ne%20null%20and%20MatterHistoryActionBodyName%20eq%20%27Common%20Council%27</pre>
+        </p>
+
+        <p>
+            To then see the vote tally, use the returned Id (5678 in this example) with the EventItems Votes endpoint:
+            <pre>https://webapi.legistar.com/v1/{Client}/eventitems/5678/votes</pre>
+        </p>
+
+        <p>There are many other items and relationships in the API.  If you have a specific use case, we’d be happy to help you find the appropriate calls.</p>
+
+        <h2 id="tips">Tips</h2>
+        <ul>
+            <li>http and https are both supported for GETs – please use as appropriate for your data and consumer.</li>
+            <li>Items returned to GET requests are limited to those items marked as public and available for view on InSite.</li>
+            <li>Limiting queries by paging and filtering will reduce both the load on the server and the time needed to return the requested data.</li>
+            <li>Fields in the API do not reflect any label customization done for your specific site.  If you need help identifying a field’s relationship to your specific Legistar configuration, please ask.</li>
+            <li>For an especially busy site, ordering by item IDs and paging with a filter GT (greater than) the highest returned ID in a set may be more stable.  If you find you are occasionally missing items in long list queries, this is worthwhile to investigate, but slightly more complex.</li>
+        </ul>
+        <h2 id="tokens">Tokens</h2>
+        <p>Some clients require use of API tokens for access.  If the read-only operations above give an unauthorized response, please refer to that client for their token policy.</p>
+        <p>If you have a token, it can be provided as a URL parameter to the https endpoint of this API.</p>
+        <p>For example: <pre>https://webapi.legistar.com/v1/{Client}/matters?token=verylongbase64token</pre></p>
+    </body>
+</html>
+
+        <hr />
+        <footer>
+            <p><div style="float:left">&copy; 2026 - Granicus</div><div style="float:right">Version: 26.4.2.0</div></p>
+        </footer>
+    </div>
+
+    <script src="/bundles/jquery?v=jh6OW4Md5-JJ8OfboplEWHgvP2R3_aCQEX-fj_6xgGw1"></script>
+
+    <script src="/bundles/bootstrap?v=XkxfR798CUJPhMhSd0B8VYgZWSNOTtLvz6047jf84wQ1"></script>
+
+    
+</body>
+</html>

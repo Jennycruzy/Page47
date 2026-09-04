@@ -1,0 +1,2375 @@
+{
+  "captures": [
+    {
+      "bytes": 5802,
+      "capture_id": "20260904T154136.590846Z_316cb3924a816a31_8a8b8b46f0ba5681",
+      "captured_at": "2026-09-04T15:41:36.590846Z",
+      "headers": {
+        "content-length": "5802",
+        "content-type": "text/html; charset=utf-8"
+      },
+      "sha256": "8a8b8b46f0ba5681835203a6bd6fb1601f943d0c3ed29901394e4dac22219109",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154136.590846Z_316cb3924a816a31_8a8b8b46f0ba5681.body",
+      "url": "https://webapi.legistar.com/Home/Examples"
+    },
+    {
+      "bytes": 41921,
+      "capture_id": "20260904T154137.098543Z_2c12fc7ada1a08fb_9f2193296fc70184",
+      "captured_at": "2026-09-04T15:41:37.098543Z",
+      "headers": {
+        "content-length": "41921",
+        "content-type": "text/html; charset=utf-8"
+      },
+      "sha256": "9f2193296fc70184f30822d0a021508bb64d8d428dc0d42d67c1484acb98df64",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154137.098543Z_2c12fc7ada1a08fb_9f2193296fc70184.body",
+      "url": "https://webapi.legistar.com/Help"
+    },
+    {
+      "bytes": 22144,
+      "capture_id": "20260904T154137.752517Z_bcebaa76ab8bf670_f94a5296502de372",
+      "captured_at": "2026-09-04T15:41:37.752517Z",
+      "headers": {
+        "content-length": "22144",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "f94a5296502de3725fd4da36155b7e787f6f239cd98dc1dddc66115f3d1cbfd5",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154137.752517Z_bcebaa76ab8bf670_f94a5296502de372.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 7061,
+      "capture_id": "20260904T154138.785460Z_d7d0492c934b4654_51c1ad535d666eef",
+      "captured_at": "2026-09-04T15:41:38.785460Z",
+      "headers": {
+        "content-length": "7061",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "51c1ad535d666eefdbe6a34d1a162836f8044c5849352d7cf8f3f1ae9e5a0dc4",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154138.785460Z_d7d0492c934b4654_51c1ad535d666eef.body",
+      "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=5&%24orderby=MatterId+desc"
+    },
+    {
+      "bytes": 17425,
+      "capture_id": "20260904T154139.298436Z_e9b93b80e0cd2f5c_8a25c6371208a747",
+      "captured_at": "2026-09-04T15:41:39.298436Z",
+      "headers": {
+        "content-length": "17425",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "8a25c6371208a7471022a83b2b9e12d836177ebb36bd2b695c8d3099ffa79a53",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154139.298436Z_e9b93b80e0cd2f5c_8a25c6371208a747.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events/6866?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 84060,
+      "capture_id": "20260904T154139.994784Z_cb4ceb13875c6783_b5fb03cbba69365c",
+      "captured_at": "2026-09-04T15:41:39.994784Z",
+      "headers": {
+        "content-length": "84060",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "b5fb03cbba69365ced7fc675b22b6f2e3ea0d8328d9bfddcd02ba14d826f6010",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154139.994784Z_cb4ceb13875c6783_b5fb03cbba69365c.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events/6865?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 37226,
+      "capture_id": "20260904T154140.966108Z_97693f9978714bab_9d2ebb2e3ecdc2ea",
+      "captured_at": "2026-09-04T15:41:40.966108Z",
+      "headers": {
+        "content-length": "37226",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "9d2ebb2e3ecdc2ea3ca41f925fd358c284d2625be1ab7609297e81afa67902c9",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154140.966108Z_97693f9978714bab_9d2ebb2e3ecdc2ea.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 2015,
+      "capture_id": "20260904T154141.821816Z_afa427253bf4322d_e7155c1f6eaa99cd",
+      "captured_at": "2026-09-04T15:41:41.821816Z",
+      "headers": {
+        "content-length": "2015",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "e7155c1f6eaa99cd556f21e09af0eeb2c3c8428dd6deab5a27bd753f7be7c81e",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154141.821816Z_afa427253bf4322d_e7155c1f6eaa99cd.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events/6862?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 20827,
+      "capture_id": "20260904T154142.534382Z_1a50b2f6e508fecd_f9db26d7a7dddad2",
+      "captured_at": "2026-09-04T15:41:42.534382Z",
+      "headers": {
+        "content-length": "20827",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "f9db26d7a7dddad28d060ac96aa354ec6aa8c1a3b2dbc75235e2d868b2cd695c",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154142.534382Z_1a50b2f6e508fecd_f9db26d7a7dddad2.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events/6859?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 5274,
+      "capture_id": "20260904T154143.356431Z_5d6357dcdbfd1459_c2e814378b00033b",
+      "captured_at": "2026-09-04T15:41:43.356431Z",
+      "headers": {
+        "content-length": "5274",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "c2e814378b00033bdfe229b376e70598b07a883f3889134b4e58135a305766d1",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154143.356431Z_5d6357dcdbfd1459_c2e814378b00033b.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events?%24top=5&%24orderby=EventId+asc"
+    },
+    {
+      "bytes": 8746,
+      "capture_id": "20260904T154144.252174Z_239276ac026238a7_840b8bc49b48e4c6",
+      "captured_at": "2026-09-04T15:41:44.252174Z",
+      "headers": {
+        "content-length": "8746",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "840b8bc49b48e4c6933372c5412a473ed5087a07516c328f8bb5a01b72159753",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154144.252174Z_239276ac026238a7_840b8bc49b48e4c6.body",
+      "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=5&%24orderby=MatterId+asc"
+    },
+    {
+      "bytes": 1004,
+      "capture_id": "20260904T154144.782927Z_df256be2e6e0a352_fda85fa8da65d63f",
+      "captured_at": "2026-09-04T15:41:44.782927Z",
+      "headers": {
+        "content-length": "1004",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "fda85fa8da65d63f5edbfd3d5223dc3fa098b4bb3decd38b5e913e4e3baaab6f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154144.782927Z_df256be2e6e0a352_fda85fa8da65d63f.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events?%24top=1"
+    },
+    {
+      "bytes": 1004,
+      "capture_id": "20260904T154145.884539Z_df256be2e6e0a352_fda85fa8da65d63f",
+      "captured_at": "2026-09-04T15:41:45.884539Z",
+      "headers": {
+        "content-length": "1004",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "fda85fa8da65d63f5edbfd3d5223dc3fa098b4bb3decd38b5e913e4e3baaab6f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154145.884539Z_df256be2e6e0a352_fda85fa8da65d63f.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events?%24top=1"
+    },
+    {
+      "bytes": 1004,
+      "capture_id": "20260904T154147.110924Z_df256be2e6e0a352_fda85fa8da65d63f",
+      "captured_at": "2026-09-04T15:41:47.110924Z",
+      "headers": {
+        "content-length": "1004",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "fda85fa8da65d63f5edbfd3d5223dc3fa098b4bb3decd38b5e913e4e3baaab6f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154147.110924Z_df256be2e6e0a352_fda85fa8da65d63f.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events?%24top=1"
+    },
+    {
+      "bytes": 1004,
+      "capture_id": "20260904T154148.359963Z_df256be2e6e0a352_fda85fa8da65d63f",
+      "captured_at": "2026-09-04T15:41:48.359963Z",
+      "headers": {
+        "content-length": "1004",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "fda85fa8da65d63f5edbfd3d5223dc3fa098b4bb3decd38b5e913e4e3baaab6f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154148.359963Z_df256be2e6e0a352_fda85fa8da65d63f.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events?%24top=1"
+    },
+    {
+      "bytes": 1004,
+      "capture_id": "20260904T154149.623885Z_df256be2e6e0a352_fda85fa8da65d63f",
+      "captured_at": "2026-09-04T15:41:49.623885Z",
+      "headers": {
+        "content-length": "1004",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "fda85fa8da65d63f5edbfd3d5223dc3fa098b4bb3decd38b5e913e4e3baaab6f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154149.623885Z_df256be2e6e0a352_fda85fa8da65d63f.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events?%24top=1"
+    },
+    {
+      "bytes": 1004,
+      "capture_id": "20260904T154150.777644Z_df256be2e6e0a352_fda85fa8da65d63f",
+      "captured_at": "2026-09-04T15:41:50.777644Z",
+      "headers": {
+        "content-length": "1004",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "fda85fa8da65d63f5edbfd3d5223dc3fa098b4bb3decd38b5e913e4e3baaab6f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154150.777644Z_df256be2e6e0a352_fda85fa8da65d63f.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events?%24top=1"
+    },
+    {
+      "bytes": 1004,
+      "capture_id": "20260904T154151.883789Z_df256be2e6e0a352_fda85fa8da65d63f",
+      "captured_at": "2026-09-04T15:41:51.883789Z",
+      "headers": {
+        "content-length": "1004",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "fda85fa8da65d63f5edbfd3d5223dc3fa098b4bb3decd38b5e913e4e3baaab6f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154151.883789Z_df256be2e6e0a352_fda85fa8da65d63f.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events?%24top=1"
+    },
+    {
+      "bytes": 1004,
+      "capture_id": "20260904T154153.100161Z_df256be2e6e0a352_fda85fa8da65d63f",
+      "captured_at": "2026-09-04T15:41:53.100161Z",
+      "headers": {
+        "content-length": "1004",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "fda85fa8da65d63f5edbfd3d5223dc3fa098b4bb3decd38b5e913e4e3baaab6f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154153.100161Z_df256be2e6e0a352_fda85fa8da65d63f.body",
+      "url": "https://webapi.legistar.com/v1/seattle/events?%24top=1"
+    },
+    {
+      "bytes": 16179,
+      "capture_id": "20260904T154153.966700Z_7a008afe9a836073_052009348bcc2455",
+      "captured_at": "2026-09-04T15:41:53.966700Z",
+      "headers": {
+        "content-length": "16179",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "052009348bcc2455f9a92deceb513f3b9dbff354f4f58267429ae059bd49ecb9",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154153.966700Z_7a008afe9a836073_052009348bcc2455.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 6967,
+      "capture_id": "20260904T154154.822377Z_b1c86b1339e287eb_e5e5fc7ecf142ba4",
+      "captured_at": "2026-09-04T15:41:54.822377Z",
+      "headers": {
+        "content-length": "6967",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "e5e5fc7ecf142ba432cdd909008bf9bdaed011ce2252f39c333ae174c9ead269",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154154.822377Z_b1c86b1339e287eb_e5e5fc7ecf142ba4.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/matters?%24top=5&%24orderby=MatterId+desc"
+    },
+    {
+      "bytes": 838,
+      "capture_id": "20260904T154155.308064Z_0462a67ea00fe924_1fcd1757418fc68f",
+      "captured_at": "2026-09-04T15:41:55.308064Z",
+      "headers": {
+        "content-length": "838",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "1fcd1757418fc68ff46d41333d7eb92b83bb730cd9e89dd877bd241e73c7de4a",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154155.308064Z_0462a67ea00fe924_1fcd1757418fc68f.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8217?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 808,
+      "capture_id": "20260904T154155.949876Z_8c2ba1df432efb49_b5101f7dca5bbd6a",
+      "captured_at": "2026-09-04T15:41:55.949876Z",
+      "headers": {
+        "content-length": "808",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "b5101f7dca5bbd6a4713d6a45011635bfc9d3477d1dee2a20c9dc56daafa19b5",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154155.949876Z_8c2ba1df432efb49_b5101f7dca5bbd6a.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8215?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 818,
+      "capture_id": "20260904T154156.617786Z_6ce937879483c777_2a4e7d0a19420f4b",
+      "captured_at": "2026-09-04T15:41:56.617786Z",
+      "headers": {
+        "content-length": "818",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "2a4e7d0a19420f4bed05d2791a16527e01c0663027ae453f7570d3926dc5921a",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154156.617786Z_6ce937879483c777_2a4e7d0a19420f4b.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8214?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 762,
+      "capture_id": "20260904T154157.274330Z_494cfcff52bebd0e_1d1204dc1612c827",
+      "captured_at": "2026-09-04T15:41:57.274330Z",
+      "headers": {
+        "content-length": "762",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "1d1204dc1612c827a0d57a0f8a7fa12f7feb431d80e0382bc4111dc2106d434d",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154157.274330Z_494cfcff52bebd0e_1d1204dc1612c827.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8212?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 777,
+      "capture_id": "20260904T154157.939998Z_97cd838c28a751c6_ed1d5d17afe603bc",
+      "captured_at": "2026-09-04T15:41:57.939998Z",
+      "headers": {
+        "content-length": "777",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "ed1d5d17afe603bc2ed236c93853adce0b36f1c9f134e4dcedf935a195f1d57d",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154157.939998Z_97cd838c28a751c6_ed1d5d17afe603bc.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8211?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 806,
+      "capture_id": "20260904T154158.615032Z_99d55f4efd66d5e3_fcf81c98e1d1bbc8",
+      "captured_at": "2026-09-04T15:41:58.615032Z",
+      "headers": {
+        "content-length": "806",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "fcf81c98e1d1bbc88fabc7f53f2d9d0b2f027d2c55f309938b7140a431385d78",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154158.615032Z_99d55f4efd66d5e3_fcf81c98e1d1bbc8.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8208?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 796,
+      "capture_id": "20260904T154159.331591Z_d1c2bb46255d78de_0a2e56fc296a41bc",
+      "captured_at": "2026-09-04T15:41:59.331591Z",
+      "headers": {
+        "content-length": "796",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "0a2e56fc296a41bc80d54df3b0611f1e1f3baa27406a4a1cf0bcb675f476b9b0",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154159.331591Z_d1c2bb46255d78de_0a2e56fc296a41bc.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8207?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 792,
+      "capture_id": "20260904T154200.012933Z_df5166985efcd5ed_603606d15975e4b7",
+      "captured_at": "2026-09-04T15:42:00.012933Z",
+      "headers": {
+        "content-length": "792",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "603606d15975e4b7c42d193a70b268f00204a04b170d3cda4795c0ff6382f9aa",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154200.012933Z_df5166985efcd5ed_603606d15975e4b7.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8206?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 813,
+      "capture_id": "20260904T154200.775964Z_53df12a3cbb7bf20_340a033e3fbe050b",
+      "captured_at": "2026-09-04T15:42:00.775964Z",
+      "headers": {
+        "content-length": "813",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "340a033e3fbe050b9be235ddf31d0477137c451a17f36d1342dab76cd9e45cd0",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154200.775964Z_53df12a3cbb7bf20_340a033e3fbe050b.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8203?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 772,
+      "capture_id": "20260904T154201.461325Z_34d0167dd13a5b8f_c0398ed16489fc8f",
+      "captured_at": "2026-09-04T15:42:01.461325Z",
+      "headers": {
+        "content-length": "772",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "c0398ed16489fc8f542392eab3b951bb089596e410567ac24f116b5b488730ec",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154201.461325Z_34d0167dd13a5b8f_c0398ed16489fc8f.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8201?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 831,
+      "capture_id": "20260904T154202.208535Z_6096cac0b433065f_49ef17938a305be6",
+      "captured_at": "2026-09-04T15:42:02.208535Z",
+      "headers": {
+        "content-length": "831",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "49ef17938a305be664aeda3a0cdbdbf60cd9c2702d1531a960c8c07b64771806",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154202.208535Z_6096cac0b433065f_49ef17938a305be6.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8200?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 975,
+      "capture_id": "20260904T154202.900479Z_2500c26d4d34abc1_e5d6f7596209695e",
+      "captured_at": "2026-09-04T15:42:02.900479Z",
+      "headers": {
+        "content-length": "975",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "e5d6f7596209695e856a64cafc475eb76673ec5004d4b38cc9d61a483c05a2fd",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154202.900479Z_2500c26d4d34abc1_e5d6f7596209695e.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8225?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 799,
+      "capture_id": "20260904T154203.606227Z_de57567e67bac76a_5ec52b04fb12bc61",
+      "captured_at": "2026-09-04T15:42:03.606227Z",
+      "headers": {
+        "content-length": "799",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "5ec52b04fb12bc617739fc9e54fdcf43bab472e5fc4037f17827cea430af8e90",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154203.606227Z_de57567e67bac76a_5ec52b04fb12bc61.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8224?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 795,
+      "capture_id": "20260904T154204.261769Z_abcabfaa6ae370a8_942069e188cea3f6",
+      "captured_at": "2026-09-04T15:42:04.261769Z",
+      "headers": {
+        "content-length": "795",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "942069e188cea3f6aff4da17c6ff2ad24164ce9d6977d771811631481ed747db",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154204.261769Z_abcabfaa6ae370a8_942069e188cea3f6.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8223?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 838,
+      "capture_id": "20260904T154204.932166Z_2aeced9e4c33985b_a089f149d05fa333",
+      "captured_at": "2026-09-04T15:42:04.932166Z",
+      "headers": {
+        "content-length": "838",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "a089f149d05fa33388492de0fb2275f8e64bb0bd85c006cb4eddc83e0bcf6806",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154204.932166Z_2aeced9e4c33985b_a089f149d05fa333.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8222?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 802,
+      "capture_id": "20260904T154205.642195Z_f461789a33e470d2_0ba885d601627614",
+      "captured_at": "2026-09-04T15:42:05.642195Z",
+      "headers": {
+        "content-length": "802",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "0ba885d6016276140b30b2b9afc7eea8761bb41d607f75043a5a8b070c3f8466",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154205.642195Z_f461789a33e470d2_0ba885d601627614.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8221?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 807,
+      "capture_id": "20260904T154206.342356Z_472f4d419d5e22f5_53f2cff77b8f4eda",
+      "captured_at": "2026-09-04T15:42:06.342356Z",
+      "headers": {
+        "content-length": "807",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "53f2cff77b8f4eda44e969120c6245af3e246d33311fa38fdc37bc69b93d8b92",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154206.342356Z_472f4d419d5e22f5_53f2cff77b8f4eda.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8220?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 802,
+      "capture_id": "20260904T154207.103267Z_1ce61148010eb436_a3e109ec53e9caaf",
+      "captured_at": "2026-09-04T15:42:07.103267Z",
+      "headers": {
+        "content-length": "802",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "a3e109ec53e9caaffe8698a74c0a6daeafe1b2d02790b335682d86af904ef3da",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154207.103267Z_1ce61148010eb436_a3e109ec53e9caaf.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8219?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 758,
+      "capture_id": "20260904T154207.814445Z_209723a360445357_80ac0125c65cf7b9",
+      "captured_at": "2026-09-04T15:42:07.814445Z",
+      "headers": {
+        "content-length": "758",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "80ac0125c65cf7b94af9bc98a0bac4e8e2927acc5ddc5232f52183001d90b115",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154207.814445Z_209723a360445357_80ac0125c65cf7b9.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8218?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 769,
+      "capture_id": "20260904T154208.505889Z_fcc5303ffe6f0558_3ef5d64f4627f664",
+      "captured_at": "2026-09-04T15:42:08.505889Z",
+      "headers": {
+        "content-length": "769",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "3ef5d64f4627f664934d8b1d6ee65faec02891bf2d7ada60b910c1bc07d98059",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154208.505889Z_fcc5303ffe6f0558_3ef5d64f4627f664.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events/8213?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 4381,
+      "capture_id": "20260904T154209.201456Z_398d3c728ee44f91_0af7e20898640264",
+      "captured_at": "2026-09-04T15:42:09.201456Z",
+      "headers": {
+        "content-length": "4381",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "0af7e20898640264cdfff0efd7d774e9fbe2b50684e51b435e33c33ff4dc4b21",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154209.201456Z_398d3c728ee44f91_0af7e20898640264.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events?%24top=5&%24orderby=EventId+asc"
+    },
+    {
+      "bytes": 6931,
+      "capture_id": "20260904T154210.041249Z_0ea82eb73f584383_3bdd543321605e32",
+      "captured_at": "2026-09-04T15:42:10.041249Z",
+      "headers": {
+        "content-length": "6931",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "3bdd543321605e32afab42486ccb40d80ea04cb6a856673ae7c74048e5c2de46",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154210.041249Z_0ea82eb73f584383_3bdd543321605e32.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/matters?%24top=5&%24orderby=MatterId+asc"
+    },
+    {
+      "bytes": 873,
+      "capture_id": "20260904T154210.551010Z_855539e5dcfa6778_f84d88922b0751a2",
+      "captured_at": "2026-09-04T15:42:10.551010Z",
+      "headers": {
+        "content-length": "873",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "f84d88922b0751a236b3a32a9e74097cd2a1ff262259f9c137d4ad9c36064eea",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154210.551010Z_855539e5dcfa6778_f84d88922b0751a2.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events?%24top=1"
+    },
+    {
+      "bytes": 873,
+      "capture_id": "20260904T154211.672422Z_855539e5dcfa6778_f84d88922b0751a2",
+      "captured_at": "2026-09-04T15:42:11.672422Z",
+      "headers": {
+        "content-length": "873",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "f84d88922b0751a236b3a32a9e74097cd2a1ff262259f9c137d4ad9c36064eea",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154211.672422Z_855539e5dcfa6778_f84d88922b0751a2.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events?%24top=1"
+    },
+    {
+      "bytes": 873,
+      "capture_id": "20260904T154212.739703Z_855539e5dcfa6778_f84d88922b0751a2",
+      "captured_at": "2026-09-04T15:42:12.739703Z",
+      "headers": {
+        "content-length": "873",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "f84d88922b0751a236b3a32a9e74097cd2a1ff262259f9c137d4ad9c36064eea",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154212.739703Z_855539e5dcfa6778_f84d88922b0751a2.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events?%24top=1"
+    },
+    {
+      "bytes": 873,
+      "capture_id": "20260904T154213.809170Z_855539e5dcfa6778_f84d88922b0751a2",
+      "captured_at": "2026-09-04T15:42:13.809170Z",
+      "headers": {
+        "content-length": "873",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "f84d88922b0751a236b3a32a9e74097cd2a1ff262259f9c137d4ad9c36064eea",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154213.809170Z_855539e5dcfa6778_f84d88922b0751a2.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events?%24top=1"
+    },
+    {
+      "bytes": 873,
+      "capture_id": "20260904T154214.922508Z_855539e5dcfa6778_f84d88922b0751a2",
+      "captured_at": "2026-09-04T15:42:14.922508Z",
+      "headers": {
+        "content-length": "873",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "f84d88922b0751a236b3a32a9e74097cd2a1ff262259f9c137d4ad9c36064eea",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154214.922508Z_855539e5dcfa6778_f84d88922b0751a2.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events?%24top=1"
+    },
+    {
+      "bytes": 873,
+      "capture_id": "20260904T154216.060472Z_855539e5dcfa6778_f84d88922b0751a2",
+      "captured_at": "2026-09-04T15:42:16.060472Z",
+      "headers": {
+        "content-length": "873",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "f84d88922b0751a236b3a32a9e74097cd2a1ff262259f9c137d4ad9c36064eea",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154216.060472Z_855539e5dcfa6778_f84d88922b0751a2.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events?%24top=1"
+    },
+    {
+      "bytes": 873,
+      "capture_id": "20260904T154217.160417Z_855539e5dcfa6778_f84d88922b0751a2",
+      "captured_at": "2026-09-04T15:42:17.160417Z",
+      "headers": {
+        "content-length": "873",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "f84d88922b0751a236b3a32a9e74097cd2a1ff262259f9c137d4ad9c36064eea",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154217.160417Z_855539e5dcfa6778_f84d88922b0751a2.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events?%24top=1"
+    },
+    {
+      "bytes": 873,
+      "capture_id": "20260904T154218.285646Z_855539e5dcfa6778_f84d88922b0751a2",
+      "captured_at": "2026-09-04T15:42:18.285646Z",
+      "headers": {
+        "content-length": "873",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "f84d88922b0751a236b3a32a9e74097cd2a1ff262259f9c137d4ad9c36064eea",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154218.285646Z_855539e5dcfa6778_f84d88922b0751a2.body",
+      "url": "https://webapi.legistar.com/v1/sanjose/events?%24top=1"
+    },
+    {
+      "bytes": 19437,
+      "capture_id": "20260904T154219.073319Z_c195784cb7905dfd_8fdcf33f7460a4ba",
+      "captured_at": "2026-09-04T15:42:19.073319Z",
+      "headers": {
+        "content-length": "19437",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "8fdcf33f7460a4bab8eeec46a6fc1d2a8f7a3a5b25647411b1c40f5c15fdcbcb",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154219.073319Z_c195784cb7905dfd_8fdcf33f7460a4ba.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 7562,
+      "capture_id": "20260904T154220.095812Z_6edff4740f25e8ef_a9f10f83a92eeac9",
+      "captured_at": "2026-09-04T15:42:20.095812Z",
+      "headers": {
+        "content-length": "7562",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "a9f10f83a92eeac97eb24e068fed4810525137e9d642c4001009a63559a4a4a7",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154220.095812Z_6edff4740f25e8ef_a9f10f83a92eeac9.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/matters?%24top=5&%24orderby=MatterId+desc"
+    },
+    {
+      "bytes": 33677,
+      "capture_id": "20260904T154220.650597Z_3a9f124ec8163d82_b59ef913db56e670",
+      "captured_at": "2026-09-04T15:42:20.650597Z",
+      "headers": {
+        "content-length": "33677",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "b59ef913db56e670353399edd94dc59cd404ada7af64e0fe0a6997aaee290faf",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154220.650597Z_3a9f124ec8163d82_b59ef913db56e670.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events/3867?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 10215,
+      "capture_id": "20260904T154221.440819Z_c332bf10976ff23c_6235bf6742882237",
+      "captured_at": "2026-09-04T15:42:21.440819Z",
+      "headers": {
+        "content-length": "10215",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "6235bf67428822374e10e9c6e13d2910c54294ff26f81608d3783a930dc0942d",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154221.440819Z_c332bf10976ff23c_6235bf6742882237.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events/3863?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 17247,
+      "capture_id": "20260904T154222.099833Z_c5ef1f950398eb2e_176a0418208494bf",
+      "captured_at": "2026-09-04T15:42:22.099833Z",
+      "headers": {
+        "content-length": "17247",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "176a0418208494bf6a2caccafee8e76719d873a87f4407a3ab6ec82b4756ec99",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154222.099833Z_c5ef1f950398eb2e_176a0418208494bf.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events/3862?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 13800,
+      "capture_id": "20260904T154222.765429Z_8cb08d8cadbd0c5e_104630a1973e97a2",
+      "captured_at": "2026-09-04T15:42:22.765429Z",
+      "headers": {
+        "content-length": "13800",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "104630a1973e97a2cf76a423ff771bcef8650f12e2527b3af1acf33c216de356",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154222.765429Z_8cb08d8cadbd0c5e_104630a1973e97a2.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events/3861?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 12517,
+      "capture_id": "20260904T154223.463097Z_df950e78050414b2_48422ba2feaed190",
+      "captured_at": "2026-09-04T15:42:23.463097Z",
+      "headers": {
+        "content-length": "12517",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "48422ba2feaed190594a81551f2341d4afd285577bd1559a1df98922114d7f6a",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154223.463097Z_df950e78050414b2_48422ba2feaed190.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events/3860?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 3974,
+      "capture_id": "20260904T154224.163884Z_b918366f12e0bef9_90a4a5ac90522eef",
+      "captured_at": "2026-09-04T15:42:24.163884Z",
+      "headers": {
+        "content-length": "3974",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "90a4a5ac90522eefcf5f9f4d7a39b0b1f3465b5747e609e6ef24181426a398d9",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154224.163884Z_b918366f12e0bef9_90a4a5ac90522eef.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events?%24top=5&%24orderby=EventId+asc"
+    },
+    {
+      "bytes": 7555,
+      "capture_id": "20260904T154225.018569Z_97ed181b900a4a06_0b682a6272de67de",
+      "captured_at": "2026-09-04T15:42:25.018569Z",
+      "headers": {
+        "content-length": "7555",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "0b682a6272de67de8eaf07a4690846878cbb683195ec2d789791e2c63e45c981",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154225.018569Z_97ed181b900a4a06_0b682a6272de67de.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/matters?%24top=5&%24orderby=MatterId+asc"
+    },
+    {
+      "bytes": 784,
+      "capture_id": "20260904T154225.502101Z_e91be58e112617ef_ad649c813e18509d",
+      "captured_at": "2026-09-04T15:42:25.502101Z",
+      "headers": {
+        "content-length": "784",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "ad649c813e18509dca076e5fef668697bd128e01c0da7bc7e01e916fdccc6958",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154225.502101Z_e91be58e112617ef_ad649c813e18509d.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events?%24top=1"
+    },
+    {
+      "bytes": 784,
+      "capture_id": "20260904T154226.615754Z_e91be58e112617ef_ad649c813e18509d",
+      "captured_at": "2026-09-04T15:42:26.615754Z",
+      "headers": {
+        "content-length": "784",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "ad649c813e18509dca076e5fef668697bd128e01c0da7bc7e01e916fdccc6958",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154226.615754Z_e91be58e112617ef_ad649c813e18509d.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events?%24top=1"
+    },
+    {
+      "bytes": 784,
+      "capture_id": "20260904T154227.760140Z_e91be58e112617ef_ad649c813e18509d",
+      "captured_at": "2026-09-04T15:42:27.760140Z",
+      "headers": {
+        "content-length": "784",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "ad649c813e18509dca076e5fef668697bd128e01c0da7bc7e01e916fdccc6958",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154227.760140Z_e91be58e112617ef_ad649c813e18509d.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events?%24top=1"
+    },
+    {
+      "bytes": 784,
+      "capture_id": "20260904T154228.921866Z_e91be58e112617ef_ad649c813e18509d",
+      "captured_at": "2026-09-04T15:42:28.921866Z",
+      "headers": {
+        "content-length": "784",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "ad649c813e18509dca076e5fef668697bd128e01c0da7bc7e01e916fdccc6958",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154228.921866Z_e91be58e112617ef_ad649c813e18509d.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events?%24top=1"
+    },
+    {
+      "bytes": 784,
+      "capture_id": "20260904T154230.024696Z_e91be58e112617ef_ad649c813e18509d",
+      "captured_at": "2026-09-04T15:42:30.024696Z",
+      "headers": {
+        "content-length": "784",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "ad649c813e18509dca076e5fef668697bd128e01c0da7bc7e01e916fdccc6958",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154230.024696Z_e91be58e112617ef_ad649c813e18509d.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events?%24top=1"
+    },
+    {
+      "bytes": 784,
+      "capture_id": "20260904T154231.159192Z_e91be58e112617ef_ad649c813e18509d",
+      "captured_at": "2026-09-04T15:42:31.159192Z",
+      "headers": {
+        "content-length": "784",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "ad649c813e18509dca076e5fef668697bd128e01c0da7bc7e01e916fdccc6958",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154231.159192Z_e91be58e112617ef_ad649c813e18509d.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events?%24top=1"
+    },
+    {
+      "bytes": 784,
+      "capture_id": "20260904T154232.252433Z_e91be58e112617ef_ad649c813e18509d",
+      "captured_at": "2026-09-04T15:42:32.252433Z",
+      "headers": {
+        "content-length": "784",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "ad649c813e18509dca076e5fef668697bd128e01c0da7bc7e01e916fdccc6958",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154232.252433Z_e91be58e112617ef_ad649c813e18509d.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events?%24top=1"
+    },
+    {
+      "bytes": 784,
+      "capture_id": "20260904T154233.374232Z_e91be58e112617ef_ad649c813e18509d",
+      "captured_at": "2026-09-04T15:42:33.374232Z",
+      "headers": {
+        "content-length": "784",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "ad649c813e18509dca076e5fef668697bd128e01c0da7bc7e01e916fdccc6958",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154233.374232Z_e91be58e112617ef_ad649c813e18509d.body",
+      "url": "https://webapi.legistar.com/v1/sacramento/events?%24top=1"
+    },
+    {
+      "bytes": 4827,
+      "capture_id": "20260904T154234.168904Z_debd61137d28f968_09061eb58b1d4143",
+      "captured_at": "2026-09-04T15:42:34.168904Z",
+      "error": "HTTP Error 500: Internal Server Error",
+      "error_type": "HTTPError",
+      "headers": {
+        "content-length": "4827",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "09061eb58b1d41431a9a80cbbe5b9ac8f02daf95fc39b3f5dc4e4b8f9fc6a8ff",
+      "status": 500,
+      "storage_key": "evidence/preflight/responses/20260904T154234.168904Z_debd61137d28f968_09061eb58b1d4143.body",
+      "url": "https://webapi.legistar.com/v1/sandiego/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 20244,
+      "capture_id": "20260904T154234.630504Z_23e9225cd659283a_f107f6d096b7f390",
+      "captured_at": "2026-09-04T15:42:34.630504Z",
+      "headers": {
+        "content-length": "20244",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "f107f6d096b7f3900fc923e23a50409224541951e1d71dfbf55735d60da61ffb",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154234.630504Z_23e9225cd659283a_f107f6d096b7f390.body",
+      "url": "https://webapi.legistar.com/v1/denver/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 7718,
+      "capture_id": "20260904T154235.723548Z_a45ff08ae83e02c8_91f13d4b739058e1",
+      "captured_at": "2026-09-04T15:42:35.723548Z",
+      "headers": {
+        "content-length": "7718",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "91f13d4b739058e16a39167d9dc30f8aa2dba70e59beefe24fac7eac9dbb11a6",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154235.723548Z_a45ff08ae83e02c8_91f13d4b739058e1.body",
+      "url": "https://webapi.legistar.com/v1/denver/matters?%24top=5&%24orderby=MatterId+desc"
+    },
+    {
+      "bytes": 74125,
+      "capture_id": "20260904T154236.254647Z_1e32c9d341ff1d81_f4c61574491ab8fe",
+      "captured_at": "2026-09-04T15:42:36.254647Z",
+      "headers": {
+        "content-length": "74125",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "f4c61574491ab8fe7894217855ed64b1843dde75817a579c02a220c973f537c8",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154236.254647Z_1e32c9d341ff1d81_f4c61574491ab8fe.body",
+      "url": "https://webapi.legistar.com/v1/denver/events/12903?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 23396,
+      "capture_id": "20260904T154237.248770Z_650bc8cd19a1088a_ee60828b4d1d7108",
+      "captured_at": "2026-09-04T15:42:37.248770Z",
+      "headers": {
+        "content-length": "23396",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "ee60828b4d1d710842794bc70cfc5052a4ae6638cca18f4239f00a69e5b4b1e0",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154237.248770Z_650bc8cd19a1088a_ee60828b4d1d7108.body",
+      "url": "https://webapi.legistar.com/v1/denver/events/12901?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 20866,
+      "capture_id": "20260904T154238.016331Z_bb75165727e7bd7a_39d2740e1e30cd5c",
+      "captured_at": "2026-09-04T15:42:38.016331Z",
+      "headers": {
+        "content-length": "20866",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "39d2740e1e30cd5c3f769777b0c824f3c800689812bbe28fe3d13dfee2a86dde",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154238.016331Z_bb75165727e7bd7a_39d2740e1e30cd5c.body",
+      "url": "https://webapi.legistar.com/v1/denver/events/12900?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 6402,
+      "capture_id": "20260904T154238.851821Z_e2a72ee2709e9127_6a0c6b02638cd5c6",
+      "captured_at": "2026-09-04T15:42:38.851821Z",
+      "headers": {
+        "content-length": "6402",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "6a0c6b02638cd5c6b053ef98024b2e51cf118075661a5d7b19111ef0579429c0",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154238.851821Z_e2a72ee2709e9127_6a0c6b02638cd5c6.body",
+      "url": "https://webapi.legistar.com/v1/denver/events/12899?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 6765,
+      "capture_id": "20260904T154239.525715Z_f6723d3f0f41ccde_bf3e4aac52f6c1d6",
+      "captured_at": "2026-09-04T15:42:39.525715Z",
+      "headers": {
+        "content-length": "6765",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "bf3e4aac52f6c1d6d7ee48d1dd6a454ee83f7bfd85d0dc31ad0122122bdb258f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154239.525715Z_f6723d3f0f41ccde_bf3e4aac52f6c1d6.body",
+      "url": "https://webapi.legistar.com/v1/denver/events/12898?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 5354,
+      "capture_id": "20260904T154240.192174Z_75003c9f90244046_418195feb0e38c57",
+      "captured_at": "2026-09-04T15:42:40.192174Z",
+      "headers": {
+        "content-length": "5354",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "418195feb0e38c576e301a250d4b08921e6c9d553c6ffc52f387997229c5b326",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154240.192174Z_75003c9f90244046_418195feb0e38c57.body",
+      "url": "https://webapi.legistar.com/v1/denver/events?%24top=5&%24orderby=EventId+asc"
+    },
+    {
+      "bytes": 9099,
+      "capture_id": "20260904T154241.080725Z_ae727590950b15f6_58ae85efcdec9fb8",
+      "captured_at": "2026-09-04T15:42:41.080725Z",
+      "headers": {
+        "content-length": "9099",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "58ae85efcdec9fb84ee1df07fcce176b05582ac146b6e2896eddd0d3bdc8a13a",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154241.080725Z_ae727590950b15f6_58ae85efcdec9fb8.body",
+      "url": "https://webapi.legistar.com/v1/denver/matters?%24top=5&%24orderby=MatterId+asc"
+    },
+    {
+      "bytes": 1126,
+      "capture_id": "20260904T154241.579774Z_ec851d9c089129ed_3313c853e1b368aa",
+      "captured_at": "2026-09-04T15:42:41.579774Z",
+      "headers": {
+        "content-length": "1126",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "3313c853e1b368aa969037436a4fe0c15143108fcaf74e329e1cd08b9546adbf",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154241.579774Z_ec851d9c089129ed_3313c853e1b368aa.body",
+      "url": "https://webapi.legistar.com/v1/denver/events?%24top=1"
+    },
+    {
+      "bytes": 1126,
+      "capture_id": "20260904T154242.717389Z_ec851d9c089129ed_3313c853e1b368aa",
+      "captured_at": "2026-09-04T15:42:42.717389Z",
+      "headers": {
+        "content-length": "1126",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "3313c853e1b368aa969037436a4fe0c15143108fcaf74e329e1cd08b9546adbf",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154242.717389Z_ec851d9c089129ed_3313c853e1b368aa.body",
+      "url": "https://webapi.legistar.com/v1/denver/events?%24top=1"
+    },
+    {
+      "bytes": 1126,
+      "capture_id": "20260904T154243.891174Z_ec851d9c089129ed_3313c853e1b368aa",
+      "captured_at": "2026-09-04T15:42:43.891174Z",
+      "headers": {
+        "content-length": "1126",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "3313c853e1b368aa969037436a4fe0c15143108fcaf74e329e1cd08b9546adbf",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154243.891174Z_ec851d9c089129ed_3313c853e1b368aa.body",
+      "url": "https://webapi.legistar.com/v1/denver/events?%24top=1"
+    },
+    {
+      "bytes": 1126,
+      "capture_id": "20260904T154245.038791Z_ec851d9c089129ed_3313c853e1b368aa",
+      "captured_at": "2026-09-04T15:42:45.038791Z",
+      "headers": {
+        "content-length": "1126",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "3313c853e1b368aa969037436a4fe0c15143108fcaf74e329e1cd08b9546adbf",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154245.038791Z_ec851d9c089129ed_3313c853e1b368aa.body",
+      "url": "https://webapi.legistar.com/v1/denver/events?%24top=1"
+    },
+    {
+      "bytes": 1126,
+      "capture_id": "20260904T154246.219605Z_ec851d9c089129ed_3313c853e1b368aa",
+      "captured_at": "2026-09-04T15:42:46.219605Z",
+      "headers": {
+        "content-length": "1126",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "3313c853e1b368aa969037436a4fe0c15143108fcaf74e329e1cd08b9546adbf",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154246.219605Z_ec851d9c089129ed_3313c853e1b368aa.body",
+      "url": "https://webapi.legistar.com/v1/denver/events?%24top=1"
+    },
+    {
+      "bytes": 1126,
+      "capture_id": "20260904T154247.444896Z_ec851d9c089129ed_3313c853e1b368aa",
+      "captured_at": "2026-09-04T15:42:47.444896Z",
+      "headers": {
+        "content-length": "1126",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "3313c853e1b368aa969037436a4fe0c15143108fcaf74e329e1cd08b9546adbf",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154247.444896Z_ec851d9c089129ed_3313c853e1b368aa.body",
+      "url": "https://webapi.legistar.com/v1/denver/events?%24top=1"
+    },
+    {
+      "bytes": 1126,
+      "capture_id": "20260904T154248.536036Z_ec851d9c089129ed_3313c853e1b368aa",
+      "captured_at": "2026-09-04T15:42:48.536036Z",
+      "headers": {
+        "content-length": "1126",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "3313c853e1b368aa969037436a4fe0c15143108fcaf74e329e1cd08b9546adbf",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154248.536036Z_ec851d9c089129ed_3313c853e1b368aa.body",
+      "url": "https://webapi.legistar.com/v1/denver/events?%24top=1"
+    },
+    {
+      "bytes": 1126,
+      "capture_id": "20260904T154249.713120Z_ec851d9c089129ed_3313c853e1b368aa",
+      "captured_at": "2026-09-04T15:42:49.713120Z",
+      "headers": {
+        "content-length": "1126",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "3313c853e1b368aa969037436a4fe0c15143108fcaf74e329e1cd08b9546adbf",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154249.713120Z_ec851d9c089129ed_3313c853e1b368aa.body",
+      "url": "https://webapi.legistar.com/v1/denver/events?%24top=1"
+    },
+    {
+      "bytes": 4825,
+      "capture_id": "20260904T154250.626901Z_b192470cad8c4664_26b93d9e3a558cea",
+      "captured_at": "2026-09-04T15:42:50.626901Z",
+      "error": "HTTP Error 500: Internal Server Error",
+      "error_type": "HTTPError",
+      "headers": {
+        "content-length": "4825",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "26b93d9e3a558cead1afa582d438ceab65669cb83e972064659a6ca5e94a9313",
+      "status": 500,
+      "storage_key": "evidence/preflight/responses/20260904T154250.626901Z_b192470cad8c4664_26b93d9e3a558cea.body",
+      "url": "https://webapi.legistar.com/v1/austin/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 4826,
+      "capture_id": "20260904T154251.071964Z_2e58c6143472931e_7a56f6b9af4db2b1",
+      "captured_at": "2026-09-04T15:42:51.071964Z",
+      "error": "HTTP Error 500: Internal Server Error",
+      "error_type": "HTTPError",
+      "headers": {
+        "content-length": "4826",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "7a56f6b9af4db2b149b6a3397a643c0c335839dce81dad0d073ec9933522be03",
+      "status": 500,
+      "storage_key": "evidence/preflight/responses/20260904T154251.071964Z_2e58c6143472931e_7a56f6b9af4db2b1.body",
+      "url": "https://webapi.legistar.com/v1/chicago/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 18202,
+      "capture_id": "20260904T154251.515657Z_1214f638db6a5dfc_54945618fb82c54d",
+      "captured_at": "2026-09-04T15:42:51.515657Z",
+      "headers": {
+        "content-length": "18202",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "54945618fb82c54dac37ca1bf401a43ff21781c4ffa6502be9a4da7d2e1f8499",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154251.515657Z_1214f638db6a5dfc_54945618fb82c54d.body",
+      "url": "https://webapi.legistar.com/v1/boston/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 7176,
+      "capture_id": "20260904T154252.476046Z_fbc96e9c74a4ac5b_26575b91389dda4f",
+      "captured_at": "2026-09-04T15:42:52.476046Z",
+      "headers": {
+        "content-length": "7176",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "26575b91389dda4fdb650ddc1ab0970c74f591cec47af80c5794afd2aff38d73",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154252.476046Z_fbc96e9c74a4ac5b_26575b91389dda4f.body",
+      "url": "https://webapi.legistar.com/v1/boston/matters?%24top=5&%24orderby=MatterId+desc"
+    },
+    {
+      "bytes": 1926,
+      "capture_id": "20260904T154253.035520Z_4c2c6629204d59fa_330f8b1ffa8acf5a",
+      "captured_at": "2026-09-04T15:42:53.035520Z",
+      "headers": {
+        "content-length": "1926",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "330f8b1ffa8acf5a33865b15e3a370601cc2307286e0c900a7c70298a66e31d1",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154253.035520Z_4c2c6629204d59fa_330f8b1ffa8acf5a.body",
+      "url": "https://webapi.legistar.com/v1/boston/events/14243?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 2016,
+      "capture_id": "20260904T154253.743738Z_5ad5f9455262cc56_66687977758d3ab2",
+      "captured_at": "2026-09-04T15:42:53.743738Z",
+      "headers": {
+        "content-length": "2016",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "66687977758d3ab2d18bf17a17861b4e53c43693a3ee1dd81a2d6571a26b1723",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154253.743738Z_5ad5f9455262cc56_66687977758d3ab2.body",
+      "url": "https://webapi.legistar.com/v1/boston/events/14242?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 3923,
+      "capture_id": "20260904T154254.432157Z_b01c57bd20b65431_9cd8542fc67242a5",
+      "captured_at": "2026-09-04T15:42:54.432157Z",
+      "headers": {
+        "content-length": "3923",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "9cd8542fc67242a53e4063ea68216a3aecc74282880e5ad7ebfea33400508966",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154254.432157Z_b01c57bd20b65431_9cd8542fc67242a5.body",
+      "url": "https://webapi.legistar.com/v1/boston/events/14241?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 6035,
+      "capture_id": "20260904T154255.148901Z_e76fe1673f446623_065fba96504e878f",
+      "captured_at": "2026-09-04T15:42:55.148901Z",
+      "headers": {
+        "content-length": "6035",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "065fba96504e878f4c7212e5354fff10db32f2b8f400bd9280c63dd4b6db638a",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154255.148901Z_e76fe1673f446623_065fba96504e878f.body",
+      "url": "https://webapi.legistar.com/v1/boston/events/14240?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 24460,
+      "capture_id": "20260904T154255.865147Z_f8a3caafc25816ec_d065735fb44b2d66",
+      "captured_at": "2026-09-04T15:42:55.865147Z",
+      "headers": {
+        "content-length": "24460",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "d065735fb44b2d66298af209349c266a0720ef22177766f1d8f4e5e1b9107985",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154255.865147Z_f8a3caafc25816ec_d065735fb44b2d66.body",
+      "url": "https://webapi.legistar.com/v1/boston/events/14237?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 4720,
+      "capture_id": "20260904T154256.712718Z_9f7b259368e097bb_99b36cf8f46f145d",
+      "captured_at": "2026-09-04T15:42:56.712718Z",
+      "headers": {
+        "content-length": "4720",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "99b36cf8f46f145db2f4a053cfa5e51735954fd9b254b8cb09b1beab4871e18a",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154256.712718Z_9f7b259368e097bb_99b36cf8f46f145d.body",
+      "url": "https://webapi.legistar.com/v1/boston/events?%24top=5&%24orderby=EventId+asc"
+    },
+    {
+      "bytes": 7373,
+      "capture_id": "20260904T154257.607251Z_60c520ef8e90f58d_a872e21814450836",
+      "captured_at": "2026-09-04T15:42:57.607251Z",
+      "headers": {
+        "content-length": "7373",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "a872e2181445083659f6d618b37f5736c2132d90d2a1b60155a26de50c7564a7",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154257.607251Z_60c520ef8e90f58d_a872e21814450836.body",
+      "url": "https://webapi.legistar.com/v1/boston/matters?%24top=5&%24orderby=MatterId+asc"
+    },
+    {
+      "bytes": 989,
+      "capture_id": "20260904T154258.108071Z_31879498847f6409_078244b9619b414f",
+      "captured_at": "2026-09-04T15:42:58.108071Z",
+      "headers": {
+        "content-length": "989",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "078244b9619b414f0df594c99203551b07b36959a76baa7a83d2fe4e4a7bcd53",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154258.108071Z_31879498847f6409_078244b9619b414f.body",
+      "url": "https://webapi.legistar.com/v1/boston/events?%24top=1"
+    },
+    {
+      "bytes": 989,
+      "capture_id": "20260904T154259.259535Z_31879498847f6409_078244b9619b414f",
+      "captured_at": "2026-09-04T15:42:59.259535Z",
+      "headers": {
+        "content-length": "989",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "078244b9619b414f0df594c99203551b07b36959a76baa7a83d2fe4e4a7bcd53",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154259.259535Z_31879498847f6409_078244b9619b414f.body",
+      "url": "https://webapi.legistar.com/v1/boston/events?%24top=1"
+    },
+    {
+      "bytes": 989,
+      "capture_id": "20260904T154300.405749Z_31879498847f6409_078244b9619b414f",
+      "captured_at": "2026-09-04T15:43:00.405749Z",
+      "headers": {
+        "content-length": "989",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "078244b9619b414f0df594c99203551b07b36959a76baa7a83d2fe4e4a7bcd53",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154300.405749Z_31879498847f6409_078244b9619b414f.body",
+      "url": "https://webapi.legistar.com/v1/boston/events?%24top=1"
+    },
+    {
+      "bytes": 989,
+      "capture_id": "20260904T154301.633233Z_31879498847f6409_078244b9619b414f",
+      "captured_at": "2026-09-04T15:43:01.633233Z",
+      "headers": {
+        "content-length": "989",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "078244b9619b414f0df594c99203551b07b36959a76baa7a83d2fe4e4a7bcd53",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154301.633233Z_31879498847f6409_078244b9619b414f.body",
+      "url": "https://webapi.legistar.com/v1/boston/events?%24top=1"
+    },
+    {
+      "bytes": 989,
+      "capture_id": "20260904T154302.849653Z_31879498847f6409_078244b9619b414f",
+      "captured_at": "2026-09-04T15:43:02.849653Z",
+      "headers": {
+        "content-length": "989",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "078244b9619b414f0df594c99203551b07b36959a76baa7a83d2fe4e4a7bcd53",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154302.849653Z_31879498847f6409_078244b9619b414f.body",
+      "url": "https://webapi.legistar.com/v1/boston/events?%24top=1"
+    },
+    {
+      "bytes": 989,
+      "capture_id": "20260904T154303.938751Z_31879498847f6409_078244b9619b414f",
+      "captured_at": "2026-09-04T15:43:03.938751Z",
+      "headers": {
+        "content-length": "989",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "078244b9619b414f0df594c99203551b07b36959a76baa7a83d2fe4e4a7bcd53",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154303.938751Z_31879498847f6409_078244b9619b414f.body",
+      "url": "https://webapi.legistar.com/v1/boston/events?%24top=1"
+    },
+    {
+      "bytes": 989,
+      "capture_id": "20260904T154305.030107Z_31879498847f6409_078244b9619b414f",
+      "captured_at": "2026-09-04T15:43:05.030107Z",
+      "headers": {
+        "content-length": "989",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "078244b9619b414f0df594c99203551b07b36959a76baa7a83d2fe4e4a7bcd53",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154305.030107Z_31879498847f6409_078244b9619b414f.body",
+      "url": "https://webapi.legistar.com/v1/boston/events?%24top=1"
+    },
+    {
+      "bytes": 989,
+      "capture_id": "20260904T154306.102618Z_31879498847f6409_078244b9619b414f",
+      "captured_at": "2026-09-04T15:43:06.102618Z",
+      "headers": {
+        "content-length": "989",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "078244b9619b414f0df594c99203551b07b36959a76baa7a83d2fe4e4a7bcd53",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154306.102618Z_31879498847f6409_078244b9619b414f.body",
+      "url": "https://webapi.legistar.com/v1/boston/events?%24top=1"
+    },
+    {
+      "bytes": 4827,
+      "capture_id": "20260904T154307.009348Z_96eb89044226b276_5f579020d800c471",
+      "captured_at": "2026-09-04T15:43:07.009348Z",
+      "error": "HTTP Error 500: Internal Server Error",
+      "error_type": "HTTPError",
+      "headers": {
+        "content-length": "4827",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "5f579020d800c4712fc725f1d7de166dda5f45ae9cb7841ef65000e156d3f63f",
+      "status": 500,
+      "storage_key": "evidence/preflight/responses/20260904T154307.009348Z_96eb89044226b276_5f579020d800c471.body",
+      "url": "https://webapi.legistar.com/v1/portland/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 21203,
+      "capture_id": "20260904T154307.464176Z_308a58d8f1ac90e3_996dfafde2b0c075",
+      "captured_at": "2026-09-04T15:43:07.464176Z",
+      "headers": {
+        "content-length": "21203",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "996dfafde2b0c075575589cb584846745a803b347bb1da14145f612bdf7ceff4",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154307.464176Z_308a58d8f1ac90e3_996dfafde2b0c075.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 9684,
+      "capture_id": "20260904T154308.518395Z_23177cb9492c3fdf_2e9ae820f0aaf15d",
+      "captured_at": "2026-09-04T15:43:08.518395Z",
+      "headers": {
+        "content-length": "9684",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "2e9ae820f0aaf15da01ce2df14b10b728c1540db2563d7105a8b85e063c330d1",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154308.518395Z_23177cb9492c3fdf_2e9ae820f0aaf15d.body",
+      "url": "https://webapi.legistar.com/v1/oakland/matters?%24top=5&%24orderby=MatterId+desc"
+    },
+    {
+      "bytes": 17557,
+      "capture_id": "20260904T154308.991104Z_3fdb614cb0e4c872_4d3472df01677a68",
+      "captured_at": "2026-09-04T15:43:08.991104Z",
+      "headers": {
+        "content-length": "17557",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "4d3472df01677a68d6ef3574bf61447164189a988fee7d8d62f949ff916907c8",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154308.991104Z_3fdb614cb0e4c872_4d3472df01677a68.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events/9577?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 1944,
+      "capture_id": "20260904T154309.855592Z_9c4a571218c8723c_d0f438b51a451fee",
+      "captured_at": "2026-09-04T15:43:09.855592Z",
+      "headers": {
+        "content-length": "1944",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "d0f438b51a451fee2e1873aa95c3c69a03edb6308c18e98b7dc0a0a381d4dcd9",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154309.855592Z_9c4a571218c8723c_d0f438b51a451fee.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events/9576?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 1927,
+      "capture_id": "20260904T154310.605018Z_3c10d0a2d1584c76_9c47bc994001139b",
+      "captured_at": "2026-09-04T15:43:10.605018Z",
+      "headers": {
+        "content-length": "1927",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "9c47bc994001139b80c8792e857b0da5a1fd2d14b457baafa9bf393d0091af76",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154310.605018Z_3c10d0a2d1584c76_9c47bc994001139b.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events/9575?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 1931,
+      "capture_id": "20260904T154311.335347Z_e4997a62a18e9d4e_522de4d178a079e9",
+      "captured_at": "2026-09-04T15:43:11.335347Z",
+      "headers": {
+        "content-length": "1931",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "522de4d178a079e90694020ee14d068c90fe935bea884c6c8bcb57913145f249",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154311.335347Z_e4997a62a18e9d4e_522de4d178a079e9.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events/9574?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 1969,
+      "capture_id": "20260904T154312.051234Z_3d47aca9e5140f03_57e765ba0adb9411",
+      "captured_at": "2026-09-04T15:43:12.051234Z",
+      "headers": {
+        "content-length": "1969",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "57e765ba0adb9411a0cbbdbb7d2c05644451c28e1adad5a0f9683c3cd9a79cef",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154312.051234Z_3d47aca9e5140f03_57e765ba0adb9411.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events/9573?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 3862,
+      "capture_id": "20260904T154312.723511Z_b27105f894340133_e8b71474d4207146",
+      "captured_at": "2026-09-04T15:43:12.723511Z",
+      "headers": {
+        "content-length": "3862",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "e8b71474d42071462bf43ecfa2d5c59d679f5fb45985652a560719d71619f8cb",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154312.723511Z_b27105f894340133_e8b71474d4207146.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events?%24top=5&%24orderby=EventId+asc"
+    },
+    {
+      "bytes": 7989,
+      "capture_id": "20260904T154313.769478Z_4bfbd1e99de0bdff_559ceae4917f97d3",
+      "captured_at": "2026-09-04T15:43:13.769478Z",
+      "headers": {
+        "content-length": "7989",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "559ceae4917f97d35839743a2b575c12c651877f91716513f277a086103ee2da",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154313.769478Z_4bfbd1e99de0bdff_559ceae4917f97d3.body",
+      "url": "https://webapi.legistar.com/v1/oakland/matters?%24top=5&%24orderby=MatterId+asc"
+    },
+    {
+      "bytes": 763,
+      "capture_id": "20260904T154314.303852Z_3093d42dd0ae978a_165fb3044653438a",
+      "captured_at": "2026-09-04T15:43:14.303852Z",
+      "headers": {
+        "content-length": "763",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "165fb3044653438a669be2c2e1948d0b0b5367c6a4cfdca2cb509bb7ae7bc180",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154314.303852Z_3093d42dd0ae978a_165fb3044653438a.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events?%24top=1"
+    },
+    {
+      "bytes": 763,
+      "capture_id": "20260904T154315.459543Z_3093d42dd0ae978a_165fb3044653438a",
+      "captured_at": "2026-09-04T15:43:15.459543Z",
+      "headers": {
+        "content-length": "763",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "165fb3044653438a669be2c2e1948d0b0b5367c6a4cfdca2cb509bb7ae7bc180",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154315.459543Z_3093d42dd0ae978a_165fb3044653438a.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events?%24top=1"
+    },
+    {
+      "bytes": 763,
+      "capture_id": "20260904T154316.651751Z_3093d42dd0ae978a_165fb3044653438a",
+      "captured_at": "2026-09-04T15:43:16.651751Z",
+      "headers": {
+        "content-length": "763",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "165fb3044653438a669be2c2e1948d0b0b5367c6a4cfdca2cb509bb7ae7bc180",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154316.651751Z_3093d42dd0ae978a_165fb3044653438a.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events?%24top=1"
+    },
+    {
+      "bytes": 763,
+      "capture_id": "20260904T154317.756412Z_3093d42dd0ae978a_165fb3044653438a",
+      "captured_at": "2026-09-04T15:43:17.756412Z",
+      "headers": {
+        "content-length": "763",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "165fb3044653438a669be2c2e1948d0b0b5367c6a4cfdca2cb509bb7ae7bc180",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154317.756412Z_3093d42dd0ae978a_165fb3044653438a.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events?%24top=1"
+    },
+    {
+      "bytes": 763,
+      "capture_id": "20260904T154318.892811Z_3093d42dd0ae978a_165fb3044653438a",
+      "captured_at": "2026-09-04T15:43:18.892811Z",
+      "headers": {
+        "content-length": "763",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "165fb3044653438a669be2c2e1948d0b0b5367c6a4cfdca2cb509bb7ae7bc180",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154318.892811Z_3093d42dd0ae978a_165fb3044653438a.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events?%24top=1"
+    },
+    {
+      "bytes": 763,
+      "capture_id": "20260904T154320.003093Z_3093d42dd0ae978a_165fb3044653438a",
+      "captured_at": "2026-09-04T15:43:20.003093Z",
+      "headers": {
+        "content-length": "763",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "165fb3044653438a669be2c2e1948d0b0b5367c6a4cfdca2cb509bb7ae7bc180",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154320.003093Z_3093d42dd0ae978a_165fb3044653438a.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events?%24top=1"
+    },
+    {
+      "bytes": 763,
+      "capture_id": "20260904T154321.150649Z_3093d42dd0ae978a_165fb3044653438a",
+      "captured_at": "2026-09-04T15:43:21.150649Z",
+      "headers": {
+        "content-length": "763",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "165fb3044653438a669be2c2e1948d0b0b5367c6a4cfdca2cb509bb7ae7bc180",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154321.150649Z_3093d42dd0ae978a_165fb3044653438a.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events?%24top=1"
+    },
+    {
+      "bytes": 763,
+      "capture_id": "20260904T154322.267751Z_3093d42dd0ae978a_165fb3044653438a",
+      "captured_at": "2026-09-04T15:43:22.267751Z",
+      "headers": {
+        "content-length": "763",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "165fb3044653438a669be2c2e1948d0b0b5367c6a4cfdca2cb509bb7ae7bc180",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154322.267751Z_3093d42dd0ae978a_165fb3044653438a.body",
+      "url": "https://webapi.legistar.com/v1/oakland/events?%24top=1"
+    },
+    {
+      "bytes": 15217,
+      "capture_id": "20260904T154323.209936Z_f53c0fff0b17c996_bac054a692116998",
+      "captured_at": "2026-09-04T15:43:23.209936Z",
+      "headers": {
+        "content-length": "15217",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "bac054a6921169988c07d3f2de02e9969f4517aca6101a197ac96ae5aa7d3bac",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154323.209936Z_f53c0fff0b17c996_bac054a692116998.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 8022,
+      "capture_id": "20260904T154324.091089Z_2f6255c0df522201_056b999e477cf357",
+      "captured_at": "2026-09-04T15:43:24.091089Z",
+      "headers": {
+        "content-length": "8022",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "056b999e477cf35707924897bf1a80bd6c00ea68556630a24aecafa00ef2a3d1",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154324.091089Z_2f6255c0df522201_056b999e477cf357.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/matters?%24top=5&%24orderby=MatterId+desc"
+    },
+    {
+      "bytes": 5052,
+      "capture_id": "20260904T154324.569845Z_fcab5970c089e40a_e9e4e2e8d4fd648b",
+      "captured_at": "2026-09-04T15:43:24.569845Z",
+      "headers": {
+        "content-length": "5052",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "e9e4e2e8d4fd648b743e4d476f71b3f3589405e94fb5cb6c1a5931250833ab7d",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154324.569845Z_fcab5970c089e40a_e9e4e2e8d4fd648b.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events/2656?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 2963,
+      "capture_id": "20260904T154325.276366Z_25eb71c407f4c44a_2afaef169c475f9f",
+      "captured_at": "2026-09-04T15:43:25.276366Z",
+      "headers": {
+        "content-length": "2963",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "2afaef169c475f9fd6cda3b00984116ef211e5a286051d233a3bdfdf1a0b8de0",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154325.276366Z_25eb71c407f4c44a_2afaef169c475f9f.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events/2655?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 3810,
+      "capture_id": "20260904T154325.971909Z_ab4dea45bf014feb_fee7f2ae08eb1f30",
+      "captured_at": "2026-09-04T15:43:25.971909Z",
+      "headers": {
+        "content-length": "3810",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "fee7f2ae08eb1f301dbc4dba61fb4f06bd53d9bdae7c159d296d4b16d3a007ff",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154325.971909Z_ab4dea45bf014feb_fee7f2ae08eb1f30.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events/2652?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 286612,
+      "capture_id": "20260904T154326.657419Z_be4fc01cafe3eeee_cfebaeb669ac161c",
+      "captured_at": "2026-09-04T15:43:26.657419Z",
+      "headers": {
+        "content-length": "286612",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "cfebaeb669ac161cfedb60d9cfa7ec10ce2c416b4f41c35e40b9515de2246754",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154326.657419Z_be4fc01cafe3eeee_cfebaeb669ac161c.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events/2651?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 6982,
+      "capture_id": "20260904T154327.930144Z_9d49ba736b75d191_b4cf246989dcd2b7",
+      "captured_at": "2026-09-04T15:43:27.930144Z",
+      "headers": {
+        "content-length": "6982",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "b4cf246989dcd2b72d5fa86413d75bb8898889792276325222a4739e326bf0bf",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154327.930144Z_9d49ba736b75d191_b4cf246989dcd2b7.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events/2650?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 4085,
+      "capture_id": "20260904T154328.587464Z_b05064c91b9b96f8_e4c32e33860c50bd",
+      "captured_at": "2026-09-04T15:43:28.587464Z",
+      "headers": {
+        "content-length": "4085",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "e4c32e33860c50bdd9e4f85bfb0151ded16edef1874b7fd77c6314472e98ce3e",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154328.587464Z_b05064c91b9b96f8_e4c32e33860c50bd.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events?%24top=5&%24orderby=EventId+asc"
+    },
+    {
+      "bytes": 7101,
+      "capture_id": "20260904T154329.463457Z_cc8a3ab35fec09cf_059870fde00ff6bf",
+      "captured_at": "2026-09-04T15:43:29.463457Z",
+      "headers": {
+        "content-length": "7101",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "059870fde00ff6bf70758f1646b8199e95dcabab4a1e1be4ff901037c826401b",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154329.463457Z_cc8a3ab35fec09cf_059870fde00ff6bf.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/matters?%24top=5&%24orderby=MatterId+asc"
+    },
+    {
+      "bytes": 820,
+      "capture_id": "20260904T154330.008876Z_d094cb2badd5d123_2e8dd1220667a9e3",
+      "captured_at": "2026-09-04T15:43:30.008876Z",
+      "headers": {
+        "content-length": "820",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "2e8dd1220667a9e3e6a767b0a67935b8498286d3dc9923088609488b1f9d9d0f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154330.008876Z_d094cb2badd5d123_2e8dd1220667a9e3.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events?%24top=1"
+    },
+    {
+      "bytes": 820,
+      "capture_id": "20260904T154331.127381Z_d094cb2badd5d123_2e8dd1220667a9e3",
+      "captured_at": "2026-09-04T15:43:31.127381Z",
+      "headers": {
+        "content-length": "820",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "2e8dd1220667a9e3e6a767b0a67935b8498286d3dc9923088609488b1f9d9d0f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154331.127381Z_d094cb2badd5d123_2e8dd1220667a9e3.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events?%24top=1"
+    },
+    {
+      "bytes": 820,
+      "capture_id": "20260904T154332.218129Z_d094cb2badd5d123_2e8dd1220667a9e3",
+      "captured_at": "2026-09-04T15:43:32.218129Z",
+      "headers": {
+        "content-length": "820",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "2e8dd1220667a9e3e6a767b0a67935b8498286d3dc9923088609488b1f9d9d0f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154332.218129Z_d094cb2badd5d123_2e8dd1220667a9e3.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events?%24top=1"
+    },
+    {
+      "bytes": 820,
+      "capture_id": "20260904T154333.302181Z_d094cb2badd5d123_2e8dd1220667a9e3",
+      "captured_at": "2026-09-04T15:43:33.302181Z",
+      "headers": {
+        "content-length": "820",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "2e8dd1220667a9e3e6a767b0a67935b8498286d3dc9923088609488b1f9d9d0f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154333.302181Z_d094cb2badd5d123_2e8dd1220667a9e3.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events?%24top=1"
+    },
+    {
+      "bytes": 820,
+      "capture_id": "20260904T154334.418877Z_d094cb2badd5d123_2e8dd1220667a9e3",
+      "captured_at": "2026-09-04T15:43:34.418877Z",
+      "headers": {
+        "content-length": "820",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "2e8dd1220667a9e3e6a767b0a67935b8498286d3dc9923088609488b1f9d9d0f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154334.418877Z_d094cb2badd5d123_2e8dd1220667a9e3.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events?%24top=1"
+    },
+    {
+      "bytes": 820,
+      "capture_id": "20260904T154335.559076Z_d094cb2badd5d123_2e8dd1220667a9e3",
+      "captured_at": "2026-09-04T15:43:35.559076Z",
+      "headers": {
+        "content-length": "820",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "2e8dd1220667a9e3e6a767b0a67935b8498286d3dc9923088609488b1f9d9d0f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154335.559076Z_d094cb2badd5d123_2e8dd1220667a9e3.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events?%24top=1"
+    },
+    {
+      "bytes": 820,
+      "capture_id": "20260904T154336.655252Z_d094cb2badd5d123_2e8dd1220667a9e3",
+      "captured_at": "2026-09-04T15:43:36.655252Z",
+      "headers": {
+        "content-length": "820",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "2e8dd1220667a9e3e6a767b0a67935b8498286d3dc9923088609488b1f9d9d0f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154336.655252Z_d094cb2badd5d123_2e8dd1220667a9e3.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events?%24top=1"
+    },
+    {
+      "bytes": 820,
+      "capture_id": "20260904T154337.785013Z_d094cb2badd5d123_2e8dd1220667a9e3",
+      "captured_at": "2026-09-04T15:43:37.785013Z",
+      "headers": {
+        "content-length": "820",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "2e8dd1220667a9e3e6a767b0a67935b8498286d3dc9923088609488b1f9d9d0f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154337.785013Z_d094cb2badd5d123_2e8dd1220667a9e3.body",
+      "url": "https://webapi.legistar.com/v1/phoenix/events?%24top=1"
+    },
+    {
+      "bytes": 4825,
+      "capture_id": "20260904T154338.664633Z_07e355d7fde3af3f_ea1311d2c0279ac3",
+      "captured_at": "2026-09-04T15:43:38.664633Z",
+      "error": "HTTP Error 500: Internal Server Error",
+      "error_type": "HTTPError",
+      "headers": {
+        "content-length": "4825",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "ea1311d2c0279ac30eba2a4647b95149e019e2b8bd2da0848ecc4883b749cce3",
+      "status": 500,
+      "storage_key": "evidence/preflight/responses/20260904T154338.664633Z_07e355d7fde3af3f_ea1311d2c0279ac3.body",
+      "url": "https://webapi.legistar.com/v1/tucson/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 4829,
+      "capture_id": "20260904T154339.134039Z_1bc694a7ca59f1fd_59c489e09d2d4671",
+      "captured_at": "2026-09-04T15:43:39.134039Z",
+      "error": "HTTP Error 500: Internal Server Error",
+      "error_type": "HTTPError",
+      "headers": {
+        "content-length": "4829",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "59c489e09d2d46714f1ec20811b853173e743ac9a1649b2c1a4b82610b0e8a23",
+      "status": 500,
+      "storage_key": "evidence/preflight/responses/20260904T154339.134039Z_1bc694a7ca59f1fd_59c489e09d2d4671.body",
+      "url": "https://webapi.legistar.com/v1/miamibeach/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 15640,
+      "capture_id": "20260904T154339.601831Z_65c65ef82791600b_3ac057f08c5da6eb",
+      "captured_at": "2026-09-04T15:43:39.601831Z",
+      "headers": {
+        "content-length": "15640",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "3ac057f08c5da6ebb70170dd4f6484cdf6da6025e8ab00b18222196b8838edab",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154339.601831Z_65c65ef82791600b_3ac057f08c5da6eb.body",
+      "url": "https://webapi.legistar.com/v1/plano/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 6991,
+      "capture_id": "20260904T154340.507758Z_5da16b385e47a254_7b3d5bcfead22973",
+      "captured_at": "2026-09-04T15:43:40.507758Z",
+      "headers": {
+        "content-length": "6991",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "7b3d5bcfead2297333ce2c0aa4a4098ee3e520e164c178198bb82f8ce0302e0d",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154340.507758Z_5da16b385e47a254_7b3d5bcfead22973.body",
+      "url": "https://webapi.legistar.com/v1/plano/matters?%24top=5&%24orderby=MatterId+desc"
+    },
+    {
+      "bytes": 850,
+      "capture_id": "20260904T154341.045530Z_b2bda08fc0728ab6_42ffdcc9c730a6e9",
+      "captured_at": "2026-09-04T15:43:41.045530Z",
+      "headers": {
+        "content-length": "850",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "42ffdcc9c730a6e90f0dd56e7a18b14b2b4f3a25f09dd3b862e7438eb8d88d2a",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154341.045530Z_b2bda08fc0728ab6_42ffdcc9c730a6e9.body",
+      "url": "https://webapi.legistar.com/v1/plano/events/1180?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 11088,
+      "capture_id": "20260904T154341.783628Z_b7ab762865f76407_29c8a87efdf53f34",
+      "captured_at": "2026-09-04T15:43:41.783628Z",
+      "headers": {
+        "content-length": "11088",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "29c8a87efdf53f347f2c2db6d60f76e6e8979cc36b8f93efd1ddb1e70e40e4fa",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154341.783628Z_b7ab762865f76407_29c8a87efdf53f34.body",
+      "url": "https://webapi.legistar.com/v1/plano/events/1175?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 127427,
+      "capture_id": "20260904T154342.518306Z_506b789c2109243f_4b9a30db14951ff5",
+      "captured_at": "2026-09-04T15:43:42.518306Z",
+      "headers": {
+        "content-length": "127427",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "4b9a30db14951ff54b548efaa821724d1ed6573c84fcd8245f59cf4e59ab9726",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154342.518306Z_506b789c2109243f_4b9a30db14951ff5.body",
+      "url": "https://webapi.legistar.com/v1/plano/events/1174?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 774,
+      "capture_id": "20260904T154343.601602Z_4d02467a3bae71dc_febc7a91da6fcdc1",
+      "captured_at": "2026-09-04T15:43:43.601602Z",
+      "headers": {
+        "content-length": "774",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "febc7a91da6fcdc1e3fb5826bd41aeed30296fc1e4ea685c6bd159fdef4f7e71",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154343.601602Z_4d02467a3bae71dc_febc7a91da6fcdc1.body",
+      "url": "https://webapi.legistar.com/v1/plano/events/1170?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 28611,
+      "capture_id": "20260904T154344.299070Z_7d8502a8ce1ae6fa_ebdeb96a11e72925",
+      "captured_at": "2026-09-04T15:43:44.299070Z",
+      "headers": {
+        "content-length": "28611",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "ebdeb96a11e72925fca0ce273392ea0c57e3670c25d6f451fb55a9e67b9e8e9c",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154344.299070Z_7d8502a8ce1ae6fa_ebdeb96a11e72925.body",
+      "url": "https://webapi.legistar.com/v1/plano/events/1169?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 21680,
+      "capture_id": "20260904T154345.162889Z_d8279d8bf4f65940_9eebd21919f72f5d",
+      "captured_at": "2026-09-04T15:43:45.162889Z",
+      "headers": {
+        "content-length": "21680",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "9eebd21919f72f5d4fafa25cff7ff968217fc446f8e8a28fe77be28e64041e16",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154345.162889Z_d8279d8bf4f65940_9eebd21919f72f5d.body",
+      "url": "https://webapi.legistar.com/v1/plano/events/1168?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 23923,
+      "capture_id": "20260904T154345.985495Z_016884e687d4310e_52ac3127c6cd285a",
+      "captured_at": "2026-09-04T15:43:45.985495Z",
+      "headers": {
+        "content-length": "23923",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "52ac3127c6cd285ac301660cce7a6df8d21864cb1a6d8b9321844e87646f67ad",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154345.985495Z_016884e687d4310e_52ac3127c6cd285a.body",
+      "url": "https://webapi.legistar.com/v1/plano/events/1167?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 4319,
+      "capture_id": "20260904T154346.732989Z_913cbeb412fe1b31_9234934d3dc0a183",
+      "captured_at": "2026-09-04T15:43:46.732989Z",
+      "headers": {
+        "content-length": "4319",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "9234934d3dc0a1833dfa62cd5e28e8f2c99d3a1faef73397230c2dbbfcdccc50",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154346.732989Z_913cbeb412fe1b31_9234934d3dc0a183.body",
+      "url": "https://webapi.legistar.com/v1/plano/events?%24top=5&%24orderby=EventId+asc"
+    },
+    {
+      "bytes": 6839,
+      "capture_id": "20260904T154347.719931Z_1ddaa8ce69905a70_a2d34f3865ce86b7",
+      "captured_at": "2026-09-04T15:43:47.719931Z",
+      "headers": {
+        "content-length": "6839",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "a2d34f3865ce86b7c714bd9454629da8b007e47d2b26d47f40c536db0241413f",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154347.719931Z_1ddaa8ce69905a70_a2d34f3865ce86b7.body",
+      "url": "https://webapi.legistar.com/v1/plano/matters?%24top=5&%24orderby=MatterId+asc"
+    },
+    {
+      "bytes": 815,
+      "capture_id": "20260904T154348.231294Z_f20c3ccdf6134a47_decf7de812cf95bb",
+      "captured_at": "2026-09-04T15:43:48.231294Z",
+      "headers": {
+        "content-length": "815",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "decf7de812cf95bbce6adfc697a5d550253fca5b8f37220d385c8e9de9241d38",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154348.231294Z_f20c3ccdf6134a47_decf7de812cf95bb.body",
+      "url": "https://webapi.legistar.com/v1/plano/events?%24top=1"
+    },
+    {
+      "bytes": 815,
+      "capture_id": "20260904T154349.379985Z_f20c3ccdf6134a47_decf7de812cf95bb",
+      "captured_at": "2026-09-04T15:43:49.379985Z",
+      "headers": {
+        "content-length": "815",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "decf7de812cf95bbce6adfc697a5d550253fca5b8f37220d385c8e9de9241d38",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154349.379985Z_f20c3ccdf6134a47_decf7de812cf95bb.body",
+      "url": "https://webapi.legistar.com/v1/plano/events?%24top=1"
+    },
+    {
+      "bytes": 815,
+      "capture_id": "20260904T154350.517740Z_f20c3ccdf6134a47_decf7de812cf95bb",
+      "captured_at": "2026-09-04T15:43:50.517740Z",
+      "headers": {
+        "content-length": "815",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "decf7de812cf95bbce6adfc697a5d550253fca5b8f37220d385c8e9de9241d38",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154350.517740Z_f20c3ccdf6134a47_decf7de812cf95bb.body",
+      "url": "https://webapi.legistar.com/v1/plano/events?%24top=1"
+    },
+    {
+      "bytes": 815,
+      "capture_id": "20260904T154351.606051Z_f20c3ccdf6134a47_decf7de812cf95bb",
+      "captured_at": "2026-09-04T15:43:51.606051Z",
+      "headers": {
+        "content-length": "815",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "decf7de812cf95bbce6adfc697a5d550253fca5b8f37220d385c8e9de9241d38",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154351.606051Z_f20c3ccdf6134a47_decf7de812cf95bb.body",
+      "url": "https://webapi.legistar.com/v1/plano/events?%24top=1"
+    },
+    {
+      "bytes": 815,
+      "capture_id": "20260904T154352.700212Z_f20c3ccdf6134a47_decf7de812cf95bb",
+      "captured_at": "2026-09-04T15:43:52.700212Z",
+      "headers": {
+        "content-length": "815",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "decf7de812cf95bbce6adfc697a5d550253fca5b8f37220d385c8e9de9241d38",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154352.700212Z_f20c3ccdf6134a47_decf7de812cf95bb.body",
+      "url": "https://webapi.legistar.com/v1/plano/events?%24top=1"
+    },
+    {
+      "bytes": 815,
+      "capture_id": "20260904T154353.745624Z_f20c3ccdf6134a47_decf7de812cf95bb",
+      "captured_at": "2026-09-04T15:43:53.745624Z",
+      "headers": {
+        "content-length": "815",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "decf7de812cf95bbce6adfc697a5d550253fca5b8f37220d385c8e9de9241d38",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154353.745624Z_f20c3ccdf6134a47_decf7de812cf95bb.body",
+      "url": "https://webapi.legistar.com/v1/plano/events?%24top=1"
+    },
+    {
+      "bytes": 815,
+      "capture_id": "20260904T154354.892337Z_f20c3ccdf6134a47_decf7de812cf95bb",
+      "captured_at": "2026-09-04T15:43:54.892337Z",
+      "headers": {
+        "content-length": "815",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "decf7de812cf95bbce6adfc697a5d550253fca5b8f37220d385c8e9de9241d38",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154354.892337Z_f20c3ccdf6134a47_decf7de812cf95bb.body",
+      "url": "https://webapi.legistar.com/v1/plano/events?%24top=1"
+    },
+    {
+      "bytes": 815,
+      "capture_id": "20260904T154356.012538Z_f20c3ccdf6134a47_decf7de812cf95bb",
+      "captured_at": "2026-09-04T15:43:56.012538Z",
+      "headers": {
+        "content-length": "815",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "decf7de812cf95bbce6adfc697a5d550253fca5b8f37220d385c8e9de9241d38",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154356.012538Z_f20c3ccdf6134a47_decf7de812cf95bb.body",
+      "url": "https://webapi.legistar.com/v1/plano/events?%24top=1"
+    },
+    {
+      "bytes": 4828,
+      "capture_id": "20260904T154356.874190Z_367751e616002d83_1b3329a9f08add6c",
+      "captured_at": "2026-09-04T15:43:56.874190Z",
+      "error": "HTTP Error 500: Internal Server Error",
+      "error_type": "HTTPError",
+      "headers": {
+        "content-length": "4828",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "1b3329a9f08add6c25c77d92e418be2ab43984e8adba2e9e1f4f24029872bd23",
+      "status": 500,
+      "storage_key": "evidence/preflight/responses/20260904T154356.874190Z_367751e616002d83_1b3329a9f08add6c.body",
+      "url": "https://webapi.legistar.com/v1/fortworth/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 4828,
+      "capture_id": "20260904T154357.324466Z_bfb2fa1a970ddb3e_8fff6f8a09286e15",
+      "captured_at": "2026-09-04T15:43:57.324466Z",
+      "error": "HTTP Error 500: Internal Server Error",
+      "error_type": "HTTPError",
+      "headers": {
+        "content-length": "4828",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "8fff6f8a09286e1590de36fb4d5278e36f0356aa2478fe90828db309876b4680",
+      "status": 500,
+      "storage_key": "evidence/preflight/responses/20260904T154357.324466Z_bfb2fa1a970ddb3e_8fff6f8a09286e15.body",
+      "url": "https://webapi.legistar.com/v1/arlington/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 19759,
+      "capture_id": "20260904T154357.811299Z_ffe1bdb8c3c9cc67_48f60f0a982fed3f",
+      "captured_at": "2026-09-04T15:43:57.811299Z",
+      "headers": {
+        "content-length": "19759",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "48f60f0a982fed3f56339aaac86a201f87da4ffae4cd2cbac98311594f05f0a9",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154357.811299Z_ffe1bdb8c3c9cc67_48f60f0a982fed3f.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events?%24top=20&%24orderby=EventId+desc"
+    },
+    {
+      "bytes": 7758,
+      "capture_id": "20260904T154358.925171Z_eaf5d950abe0e48a_cf316e619d8346ae",
+      "captured_at": "2026-09-04T15:43:58.925171Z",
+      "headers": {
+        "content-length": "7758",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "cf316e619d8346ae15662c56074b5d46cc58f33b2885370a3c3b1f3a7876ef99",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154358.925171Z_eaf5d950abe0e48a_cf316e619d8346ae.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/matters?%24top=5&%24orderby=MatterId+desc"
+    },
+    {
+      "bytes": 2916,
+      "capture_id": "20260904T154359.462630Z_7438922259ff9542_01d3877c7cea5b1e",
+      "captured_at": "2026-09-04T15:43:59.462630Z",
+      "headers": {
+        "content-length": "2916",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "01d3877c7cea5b1eb022221fe489071d1f1c701dba1310cea05d9ff1f91e009a",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154359.462630Z_7438922259ff9542_01d3877c7cea5b1e.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events/7754?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 23617,
+      "capture_id": "20260904T154400.189933Z_59298e7ecea3a1e1_f2b6c00d0ce07ec6",
+      "captured_at": "2026-09-04T15:44:00.189933Z",
+      "headers": {
+        "content-length": "23617",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "f2b6c00d0ce07ec6d3f2aac1207695c3ad4ed1bb45e7ae49f7115e5e155fccad",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154400.189933Z_59298e7ecea3a1e1_f2b6c00d0ce07ec6.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events/7753?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 6001,
+      "capture_id": "20260904T154400.979731Z_a8c5ce1f4b9f6c51_8fd76189783d946d",
+      "captured_at": "2026-09-04T15:44:00.979731Z",
+      "headers": {
+        "content-length": "6001",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "8fd76189783d946da1a360e854711338f5cadfa37e50332a2cd4e8d320584616",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154400.979731Z_a8c5ce1f4b9f6c51_8fd76189783d946d.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events/7752?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 234826,
+      "capture_id": "20260904T154401.728631Z_2c2582ac57a844a2_2ef1a43dd7032966",
+      "captured_at": "2026-09-04T15:44:01.728631Z",
+      "headers": {
+        "content-length": "234826",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "2ef1a43dd7032966569484ae81f52e053d7aba4aefedaa34044e076b8f6c6b3b",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154401.728631Z_2c2582ac57a844a2_2ef1a43dd7032966.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events/7751?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 11999,
+      "capture_id": "20260904T154402.956692Z_0ff7b6be719d4648_6dbea66de365eb57",
+      "captured_at": "2026-09-04T15:44:02.956692Z",
+      "headers": {
+        "content-length": "11999",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "6dbea66de365eb576ab25000ac8aca71ed4d918aaede90bdcb5a83968cfb7b2e",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154402.956692Z_0ff7b6be719d4648_6dbea66de365eb57.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events/7750?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+    },
+    {
+      "bytes": 4040,
+      "capture_id": "20260904T154403.642264Z_79221e1033ef3c0f_bd824d48032d9a59",
+      "captured_at": "2026-09-04T15:44:03.642264Z",
+      "headers": {
+        "content-length": "4040",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "bd824d48032d9a59ba6f8c8fdf68db38922c25064cc2696ccf5e45d6797a9cd7",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154403.642264Z_79221e1033ef3c0f_bd824d48032d9a59.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events?%24top=5&%24orderby=EventId+asc"
+    },
+    {
+      "bytes": 7345,
+      "capture_id": "20260904T154404.582004Z_63e3f4d83e443dcd_eb6c8b64f64f5789",
+      "captured_at": "2026-09-04T15:44:04.582004Z",
+      "headers": {
+        "content-length": "7345",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "eb6c8b64f64f5789fcb4aa37f8f5c32e11be1a84f15c0c43ce6ec8d88ac3caf6",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154404.582004Z_63e3f4d83e443dcd_eb6c8b64f64f5789.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/matters?%24top=5&%24orderby=MatterId+asc"
+    },
+    {
+      "bytes": 885,
+      "capture_id": "20260904T154405.134477Z_f537062291e3b1bc_67870fe3fd8a7ff7",
+      "captured_at": "2026-09-04T15:44:05.134477Z",
+      "headers": {
+        "content-length": "885",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "67870fe3fd8a7ff77db122528e0ae782d85641f571f66fe92834dd0431b32f58",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154405.134477Z_f537062291e3b1bc_67870fe3fd8a7ff7.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events?%24top=1"
+    },
+    {
+      "bytes": 885,
+      "capture_id": "20260904T154406.276648Z_f537062291e3b1bc_67870fe3fd8a7ff7",
+      "captured_at": "2026-09-04T15:44:06.276648Z",
+      "headers": {
+        "content-length": "885",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "67870fe3fd8a7ff77db122528e0ae782d85641f571f66fe92834dd0431b32f58",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154406.276648Z_f537062291e3b1bc_67870fe3fd8a7ff7.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events?%24top=1"
+    },
+    {
+      "bytes": 885,
+      "capture_id": "20260904T154407.404777Z_f537062291e3b1bc_67870fe3fd8a7ff7",
+      "captured_at": "2026-09-04T15:44:07.404777Z",
+      "headers": {
+        "content-length": "885",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "67870fe3fd8a7ff77db122528e0ae782d85641f571f66fe92834dd0431b32f58",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154407.404777Z_f537062291e3b1bc_67870fe3fd8a7ff7.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events?%24top=1"
+    },
+    {
+      "bytes": 885,
+      "capture_id": "20260904T154408.531697Z_f537062291e3b1bc_67870fe3fd8a7ff7",
+      "captured_at": "2026-09-04T15:44:08.531697Z",
+      "headers": {
+        "content-length": "885",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "67870fe3fd8a7ff77db122528e0ae782d85641f571f66fe92834dd0431b32f58",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154408.531697Z_f537062291e3b1bc_67870fe3fd8a7ff7.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events?%24top=1"
+    },
+    {
+      "bytes": 885,
+      "capture_id": "20260904T154409.618326Z_f537062291e3b1bc_67870fe3fd8a7ff7",
+      "captured_at": "2026-09-04T15:44:09.618326Z",
+      "headers": {
+        "content-length": "885",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "67870fe3fd8a7ff77db122528e0ae782d85641f571f66fe92834dd0431b32f58",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154409.618326Z_f537062291e3b1bc_67870fe3fd8a7ff7.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events?%24top=1"
+    },
+    {
+      "bytes": 885,
+      "capture_id": "20260904T154410.742363Z_f537062291e3b1bc_67870fe3fd8a7ff7",
+      "captured_at": "2026-09-04T15:44:10.742363Z",
+      "headers": {
+        "content-length": "885",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "67870fe3fd8a7ff77db122528e0ae782d85641f571f66fe92834dd0431b32f58",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154410.742363Z_f537062291e3b1bc_67870fe3fd8a7ff7.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events?%24top=1"
+    },
+    {
+      "bytes": 885,
+      "capture_id": "20260904T154411.883260Z_f537062291e3b1bc_67870fe3fd8a7ff7",
+      "captured_at": "2026-09-04T15:44:11.883260Z",
+      "headers": {
+        "content-length": "885",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "67870fe3fd8a7ff77db122528e0ae782d85641f571f66fe92834dd0431b32f58",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154411.883260Z_f537062291e3b1bc_67870fe3fd8a7ff7.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events?%24top=1"
+    },
+    {
+      "bytes": 885,
+      "capture_id": "20260904T154412.993997Z_f537062291e3b1bc_67870fe3fd8a7ff7",
+      "captured_at": "2026-09-04T15:44:12.993997Z",
+      "headers": {
+        "content-length": "885",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "67870fe3fd8a7ff77db122528e0ae782d85641f571f66fe92834dd0431b32f58",
+      "status": 200,
+      "storage_key": "evidence/preflight/responses/20260904T154412.993997Z_f537062291e3b1bc_67870fe3fd8a7ff7.body",
+      "url": "https://webapi.legistar.com/v1/stpaul/events?%24top=1"
+    },
+    {
+      "bytes": 4830,
+      "capture_id": "20260904T154413.865417Z_03493ff8f9985c71_3fa2fbfd7f68b1d0",
+      "captured_at": "2026-09-04T15:44:13.865417Z",
+      "error": "HTTP Error 500: Internal Server Error",
+      "error_type": "HTTPError",
+      "headers": {
+        "content-length": "4830",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "sha256": "3fa2fbfd7f68b1d00ff77d17ea8288a4cc508851fc8b08d25d543e283288faad",
+      "status": 500,
+      "storage_key": "evidence/preflight/responses/20260904T154413.865417Z_03493ff8f9985c71_3fa2fbfd7f68b1d0.body",
+      "url": "https://webapi.legistar.com/v1/minneapolis/events?%24top=20&%24orderby=EventId+desc"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "legistar": {
+    "base_url": "https://webapi.legistar.com/v1",
+    "official_reference_urls": [
+      "https://webapi.legistar.com/Home/Examples",
+      "https://webapi.legistar.com/Help"
+    ],
+    "candidates": [
+      {"slug": "seattle", "name": "Seattle, Washington"},
+      {"slug": "sanjose", "name": "San Jose, California"},
+      {"slug": "sacramento", "name": "Sacramento, California"},
+      {"slug": "sandiego", "name": "San Diego, California"},
+      {"slug": "denver", "name": "Denver, Colorado"},
+      {"slug": "austin", "name": "Austin, Texas"},
+      {"slug": "chicago", "name": "Chicago, Illinois"},
+      {"slug": "boston", "name": "Boston, Massachusetts"},
+      {"slug": "portland", "name": "Portland, Oregon"},
+      {"slug": "oakland", "name": "Oakland, California"},
+      {"slug": "phoenix", "name": "Phoenix, Arizona"},
+      {"slug": "tucson", "name": "Tucson, Arizona"},
+      {"slug": "miamibeach", "name": "Miami Beach, Florida"},
+      {"slug": "plano", "name": "Plano, Texas"},
+      {"slug": "fortworth", "name": "Fort Worth, Texas"},
+      {"slug": "arlington", "name": "Arlington, Texas"},
+      {"slug": "stpaul", "name": "Saint Paul, Minnesota"},
+      {"slug": "minneapolis", "name": "Minneapolis, Minnesota"}
+    ],
+    "sample_size": 5,
+    "event_scan_size": 20,
+    "event_detail_sample_size": 5,
+    "rate_limit_probe_requests": 8,
+    "rate_limit_probe_delay_seconds": 0.25,
+    "timeout_seconds": 20
+  },
+  "aws": {
+    "discovery_regions": [
+      "eu-north-1",
+      "eu-west-1",
+      "eu-west-2",
+      "eu-central-1",
+      "us-east-1",
+      "us-west-2"
+    ],
+    "bedrock_service": "bedrock",
+    "agentcore_control_service": "bedrock-agentcore-control",
+    "agentcore_runtime_service": "bedrock-agentcore",
+    "agentcore_python_package": "bedrock_agentcore"
+  },
+  "cost": {
+    "budget_usd": 50.0,
+    "measurement_days": 14,
+    "lightsail_monthly_usd": 7.0,
+    "lightsail_bundle_description": "Linux/Unix, 1 GB memory, 2 vCPUs, 40 GB SSD, 2 TB transfer",
+    "storage_gb_assumption": 5.0,
+    "storage_monthly_usd_per_gb": 0.023,
+    "snapshot_runs_per_day": 96,
+    "attachments_per_day_for_estimate": 100,
+    "triage_input_tokens_per_attachment": 1200,
+    "triage_output_tokens_per_attachment": 250,
+    "multimodal_candidate_fraction": 0.15,
+    "investigation_input_tokens_per_matter": 12000,
+    "investigation_output_tokens_per_matter": 3000,
+    "model_prices": "blocked_until_list_foundation_models_succeeds"
+  }
+}

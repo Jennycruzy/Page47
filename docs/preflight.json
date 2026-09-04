@@ -1,0 +1,2914 @@
+{
+  "aws": {
+    "agentcore": {
+      "control_service": "bedrock-agentcore-control",
+      "python_package_version": null,
+      "regions": {
+        "eu-central-1": {
+          "reason": "installed boto3 does not contain the AgentCore control service model",
+          "sdk_service_model_present": false,
+          "status": "unverified"
+        },
+        "eu-north-1": {
+          "reason": "installed boto3 does not contain the AgentCore control service model",
+          "sdk_service_model_present": false,
+          "status": "unverified"
+        },
+        "eu-west-1": {
+          "reason": "installed boto3 does not contain the AgentCore control service model",
+          "sdk_service_model_present": false,
+          "status": "unverified"
+        },
+        "eu-west-2": {
+          "reason": "installed boto3 does not contain the AgentCore control service model",
+          "sdk_service_model_present": false,
+          "status": "unverified"
+        },
+        "us-east-1": {
+          "reason": "installed boto3 does not contain the AgentCore control service model",
+          "sdk_service_model_present": false,
+          "status": "unverified"
+        },
+        "us-west-2": {
+          "reason": "installed boto3 does not contain the AgentCore control service model",
+          "sdk_service_model_present": false,
+          "status": "unverified"
+        }
+      },
+      "runtime_service": "bedrock-agentcore"
+    },
+    "agentcore_python_package_available": false,
+    "boto3_available": true,
+    "foundation_models": {
+      "eu-central-1": {
+        "error": "An error occurred (AccessDeniedException) when calling the ListFoundationModels operation: User: <aws-arn-redacted> is not authorized to perform: bedrock:ListFoundationModels because no identity-based policy allows the bedrock:ListFoundationModels action",
+        "error_type": "AccessDeniedException",
+        "status": "unavailable"
+      },
+      "eu-north-1": {
+        "error": "An error occurred (AccessDeniedException) when calling the ListFoundationModels operation: User: <aws-arn-redacted> is not authorized to perform: bedrock:ListFoundationModels because no identity-based policy allows the bedrock:ListFoundationModels action",
+        "error_type": "AccessDeniedException",
+        "status": "unavailable"
+      },
+      "eu-west-1": {
+        "error": "An error occurred (AccessDeniedException) when calling the ListFoundationModels operation: User: <aws-arn-redacted> is not authorized to perform: bedrock:ListFoundationModels because no identity-based policy allows the bedrock:ListFoundationModels action",
+        "error_type": "AccessDeniedException",
+        "status": "unavailable"
+      },
+      "eu-west-2": {
+        "error": "An error occurred (AccessDeniedException) when calling the ListFoundationModels operation: User: <aws-arn-redacted> is not authorized to perform: bedrock:ListFoundationModels because no identity-based policy allows the bedrock:ListFoundationModels action",
+        "error_type": "AccessDeniedException",
+        "status": "unavailable"
+      },
+      "us-east-1": {
+        "error": "An error occurred (AccessDeniedException) when calling the ListFoundationModels operation: User: <aws-arn-redacted> is not authorized to perform: bedrock:ListFoundationModels because no identity-based policy allows the bedrock:ListFoundationModels action",
+        "error_type": "AccessDeniedException",
+        "status": "unavailable"
+      },
+      "us-west-2": {
+        "error": "An error occurred (AccessDeniedException) when calling the ListFoundationModels operation: User: <aws-arn-redacted> is not authorized to perform: bedrock:ListFoundationModels because no identity-based policy allows the bedrock:ListFoundationModels action",
+        "error_type": "AccessDeniedException",
+        "status": "unavailable"
+      }
+    },
+    "python_version": "3.12.3",
+    "regions_requested": [
+      "eu-north-1",
+      "eu-west-1",
+      "eu-west-2",
+      "eu-central-1",
+      "us-east-1",
+      "us-west-2"
+    ]
+  },
+  "blockers": [
+    "No Bedrock model list succeeded with the available AWS permissions",
+    "AgentCore availability was not verified with the available SDK and permissions",
+    "City terms-of-use review remains manual for each candidate"
+  ],
+  "cache_index": "evidence/preflight/index.json",
+  "captured_at": "2026-09-04T15:41:36.590826Z",
+  "cost_arithmetic": {
+    "budget_usd": 50.0,
+    "fixed_cost_subtotal_usd": 3.3203,
+    "lightsail_cost_usd": 3.2667,
+    "measurement_days": 14,
+    "model_cost_formula": "triage input tokens \u00d7 triage input price + triage output tokens \u00d7 triage output price + candidate multimodal tokens \u00d7 multimodal prices + investigation tokens \u00d7 investigation prices",
+    "model_cost_status": "not computed until a real model list and current prices are available",
+    "source_urls": [
+      "https://aws.amazon.com/lightsail/pricing/",
+      "https://aws.amazon.com/bedrock/pricing/"
+    ],
+    "status": "partial_model_cost_blocked",
+    "storage_cost_usd": 0.0537
+  },
+  "legistar": {
+    "base_url": "https://webapi.legistar.com/v1",
+    "clients": [
+      {
+        "attachment_count_sampled": 66,
+        "attachment_field_population": {
+          "MatterAttachmentHyperlink": {
+            "present": 66,
+            "sample_records": 66
+          },
+          "MatterAttachmentId": {
+            "present": 66,
+            "sample_records": 66
+          },
+          "MatterAttachmentIsSupportingDocument": {
+            "present": 66,
+            "sample_records": 66
+          },
+          "MatterAttachmentLastModifiedUtc": {
+            "present": 66,
+            "sample_records": 66
+          },
+          "MatterAttachmentMatterVersion": {
+            "present": 66,
+            "sample_records": 66
+          },
+          "MatterAttachmentName": {
+            "present": 66,
+            "sample_records": 66
+          }
+        },
+        "detail_events_with_items": 5,
+        "earliest_event_sample": {
+          "event_dates": [
+            "2015-02-03T00:00:00",
+            "2015-02-09T00:00:00",
+            "2015-02-11T00:00:00",
+            "2015-02-03T00:00:00",
+            "2015-03-04T00:00:00"
+          ],
+          "event_id_range": {
+            "field": "EventId",
+            "maximum": 1332,
+            "minimum": 1326,
+            "sample_count": 5
+          },
+          "request_status": 200
+        },
+        "earliest_matter_sample": {
+          "matter_id_range": {
+            "field": "MatterId",
+            "maximum": 1794,
+            "minimum": 1785,
+            "sample_count": 5
+          },
+          "matter_intro_dates": [
+            "2015-01-26T00:00:00",
+            "2015-01-26T00:00:00",
+            "2015-01-28T00:00:00",
+            "2015-01-28T00:00:00",
+            "2015-01-29T00:00:00"
+          ],
+          "request_status": 200
+        },
+        "event_count_sampled": 20,
+        "event_detail_requests": [
+          {
+            "event_id": 6866,
+            "item_count": 8,
+            "status": 200
+          },
+          {
+            "event_id": 6865,
+            "item_count": 43,
+            "status": 200
+          },
+          {
+            "event_id": 6864,
+            "item_count": 12,
+            "status": 200
+          },
+          {
+            "event_id": 6862,
+            "item_count": 1,
+            "status": 200
+          },
+          {
+            "event_id": 6859,
+            "item_count": 9,
+            "status": 200
+          }
+        ],
+        "event_field_population": {
+          "EventAgendaFile": {
+            "present": 19,
+            "sample_records": 20
+          },
+          "EventAgendaLastPublishedUTC": {
+            "present": 19,
+            "sample_records": 20
+          },
+          "EventAgendaStatusName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventComment": {
+            "present": 6,
+            "sample_records": 20
+          },
+          "EventDate": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventInSiteURL": {
+            "present": 20,
+            "sample_records": 20
+          }
+        },
+        "event_id_range_desc_sample": {
+          "field": "EventId",
+          "maximum": 6873,
+          "minimum": 6848,
+          "sample_count": 20
+        },
+        "event_item_count_sampled": 73,
+        "event_item_field_population": {
+          "EventItemActionName": {
+            "present": 32,
+            "sample_records": 73
+          },
+          "EventItemActionText": {
+            "present": 32,
+            "sample_records": 73
+          },
+          "EventItemAgendaNote": {
+            "present": 21,
+            "sample_records": 73
+          },
+          "EventItemAgendaNumber": {
+            "present": 58,
+            "sample_records": 73
+          },
+          "EventItemAgendaSequence": {
+            "present": 72,
+            "sample_records": 73
+          },
+          "EventItemConsent": {
+            "present": 73,
+            "sample_records": 73
+          },
+          "EventItemEventId": {
+            "present": 73,
+            "sample_records": 73
+          },
+          "EventItemId": {
+            "present": 73,
+            "sample_records": 73
+          },
+          "EventItemLastModifiedUtc": {
+            "present": 73,
+            "sample_records": 73
+          },
+          "EventItemMatterAttachments": {
+            "present": 32,
+            "sample_records": 73
+          },
+          "EventItemMatterId": {
+            "present": 32,
+            "sample_records": 73
+          },
+          "EventItemMinutesNote": {
+            "present": 18,
+            "sample_records": 73
+          },
+          "EventItemPassedFlagName": {
+            "present": 27,
+            "sample_records": 73
+          },
+          "EventItemTitle": {
+            "present": 72,
+            "sample_records": 73
+          },
+          "EventItemVersion": {
+            "present": 32,
+            "sample_records": 73
+          }
+        },
+        "events_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "matter_id_range_desc_sample": {
+          "field": "MatterId",
+          "maximum": 17540,
+          "minimum": 17486,
+          "sample_count": 5
+        },
+        "matters_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "name": "Seattle, Washington",
+        "public_site_hosts_observed": [
+          "legistar2.granicus.com",
+          "seattle.legistar.com"
+        ],
+        "rate_limit_probe": {
+          "attempts": [
+            {
+              "attempt": 1,
+              "elapsed_ms": 851.42,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 2,
+              "elapsed_ms": 976.11,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 3,
+              "elapsed_ms": 998.85,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 4,
+              "elapsed_ms": 1013.75,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 5,
+              "elapsed_ms": 903.58,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 6,
+              "elapsed_ms": 855.98,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 7,
+              "elapsed_ms": 966.17,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 8,
+              "elapsed_ms": 866.29,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            }
+          ],
+          "interpretation": "no throttling observed within the bounded probe",
+          "requests_attempted": 8,
+          "throttled_after_request": null
+        },
+        "slug": "seattle",
+        "status": "viable",
+        "terms_review": {
+          "evidence": [
+            "The API response exposed public record URLs, but no terms document was identified automatically.",
+            "The selected city must be checked against its public-site terms before production use."
+          ],
+          "status": "manual_review_required"
+        }
+      },
+      {
+        "attachment_count_sampled": 0,
+        "attachment_field_population": {
+          "MatterAttachmentHyperlink": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "MatterAttachmentId": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "MatterAttachmentIsSupportingDocument": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "MatterAttachmentLastModifiedUtc": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "MatterAttachmentMatterVersion": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "MatterAttachmentName": {
+            "present": 0,
+            "sample_records": 0
+          }
+        },
+        "detail_events_with_items": 0,
+        "earliest_event_sample": {
+          "event_dates": [
+            "2017-09-12T00:00:00",
+            "2017-09-26T00:00:00",
+            "2017-09-19T00:00:00",
+            "2017-10-03T00:00:00",
+            "2017-10-17T00:00:00"
+          ],
+          "event_id_range": {
+            "field": "EventId",
+            "maximum": 1085,
+            "minimum": 1080,
+            "sample_count": 5
+          },
+          "request_status": 200
+        },
+        "earliest_matter_sample": {
+          "matter_id_range": {
+            "field": "MatterId",
+            "maximum": 1969,
+            "minimum": 1962,
+            "sample_count": 5
+          },
+          "matter_intro_dates": [
+            "2017-08-14T00:00:00",
+            "2017-08-14T00:00:00",
+            "2017-08-14T00:00:00",
+            "2017-08-14T00:00:00",
+            "2017-08-14T00:00:00"
+          ],
+          "request_status": 200
+        },
+        "event_count_sampled": 20,
+        "event_detail_requests": [
+          {
+            "event_id": 8217,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8215,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8214,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8212,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8211,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8208,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8207,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8206,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8203,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8201,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8200,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8225,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8224,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8223,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8222,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8221,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8220,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8219,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8218,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 8213,
+            "item_count": 0,
+            "status": 200
+          }
+        ],
+        "event_field_population": {
+          "EventAgendaFile": {
+            "present": 0,
+            "sample_records": 20
+          },
+          "EventAgendaLastPublishedUTC": {
+            "present": 0,
+            "sample_records": 20
+          },
+          "EventAgendaStatusName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventComment": {
+            "present": 12,
+            "sample_records": 20
+          },
+          "EventDate": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventInSiteURL": {
+            "present": 20,
+            "sample_records": 20
+          }
+        },
+        "event_id_range_desc_sample": {
+          "field": "EventId",
+          "maximum": 8225,
+          "minimum": 8200,
+          "sample_count": 20
+        },
+        "event_item_count_sampled": 0,
+        "event_item_field_population": {
+          "EventItemActionName": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemActionText": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemAgendaNote": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemAgendaNumber": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemAgendaSequence": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemConsent": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemEventId": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemId": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemLastModifiedUtc": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemMatterAttachments": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemMatterId": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemMinutesNote": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemPassedFlagName": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemTitle": {
+            "present": 0,
+            "sample_records": 0
+          },
+          "EventItemVersion": {
+            "present": 0,
+            "sample_records": 0
+          }
+        },
+        "events_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "matter_id_range_desc_sample": {
+          "field": "MatterId",
+          "maximum": 16257,
+          "minimum": 16253,
+          "sample_count": 5
+        },
+        "matters_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "name": "San Jose, California",
+        "public_site_hosts_observed": [
+          "sanjose.legistar.com"
+        ],
+        "rate_limit_probe": {
+          "attempts": [
+            {
+              "attempt": 1,
+              "elapsed_ms": 871.23,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 2,
+              "elapsed_ms": 817.09,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 3,
+              "elapsed_ms": 819.3,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 4,
+              "elapsed_ms": 863.17,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 5,
+              "elapsed_ms": 887.76,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 6,
+              "elapsed_ms": 849.76,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 7,
+              "elapsed_ms": 875.04,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 8,
+              "elapsed_ms": 787.59,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            }
+          ],
+          "interpretation": "no throttling observed within the bounded probe",
+          "requests_attempted": 8,
+          "throttled_after_request": null
+        },
+        "slug": "sanjose",
+        "status": "partial",
+        "terms_review": {
+          "evidence": [
+            "The API response exposed public record URLs, but no terms document was identified automatically.",
+            "The selected city must be checked against its public-site terms before production use."
+          ],
+          "status": "manual_review_required"
+        }
+      },
+      {
+        "attachment_count_sampled": 6,
+        "attachment_field_population": {
+          "MatterAttachmentHyperlink": {
+            "present": 6,
+            "sample_records": 6
+          },
+          "MatterAttachmentId": {
+            "present": 6,
+            "sample_records": 6
+          },
+          "MatterAttachmentIsSupportingDocument": {
+            "present": 6,
+            "sample_records": 6
+          },
+          "MatterAttachmentLastModifiedUtc": {
+            "present": 6,
+            "sample_records": 6
+          },
+          "MatterAttachmentMatterVersion": {
+            "present": 6,
+            "sample_records": 6
+          },
+          "MatterAttachmentName": {
+            "present": 6,
+            "sample_records": 6
+          }
+        },
+        "detail_events_with_items": 5,
+        "earliest_event_sample": {
+          "event_dates": [
+            "2016-11-01T00:00:00",
+            "2016-12-06T00:00:00",
+            "2016-10-13T00:00:00",
+            "2016-11-10T00:00:00",
+            "2016-12-13T00:00:00"
+          ],
+          "event_id_range": {
+            "field": "EventId",
+            "maximum": 1012,
+            "minimum": 1008,
+            "sample_count": 5
+          },
+          "request_status": 200
+        },
+        "earliest_matter_sample": {
+          "matter_id_range": {
+            "field": "MatterId",
+            "maximum": 1413,
+            "minimum": 1409,
+            "sample_count": 5
+          },
+          "matter_intro_dates": [
+            "2016-08-31T00:00:00",
+            "2016-08-31T00:00:00",
+            "2016-09-01T00:00:00",
+            "2016-09-01T00:00:00",
+            "2016-09-01T00:00:00"
+          ],
+          "request_status": 200
+        },
+        "event_count_sampled": 20,
+        "event_detail_requests": [
+          {
+            "event_id": 3867,
+            "item_count": 24,
+            "status": 200
+          },
+          {
+            "event_id": 3863,
+            "item_count": 7,
+            "status": 200
+          },
+          {
+            "event_id": 3862,
+            "item_count": 13,
+            "status": 200
+          },
+          {
+            "event_id": 3861,
+            "item_count": 10,
+            "status": 200
+          },
+          {
+            "event_id": 3860,
+            "item_count": 9,
+            "status": 200
+          }
+        ],
+        "event_field_population": {
+          "EventAgendaFile": {
+            "present": 18,
+            "sample_records": 20
+          },
+          "EventAgendaLastPublishedUTC": {
+            "present": 18,
+            "sample_records": 20
+          },
+          "EventAgendaStatusName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventComment": {
+            "present": 9,
+            "sample_records": 20
+          },
+          "EventDate": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventInSiteURL": {
+            "present": 20,
+            "sample_records": 20
+          }
+        },
+        "event_id_range_desc_sample": {
+          "field": "EventId",
+          "maximum": 3867,
+          "minimum": 3833,
+          "sample_count": 20
+        },
+        "event_item_count_sampled": 63,
+        "event_item_field_population": {
+          "EventItemActionName": {
+            "present": 0,
+            "sample_records": 63
+          },
+          "EventItemActionText": {
+            "present": 0,
+            "sample_records": 63
+          },
+          "EventItemAgendaNote": {
+            "present": 1,
+            "sample_records": 63
+          },
+          "EventItemAgendaNumber": {
+            "present": 23,
+            "sample_records": 63
+          },
+          "EventItemAgendaSequence": {
+            "present": 63,
+            "sample_records": 63
+          },
+          "EventItemConsent": {
+            "present": 63,
+            "sample_records": 63
+          },
+          "EventItemEventId": {
+            "present": 63,
+            "sample_records": 63
+          },
+          "EventItemId": {
+            "present": 63,
+            "sample_records": 63
+          },
+          "EventItemLastModifiedUtc": {
+            "present": 63,
+            "sample_records": 63
+          },
+          "EventItemMatterAttachments": {
+            "present": 6,
+            "sample_records": 63
+          },
+          "EventItemMatterId": {
+            "present": 21,
+            "sample_records": 63
+          },
+          "EventItemMinutesNote": {
+            "present": 0,
+            "sample_records": 63
+          },
+          "EventItemPassedFlagName": {
+            "present": 0,
+            "sample_records": 63
+          },
+          "EventItemTitle": {
+            "present": 63,
+            "sample_records": 63
+          },
+          "EventItemVersion": {
+            "present": 21,
+            "sample_records": 63
+          }
+        },
+        "events_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "matter_id_range_desc_sample": {
+          "field": "MatterId",
+          "maximum": 21713,
+          "minimum": 21709,
+          "sample_count": 5
+        },
+        "matters_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "name": "Sacramento, California",
+        "public_site_hosts_observed": [
+          "sacramento.legistar.com",
+          "sacramento.legistar1.com"
+        ],
+        "rate_limit_probe": {
+          "attempts": [
+            {
+              "attempt": 1,
+              "elapsed_ms": 863.46,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 2,
+              "elapsed_ms": 894.21,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 3,
+              "elapsed_ms": 911.52,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 4,
+              "elapsed_ms": 852.62,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 5,
+              "elapsed_ms": 884.32,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 6,
+              "elapsed_ms": 843.07,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 7,
+              "elapsed_ms": 871.62,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 8,
+              "elapsed_ms": 794.53,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            }
+          ],
+          "interpretation": "no throttling observed within the bounded probe",
+          "requests_attempted": 8,
+          "throttled_after_request": null
+        },
+        "slug": "sacramento",
+        "status": "viable",
+        "terms_review": {
+          "evidence": [
+            "The API response exposed public record URLs, but no terms document was identified automatically.",
+            "The selected city must be checked against its public-site terms before production use."
+          ],
+          "status": "manual_review_required"
+        }
+      },
+      {
+        "events_request": {
+          "error": "HTTP Error 500: Internal Server Error",
+          "error_type": "HTTPError",
+          "status": 500
+        },
+        "name": "San Diego, California",
+        "slug": "sandiego",
+        "status": "unavailable"
+      },
+      {
+        "attachment_count_sampled": 80,
+        "attachment_field_population": {
+          "MatterAttachmentHyperlink": {
+            "present": 80,
+            "sample_records": 80
+          },
+          "MatterAttachmentId": {
+            "present": 80,
+            "sample_records": 80
+          },
+          "MatterAttachmentIsSupportingDocument": {
+            "present": 80,
+            "sample_records": 80
+          },
+          "MatterAttachmentLastModifiedUtc": {
+            "present": 80,
+            "sample_records": 80
+          },
+          "MatterAttachmentMatterVersion": {
+            "present": 80,
+            "sample_records": 80
+          },
+          "MatterAttachmentName": {
+            "present": 80,
+            "sample_records": 80
+          }
+        },
+        "detail_events_with_items": 5,
+        "earliest_event_sample": {
+          "event_dates": [
+            "2016-08-16T00:00:00",
+            "2016-08-23T00:00:00",
+            "2016-09-13T00:00:00",
+            "2016-08-22T00:00:00",
+            "2016-08-29T00:00:00"
+          ],
+          "event_id_range": {
+            "field": "EventId",
+            "maximum": 1136,
+            "minimum": 1126,
+            "sample_count": 5
+          },
+          "request_status": 200
+        },
+        "earliest_matter_sample": {
+          "matter_id_range": {
+            "field": "MatterId",
+            "maximum": 1384,
+            "minimum": 1075,
+            "sample_count": 5
+          },
+          "matter_intro_dates": [
+            "2016-06-08T00:00:00",
+            "2016-08-13T00:00:00",
+            "2016-08-13T00:00:00",
+            "2016-08-09T00:00:00",
+            "2016-08-09T00:00:00"
+          ],
+          "request_status": 200
+        },
+        "event_count_sampled": 20,
+        "event_detail_requests": [
+          {
+            "event_id": 12903,
+            "item_count": 22,
+            "status": 200
+          },
+          {
+            "event_id": 12901,
+            "item_count": 9,
+            "status": 200
+          },
+          {
+            "event_id": 12900,
+            "item_count": 5,
+            "status": 200
+          },
+          {
+            "event_id": 12899,
+            "item_count": 3,
+            "status": 200
+          },
+          {
+            "event_id": 12898,
+            "item_count": 3,
+            "status": 200
+          }
+        ],
+        "event_field_population": {
+          "EventAgendaFile": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventAgendaLastPublishedUTC": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventAgendaStatusName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventComment": {
+            "present": 11,
+            "sample_records": 20
+          },
+          "EventDate": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventInSiteURL": {
+            "present": 20,
+            "sample_records": 20
+          }
+        },
+        "event_id_range_desc_sample": {
+          "field": "EventId",
+          "maximum": 12912,
+          "minimum": 12886,
+          "sample_count": 20
+        },
+        "event_item_count_sampled": 42,
+        "event_item_field_population": {
+          "EventItemActionName": {
+            "present": 11,
+            "sample_records": 42
+          },
+          "EventItemActionText": {
+            "present": 11,
+            "sample_records": 42
+          },
+          "EventItemAgendaNote": {
+            "present": 8,
+            "sample_records": 42
+          },
+          "EventItemAgendaNumber": {
+            "present": 2,
+            "sample_records": 42
+          },
+          "EventItemAgendaSequence": {
+            "present": 41,
+            "sample_records": 42
+          },
+          "EventItemConsent": {
+            "present": 42,
+            "sample_records": 42
+          },
+          "EventItemEventId": {
+            "present": 42,
+            "sample_records": 42
+          },
+          "EventItemId": {
+            "present": 42,
+            "sample_records": 42
+          },
+          "EventItemLastModifiedUtc": {
+            "present": 42,
+            "sample_records": 42
+          },
+          "EventItemMatterAttachments": {
+            "present": 22,
+            "sample_records": 42
+          },
+          "EventItemMatterId": {
+            "present": 22,
+            "sample_records": 42
+          },
+          "EventItemMinutesNote": {
+            "present": 0,
+            "sample_records": 42
+          },
+          "EventItemPassedFlagName": {
+            "present": 8,
+            "sample_records": 42
+          },
+          "EventItemTitle": {
+            "present": 39,
+            "sample_records": 42
+          },
+          "EventItemVersion": {
+            "present": 22,
+            "sample_records": 42
+          }
+        },
+        "events_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "matter_id_range_desc_sample": {
+          "field": "MatterId",
+          "maximum": 57456,
+          "minimum": 57449,
+          "sample_count": 5
+        },
+        "matters_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "name": "Denver, Colorado",
+        "public_site_hosts_observed": [
+          "denver.legistar.com",
+          "denver.legistar1.com"
+        ],
+        "rate_limit_probe": {
+          "attempts": [
+            {
+              "attempt": 1,
+              "elapsed_ms": 887.44,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 2,
+              "elapsed_ms": 923.62,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 3,
+              "elapsed_ms": 897.43,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 4,
+              "elapsed_ms": 930.64,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 5,
+              "elapsed_ms": 975.11,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 6,
+              "elapsed_ms": 840.96,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 7,
+              "elapsed_ms": 926.88,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 8,
+              "elapsed_ms": 913.48,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            }
+          ],
+          "interpretation": "no throttling observed within the bounded probe",
+          "requests_attempted": 8,
+          "throttled_after_request": null
+        },
+        "slug": "denver",
+        "status": "viable",
+        "terms_review": {
+          "evidence": [
+            "The API response exposed public record URLs, but no terms document was identified automatically.",
+            "The selected city must be checked against its public-site terms before production use."
+          ],
+          "status": "manual_review_required"
+        }
+      },
+      {
+        "events_request": {
+          "error": "HTTP Error 500: Internal Server Error",
+          "error_type": "HTTPError",
+          "status": 500
+        },
+        "name": "Austin, Texas",
+        "slug": "austin",
+        "status": "unavailable"
+      },
+      {
+        "events_request": {
+          "error": "HTTP Error 500: Internal Server Error",
+          "error_type": "HTTPError",
+          "status": 500
+        },
+        "name": "Chicago, Illinois",
+        "slug": "chicago",
+        "status": "unavailable"
+      },
+      {
+        "attachment_count_sampled": 17,
+        "attachment_field_population": {
+          "MatterAttachmentHyperlink": {
+            "present": 17,
+            "sample_records": 17
+          },
+          "MatterAttachmentId": {
+            "present": 17,
+            "sample_records": 17
+          },
+          "MatterAttachmentIsSupportingDocument": {
+            "present": 17,
+            "sample_records": 17
+          },
+          "MatterAttachmentLastModifiedUtc": {
+            "present": 17,
+            "sample_records": 17
+          },
+          "MatterAttachmentMatterVersion": {
+            "present": 17,
+            "sample_records": 17
+          },
+          "MatterAttachmentName": {
+            "present": 17,
+            "sample_records": 17
+          }
+        },
+        "detail_events_with_items": 5,
+        "earliest_event_sample": {
+          "event_dates": [
+            "2021-09-15T00:00:00",
+            "2025-10-01T00:00:00",
+            "2021-09-08T00:00:00",
+            "2021-09-22T00:00:00",
+            "2021-09-29T00:00:00"
+          ],
+          "event_id_range": {
+            "field": "EventId",
+            "maximum": 3999,
+            "minimum": 1978,
+            "sample_count": 5
+          },
+          "request_status": 200
+        },
+        "earliest_matter_sample": {
+          "matter_id_range": {
+            "field": "MatterId",
+            "maximum": 3367,
+            "minimum": 3361,
+            "sample_count": 5
+          },
+          "matter_intro_dates": [
+            "2021-08-03T00:00:00",
+            "2021-08-03T00:00:00",
+            "2021-08-03T00:00:00",
+            "2021-08-03T00:00:00",
+            "2021-08-03T00:00:00"
+          ],
+          "request_status": 200
+        },
+        "event_count_sampled": 20,
+        "event_detail_requests": [
+          {
+            "event_id": 14243,
+            "item_count": 1,
+            "status": 200
+          },
+          {
+            "event_id": 14242,
+            "item_count": 1,
+            "status": 200
+          },
+          {
+            "event_id": 14241,
+            "item_count": 2,
+            "status": 200
+          },
+          {
+            "event_id": 14240,
+            "item_count": 3,
+            "status": 200
+          },
+          {
+            "event_id": 14237,
+            "item_count": 9,
+            "status": 200
+          }
+        ],
+        "event_field_population": {
+          "EventAgendaFile": {
+            "present": 18,
+            "sample_records": 20
+          },
+          "EventAgendaLastPublishedUTC": {
+            "present": 18,
+            "sample_records": 20
+          },
+          "EventAgendaStatusName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventComment": {
+            "present": 0,
+            "sample_records": 20
+          },
+          "EventDate": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventInSiteURL": {
+            "present": 20,
+            "sample_records": 20
+          }
+        },
+        "event_id_range_desc_sample": {
+          "field": "EventId",
+          "maximum": 14245,
+          "minimum": 14219,
+          "sample_count": 20
+        },
+        "event_item_count_sampled": 16,
+        "event_item_field_population": {
+          "EventItemActionName": {
+            "present": 0,
+            "sample_records": 16
+          },
+          "EventItemActionText": {
+            "present": 0,
+            "sample_records": 16
+          },
+          "EventItemAgendaNote": {
+            "present": 0,
+            "sample_records": 16
+          },
+          "EventItemAgendaNumber": {
+            "present": 0,
+            "sample_records": 16
+          },
+          "EventItemAgendaSequence": {
+            "present": 16,
+            "sample_records": 16
+          },
+          "EventItemConsent": {
+            "present": 16,
+            "sample_records": 16
+          },
+          "EventItemEventId": {
+            "present": 16,
+            "sample_records": 16
+          },
+          "EventItemId": {
+            "present": 16,
+            "sample_records": 16
+          },
+          "EventItemLastModifiedUtc": {
+            "present": 16,
+            "sample_records": 16
+          },
+          "EventItemMatterAttachments": {
+            "present": 10,
+            "sample_records": 16
+          },
+          "EventItemMatterId": {
+            "present": 10,
+            "sample_records": 16
+          },
+          "EventItemMinutesNote": {
+            "present": 0,
+            "sample_records": 16
+          },
+          "EventItemPassedFlagName": {
+            "present": 0,
+            "sample_records": 16
+          },
+          "EventItemTitle": {
+            "present": 15,
+            "sample_records": 16
+          },
+          "EventItemVersion": {
+            "present": 10,
+            "sample_records": 16
+          }
+        },
+        "events_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "matter_id_range_desc_sample": {
+          "field": "MatterId",
+          "maximum": 43315,
+          "minimum": 43311,
+          "sample_count": 5
+        },
+        "matters_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "name": "Boston, Massachusetts",
+        "public_site_hosts_observed": [
+          "boston.legistar.com",
+          "boston.legistar1.com"
+        ],
+        "rate_limit_probe": {
+          "attempts": [
+            {
+              "attempt": 1,
+              "elapsed_ms": 901.29,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 2,
+              "elapsed_ms": 896.01,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 3,
+              "elapsed_ms": 977.26,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 4,
+              "elapsed_ms": 966.21,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 5,
+              "elapsed_ms": 838.89,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 6,
+              "elapsed_ms": 841.21,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 7,
+              "elapsed_ms": 822.33,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 8,
+              "elapsed_ms": 906.61,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            }
+          ],
+          "interpretation": "no throttling observed within the bounded probe",
+          "requests_attempted": 8,
+          "throttled_after_request": null
+        },
+        "slug": "boston",
+        "status": "viable",
+        "terms_review": {
+          "evidence": [
+            "The API response exposed public record URLs, but no terms document was identified automatically.",
+            "The selected city must be checked against its public-site terms before production use."
+          ],
+          "status": "manual_review_required"
+        }
+      },
+      {
+        "events_request": {
+          "error": "HTTP Error 500: Internal Server Error",
+          "error_type": "HTTPError",
+          "status": 500
+        },
+        "name": "Portland, Oregon",
+        "slug": "portland",
+        "status": "unavailable"
+      },
+      {
+        "attachment_count_sampled": 7,
+        "attachment_field_population": {
+          "MatterAttachmentHyperlink": {
+            "present": 7,
+            "sample_records": 7
+          },
+          "MatterAttachmentId": {
+            "present": 7,
+            "sample_records": 7
+          },
+          "MatterAttachmentIsSupportingDocument": {
+            "present": 7,
+            "sample_records": 7
+          },
+          "MatterAttachmentLastModifiedUtc": {
+            "present": 7,
+            "sample_records": 7
+          },
+          "MatterAttachmentMatterVersion": {
+            "present": 7,
+            "sample_records": 7
+          },
+          "MatterAttachmentName": {
+            "present": 7,
+            "sample_records": 7
+          }
+        },
+        "detail_events_with_items": 5,
+        "earliest_event_sample": {
+          "event_dates": [
+            "2000-09-12T00:00:00",
+            "2000-09-12T00:00:00",
+            "2000-09-12T00:00:00",
+            "2000-09-12T00:00:00",
+            "2000-09-19T00:00:00"
+          ],
+          "event_id_range": {
+            "field": "EventId",
+            "maximum": 750,
+            "minimum": 573,
+            "sample_count": 5
+          },
+          "request_status": 200
+        },
+        "earliest_matter_sample": {
+          "matter_id_range": {
+            "field": "MatterId",
+            "maximum": 1156,
+            "minimum": 1136,
+            "sample_count": 5
+          },
+          "matter_intro_dates": [
+            "2000-10-10T00:00:00",
+            "2000-10-03T00:00:00",
+            "2000-09-26T00:00:00",
+            "2000-09-26T00:00:00",
+            "2000-09-12T00:00:00"
+          ],
+          "request_status": 200
+        },
+        "event_count_sampled": 20,
+        "event_detail_requests": [
+          {
+            "event_id": 9577,
+            "item_count": 8,
+            "status": 200
+          },
+          {
+            "event_id": 9576,
+            "item_count": 1,
+            "status": 200
+          },
+          {
+            "event_id": 9575,
+            "item_count": 1,
+            "status": 200
+          },
+          {
+            "event_id": 9574,
+            "item_count": 1,
+            "status": 200
+          },
+          {
+            "event_id": 9573,
+            "item_count": 1,
+            "status": 200
+          }
+        ],
+        "event_field_population": {
+          "EventAgendaFile": {
+            "present": 13,
+            "sample_records": 20
+          },
+          "EventAgendaLastPublishedUTC": {
+            "present": 13,
+            "sample_records": 20
+          },
+          "EventAgendaStatusName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventComment": {
+            "present": 9,
+            "sample_records": 20
+          },
+          "EventDate": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventInSiteURL": {
+            "present": 20,
+            "sample_records": 20
+          }
+        },
+        "event_id_range_desc_sample": {
+          "field": "EventId",
+          "maximum": 9579,
+          "minimum": 9559,
+          "sample_count": 20
+        },
+        "event_item_count_sampled": 12,
+        "event_item_field_population": {
+          "EventItemActionName": {
+            "present": 0,
+            "sample_records": 12
+          },
+          "EventItemActionText": {
+            "present": 0,
+            "sample_records": 12
+          },
+          "EventItemAgendaNote": {
+            "present": 0,
+            "sample_records": 12
+          },
+          "EventItemAgendaNumber": {
+            "present": 2,
+            "sample_records": 12
+          },
+          "EventItemAgendaSequence": {
+            "present": 12,
+            "sample_records": 12
+          },
+          "EventItemConsent": {
+            "present": 12,
+            "sample_records": 12
+          },
+          "EventItemEventId": {
+            "present": 12,
+            "sample_records": 12
+          },
+          "EventItemId": {
+            "present": 12,
+            "sample_records": 12
+          },
+          "EventItemLastModifiedUtc": {
+            "present": 12,
+            "sample_records": 12
+          },
+          "EventItemMatterAttachments": {
+            "present": 2,
+            "sample_records": 12
+          },
+          "EventItemMatterId": {
+            "present": 2,
+            "sample_records": 12
+          },
+          "EventItemMinutesNote": {
+            "present": 0,
+            "sample_records": 12
+          },
+          "EventItemPassedFlagName": {
+            "present": 0,
+            "sample_records": 12
+          },
+          "EventItemTitle": {
+            "present": 8,
+            "sample_records": 12
+          },
+          "EventItemVersion": {
+            "present": 2,
+            "sample_records": 12
+          }
+        },
+        "events_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "matter_id_range_desc_sample": {
+          "field": "MatterId",
+          "maximum": 37541,
+          "minimum": 37536,
+          "sample_count": 5
+        },
+        "matters_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "name": "Oakland, California",
+        "public_site_hosts_observed": [
+          "oakland.legistar.com",
+          "oakland.legistar1.com"
+        ],
+        "rate_limit_probe": {
+          "attempts": [
+            {
+              "attempt": 1,
+              "elapsed_ms": 905.53,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 2,
+              "elapsed_ms": 942.01,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 3,
+              "elapsed_ms": 854.49,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 4,
+              "elapsed_ms": 886.23,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 5,
+              "elapsed_ms": 860.01,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 6,
+              "elapsed_ms": 897.38,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 7,
+              "elapsed_ms": 866.91,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 8,
+              "elapsed_ms": 942.06,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            }
+          ],
+          "interpretation": "no throttling observed within the bounded probe",
+          "requests_attempted": 8,
+          "throttled_after_request": null
+        },
+        "slug": "oakland",
+        "status": "viable",
+        "terms_review": {
+          "evidence": [
+            "The API response exposed public record URLs, but no terms document was identified automatically.",
+            "The selected city must be checked against its public-site terms before production use."
+          ],
+          "status": "manual_review_required"
+        }
+      },
+      {
+        "attachment_count_sampled": 125,
+        "attachment_field_population": {
+          "MatterAttachmentHyperlink": {
+            "present": 125,
+            "sample_records": 125
+          },
+          "MatterAttachmentId": {
+            "present": 125,
+            "sample_records": 125
+          },
+          "MatterAttachmentIsSupportingDocument": {
+            "present": 125,
+            "sample_records": 125
+          },
+          "MatterAttachmentLastModifiedUtc": {
+            "present": 125,
+            "sample_records": 125
+          },
+          "MatterAttachmentMatterVersion": {
+            "present": 125,
+            "sample_records": 125
+          },
+          "MatterAttachmentName": {
+            "present": 125,
+            "sample_records": 125
+          }
+        },
+        "detail_events_with_items": 5,
+        "earliest_event_sample": {
+          "event_dates": [
+            "2016-08-31T00:00:00",
+            "2016-09-20T00:00:00",
+            "2016-09-21T00:00:00",
+            "2016-09-28T00:00:00",
+            "2016-10-05T00:00:00"
+          ],
+          "event_id_range": {
+            "field": "EventId",
+            "maximum": 1175,
+            "minimum": 1159,
+            "sample_count": 5
+          },
+          "request_status": 200
+        },
+        "earliest_matter_sample": {
+          "matter_id_range": {
+            "field": "MatterId",
+            "maximum": 1975,
+            "minimum": 1870,
+            "sample_count": 5
+          },
+          "matter_intro_dates": [
+            "2016-08-25T00:00:00",
+            "2016-09-20T00:00:00",
+            "2016-09-20T00:00:00",
+            "2016-09-20T00:00:00",
+            "2016-09-20T00:00:00"
+          ],
+          "request_status": 200
+        },
+        "event_count_sampled": 20,
+        "event_detail_requests": [
+          {
+            "event_id": 2656,
+            "item_count": 3,
+            "status": 200
+          },
+          {
+            "event_id": 2655,
+            "item_count": 2,
+            "status": 200
+          },
+          {
+            "event_id": 2652,
+            "item_count": 2,
+            "status": 200
+          },
+          {
+            "event_id": 2651,
+            "item_count": 114,
+            "status": 200
+          },
+          {
+            "event_id": 2650,
+            "item_count": 4,
+            "status": 200
+          }
+        ],
+        "event_field_population": {
+          "EventAgendaFile": {
+            "present": 0,
+            "sample_records": 20
+          },
+          "EventAgendaLastPublishedUTC": {
+            "present": 0,
+            "sample_records": 20
+          },
+          "EventAgendaStatusName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventComment": {
+            "present": 0,
+            "sample_records": 20
+          },
+          "EventDate": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventInSiteURL": {
+            "present": 20,
+            "sample_records": 20
+          }
+        },
+        "event_id_range_desc_sample": {
+          "field": "EventId",
+          "maximum": 2656,
+          "minimum": 2635,
+          "sample_count": 20
+        },
+        "event_item_count_sampled": 125,
+        "event_item_field_population": {
+          "EventItemActionName": {
+            "present": 93,
+            "sample_records": 125
+          },
+          "EventItemActionText": {
+            "present": 93,
+            "sample_records": 125
+          },
+          "EventItemAgendaNote": {
+            "present": 2,
+            "sample_records": 125
+          },
+          "EventItemAgendaNumber": {
+            "present": 98,
+            "sample_records": 125
+          },
+          "EventItemAgendaSequence": {
+            "present": 117,
+            "sample_records": 125
+          },
+          "EventItemConsent": {
+            "present": 125,
+            "sample_records": 125
+          },
+          "EventItemEventId": {
+            "present": 125,
+            "sample_records": 125
+          },
+          "EventItemId": {
+            "present": 125,
+            "sample_records": 125
+          },
+          "EventItemLastModifiedUtc": {
+            "present": 125,
+            "sample_records": 125
+          },
+          "EventItemMatterAttachments": {
+            "present": 54,
+            "sample_records": 125
+          },
+          "EventItemMatterId": {
+            "present": 98,
+            "sample_records": 125
+          },
+          "EventItemMinutesNote": {
+            "present": 20,
+            "sample_records": 125
+          },
+          "EventItemPassedFlagName": {
+            "present": 91,
+            "sample_records": 125
+          },
+          "EventItemTitle": {
+            "present": 117,
+            "sample_records": 125
+          },
+          "EventItemVersion": {
+            "present": 98,
+            "sample_records": 125
+          }
+        },
+        "events_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "matter_id_range_desc_sample": {
+          "field": "MatterId",
+          "maximum": 35991,
+          "minimum": 35956,
+          "sample_count": 5
+        },
+        "matters_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "name": "Phoenix, Arizona",
+        "public_site_hosts_observed": [
+          "phoenix.legistar.com"
+        ],
+        "rate_limit_probe": {
+          "attempts": [
+            {
+              "attempt": 1,
+              "elapsed_ms": 868.34,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 2,
+              "elapsed_ms": 840.58,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 3,
+              "elapsed_ms": 833.88,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 4,
+              "elapsed_ms": 866.42,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 5,
+              "elapsed_ms": 890.02,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 6,
+              "elapsed_ms": 846.0,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 7,
+              "elapsed_ms": 879.52,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 8,
+              "elapsed_ms": 879.38,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            }
+          ],
+          "interpretation": "no throttling observed within the bounded probe",
+          "requests_attempted": 8,
+          "throttled_after_request": null
+        },
+        "slug": "phoenix",
+        "status": "viable",
+        "terms_review": {
+          "evidence": [
+            "The API response exposed public record URLs, but no terms document was identified automatically.",
+            "The selected city must be checked against its public-site terms before production use."
+          ],
+          "status": "manual_review_required"
+        }
+      },
+      {
+        "events_request": {
+          "error": "HTTP Error 500: Internal Server Error",
+          "error_type": "HTTPError",
+          "status": 500
+        },
+        "name": "Tucson, Arizona",
+        "slug": "tucson",
+        "status": "unavailable"
+      },
+      {
+        "events_request": {
+          "error": "HTTP Error 500: Internal Server Error",
+          "error_type": "HTTPError",
+          "status": 500
+        },
+        "name": "Miami Beach, Florida",
+        "slug": "miamibeach",
+        "status": "unavailable"
+      },
+      {
+        "attachment_count_sampled": 68,
+        "attachment_field_population": {
+          "MatterAttachmentHyperlink": {
+            "present": 68,
+            "sample_records": 68
+          },
+          "MatterAttachmentId": {
+            "present": 68,
+            "sample_records": 68
+          },
+          "MatterAttachmentIsSupportingDocument": {
+            "present": 68,
+            "sample_records": 68
+          },
+          "MatterAttachmentLastModifiedUtc": {
+            "present": 68,
+            "sample_records": 68
+          },
+          "MatterAttachmentMatterVersion": {
+            "present": 68,
+            "sample_records": 68
+          },
+          "MatterAttachmentName": {
+            "present": 68,
+            "sample_records": 68
+          }
+        },
+        "detail_events_with_items": 5,
+        "earliest_event_sample": {
+          "event_dates": [
+            "2026-01-05T00:00:00",
+            "2026-01-20T00:00:00",
+            "2026-07-27T00:00:00",
+            "2026-08-10T00:00:00",
+            "2026-08-13T00:00:00"
+          ],
+          "event_id_range": {
+            "field": "EventId",
+            "maximum": 1151,
+            "minimum": 1014,
+            "sample_count": 5
+          },
+          "request_status": 200
+        },
+        "earliest_matter_sample": {
+          "matter_id_range": {
+            "field": "MatterId",
+            "maximum": 1541,
+            "minimum": 1537,
+            "sample_count": 5
+          },
+          "matter_intro_dates": [
+            "2026-06-08T00:00:00",
+            "2026-06-08T00:00:00",
+            "2026-06-08T00:00:00",
+            "2026-06-08T00:00:00",
+            "2026-06-08T00:00:00"
+          ],
+          "request_status": 200
+        },
+        "event_count_sampled": 18,
+        "event_detail_requests": [
+          {
+            "event_id": 1180,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 1175,
+            "item_count": 9,
+            "status": 200
+          },
+          {
+            "event_id": 1174,
+            "item_count": 59,
+            "status": 200
+          },
+          {
+            "event_id": 1170,
+            "item_count": 0,
+            "status": 200
+          },
+          {
+            "event_id": 1169,
+            "item_count": 18,
+            "status": 200
+          },
+          {
+            "event_id": 1168,
+            "item_count": 17,
+            "status": 200
+          },
+          {
+            "event_id": 1167,
+            "item_count": 18,
+            "status": 200
+          }
+        ],
+        "event_field_population": {
+          "EventAgendaFile": {
+            "present": 6,
+            "sample_records": 18
+          },
+          "EventAgendaLastPublishedUTC": {
+            "present": 12,
+            "sample_records": 18
+          },
+          "EventAgendaStatusName": {
+            "present": 18,
+            "sample_records": 18
+          },
+          "EventBodyId": {
+            "present": 18,
+            "sample_records": 18
+          },
+          "EventBodyName": {
+            "present": 18,
+            "sample_records": 18
+          },
+          "EventComment": {
+            "present": 10,
+            "sample_records": 18
+          },
+          "EventDate": {
+            "present": 18,
+            "sample_records": 18
+          },
+          "EventId": {
+            "present": 18,
+            "sample_records": 18
+          },
+          "EventInSiteURL": {
+            "present": 18,
+            "sample_records": 18
+          }
+        },
+        "event_id_range_desc_sample": {
+          "field": "EventId",
+          "maximum": 1190,
+          "minimum": 1014,
+          "sample_count": 18
+        },
+        "event_item_count_sampled": 121,
+        "event_item_field_population": {
+          "EventItemActionName": {
+            "present": 0,
+            "sample_records": 121
+          },
+          "EventItemActionText": {
+            "present": 0,
+            "sample_records": 121
+          },
+          "EventItemAgendaNote": {
+            "present": 1,
+            "sample_records": 121
+          },
+          "EventItemAgendaNumber": {
+            "present": 51,
+            "sample_records": 121
+          },
+          "EventItemAgendaSequence": {
+            "present": 117,
+            "sample_records": 121
+          },
+          "EventItemConsent": {
+            "present": 121,
+            "sample_records": 121
+          },
+          "EventItemEventId": {
+            "present": 121,
+            "sample_records": 121
+          },
+          "EventItemId": {
+            "present": 121,
+            "sample_records": 121
+          },
+          "EventItemLastModifiedUtc": {
+            "present": 121,
+            "sample_records": 121
+          },
+          "EventItemMatterAttachments": {
+            "present": 35,
+            "sample_records": 121
+          },
+          "EventItemMatterId": {
+            "present": 51,
+            "sample_records": 121
+          },
+          "EventItemMinutesNote": {
+            "present": 27,
+            "sample_records": 121
+          },
+          "EventItemPassedFlagName": {
+            "present": 0,
+            "sample_records": 121
+          },
+          "EventItemTitle": {
+            "present": 121,
+            "sample_records": 121
+          },
+          "EventItemVersion": {
+            "present": 51,
+            "sample_records": 121
+          }
+        },
+        "events_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "matter_id_range_desc_sample": {
+          "field": "MatterId",
+          "maximum": 1897,
+          "minimum": 1891,
+          "sample_count": 5
+        },
+        "matters_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "name": "Plano, Texas",
+        "public_site_hosts_observed": [
+          "plano.legistar.com",
+          "plano.legistar1.com"
+        ],
+        "rate_limit_probe": {
+          "attempts": [
+            {
+              "attempt": 1,
+              "elapsed_ms": 898.51,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 2,
+              "elapsed_ms": 887.55,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 3,
+              "elapsed_ms": 838.15,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 4,
+              "elapsed_ms": 843.98,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 5,
+              "elapsed_ms": 795.24,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 6,
+              "elapsed_ms": 896.53,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 7,
+              "elapsed_ms": 870.03,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 8,
+              "elapsed_ms": 861.45,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            }
+          ],
+          "interpretation": "no throttling observed within the bounded probe",
+          "requests_attempted": 8,
+          "throttled_after_request": null
+        },
+        "slug": "plano",
+        "status": "viable",
+        "terms_review": {
+          "evidence": [
+            "The API response exposed public record URLs, but no terms document was identified automatically.",
+            "The selected city must be checked against its public-site terms before production use."
+          ],
+          "status": "manual_review_required"
+        }
+      },
+      {
+        "events_request": {
+          "error": "HTTP Error 500: Internal Server Error",
+          "error_type": "HTTPError",
+          "status": 500
+        },
+        "name": "Fort Worth, Texas",
+        "slug": "fortworth",
+        "status": "unavailable"
+      },
+      {
+        "events_request": {
+          "error": "HTTP Error 500: Internal Server Error",
+          "error_type": "HTTPError",
+          "status": 500
+        },
+        "name": "Arlington, Texas",
+        "slug": "arlington",
+        "status": "unavailable"
+      },
+      {
+        "attachment_count_sampled": 198,
+        "attachment_field_population": {
+          "MatterAttachmentHyperlink": {
+            "present": 198,
+            "sample_records": 198
+          },
+          "MatterAttachmentId": {
+            "present": 198,
+            "sample_records": 198
+          },
+          "MatterAttachmentIsSupportingDocument": {
+            "present": 198,
+            "sample_records": 198
+          },
+          "MatterAttachmentLastModifiedUtc": {
+            "present": 198,
+            "sample_records": 198
+          },
+          "MatterAttachmentMatterVersion": {
+            "present": 198,
+            "sample_records": 198
+          },
+          "MatterAttachmentName": {
+            "present": 198,
+            "sample_records": 198
+          }
+        },
+        "detail_events_with_items": 5,
+        "earliest_event_sample": {
+          "event_dates": [
+            "2010-10-27T00:00:00",
+            "2010-09-07T01:00:00",
+            "2010-10-27T03:00:00",
+            "2010-09-14T01:00:00",
+            "2010-09-21T01:00:00"
+          ],
+          "event_id_range": {
+            "field": "EventId",
+            "maximum": 1345,
+            "minimum": 1331,
+            "sample_count": 5
+          },
+          "request_status": 200
+        },
+        "earliest_matter_sample": {
+          "matter_id_range": {
+            "field": "MatterId",
+            "maximum": 1868,
+            "minimum": 1320,
+            "sample_count": 5
+          },
+          "matter_intro_dates": [
+            "2010-07-15T00:00:00",
+            "2010-07-23T00:00:00",
+            "2010-08-06T00:00:00",
+            "2010-08-09T00:00:00",
+            "2010-08-09T00:00:00"
+          ],
+          "request_status": 200
+        },
+        "event_count_sampled": 20,
+        "event_detail_requests": [
+          {
+            "event_id": 7754,
+            "item_count": 2,
+            "status": 200
+          },
+          {
+            "event_id": 7753,
+            "item_count": 8,
+            "status": 200
+          },
+          {
+            "event_id": 7752,
+            "item_count": 4,
+            "status": 200
+          },
+          {
+            "event_id": 7751,
+            "item_count": 64,
+            "status": 200
+          },
+          {
+            "event_id": 7750,
+            "item_count": 8,
+            "status": 200
+          }
+        ],
+        "event_field_population": {
+          "EventAgendaFile": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventAgendaLastPublishedUTC": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventAgendaStatusName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventBodyName": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventComment": {
+            "present": 2,
+            "sample_records": 20
+          },
+          "EventDate": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventId": {
+            "present": 20,
+            "sample_records": 20
+          },
+          "EventInSiteURL": {
+            "present": 20,
+            "sample_records": 20
+          }
+        },
+        "event_id_range_desc_sample": {
+          "field": "EventId",
+          "maximum": 7759,
+          "minimum": 7735,
+          "sample_count": 20
+        },
+        "event_item_count_sampled": 86,
+        "event_item_field_population": {
+          "EventItemActionName": {
+            "present": 61,
+            "sample_records": 86
+          },
+          "EventItemActionText": {
+            "present": 63,
+            "sample_records": 86
+          },
+          "EventItemAgendaNote": {
+            "present": 0,
+            "sample_records": 86
+          },
+          "EventItemAgendaNumber": {
+            "present": 57,
+            "sample_records": 86
+          },
+          "EventItemAgendaSequence": {
+            "present": 84,
+            "sample_records": 86
+          },
+          "EventItemConsent": {
+            "present": 86,
+            "sample_records": 86
+          },
+          "EventItemEventId": {
+            "present": 86,
+            "sample_records": 86
+          },
+          "EventItemId": {
+            "present": 86,
+            "sample_records": 86
+          },
+          "EventItemLastModifiedUtc": {
+            "present": 86,
+            "sample_records": 86
+          },
+          "EventItemMatterAttachments": {
+            "present": 51,
+            "sample_records": 86
+          },
+          "EventItemMatterId": {
+            "present": 59,
+            "sample_records": 86
+          },
+          "EventItemMinutesNote": {
+            "present": 3,
+            "sample_records": 86
+          },
+          "EventItemPassedFlagName": {
+            "present": 53,
+            "sample_records": 86
+          },
+          "EventItemTitle": {
+            "present": 86,
+            "sample_records": 86
+          },
+          "EventItemVersion": {
+            "present": 59,
+            "sample_records": 86
+          }
+        },
+        "events_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "matter_id_range_desc_sample": {
+          "field": "MatterId",
+          "maximum": 52884,
+          "minimum": 52874,
+          "sample_count": 5
+        },
+        "matters_request": {
+          "error": null,
+          "error_type": null,
+          "status": 200
+        },
+        "name": "Saint Paul, Minnesota",
+        "public_site_hosts_observed": [
+          "legistar1.granicus.com",
+          "stpaul.legistar.com"
+        ],
+        "rate_limit_probe": {
+          "attempts": [
+            {
+              "attempt": 1,
+              "elapsed_ms": 892.0,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 2,
+              "elapsed_ms": 877.94,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 3,
+              "elapsed_ms": 876.72,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 4,
+              "elapsed_ms": 836.45,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 5,
+              "elapsed_ms": 873.85,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 6,
+              "elapsed_ms": 890.72,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 7,
+              "elapsed_ms": 860.57,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            },
+            {
+              "attempt": 8,
+              "elapsed_ms": 871.17,
+              "error_type": null,
+              "retry_after": null,
+              "status": 200
+            }
+          ],
+          "interpretation": "no throttling observed within the bounded probe",
+          "requests_attempted": 8,
+          "throttled_after_request": null
+        },
+        "slug": "stpaul",
+        "status": "viable",
+        "terms_review": {
+          "evidence": [
+            "The API response exposed public record URLs, but no terms document was identified automatically.",
+            "The selected city must be checked against its public-site terms before production use."
+          ],
+          "status": "manual_review_required"
+        }
+      },
+      {
+        "events_request": {
+          "error": "HTTP Error 500: Internal Server Error",
+          "error_type": "HTTPError",
+          "status": 500
+        },
+        "name": "Minneapolis, Minnesota",
+        "slug": "minneapolis",
+        "status": "unavailable"
+      }
+    ],
+    "official_references": [
+      {
+        "error": null,
+        "error_type": null,
+        "status": 200,
+        "url": "https://webapi.legistar.com/Home/Examples"
+      },
+      {
+        "error": null,
+        "error_type": null,
+        "status": 200,
+        "url": "https://webapi.legistar.com/Help"
+      }
+    ]
+  },
+  "runtime": {
+    "executable": "/usr/bin/python3",
+    "platform": "Linux-7.0.0-1011-aws-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "schema_version": 1,
+  "viable_clients_count": 8
+}

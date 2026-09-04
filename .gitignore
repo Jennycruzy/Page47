@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+*.py[cod]
+.DS_Store
+
+# Runtime evidence is append-only but can become large outside the committed preflight.
+docs/evidence/runtime/
+*.log
+
+# Never commit local credentials or environment files.
+.env
+.env.*
+!.env.example
