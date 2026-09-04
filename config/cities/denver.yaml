@@ -1,0 +1,108 @@
+city: Denver, Colorado
+client: denver
+
+api:
+  base_url: https://webapi.legistar.com/v1
+  accept_header: "*/*"
+  page_size: 100
+  max_pages: 100
+  timeout_seconds: 30
+  lookahead_days: 30
+  include_cancelled: false
+  detail_parameters:
+    EventItems: 1
+    AgendaNote: 1
+    MinutesNote: 1
+    EventItemAttachments: 1
+
+watched_bodies:
+  - id: 344
+    name: Parks, Art and Culture
+
+event_fields:
+  id: EventId
+  date: EventDate
+  body_id: EventBodyId
+  body_name: EventBodyName
+  agenda_file: EventAgendaFile
+  agenda_last_published: EventAgendaLastPublishedUTC
+  agenda_status: EventAgendaStatusName
+  in_site_url: EventInSiteURL
+  comment: EventComment
+  items: EventItems
+
+item_fields:
+  id: EventItemId
+  event_id: EventItemEventId
+  matter_id: EventItemMatterId
+  title: EventItemTitle
+  consent: EventItemConsent
+  agenda_sequence: EventItemAgendaSequence
+  agenda_number: EventItemAgendaNumber
+  action_name: EventItemActionName
+  action_text: EventItemActionText
+  passed_flag_name: EventItemPassedFlagName
+  version: EventItemVersion
+  agenda_note: EventItemAgendaNote
+  minutes_note: EventItemMinutesNote
+  last_modified: EventItemLastModifiedUtc
+  attachments: EventItemMatterAttachments
+
+matter_fields:
+  id: MatterId
+  file_number: MatterFile
+  name: MatterName
+  title: MatterTitle
+  type: MatterTypeName
+  status: MatterStatusName
+  body_id: MatterBodyId
+  body_name: MatterBodyName
+  intro_date: MatterIntroDate
+  agenda_date: MatterAgendaDate
+  version: MatterVersion
+  last_modified: MatterLastModifiedUtc
+
+attachment_fields:
+  id: MatterAttachmentId
+  name: MatterAttachmentName
+  url: MatterAttachmentHyperlink
+  last_modified: MatterAttachmentLastModifiedUtc
+  matter_version: MatterAttachmentMatterVersion
+  supporting_document: MatterAttachmentIsSupportingDocument
+
+storage:
+  root: runtime/evidence/denver
+
+backfill:
+  event_page_size: 100
+  max_event_pages: 100
+  matter_page_size: 100
+  max_matter_pages: 250
+  max_detail_events: 10000
+  minimum_repeated_matters: 20
+  minimum_appearances_per_repeated_matter: 3
+
+consent_calibration:
+  status: established
+  meeting_event_id: 12901
+  meeting_date: "2026-09-01"
+  agenda_pages_with_consent: 2
+  agenda_page_with_regular_items: 1
+  agenda_url: https://denver.legistar1.com/denver/meetings/2026/9/12901_A_Parks%2C_Art_and_Culture_26-09-01_Committee_Agenda.pdf
+  api_detail_url: https://webapi.legistar.com/v1/denver/events/12901?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1
+  visible_consent_event_item_ids: [237282]
+  visible_regular_event_item_ids: [237278, 237279, 237280, 237281, 237453, 237454, 237455, 237575]
+  observed_consent_values: [1]
+  observed_regular_values: [0]
+  mapping_usable: true
+  consent_value: 1
+  regular_value: 0
+  evidence_capture:
+    captured_at: "2026-09-04T16:44:23.223432Z"
+    content_sha256: ee60828b4d1d710842794bc70cfc5052a4ae6638cca18f4239f00a69e5b4b1e0
+    storage_key: docs/evidence/preflight/responses/20260904T164423.223432Z_650bc8cd19a1088a_ee60828b4d1d7108.body
+
+evidence:
+  preflight: docs/preflight.json
+  api_examples: https://webapi.legistar.com/Home/Examples
+  event_detail_help: https://webapi.legistar.com/Help/Api/GET-v1-Client-Events-EventId_EventItems_AgendaNote_MinutesNote_EventItemAttachments
