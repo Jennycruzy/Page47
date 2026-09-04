@@ -75,16 +75,32 @@ class LegistarClient:
         request_url = self.url(resource, parameters)
         return self.http.fetch(target, request_url, self.store.latest(target))
 
-    def fetch_event_page(self, page_number: int) -> FetchResult:
+    def fetch_event_page(self, page_number: int, page_size: int | None = None) -> FetchResult:
         if page_number < 0:
             raise ValueError("page_number must not be negative")
-        skip = page_number * self.config.page_size
+        requested_page_size = self.config.page_size if page_size is None else page_size
+        if requested_page_size < 1:
+            raise ValueError("page_size must be positive")
+        skip = page_number * requested_page_size
         parameters = {
-            "$top": str(self.config.page_size),
+            "$top": str(requested_page_size),
             "$skip": str(skip),
             "$orderby": "EventId desc",
         }
         return self.fetch(f"events-page:{page_number}", "events", parameters)
+
+    def fetch_matter_page(self, page_number: int, page_size: int) -> FetchResult:
+        if page_number < 0:
+            raise ValueError("page_number must not be negative")
+        if page_size < 1:
+            raise ValueError("page_size must be positive")
+        skip = page_number * page_size
+        parameters = {
+            "$top": str(page_size),
+            "$skip": str(skip),
+            "$orderby": "MatterId asc",
+        }
+        return self.fetch(f"matters-page:{page_number}", "matters", parameters)
 
     def fetch_event_detail(self, event_id: int) -> FetchResult:
         if event_id < 1:

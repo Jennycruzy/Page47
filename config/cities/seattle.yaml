@@ -43,10 +43,13 @@ event_fields:
   agenda_file: EventAgendaFile
   agenda_last_published: EventAgendaLastPublishedUTC
   agenda_status: EventAgendaStatusName
+  in_site_url: EventInSiteURL
+  comment: EventComment
   items: EventItems
 
 item_fields:
   id: EventItemId
+  event_id: EventItemEventId
   matter_id: EventItemMatterId
   title: EventItemTitle
   consent: EventItemConsent
@@ -61,6 +64,20 @@ item_fields:
   last_modified: EventItemLastModifiedUtc
   attachments: EventItemMatterAttachments
 
+matter_fields:
+  id: MatterId
+  file_number: MatterFile
+  name: MatterName
+  title: MatterTitle
+  type: MatterTypeName
+  status: MatterStatusName
+  body_id: MatterBodyId
+  body_name: MatterBodyName
+  intro_date: MatterIntroDate
+  agenda_date: MatterAgendaDate
+  version: MatterVersion
+  last_modified: MatterLastModifiedUtc
+
 attachment_fields:
   id: MatterAttachmentId
   name: MatterAttachmentName
@@ -71,6 +88,15 @@ attachment_fields:
 
 storage:
   root: runtime/evidence/seattle
+
+backfill:
+  event_page_size: 100
+  max_event_pages: 100
+  matter_page_size: 100
+  max_matter_pages: 250
+  max_detail_events: 10000
+  minimum_repeated_matters: 20
+  minimum_appearances_per_repeated_matter: 3
 
 evidence:
   preflight: docs/preflight.json

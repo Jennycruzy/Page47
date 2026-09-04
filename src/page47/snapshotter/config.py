@@ -19,6 +19,17 @@ class WatchedBody:
 
 
 @dataclass(frozen=True, slots=True)
+class BackfillConfig:
+    event_page_size: int
+    max_event_pages: int
+    matter_page_size: int
+    max_matter_pages: int
+    max_detail_events: int
+    minimum_repeated_matters: int
+    minimum_appearances_per_repeated_matter: int
+
+
+@dataclass(frozen=True, slots=True)
 class CityConfig:
     city: str
     client: str
@@ -32,9 +43,11 @@ class CityConfig:
     watched_bodies: tuple[WatchedBody, ...]
     event_fields: JSONObject
     item_fields: JSONObject
+    matter_fields: JSONObject
     attachment_fields: JSONObject
     detail_parameters: JSONObject
     storage_root: Path
+    backfill: BackfillConfig
 
 
 def as_json_value(value: object) -> JSONValue:
@@ -106,6 +119,7 @@ def load_city_config(path: Path) -> CityConfig:
     if not watched:
         raise ValueError("watched_bodies must not be empty")
     storage = required_mapping(root, "storage")
+    backfill = required_mapping(root, "backfill")
     detail_parameters = required_mapping(api, "detail_parameters")
     for key, item in detail_parameters.items():
         if isinstance(item, bool) or not isinstance(item, int):
@@ -123,9 +137,23 @@ def load_city_config(path: Path) -> CityConfig:
         watched_bodies=tuple(watched),
         event_fields=required_mapping(root, "event_fields"),
         item_fields=required_mapping(root, "item_fields"),
+        matter_fields=required_mapping(root, "matter_fields"),
         attachment_fields=required_mapping(root, "attachment_fields"),
         detail_parameters=detail_parameters,
         storage_root=Path(required_text(storage, "root")),
+        backfill=BackfillConfig(
+            event_page_size=required_integer(backfill, "event_page_size", minimum=1),
+            max_event_pages=required_integer(backfill, "max_event_pages", minimum=1),
+            matter_page_size=required_integer(backfill, "matter_page_size", minimum=1),
+            max_matter_pages=required_integer(backfill, "max_matter_pages", minimum=1),
+            max_detail_events=required_integer(backfill, "max_detail_events", minimum=1),
+            minimum_repeated_matters=required_integer(
+                backfill, "minimum_repeated_matters", minimum=1
+            ),
+            minimum_appearances_per_repeated_matter=required_integer(
+                backfill, "minimum_appearances_per_repeated_matter", minimum=2
+            ),
+        ),
     )
 
 

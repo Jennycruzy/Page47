@@ -10,6 +10,8 @@ The first supported city is Seattle, Washington, on the Granicus Legistar public
 
 The snapshotter is running on the Lightsail instance every 15 minutes. Its first clean capture selected five upcoming meetings and stored 30 attachment files plus five agendas. It keeps immutable bytes, SHA-256 hashes, capture times, source URLs, ETags when supplied, and explicit error records.
 
+The historical record is now backfilled for the nine selected Seattle bodies: 1,332 meetings, 24,047 appearances, 25,640 attachment records, and 81 matters with at least three appearances, covering 9 February 2015 through 11 September 2026. The normalized SQLite store is running on Lightsail at `runtime/records/seattle.sqlite3`; all present stored fields carry a source URL and capture time.
+
 The public console and notification service are not live yet. The AWS role currently cannot list Bedrock models or AgentCore runtimes, so the repository records no assumed model ID and does not enable model-dependent work.
 
 ## What Page 47 does not do
@@ -26,6 +28,7 @@ python3.12 -m venv .venv
 python -m pip install -e '.[dev]'
 python scripts/preflight.py --config config/preflight.json --output docs/preflight.json
 python scripts/snapshotter.py --config config/cities/seattle.yaml
+python scripts/backfill.py --config config/cities/seattle.yaml --database runtime/records/seattle.sqlite3 --evidence-root runtime/evidence/seattle
 pytest
 ```
 
@@ -36,6 +39,7 @@ The preflight command performs bounded live discovery and stores the public resp
 - [Preflight report](docs/preflight.json)
 - [Preflight audit](docs/audits/phase-0.md)
 - [Snapshotter audit](docs/audits/phase-1.md)
+- [Historical record audit](docs/audits/phase-2.md)
 - [Seattle configuration](config/cities/seattle.yaml)
 - [AWS discovery response cache](docs/evidence/preflight/index.json)
 
@@ -43,11 +47,11 @@ The preflight report identified eight clients that met the bounded structural ch
 
 ## Design still to build
 
-The next record work will backfill matters, appearances, and attachments from the verified fields. Consent placement will not be used until a Seattle agenda PDF is compared with its event-item values and the mapping is recorded with evidence. Later model work will use the five-node Strands investigation graph, a deterministic evidence rule, and Bedrock on the managed runtime after AWS access is granted.
+Consent placement will not be used until a Seattle agenda PDF is compared with its event-item values and the mapping is recorded with evidence. The public console, notification service, PostgreSQL deployment, historical norms, document reading, and later model work remain to be built. The model work will use the five-node Strands investigation graph, a deterministic evidence rule, and Bedrock on the managed runtime after AWS access is granted.
 
 ## Tests
 
-The current suite has 4 tests. It replays captured real Legistar responses offline, verifies duplicate suppression, verifies changed-copy detection, and checks the city configuration. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
+The current suite has 7 tests. It replays captured real Legistar responses offline, verifies duplicate suppression, verifies changed-copy detection, checks the city configuration, and exercises the record store with recorded matters and event items. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
 
 ## Limitations
 

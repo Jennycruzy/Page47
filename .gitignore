@@ -8,6 +8,7 @@ __pycache__/
 
 # Runtime evidence is append-only but can become large outside the committed preflight.
 docs/evidence/runtime/
+runtime/
 *.log
 
 # Never commit local credentials or environment files.

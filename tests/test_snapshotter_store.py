@@ -9,7 +9,6 @@ from page47.snapshotter.http import FetchResult
 from page47.snapshotter.runner import compare_document
 from page47.snapshotter.store import SnapshotStore
 
-
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 PREFLIGHT_INDEX = REPOSITORY_ROOT / "docs/evidence/preflight/index.json"
 

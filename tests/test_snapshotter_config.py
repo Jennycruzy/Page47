@@ -28,3 +28,7 @@ def test_seattle_configuration_uses_the_verified_bodies_and_detail_switches() ->
         "MinutesNote": 1,
         "EventItemAttachments": 1,
     }
+    assert config.backfill.max_event_pages == 100
+    assert config.backfill.max_matter_pages == 250
+    assert config.backfill.minimum_repeated_matters == 20
+    assert config.backfill.minimum_appearances_per_repeated_matter == 3
