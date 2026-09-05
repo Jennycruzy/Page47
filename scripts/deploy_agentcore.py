@@ -416,6 +416,7 @@ def deploy(
         session.client("bedrock-agentcore-control", region_name=settings.region),
     )
     account_id = _account_id(identity)
+    role_arn = _parameter_value(parameters, settings.execution_role_parameter)
     bucket = f"{settings.artifact_bucket_prefix}-{account_id}-{settings.region}"
     key = f"{settings.artifact_prefix}/{archive_path.name}"
     _ensure_bucket(storage, bucket, settings.region, account_id)
@@ -425,7 +426,6 @@ def deploy(
         Key=key,
         ExtraArgs={"ExpectedBucketOwner": account_id, "ContentType": "application/zip"},
     )
-    role_arn = _parameter_value(parameters, settings.execution_role_parameter)
     matches = [item for item in _runtime_summaries(control) if item.name == settings.runtime_name]
     if len(matches) > 1:
         raise RuntimeError(f"More than one AgentCore runtime is named {settings.runtime_name}")
