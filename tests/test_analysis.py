@@ -1,7 +1,18 @@
 from __future__ import annotations
 
+from page47.agents.schemas import (
+    AgentEvidence,
+    AgentObservation,
+    ArchivistReport,
+    BriefLine,
+    BriefWriterReport,
+    ProcessReport,
+    SkepticReport,
+    SubstanceReport,
+)
 from page47.analysis.case import AppearanceRecord, MatterCase, MatterRecord
 from page47.analysis.drift import EvidenceLink, PresentationConfig, compare_all_appearances
+from page47.analysis.investigation import _agent_reports, _brief_with_resolved_ids
 from page47.analysis.policy import (
     AgentReports,
     EvidencePolicyConfig,
@@ -104,3 +115,89 @@ def test_evidence_policy_is_counted_without_a_model_call() -> None:
     assert decision.state == "less_clear"
     assert len(decision.rejected) == 1
     assert "Page 47 does not determine why" in decision.human_text
+
+
+def test_agent_observation_ids_are_scoped_when_readers_reuse_an_id() -> None:
+    evidence = AgentEvidence(
+        label="record",
+        url="https://records.example/item",
+        captured_at="2026-09-05T00:00:00Z",
+    )
+    archivist = ArchivistReport(
+        observations=[
+            AgentObservation(
+                observation_id="same",
+                direction="less_clear",
+                statement="The record changed.",
+                evidence=[evidence],
+            )
+        ],
+        summary="record",
+    )
+    process = ProcessReport(
+        observations=[
+            AgentObservation(
+                observation_id="same",
+                direction="less_clear",
+                statement="The presentation changed.",
+                evidence=[evidence],
+            )
+        ],
+        summary="presentation",
+    )
+    reports, _aliases = _agent_reports(
+        archivist,
+        SubstanceReport(changes=[], no_substantive_change=True, summary="none"),
+        process,
+        SkepticReport(
+            accepted_observation_ids=["same"],
+            rejected_observations=[],
+            summary="ambiguous",
+        ),
+    )
+    assert reports.accepted_observation_ids == frozenset()
+    assert {item.observation_id for item in reports.rejections} == {
+        "archivist:same",
+        "process:same",
+    }
+
+
+def test_brief_lines_use_the_accepted_record_text_and_evidence() -> None:
+    record_evidence = EvidenceLink(
+        "record",
+        "https://records.example/item",
+        "2026-09-05T00:00:00Z",
+    )
+    observation = ReviewedObservation(
+        "process:item",
+        "less_clear",
+        "The item moved to the consent calendar.",
+        (record_evidence,),
+    )
+    model_brief = BriefWriterReport(
+        heading="Invented heading",
+        lines=[
+            BriefLine(
+                observation_id="raw-item",
+                text="An unsupported statement.",
+                evidence=[
+                    AgentEvidence(
+                        label="invented",
+                        url="https://example.invalid/fake",
+                        captured_at="2023-01-01",
+                    )
+                ],
+            )
+        ],
+        questions=[],
+        limitation="unsupported",
+    )
+    safe = _brief_with_resolved_ids(
+        model_brief,
+        frozenset({"process:item"}),
+        {"process:item": observation},
+    )
+    assert safe.heading == "Worth a look"
+    assert safe.lines[0].text == observation.text
+    assert safe.lines[0].evidence[0].url == record_evidence.url
+    assert safe.limitation == "Page 47 does not determine why these changes were made."

@@ -25,6 +25,7 @@ class ModelSettings:
     document: ModelRoute
     agents: tuple[ModelRoute, ...]
     temperature: float
+    streaming: bool
     triage_max_output_tokens: int
     document_max_output_tokens: int
     agent_max_output_tokens: int
@@ -84,6 +85,13 @@ def _number(value: JSONObject, key: str, context: str, minimum: float, maximum: 
     return number
 
 
+def _boolean(value: JSONObject, key: str, context: str) -> bool:
+    item = value.get(key)
+    if not isinstance(item, bool):
+        raise ValueError(f"{context}.{key} must be a boolean")
+    return item
+
+
 def _route(value: JSONObject, key: str, context: str) -> ModelRoute:
     return ModelRoute(name=key, model_id=_text(value, "model_id", context))
 
@@ -110,6 +118,7 @@ def load_model_settings(path: Path) -> ModelSettings:
         document=document,
         agents=tuple(agents),
         temperature=_number(inference, "temperature", "inference", 0.0, 1.0),
+        streaming=_boolean(inference, "streaming", "inference"),
         triage_max_output_tokens=_integer(
             inference, "triage_max_output_tokens", "inference", 1
         ),

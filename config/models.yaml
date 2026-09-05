@@ -11,12 +11,17 @@ document:
 agents:
   archivist: amazon.nova-micro-v1:0
   substance: amazon.nova-lite-v1:0
-  process: amazon.nova-micro-v1:0
-  skeptic: amazon.nova-micro-v1:0
-  brief_writer: amazon.nova-micro-v1:0
+  # Downstream nodes receive predecessor results. Live checks on 2026-09-05
+  # showed Nova Lite handles that input reliably with Converse tool calls.
+  process: amazon.nova-lite-v1:0
+  skeptic: amazon.nova-lite-v1:0
+  brief_writer: amazon.nova-lite-v1:0
 
 inference:
   temperature: 0.0
+  # Nova tool calls are run without streaming after a live tool-use check on
+  # 2026-09-05; this avoids invalid ConverseStream tool sequences.
+  streaming: false
   triage_max_output_tokens: 256
   document_max_output_tokens: 1200
   agent_max_output_tokens: 1000

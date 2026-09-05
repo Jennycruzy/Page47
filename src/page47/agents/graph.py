@@ -96,6 +96,7 @@ def _make_agent(
         region_name=settings.region,
         temperature=settings.temperature,
         max_tokens=settings.agent_max_output_tokens,
+        streaming=settings.streaming,
     )
     prompt = _text(prompts, name, "prompts")
     return Agent(

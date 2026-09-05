@@ -17,6 +17,7 @@ from page47.agents.schemas import (
     AgentEvidence,
     AgentObservation,
     ArchivistReport,
+    BriefLine,
     BriefWriterReport,
     ProcessReport,
     SkepticReport,
@@ -97,27 +98,170 @@ def _observation(item: AgentObservation) -> ReviewedObservation:
     )
 
 
+def _namespaced_observation(role: str, item: AgentObservation) -> ReviewedObservation:
+    observation = _observation(item)
+    return ReviewedObservation(
+        observation_id=f"{role}:{observation.observation_id}",
+        direction=observation.direction,
+        text=observation.text,
+        evidence=observation.evidence,
+    )
+
+
 def _substance_observations(report: SubstanceReport) -> tuple[ReviewedObservation, ...]:
     output: list[ReviewedObservation] = []
     for change in report.changes:
         if change.before is not None and change.after is not None:
             values = f"{change.before} to {change.after}"
+            statement = f"The document records {change.subject}: {values}."
         elif change.value is not None:
-            values = change.value
+            statement = f"The document states: {change.excerpt}"
         else:
             raise ValueError(f"Substance observation {change.observation_id} had no value")
-        statement = change.statement
-        if not statement.strip():
-            statement = f"The document states {change.subject}: {values}."
         output.append(
             ReviewedObservation(
-                observation_id=change.observation_id,
+                observation_id=f"substance:{change.observation_id}",
                 direction="neutral",
                 text=statement,
                 evidence=(_evidence(change.evidence),),
             )
         )
     return tuple(output)
+
+
+def _agent_observations(
+    role: str,
+    observations: tuple[AgentObservation, ...],
+) -> tuple[tuple[ReviewedObservation, ...], dict[str, tuple[str, ...]]]:
+    output = tuple(_namespaced_observation(role, item) for item in observations)
+    aliases: dict[str, list[str]] = {}
+    for item in output:
+        raw_id = item.observation_id.removeprefix(f"{role}:")
+        aliases.setdefault(raw_id, []).append(item.observation_id)
+    return output, {key: tuple(value) for key, value in aliases.items()}
+
+
+def _merge_aliases(
+    groups: tuple[dict[str, tuple[str, ...]], ...],
+) -> dict[str, tuple[str, ...]]:
+    merged: dict[str, list[str]] = {}
+    for group in groups:
+        for raw_id, namespaced_ids in group.items():
+            merged.setdefault(raw_id, []).extend(namespaced_ids)
+    return {key: tuple(value) for key, value in merged.items()}
+
+
+def _resolved_ids(
+    raw_ids: list[str],
+    aliases: dict[str, tuple[str, ...]],
+    context: str,
+) -> tuple[frozenset[str], tuple[ReviewRejection, ...]]:
+    resolved: set[str] = set()
+    ambiguous: list[ReviewRejection] = []
+    for raw_id in raw_ids:
+        candidates = aliases.get(raw_id)
+        if candidates is None:
+            raise ValueError(f"Skeptic {context} unknown observation: {raw_id}")
+        if len(candidates) == 1:
+            resolved.add(candidates[0])
+            continue
+        for candidate in candidates:
+            ambiguous.append(
+                ReviewRejection(
+                    observation_id=candidate,
+                    reason=(
+                        f"The review record used {raw_id}, which was shared by multiple readers; "
+                        "the point was not counted."
+                    ),
+                )
+            )
+    return frozenset(resolved), tuple(ambiguous)
+
+
+def _agent_reports(
+    archivist: ArchivistReport,
+    substance: SubstanceReport,
+    process: ProcessReport,
+    skeptic: SkepticReport,
+) -> tuple[AgentReports, dict[str, tuple[str, ...]]]:
+    archivist_observations, archivist_aliases = _agent_observations(
+        "archivist", tuple(archivist.observations)
+    )
+    substance_observations = _substance_observations(substance)
+    substance_aliases: dict[str, tuple[str, ...]] = {}
+    for item in substance.changes:
+        substance_aliases.setdefault(item.observation_id, ())
+        substance_aliases[item.observation_id] += (f"substance:{item.observation_id}",)
+    process_observations, process_aliases = _agent_observations(
+        "process", tuple(process.observations)
+    )
+    aliases = _merge_aliases((archivist_aliases, substance_aliases, process_aliases))
+    observations = archivist_observations + substance_observations + process_observations
+    by_id: dict[str, ReviewedObservation] = {}
+    for observation in observations:
+        if observation.observation_id in by_id:
+            raise ValueError(f"Duplicate namespaced observation ID {observation.observation_id}")
+        by_id[observation.observation_id] = observation
+    accepted, ambiguous_accepts = _resolved_ids(
+        skeptic.accepted_observation_ids, aliases, "accepted"
+    )
+    rejected: dict[str, ReviewRejection] = {
+        ambiguous.observation_id: ReviewRejection(
+            observation_id=ambiguous.observation_id,
+            reason=ambiguous.reason,
+        )
+        for ambiguous in ambiguous_accepts
+    }
+    for rejected_observation in skeptic.rejected_observations:
+        candidates = aliases.get(rejected_observation.observation_id)
+        if candidates is None:
+            raise ValueError(
+                "Skeptic rejected unknown observation: "
+                f"{rejected_observation.observation_id}"
+            )
+        for candidate in candidates:
+            rejected[candidate] = ReviewRejection(
+                observation_id=candidate,
+                reason=rejected_observation.reason,
+            )
+    return (
+        AgentReports(
+            observations=observations,
+            accepted_observation_ids=accepted,
+            rejections=tuple(rejected.values()),
+        ),
+        aliases,
+    )
+
+
+def _brief_with_resolved_ids(
+    brief: BriefWriterReport,
+    accepted_ids: frozenset[str],
+    observations: dict[str, ReviewedObservation],
+) -> BriefWriterReport:
+    lines = [
+        BriefLine(
+            observation_id=observation_id,
+            text=observations[observation_id].text,
+            evidence=[
+                AgentEvidence(
+                    label=link.label,
+                    url=link.url,
+                    captured_at=link.captured_at,
+                    page_number=link.page_number,
+                )
+                for link in observations[observation_id].evidence
+            ],
+        )
+        for observation_id in observations
+        if observation_id in accepted_ids
+    ]
+    return BriefWriterReport(
+        heading="Worth a look",
+        lines=lines,
+        questions=brief.questions,
+        limitation="Page 47 does not determine why these changes were made.",
+    )
 
 
 def _node_report[ReportModel: BaseModel](
@@ -310,38 +454,24 @@ def investigate_matter(
         process = _node_report(graph, "process", ProcessReport)
         skeptic = _node_report(graph, "skeptic", SkepticReport)
         brief = _node_report(graph, "brief_writer", BriefWriterReport)
-        observations = (
-            tuple(_observation(item) for item in archivist.observations)
-            + _substance_observations(substance)
-            + tuple(_observation(item) for item in process.observations)
-        )
+        reports, _aliases = _agent_reports(archivist, substance, process, skeptic)
         structural = _structural_observation(
             drift.comparisons[-1] if drift.comparisons else None
         )
+        observations = reports.observations + structural
         by_id: dict[str, ReviewedObservation] = {}
-        for observation in observations + structural:
+        for observation in observations:
             if observation.observation_id in by_id:
                 raise ValueError(f"Duplicate observation ID {observation.observation_id}")
             by_id[observation.observation_id] = observation
-        accepted = frozenset(skeptic.accepted_observation_ids)
-        unknown_accepted = accepted - by_id.keys()
-        if unknown_accepted:
-            raise ValueError(f"Skeptic accepted unknown observations: {sorted(unknown_accepted)}")
-        rejections = tuple(
-            ReviewRejection(item.observation_id, item.reason)
-            for item in skeptic.rejected_observations
+        report = AgentReports(
+            observations=observations,
+            accepted_observation_ids=reports.accepted_observation_ids,
+            rejections=reports.rejections,
         )
-        unknown_rejected = {item.observation_id for item in rejections} - by_id.keys()
-        if unknown_rejected:
-            raise ValueError(f"Skeptic rejected unknown observations: {sorted(unknown_rejected)}")
-        report = AgentReports(observations, accepted, rejections)
         decision = apply_evidence_policy(report, policy_config)
-        accepted_ids = {item.observation_id for item in decision.accepted}
-        for line in brief.lines:
-            if line.observation_id not in accepted_ids:
-                raise ValueError(
-                    f"Brief writer cited observation not accepted by review: {line.observation_id}"
-                )
+        accepted_ids = frozenset(item.observation_id for item in decision.accepted)
+        brief = _brief_with_resolved_ids(brief, accepted_ids, by_id)
         outcome = InvestigationOutcome(
             run_id=run_id,
             case=case,
