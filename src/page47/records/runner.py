@@ -8,6 +8,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from pathlib import Path
 
+from page47.records.pdf_consent import AgendaPage, classify_item, extract_pages
 from page47.records.store import (
     AppearanceObservation,
     AttachmentObservation,
@@ -100,13 +101,13 @@ def required_objects(
     return as_objects(value, f"{context}.{source_key}")
 
 
-def source_for_capture(capture: JSONObject) -> SourceReference:
+def source_for_capture(capture: JSONObject, kind: str = "api") -> SourceReference:
     target = text_value(capture, "target")
     source_url = text_value(capture, "source_url")
     captured_at = text_value(capture, "captured_at")
     if target is None or source_url is None or captured_at is None:
         raise ValueError("A stored capture lacked its target, URL, or capture time")
-    return SourceReference(kind="api", url=source_url, captured_at=captured_at)
+    return SourceReference(kind=kind, url=source_url, captured_at=captured_at)
 
 
 def response_hash(capture: JSONObject) -> str | None:
@@ -422,6 +423,9 @@ def appearance_observation(
         body_name=body_name_value,
         title_as_presented=title_as_presented,
         consent_value=consent_value,
+        pdf_placement=None,
+        pdf_evidence_pages_json=None,
+        pdf_placement_reason=None,
         agenda_sequence=agenda_sequence,
         agenda_number=agenda_number,
         action_taken=action_taken,
@@ -495,6 +499,32 @@ def content_capture(
     if status != HTTP_OK or content_hash is None:
         return None, None
     return content_hash, source_for_capture(capture)
+
+
+def agenda_capture(
+    snapshot_store: SnapshotStore,
+    event_id: int,
+    agenda_url: str | None,
+) -> tuple[tuple[AgendaPage, ...], SourceReference] | None:
+    """Read an agenda only when its captured bytes are available locally."""
+
+    candidates = [snapshot_store.latest(f"agenda:{event_id}")]
+    if agenda_url is not None:
+        candidates.extend(
+            record
+            for record in snapshot_store.records
+            if record.get("kind") == "agenda_pdf" and record.get("source_url") == agenda_url
+        )
+    capture = next((record for record in candidates if record is not None), None)
+    if capture is None:
+        return None
+    try:
+        pages = extract_pages(snapshot_store.body(capture))
+    except (OSError, RuntimeError, ValueError) as error:
+        raise ValueError(
+            f"Could not read captured agenda PDF: {type(error).__name__}: {error}"
+        ) from error
+    return pages, source_for_capture(capture, "snapshot")
 
 
 def read_matter_pages(
@@ -722,6 +752,8 @@ def read_event_detail(
             event_source,
         )
         items = required_objects(detail, config.event_fields, "items", f"event detail {event_id}")
+        agenda_file = optional_text(detail, config.event_fields, "agenda_file", "event detail")
+        agenda = agenda_capture(snapshot_store, event_id, agenda_file)
         for index, item in enumerate(items):
             try:
                 appearance = appearance_observation(
@@ -747,6 +779,9 @@ def read_event_detail(
                     body_name=appearance.body_name,
                     title_as_presented=appearance.title_as_presented,
                     consent_value=appearance.consent_value,
+                    pdf_placement=appearance.pdf_placement,
+                    pdf_evidence_pages_json=appearance.pdf_evidence_pages_json,
+                    pdf_placement_reason=appearance.pdf_placement_reason,
                     agenda_sequence=appearance.agenda_sequence,
                     agenda_number=appearance.agenda_number,
                     action_taken=appearance.action_taken,
@@ -760,6 +795,20 @@ def read_event_detail(
                     provenance=appearance_provenance,
                 )
                 record_store.upsert_appearance(appearance)
+                if (
+                    agenda is not None
+                    and appearance.matter_id is not None
+                    and appearance.title_as_presented is not None
+                ):
+                    agenda_pages, agenda_source = agenda
+                    placement = classify_item(agenda_pages, appearance.title_as_presented)
+                    record_store.set_pdf_placement(
+                        appearance.event_item_id,
+                        placement.placement,
+                        placement.evidence_pages,
+                        placement.reason,
+                        agenda_source,
+                    )
                 raw_attachments = item.get(field_name(config.item_fields, "attachments"))
                 if raw_attachments is None:
                     raise ValueError("event item attachments were absent")

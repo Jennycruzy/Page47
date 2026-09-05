@@ -80,6 +80,16 @@ def classify_item(pages: tuple[AgendaPage, ...], title: str) -> PlacementResult:
     document = " ".join(normalised_pages)
     consent_start = document.find("approval of consent calendar")
     if consent_start < 0:
+        candidate = _normalise(title)
+        title_start = document.find(candidate)
+        if title_start < 0 and candidate:
+            title_start = document.find(candidate[:120])
+        if title_start >= 0:
+            return PlacementResult(
+                "regular",
+                (_page_for_position(pages, title_start),),
+                "The agenda has no consent section and the item title appears in its text.",
+            )
         return PlacementResult(
             "cannot_determine", (), "The published agenda has no consent heading."
         )

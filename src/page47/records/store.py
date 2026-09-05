@@ -56,6 +56,9 @@ CREATE TABLE IF NOT EXISTS appearances (
     body_name TEXT,
     title_as_presented TEXT,
     consent_value INTEGER,
+    pdf_placement TEXT,
+    pdf_evidence_pages_json TEXT,
+    pdf_placement_reason TEXT,
     agenda_sequence INTEGER,
     agenda_number TEXT,
     action_taken TEXT,
@@ -200,6 +203,9 @@ class AppearanceObservation:
     body_name: str | None
     title_as_presented: str | None
     consent_value: int | None
+    pdf_placement: str | None
+    pdf_evidence_pages_json: str | None
+    pdf_placement_reason: str | None
     agenda_sequence: int | None
     agenda_number: str | None
     action_taken: str | None
@@ -211,6 +217,28 @@ class AppearanceObservation:
     item_last_modified_utc: str | None
     source: SourceReference
     provenance: JSONObject
+
+
+@dataclass(frozen=True, slots=True)
+class PlacementHistoryItem:
+    event_item_id: int
+    event_date: str | None
+    title_as_presented: str | None
+    placement: str | None
+    evidence_pages: tuple[int, ...]
+    source: SourceReference | None
+
+
+@dataclass(frozen=True, slots=True)
+class EventAppearanceTitle:
+    event_item_id: int
+    title_as_presented: str
+
+
+@dataclass(frozen=True, slots=True)
+class EventAgenda:
+    event_id: int
+    agenda_file: str
 
 
 @dataclass(frozen=True, slots=True)
@@ -288,6 +316,17 @@ class RecordStore:
         self.connection.row_factory = sqlite3.Row
         self.connection.execute("PRAGMA foreign_keys = ON")
         self.connection.executescript(SCHEMA)
+        columns = {
+            row[1]
+            for row in self.connection.execute("PRAGMA table_info(appearances)").fetchall()
+        }
+        for name, definition in (
+            ("pdf_placement", "TEXT"),
+            ("pdf_evidence_pages_json", "TEXT"),
+            ("pdf_placement_reason", "TEXT"),
+        ):
+            if name not in columns:
+                self.connection.execute(f"ALTER TABLE appearances ADD COLUMN {name} {definition}")
         self.connection.commit()
 
     def close(self) -> None:
@@ -398,6 +437,9 @@ class RecordStore:
             "body_name": observation.body_name,
             "title_as_presented": observation.title_as_presented,
             "consent_value": observation.consent_value,
+            "pdf_placement": observation.pdf_placement,
+            "pdf_evidence_pages_json": observation.pdf_evidence_pages_json,
+            "pdf_placement_reason": observation.pdf_placement_reason,
             "agenda_sequence": observation.agenda_sequence,
             "agenda_number": observation.agenda_number,
             "action_taken": observation.action_taken,
@@ -417,6 +459,43 @@ class RecordStore:
             provenance=observation.provenance,
         )
 
+    def set_pdf_placement(
+        self,
+        event_item_id: int,
+        placement: str,
+        evidence_pages: tuple[int, ...],
+        reason: str,
+        source: SourceReference,
+    ) -> None:
+        if placement not in {"consent", "regular", "cannot_determine"}:
+            raise ValueError(f"Unsupported PDF placement {placement}")
+        row = self.connection.execute(
+            "SELECT provenance_json FROM appearances WHERE event_item_id = ?",
+            (event_item_id,),
+        ).fetchone()
+        if row is None:
+            raise ValueError(f"Cannot add PDF placement to missing appearance {event_item_id}")
+        provenance = parse_provenance(row[0], "appearances.provenance")
+        placement_source = source.as_json()
+        provenance["pdf_placement"] = placement_source
+        provenance["pdf_evidence_pages_json"] = placement_source
+        provenance["pdf_placement_reason"] = placement_source
+        self.connection.execute(
+            """
+            UPDATE appearances
+            SET pdf_placement = ?, pdf_evidence_pages_json = ?,
+                pdf_placement_reason = ?, provenance_json = ?
+            WHERE event_item_id = ?
+            """,
+            (
+                placement,
+                stable_json(list(evidence_pages)),
+                reason,
+                provenance_json(provenance),
+                event_item_id,
+            ),
+        )
+
     def upsert_attachment(
         self,
         observation: AttachmentObservation,
@@ -434,7 +513,7 @@ class RecordStore:
                 )
             if existing_first < first_observed:
                 first_observed = existing_first
-        preserve_provenance = frozenset()
+        preserve_provenance: frozenset[str] = frozenset()
         if existing is not None:
             existing_first = existing[0]
             if isinstance(existing_first, str) and existing_first <= first_observed:
@@ -644,6 +723,109 @@ class RecordStore:
             raise ValueError("Could not count repeated matters")
         return row[0]
 
+    def placement_history(self, matter_id: int) -> tuple[PlacementHistoryItem, ...]:
+        rows = self.connection.execute(
+            """
+            SELECT event_item_id, event_date, title_as_presented, pdf_placement,
+                   pdf_evidence_pages_json, provenance_json
+            FROM appearances
+            WHERE matter_id = ?
+            ORDER BY event_date, event_item_id
+            """,
+            (matter_id,),
+        ).fetchall()
+        history: list[PlacementHistoryItem] = []
+        for row in rows:
+            item_id = row[0]
+            if not isinstance(item_id, int):
+                raise ValueError("Stored appearance had an invalid item ID")
+            event_date = row[1] if isinstance(row[1], str) else None
+            title = row[2] if isinstance(row[2], str) else None
+            placement = row[3] if isinstance(row[3], str) else None
+            pages = self._page_numbers(row[4])
+            provenance = parse_provenance(row[5], "appearances.provenance")
+            history.append(
+                PlacementHistoryItem(
+                    event_item_id=item_id,
+                    event_date=event_date,
+                    title_as_presented=title,
+                    placement=placement,
+                    evidence_pages=pages,
+                    source=self._placement_source(provenance),
+                )
+            )
+        return tuple(history)
+
+    def matter_appearance_titles(self, event_id: int) -> tuple[EventAppearanceTitle, ...]:
+        rows = self.connection.execute(
+            """
+            SELECT event_item_id, title_as_presented
+            FROM appearances
+            WHERE event_id = ? AND matter_id IS NOT NULL AND title_as_presented IS NOT NULL
+            ORDER BY event_item_id
+            """,
+            (event_id,),
+        ).fetchall()
+        output: list[EventAppearanceTitle] = []
+        for row in rows:
+            item_id = row[0]
+            title = row[1]
+            if not isinstance(item_id, int) or not isinstance(title, str) or not title:
+                raise ValueError("Stored matter appearance title was invalid")
+            output.append(EventAppearanceTitle(item_id, title))
+        return tuple(output)
+
+    def event_agendas(self) -> tuple[EventAgenda, ...]:
+        rows = self.connection.execute(
+            "SELECT event_id, agenda_file FROM events "
+            "WHERE agenda_file IS NOT NULL ORDER BY event_id"
+        ).fetchall()
+        output: list[EventAgenda] = []
+        for row in rows:
+            event_id = row[0]
+            agenda_file = row[1]
+            if not isinstance(event_id, int) or not isinstance(agenda_file, str) or not agenda_file:
+                raise ValueError("Stored event agenda was invalid")
+            output.append(EventAgenda(event_id, agenda_file))
+        return tuple(output)
+
+    @staticmethod
+    def _page_numbers(value: object) -> tuple[int, ...]:
+        if value is None:
+            return ()
+        if not isinstance(value, str):
+            raise ValueError("Stored PDF evidence pages were not text")
+        try:
+            decoded: object = json.loads(value)
+        except json.JSONDecodeError as error:
+            raise ValueError("Stored PDF evidence pages were not valid JSON") from error
+        if not isinstance(decoded, list):
+            raise ValueError("Stored PDF evidence pages were not a list")
+        pages: list[int] = []
+        for page in decoded:
+            if isinstance(page, bool) or not isinstance(page, int) or page < 1:
+                raise ValueError("Stored PDF evidence pages contained an invalid page number")
+            pages.append(page)
+        return tuple(pages)
+
+    @staticmethod
+    def _placement_source(provenance: JSONObject) -> SourceReference | None:
+        raw_source = provenance.get("pdf_placement")
+        if raw_source is None:
+            return None
+        if not isinstance(raw_source, dict):
+            raise ValueError("Stored PDF placement source was not an object")
+        kind = raw_source.get("kind")
+        url = raw_source.get("url")
+        captured_at = raw_source.get("captured_at")
+        if not isinstance(kind, str) or not kind:
+            raise ValueError("Stored PDF placement source was incomplete")
+        if not isinstance(url, str) or not url:
+            raise ValueError("Stored PDF placement source was incomplete")
+        if not isinstance(captured_at, str) or not captured_at:
+            raise ValueError("Stored PDF placement source was incomplete")
+        return SourceReference(kind=kind, url=url, captured_at=captured_at)
+
     def date_bounds(self) -> tuple[str | None, str | None]:
         row = self.connection.execute(
             "SELECT MIN(event_date), MAX(event_date) FROM events WHERE event_date IS NOT NULL"
@@ -700,6 +882,8 @@ class RecordStore:
                     "body_name",
                     "title_as_presented",
                     "consent_value",
+                    "pdf_placement",
+                    "pdf_evidence_pages_json",
                     "agenda_sequence",
                     "agenda_number",
                     "action_taken",

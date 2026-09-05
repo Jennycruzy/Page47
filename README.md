@@ -52,8 +52,8 @@ Consent placement will not be used until a Seattle agenda PDF is compared with i
 
 ## Tests
 
-The current suite has 7 tests. It replays captured real Legistar responses offline, verifies duplicate suppression, verifies changed-copy detection, checks the city configuration, and exercises the record store with recorded matters and event items. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
+The current suite has 11 tests. It replays captured real Legistar responses offline, verifies duplicate suppression, verifies changed-copy detection, checks the city configuration, reads published agenda text, and exercises the record store with recorded matters and event items. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
 
 ## Limitations
 
-The public API only exposes records marked public and viewable on the city site. Its last-published timestamp can overwrite earlier publication times; a PDF can be replaced at the same URL; intermediate modifications and deleted attachments leave no historical record. The running snapshotter begins preserving those forward-looking observations now, but it cannot reconstruct what was lost before it started. Address matching will be limited to street, neighbourhood, and council-district evidence and will say when an area could not be confirmed.
+The public API only exposes records marked public and viewable on the city site. Its last-published timestamp can overwrite earlier publication times; a PDF can be replaced at the same URL; intermediate modifications and deleted attachments leave no historical record. The running snapshotter begins preserving those forward-looking observations now, but it cannot reconstruct what was lost before it started. Seattle's API consent integer is not used: Page 47 reads a captured agenda PDF, records the page supporting a matched title, and says it cannot determine placement when the PDF or match is unavailable. Address matching will be limited to street, neighbourhood, and council-district evidence and will say when an area could not be confirmed.

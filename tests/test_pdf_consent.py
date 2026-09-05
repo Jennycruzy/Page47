@@ -29,3 +29,21 @@ def test_missing_title_is_not_labeled() -> None:
     result = classify_item(pages, "An item that is not in this agenda")
     assert result.placement == "cannot_determine"
     assert result.evidence_pages == ()
+
+
+def test_item_in_agenda_without_consent_section_is_regular() -> None:
+    pages = (
+        AgendaPage(
+            1,
+            "Transportation, Waterfront, and Seattle Center Committee\n"
+            "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within "
+            "Block 2, Wegener's Addition to the City of Seattle.",
+        ),
+    )
+    result = classify_item(
+        pages,
+        "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within "
+        "Block 2, Wegener's Addition to the City of Seattle.",
+    )
+    assert result.placement == "regular"
+    assert result.evidence_pages == (1,)
