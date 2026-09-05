@@ -16,9 +16,9 @@ Seattle consent placement is read from captured agenda PDFs rather than the city
 
 Captured Seattle PDF attachments are read into page-linked references for configured dates, dollar amounts, distances, and parcel references. Twenty Seattle attachments have completed the document-specific reading run; eleven returned structured page readings and nine recorded explicit failures. The reader preserves the document URL, capture time, page, character location, and excerpt. It says when no configured reference was found and when a PDF cannot be read. The verified Bedrock routes are `amazon.nova-micro-v1:0` for text work and `amazon.nova-lite-v1:0` for page images in `eu-west-2`.
 
-The five-node Strands investigation graph and its AgentCore transport are implemented and pass strict type checking. No AgentCore runtime has been created yet; the live control call returned an empty runtime list on 5 September 2026. The console, watch setup, Census address lookup, SES delivery code, and delivery ledger are implemented but are not yet public.
+The five-node Strands investigation graph and its AgentCore transport are implemented and pass strict type checking. A real Seattle matter has been reviewed locally and saved with primary-record links; failed runs remain visible in the record store. The repeatable deployment command builds a 49.8 MB Linux arm64 ZIP that expands to 137 MB and contains the required root `app.py`. No AgentCore runtime has been created yet: the live deployment check stopped because the VPS identity cannot read `/page47/agentcore/execution-role-arn` from SSM.
 
-Live URL: not deployed yet.
+The resident console is supervised by systemd on Lightsail and is public over the existing TLS certificate at [https://xcover.online/page47/](https://xcover.online/page47/). It reads the live Seattle and Denver stores, shows the current ledger, supports watch setup, and opens captured documents. The deployment uses a separate `/page47` path so the other application on the domain remains untouched.
 
 ## What Page 47 does not do
 
@@ -54,11 +54,11 @@ The preflight report identified eight clients that met the bounded structural ch
 
 ## Next work
 
-The remaining work is to run the graph on a real stored matter, create the managed AgentCore runtime, connect the Lightsail API to it, configure SES and SSM, publish the console over HTTPS, add CloudWatch logs and a missed-run alarm, export one trace, complete Denver's record depth, and run the hand-labelled comparison. The comparison results will remain unpublished until they have been reviewed.
+The remaining work is to grant the deployment identity read/write access to the two AgentCore SSM parameters and `iam:PassRole` for a least-privilege execution role, create the managed runtime, and switch the Lightsail service to it. SES still needs a verified sender and its SSM values. CloudWatch logs, a missed-run alarm, and a viewable OpenTelemetry trace still need configuration. Denver needs deeper record and document coverage. Finally, the hand-labelled comparison must run over the same matters for keyword alerts, search, latest-document reading, and Page 47; its results and every miss remain unpublished until review.
 
 ## Tests
 
-The current suite has 16 tests. It replays captured real Legistar responses offline, verifies duplicate suppression, verifies changed-copy detection, checks the city configuration, reads published agenda text, exercises the record store with recorded matters and event items, and checks unique delivery records. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes Seattle PDF placement. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
+The current suite has 20 tests. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request, checks public-path links, and checks unique delivery records. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes Seattle PDF placement. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
 
 ## Limitations
 
