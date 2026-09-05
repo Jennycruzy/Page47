@@ -14,6 +14,8 @@ The historical record is now backfilled for the nine selected Seattle bodies: 1,
 
 Seattle consent placement is read from captured agenda PDFs rather than the city's unusable API integer. The public console and notification service are not live yet. The AWS role currently cannot list Bedrock models or AgentCore runtimes, so the repository records no assumed model ID and does not enable model-dependent work.
 
+Captured Seattle PDF attachments are read into page-linked references for configured dates, dollar amounts, distances, and parcel references. The reader preserves the document URL, capture time, page, character location, and excerpt. It says when no configured reference was found and when a PDF cannot be read.
+
 ## What Page 47 does not do
 
 Page 47 reports public records. It does not determine why a change was made, claim that anyone intended to hide information, or make a legal finding. A record that was never published is outside what this tool can see.
@@ -52,7 +54,7 @@ The public console, notification service, PostgreSQL deployment, historical norm
 
 ## Tests
 
-The current suite has 12 tests. It replays captured real Legistar responses offline, verifies duplicate suppression, verifies changed-copy detection, checks the city configuration, reads published agenda text, and exercises the record store with recorded matters and event items. Lightsail applies newly captured event details to the record store before refreshing Seattle PDF placement. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
+The current suite has 13 tests. It replays captured real Legistar responses offline, verifies duplicate suppression, verifies changed-copy detection, checks the city configuration, reads published agenda text, and exercises the record store with recorded matters and event items. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes Seattle PDF placement. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
 
 ## Limitations
 

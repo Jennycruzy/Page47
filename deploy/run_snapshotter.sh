@@ -19,6 +19,10 @@ if ! /usr/bin/flock -n /tmp/page47-snapshotter.lock sh -c '
     --config "$1/config/cities/denver.yaml" \
     --database "$1/runtime/records/denver.sqlite3" \
     --evidence-root "$1/runtime/evidence/denver"
+  "$1/.venv/bin/python" "$1/scripts/read_captured_attachments.py" \
+    --database "$1/runtime/records/seattle.sqlite3" \
+    --evidence-root "$1/runtime/evidence/seattle" \
+    --substance-config "$1/config/substance.yaml"
   "$1/.venv/bin/python" "$1/scripts/apply_pdf_placements.py" \
     --config "$1/config/cities/seattle.yaml" \
     --database "$1/runtime/records/seattle.sqlite3" \

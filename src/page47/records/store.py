@@ -103,6 +103,18 @@ CREATE TABLE IF NOT EXISTS appearance_attachments (
     PRIMARY KEY (event_item_id, attachment_id)
 );
 
+CREATE TABLE IF NOT EXISTS attachment_readings (
+    attachment_id INTEGER PRIMARY KEY,
+    content_hash TEXT NOT NULL,
+    status TEXT NOT NULL,
+    page_count INTEGER NOT NULL,
+    references_json TEXT NOT NULL,
+    reason TEXT NOT NULL,
+    source_url TEXT NOT NULL,
+    observed_at TEXT NOT NULL,
+    provenance_json TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS snapshots (
     capture_key TEXT PRIMARY KEY,
     target TEXT NOT NULL,
@@ -141,6 +153,8 @@ CREATE INDEX IF NOT EXISTS appearances_by_event
     ON appearances (event_id);
 CREATE INDEX IF NOT EXISTS attachments_by_matter
     ON attachments (matter_id);
+CREATE INDEX IF NOT EXISTS attachment_readings_by_content
+    ON attachment_readings (content_hash);
 """
 
 
@@ -255,6 +269,17 @@ class AttachmentObservation:
     source: SourceReference
     provenance: JSONObject
     content_source: SourceReference | None
+
+
+@dataclass(frozen=True, slots=True)
+class AttachmentReadingObservation:
+    attachment_id: int
+    content_hash: str
+    status: str
+    page_count: int
+    references: JSONObject
+    reason: str
+    source: SourceReference
 
 
 @dataclass(frozen=True, slots=True)
@@ -551,6 +576,48 @@ class RecordStore:
                 {"content_hash": observation.content_source.as_json()},
             )
 
+    def upsert_attachment_reading(self, observation: AttachmentReadingObservation) -> None:
+        if observation.status not in {"candidate", "absent", "unreadable"}:
+            raise ValueError(f"Unsupported attachment reading status {observation.status}")
+        if observation.page_count < 0:
+            raise ValueError("Attachment reading page count must not be negative")
+        values: dict[str, SQLValue] = {
+            "content_hash": observation.content_hash,
+            "status": observation.status,
+            "page_count": observation.page_count,
+            "references_json": provenance_json(observation.references),
+            "reason": observation.reason,
+        }
+        provenance: JSONObject = {
+            "content_hash": observation.source.as_json(),
+            "status": observation.source.as_json(),
+            "page_count": observation.source.as_json(),
+            "references_json": observation.source.as_json(),
+            "reason": observation.source.as_json(),
+        }
+        self._merge_row(
+            table="attachment_readings",
+            key_column="attachment_id",
+            key_value=observation.attachment_id,
+            values=values,
+            source=observation.source,
+            provenance=provenance,
+        )
+
+    def attachment_reading_hash(self, attachment_id: int) -> str | None:
+        row = self.connection.execute(
+            "SELECT content_hash FROM attachment_readings WHERE attachment_id = ?",
+            (attachment_id,),
+        ).fetchone()
+        if row is None:
+            return None
+        content_hash = row[0]
+        if not isinstance(content_hash, str) or not content_hash:
+            raise ValueError(
+                f"Stored attachment reading {attachment_id} has an invalid content hash"
+            )
+        return content_hash
+
     def upsert_appearance_attachment(
         self,
         event_item_id: int,
@@ -701,6 +768,7 @@ class RecordStore:
             ("matters", "matters"),
             ("appearances", "appearances"),
             ("attachments", "attachments"),
+            ("attachment_readings", "attachment_readings"),
             ("snapshots", "snapshots"),
             ("parse_failures", "parse_failures"),
         ):
@@ -913,6 +981,18 @@ class RecordStore:
                     "last_modified_utc",
                     "content_hash",
                     "supporting_document",
+                ),
+                "attachment_id",
+            ),
+            "attachment_readings": self._structural_rows(
+                "attachment_readings",
+                (
+                    "attachment_id",
+                    "content_hash",
+                    "status",
+                    "page_count",
+                    "references_json",
+                    "reason",
                 ),
                 "attachment_id",
             ),
