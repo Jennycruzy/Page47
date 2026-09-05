@@ -14,9 +14,10 @@ from page47.address.matcher import (
     match_case_to_area,
 )
 from page47.analysis.case import load_matter_case
-from page47.analysis.investigation import investigate_matter
+from page47.analysis.investigation import investigate_matter, review_graph_payload
 from page47.analysis.norms import compute_historical_norms, load_norm_settings
 from page47.records.store import RecordStore, SourceReference, WatchObservation
+from page47.runtime.client import AgentCoreTransport, load_agentcore_settings
 from page47.snapshotter.config import JSONObject, JSONValue, as_json_value, load_city_config
 from page47.snapshotter.store import SnapshotStore
 from page47.web.config import CityRuntime, WebSettings
@@ -38,6 +39,14 @@ class WebService:
             settings.repository_root / "config" / "address.yaml"
         )
         self.norm_settings = load_norm_settings(settings.repository_root / "config" / "norms.yaml")
+        self.agentcore_settings = load_agentcore_settings(
+            settings.repository_root / "config" / "agentcore.yaml"
+        )
+        self.agentcore = (
+            AgentCoreTransport(self.agentcore_settings)
+            if self.agentcore_settings.enabled
+            else None
+        )
 
     def _runtime(self, city: str) -> CityRuntime:
         return self.settings.city(city)
@@ -247,16 +256,31 @@ class WebService:
         runtime = self._runtime(city)
         root = self.settings.repository_root
         with self._store(city) as store:
-            outcome = investigate_matter(
-                store=store,
-                city=city,
-                matter_id=matter_id,
-                evidence_root=runtime.evidence_root,
-                models_path=root / "config" / "models.yaml",
-                presentation_path=root / "config" / "presentation.yaml",
-                policy_path=root / "config" / "policy.yaml",
-                norms_path=root / "config" / "norms.yaml",
-            )
+            if self.agentcore is None:
+                outcome = investigate_matter(
+                    store=store,
+                    city=city,
+                    matter_id=matter_id,
+                    evidence_root=runtime.evidence_root,
+                    models_path=root / "config" / "models.yaml",
+                    presentation_path=root / "config" / "presentation.yaml",
+                    policy_path=root / "config" / "policy.yaml",
+                    norms_path=root / "config" / "norms.yaml",
+                )
+            else:
+                case = load_matter_case(store, city, matter_id, runtime.evidence_root)
+                graph_result = self.agentcore.invoke_case(case)
+                outcome = review_graph_payload(
+                    store=store,
+                    city=city,
+                    matter_id=matter_id,
+                    evidence_root=runtime.evidence_root,
+                    models_path=root / "config" / "models.yaml",
+                    presentation_path=root / "config" / "presentation.yaml",
+                    policy_path=root / "config" / "policy.yaml",
+                    norms_path=root / "config" / "norms.yaml",
+                    graph_result=graph_result,
+                )
             return {
                 "run_id": outcome.run_id,
                 "finding_id": f"{city.casefold().replace(' ', '-')}-{matter_id}",

@@ -33,7 +33,6 @@ from page47.analysis.drift import (
 )
 from page47.analysis.norms import (
     HistoricalNorm,
-    NormSettings,
     compute_historical_norms,
     load_norm_settings,
 )
@@ -65,6 +64,24 @@ class InvestigationOutcome:
     decision: EvidenceDecision
     brief: BriefWriterReport
     graph_result: JSONObject
+
+
+type InvestigationReports = tuple[
+    ArchivistReport,
+    SubstanceReport,
+    ProcessReport,
+    SkepticReport,
+    BriefWriterReport,
+]
+
+
+@dataclass(frozen=True, slots=True)
+class _ReviewInputs:
+    model_settings: ModelSettings
+    case: MatterCase
+    drift: DriftLedger
+    norm: HistoricalNorm | None
+    policy_config: EvidencePolicyConfig
 
 
 def _now() -> str:
@@ -279,6 +296,43 @@ def _node_report[ReportModel: BaseModel](
     return structured
 
 
+def _payload_report[ReportModel: BaseModel](
+    payload: JSONObject,
+    node_id: str,
+    model: type[ReportModel],
+) -> ReportModel:
+    raw_nodes = payload.get("nodes")
+    if not isinstance(raw_nodes, dict):
+        raise ValueError("Graph payload did not contain node reports")
+    raw_report = raw_nodes.get(node_id)
+    if not isinstance(raw_report, dict):
+        raise ValueError(f"Graph payload did not contain a report for node {node_id}")
+    try:
+        return model.model_validate(raw_report, strict=True)
+    except ValueError as error:
+        raise ValueError(f"Graph payload report {node_id} failed validation") from error
+
+
+def _reports_from_graph(graph: GraphResult) -> InvestigationReports:
+    return (
+        _node_report(graph, "archivist", ArchivistReport),
+        _node_report(graph, "substance", SubstanceReport),
+        _node_report(graph, "process", ProcessReport),
+        _node_report(graph, "skeptic", SkepticReport),
+        _node_report(graph, "brief_writer", BriefWriterReport),
+    )
+
+
+def _reports_from_payload(payload: JSONObject) -> InvestigationReports:
+    return (
+        _payload_report(payload, "archivist", ArchivistReport),
+        _payload_report(payload, "substance", SubstanceReport),
+        _payload_report(payload, "process", ProcessReport),
+        _payload_report(payload, "skeptic", SkepticReport),
+        _payload_report(payload, "brief_writer", BriefWriterReport),
+    )
+
+
 def _graph_payload(graph: GraphResult) -> JSONObject:
     nodes: JSONObject = {}
     for node_id, node in sorted(graph.results.items()):
@@ -423,6 +477,128 @@ def _brief_json(brief: BriefWriterReport) -> JSONObject:
     return value
 
 
+def _load_review_inputs(
+    store: RecordStore,
+    city: str,
+    matter_id: int,
+    evidence_root: Path,
+    models_path: Path,
+    presentation_path: Path,
+    policy_path: Path,
+    norms_path: Path,
+) -> _ReviewInputs:
+    model_settings = load_model_settings(models_path)
+    presentation_config = load_presentation_config(presentation_path)
+    policy_config = load_policy_config(policy_path)
+    norm_settings = load_norm_settings(norms_path)
+    case = load_matter_case(store, city, matter_id, evidence_root)
+    drift = compare_all_appearances(case, presentation_config)
+    norms = compute_historical_norms(store.connection, norm_settings)
+    return _ReviewInputs(
+        model_settings=model_settings,
+        case=case,
+        drift=drift,
+        norm=_norm_for_case(norms, case),
+        policy_config=policy_config,
+    )
+
+
+def _complete_review(
+    inputs: _ReviewInputs,
+    run_id: str,
+    reports: InvestigationReports,
+    graph_result: JSONObject,
+) -> InvestigationOutcome:
+    archivist, substance, process, skeptic, brief = reports
+    agent_reports, _aliases = _agent_reports(archivist, substance, process, skeptic)
+    structural = _structural_observation(
+        inputs.drift.comparisons[-1] if inputs.drift.comparisons else None
+    )
+    observations = agent_reports.observations + structural
+    by_id: dict[str, ReviewedObservation] = {}
+    for observation in observations:
+        if observation.observation_id in by_id:
+            raise ValueError(f"Duplicate observation ID {observation.observation_id}")
+        by_id[observation.observation_id] = observation
+    report = AgentReports(
+        observations=observations,
+        accepted_observation_ids=agent_reports.accepted_observation_ids,
+        rejections=agent_reports.rejections,
+    )
+    decision = apply_evidence_policy(report, inputs.policy_config)
+    accepted_ids = frozenset(item.observation_id for item in decision.accepted)
+    safe_brief = _brief_with_resolved_ids(brief, accepted_ids, by_id)
+    return InvestigationOutcome(
+        run_id=run_id,
+        case=inputs.case,
+        drift=inputs.drift,
+        norm=inputs.norm,
+        decision=decision,
+        brief=safe_brief,
+        graph_result=graph_result,
+    )
+
+
+def _save_failed_run(
+    store: RecordStore,
+    city: str,
+    matter_id: int,
+    run_id: str,
+    started_at: str,
+    graph_result: JSONObject,
+    error: Exception,
+) -> None:
+    store.save_investigation_run(
+        InvestigationRunObservation(
+            run_id=run_id,
+            city=city,
+            matter_id=matter_id,
+            started_at=started_at,
+            finished_at=_now(),
+            status="failed",
+            graph_result=graph_result,
+            policy=None,
+            error=f"{type(error).__name__}: {error}",
+        )
+    )
+    store.commit()
+
+
+def review_graph_payload(
+    store: RecordStore,
+    city: str,
+    matter_id: int,
+    evidence_root: Path,
+    models_path: Path,
+    presentation_path: Path,
+    policy_path: Path,
+    norms_path: Path,
+    graph_result: JSONObject,
+) -> InvestigationOutcome:
+    """Review and persist a graph result returned by local or managed runtime."""
+
+    started_at = _now()
+    run_id = uuid4().hex
+    try:
+        inputs = _load_review_inputs(
+            store,
+            city,
+            matter_id,
+            evidence_root,
+            models_path,
+            presentation_path,
+            policy_path,
+            norms_path,
+        )
+        reports = _reports_from_payload(graph_result)
+        outcome = _complete_review(inputs, run_id, reports, graph_result)
+        _save_outcome(store, outcome, started_at, _now())
+        return outcome
+    except Exception as error:
+        _save_failed_run(store, city, matter_id, run_id, started_at, graph_result, error)
+        raise
+
+
 def investigate_matter(
     store: RecordStore,
     city: str,
@@ -437,66 +613,34 @@ def investigate_matter(
 
     started_at = _now()
     run_id = uuid4().hex
-    model_settings: ModelSettings = load_model_settings(models_path)
-    presentation_config = load_presentation_config(presentation_path)
-    policy_config: EvidencePolicyConfig = load_policy_config(policy_path)
-    norm_settings: NormSettings = load_norm_settings(norms_path)
-    case = load_matter_case(store, city, matter_id, evidence_root)
-    drift = compare_all_appearances(case, presentation_config)
-    norms = compute_historical_norms(store.connection, norm_settings)
-    norm = _norm_for_case(norms, case)
+    graph_result: JSONObject = {"status": "failed"}
     try:
+        inputs = _load_review_inputs(
+            store,
+            city,
+            matter_id,
+            evidence_root,
+            models_path,
+            presentation_path,
+            policy_path,
+            norms_path,
+        )
         graph = invoke_investigation(
-            InvestigationContext(case=case, evidence_root=evidence_root, models=model_settings)
+            InvestigationContext(
+                case=inputs.case,
+                evidence_root=evidence_root,
+                models=inputs.model_settings,
+            )
         )
-        archivist = _node_report(graph, "archivist", ArchivistReport)
-        substance = _node_report(graph, "substance", SubstanceReport)
-        process = _node_report(graph, "process", ProcessReport)
-        skeptic = _node_report(graph, "skeptic", SkepticReport)
-        brief = _node_report(graph, "brief_writer", BriefWriterReport)
-        reports, _aliases = _agent_reports(archivist, substance, process, skeptic)
-        structural = _structural_observation(
-            drift.comparisons[-1] if drift.comparisons else None
-        )
-        observations = reports.observations + structural
-        by_id: dict[str, ReviewedObservation] = {}
-        for observation in observations:
-            if observation.observation_id in by_id:
-                raise ValueError(f"Duplicate observation ID {observation.observation_id}")
-            by_id[observation.observation_id] = observation
-        report = AgentReports(
-            observations=observations,
-            accepted_observation_ids=reports.accepted_observation_ids,
-            rejections=reports.rejections,
-        )
-        decision = apply_evidence_policy(report, policy_config)
-        accepted_ids = frozenset(item.observation_id for item in decision.accepted)
-        brief = _brief_with_resolved_ids(brief, accepted_ids, by_id)
-        outcome = InvestigationOutcome(
-            run_id=run_id,
-            case=case,
-            drift=drift,
-            norm=norm,
-            decision=decision,
-            brief=brief,
-            graph_result=_graph_payload(graph),
+        graph_result = _graph_payload(graph)
+        outcome = _complete_review(
+            inputs,
+            run_id,
+            _reports_from_graph(graph),
+            graph_result,
         )
         _save_outcome(store, outcome, started_at, _now())
         return outcome
     except Exception as error:
-        finished_at = _now()
-        store.save_investigation_run(
-            InvestigationRunObservation(
-                run_id=run_id,
-                city=city,
-                matter_id=matter_id,
-                started_at=started_at,
-                finished_at=finished_at,
-                status="failed",
-                graph_result={"status": "failed"},
-                policy=None,
-                error=f"{type(error).__name__}: {error}",
-            )
-        )
-        store.commit()
+        _save_failed_run(store, city, matter_id, run_id, started_at, graph_result, error)
         raise

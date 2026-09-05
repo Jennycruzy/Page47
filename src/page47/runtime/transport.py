@@ -4,13 +4,52 @@ from __future__ import annotations
 
 import base64
 import binascii
+import json
 from hashlib import sha256
 from pathlib import Path
 
 from page47.analysis.case import InvestigationContext, MatterCase, case_from_structural_payload
 from page47.models.config import load_model_settings
 from page47.records.store import SourceReference
-from page47.snapshotter.config import JSONObject, as_json_value
+from page47.snapshotter.config import JSONObject, JSONValue, as_json_value
+
+
+def request_from_case(case: MatterCase) -> JSONObject:
+    """Build a checked AgentCore request from one stored public matter."""
+
+    documents: list[JSONValue] = []
+    for attachment in case.unique_attachments():
+        capture = attachment.document_capture()
+        if capture is None:
+            continue
+        content, source = capture
+        content_hash = sha256(content).hexdigest()
+        if attachment.content_hash is not None and attachment.content_hash != content_hash:
+            raise ValueError(
+                f"Captured attachment {attachment.attachment_id} did not match the record hash"
+            )
+        documents.append(
+            {
+                "attachment_id": attachment.attachment_id,
+                "content_base64": base64.b64encode(content).decode("ascii"),
+                "content_sha256": content_hash,
+                "source": source.as_json(),
+            }
+        )
+    return {
+        "city": case.city,
+        "matter_id": case.matter_id,
+        "case": case.structural_payload(),
+        "documents": documents,
+    }
+
+
+def request_bytes(case: MatterCase) -> bytes:
+    """Encode a runtime request deterministically for the data-plane call."""
+
+    return json.dumps(request_from_case(case), sort_keys=True, separators=(",", ":")).encode(
+        "utf-8"
+    )
 
 
 def _object(value: object, context: str) -> JSONObject:
