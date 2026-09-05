@@ -9,7 +9,13 @@ from page47.records.runner import (
     attachment_observation,
     matter_observation,
 )
-from page47.records.store import RecordStore, SnapshotObservation, SourceReference
+from page47.records.store import (
+    NotificationObservation,
+    RecordStore,
+    SnapshotObservation,
+    SourceReference,
+    WatchObservation,
+)
 from page47.snapshotter.client import as_object, as_objects, parse_json
 from page47.snapshotter.config import JSONObject, JSONValue, field_name, load_city_config
 
@@ -170,3 +176,54 @@ def test_recorded_snapshot_marks_a_detail_as_applied(tmp_path: Path) -> None:
         assert store.has_snapshot(observation.capture_key) is False
         store.add_snapshot(observation)
         assert store.has_snapshot(observation.capture_key) is True
+
+
+def test_notification_delivery_is_unique_per_watch_and_finding(tmp_path: Path) -> None:
+    with RecordStore(tmp_path / "records.sqlite3") as store:
+        store.save_watch(
+            WatchObservation(
+                watch_id="watch-1",
+                city="Seattle, Washington",
+                bodies=["City Council"],
+                address=None,
+                neighbourhood="Central",
+                email="resident@example.org",
+                active=True,
+                created_at="2026-09-05T00:00:00Z",
+                updated_at="2026-09-05T00:00:00Z",
+            )
+        )
+        store.save_notification(
+            NotificationObservation(
+                notification_id="delivery-1",
+                watch_id="watch-1",
+                city="Seattle, Washington",
+                finding_id="seattle-1",
+                status="failed",
+                area_status="confirmed",
+                area_reason="The stored record contained the requested neighbourhood.",
+                provider_message_id=None,
+                error="delivery failed",
+                created_at="2026-09-05T00:00:00Z",
+                updated_at="2026-09-05T00:00:00Z",
+            )
+        )
+        store.save_notification(
+            NotificationObservation(
+                notification_id="delivery-2",
+                watch_id="watch-1",
+                city="Seattle, Washington",
+                finding_id="seattle-1",
+                status="sent",
+                area_status="confirmed",
+                area_reason="The stored record contained the requested neighbourhood.",
+                provider_message_id="ses-message-1",
+                error=None,
+                created_at="2026-09-05T00:00:00Z",
+                updated_at="2026-09-05T00:01:00Z",
+            )
+        )
+        store.commit()
+        assert store.notification_sent("watch-1", "seattle-1") is True
+        assert store.counts()["notifications"] == 1
+        assert store.notification_rows("Seattle, Washington")[0]["status"] == "sent"

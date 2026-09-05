@@ -199,9 +199,25 @@ CREATE TABLE IF NOT EXISTS watches (
     updated_at TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS notifications (
+    notification_id TEXT PRIMARY KEY,
+    watch_id TEXT NOT NULL,
+    city TEXT NOT NULL,
+    finding_id TEXT NOT NULL,
+    status TEXT NOT NULL,
+    area_status TEXT NOT NULL,
+    area_reason TEXT NOT NULL,
+    provider_message_id TEXT,
+    error TEXT,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL,
+    UNIQUE (watch_id, finding_id)
+);
+
 CREATE INDEX IF NOT EXISTS findings_by_matter ON findings (matter_id, updated_at);
 CREATE INDEX IF NOT EXISTS findings_by_city ON findings (city, updated_at);
 CREATE INDEX IF NOT EXISTS watches_by_city ON watches (city, active);
+CREATE INDEX IF NOT EXISTS notifications_by_finding ON notifications (finding_id, status);
 
 CREATE INDEX IF NOT EXISTS appearances_by_matter
     ON appearances (matter_id);
@@ -388,6 +404,21 @@ class WatchObservation:
     neighbourhood: str | None
     email: str
     active: bool
+    created_at: str
+    updated_at: str
+
+
+@dataclass(frozen=True, slots=True)
+class NotificationObservation:
+    notification_id: str
+    watch_id: str
+    city: str
+    finding_id: str
+    status: str
+    area_status: str
+    area_reason: str
+    provider_message_id: str | None
+    error: str | None
     created_at: str
     updated_at: str
 
@@ -1115,6 +1146,94 @@ class RecordStore:
             )
         return output
 
+    def notification_sent(self, watch_id: str, finding_id: str) -> bool:
+        row = self.connection.execute(
+            "SELECT status FROM notifications WHERE watch_id = ? AND finding_id = ?",
+            (watch_id, finding_id),
+        ).fetchone()
+        if row is None:
+            return False
+        status = row[0]
+        if not isinstance(status, str):
+            raise ValueError("Stored notification status was not text")
+        return status == "sent"
+
+    def save_notification(self, observation: NotificationObservation) -> None:
+        if not observation.notification_id.strip() or not observation.watch_id.strip():
+            raise ValueError("Notification IDs must not be empty")
+        if not observation.city.strip() or not observation.finding_id.strip():
+            raise ValueError("Notification city and finding ID must not be empty")
+        if observation.status not in {"sent", "failed", "skipped"}:
+            raise ValueError(f"Unsupported notification status {observation.status}")
+        if not observation.area_status.strip() or not observation.area_reason.strip():
+            raise ValueError("Notification area details must not be empty")
+        if not observation.created_at or not observation.updated_at:
+            raise ValueError("Notification timestamps must not be empty")
+        self.connection.execute(
+            """
+            INSERT INTO notifications
+            (notification_id, watch_id, city, finding_id, status, area_status,
+             area_reason, provider_message_id, error, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT (watch_id, finding_id) DO UPDATE SET
+                notification_id = excluded.notification_id,
+                status = excluded.status,
+                area_status = excluded.area_status,
+                area_reason = excluded.area_reason,
+                provider_message_id = excluded.provider_message_id,
+                error = excluded.error,
+                updated_at = excluded.updated_at
+            """,
+            (
+                observation.notification_id,
+                observation.watch_id,
+                observation.city,
+                observation.finding_id,
+                observation.status,
+                observation.area_status,
+                observation.area_reason,
+                observation.provider_message_id,
+                observation.error,
+                observation.created_at,
+                observation.updated_at,
+            ),
+        )
+
+    def notification_rows(self, city: str | None = None, limit: int = 100) -> list[JSONObject]:
+        if limit < 1:
+            raise ValueError("Notification limit must be positive")
+        if city is None:
+            rows = self.connection.execute(
+                "SELECT * FROM notifications ORDER BY updated_at DESC, notification_id LIMIT ?",
+                (limit,),
+            ).fetchall()
+        else:
+            if not city.strip():
+                raise ValueError("Notification city filter must not be empty")
+            rows = self.connection.execute(
+                "SELECT * FROM notifications WHERE city = ? "
+                "ORDER BY updated_at DESC, notification_id LIMIT ?",
+                (city, limit),
+            ).fetchall()
+        output: list[JSONObject] = []
+        for row in rows:
+            output.append(
+                {
+                    "notification_id": row["notification_id"],
+                    "watch_id": row["watch_id"],
+                    "city": row["city"],
+                    "finding_id": row["finding_id"],
+                    "status": row["status"],
+                    "area_status": row["area_status"],
+                    "area_reason": row["area_reason"],
+                    "provider_message_id": row["provider_message_id"],
+                    "error": row["error"],
+                    "created_at": row["created_at"],
+                    "updated_at": row["updated_at"],
+                }
+            )
+        return output
+
     def add_collection_run(
         self,
         run_id: str,
@@ -1157,6 +1276,7 @@ class RecordStore:
             ("investigation_runs", "investigation_runs"),
             ("findings", "findings"),
             ("watches", "watches"),
+            ("notifications", "notifications"),
         ):
             row = self.connection.execute(f"SELECT COUNT(*) FROM {table}").fetchone()
             if row is None or not isinstance(row[0], int):

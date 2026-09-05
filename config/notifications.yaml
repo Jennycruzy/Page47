@@ -1,0 +1,4 @@
+email:
+  region: eu-west-2
+  sender_parameter: /page47/email/sender
+  public_base_url_parameter: /page47/web/public-url
