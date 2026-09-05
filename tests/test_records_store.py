@@ -9,7 +9,7 @@ from page47.records.runner import (
     attachment_observation,
     matter_observation,
 )
-from page47.records.store import RecordStore, SourceReference
+from page47.records.store import RecordStore, SnapshotObservation, SourceReference
 from page47.snapshotter.client import as_object, as_objects, parse_json
 from page47.snapshotter.config import JSONObject, JSONValue, field_name, load_city_config
 
@@ -54,6 +54,27 @@ def recorded_detail_with_matter() -> tuple[JSONObject, SourceReference, JSONObje
                     item,
                 )
     raise AssertionError("The recorded preflight set had no matter-bearing event item")
+
+
+def recorded_snapshot_observation() -> SnapshotObservation:
+    index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
+    capture = next(
+        item
+        for item in index["captures"]
+        if "/v1/seattle/events/" in item["url"] and item["status"] == 200
+    )
+    return SnapshotObservation(
+        capture_key=capture["capture_id"],
+        target="recorded-event-detail",
+        kind="event_detail",
+        source_url=capture["url"],
+        captured_at=capture["captured_at"],
+        status=capture["status"],
+        response_sha256=capture["sha256"],
+        content_sha256=capture["sha256"],
+        storage_key=capture["storage_key"],
+        source_kind="api",
+    )
 
 
 def test_recorded_matters_upsert_without_fingerprint_drift(tmp_path: Path) -> None:
@@ -141,3 +162,11 @@ def test_recorded_detail_can_be_read_as_a_typed_object() -> None:
     detail = as_object(decoded, "recorded event detail")
     items = as_objects(detail["EventItems"], "recorded event items")
     assert len(items) > 0
+
+
+def test_recorded_snapshot_marks_a_detail_as_applied(tmp_path: Path) -> None:
+    observation = recorded_snapshot_observation()
+    with RecordStore(tmp_path / "records.sqlite3") as store:
+        assert store.has_snapshot(observation.capture_key) is False
+        store.add_snapshot(observation)
+        assert store.has_snapshot(observation.capture_key) is True

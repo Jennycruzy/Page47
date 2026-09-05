@@ -20,3 +20,7 @@ Matter `14765`, the YEW alley-vacation petition, appeared at the Transportation,
 `page47.findings.placement.compare_placement` returned `moved_to_consent` with the resident-facing sentence: “This item moved from the regular agenda to the consent calendar.” Both cited source URLs came from the stored PDF captures.
 
 Page 47 does not determine why this change was made.
+
+## Ongoing updates
+
+`scripts/apply_captured_events.py` records only event-detail captures whose capture key is not already in the database. In its first live run it added 15 Seattle detail records and 143 appearances, with no parse failures; a repeat run added zero records. The scheduled Lightsail job runs this update before `scripts/apply_pdf_placements.py`, so a newly captured meeting can become a stored appearance without a full historical collection.

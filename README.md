@@ -52,7 +52,7 @@ Consent placement will not be used until a Seattle agenda PDF is compared with i
 
 ## Tests
 
-The current suite has 11 tests. It replays captured real Legistar responses offline, verifies duplicate suppression, verifies changed-copy detection, checks the city configuration, reads published agenda text, and exercises the record store with recorded matters and event items. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
+The current suite has 12 tests. It replays captured real Legistar responses offline, verifies duplicate suppression, verifies changed-copy detection, checks the city configuration, reads published agenda text, and exercises the record store with recorded matters and event items. Lightsail applies newly captured event details to the record store before refreshing Seattle PDF placement. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
 
 ## Limitations
 

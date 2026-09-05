@@ -360,6 +360,12 @@ class RecordStore:
             ),
         )
 
+    def has_snapshot(self, capture_key: str) -> bool:
+        row = self.connection.execute(
+            "SELECT 1 FROM snapshots WHERE capture_key = ?", (capture_key,)
+        ).fetchone()
+        return row is not None
+
     def add_parse_failure(
         self,
         target: str,
