@@ -22,6 +22,7 @@ class CityRuntime:
 class WebSettings:
     title: str
     default_city: str
+    public_path: str
     cities: tuple[CityRuntime, ...]
     repository_root: Path
 
@@ -52,6 +53,9 @@ def load_web_settings(path: Path) -> WebSettings:
     web = _object(root.get("web"), "web")
     title = _text(web, "title", "web")
     default_city = _text(web, "default_city", "web")
+    public_path = _text(web, "public_path", "web").rstrip("/")
+    if not public_path.startswith("/"):
+        raise ValueError("web.public_path must start with '/'")
     raw_cities = _object(web.get("city_configs"), "web.city_configs")
     cities: list[CityRuntime] = []
     for name, raw_value in raw_cities.items():
@@ -66,4 +70,4 @@ def load_web_settings(path: Path) -> WebSettings:
         raise ValueError("web.city_configs must not be empty")
     if default_city not in {city.name for city in cities}:
         raise ValueError("web.default_city is not configured")
-    return WebSettings(title, default_city, tuple(cities), repository_root)
+    return WebSettings(title, default_city, public_path, tuple(cities), repository_root)

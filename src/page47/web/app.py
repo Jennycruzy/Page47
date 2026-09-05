@@ -140,7 +140,7 @@ def create_app(config_path: Path | None = None) -> FastAPI:
             data = service.attachment_evidence(city, attachment_id)
         except LookupError as error:
             raise HTTPException(status_code=404, detail=str(error)) from error
-        return HTMLResponse(_evidence_page(settings.title, city, data))
+        return HTMLResponse(_evidence_page(settings.title, city, data, settings.public_path))
 
     @app.get("/matter/{city}/{matter_id}", response_class=HTMLResponse)
     def matter_page(city: str, matter_id: int) -> HTMLResponse:
@@ -150,7 +150,7 @@ def create_app(config_path: Path | None = None) -> FastAPI:
             raise HTTPException(status_code=404, detail=str(error)) from error
         except (ValueError, FileNotFoundError) as error:
             raise HTTPException(status_code=500, detail=str(error)) from error
-        return HTMLResponse(_matter_page(settings.title, city, data))
+        return HTMLResponse(_matter_page(settings.title, city, data, settings.public_path))
 
     @app.get("/finding/{city}/{finding_id}", response_class=HTMLResponse)
     def finding_page(city: str, finding_id: str) -> HTMLResponse:
@@ -158,18 +158,25 @@ def create_app(config_path: Path | None = None) -> FastAPI:
             data = service.finding(city, finding_id)
         except LookupError as error:
             raise HTTPException(status_code=404, detail=str(error)) from error
-        return HTMLResponse(_finding_page(settings.title, city, data))
+        return HTMLResponse(_finding_page(settings.title, city, data, settings.public_path))
 
     @app.get("/", response_class=HTMLResponse)
     def index() -> HTMLResponse:
-        return HTMLResponse(_index_page(settings.title, settings.default_city))
+        return HTMLResponse(_index_page(settings.title, settings.default_city, settings.public_path))
 
     return app
 
 
-def _index_page(title: str, default_city: str) -> str:
+def _internal_url(public_path: str, path: str) -> str:
+    if path.startswith(("https://", "http://")):
+        return path
+    return f"{public_path}{path if path.startswith('/') else f'/{path}'}"
+
+
+def _index_page(title: str, default_city: str, public_path: str) -> str:
     safe_title = html.escape(title)
     default_city_json = json.dumps(default_city)
+    public_path_json = json.dumps(public_path)
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{safe_title}</title>
@@ -193,27 +200,28 @@ select,button,input {{ border:1px solid var(--line); border-radius:10px; backgro
 <section><h2>Reviewed items</h2><div id="findings" class="grid"><div class="empty">Loading saved reviews…</div></div></section>
 </main><footer>Page 47 reports public records. A record that was never published is outside what this tool can see.<br>Page 47 does not determine why these changes were made.</footer>
 <script>
-const defaultCity = {default_city_json};
+const defaultCity = {default_city_json}; const publicPath = {public_path_json};
 const citySelect=document.querySelector('#city'); const esc=(v)=>String(v??'').replace(/[&<>"']/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}}[c]));
 async function json(url) {{ const r=await fetch(url); if(!r.ok) throw new Error(await r.text()); return r.json(); }}
+function internal(path) {{ return publicPath + (path.startsWith('/') ? path : `/${{path}}`); }}
 function chosen() {{ return citySelect.value || defaultCity; }}
 function metric(label,value) {{ return `<div class="metric"><strong>${{esc(value)}}</strong><span>${{esc(label)}}</span></div>`; }}
-async function loadBodies() {{ const city=chosen(); const data=await json(`/api/cities/${{encodeURIComponent(city)}}/bodies`); document.querySelector('#bodies').innerHTML=data.bodies.map((body,index)=>`<label><input type="checkbox" name="body" value="${{esc(body)}}" ${{index===0?'checked':''}}> ${{esc(body)}}</label>`).join(''); }}
-async function load() {{ const city=chosen(); const [ledger,matters,findings]=await Promise.all([json(`/api/cities/${{encodeURIComponent(city)}}/ledger`),json(`/api/cities/${{encodeURIComponent(city)}}/matters?limit=40`),json(`/api/cities/${{encodeURIComponent(city)}}/findings?limit=40`)]);
+async function loadBodies() {{ const city=chosen(); const data=await json(internal(`/api/cities/${{encodeURIComponent(city)}}/bodies`)); document.querySelector('#bodies').innerHTML=data.bodies.map((body,index)=>`<label><input type="checkbox" name="body" value="${{esc(body)}}" ${{index===0?'checked':''}}> ${{esc(body)}}</label>`).join(''); }}
+async function load() {{ const city=chosen(); const [ledger,matters,findings]=await Promise.all([json(internal(`/api/cities/${{encodeURIComponent(city)}}/ledger`)),json(internal(`/api/cities/${{encodeURIComponent(city)}}/matters?limit=40`)),json(internal(`/api/cities/${{encodeURIComponent(city)}}/findings?limit=40`)]);
 document.querySelector('#ledger').innerHTML=[metric('matters observed',ledger.matters_observed),metric('packet changes recorded',ledger.packet_changes_recorded),metric('became less clear',ledger.became_less_clear),metric('became clearer',ledger.became_clearer),metric('interpretations rejected',ledger.interpretations_rejected),metric('claims about intent',ledger.claims_about_intent)].join('');
-document.querySelector('#matters').innerHTML=matters.matters.length?matters.matters.map(m=>`<article class="card"><span class="tag">${{esc(m.placement_note)}}</span><h3>${{esc(m.latest_title||m.current_title||'Untitled public matter')}}</h3><p class="muted">${{esc(m.body_name)}} · ${{esc(m.latest_event_date)}} · item ${{esc(m.matter_id)}}</p><a href="/matter/${{encodeURIComponent(city)}}/${{m.matter_id}}">Open record</a></article>`).join(''):'<div class="empty">No stored matters were found.</div>';
-document.querySelector('#findings').innerHTML=findings.findings.length?findings.findings.map(f=>`<article class="card"><span class="tag">${{esc(f.state)}}</span><h3>Item ${{esc(f.matter_id)}}</h3><p>${{esc(f.supported_count)}} recorded observations supported · ${{esc(f.rejected_count)}} rejected in review</p><a href="/finding/${{encodeURIComponent(city)}}/${{encodeURIComponent(f.finding_id)}}">Read the review</a></article>`).join(''):'<div class="empty">No reviewed items have been saved yet.</div>'; }}
-async function init() {{ const data=await json('/api/cities'); citySelect.innerHTML=data.cities.map(c=>`<option>${{esc(c.name)}}</option>`).join(''); citySelect.value=defaultCity; await loadBodies(); await load(); }}
-document.querySelector('#refresh').onclick=load; citySelect.onchange=async()=>{{await loadBodies(); await load();}}; document.querySelector('#watch-form').onsubmit=async(event)=>{{event.preventDefault(); const result=document.querySelector('#watch-result'); const bodies=[...document.querySelectorAll('input[name="body"]:checked')].map(input=>input.value); const address=document.querySelector('#address').value.trim()||null; const neighbourhood=document.querySelector('#neighbourhood').value.trim()||null; if(!address&&!neighbourhood){{result.textContent='Enter an address or neighbourhood.'; return;}} result.textContent='Saving…'; try {{ const response=await fetch('/api/watches',{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{city:chosen(),bodies,address,neighbourhood,email:document.querySelector('#email').value.trim()}})}}); const payload=await response.json(); if(!response.ok) throw new Error(payload.detail||'The watch could not be saved.'); result.textContent=payload.message; }} catch(error) {{result.textContent=`Could not save the watch: ${{esc(error.message)}}`;}} }}; init().catch(e=>{{document.querySelector('#matters').innerHTML=`<div class="empty">Could not load the record: ${{esc(e.message)}}</div>`;}});
+document.querySelector('#matters').innerHTML=matters.matters.length?matters.matters.map(m=>`<article class="card"><span class="tag">${{esc(m.placement_note)}}</span><h3>${{esc(m.latest_title||m.current_title||'Untitled public matter')}}</h3><p class="muted">${{esc(m.body_name)}} · ${{esc(m.latest_event_date)}} · item ${{esc(m.matter_id)}}</p><a href="${{internal(`/matter/${{encodeURIComponent(city)}}/${{m.matter_id}}`)}}">Open record</a></article>`).join(''):'<div class="empty">No stored matters were found.</div>';
+document.querySelector('#findings').innerHTML=findings.findings.length?findings.findings.map(f=>`<article class="card"><span class="tag">${{esc(f.state)}}</span><h3>Item ${{esc(f.matter_id)}}</h3><p>${{esc(f.supported_count)}} recorded observations supported · ${{esc(f.rejected_count)}} rejected in review</p><a href="${{internal(`/finding/${{encodeURIComponent(city)}}/${{encodeURIComponent(f.finding_id)}}`)}}">Read the review</a></article>`).join(''):'<div class="empty">No reviewed items have been saved yet.</div>'; }}
+async function init() {{ const data=await json(internal('/api/cities')); citySelect.innerHTML=data.cities.map(c=>`<option>${{esc(c.name)}}</option>`).join(''); citySelect.value=defaultCity; await loadBodies(); await load(); }}
+document.querySelector('#refresh').onclick=load; citySelect.onchange=async()=>{{await loadBodies(); await load();}}; document.querySelector('#watch-form').onsubmit=async(event)=>{{event.preventDefault(); const result=document.querySelector('#watch-result'); const bodies=[...document.querySelectorAll('input[name="body"]:checked')].map(input=>input.value); const address=document.querySelector('#address').value.trim()||null; const neighbourhood=document.querySelector('#neighbourhood').value.trim()||null; if(!address&&!neighbourhood){{result.textContent='Enter an address or neighbourhood.'; return;}} result.textContent='Saving…'; try {{ const response=await fetch(internal('/api/watches'),{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{city:chosen(),bodies,address,neighbourhood,email:document.querySelector('#email').value.trim()}})}}); const payload=await response.json(); if(!response.ok) throw new Error(payload.detail||'The watch could not be saved.'); result.textContent=payload.message; }} catch(error) {{result.textContent=`Could not save the watch: ${{esc(error.message)}}`;}} }}; init().catch(e=>{{document.querySelector('#matters').innerHTML=`<div class="empty">Could not load the record: ${{esc(e.message)}}`;}});
 </script></body></html>"""
 
 
-def _evidence_page(title: str, city: str, data: JSONObject) -> str:
+def _evidence_page(title: str, city: str, data: JSONObject, public_path: str) -> str:
     attachment = data.get("attachment")
     if not isinstance(attachment, dict):
         raise HTTPException(status_code=500, detail="Stored attachment evidence was invalid")
     name = html.escape(str(attachment.get("name") or "Captured public document"))
-    pdf_url = html.escape(str(data.get("pdf_url")))
+    pdf_url = html.escape(_internal_url(public_path, str(data.get("pdf_url"))))
     anchors = data.get("anchors")
     blocks: list[str] = []
     if isinstance(anchors, list):
@@ -225,7 +233,7 @@ def _evidence_page(title: str, city: str, data: JSONObject) -> str:
             blocks.append(f"<blockquote><b>PDF page {page}</b><br><mark>{excerpt}</mark></blockquote>")
     if not blocks:
         blocks.append("<p class=muted>The stored text reader found no page passage for this document.</p>")
-    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} evidence</title><style>body{{max-width:850px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}blockquote{{background:white;border-left:4px solid #e9b949;padding:14px;margin:16px 0}}mark{{background:#fff0a8}}.muted{{color:#68736b}}</style></head><body><p><a href="/">← Back to Page 47</a></p><h1>{name}</h1><p>This page shows the captured document passage used by Page 47. The PDF is the primary record.</p><p><a href="{pdf_url}" target="_blank" rel="noreferrer">Open the captured PDF</a></p>{''.join(blocks)}<p>Page 47 does not determine why these changes were made.</p></body></html>"""
+    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} evidence</title><style>body{{max-width:850px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}blockquote{{background:white;border-left:4px solid #e9b949;padding:14px;margin:16px 0}}mark{{background:#fff0a8}}.muted{{color:#68736b}}</style></head><body><p><a href="{html.escape(public_path + '/', quote=True)}">← Back to Page 47</a></p><h1>{name}</h1><p>This page shows the captured document passage used by Page 47. The PDF is the primary record.</p><p><a href="{pdf_url}" target="_blank" rel="noreferrer">Open the captured PDF</a></p>{''.join(blocks)}<p>Page 47 does not determine why these changes were made.</p></body></html>"""
 
 
 def _display(value: object, fallback: str = "Could not determine") -> str:
@@ -289,7 +297,7 @@ def _evidence_links(value: object) -> str:
     return " · ".join(links)
 
 
-def _matter_page(title: str, city: str, data: JSONObject) -> str:
+def _matter_page(title: str, city: str, data: JSONObject, public_path: str) -> str:
     case = data.get("case")
     if not isinstance(case, dict):
         raise HTTPException(status_code=500, detail="Stored matter record was invalid")
@@ -311,10 +319,7 @@ def _matter_page(title: str, city: str, data: JSONObject) -> str:
                 attachment_id = attachment.get("attachment_id")
                 name = _display(attachment.get("name"), "Unnamed attachment")
                 if isinstance(attachment_id, int):
-                    attachment_link = (
-                        f'<a href="/evidence/{html.escape(city, quote=True)}/attachment/'
-                        f'{attachment_id}">View captured document</a>'
-                    )
+                    attachment_link = f'<a href="{html.escape(_internal_url(public_path, f"/evidence/{city}/attachment/{attachment_id}"), quote=True)}">View captured document</a>'
                 else:
                     attachment_link = "Captured document was not available"
                 attachment_blocks.append(f"<li>{html.escape(name)} — {attachment_link}</li>")
@@ -343,13 +348,12 @@ def _matter_page(title: str, city: str, data: JSONObject) -> str:
         finding_id = finding.get("finding_id")
         if isinstance(finding_id, str):
             finding_html = (
-                f'<p><a href="/finding/{html.escape(city, quote=True)}/'
-                f'{html.escape(finding_id, quote=True)}">Read the saved review</a></p>'
+                f'<p><a href="{html.escape(_internal_url(public_path, f"/finding/{city}/{finding_id}"), quote=True)}">Read the saved review</a></p>'
             )
-    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} — {html.escape(current_title)}</title><style>body{{max-width:1000px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}.card{{background:white;border:1px solid #d9dfd8;border-radius:14px;padding:18px;margin:16px 0}}.muted{{color:#68736b}}li{{margin:8px 0}}</style></head><body><p><a href="/">← Back to Page 47</a></p><p class=muted>{html.escape(city)} · Matter {_display(matter.get('matter_id'))}</p><h1>{html.escape(current_title)}</h1><p>The entries below show how this public matter appeared at each recorded meeting. The links identify the source and capture time.</p>{finding_html}{''.join(appearance_blocks)}<p>Page 47 does not determine why these changes were made.</p></body></html>"""
+    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} — {html.escape(current_title)}</title><style>body{{max-width:1000px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}.card{{background:white;border:1px solid #d9dfd8;border-radius:14px;padding:18px;margin:16px 0}}.muted{{color:#68736b}}li{{margin:8px 0}}</style></head><body><p><a href="{html.escape(public_path + '/', quote=True)}">← Back to Page 47</a></p><p class=muted>{html.escape(city)} · Matter {_display(matter.get('matter_id'))}</p><h1>{html.escape(current_title)}</h1><p>The entries below show how this public matter appeared at each recorded meeting. The links identify the source and capture time.</p>{finding_html}{''.join(appearance_blocks)}<p>Page 47 does not determine why these changes were made.</p></body></html>"""
 
 
-def _finding_page(title: str, city: str, data: JSONObject) -> str:
+def _finding_page(title: str, city: str, data: JSONObject, public_path: str) -> str:
     decision = data.get("decision")
     brief = data.get("brief")
     if not isinstance(decision, dict):
@@ -385,7 +389,7 @@ def _finding_page(title: str, city: str, data: JSONObject) -> str:
         else "Worth a look"
     )
     limitation = _display(brief.get("limitation")) if isinstance(brief, dict) else ""
-    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} — review</title><style>body{{max-width:850px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}section{{background:white;border:1px solid #d9dfd8;border-radius:14px;padding:18px;margin:16px 0}}.state{{font-size:1.25rem;color:#245c45}}.muted{{color:#68736b}}li{{margin:14px 0}}</style></head><body><p><a href="/">← Back to Page 47</a></p><p class=muted>{html.escape(city)} · Matter {_display(data.get('matter_id'))}</p><h1>{html.escape(heading)}</h1><p class=state>Presentation drift: {html.escape(_state_text(decision.get('state')))}</p><p>{html.escape(_display(decision.get('reason')))}</p><section><h2>What the review supports</h2><ol>{''.join(accepted_blocks)}</ol></section><section><h2>What the record normally shows</h2>{norm_html or '<p class=muted>No body comparison was available.</p>'}</section><section><h2>Questions worth asking</h2>{questions_html}</section><section><h2>What Page 47 does not decide</h2><p>{html.escape(limitation or 'Page 47 does not determine why these changes were made.')}</p><p>Page 47 does not determine why these changes were made.</p></section><p>Supported observations: {html.escape(_display(data.get('supported_count')))} · Interpretations not used after review: {html.escape(_display(data.get('rejected_count'), '0'))}</p></body></html>"""
+    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} — review</title><style>body{{max-width:850px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}section{{background:white;border:1px solid #d9dfd8;border-radius:14px;padding:18px;margin:16px 0}}.state{{font-size:1.25rem;color:#245c45}}.muted{{color:#68736b}}li{{margin:14px 0}}</style></head><body><p><a href="{html.escape(public_path + '/', quote=True)}">← Back to Page 47</a></p><p class=muted>{html.escape(city)} · Matter {_display(data.get('matter_id'))}</p><h1>{html.escape(heading)}</h1><p class=state>Presentation drift: {html.escape(_state_text(decision.get('state')))}</p><p>{html.escape(_display(decision.get('reason')))}</p><section><h2>What the review supports</h2><ol>{''.join(accepted_blocks)}</ol></section><section><h2>What the record normally shows</h2>{norm_html or '<p class=muted>No body comparison was available.</p>'}</section><section><h2>Questions worth asking</h2>{questions_html}</section><section><h2>What Page 47 does not decide</h2><p>{html.escape(limitation or 'Page 47 does not determine why these changes were made.')}</p><p>Page 47 does not determine why these changes were made.</p></section><p>Supported observations: {html.escape(_display(data.get('supported_count')))} · Interpretations not used after review: {html.escape(_display(data.get('rejected_count'), '0'))}</p></body></html>"""
 
 
 app = create_app()

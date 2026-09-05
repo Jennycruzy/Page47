@@ -1,0 +1,20 @@
+[Unit]
+Description=Page 47 resident console
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/page47-preflight/src
+Environment=PYTHONPATH=/home/ubuntu/page47-preflight/src
+Environment=PAGE47_WEB_CONFIG=/home/ubuntu/page47-preflight/config/web.yaml
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/ubuntu/page47-preflight/.venv/bin/uvicorn page47.web.app:create_app --factory --host 127.0.0.1 --port 8090
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
