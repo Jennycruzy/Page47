@@ -29,7 +29,7 @@ def extract_pages(pdf_bytes: bytes) -> tuple[AgendaPage, ...]:
     """Extract page text from a captured PDF, preserving its page numbers."""
 
     try:
-        from pypdf import PdfReader  # type: ignore[import-untyped]
+        from pypdf import PdfReader
     except ImportError as error:
         raise RuntimeError("PDF reading requires the project's pypdf dependency") from error
     reader = PdfReader(BytesIO(pdf_bytes))

@@ -134,7 +134,7 @@ def test_recorded_appearance_and_attachment_keep_primary_source(tmp_path: Path) 
         store.upsert_appearance_attachment(appearance.event_item_id, attachment)
         later_observation = replace(
             attachment,
-            first_observed_by_us="2026-09-05T00:00:00Z",
+            first_observed_by_us="2026-09-06T00:00:00Z",
             source=SourceReference(
                 kind="api", url=source.url, captured_at="2026-09-05T00:00:00Z"
             ),

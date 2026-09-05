@@ -159,6 +159,50 @@ CREATE TABLE IF NOT EXISTS collection_runs (
     issues_json TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS investigation_runs (
+    run_id TEXT PRIMARY KEY,
+    city TEXT NOT NULL,
+    matter_id INTEGER NOT NULL,
+    started_at TEXT NOT NULL,
+    finished_at TEXT NOT NULL,
+    status TEXT NOT NULL,
+    graph_result_json TEXT NOT NULL,
+    policy_json TEXT,
+    error TEXT
+);
+
+CREATE TABLE IF NOT EXISTS findings (
+    finding_id TEXT PRIMARY KEY,
+    city TEXT NOT NULL,
+    matter_id INTEGER NOT NULL,
+    state TEXT NOT NULL,
+    publish INTEGER NOT NULL,
+    supported_count INTEGER NOT NULL,
+    rejected_count INTEGER NOT NULL,
+    decision_json TEXT NOT NULL,
+    brief_json TEXT,
+    norms_json TEXT,
+    fingerprint TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS watches (
+    watch_id TEXT PRIMARY KEY,
+    city TEXT NOT NULL,
+    bodies_json TEXT NOT NULL,
+    address TEXT,
+    neighbourhood TEXT,
+    email TEXT NOT NULL,
+    active INTEGER NOT NULL,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS findings_by_matter ON findings (matter_id, updated_at);
+CREATE INDEX IF NOT EXISTS findings_by_city ON findings (city, updated_at);
+CREATE INDEX IF NOT EXISTS watches_by_city ON watches (city, active);
+
 CREATE INDEX IF NOT EXISTS appearances_by_matter
     ON appearances (matter_id);
 CREATE INDEX IF NOT EXISTS appearances_by_event
@@ -303,6 +347,49 @@ class DocumentExtractionObservation:
     reason: str
     model_id: str
     source: SourceReference
+
+
+@dataclass(frozen=True, slots=True)
+class InvestigationRunObservation:
+    run_id: str
+    city: str
+    matter_id: int
+    started_at: str
+    finished_at: str
+    status: str
+    graph_result: JSONValue
+    policy: JSONObject | None
+    error: str | None
+
+
+@dataclass(frozen=True, slots=True)
+class FindingObservation:
+    finding_id: str
+    city: str
+    matter_id: int
+    state: str
+    publish: bool
+    supported_count: int
+    rejected_count: int
+    decision: JSONObject
+    brief: JSONObject | None
+    norms: JSONObject | None
+    fingerprint: str
+    created_at: str
+    updated_at: str
+
+
+@dataclass(frozen=True, slots=True)
+class WatchObservation:
+    watch_id: str
+    city: str
+    bodies: JSONValue
+    address: str | None
+    neighbourhood: str | None
+    email: str
+    active: bool
+    created_at: str
+    updated_at: str
 
 
 @dataclass(frozen=True, slots=True)
@@ -646,7 +733,7 @@ class RecordStore:
             "reason": observation.reason,
             "model_id": observation.model_id,
         }
-        provenance = {
+        provenance: JSONObject = {
             "content_hash": observation.source.as_json(),
             "status": observation.source.as_json(),
             "changes_json": observation.source.as_json(),
@@ -842,6 +929,192 @@ class RecordStore:
     def commit(self) -> None:
         self.connection.commit()
 
+    def save_investigation_run(self, observation: InvestigationRunObservation) -> None:
+        if not observation.run_id.strip():
+            raise ValueError("Investigation run ID must not be empty")
+        if not observation.city.strip():
+            raise ValueError("Investigation run city must not be empty")
+        if observation.matter_id < 1:
+            raise ValueError("Investigation run matter ID must be positive")
+        if not observation.started_at or not observation.finished_at:
+            raise ValueError("Investigation run timestamps must not be empty")
+        if not observation.status.strip():
+            raise ValueError("Investigation run status must not be empty")
+        policy_json = stable_json(observation.policy) if observation.policy is not None else None
+        self.connection.execute(
+            """
+            INSERT OR REPLACE INTO investigation_runs
+            (run_id, city, matter_id, started_at, finished_at, status,
+             graph_result_json, policy_json, error)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                observation.run_id,
+                observation.city,
+                observation.matter_id,
+                observation.started_at,
+                observation.finished_at,
+                observation.status,
+                stable_json(observation.graph_result),
+                policy_json,
+                observation.error,
+            ),
+        )
+
+    def save_finding(self, observation: FindingObservation) -> None:
+        if not observation.finding_id.strip():
+            raise ValueError("Finding ID must not be empty")
+        if not observation.city.strip():
+            raise ValueError("Finding city must not be empty")
+        if observation.matter_id < 1:
+            raise ValueError("Finding matter ID must be positive")
+        if observation.supported_count < 0 or observation.rejected_count < 0:
+            raise ValueError("Finding counts must not be negative")
+        if not observation.state.strip() or not observation.fingerprint.strip():
+            raise ValueError("Finding state and fingerprint must not be empty")
+        brief_json = stable_json(observation.brief) if observation.brief is not None else None
+        norms_json = stable_json(observation.norms) if observation.norms is not None else None
+        self.connection.execute(
+            """
+            INSERT OR REPLACE INTO findings
+            (finding_id, city, matter_id, state, publish, supported_count,
+             rejected_count, decision_json, brief_json, norms_json, fingerprint,
+             created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                observation.finding_id,
+                observation.city,
+                observation.matter_id,
+                observation.state,
+                bool_as_integer(observation.publish),
+                observation.supported_count,
+                observation.rejected_count,
+                stable_json(observation.decision),
+                brief_json,
+                norms_json,
+                observation.fingerprint,
+                observation.created_at,
+                observation.updated_at,
+            ),
+        )
+
+    def finding_rows(self, city: str | None = None, limit: int = 100) -> list[JSONObject]:
+        if limit < 1:
+            raise ValueError("Finding limit must be positive")
+        if city is None:
+            rows = self.connection.execute(
+                "SELECT * FROM findings ORDER BY updated_at DESC, finding_id LIMIT ?",
+                (limit,),
+            ).fetchall()
+        else:
+            if not city.strip():
+                raise ValueError("Finding city filter must not be empty")
+            rows = self.connection.execute(
+                "SELECT * FROM findings WHERE city = ? "
+                "ORDER BY updated_at DESC, finding_id LIMIT ?",
+                (city, limit),
+            ).fetchall()
+        output: list[JSONObject] = []
+        for row in rows:
+            decision = json_object(json.loads(row["decision_json"]), "finding decision")
+            brief_raw = row["brief_json"]
+            norms_raw = row["norms_json"]
+            brief = (
+                json_object(json.loads(brief_raw), "finding brief")
+                if isinstance(brief_raw, str)
+                else None
+            )
+            norms = (
+                json_object(json.loads(norms_raw), "finding norms")
+                if isinstance(norms_raw, str)
+                else None
+            )
+            publish_value = row["publish"]
+            if isinstance(publish_value, bool) or not isinstance(publish_value, int):
+                raise ValueError("Stored finding publish flag was invalid")
+            output.append(
+                {
+                    "finding_id": row["finding_id"],
+                    "city": row["city"],
+                    "matter_id": row["matter_id"],
+                    "state": row["state"],
+                    "publish": bool(publish_value),
+                    "supported_count": row["supported_count"],
+                    "rejected_count": row["rejected_count"],
+                    "decision": decision,
+                    "brief": brief,
+                    "norms": norms,
+                    "fingerprint": row["fingerprint"],
+                    "created_at": row["created_at"],
+                    "updated_at": row["updated_at"],
+                }
+            )
+        return output
+
+    def save_watch(self, observation: WatchObservation) -> None:
+        if not observation.watch_id.strip() or not observation.city.strip():
+            raise ValueError("Watch ID and city must not be empty")
+        if not observation.email.strip():
+            raise ValueError("Watch email must not be empty")
+        if not observation.created_at or not observation.updated_at:
+            raise ValueError("Watch timestamps must not be empty")
+        self.connection.execute(
+            """
+            INSERT OR REPLACE INTO watches
+            (watch_id, city, bodies_json, address, neighbourhood, email, active,
+             created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                observation.watch_id,
+                observation.city,
+                stable_json(observation.bodies),
+                observation.address,
+                observation.neighbourhood,
+                observation.email,
+                bool_as_integer(observation.active),
+                observation.created_at,
+                observation.updated_at,
+            ),
+        )
+
+    def watch_rows(self, city: str | None = None) -> list[JSONObject]:
+        if city is None:
+            rows = self.connection.execute(
+                "SELECT * FROM watches WHERE active = 1 ORDER BY created_at, watch_id"
+            ).fetchall()
+        else:
+            if not city.strip():
+                raise ValueError("Watch city filter must not be empty")
+            rows = self.connection.execute(
+                "SELECT * FROM watches WHERE city = ? AND active = 1 "
+                "ORDER BY created_at, watch_id",
+                (city,),
+            ).fetchall()
+        output: list[JSONObject] = []
+        for row in rows:
+            active_value = row["active"]
+            if isinstance(active_value, bool) or not isinstance(active_value, int):
+                raise ValueError("Stored watch active flag was invalid")
+            bodies = as_json_value(json.loads(row["bodies_json"]))
+            if not isinstance(bodies, list):
+                raise ValueError("Stored watch bodies were not a list")
+            output.append(
+                {
+                    "watch_id": row["watch_id"],
+                    "city": row["city"],
+                    "bodies": bodies,
+                    "address": row["address"],
+                    "neighbourhood": row["neighbourhood"],
+                    "email": row["email"],
+                    "active": bool(active_value),
+                    "created_at": row["created_at"],
+                    "updated_at": row["updated_at"],
+                }
+            )
+        return output
+
     def add_collection_run(
         self,
         run_id: str,
@@ -881,6 +1154,9 @@ class RecordStore:
             ("document_extractions", "document_extractions"),
             ("snapshots", "snapshots"),
             ("parse_failures", "parse_failures"),
+            ("investigation_runs", "investigation_runs"),
+            ("findings", "findings"),
+            ("watches", "watches"),
         ):
             row = self.connection.execute(f"SELECT COUNT(*) FROM {table}").fetchone()
             if row is None or not isinstance(row[0], int):

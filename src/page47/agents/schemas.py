@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from typing import Literal
+from typing import Literal, Self
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 Direction = Literal["clearer", "less_clear", "neutral"]
 
@@ -32,12 +32,23 @@ class SubstanceChange(BaseModel):
     observation_id: str = Field(min_length=1)
     statement: str = Field(min_length=1)
     subject: str = Field(min_length=1)
-    before: str = Field(min_length=1)
-    after: str = Field(min_length=1)
+    before: str | None = Field(default=None, min_length=1)
+    after: str | None = Field(default=None, min_length=1)
+    value: str | None = Field(default=None, min_length=1)
     unit: str | None = None
     page_number: int = Field(ge=1)
     excerpt: str = Field(min_length=1)
     evidence: AgentEvidence
+
+    @model_validator(mode="after")
+    def has_document_value(self) -> Self:
+        has_before = self.before is not None
+        has_after = self.after is not None
+        if has_before != has_after:
+            raise ValueError("before and after must be supplied together")
+        if self.value is None and not (has_before and has_after):
+            raise ValueError("A document change needs a value or an explicit change")
+        return self
 
 
 class SubstanceReport(BaseModel):

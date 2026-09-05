@@ -10,7 +10,7 @@ from typing import Literal
 
 import yaml
 
-from page47.analysis.case import AppearanceRecord, MatterCase, PageAnchor
+from page47.analysis.case import AppearanceRecord, MatterCase
 
 DriftState = Literal["clearer", "unchanged", "less_clear", "cannot_determine"]
 Direction = Literal["clearer", "less_clear", "neutral"]
@@ -63,6 +63,24 @@ class DriftComparison:
             "current_event_item_id": self.current_event_item_id,
             "observations": [item.as_json() for item in self.observations],
             "reason": self.reason,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class DriftLedger:
+    comparisons: tuple[DriftComparison, ...]
+
+    @property
+    def counts(self) -> dict[DriftState, int]:
+        return {
+            state: sum(1 for comparison in self.comparisons if comparison.state == state)
+            for state in ("clearer", "unchanged", "less_clear", "cannot_determine")
+        }
+
+    def as_json(self) -> dict[str, object]:
+        return {
+            "counts": self.counts,
+            "comparisons": [comparison.as_json() for comparison in self.comparisons],
         }
 
 
@@ -150,17 +168,33 @@ def _title_observation(
                 _link("later title", current.source.url, current.source.captured_at),
             ),
         )
-    previous_overlap = len(_tokens(previous_title) & _subject_tokens(previous, config.common_title_words))
-    current_overlap = len(_tokens(current_title) & _subject_tokens(current, config.common_title_words))
-    if previous_overlap < config.minimum_title_overlap and current_overlap < config.minimum_title_overlap:
+    previous_overlap = len(
+        _tokens(previous_title) & _subject_tokens(previous, config.common_title_words)
+    )
+    current_overlap = len(
+        _tokens(current_title) & _subject_tokens(current, config.common_title_words)
+    )
+    if (
+        previous_overlap < config.minimum_title_overlap
+        and current_overlap < config.minimum_title_overlap
+    ):
         direction: Direction = "neutral"
-        text = "The title changed, but the available page text does not show which title was more specific."
+        text = (
+            "The title changed, but the available page text does not show which title was "
+            "more specific."
+        )
     elif current_overlap < previous_overlap:
         direction = "less_clear"
-        text = "The later title shares fewer recorded subject words with the attached material than the earlier title."
+        text = (
+            "The later title shares fewer recorded subject words with the attached material "
+            "than the earlier title."
+        )
     elif current_overlap > previous_overlap:
         direction = "clearer"
-        text = "The later title shares more recorded subject words with the attached material than the earlier title."
+        text = (
+            "The later title shares more recorded subject words with the attached material "
+            "than the earlier title."
+        )
     else:
         direction = "neutral"
         text = "The title changed, but the recorded subject-word overlap was the same."
@@ -193,10 +227,20 @@ def _placement_observation(
     if current_source is None:
         current_source = current.source
     evidence.append(
-        _link("earlier agenda placement", previous_source.url, previous_source.captured_at, previous_page)
+        _link(
+            "earlier agenda placement",
+            previous_source.url,
+            previous_source.captured_at,
+            previous_page,
+        )
     )
     evidence.append(
-        _link("later agenda placement", current_source.url, current_source.captured_at, current_page)
+        _link(
+            "later agenda placement",
+            current_source.url,
+            current_source.captured_at,
+            current_page,
+        )
     )
     if previous.pdf_placement == current.pdf_placement:
         return PresentationObservation(
@@ -256,13 +300,22 @@ def _timing_observation(
     difference = previous_lag - current_lag
     if abs(difference) < config.timing_difference_hours:
         direction: Direction = "neutral"
-        text = "The recorded attachment-to-meeting timing changed by less than the configured comparison interval."
+        text = (
+            "The recorded attachment-to-meeting timing changed by less than the configured "
+            "comparison interval."
+        )
     elif difference > 0:
         direction = "less_clear"
-        text = "The later appearance has an attachment timestamp closer to the meeting than the earlier appearance."
+        text = (
+            "The later appearance has an attachment timestamp closer to the meeting than "
+            "the earlier appearance."
+        )
     else:
         direction = "clearer"
-        text = "The later appearance has an attachment timestamp farther from the meeting than the earlier appearance."
+        text = (
+            "The later appearance has an attachment timestamp farther from the meeting than "
+            "the earlier appearance."
+        )
     evidence = (
         _link("earlier item record", previous.source.url, previous.source.captured_at),
         _link("later item record", current.source.url, current.source.captured_at),
@@ -282,6 +335,54 @@ def compare_latest_appearances(case: MatterCase, config: PresentationConfig) -> 
         )
     previous = case.appearances[-2]
     current = case.appearances[-1]
+    possible = (
+        _title_observation(previous, current, config),
+        _placement_observation(previous, current),
+        _timing_observation(previous, current, config),
+    )
+    observations = tuple(item for item in possible if item is not None)
+    if not observations:
+        return DriftComparison(
+            "cannot_determine",
+            previous.event_item_id,
+            current.event_item_id,
+            (),
+            "The stored appearances do not contain enough comparable presentation details.",
+        )
+    less_clear = sum(1 for item in observations if item.direction == "less_clear")
+    clearer = sum(1 for item in observations if item.direction == "clearer")
+    if less_clear > clearer:
+        state: DriftState = "less_clear"
+    elif clearer > less_clear:
+        state = "clearer"
+    else:
+        state = "unchanged"
+    return DriftComparison(
+        state,
+        previous.event_item_id,
+        current.event_item_id,
+        observations,
+        "The result counts recorded observations in both directions; it does not assess motive.",
+    )
+
+
+def compare_all_appearances(case: MatterCase, config: PresentationConfig) -> DriftLedger:
+    """Compare every adjacent recorded appearance, preserving unknown results."""
+
+    if len(case.appearances) < config.minimum_appearances:
+        return DriftLedger((compare_latest_appearances(case, config),))
+    comparisons = tuple(
+        _compare_pair(previous, current, config)
+        for previous, current in zip(case.appearances, case.appearances[1:], strict=False)
+    )
+    return DriftLedger(comparisons)
+
+
+def _compare_pair(
+    previous: AppearanceRecord,
+    current: AppearanceRecord,
+    config: PresentationConfig,
+) -> DriftComparison:
     possible = (
         _title_observation(previous, current, config),
         _placement_observation(previous, current),

@@ -5,10 +5,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from functools import lru_cache
 from io import BytesIO
-from pathlib import Path
 from typing import Literal, Self, cast
 
-import pypdfium2 as pdfium
+import pypdfium2 as pdfium  # type: ignore[import-untyped]
 from pydantic import BaseModel, Field, model_validator
 from strands import Agent
 from strands.models import BedrockModel
@@ -150,8 +149,9 @@ def _agent(settings: ModelSettings) -> Agent:
             "a prior value, a current value, a location, or a reason. Every entry must include the "
             "supplied PDF page number, a normalized bounding box for the visible passage, and a "
             "short exact excerpt. Use the field named provisions for specific rules, quantities, "
-            "dates, locations, or obligations found in the pages; do not use an empty result merely "
-            "because this is not a before-and-after comparison. If no concrete provision is visible, "
+            "dates, locations, or obligations found in the pages; do not use an empty result "
+            "merely because this is not a before-and-after comparison. If no concrete provision "
+            "is visible, "
             "return an empty provisions list and set no_substantive_change to true. Never infer "
             "purpose or motive."
         ),

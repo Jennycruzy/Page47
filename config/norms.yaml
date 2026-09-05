@@ -1,0 +1,3 @@
+norms:
+  short_document_page_limit: 5
+  maximum_source_links: 12
