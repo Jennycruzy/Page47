@@ -6,15 +6,19 @@ The named primitive is **presentation drift**: the gap between how a matter is d
 
 ## Current build
 
-The first supported city is Seattle, Washington, on the Granicus Legistar public API. The live preflight sampled 20 events, found 73 event items and 66 attachments, and found records reaching the observed sample boundary of 2015-02-03. Nine Seattle council bodies are recorded in `config/cities/seattle.yaml`.
+The current complete record source is Seattle, Washington, on the Granicus Legistar public API. Denver, Colorado is also configured with a separately verified consent mapping so the console can demonstrate that the city-specific meaning is never copied from Seattle. The live preflight sampled 20 events, found 73 event items and 66 attachments, and found Seattle records reaching the observed sample boundary of 2015-02-02. Nine Seattle council bodies are recorded in `config/cities/seattle.yaml`.
 
 The snapshotter is running on the Lightsail instance every 15 minutes. Its first clean capture selected five upcoming meetings and stored 30 attachment files plus five agendas. It keeps immutable bytes, SHA-256 hashes, capture times, source URLs, ETags when supplied, and explicit error records.
 
 The historical record is now backfilled for the nine selected Seattle bodies: 1,332 meetings, 24,047 appearances, 25,640 attachment records, and 81 matters with at least three appearances, covering 9 February 2015 through 11 September 2026. The normalized SQLite store is running on Lightsail at `runtime/records/seattle.sqlite3`; all present stored fields carry a source URL and capture time.
 
-Seattle consent placement is read from captured agenda PDFs rather than the city's unusable API integer. The public console and notification service are not live yet. The AWS role currently cannot list Bedrock models or AgentCore runtimes, so the repository records no assumed model ID and does not enable model-dependent work.
+Seattle consent placement is read from captured agenda PDFs rather than the city's unusable API integer. Denver uses its own verified mapping: `1` means consent and `0` means regular agenda in the calibrated meeting. Seattle and Denver both have live append-only captures on the Lightsail instance.
 
-Captured Seattle PDF attachments are read into page-linked references for configured dates, dollar amounts, distances, and parcel references. The reader preserves the document URL, capture time, page, character location, and excerpt. It says when no configured reference was found and when a PDF cannot be read.
+Captured Seattle PDF attachments are read into page-linked references for configured dates, dollar amounts, distances, and parcel references. Twenty Seattle attachments have completed the document-specific reading run; eleven returned structured page readings and nine recorded explicit failures. The reader preserves the document URL, capture time, page, character location, and excerpt. It says when no configured reference was found and when a PDF cannot be read. The verified Bedrock routes are `amazon.nova-micro-v1:0` for text work and `amazon.nova-lite-v1:0` for page images in `eu-west-2`.
+
+The five-node Strands investigation graph and its AgentCore transport are implemented and pass strict type checking. No AgentCore runtime has been created yet; the live control call returned an empty runtime list on 5 September 2026. The console, watch setup, Census address lookup, SES delivery code, and delivery ledger are implemented but are not yet public.
+
+Live URL: not deployed yet.
 
 ## What Page 47 does not do
 
@@ -48,14 +52,14 @@ The preflight command performs bounded live discovery and stores the public resp
 
 The preflight report identified eight clients that met the bounded structural checks. Seattle is selected because its sampled records were viable and its observed history reached 2015. The exact historical boundary will be measured during backfill rather than inferred from a small sample.
 
-## Design still to build
+## Next work
 
-The public console, notification service, PostgreSQL deployment, historical norms, document reading, and later model work remain to be built. The model work will use the five-node Strands investigation graph, a deterministic evidence rule, and Bedrock on the managed runtime after AWS access is granted.
+The remaining work is to run the graph on a real stored matter, create the managed AgentCore runtime, connect the Lightsail API to it, configure SES and SSM, publish the console over HTTPS, add CloudWatch logs and a missed-run alarm, export one trace, complete Denver's record depth, and run the hand-labelled comparison. The comparison results will remain unpublished until they have been reviewed.
 
 ## Tests
 
-The current suite has 13 tests. It replays captured real Legistar responses offline, verifies duplicate suppression, verifies changed-copy detection, checks the city configuration, reads published agenda text, and exercises the record store with recorded matters and event items. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes Seattle PDF placement. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
+The current suite has 16 tests. It replays captured real Legistar responses offline, verifies duplicate suppression, verifies changed-copy detection, checks the city configuration, reads published agenda text, exercises the record store with recorded matters and event items, and checks unique delivery records. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes Seattle PDF placement. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
 
 ## Limitations
 
-The public API only exposes records marked public and viewable on the city site. Its last-published timestamp can overwrite earlier publication times; a PDF can be replaced at the same URL; intermediate modifications and deleted attachments leave no historical record. The running snapshotter begins preserving those forward-looking observations now, but it cannot reconstruct what was lost before it started. Seattle's API consent integer is not used: Page 47 reads a captured agenda PDF, records the page supporting a matched title, and says it cannot determine placement when the PDF or match is unavailable. Address matching will be limited to street, neighbourhood, and council-district evidence and will say when an area could not be confirmed.
+The public API only exposes records marked public and viewable on the city site. Its last-published timestamp can overwrite earlier publication times; a PDF can be replaced at the same URL; intermediate modifications and deleted attachments leave no historical record. The running snapshotter preserves those forward-looking observations, but it cannot reconstruct what was lost before it started. Seattle's API consent integer is not used: Page 47 reads a captured agenda PDF, records the page supporting a matched title, and says it cannot determine placement when the PDF or match is unavailable. Denver's mapping is valid only for Denver's recorded calibration. Address matching is limited to street, neighbourhood, and council-district evidence and says when an area could not be confirmed.

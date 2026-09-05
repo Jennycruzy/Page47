@@ -94,7 +94,13 @@ def read_attachment_document(attachment_id: int, tool_context: ToolContext) -> s
     )
     if attachment is None:
         raise ValueError(f"Attachment {attachment_id} is not part of this matter")
-    capture = attachment.document_capture()
+    capture = (
+        context.document_captures.get(attachment_id)
+        if context.document_captures is not None
+        else None
+    )
+    if capture is None:
+        capture = attachment.document_capture()
     if capture is None:
         raise ValueError(f"No captured PDF bytes are available for attachment {attachment_id}")
     pdf_bytes, source = capture

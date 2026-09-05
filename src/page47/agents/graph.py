@@ -6,7 +6,9 @@ import os
 from pathlib import Path
 
 import yaml
+from pydantic import BaseModel
 from strands import Agent
+from strands.agent import AgentResult
 from strands.models import BedrockModel
 from strands.multiagent import GraphBuilder, GraphResult
 from strands.multiagent.graph import Graph
@@ -160,3 +162,30 @@ def invoke_investigation(context: InvestigationContext) -> GraphResult:
         "Investigate the supplied public matter and return the requested structured result.",
         invocation_state={"page47_context": context},
     )
+
+
+def graph_result_payload(graph: GraphResult) -> JSONObject:
+    """Serialize validated node reports for the runtime transport."""
+
+    nodes: JSONObject = {}
+    for node_id, node in sorted(graph.results.items()):
+        result = node.result
+        if isinstance(result, AgentResult):
+            structured = result.structured_output
+            if isinstance(structured, BaseModel):
+                nodes[node_id] = _json_value(structured.model_dump(mode="json"))
+            else:
+                nodes[node_id] = {"status": "no_structured_report"}
+        elif isinstance(result, Exception):
+            nodes[node_id] = {"status": "error", "type": type(result).__name__}
+        else:
+            nodes[node_id] = {"status": type(result).__name__}
+    return {
+        "status": str(graph.status),
+        "total_nodes": graph.total_nodes,
+        "completed_nodes": graph.completed_nodes,
+        "failed_nodes": graph.failed_nodes,
+        "execution_count": graph.execution_count,
+        "execution_time": graph.execution_time,
+        "nodes": nodes,
+    }

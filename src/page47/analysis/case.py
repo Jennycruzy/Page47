@@ -4,11 +4,13 @@ from __future__ import annotations
 
 import json
 import sqlite3
+from collections.abc import Mapping
 from dataclasses import dataclass
 from pathlib import Path
 
 from page47.models.config import ModelSettings
 from page47.records.store import RecordStore, SourceReference
+from page47.snapshotter.config import as_json_value
 from page47.snapshotter.store import SnapshotStore
 
 type JSONScalar = None | bool | int | float | str
@@ -72,13 +74,20 @@ class AttachmentRecord:
     def as_index_json(self) -> JSONObject:
         return {
             "attachment_id": self.attachment_id,
+            "matter_id": self.matter_id,
             "name": self.name,
+            "url": self.url,
             "version": self.version,
             "last_modified_utc": self.last_modified_utc,
+            "first_observed_by_us": self.first_observed_by_us,
             "content_hash": self.content_hash,
+            "supporting_document": self.supporting_document,
             "reading_status": self.reading_status,
             "page_count": self.page_count,
             "anchors": [anchor.as_json() for anchor in self.anchors],
+            "reading_source": (
+                self.reading_source.as_json() if self.reading_source is not None else None
+            ),
             "source": self.source.as_json(),
         }
 
@@ -214,6 +223,7 @@ class InvestigationContext:
     case: MatterCase
     evidence_root: Path
     models: ModelSettings
+    document_captures: Mapping[int, tuple[bytes, SourceReference]] | None = None
 
 
 def _source(row: sqlite3.Row) -> SourceReference:
@@ -335,6 +345,237 @@ def _anchors(row: sqlite3.Row, source: SourceReference) -> tuple[PageAnchor, ...
             raise ValueError(f"Stored attachment reference {index} had no excerpt")
         anchors.append(PageAnchor(kind, value, page, start, end, excerpt, source))
     return tuple(anchors)
+
+
+def _payload_object(value: object, context: str) -> JSONObject:
+    decoded = as_json_value(value)
+    if not isinstance(decoded, dict):
+        raise ValueError(f"Runtime {context} was not an object")
+    return decoded
+
+
+def _payload_text(value: object, context: str, required: bool = False) -> str | None:
+    if value is None:
+        if required:
+            raise ValueError(f"Runtime {context} was missing")
+        return None
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"Runtime {context} was not non-empty text")
+    return value
+
+
+def _payload_integer(value: object, context: str, required: bool = False) -> int | None:
+    if value is None:
+        if required:
+            raise ValueError(f"Runtime {context} was missing")
+        return None
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise ValueError(f"Runtime {context} was not an integer")
+    return value
+
+
+def _payload_boolean(value: object, context: str) -> bool | None:
+    if value is None:
+        return None
+    if not isinstance(value, bool):
+        raise ValueError(f"Runtime {context} was not a boolean")
+    return value
+
+
+def _payload_pages(value: object, context: str) -> tuple[int, ...]:
+    if value is None:
+        return ()
+    if not isinstance(value, list):
+        raise ValueError(f"Runtime {context} was not a list")
+    pages: list[int] = []
+    for index, item in enumerate(value):
+        page = _payload_integer(item, f"{context}[{index}]", required=True)
+        if page is None or page < 1:
+            raise ValueError(f"Runtime {context}[{index}] was not a positive page")
+        pages.append(page)
+    return tuple(pages)
+
+
+def _payload_source(value: object, context: str) -> SourceReference:
+    return _source_from_json(value, f"runtime {context}")
+
+
+def _payload_anchor(value: object, context: str) -> PageAnchor:
+    item = _payload_object(value, context)
+    kind = _payload_text(item.get("kind"), f"{context}.kind", required=True)
+    anchor_value = _payload_text(item.get("value"), f"{context}.value", required=True)
+    page = _payload_integer(item.get("page_number"), f"{context}.page_number", required=True)
+    start = _payload_integer(
+        item.get("start_character"), f"{context}.start_character", required=True
+    )
+    end = _payload_integer(item.get("end_character"), f"{context}.end_character", required=True)
+    excerpt = _payload_text(item.get("excerpt"), f"{context}.excerpt", required=True)
+    if kind is None or anchor_value is None or page is None or start is None or end is None:
+        raise ValueError(f"Runtime {context} was incomplete")
+    if page < 1 or start < 0 or end < start:
+        raise ValueError(f"Runtime {context} had invalid bounds")
+    if excerpt is None:
+        raise ValueError(f"Runtime {context} had no excerpt")
+    return PageAnchor(
+        kind,
+        anchor_value,
+        page,
+        start,
+        end,
+        excerpt,
+        _payload_source(item.get("source"), f"{context}.source"),
+    )
+
+
+def _payload_attachment(value: object, evidence_root: Path, context: str) -> AttachmentRecord:
+    item = _payload_object(value, context)
+    attachment_id = _payload_integer(item.get("attachment_id"), f"{context}.attachment_id", True)
+    first_observed = _payload_text(
+        item.get("first_observed_by_us"), f"{context}.first_observed_by_us", True
+    )
+    source = _payload_source(item.get("source"), f"{context}.source")
+    raw_anchors = item.get("anchors")
+    if not isinstance(raw_anchors, list):
+        raise ValueError(f"Runtime {context}.anchors was not a list")
+    anchors = tuple(
+        _payload_anchor(anchor, f"{context}.anchors[{index}]")
+        for index, anchor in enumerate(raw_anchors)
+    )
+    if attachment_id is None or first_observed is None:
+        raise ValueError(f"Runtime {context} was incomplete")
+    return AttachmentRecord(
+        attachment_id=attachment_id,
+        matter_id=_payload_integer(item.get("matter_id"), f"{context}.matter_id"),
+        name=_payload_text(item.get("name"), f"{context}.name"),
+        url=_payload_text(item.get("url"), f"{context}.url"),
+        version=_payload_text(item.get("version"), f"{context}.version"),
+        last_modified_utc=_payload_text(
+            item.get("last_modified_utc"), f"{context}.last_modified_utc"
+        ),
+        first_observed_by_us=first_observed,
+        content_hash=_payload_text(item.get("content_hash"), f"{context}.content_hash"),
+        supporting_document=_payload_boolean(
+            item.get("supporting_document"), f"{context}.supporting_document"
+        ),
+        source=source,
+        reading_status=_payload_text(item.get("reading_status"), f"{context}.reading_status"),
+        page_count=_payload_integer(item.get("page_count"), f"{context}.page_count"),
+        anchors=anchors,
+        reading_source=(
+            _payload_source(item.get("reading_source"), f"{context}.reading_source")
+            if item.get("reading_source") is not None
+            else None
+        ),
+        evidence_root=evidence_root,
+    )
+
+
+def _payload_appearance(
+    value: object,
+    evidence_root: Path,
+    context: str,
+) -> AppearanceRecord:
+    item = _payload_object(value, context)
+    event_item_id = _payload_integer(item.get("event_item_id"), f"{context}.event_item_id", True)
+    event_id = _payload_integer(item.get("event_id"), f"{context}.event_id", True)
+    if event_item_id is None or event_id is None:
+        raise ValueError(f"Runtime {context} was incomplete")
+    raw_attachments = item.get("attachments")
+    if not isinstance(raw_attachments, list):
+        raise ValueError(f"Runtime {context}.attachments was not a list")
+    attachments = tuple(
+        _payload_attachment(attachment, evidence_root, f"{context}.attachments[{index}]")
+        for index, attachment in enumerate(raw_attachments)
+    )
+    pdf_source = item.get("pdf_source")
+    return AppearanceRecord(
+        event_item_id=event_item_id,
+        matter_id=_payload_integer(item.get("matter_id"), f"{context}.matter_id"),
+        event_id=event_id,
+        event_date=_payload_text(item.get("event_date"), f"{context}.event_date"),
+        body_id=_payload_integer(item.get("body_id"), f"{context}.body_id"),
+        body_name=_payload_text(item.get("body_name"), f"{context}.body_name"),
+        title_as_presented=_payload_text(
+            item.get("title_as_presented"), f"{context}.title_as_presented"
+        ),
+        consent_value=_payload_integer(item.get("consent_value"), f"{context}.consent_value"),
+        pdf_placement=_payload_text(item.get("pdf_placement"), f"{context}.pdf_placement"),
+        pdf_evidence_pages=_payload_pages(
+            item.get("pdf_evidence_pages"), f"{context}.pdf_evidence_pages"
+        ),
+        pdf_placement_reason=_payload_text(
+            item.get("pdf_placement_reason"), f"{context}.pdf_placement_reason"
+        ),
+        agenda_sequence=_payload_integer(
+            item.get("agenda_sequence"), f"{context}.agenda_sequence"
+        ),
+        agenda_number=_payload_text(item.get("agenda_number"), f"{context}.agenda_number"),
+        action_taken=_payload_text(item.get("action_taken"), f"{context}.action_taken"),
+        action_text=_payload_text(item.get("action_text"), f"{context}.action_text"),
+        passed_flag_name=_payload_text(
+            item.get("passed_flag_name"), f"{context}.passed_flag_name"
+        ),
+        matter_version_at_event=_payload_text(
+            item.get("matter_version_at_event"), f"{context}.matter_version_at_event"
+        ),
+        agenda_note=_payload_text(item.get("agenda_note"), f"{context}.agenda_note"),
+        minutes_note=_payload_text(item.get("minutes_note"), f"{context}.minutes_note"),
+        item_last_modified_utc=_payload_text(
+            item.get("item_last_modified_utc"), f"{context}.item_last_modified_utc"
+        ),
+        source=_payload_source(item.get("source"), f"{context}.source"),
+        pdf_source=_payload_source(pdf_source, f"{context}.pdf_source")
+        if pdf_source is not None
+        else None,
+        attachments=attachments,
+    )
+
+
+def case_from_structural_payload(
+    value: object,
+    evidence_root: Path,
+) -> MatterCase:
+    """Rebuild a typed case from the API transport without accepting unchecked values."""
+
+    root = _payload_object(value, "case")
+    city = _payload_text(root.get("city"), "case.city", required=True)
+    matter_value = _payload_object(root.get("matter"), "case.matter")
+    matter_id = _payload_integer(matter_value.get("matter_id"), "case.matter.matter_id", True)
+    if city is None or matter_id is None:
+        raise ValueError("Runtime case was missing its city or matter ID")
+    appearances_value = root.get("appearances")
+    if not isinstance(appearances_value, list):
+        raise ValueError("Runtime case.appearances was not a list")
+    matter = MatterRecord(
+        matter_id=matter_id,
+        file_number=_payload_text(matter_value.get("file_number"), "case.matter.file_number"),
+        matter_name=_payload_text(matter_value.get("matter_name"), "case.matter.matter_name"),
+        current_title=_payload_text(
+            matter_value.get("current_title"), "case.matter.current_title"
+        ),
+        type_name=_payload_text(matter_value.get("type_name"), "case.matter.type_name"),
+        status_name=_payload_text(matter_value.get("status_name"), "case.matter.status_name"),
+        body_id=_payload_integer(matter_value.get("body_id"), "case.matter.body_id"),
+        body_name=_payload_text(matter_value.get("body_name"), "case.matter.body_name"),
+        intro_date=_payload_text(matter_value.get("intro_date"), "case.matter.intro_date"),
+        agenda_date=_payload_text(matter_value.get("agenda_date"), "case.matter.agenda_date"),
+        version=_payload_text(matter_value.get("version"), "case.matter.version"),
+        last_modified_utc=_payload_text(
+            matter_value.get("last_modified_utc"), "case.matter.last_modified_utc"
+        ),
+        source=_payload_source(matter_value.get("source"), "case.matter.source"),
+    )
+    appearances = tuple(
+        _payload_appearance(appearance, evidence_root, f"case.appearances[{index}]")
+        for index, appearance in enumerate(appearances_value)
+    )
+    for appearance in appearances:
+        if appearance.matter_id not in {None, matter_id}:
+            raise ValueError("Runtime appearance belonged to a different matter")
+        for attachment in appearance.attachments:
+            if attachment.matter_id not in {None, matter_id}:
+                raise ValueError("Runtime attachment belonged to a different matter")
+    return MatterCase(city=city, matter=matter, appearances=appearances)
 
 
 def _attachment(
