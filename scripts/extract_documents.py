@@ -46,7 +46,9 @@ def _reading(store: RecordStore, attachment_id: int) -> AttachmentReading | None
     references: list[PageReference] = []
     for index, value in enumerate(raw):
         if not isinstance(value, dict):
-            raise ValueError(f"Attachment reading {attachment_id} reference {index} was not an object")
+            raise ValueError(
+                f"Attachment reading {attachment_id} reference {index} was not an object"
+            )
         kind = value.get("kind")
         match_value = value.get("value")
         page = value.get("page_number")

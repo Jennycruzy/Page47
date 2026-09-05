@@ -65,6 +65,7 @@ class HistoricalNorm:
     timing_observation_count: int
     median_attachment_lead_hours: float | None
     unknown_timing_count: int
+    excluded_post_meeting_timestamp_count: int
     source_links: tuple[SourceReference, ...]
 
     def as_json(self) -> JSONObject:
@@ -84,6 +85,7 @@ class HistoricalNorm:
             "timing_observation_count": self.timing_observation_count,
             "median_attachment_lead_hours": self.median_attachment_lead_hours,
             "unknown_timing_count": self.unknown_timing_count,
+            "excluded_post_meeting_timestamp_count": self.excluded_post_meeting_timestamp_count,
             "source_links": [source.as_json() for source in self.source_links],
         }
 
@@ -219,6 +221,7 @@ def compute_historical_norms(
         ).fetchall()
         timing_values: list[float] = []
         unknown_timing_count = 0
+        excluded_post_meeting_timestamp_count = 0
         consent_documents_count = 0
         short_consent_documents_count = 0
         for row in attachment_rows:
@@ -228,7 +231,11 @@ def compute_historical_norms(
             if event_date is None or modified is None:
                 unknown_timing_count += 1
             else:
-                timing_values.append((event_date - modified).total_seconds() / 3600.0)
+                lead_hours = (event_date - modified).total_seconds() / 3600.0
+                if lead_hours < 0:
+                    excluded_post_meeting_timestamp_count += 1
+                else:
+                    timing_values.append(lead_hours)
             if row["pdf_placement"] == "consent":
                 consent_documents_count += 1
                 page_count = row["page_count"]
@@ -265,6 +272,7 @@ def compute_historical_norms(
                 timing_observation_count=len(timing_values),
                 median_attachment_lead_hours=_median(timing_values),
                 unknown_timing_count=unknown_timing_count,
+                excluded_post_meeting_timestamp_count=excluded_post_meeting_timestamp_count,
                 source_links=tuple(source_links.values()),
             )
         )

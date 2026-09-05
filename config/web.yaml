@@ -1,0 +1,12 @@
+web:
+  title: Page 47
+  default_city: Seattle, Washington
+  city_configs:
+    Seattle, Washington:
+      city_config: config/cities/seattle.yaml
+      database: runtime/records/seattle.sqlite3
+      evidence_root: runtime/evidence/seattle
+    Denver, Colorado:
+      city_config: config/cities/denver.yaml
+      database: runtime/records/denver.sqlite3
+      evidence_root: runtime/evidence/denver

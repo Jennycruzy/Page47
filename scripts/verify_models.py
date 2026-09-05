@@ -6,7 +6,6 @@ from __future__ import annotations
 import argparse
 import json
 import re
-from collections.abc import Mapping
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Final
@@ -26,7 +25,9 @@ def utc_now() -> str:
 
 
 def redact(message: str) -> str:
-    return AWS_ACCOUNT_PATTERN.sub("<aws-account-redacted>", AWS_ARN_PATTERN.sub("<aws-arn-redacted>", message))
+    return AWS_ACCOUNT_PATTERN.sub(
+        "<aws-account-redacted>", AWS_ARN_PATTERN.sub("<aws-arn-redacted>", message)
+    )
 
 
 def json_value(value: object) -> JSONValue:

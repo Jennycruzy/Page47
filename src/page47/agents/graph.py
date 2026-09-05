@@ -9,6 +9,7 @@ import yaml
 from strands import Agent
 from strands.models import BedrockModel
 from strands.multiagent import GraphBuilder, GraphResult
+from strands.multiagent.graph import Graph
 
 from page47.agents.schemas import (
     ArchivistReport,
@@ -105,7 +106,7 @@ def _make_agent(
     )
 
 
-def build_investigation_graph() -> object:
+def build_investigation_graph() -> Graph:
     settings, graph_config, prompts = _agent_settings()
     archivist = _make_agent(settings, prompts, "archivist", ArchivistReport, [read_record])
     substance = _make_agent(
@@ -149,7 +150,7 @@ def build_investigation_graph() -> object:
     return builder.build()
 
 
-INVESTIGATION_GRAPH = build_investigation_graph()
+INVESTIGATION_GRAPH: Graph = build_investigation_graph()
 
 
 def invoke_investigation(context: InvestigationContext) -> GraphResult:

@@ -196,7 +196,9 @@ class MatterCase:
             "city": self.city,
             "matter": self.matter.as_json(),
             "appearances": [appearance.as_json() for appearance in self.appearances],
-            "record_limit": "This record contains only public material returned by the city service.",
+            "record_limit": (
+                "This record contains only public material returned by the city service."
+            ),
         }
 
     def document_index_payload(self) -> JSONObject:
@@ -268,10 +270,17 @@ def _pages(value: object, context: str) -> tuple[int, ...]:
 def _source_from_json(value: object, context: str) -> SourceReference:
     if not isinstance(value, dict):
         raise ValueError(f"Stored {context} source was not an object")
-    kind = value.get("kind")
-    url = value.get("url")
-    captured_at = value.get("captured_at")
-    if not all(isinstance(item, str) and item for item in (kind, url, captured_at)):
+    kind: object = value.get("kind")
+    url: object = value.get("url")
+    captured_at: object = value.get("captured_at")
+    if (
+        not isinstance(kind, str)
+        or not kind
+        or not isinstance(url, str)
+        or not url
+        or not isinstance(captured_at, str)
+        or not captured_at
+    ):
         raise ValueError(f"Stored {context} source was incomplete")
     return SourceReference(kind=kind, url=url, captured_at=captured_at)
 
@@ -303,17 +312,22 @@ def _anchors(row: sqlite3.Row, source: SourceReference) -> tuple[PageAnchor, ...
     for index, item in enumerate(references):
         if not isinstance(item, dict):
             raise ValueError(f"Stored attachment reference {index} was not an object")
-        kind = item.get("kind")
-        value = item.get("value")
-        page = item.get("page_number")
-        start = item.get("start_character")
-        end = item.get("end_character")
-        excerpt = item.get("excerpt")
+        kind: object = item.get("kind")
+        value: object = item.get("value")
+        page: object = item.get("page_number")
+        start: object = item.get("start_character")
+        end: object = item.get("end_character")
+        excerpt: object = item.get("excerpt")
         if not isinstance(kind, str) or not kind:
             raise ValueError(f"Stored attachment reference {index} had no kind")
         if not isinstance(value, str) or not value:
             raise ValueError(f"Stored attachment reference {index} had no value")
-        if any(isinstance(item, bool) or not isinstance(item, int) for item in (page, start, end)):
+        if any(
+            isinstance(bound, bool) or not isinstance(bound, int)
+            for bound in (page, start, end)
+        ):
+            raise ValueError(f"Stored attachment reference {index} had invalid character bounds")
+        if not isinstance(page, int) or not isinstance(start, int) or not isinstance(end, int):
             raise ValueError(f"Stored attachment reference {index} had invalid character bounds")
         if page < 1 or start < 0 or end < start:
             raise ValueError(f"Stored attachment reference {index} had invalid bounds")

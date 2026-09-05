@@ -1,0 +1,6 @@
+geocoder:
+  endpoint: https://geocoding.geo.census.gov/geocoder/locations/onelineaddress
+  benchmark: Public_AR_Current
+  format: json
+  timeout_seconds: 15
+  cache_directory: geocoder
