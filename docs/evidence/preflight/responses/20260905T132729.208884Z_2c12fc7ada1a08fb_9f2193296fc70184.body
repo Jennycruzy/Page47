@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Legistar Web API Help Page</title>
+    
+</head>
+<body>
+    
+
+<link type="text/css" href="/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<header class="help-page">
+    <div class="content-wrapper">
+        <div class="float-left">
+            <h1>Legistar Web API Help Page</h1>
+        </div>
+    </div>
+</header>
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <p>
+                Legistar Web API exposes Legistar data to the web directly over HTTPS.
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+
+
+<h2 id="Actions">Actions</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Actions">GET v1/{Client}/Actions</a></td>
+            <td class="api-documentation">
+                <p>Gets all Actions.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Actions-ActionId">GET v1/{Client}/Actions/{ActionId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Action.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Actions">POST v1/{Client}/Actions</a></td>
+            <td class="api-documentation">
+                <p>Adds one Action.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Actions-Id">PUT v1/{Client}/Actions/{Id}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Action.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Actions-Id">DELETE v1/{Client}/Actions/{Id}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Action.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="Bodies">Bodies</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Bodies">GET v1/{Client}/Bodies</a></td>
+            <td class="api-documentation">
+                <p>Gets all Bodies.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Bodies-BodyId">GET v1/{Client}/Bodies/{BodyId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Body.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Bodies">POST v1/{Client}/Bodies</a></td>
+            <td class="api-documentation">
+                <p>Adds one Body.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Bodies-BodyId">PUT v1/{Client}/Bodies/{BodyId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Body.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Bodies-BodyId">DELETE v1/{Client}/Bodies/{BodyId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Body.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="BodyTypes">BodyTypes</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-BodyTypes">GET v1/{Client}/BodyTypes</a></td>
+            <td class="api-documentation">
+                <p>Gets all Body Types.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-BodyTypes-BodyTypeId">GET v1/{Client}/BodyTypes/{BodyTypeId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Body Type.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-BodyTypes">POST v1/{Client}/BodyTypes</a></td>
+            <td class="api-documentation">
+                <p>Adds one Body Type.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-BodyTypes-Id">PUT v1/{Client}/BodyTypes/{Id}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Body Type.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-BodyTypes-Id">DELETE v1/{Client}/BodyTypes/{Id}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Body Type.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="CodeSections">CodeSections</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-CodeSections">GET v1/{Client}/CodeSections</a></td>
+            <td class="api-documentation">
+                <p>Gets all Code Sections.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-CodeSections-CodeSectionId">GET v1/{Client}/CodeSections/{CodeSectionId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Code Section.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-CodeSections">POST v1/{Client}/CodeSections</a></td>
+            <td class="api-documentation">
+                <p>Adds one Code Section.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-CodeSections-CodeSectionId">PUT v1/{Client}/CodeSections/{CodeSectionId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Code Section.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-CodeSections-CodeSectionId">DELETE v1/{Client}/CodeSections/{CodeSectionId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Code Section.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="EventItems">EventItems</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Events-EventId-EventItems_AgendaNote_MinutesNote_Attachments">GET v1/{Client}/Events/{EventId}/EventItems?AgendaNote={AgendaNote}&amp;MinutesNote={MinutesNote}&amp;Attachments={Attachments}</a></td>
+            <td class="api-documentation">
+                <p>Gets all Event Items under a particular Event.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Events-EventId-EventItems-EventItemId_AgendaNote_MinutesNote_Attachments">GET v1/{Client}/Events/{EventId}/EventItems/{EventItemId}?AgendaNote={AgendaNote}&amp;MinutesNote={MinutesNote}&amp;Attachments={Attachments}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Event Item.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Events-EventId-EventItems">POST v1/{Client}/Events/{EventId}/EventItems</a></td>
+            <td class="api-documentation">
+                <p>Adds one Event Item.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Events-EventId-EventItems-EventItemId">PUT v1/{Client}/Events/{EventId}/EventItems/{EventItemId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Event Item.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Events-EventId-EventItems-EventItemId">DELETE v1/{Client}/Events/{EventId}/EventItems/{EventItemId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Event Item.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="Events">Events</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Events">GET v1/{Client}/Events</a></td>
+            <td class="api-documentation">
+                <p>Gets all Events.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-EventDates-BodyId_FutureDatesOnly">GET v1/{Client}/EventDates/{BodyId}?FutureDatesOnly={FutureDatesOnly}</a></td>
+            <td class="api-documentation">
+                <p>Gets Event Dates by BodyID.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Events-EventId_EventItems_AgendaNote_MinutesNote_EventItemAttachments">GET v1/{Client}/Events/{EventId}?EventItems={EventItems}&amp;AgendaNote={AgendaNote}&amp;MinutesNote={MinutesNote}&amp;EventItemAttachments={EventItemAttachments}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Event.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Events">POST v1/{Client}/Events</a></td>
+            <td class="api-documentation">
+                <p>Adds one Event.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Events-EventId">PUT v1/{Client}/Events/{EventId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Event.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Events-EventId">DELETE v1/{Client}/Events/{EventId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Event.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="Indexes">Indexes</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Indexes">GET v1/{Client}/Indexes</a></td>
+            <td class="api-documentation">
+                <p>Gets all Indexes.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Indexes-IndexId">GET v1/{Client}/Indexes/{IndexId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Index.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Indexes">POST v1/{Client}/Indexes</a></td>
+            <td class="api-documentation">
+                <p>Adds one Index.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Indexes-IndexId">PUT v1/{Client}/Indexes/{IndexId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Index.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Indexes-IndexId">DELETE v1/{Client}/Indexes/{IndexId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Index.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="MatterAttachments">MatterAttachments</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-Attachments">GET v1/{Client}/Matters/{MatterId}/Attachments</a></td>
+            <td class="api-documentation">
+                <p>Gets all available for Internet viewing Matter Attachments for one Matter record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-Attachments-MatterAttachmentId">GET v1/{Client}/Matters/{MatterId}/Attachments/{MatterAttachmentId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one available for Internet viewing Matter Attachment.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Matters-MatterId-Attachments">POST v1/{Client}/Matters/{MatterId}/Attachments</a></td>
+            <td class="api-documentation">
+                <p>Adds one Matter Attachment.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Matters-MatterId-Attachments-MatterAttachmentId">PUT v1/{Client}/Matters/{MatterId}/Attachments/{MatterAttachmentId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Matter Attachment.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Matters-MatterId-Attachments-MatterAttachmentId">DELETE v1/{Client}/Matters/{MatterId}/Attachments/{MatterAttachmentId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Matter Attachment.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-Attachments-MatterAttachmentId-File">GET v1/{Client}/Matters/{MatterId}/Attachments/{MatterAttachmentId}/File</a></td>
+            <td class="api-documentation">
+                <p>Gets the file content for one Matter Attachment.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="MatterCodeSections">MatterCodeSections</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-CodeSections">GET v1/{Client}/Matters/{MatterId}/CodeSections</a></td>
+            <td class="api-documentation">
+                <p>Gets all Matter CodeSections for one Matter record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-CodeSections-MatterCodeSectionId">GET v1/{Client}/Matters/{MatterId}/CodeSections/{MatterCodeSectionId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Matter Code Section.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Matters-MatterId-CodeSections">POST v1/{Client}/Matters/{MatterId}/CodeSections</a></td>
+            <td class="api-documentation">
+                <p>Adds one Matter Code Section.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Matters-MatterId-CodeSections-MatterCodeSectionId">PUT v1/{Client}/Matters/{MatterId}/CodeSections/{MatterCodeSectionId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Matter Code Section.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Matters-MatterId-CodeSections-MatterCodeSectionId">DELETE v1/{Client}/Matters/{MatterId}/CodeSections/{MatterCodeSectionId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Matter Code Section.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="MatterHistories">MatterHistories</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-Histories_AgendaNote_MinutesNote">GET v1/{Client}/Matters/{MatterId}/Histories?AgendaNote={AgendaNote}&amp;MinutesNote={MinutesNote}</a></td>
+            <td class="api-documentation">
+                <p>Gets all Matter History records under a particular Matter.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-Histories-MatterHistoryId_AgendaNote_MinutesNote">GET v1/{Client}/Matters/{MatterId}/Histories/{MatterHistoryId}?AgendaNote={AgendaNote}&amp;MinutesNote={MinutesNote}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Matter History record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Matters-MatterId-Histories">POST v1/{Client}/Matters/{MatterId}/Histories</a></td>
+            <td class="api-documentation">
+                <p>Adds one Matter History record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Matters-MatterId-Histories-MatterHistoryId">PUT v1/{Client}/Matters/{MatterId}/Histories/{MatterHistoryId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Matter History record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Matters-MatterId-Histories-MatterHistoryId">DELETE v1/{Client}/Matters/{MatterId}/Histories/{MatterHistoryId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Matter History record.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="MatterIndexes">MatterIndexes</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-MatterIndexes">GET v1/{Client}/MatterIndexes</a></td>
+            <td class="api-documentation">
+                <p>Gets all Matter Indexes.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-MatterIndexes-MatterIndexId">GET v1/{Client}/MatterIndexes/{MatterIndexId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Matter Index.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-MatterIndexes-Index-IndexId">GET v1/{Client}/MatterIndexes/Index/{IndexId}</a></td>
+            <td class="api-documentation">
+                <p>Gets all Matter Indexes for one IndexID.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-MatterIndexes-Matter-MatterId">GET v1/{Client}/MatterIndexes/Matter/{MatterId}</a></td>
+            <td class="api-documentation">
+                <p>Gets all Matter Indexes for one Matter record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-Indexes">GET v1/{Client}/Matters/{MatterId}/Indexes</a></td>
+            <td class="api-documentation">
+                <p>Gets all Matter Indexes for one Matter record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-Indexes-MatterIndexId">GET v1/{Client}/Matters/{MatterId}/Indexes/{MatterIndexId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Matter Index associated with a specific Matter.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-MatterIndexes">POST v1/{Client}/MatterIndexes</a></td>
+            <td class="api-documentation">
+                <p>Adds one Matter Index.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Matters-MatterId-Indexes">POST v1/{Client}/Matters/{MatterId}/Indexes</a></td>
+            <td class="api-documentation">
+                <p>Adds one Matter Index.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-MatterIndexes-MatterId_MatterIndexId">PUT v1/{Client}/MatterIndexes/{MatterId}?MatterIndexId={MatterIndexId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Matter Index.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Matters-MatterId-Indexes-MatterIndexId">PUT v1/{Client}/Matters/{MatterId}/Indexes/{MatterIndexId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Matter Index.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-MatterIndexes-MatterId_MatterIndexId">DELETE v1/{Client}/MatterIndexes/{MatterId}?MatterIndexId={MatterIndexId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Matter Index.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Matters-MatterId-Indexes-MatterIndexId">DELETE v1/{Client}/Matters/{MatterId}/Indexes/{MatterIndexId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Matter Index.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="MatterRelations">MatterRelations</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-Relations">GET v1/{Client}/Matters/{MatterId}/Relations</a></td>
+            <td class="api-documentation">
+                <p>Gets all Matter Relations for one Matter record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-Relations-MatterRelationId">GET v1/{Client}/Matters/{MatterId}/Relations/{MatterRelationId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Matter Relation.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Matters-MatterId-Relations">POST v1/{Client}/Matters/{MatterId}/Relations</a></td>
+            <td class="api-documentation">
+                <p>Adds one Matter Relation.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Matters-MatterId-Relations-MatterRelationId">PUT v1/{Client}/Matters/{MatterId}/Relations/{MatterRelationId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Matter Relation.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Matters-MatterId-Relations-MatterRelationId">DELETE v1/{Client}/Matters/{MatterId}/Relations/{MatterRelationId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Matter Relation.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="MatterRequesters">MatterRequesters</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-MatterRequesters">GET v1/{Client}/MatterRequesters</a></td>
+            <td class="api-documentation">
+                <p>Gets all Matter Requesters.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="Matters">Matters</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters">GET v1/{Client}/Matters</a></td>
+            <td class="api-documentation">
+                <p>Gets all Matters.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId">GET v1/{Client}/Matters/{MatterId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Matter.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Matters">POST v1/{Client}/Matters</a></td>
+            <td class="api-documentation">
+                <p>Adds one Matter.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Matters-MatterId">PUT v1/{Client}/Matters/{MatterId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Matter.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Matters-MatterId">DELETE v1/{Client}/Matters/{MatterId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Matter.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="MatterSponsors">MatterSponsors</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-Sponsors">GET v1/{Client}/Matters/{MatterId}/Sponsors</a></td>
+            <td class="api-documentation">
+                <p>Gets all Matter Sponsors for one Matter record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-Sponsors-MatterSponsorId">GET v1/{Client}/Matters/{MatterId}/Sponsors/{MatterSponsorId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Matter Sponsor for one Matter record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Matters-MatterId-Sponsors">POST v1/{Client}/Matters/{MatterId}/Sponsors</a></td>
+            <td class="api-documentation">
+                <p>Adds one Matter Sponsor.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Matters-MatterId-Sponsors-MatterSponsorId">PUT v1/{Client}/Matters/{MatterId}/Sponsors/{MatterSponsorId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Matter Sponsor.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Matters-MatterId-Sponsors-MatterSponsorId">DELETE v1/{Client}/Matters/{MatterId}/Sponsors/{MatterSponsorId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Matter Sponsor.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="MatterStatuses">MatterStatuses</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-MatterStatuses">GET v1/{Client}/MatterStatuses</a></td>
+            <td class="api-documentation">
+                <p>Gets all Matter Statuses.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-MatterStatuses-MatterStatusId">GET v1/{Client}/MatterStatuses/{MatterStatusId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Matter Status.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-MatterStatuses">POST v1/{Client}/MatterStatuses</a></td>
+            <td class="api-documentation">
+                <p>Adds one Matter Status.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-MatterStatuses-MatterStatusId">PUT v1/{Client}/MatterStatuses/{MatterStatusId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Matter Status.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-MatterStatuses-MatterStatusId">DELETE v1/{Client}/MatterStatuses/{MatterStatusId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Matter Status.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="MatterTexts">MatterTexts</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-Texts-MatterTextId">GET v1/{Client}/Matters/{MatterId}/Texts/{MatterTextId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Matter Text.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Matters-MatterId-Versions">GET v1/{Client}/Matters/{MatterId}/Versions</a></td>
+            <td class="api-documentation">
+                <p>Gets Matter Text versions for one Matter record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Matters-MatterId-Texts">POST v1/{Client}/Matters/{MatterId}/Texts</a></td>
+            <td class="api-documentation">
+                <p>Adds one Matter Text.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Matters-MatterId-Texts-MatterTextId">PUT v1/{Client}/Matters/{MatterId}/Texts/{MatterTextId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Matter Text.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Matters-MatterId-Texts-MatterTextId">DELETE v1/{Client}/Matters/{MatterId}/Texts/{MatterTextId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Matter Text.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="MatterTypes">MatterTypes</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-MatterTypes">GET v1/{Client}/MatterTypes</a></td>
+            <td class="api-documentation">
+                <p>Gets all Matter Types.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-MatterTypes-MatterTypeId">GET v1/{Client}/MatterTypes/{MatterTypeId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Matter Type.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-MatterTypes">POST v1/{Client}/MatterTypes</a></td>
+            <td class="api-documentation">
+                <p>Adds one Matter Type.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-MatterTypes-MatterTypeId">PUT v1/{Client}/MatterTypes/{MatterTypeId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Matter Type.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-MatterTypes-MatterTypeId">DELETE v1/{Client}/MatterTypes/{MatterTypeId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Matter Type.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="OfficeRecords">OfficeRecords</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-OfficeRecords">GET v1/{Client}/OfficeRecords</a></td>
+            <td class="api-documentation">
+                <p>Gets all Office Records.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Persons-PersonId-OfficeRecords">GET v1/{Client}/Persons/{PersonId}/OfficeRecords</a></td>
+            <td class="api-documentation">
+                <p>Gets Office Records for a Person record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Bodies-BodyId-OfficeRecords">GET v1/{Client}/Bodies/{BodyId}/OfficeRecords</a></td>
+            <td class="api-documentation">
+                <p>Gets Office Records for a Body record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-OfficeRecords-OfficeRecordId">GET v1/{Client}/OfficeRecords/{OfficeRecordId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Office Record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-OfficeRecords">POST v1/{Client}/OfficeRecords</a></td>
+            <td class="api-documentation">
+                <p>Adds one Office Record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-OfficeRecords-OfficeRecordId">PUT v1/{Client}/OfficeRecords/{OfficeRecordId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Office Record.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-OfficeRecords-OfficeRecordId">DELETE v1/{Client}/OfficeRecords/{OfficeRecordId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Office Record.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="Persons">Persons</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Persons">GET v1/{Client}/Persons</a></td>
+            <td class="api-documentation">
+                <p>Gets all Persons.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Persons-PersonId">GET v1/{Client}/Persons/{PersonId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Person.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-Persons">POST v1/{Client}/Persons</a></td>
+            <td class="api-documentation">
+                <p>Adds one Person.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-Persons-PersonId">PUT v1/{Client}/Persons/{PersonId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Person.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-Persons-PersonId">DELETE v1/{Client}/Persons/{PersonId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Person.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="RollCalls">RollCalls</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-EventItems-EventItemId-RollCalls">GET v1/{Client}/EventItems/{EventItemId}/RollCalls</a></td>
+            <td class="api-documentation">
+                <p>Gets all Roll Call Items under a particular Event Item.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-EventItems-EventItemId-RollCalls-RollCallId">GET v1/{Client}/EventItems/{EventItemId}/RollCalls/{RollCallId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Roll Call Item.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Persons-PersonId-RollCalls">GET v1/{Client}/Persons/{PersonId}/RollCalls</a></td>
+            <td class="api-documentation">
+                <p>Gets all Roll Call records for a Person.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-EventItems-EventItemId-RollCalls">POST v1/{Client}/EventItems/{EventItemId}/RollCalls</a></td>
+            <td class="api-documentation">
+                <p>Adds one Roll Call Item.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-EventItems-EventItemId-RollCalls-RollCallId">PUT v1/{Client}/EventItems/{EventItemId}/RollCalls/{RollCallId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Roll Call Item.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-EventItems-EventItemId-RollCalls-RollCallId">DELETE v1/{Client}/EventItems/{EventItemId}/RollCalls/{RollCallId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Roll Call Item.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="Votes">Votes</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-EventItems-EventItemId-Votes">GET v1/{Client}/EventItems/{EventItemId}/Votes</a></td>
+            <td class="api-documentation">
+                <p>Gets all Vote Items under a particular Event Item.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-EventItems-EventItemId-Votes-VoteId">GET v1/{Client}/EventItems/{EventItemId}/Votes/{VoteId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Vote Item.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-Persons-PersonId-Votes">GET v1/{Client}/Persons/{PersonId}/Votes</a></td>
+            <td class="api-documentation">
+                <p>Gets all Vote records for a Person.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-EventItems-EventItemId-Votes">POST v1/{Client}/EventItems/{EventItemId}/Votes</a></td>
+            <td class="api-documentation">
+                <p>Adds one Vote Item.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-EventItems-EventItemId-Votes-VoteId">PUT v1/{Client}/EventItems/{EventItemId}/Votes/{VoteId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Vote Item.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-EventItems-EventItemId-Votes-VoteId">DELETE v1/{Client}/EventItems/{EventItemId}/Votes/{VoteId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Vote Item.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="VoteTypes">VoteTypes</h2>
+<table class="help-page-table">
+    <thead>
+        <tr><th>API</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-VoteTypes">GET v1/{Client}/VoteTypes</a></td>
+            <td class="api-documentation">
+                <p>Gets all Vote Types.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/GET-v1-Client-VoteTypes-VoteTypeId">GET v1/{Client}/VoteTypes/{VoteTypeId}</a></td>
+            <td class="api-documentation">
+                <p>Gets one Vote Type.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/POST-v1-Client-VoteTypes">POST v1/{Client}/VoteTypes</a></td>
+            <td class="api-documentation">
+                <p>Adds one Vote Type.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/PUT-v1-Client-VoteTypes-VoteTypeId">PUT v1/{Client}/VoteTypes/{VoteTypeId}</a></td>
+            <td class="api-documentation">
+                <p>Updates one Vote Type.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="api-name"><a href="/Help/Api/DELETE-v1-Client-VoteTypes-VoteTypeId">DELETE v1/{Client}/VoteTypes/{VoteTypeId}</a></td>
+            <td class="api-documentation">
+                <p>Deletes one Vote Type.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>    </section>
+</div>
+
+</body>
+</html>

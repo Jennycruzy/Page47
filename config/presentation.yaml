@@ -1,0 +1,17 @@
+comparison:
+  minimum_appearances: 2
+  minimum_title_overlap: 1
+  timing_difference_hours: 6
+  common_title_words:
+    - amendment
+    - amendments
+    - approval
+    - administrative
+    - committee
+    - matter
+    - miscellaneous
+    - ordinance
+    - proposal
+    - resolution
+    - review
+    - services

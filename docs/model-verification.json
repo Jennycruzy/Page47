@@ -1,0 +1,51 @@
+{
+  "captured_at": "2026-09-05T14:18:04.255600Z",
+  "models": {
+    "amazon.nova-lite-v1:0": {
+      "input_modalities": [
+        "TEXT",
+        "IMAGE",
+        "VIDEO"
+      ],
+      "invocation_status": "available",
+      "metadata_status": "available",
+      "model_id": "amazon.nova-lite-v1:0",
+      "output_modalities": [
+        "TEXT"
+      ],
+      "provider": "Amazon",
+      "response_streaming_supported": true,
+      "stop_reason": "end_turn",
+      "usage": {
+        "inputTokens": 7,
+        "outputTokens": 4,
+        "totalTokens": 11
+      }
+    },
+    "amazon.nova-micro-v1:0": {
+      "input_modalities": [
+        "TEXT"
+      ],
+      "invocation_status": "available",
+      "metadata_status": "available",
+      "model_id": "amazon.nova-micro-v1:0",
+      "output_modalities": [
+        "TEXT"
+      ],
+      "provider": "Amazon",
+      "response_streaming_supported": true,
+      "stop_reason": "end_turn",
+      "usage": {
+        "inputTokens": 7,
+        "outputTokens": 2,
+        "totalTokens": 9
+      }
+    }
+  },
+  "region": "eu-west-2",
+  "schema_version": 1,
+  "selected_model_ids": [
+    "amazon.nova-micro-v1:0",
+    "amazon.nova-lite-v1:0"
+  ]
+}

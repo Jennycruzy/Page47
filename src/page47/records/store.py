@@ -115,6 +115,18 @@ CREATE TABLE IF NOT EXISTS attachment_readings (
     provenance_json TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS document_extractions (
+    attachment_id INTEGER PRIMARY KEY,
+    content_hash TEXT NOT NULL,
+    status TEXT NOT NULL,
+    changes_json TEXT NOT NULL,
+    reason TEXT NOT NULL,
+    model_id TEXT NOT NULL,
+    source_url TEXT NOT NULL,
+    observed_at TEXT NOT NULL,
+    provenance_json TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS snapshots (
     capture_key TEXT PRIMARY KEY,
     target TEXT NOT NULL,
@@ -279,6 +291,17 @@ class AttachmentReadingObservation:
     page_count: int
     references: JSONObject
     reason: str
+    source: SourceReference
+
+
+@dataclass(frozen=True, slots=True)
+class DocumentExtractionObservation:
+    attachment_id: int
+    content_hash: str
+    status: str
+    changes: JSONValue
+    reason: str
+    model_id: str
     source: SourceReference
 
 
@@ -604,6 +627,41 @@ class RecordStore:
             provenance=provenance,
         )
 
+    def upsert_document_extraction(
+        self, observation: DocumentExtractionObservation
+    ) -> None:
+        if observation.status not in {"read", "absent", "unreadable", "failed"}:
+            raise ValueError(f"Unsupported document extraction status {observation.status}")
+        if not observation.content_hash:
+            raise ValueError("Document extraction content hash must not be empty")
+        if not observation.reason.strip():
+            raise ValueError("Document extraction reason must not be empty")
+        if not observation.model_id.strip():
+            raise ValueError("Document extraction model ID must not be empty")
+        changes = as_json_value(observation.changes)
+        values: dict[str, SQLValue] = {
+            "content_hash": observation.content_hash,
+            "status": observation.status,
+            "changes_json": stable_json(changes),
+            "reason": observation.reason,
+            "model_id": observation.model_id,
+        }
+        provenance = {
+            "content_hash": observation.source.as_json(),
+            "status": observation.source.as_json(),
+            "changes_json": observation.source.as_json(),
+            "reason": observation.source.as_json(),
+            "model_id": observation.source.as_json(),
+        }
+        self._merge_row(
+            table="document_extractions",
+            key_column="attachment_id",
+            key_value=observation.attachment_id,
+            values=values,
+            source=observation.source,
+            provenance=provenance,
+        )
+
     def attachment_reading_hash(self, attachment_id: int) -> str | None:
         row = self.connection.execute(
             "SELECT content_hash FROM attachment_readings WHERE attachment_id = ?",
@@ -617,6 +675,57 @@ class RecordStore:
                 f"Stored attachment reading {attachment_id} has an invalid content hash"
             )
         return content_hash
+
+    def document_extraction_hash(self, attachment_id: int) -> str | None:
+        row = self.connection.execute(
+            "SELECT content_hash FROM document_extractions WHERE attachment_id = ?",
+            (attachment_id,),
+        ).fetchone()
+        if row is None:
+            return None
+        content_hash = row[0]
+        if not isinstance(content_hash, str) or not content_hash:
+            raise ValueError(
+                f"Stored document extraction {attachment_id} has an invalid content hash"
+            )
+        return content_hash
+
+    def attachment_reading(self, attachment_id: int) -> AttachmentReadingObservation | None:
+        row = self.connection.execute(
+            "SELECT * FROM attachment_readings WHERE attachment_id = ?", (attachment_id,)
+        ).fetchone()
+        if row is None:
+            return None
+        status = row["status"]
+        content_hash = row["content_hash"]
+        page_count = row["page_count"]
+        reason = row["reason"]
+        if not isinstance(status, str) or not isinstance(content_hash, str):
+            raise ValueError("Stored attachment reading had invalid status or hash")
+        if isinstance(page_count, bool) or not isinstance(page_count, int):
+            raise ValueError("Stored attachment reading had invalid page count")
+        if not isinstance(reason, str):
+            raise ValueError("Stored attachment reading had invalid reason")
+        raw_references = row["references_json"]
+        if not isinstance(raw_references, str):
+            raise ValueError("Stored attachment reading references were not text")
+        try:
+            decoded_references: object = json.loads(raw_references)
+        except json.JSONDecodeError as error:
+            raise ValueError("Stored attachment reading references were invalid JSON") from error
+        return AttachmentReadingObservation(
+            attachment_id=attachment_id,
+            content_hash=content_hash,
+            status=status,
+            page_count=page_count,
+            references=json_object(decoded_references, "attachment reading references"),
+            reason=reason,
+            source=SourceReference(
+                kind="snapshot",
+                url=str(row["source_url"]),
+                captured_at=str(row["observed_at"]),
+            ),
+        )
 
     def upsert_appearance_attachment(
         self,
@@ -769,6 +878,7 @@ class RecordStore:
             ("appearances", "appearances"),
             ("attachments", "attachments"),
             ("attachment_readings", "attachment_readings"),
+            ("document_extractions", "document_extractions"),
             ("snapshots", "snapshots"),
             ("parse_failures", "parse_failures"),
         ):
