@@ -5,3 +5,23 @@ runtime:
     region: eu-west-2
     runtime_arn_parameter: /page47/agentcore/runtime-arn
     qualifier: DEFAULT
+  deployment:
+    name: page47-review
+    runtime: PYTHON_3_12
+    entrypoint:
+      - app.py
+    entrypoint_source: src/page47/runtime/app.py
+    protocol: HTTP
+    network_mode: PUBLIC
+    build_platform: aarch64-manylinux2014
+    artifact_bucket_prefix: bedrock-agentcore-code
+    artifact_prefix: page47-review
+    execution_role_parameter: /page47/agentcore/execution-role-arn
+    idle_session_timeout_seconds: 300
+    max_lifetime_seconds: 1800
+    max_zip_megabytes: 250
+    max_unzipped_megabytes: 750
+    config_files:
+      - agentcore.yaml
+      - agents.yaml
+      - models.yaml

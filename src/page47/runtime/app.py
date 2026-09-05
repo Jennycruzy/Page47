@@ -55,3 +55,7 @@ def invoke(payload: object) -> JSONObject:
         _working_directory(),
     )
     return graph_result_payload(invoke_investigation(context))
+
+
+if __name__ == "__main__":
+    app.run()
