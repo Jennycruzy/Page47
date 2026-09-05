@@ -12,7 +12,7 @@ The snapshotter is running on the Lightsail instance every 15 minutes. Its first
 
 The historical record is now backfilled for the nine selected Seattle bodies: 1,332 meetings, 24,047 appearances, 25,640 attachment records, and 81 matters with at least three appearances, covering 9 February 2015 through 11 September 2026. The normalized SQLite store is running on Lightsail at `runtime/records/seattle.sqlite3`; all present stored fields carry a source URL and capture time.
 
-The public console and notification service are not live yet. The AWS role currently cannot list Bedrock models or AgentCore runtimes, so the repository records no assumed model ID and does not enable model-dependent work.
+Seattle consent placement is read from captured agenda PDFs rather than the city's unusable API integer. The public console and notification service are not live yet. The AWS role currently cannot list Bedrock models or AgentCore runtimes, so the repository records no assumed model ID and does not enable model-dependent work.
 
 ## What Page 47 does not do
 
@@ -48,7 +48,7 @@ The preflight report identified eight clients that met the bounded structural ch
 
 ## Design still to build
 
-Consent placement will not be used until a Seattle agenda PDF is compared with its event-item values and the mapping is recorded with evidence. The public console, notification service, PostgreSQL deployment, historical norms, document reading, and later model work remain to be built. The model work will use the five-node Strands investigation graph, a deterministic evidence rule, and Bedrock on the managed runtime after AWS access is granted.
+The public console, notification service, PostgreSQL deployment, historical norms, document reading, and later model work remain to be built. The model work will use the five-node Strands investigation graph, a deterministic evidence rule, and Bedrock on the managed runtime after AWS access is granted.
 
 ## Tests
 
