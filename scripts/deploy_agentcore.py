@@ -332,10 +332,7 @@ def _ensure_bucket(
     except Exception as error:
         if _error_code(error) not in {"404", "NoSuchBucket", "NotFound"}:
             raise
-    arguments: dict[str, object] = {
-        "Bucket": bucket,
-        "ExpectedBucketOwner": account_id,
-    }
+    arguments: dict[str, object] = {"Bucket": bucket}
     if region != "us-east-1":
         arguments["CreateBucketConfiguration"] = {"LocationConstraint": region}
     storage.create_bucket(**arguments)
