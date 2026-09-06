@@ -668,6 +668,29 @@ class RecordStore:
             ),
         )
 
+    def consent_placement_inputs(self) -> tuple[tuple[int, int, SourceReference], ...]:
+        """Return recorded API placement values with their field sources."""
+
+        rows = self.connection.execute(
+            "SELECT event_item_id, consent_value, provenance_json FROM appearances "
+            "WHERE consent_value IS NOT NULL ORDER BY event_item_id"
+        ).fetchall()
+        output: list[tuple[int, int, SourceReference]] = []
+        for row in rows:
+            event_item_id = row[0]
+            consent_value = row[1]
+            if (
+                isinstance(event_item_id, bool)
+                or not isinstance(event_item_id, int)
+                or isinstance(consent_value, bool)
+                or not isinstance(consent_value, int)
+            ):
+                raise ValueError("Stored API placement input was invalid")
+            provenance = parse_provenance(row[2], "appearances.provenance")
+            source = self._source_from_json(provenance.get("consent_value"), "consent value")
+            output.append((event_item_id, consent_value, source))
+        return tuple(output)
+
     def upsert_attachment(
         self,
         observation: AttachmentObservation,
@@ -1408,22 +1431,27 @@ class RecordStore:
         return tuple(pages)
 
     @staticmethod
-    def _placement_source(provenance: JSONObject) -> SourceReference | None:
-        raw_source = provenance.get("pdf_placement")
-        if raw_source is None:
-            return None
+    def _source_from_json(value: object, context: str) -> SourceReference:
+        raw_source = value
         if not isinstance(raw_source, dict):
-            raise ValueError("Stored PDF placement source was not an object")
+            raise ValueError(f"Stored {context} source was not an object")
         kind = raw_source.get("kind")
         url = raw_source.get("url")
         captured_at = raw_source.get("captured_at")
         if not isinstance(kind, str) or not kind:
-            raise ValueError("Stored PDF placement source was incomplete")
+            raise ValueError(f"Stored {context} source was incomplete")
         if not isinstance(url, str) or not url:
-            raise ValueError("Stored PDF placement source was incomplete")
+            raise ValueError(f"Stored {context} source was incomplete")
         if not isinstance(captured_at, str) or not captured_at:
-            raise ValueError("Stored PDF placement source was incomplete")
+            raise ValueError(f"Stored {context} source was incomplete")
         return SourceReference(kind=kind, url=url, captured_at=captured_at)
+
+    @staticmethod
+    def _placement_source(provenance: JSONObject) -> SourceReference | None:
+        raw_source = provenance.get("pdf_placement")
+        if raw_source is None:
+            return None
+        return RecordStore._source_from_json(raw_source, "PDF placement")
 
     def date_bounds(self) -> tuple[str | None, str | None]:
         row = self.connection.execute(

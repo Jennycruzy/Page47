@@ -13,5 +13,7 @@ def test_scheduled_collector_processes_both_configured_cities() -> None:
     assert script.count("scripts/notify_findings.py") == 1
     assert "runtime/records/denver.sqlite3" in script
     assert "runtime/evidence/denver" in script
-    assert '--web-config "$1/config/web.yaml"' in script
+    assert '--web-config "$PAGE47_ROOT/config/web.yaml"' in script
+    assert 'exec 9>/tmp/page47-snapshotter.lock' in script
+    assert '/usr/bin/flock -n 9' in script
     assert "Page47SnapshotRunSuccess" in script

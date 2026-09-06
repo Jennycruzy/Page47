@@ -22,6 +22,58 @@ def pdf_reader_enabled(config: CityConfig) -> bool:
     return isinstance(reader, dict) and reader.get("enabled") is True
 
 
+def api_placement_mapping(config: CityConfig) -> tuple[int, int] | None:
+    calibration = config.consent_calibration
+    if calibration.get("mapping_usable") is not True:
+        return None
+    consent_value = calibration.get("consent_value")
+    regular_value = calibration.get("regular_value")
+    if (
+        isinstance(consent_value, bool)
+        or not isinstance(consent_value, int)
+        or isinstance(regular_value, bool)
+        or not isinstance(regular_value, int)
+    ):
+        raise ValueError("The calibrated API placement values were not integers")
+    if consent_value == regular_value:
+        raise ValueError("The calibrated API placement values were identical")
+    return consent_value, regular_value
+
+
+def apply_api_placements(
+    config: CityConfig,
+    database_path: Path,
+) -> dict[str, int]:
+    mapping = api_placement_mapping(config)
+    if mapping is None:
+        raise ValueError(f"API placement mapping is not established for {config.city}")
+    consent_value, regular_value = mapping
+    result = {
+        "agendas_available": 0,
+        "agendas_unavailable": 0,
+        "agendas_unreadable": 0,
+        "api_mapped": 0,
+        "appearances_updated": 0,
+        "cannot_determine": 0,
+    }
+    with RecordStore(database_path) as record_store:
+        for event_item_id, recorded_value, source in record_store.consent_placement_inputs():
+            if recorded_value == consent_value:
+                placement = "consent"
+                reason = "The city's recorded placement mapping identifies this item as consent."
+            elif recorded_value == regular_value:
+                placement = "regular"
+                reason = "The city's recorded placement mapping identifies this item as regular."
+            else:
+                result["cannot_determine"] += 1
+                continue
+            record_store.set_pdf_placement(event_item_id, placement, (), reason, source)
+            result["api_mapped"] += 1
+            result["appearances_updated"] += 1
+        record_store.commit()
+    return result
+
+
 def apply_pdf_placements(
     config_path: Path,
     database_path: Path,
@@ -31,7 +83,7 @@ def apply_pdf_placements(
 
     config = load_city_config(config_path)
     if not pdf_reader_enabled(config):
-        raise ValueError(f"PDF placement reader is not enabled for {config.city}")
+        return apply_api_placements(config, database_path)
     snapshot_store = SnapshotStore(evidence_root)
     result = {
         "agendas_available": 0,
