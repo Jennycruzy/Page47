@@ -15,7 +15,6 @@ from page47.records.runner import (
     content_capture,
     event_observation,
     required_integer,
-    response_hash,
     source_for_capture,
 )
 from page47.records.store import RecordStore, SourceReference
@@ -70,7 +69,7 @@ def apply_captured_events(
                         agenda_source = source_for_capture(agenda_record, "snapshot")
                         agenda_target = text_value(agenda_record, "target")
                         if agenda_target is None:
-                            raise ValueError("A stored agenda capture lacked its target")
+                            raise ValueError("A stored agenda capture lacked its target") from error
                         record_store.add_parse_failure(
                             agenda_target,
                             agenda_source.url,
