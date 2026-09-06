@@ -257,7 +257,9 @@ class WebService:
                 return {
                     "watch_id": watch_id,
                     "active": False,
-                    "message": "This watch has been stopped. It will not send further review emails.",
+                    "message": (
+                        "This watch has been stopped. It will not send further review emails."
+                    ),
                 }
         raise LookupError(f"Watch {watch_id} was not found")
 

@@ -418,7 +418,6 @@ def _finding_page(title: str, city: str, data: JSONObject, public_path: str) -> 
 
 def _watch_page(title: str, data: JSONObject, public_path: str) -> str:
     raw_watch_id = _display(data.get("watch_id"))
-    watch_id = html.escape(raw_watch_id, quote=True)
     city = html.escape(_display(data.get("city")))
     bodies = data.get("bodies")
     if not isinstance(bodies, list):
