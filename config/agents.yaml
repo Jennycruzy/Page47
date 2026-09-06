@@ -20,9 +20,11 @@ prompts:
     provisions visible in the document pages. Prefix every change ID with
     `substance_` and make each ID unique. For every change, copy the evidence
     URL, capture time, page number, and short excerpt from the document tool
-    result exactly. Do not invent values or use placeholders such as N/A. If
-    no concrete provision can be identified, return no changes and set
-    no_substantive_change to true.
+    result exactly. The change page must equal the evidence page. Only use
+    before and after when the two recorded values are different; never copy one
+    current fact into both fields. Do not invent values or use placeholders such
+    as N/A. If no concrete provision or changed value can be identified, return
+    no changes and set no_substantive_change to true.
   process: >-
     You are the Process reader. Call read_presentation_record first. Report at
     most six concise observations about titles, agenda placement, order, bodies,

@@ -21,6 +21,7 @@ from page47.analysis.investigation import (
     _brief_with_resolved_ids,
     _evidence_catalog,
     _validate_agent_reports,
+    _validate_brief,
 )
 from page47.analysis.policy import (
     AgentReports,
@@ -206,6 +207,12 @@ def test_brief_lines_use_the_accepted_record_text_and_evidence() -> None:
         frozenset({"process:item"}),
         {"process:item": observation},
     )
+    _validate_brief(
+        model_brief,
+        frozenset({"process:item"}),
+        {"raw-item": ("process:item",)},
+        {"process:item": observation},
+    )
     assert safe.heading == "Worth a look"
     assert safe.lines[0].text == observation.text
     assert safe.lines[0].evidence[0].url == record_evidence.url
@@ -253,6 +260,44 @@ def test_substance_change_rejects_unavailable_placeholder_values() -> None:
             after="75 feet",
             page_number=1,
             excerpt="maximum height: 75 feet",
+            evidence=AgentEvidence(
+                label="attachment",
+                url="https://records.example/attachment.pdf",
+                captured_at="2026-09-05T00:00:00Z",
+                page_number=1,
+            ),
+        )
+
+
+def test_substance_change_rejects_same_before_and_after() -> None:
+    with pytest.raises(ValidationError, match="different recorded values"):
+        SubstanceChange(
+            observation_id="salary",
+            statement="The salary is recorded.",
+            subject="salary",
+            before="$242,020",
+            after="$242,020",
+            page_number=1,
+            excerpt="annual salary of $242,020",
+            evidence=AgentEvidence(
+                label="attachment",
+                url="https://records.example/attachment.pdf",
+                captured_at="2026-09-05T00:00:00Z",
+                page_number=1,
+            ),
+        )
+
+
+def test_substance_change_rejects_mismatched_evidence_page() -> None:
+    with pytest.raises(ValidationError, match="match the evidence page"):
+        SubstanceChange(
+            observation_id="salary",
+            statement="The salary changed.",
+            subject="salary",
+            before="$200,000",
+            after="$242,020",
+            page_number=2,
+            excerpt="annual salary of $242,020",
             evidence=AgentEvidence(
                 label="attachment",
                 url="https://records.example/attachment.pdf",

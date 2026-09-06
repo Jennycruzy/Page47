@@ -317,29 +317,21 @@ def _validate_brief(
     accepted_ids: frozenset[str],
     aliases: dict[str, tuple[str, ...]],
     observations: dict[str, ReviewedObservation],
-    catalog: _EvidenceCatalog,
 ) -> None:
-    for index, line in enumerate(brief.lines):
-        observation_id = _brief_observation_id(
+    """Check cited observation IDs before rebuilding the brief from records.
+
+    Brief-writer links are advisory. The model's link values are never copied
+    into the resident-facing result; `_brief_with_resolved_ids` rebuilds every
+    line from the accepted observations and their stored evidence.
+    """
+
+    for line in brief.lines:
+        _brief_observation_id(
             line.observation_id,
             accepted_ids,
             aliases,
             observations,
         )
-        expected = {
-            (link.url, link.captured_at) for link in observations[observation_id].evidence
-        }
-        for evidence_index, evidence in enumerate(line.evidence):
-            _validate_agent_evidence(
-                evidence,
-                catalog,
-                f"Brief line {index} evidence {evidence_index}",
-            )
-            if (evidence.url, evidence.captured_at) not in expected:
-                raise ValueError(
-                    f"Brief line {index} cited evidence not attached to observation "
-                    f"{line.observation_id}"
-                )
 
 
 def _agent_observations(
@@ -725,7 +717,7 @@ def _complete_review(
     )
     decision = apply_evidence_policy(report, inputs.policy_config)
     accepted_ids = frozenset(item.observation_id for item in decision.accepted)
-    _validate_brief(brief, accepted_ids, aliases, by_id, catalog)
+    _validate_brief(brief, accepted_ids, aliases, by_id)
     safe_brief = _brief_with_resolved_ids(brief, accepted_ids, by_id)
     return InvestigationOutcome(
         run_id=run_id,
