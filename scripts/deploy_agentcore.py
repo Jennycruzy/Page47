@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import shutil
 import stat
 import subprocess
@@ -95,6 +96,15 @@ def _text(value: JSONObject, key: str, context: str) -> str:
     return item.strip()
 
 
+def _runtime_name(value: JSONObject, key: str, context: str) -> str:
+    name = _text(value, key, context)
+    if re.fullmatch(r"[A-Za-z][A-Za-z0-9_]{0,47}", name) is None:
+        raise ValueError(
+            f"{context}.{key} must start with a letter and contain only letters, numbers, and underscores"
+        )
+    return name
+
+
 def _integer(value: JSONObject, key: str, context: str, minimum: int) -> int:
     item = value.get(key)
     if isinstance(item, bool) or not isinstance(item, int) or item < minimum:
@@ -122,7 +132,7 @@ def load_deployment_settings(path: Path) -> DeploymentSettings:
     deployment = _object(runtime.get("deployment"), "runtime.deployment")
     return DeploymentSettings(
         region=_text(invocation, "region", "runtime.invocation"),
-        runtime_name=_text(deployment, "name", "runtime.deployment"),
+        runtime_name=_runtime_name(deployment, "name", "runtime.deployment"),
         runtime=_text(deployment, "runtime", "runtime.deployment"),
         entrypoint=_text_list(deployment, "entrypoint", "runtime.deployment"),
         entrypoint_source=_text(deployment, "entrypoint_source", "runtime.deployment"),

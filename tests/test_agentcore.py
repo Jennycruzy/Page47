@@ -7,7 +7,7 @@ from test_analysis import case
 
 from page47.runtime.client import load_agentcore_settings
 from page47.runtime.transport import request_bytes, request_from_case
-from scripts.deploy_agentcore import _client_token
+from scripts.deploy_agentcore import _client_token, load_deployment_settings
 
 
 def test_agentcore_is_explicitly_disabled_until_a_runtime_arn_is_configured() -> None:
@@ -15,6 +15,11 @@ def test_agentcore_is_explicitly_disabled_until_a_runtime_arn_is_configured() ->
     assert settings.enabled is False
     assert settings.region == "eu-west-2"
     assert settings.runtime_arn_parameter == "/page47/agentcore/runtime-arn"
+
+
+def test_agentcore_runtime_name_matches_service_constraints() -> None:
+    settings = load_deployment_settings(Path("config/agentcore.yaml"))
+    assert settings.runtime_name == "page47_review"
 
 
 def test_runtime_request_is_deterministic_and_carries_case_identity() -> None:

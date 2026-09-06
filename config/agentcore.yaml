@@ -6,7 +6,7 @@ runtime:
     runtime_arn_parameter: /page47/agentcore/runtime-arn
     qualifier: DEFAULT
   deployment:
-    name: page47-review
+    name: page47_review
     runtime: PYTHON_3_12
     entrypoint:
       - app.py

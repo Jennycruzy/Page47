@@ -28,7 +28,7 @@ The two-stage document route is already measured on the stored Seattle run: 20 a
 ## Deployment sequence still required
 
 1. Create the least-privilege AgentCore execution role with Bedrock invocation, S3 package read, CloudWatch Logs, and trace permissions. Grant the deployment identity `ssm:GetParameter`, `ssm:PutParameter`, and `iam:PassRole` limited to that role.
-2. Put the execution-role ARN in `/page47/agentcore/execution-role-arn`, run `scripts/deploy_agentcore.py --deploy`, and verify the runtime reaches a healthy state. The script uploads the package, creates or updates `page47-review`, and writes `/page47/agentcore/runtime-arn`.
+2. Put the execution-role ARN in `/page47/agentcore/execution-role-arn`, run `scripts/deploy_agentcore.py --deploy`, and verify the runtime reaches a healthy state. The script uploads the package, creates or updates `page47_review`, and writes `/page47/agentcore/runtime-arn`.
 3. Switch `config/agentcore.yaml` invocation to enabled on Lightsail and restart `page47-web.service`. Invoke one real stored Seattle matter through AgentCore and verify the deterministic review is saved by the Lightsail service.
 4. Configure the two SES parameters and verify SES sender status. Send one real message to a controlled address and retain the provider result without logging credentials.
 5. Send collector output to CloudWatch Logs and alarm on a missed run. Show the alarm test in the deployment record.
