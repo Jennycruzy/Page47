@@ -1123,28 +1123,47 @@ class RecordStore:
                 "ORDER BY created_at, watch_id",
                 (city,),
             ).fetchall()
-        output: list[JSONObject] = []
-        for row in rows:
-            active_value = row["active"]
-            if isinstance(active_value, bool) or not isinstance(active_value, int):
-                raise ValueError("Stored watch active flag was invalid")
-            bodies = as_json_value(json.loads(row["bodies_json"]))
-            if not isinstance(bodies, list):
-                raise ValueError("Stored watch bodies were not a list")
-            output.append(
-                {
-                    "watch_id": row["watch_id"],
-                    "city": row["city"],
-                    "bodies": bodies,
-                    "address": row["address"],
-                    "neighbourhood": row["neighbourhood"],
-                    "email": row["email"],
-                    "active": bool(active_value),
-                    "created_at": row["created_at"],
-                    "updated_at": row["updated_at"],
-                }
-            )
-        return output
+        return [self._watch_row(row) for row in rows]
+
+    def watch_row(self, watch_id: str) -> JSONObject | None:
+        if not watch_id.strip():
+            raise ValueError("Watch ID must not be empty")
+        row = self.connection.execute(
+            "SELECT * FROM watches WHERE watch_id = ?", (watch_id,)
+        ).fetchone()
+        return self._watch_row(row) if row is not None else None
+
+    def deactivate_watch(self, watch_id: str, updated_at: str) -> None:
+        if not watch_id.strip():
+            raise ValueError("Watch ID must not be empty")
+        if not updated_at:
+            raise ValueError("Watch update time must not be empty")
+        cursor = self.connection.execute(
+            "UPDATE watches SET active = 0, updated_at = ? WHERE watch_id = ?",
+            (updated_at, watch_id),
+        )
+        if cursor.rowcount != 1:
+            raise LookupError(f"Watch {watch_id} was not found")
+
+    @staticmethod
+    def _watch_row(row: sqlite3.Row) -> JSONObject:
+        active_value = row["active"]
+        if isinstance(active_value, bool) or not isinstance(active_value, int):
+            raise ValueError("Stored watch active flag was invalid")
+        bodies = as_json_value(json.loads(row["bodies_json"]))
+        if not isinstance(bodies, list):
+            raise ValueError("Stored watch bodies were not a list")
+        return {
+            "watch_id": row["watch_id"],
+            "city": row["city"],
+            "bodies": bodies,
+            "address": row["address"],
+            "neighbourhood": row["neighbourhood"],
+            "email": row["email"],
+            "active": bool(active_value),
+            "created_at": row["created_at"],
+            "updated_at": row["updated_at"],
+        }
 
     def notification_sent(self, watch_id: str, finding_id: str) -> bool:
         row = self.connection.execute(

@@ -227,3 +227,29 @@ def test_notification_delivery_is_unique_per_watch_and_finding(tmp_path: Path) -
         assert store.notification_sent("watch-1", "seattle-1") is True
         assert store.counts()["notifications"] == 1
         assert store.notification_rows("Seattle, Washington")[0]["status"] == "sent"
+
+
+def test_watch_private_link_can_stop_a_watch(tmp_path: Path) -> None:
+    observation = WatchObservation(
+        watch_id="watch-private",
+        city="Seattle, Washington",
+        bodies=["City Council"],
+        address=None,
+        neighbourhood="Central",
+        email="resident@example.org",
+        active=True,
+        created_at="2026-09-05T00:00:00Z",
+        updated_at="2026-09-05T00:00:00Z",
+    )
+    with RecordStore(tmp_path / "records.sqlite3") as store:
+        store.save_watch(observation)
+        store.commit()
+        saved = store.watch_row("watch-private")
+        assert saved is not None
+        assert saved["active"] is True
+        store.deactivate_watch("watch-private", "2026-09-06T00:00:00Z")
+        store.commit()
+        stopped = store.watch_row("watch-private")
+        assert stopped is not None
+        assert stopped["active"] is False
+        assert store.watch_rows("Seattle, Washington") == []

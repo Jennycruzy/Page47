@@ -191,6 +191,15 @@ def render_finding_email(
     html_lines.append(
         f'<p><a href="{html.escape(review_url, quote=True)}">Read the complete review</a></p>'
     )
+    manage_url = finding.get("manage_url")
+    if manage_url is not None:
+        manage_url = _required_text(manage_url, "finding.manage_url")
+        if not manage_url.startswith(("https://", "http://")):
+            raise ValueError("finding.manage_url was not an HTTP(S) URL")
+        text_lines.extend(("", "Manage or stop this watch:", manage_url))
+        html_lines.append(
+            f'<p><a href="{html.escape(manage_url, quote=True)}">Manage or stop this watch</a></p>'
+        )
     subject = _plain_language(f"Page 47 review for {city}", "Email subject")
     return EmailMessage(subject, "\n".join(text_lines), "".join(html_lines))
 
@@ -232,7 +241,12 @@ class EmailDelivery:
         )
         if not public_base_url.startswith(("https://", "http://")):
             raise ValueError("The public URL parameter must be an HTTP(S) URL")
-        message = render_finding_email(finding, public_base_url)
+        message_finding = dict(finding)
+        watch_id = _required_text(finding.get("watch_id"), "finding.watch_id")
+        message_finding["manage_url"] = (
+            f"{public_base_url.rstrip('/')}/watch/{quote(watch_id, safe='')}"
+        )
+        message = render_finding_email(message_finding, public_base_url)
         response = self.email.send_email(
             FromEmailAddress=sender,
             Destination={"ToAddresses": [_required_text(finding.get("recipient"), "recipient")]},
@@ -387,6 +401,7 @@ def deliver_finding(
             skipped += 1
             continue
         finding = _finding_for_delivery(store, city, finding_id, recipient)
+        finding["watch_id"] = watch_id
         try:
             if delivery is None:
                 delivery = EmailDelivery(settings)

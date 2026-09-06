@@ -18,7 +18,7 @@ Captured Seattle PDF attachments are read into page-linked references for config
 
 The five-node Strands investigation graph and its AgentCore transport are implemented and pass strict type checking. A real Seattle matter has been reviewed locally and saved with primary-record links; failed runs remain visible in the record store. The repeatable deployment command builds a 49.8 MB Linux arm64 ZIP that expands to 137 MB and contains the required root `app.py`. No AgentCore runtime has been created yet: the live deployment check stopped because the VPS identity cannot read `/page47/agentcore/execution-role-arn` from SSM.
 
-The resident console is supervised by systemd on Lightsail and is public over the existing TLS certificate at [https://xcover.online/page47/](https://xcover.online/page47/). It reads the live Seattle and Denver stores, shows the current ledger, supports watch setup, and opens captured documents. The deployment uses a separate `/page47` path so the other application on the domain remains untouched.
+The resident console is supervised by systemd on Lightsail and reads the live Seattle and Denver stores, shows the current ledger, supports watch setup, and opens captured documents. A temporary validation route exists on the existing TLS host, but no public demo URL is claimed here; a separate domain will be connected before launch.
 
 ## What Page 47 does not do
 
@@ -54,11 +54,11 @@ The preflight report identified eight clients that met the bounded structural ch
 
 ## Next work
 
-The remaining work is to grant the deployment identity read/write access to the two AgentCore SSM parameters and `iam:PassRole` for a least-privilege execution role, create the managed runtime, and switch the Lightsail service to it. SES still needs a verified sender and its SSM values. CloudWatch logs, a missed-run alarm, and a viewable OpenTelemetry trace still need configuration. Denver needs deeper record and document coverage. Finally, the hand-labelled comparison must run over the same matters for keyword alerts, search, latest-document reading, and Page 47; its results and every miss remain unpublished until review.
+The remaining work is to grant the deployment identity read/write access to the two AgentCore SSM parameters and `iam:PassRole` for a least-privilege execution role, create the managed runtime, and switch the Lightsail service to it. SES still needs a verified sender and its SSM values; the code now includes a private watch-management link in each delivered message. CloudWatch logs, a missed-run alarm, and a viewable OpenTelemetry trace still need configuration. A separate public domain is still pending. Denver needs deeper record and document coverage. Finally, the hand-labelled comparison must run over the same matters for keyword alerts, search, latest-document reading, and Page 47; its results and every miss remain unpublished until review.
 
 ## Tests
 
-The current suite has 20 tests. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request, checks public-path links, and checks unique delivery records. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes Seattle PDF placement. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
+The current suite has 22 tests. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request, checks public-path links, checks private watch stopping, and checks review email links. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes Seattle PDF placement. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
 
 ## Limitations
 

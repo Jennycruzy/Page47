@@ -113,6 +113,22 @@ def create_app(config_path: Path | None = None) -> FastAPI:
         except (LookupError, ValueError, FileNotFoundError) as error:
             raise HTTPException(status_code=400, detail=str(error)) from error
 
+    @app.get("/api/watches/{watch_id}")
+    def watch(watch_id: str) -> JSONObject:
+        try:
+            return service.watch(watch_id)
+        except LookupError as error:
+            raise HTTPException(status_code=404, detail=str(error)) from error
+
+    @app.post("/api/watches/{watch_id}/deactivate")
+    def deactivate_watch(watch_id: str) -> JSONObject:
+        try:
+            return service.deactivate_watch(watch_id)
+        except LookupError as error:
+            raise HTTPException(status_code=404, detail=str(error)) from error
+        except ValueError as error:
+            raise HTTPException(status_code=400, detail=str(error)) from error
+
     @app.post("/api/cities/{city}/matters/{matter_id}/investigate")
     def investigate(city: str, matter_id: int) -> JSONObject:
         try:
@@ -159,6 +175,14 @@ def create_app(config_path: Path | None = None) -> FastAPI:
         except LookupError as error:
             raise HTTPException(status_code=404, detail=str(error)) from error
         return HTMLResponse(_finding_page(settings.title, city, data, settings.public_path))
+
+    @app.get("/watch/{watch_id}", response_class=HTMLResponse)
+    def watch_page(watch_id: str) -> HTMLResponse:
+        try:
+            data = service.watch(watch_id)
+        except LookupError as error:
+            raise HTTPException(status_code=404, detail=str(error)) from error
+        return HTMLResponse(_watch_page(settings.title, data, settings.public_path))
 
     @app.get("/", response_class=HTMLResponse)
     def index() -> HTMLResponse:
@@ -212,7 +236,7 @@ document.querySelector('#ledger').innerHTML=[metric('matters observed',ledger.ma
 document.querySelector('#matters').innerHTML=matters.matters.length?matters.matters.map(m=>`<article class="card"><span class="tag">${{esc(m.placement_note)}}</span><h3>${{esc(m.latest_title||m.current_title||'Untitled public matter')}}</h3><p class="muted">${{esc(m.body_name)}} · ${{esc(m.latest_event_date)}} · item ${{esc(m.matter_id)}}</p><a href="${{internal(`/matter/${{encodeURIComponent(city)}}/${{m.matter_id}}`)}}">Open record</a></article>`).join(''):'<div class="empty">No stored matters were found.</div>';
 document.querySelector('#findings').innerHTML=findings.findings.length?findings.findings.map(f=>`<article class="card"><span class="tag">${{esc(f.state)}}</span><h3>Item ${{esc(f.matter_id)}}</h3><p>${{esc(f.supported_count)}} recorded observations supported · ${{esc(f.rejected_count)}} rejected in review</p><a href="${{internal(`/finding/${{encodeURIComponent(city)}}/${{encodeURIComponent(f.finding_id)}}`)}}">Read the review</a></article>`).join(''):'<div class="empty">No reviewed items have been saved yet.</div>'; }}
 async function init() {{ const data=await json(internal('/api/cities')); citySelect.innerHTML=data.cities.map(c=>`<option>${{esc(c.name)}}</option>`).join(''); citySelect.value=defaultCity; await loadBodies(); await load(); }}
-document.querySelector('#refresh').onclick=load; citySelect.onchange=async()=>{{await loadBodies(); await load();}}; document.querySelector('#watch-form').onsubmit=async(event)=>{{event.preventDefault(); const result=document.querySelector('#watch-result'); const bodies=[...document.querySelectorAll('input[name="body"]:checked')].map(input=>input.value); const address=document.querySelector('#address').value.trim()||null; const neighbourhood=document.querySelector('#neighbourhood').value.trim()||null; if(!address&&!neighbourhood){{result.textContent='Enter an address or neighbourhood.'; return;}} result.textContent='Saving…'; try {{ const response=await fetch(internal('/api/watches'),{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{city:chosen(),bodies,address,neighbourhood,email:document.querySelector('#email').value.trim()}})}}); const payload=await response.json(); if(!response.ok) throw new Error(payload.detail||'The watch could not be saved.'); result.textContent=payload.message; }} catch(error) {{result.textContent=`Could not save the watch: ${{esc(error.message)}}`;}} }}; init().catch(e=>{{document.querySelector('#matters').innerHTML=`<div class="empty">Could not load the record: ${{esc(e.message)}}`;}});
+document.querySelector('#refresh').onclick=load; citySelect.onchange=async()=>{{await loadBodies(); await load();}}; document.querySelector('#watch-form').onsubmit=async(event)=>{{event.preventDefault(); const result=document.querySelector('#watch-result'); const bodies=[...document.querySelectorAll('input[name="body"]:checked')].map(input=>input.value); const address=document.querySelector('#address').value.trim()||null; const neighbourhood=document.querySelector('#neighbourhood').value.trim()||null; if(!address&&!neighbourhood){{result.textContent='Enter an address or neighbourhood.'; return;}} result.textContent='Saving…'; try {{ const response=await fetch(internal('/api/watches'),{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{city:chosen(),bodies,address,neighbourhood,email:document.querySelector('#email').value.trim()}})}}); const payload=await response.json(); if(!response.ok) throw new Error(payload.detail||'The watch could not be saved.'); const link=internal(payload.manage_path||`/watch/${{payload.watch_id}}`); result.innerHTML=`${{esc(payload.message)}} <a href="${{esc(link)}}">Manage this private watch</a>`; }} catch(error) {{result.textContent=`Could not save the watch: ${{esc(error.message)}}`;}} }}; init().catch(e=>{{document.querySelector('#matters').innerHTML=`<div class="empty">Could not load the record: ${{esc(e.message)}}`;}});
 </script></body></html>"""
 
 
@@ -390,6 +414,35 @@ def _finding_page(title: str, city: str, data: JSONObject, public_path: str) -> 
     )
     limitation = _display(brief.get("limitation")) if isinstance(brief, dict) else ""
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} — review</title><style>body{{max-width:850px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}section{{background:white;border:1px solid #d9dfd8;border-radius:14px;padding:18px;margin:16px 0}}.state{{font-size:1.25rem;color:#245c45}}.muted{{color:#68736b}}li{{margin:14px 0}}</style></head><body><p><a href="{html.escape(public_path + '/', quote=True)}">← Back to Page 47</a></p><p class=muted>{html.escape(city)} · Matter {_display(data.get('matter_id'))}</p><h1>{html.escape(heading)}</h1><p class=state>Presentation drift: {html.escape(_state_text(decision.get('state')))}</p><p>{html.escape(_display(decision.get('reason')))}</p><section><h2>What the review supports</h2><ol>{''.join(accepted_blocks)}</ol></section><section><h2>What the record normally shows</h2>{norm_html or '<p class=muted>No body comparison was available.</p>'}</section><section><h2>Questions worth asking</h2>{questions_html}</section><section><h2>What Page 47 does not decide</h2><p>{html.escape(limitation or 'Page 47 does not determine why these changes were made.')}</p><p>Page 47 does not determine why these changes were made.</p></section><p>Supported observations: {html.escape(_display(data.get('supported_count')))} · Interpretations not used after review: {html.escape(_display(data.get('rejected_count'), '0'))}</p></body></html>"""
+
+
+def _watch_page(title: str, data: JSONObject, public_path: str) -> str:
+    raw_watch_id = _display(data.get("watch_id"))
+    watch_id = html.escape(raw_watch_id, quote=True)
+    city = html.escape(_display(data.get("city")))
+    bodies = data.get("bodies")
+    if not isinstance(bodies, list):
+        raise HTTPException(status_code=500, detail="Stored watch bodies were invalid")
+    body_names = [html.escape(str(item)) for item in bodies]
+    area = _display(data.get("address"), "") or _display(data.get("neighbourhood"), "")
+    active = data.get("active") is True
+    endpoint = html.escape(
+        f"{public_path}/api/watches/{raw_watch_id}/deactivate", quote=True
+    )
+    action = (
+        f'<button id="stop-watch" type="button">Stop this watch</button>'
+        f'<p id="watch-result" class="muted" aria-live="polite"></p>'
+        f'<script>document.querySelector("#stop-watch").onclick=async()=>{{'
+        f'const result=document.querySelector("#watch-result"); result.textContent="Stopping…"; '
+        f'try{{const response=await fetch("{endpoint}",{{method:"POST"}}); '
+        f'const data=await response.json(); if(!response.ok) throw new Error(data.detail||"Could not stop this watch."); '
+        f'result.textContent=data.message; document.querySelector("#stop-watch").remove();}}'
+        f'catch(error){{result.textContent=error.message;}}}};</script>'
+        if active
+        else "<p><b>This watch is stopped.</b> No further review emails will be sent.</p>"
+    )
+    status = "active" if active else "stopped"
+    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} — watch</title><style>body{{max-width:700px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}section{{background:white;border:1px solid #d9dfd8;border-radius:14px;padding:18px;margin:16px 0}}button{{border:1px solid #c79526;border-radius:10px;background:#e9b949;padding:11px 13px;font:inherit;font-weight:700;cursor:pointer}}.muted{{color:#68736b}}</style></head><body><p><a href="{html.escape(public_path + '/', quote=True)}">← Back to Page 47</a></p><h1>Your Page 47 watch</h1><section><p><b>City:</b> {city}</p><p><b>Public bodies:</b> {', '.join(body_names)}</p><p><b>Area:</b> {html.escape(area or 'Could not determine')}</p><p><b>Status:</b> {status}</p>{action}</section><p class=muted>This private link controls this watch. Keep it private.</p><p>Page 47 does not determine why these changes were made.</p></body></html>"""
 
 
 app = create_app()

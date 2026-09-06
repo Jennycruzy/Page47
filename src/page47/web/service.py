@@ -225,15 +225,41 @@ class WebService:
             store.commit()
         return {
             "watch_id": watch_id,
+            "manage_path": f"/watch/{watch_id}",
             "city": data.city,
             "area": {
                 "address": geocoded.as_json() if geocoded is not None else None,
                 "neighbourhood": data.neighbourhood,
             },
             "message": (
-                "Your watch is saved. New public records will be checked on the next scheduled run."
+                "Your watch is saved. Keep the private link to review or stop it. "
+                "New public records will be checked on the next scheduled run."
             ),
         }
+
+    def watch(self, watch_id: str) -> JSONObject:
+        for city in self.settings.cities:
+            with self._store(city.name) as store:
+                watch = store.watch_row(watch_id)
+                if watch is not None:
+                    watch["manage_path"] = f"/watch/{watch_id}"
+                    return watch
+        raise LookupError(f"Watch {watch_id} was not found")
+
+    def deactivate_watch(self, watch_id: str) -> JSONObject:
+        now = datetime.now(UTC).isoformat()
+        for city in self.settings.cities:
+            with self._store(city.name) as store:
+                if store.watch_row(watch_id) is None:
+                    continue
+                store.deactivate_watch(watch_id, now)
+                store.commit()
+                return {
+                    "watch_id": watch_id,
+                    "active": False,
+                    "message": "This watch has been stopped. It will not send further review emails.",
+                }
+        raise LookupError(f"Watch {watch_id} was not found")
 
     def match_matter(
         self,
