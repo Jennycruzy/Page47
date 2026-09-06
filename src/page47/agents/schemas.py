@@ -63,6 +63,15 @@ class SubstanceChange(BaseModel):
             raise ValueError("before and after must be supplied together")
         if self.value is None and not (has_before and has_after):
             raise ValueError("A document change needs a value or an explicit change")
+        if has_before and has_after:
+            before = self.before
+            after = self.after
+            if before is None or after is None:
+                raise ValueError("before and after must be supplied together")
+            if before.strip() == after.strip():
+                raise ValueError("before and after must identify different recorded values")
+        if self.evidence.page_number != self.page_number:
+            raise ValueError("The change page must match the evidence page")
         for name, value in (
             ("before", self.before),
             ("after", self.after),
