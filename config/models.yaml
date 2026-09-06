@@ -11,11 +11,13 @@ document:
 agents:
   archivist: amazon.nova-micro-v1:0
   substance: amazon.nova-lite-v1:0
-  # Downstream nodes receive predecessor results. Live checks on 2026-09-05
-  # showed Nova Lite handles that input reliably with Converse tool calls.
+  # Downstream nodes receive predecessor reports and must return a compact
+  # structured result. Keep the review nodes on the text-only model selected
+  # by the live model listing; the multimodal model is reserved for document
+  # reading.
   process: amazon.nova-lite-v1:0
-  skeptic: amazon.nova-lite-v1:0
-  brief_writer: amazon.nova-lite-v1:0
+  skeptic: amazon.nova-micro-v1:0
+  brief_writer: amazon.nova-micro-v1:0
 
 inference:
   temperature: 0.0
