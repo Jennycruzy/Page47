@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import html
+import re
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from hashlib import sha256
@@ -100,7 +101,15 @@ def load_notification_settings(path: Path) -> NotificationSettings:
 
 def _plain_language(text: str, context: str) -> str:
     lowered = text.casefold()
-    found = sorted(word for word in BANNED_HUMAN_WORDS if word in lowered)
+    found = sorted(
+        word
+        for word in BANNED_HUMAN_WORDS
+        if (
+            re.search(rf"\b{re.escape(word)}\b", lowered) is not None
+            if " " not in word
+            else word in lowered
+        )
+    )
     if found:
         raise ValueError(f"{context} contained prohibited internal wording: {', '.join(found)}")
     return text

@@ -62,7 +62,7 @@ The remaining work is to grant the deployment identity read/write access to the 
 
 ## Tests
 
-The current suite has 28 tests. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request, checks public-path links, checks private watch stopping, checks review email links, checks the observability configuration, and checks that the scheduled collector covers both cities and delivery. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes each city's PDF placement. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
+The current suite has 29 tests. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request, checks public-path links, checks private watch stopping, checks review email links, checks the observability configuration, and checks that the scheduled collector covers both cities and delivery. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes each city's PDF placement. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
 
 ## Limitations
 

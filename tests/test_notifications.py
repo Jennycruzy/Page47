@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from page47.notifications.delivery import render_finding_email
+from page47.notifications.delivery import _plain_language, render_finding_email
 from page47.snapshotter.config import JSONObject
 
 
@@ -49,3 +49,13 @@ def test_email_rejects_non_http_watch_links() -> None:
         assert "HTTP(S) URL" in str(error)
     else:
         raise AssertionError("A non-HTTP watch link was accepted")
+
+
+def test_plain_language_matches_words_without_rejecting_identity() -> None:
+    assert _plain_language("The deployment identity is recorded.", "test")
+    try:
+        _plain_language("The record names an entity.", "test")
+    except ValueError as error:
+        assert "entity" in str(error)
+    else:
+        raise AssertionError("A prohibited whole word was accepted")

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 from page47.notifications.delivery import BANNED_HUMAN_WORDS
@@ -10,7 +11,15 @@ from page47.web.app import _index_page
 
 def _check(text: str, context: str) -> None:
     lowered = text.casefold()
-    found = sorted(word for word in BANNED_HUMAN_WORDS if word in lowered)
+    found = sorted(
+        word
+        for word in BANNED_HUMAN_WORDS
+        if (
+            re.search(rf"\b{re.escape(word)}\b", lowered) is not None
+            if " " not in word
+            else word in lowered
+        )
+    )
     if found:
         raise SystemExit(f"{context} contains prohibited wording: {', '.join(found)}")
 
