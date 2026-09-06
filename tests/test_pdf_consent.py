@@ -1,4 +1,49 @@
+from pathlib import Path
+
+import pytest
+
 from page47.records.pdf_consent import AgendaPage, classify_item
+from page47.records.runner import agenda_capture
+from page47.snapshotter.http import FetchResult
+from page47.snapshotter.store import SnapshotStore
+
+AGENDA_URL = (
+    "https://legistar2.granicus.com/seattle/meetings/2026/9/"
+    "6871_A_Libraries%2C_Education%2C_and_Neighborhoods_Committee_26-09-09_"
+    "Committee_Agenda.pdf"
+)
+
+
+def stored_agenda(tmp_path: Path, status: int, body: bytes) -> SnapshotStore:
+    store = SnapshotStore(tmp_path / "evidence")
+    response = FetchResult(
+        target="agenda:6871",
+        url=AGENDA_URL,
+        captured_at="2026-09-06T15:00:00Z",
+        status=status,
+        headers={},
+        body=body,
+        error_type=None,
+        error=None,
+        not_modified=False,
+    )
+    parse_status = "binary" if status == 200 else "unparsed"
+    store.capture(response, "agenda_pdf", {"parse_status": parse_status})
+    return store
+
+
+def test_non_successful_agenda_capture_is_reported_before_pdf_reading(tmp_path: Path) -> None:
+    store = stored_agenda(tmp_path, 404, b"<!DOCTYPE html>")
+
+    with pytest.raises(ValueError, match="HTTP status 404"):
+        agenda_capture(store, 6871, AGENDA_URL)
+
+
+def test_malformed_successful_agenda_capture_is_reported(tmp_path: Path) -> None:
+    store = stored_agenda(tmp_path, 200, b"<!DOCTYPE html>")
+
+    with pytest.raises(ValueError, match="Could not read captured agenda PDF"):
+        agenda_capture(store, 6871, AGENDA_URL)
 
 
 def test_seattle_august_11_consent_item_is_found_under_heading() -> None:
