@@ -53,9 +53,10 @@ def load_web_settings(path: Path) -> WebSettings:
     web = _object(root.get("web"), "web")
     title = _text(web, "title", "web")
     default_city = _text(web, "default_city", "web")
-    public_path = _text(web, "public_path", "web").rstrip("/")
-    if not public_path.startswith("/"):
+    configured_public_path = _text(web, "public_path", "web")
+    if not configured_public_path.startswith("/"):
         raise ValueError("web.public_path must start with '/'")
+    public_path = "" if configured_public_path == "/" else configured_public_path.rstrip("/")
     raw_cities = _object(web.get("city_configs"), "web.city_configs")
     cities: list[CityRuntime] = []
     for name, raw_value in raw_cities.items():

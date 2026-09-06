@@ -194,7 +194,8 @@ def create_app(config_path: Path | None = None) -> FastAPI:
 def _internal_url(public_path: str, path: str) -> str:
     if path.startswith(("https://", "http://")):
         return path
-    return f"{public_path}{path if path.startswith('/') else f'/{path}'}"
+    suffix = path if path.startswith("/") else f"/{path}"
+    return suffix if public_path in {"", "/"} else f"{public_path}{suffix}"
 
 
 def _index_page(title: str, default_city: str, public_path: str) -> str:
@@ -215,7 +216,7 @@ select,button,input {{ border:1px solid var(--line); border-radius:10px; backgro
 .card a {{ color:var(--green); font-weight:700; }} .tag {{ display:inline-block; padding:3px 8px; border-radius:99px; background:#edf2ee; color:var(--green); font-size:.85rem; }}
 .muted {{ color:var(--muted); }} .ledger {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin:16px 0 30px; }} .metric {{ padding:14px; border-left:4px solid var(--gold); background:white; }} .metric strong {{ display:block; font-size:1.6rem; }}
 .empty {{ padding:28px; background:white; border:1px dashed var(--line); border-radius:14px; }} footer {{ max-width:1120px; margin:auto; padding:24px; color:var(--muted); }} .body-list {{ display:flex; gap:12px; flex-wrap:wrap; margin:12px 0 18px; }} .body-list label {{ background:#edf2ee; border-radius:9px; padding:8px 10px; }} .watch-fields {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-bottom:16px; }} .watch-fields label {{ display:flex; flex-direction:column; gap:5px; }}
-</style></head><body><header><a href="{html.escape(public_path + '/', quote=True)}" style="color:white;text-decoration:none"><h1>{safe_title}</h1></a><div>See how public matters were described over time.</div></header>
+</style></head><body><header><a href="{html.escape(_internal_url(public_path, '/'), quote=True)}" style="color:white;text-decoration:none"><h1>{safe_title}</h1></a><div>See how public matters were described over time.</div></header>
 <main><p class="lede">Page 47 reads the public record for residents, neighbourhood groups, and local reporters. Each result links back to the city record. It does not determine why changes were made.</p>
 <div class="toolbar"><label>City <select id="city"></select></label><button id="refresh">Refresh record</button></div>
 <section class="card"><h2>Watch a neighbourhood</h2><p class="muted">Choose a public body and an address or neighbourhood. Page 47 will check the stored public record and email one review when a matter is worth a look.</p><form id="watch-form"><div id="bodies" class="body-list">Loading public bodies…</div><div class="watch-fields"><label>Address <input id="address" autocomplete="street-address" placeholder="123 Main Street, Seattle, WA"></label><label>Neighbourhood <input id="neighbourhood" placeholder="Neighbourhood name"></label><label>Email <input id="email" type="email" required placeholder="you@example.org"></label></div><button type="submit">Save this watch</button><p id="watch-result" class="muted" aria-live="polite"></p></form></section>
@@ -227,7 +228,7 @@ select,button,input {{ border:1px solid var(--line); border-radius:10px; backgro
 const defaultCity = {default_city_json}; const publicPath = {public_path_json};
 const citySelect=document.querySelector('#city'); const esc=(v)=>String(v??'').replace(/[&<>"']/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}}[c]));
 async function json(url) {{ const r=await fetch(url); if(!r.ok) throw new Error(await r.text()); return r.json(); }}
-function internal(path) {{ return publicPath + (path.startsWith('/') ? path : `/${{path}}`); }}
+function internal(path) {{ return (publicPath === '/' ? '' : publicPath) + (path.startsWith('/') ? path : `/${{path}}`); }}
 function chosen() {{ return citySelect.value || defaultCity; }}
 function metric(label,value) {{ return `<div class="metric"><strong>${{esc(value)}}</strong><span>${{esc(label)}}</span></div>`; }}
 async function loadBodies() {{ const city=chosen(); const data=await json(internal(`/api/cities/${{encodeURIComponent(city)}}/bodies`)); document.querySelector('#bodies').innerHTML=data.bodies.map((body,index)=>`<label><input type="checkbox" name="body" value="${{esc(body)}}" ${{index===0?'checked':''}}> ${{esc(body)}}</label>`).join(''); }}
@@ -257,7 +258,8 @@ def _evidence_page(title: str, city: str, data: JSONObject, public_path: str) ->
             blocks.append(f"<blockquote><b>PDF page {page}</b><br><mark>{excerpt}</mark></blockquote>")
     if not blocks:
         blocks.append("<p class=muted>The stored text reader found no page passage for this document.</p>")
-    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} evidence</title><style>body{{max-width:850px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}blockquote{{background:white;border-left:4px solid #e9b949;padding:14px;margin:16px 0}}mark{{background:#fff0a8}}.muted{{color:#68736b}}</style></head><body><p><a href="{html.escape(public_path + '/', quote=True)}">← Back to Page 47</a></p><h1>{name}</h1><p>This page shows the captured document passage used by Page 47. The PDF is the primary record.</p><p><a href="{pdf_url}" target="_blank" rel="noreferrer">Open the captured PDF</a></p>{''.join(blocks)}<p>Page 47 does not determine why these changes were made.</p></body></html>"""
+    home_url = html.escape(_internal_url(public_path, "/"), quote=True)
+    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} evidence</title><style>body{{max-width:850px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}blockquote{{background:white;border-left:4px solid #e9b949;padding:14px;margin:16px 0}}mark{{background:#fff0a8}}.muted{{color:#68736b}}</style></head><body><p><a href="{home_url}">← Back to Page 47</a></p><h1>{name}</h1><p>This page shows the captured document passage used by Page 47. The PDF is the primary record.</p><p><a href="{pdf_url}" target="_blank" rel="noreferrer">Open the captured PDF</a></p>{''.join(blocks)}<p>Page 47 does not determine why these changes were made.</p></body></html>"""
 
 
 def _display(value: object, fallback: str = "Could not determine") -> str:
@@ -374,7 +376,8 @@ def _matter_page(title: str, city: str, data: JSONObject, public_path: str) -> s
             finding_html = (
                 f'<p><a href="{html.escape(_internal_url(public_path, f"/finding/{city}/{finding_id}"), quote=True)}">Read the saved review</a></p>'
             )
-    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} — {html.escape(current_title)}</title><style>body{{max-width:1000px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}.card{{background:white;border:1px solid #d9dfd8;border-radius:14px;padding:18px;margin:16px 0}}.muted{{color:#68736b}}li{{margin:8px 0}}</style></head><body><p><a href="{html.escape(public_path + '/', quote=True)}">← Back to Page 47</a></p><p class=muted>{html.escape(city)} · Matter {_display(matter.get('matter_id'))}</p><h1>{html.escape(current_title)}</h1><p>The entries below show how this public matter appeared at each recorded meeting. The links identify the source and capture time.</p>{finding_html}{''.join(appearance_blocks)}<p>Page 47 does not determine why these changes were made.</p></body></html>"""
+    home_url = html.escape(_internal_url(public_path, "/"), quote=True)
+    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} — {html.escape(current_title)}</title><style>body{{max-width:1000px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}.card{{background:white;border:1px solid #d9dfd8;border-radius:14px;padding:18px;margin:16px 0}}.muted{{color:#68736b}}li{{margin:8px 0}}</style></head><body><p><a href="{home_url}">← Back to Page 47</a></p><p class=muted>{html.escape(city)} · Matter {_display(matter.get('matter_id'))}</p><h1>{html.escape(current_title)}</h1><p>The entries below show how this public matter appeared at each recorded meeting. The links identify the source and capture time.</p>{finding_html}{''.join(appearance_blocks)}<p>Page 47 does not determine why these changes were made.</p></body></html>"""
 
 
 def _finding_page(title: str, city: str, data: JSONObject, public_path: str) -> str:
@@ -413,7 +416,8 @@ def _finding_page(title: str, city: str, data: JSONObject, public_path: str) -> 
         else "Worth a look"
     )
     limitation = _display(brief.get("limitation")) if isinstance(brief, dict) else ""
-    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} — review</title><style>body{{max-width:850px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}section{{background:white;border:1px solid #d9dfd8;border-radius:14px;padding:18px;margin:16px 0}}.state{{font-size:1.25rem;color:#245c45}}.muted{{color:#68736b}}li{{margin:14px 0}}</style></head><body><p><a href="{html.escape(public_path + '/', quote=True)}">← Back to Page 47</a></p><p class=muted>{html.escape(city)} · Matter {_display(data.get('matter_id'))}</p><h1>{html.escape(heading)}</h1><p class=state>Presentation drift: {html.escape(_state_text(decision.get('state')))}</p><p>{html.escape(_display(decision.get('reason')))}</p><section><h2>What the review supports</h2><ol>{''.join(accepted_blocks)}</ol></section><section><h2>What the record normally shows</h2>{norm_html or '<p class=muted>No body comparison was available.</p>'}</section><section><h2>Questions worth asking</h2>{questions_html}</section><section><h2>What Page 47 does not decide</h2><p>{html.escape(limitation or 'Page 47 does not determine why these changes were made.')}</p><p>Page 47 does not determine why these changes were made.</p></section><p>Supported observations: {html.escape(_display(data.get('supported_count')))} · Interpretations not used after review: {html.escape(_display(data.get('rejected_count'), '0'))}</p></body></html>"""
+    home_url = html.escape(_internal_url(public_path, "/"), quote=True)
+    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} — review</title><style>body{{max-width:850px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}section{{background:white;border:1px solid #d9dfd8;border-radius:14px;padding:18px;margin:16px 0}}.state{{font-size:1.25rem;color:#245c45}}.muted{{color:#68736b}}li{{margin:14px 0}}</style></head><body><p><a href="{home_url}">← Back to Page 47</a></p><p class=muted>{html.escape(city)} · Matter {_display(data.get('matter_id'))}</p><h1>{html.escape(heading)}</h1><p class=state>Presentation drift: {html.escape(_state_text(decision.get('state')))}</p><p>{html.escape(_display(decision.get('reason')))}</p><section><h2>What the review supports</h2><ol>{''.join(accepted_blocks)}</ol></section><section><h2>What the record normally shows</h2>{norm_html or '<p class=muted>No body comparison was available.</p>'}</section><section><h2>Questions worth asking</h2>{questions_html}</section><section><h2>What Page 47 does not decide</h2><p>{html.escape(limitation or 'Page 47 does not determine why these changes were made.')}</p><p>Page 47 does not determine why these changes were made.</p></section><p>Supported observations: {html.escape(_display(data.get('supported_count')))} · Interpretations not used after review: {html.escape(_display(data.get('rejected_count'), '0'))}</p></body></html>"""
 
 
 def _watch_page(title: str, data: JSONObject, public_path: str) -> str:
@@ -426,7 +430,7 @@ def _watch_page(title: str, data: JSONObject, public_path: str) -> str:
     area = _display(data.get("address"), "") or _display(data.get("neighbourhood"), "")
     active = data.get("active") is True
     endpoint = html.escape(
-        f"{public_path}/api/watches/{raw_watch_id}/deactivate", quote=True
+        _internal_url(public_path, f"/api/watches/{raw_watch_id}/deactivate"), quote=True
     )
     action = (
         f'<button id="stop-watch" type="button">Stop this watch</button>'
@@ -441,7 +445,8 @@ def _watch_page(title: str, data: JSONObject, public_path: str) -> str:
         else "<p><b>This watch is stopped.</b> No further review emails will be sent.</p>"
     )
     status = "active" if active else "stopped"
-    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} — watch</title><style>body{{max-width:700px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}section{{background:white;border:1px solid #d9dfd8;border-radius:14px;padding:18px;margin:16px 0}}button{{border:1px solid #c79526;border-radius:10px;background:#e9b949;padding:11px 13px;font:inherit;font-weight:700;cursor:pointer}}.muted{{color:#68736b}}</style></head><body><p><a href="{html.escape(public_path + '/', quote=True)}">← Back to Page 47</a></p><h1>Your Page 47 watch</h1><section><p><b>City:</b> {city}</p><p><b>Public bodies:</b> {', '.join(body_names)}</p><p><b>Area:</b> {html.escape(area or 'Could not determine')}</p><p><b>Status:</b> {status}</p>{action}</section><p class=muted>This private link controls this watch. Keep it private.</p><p>Page 47 does not determine why these changes were made.</p></body></html>"""
+    home_url = html.escape(_internal_url(public_path, "/"), quote=True)
+    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)} — watch</title><style>body{{max-width:700px;margin:0 auto;padding:30px 20px;font:16px/1.5 system-ui,sans-serif;color:#17211b;background:#fbfaf5}}a{{color:#245c45}}section{{background:white;border:1px solid #d9dfd8;border-radius:14px;padding:18px;margin:16px 0}}button{{border:1px solid #c79526;border-radius:10px;background:#e9b949;padding:11px 13px;font:inherit;font-weight:700;cursor:pointer}}.muted{{color:#68736b}}</style></head><body><p><a href="{home_url}">← Back to Page 47</a></p><h1>Your Page 47 watch</h1><section><p><b>City:</b> {city}</p><p><b>Public bodies:</b> {', '.join(body_names)}</p><p><b>Area:</b> {html.escape(area or 'Could not determine')}</p><p><b>Status:</b> {status}</p>{action}</section><p class=muted>This private link controls this watch. Keep it private.</p><p>Page 47 does not determine why these changes were made.</p></body></html>"""
 
 
 app = create_app()

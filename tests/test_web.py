@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from page47.web.app import _index_page
+from page47.web.app import _index_page, _internal_url
 from page47.web.config import load_web_settings
 
 
@@ -18,3 +18,11 @@ def test_console_links_use_the_configured_public_path() -> None:
     assert "internal('/api/cities')" in page
     assert "internal(`/matter/" in page
     assert "Manage this private watch" in page
+
+
+def test_console_supports_a_domain_root_public_path() -> None:
+    assert _internal_url("/", "/api/cities") == "/api/cities"
+    assert _internal_url("/", "/watch/watch-1") == "/watch/watch-1"
+    page = _index_page("Page 47", "Seattle, Washington", "/")
+    assert 'href="/"' in page
+    assert "publicPath === '/'" in page
