@@ -20,6 +20,8 @@ The five-node Strands investigation graph and its AgentCore transport are implem
 
 The resident console is supervised by systemd on Lightsail and reads the live Seattle and Denver stores, shows the current ledger, supports watch setup, and opens captured documents. A temporary validation route exists on the existing TLS host, but no public demo URL is claimed here; a separate domain will be connected before launch.
 
+Every watch is stored server-side with its city, selected public bodies, area, and email address, so residents do not need an account or a separate page. Saving a watch returns a private management link that shows its status and can stop future messages. When SES is configured, each delivered review includes that same private stop link; no message has been sent yet because the sender and public URL still need to be configured in AWS.
+
 ## What Page 47 does not do
 
 Page 47 reports public records. It does not determine why a change was made, claim that anyone intended to hide information, or make a legal finding. A record that was never published is outside what this tool can see.
