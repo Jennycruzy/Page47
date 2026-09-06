@@ -100,7 +100,8 @@ def _runtime_name(value: JSONObject, key: str, context: str) -> str:
     name = _text(value, key, context)
     if re.fullmatch(r"[A-Za-z][A-Za-z0-9_]{0,47}", name) is None:
         raise ValueError(
-            f"{context}.{key} must start with a letter and contain only letters, numbers, and underscores"
+            f"{context}.{key} must start with a letter and contain only letters, numbers, "
+            "and underscores"
         )
     return name
 

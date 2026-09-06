@@ -74,6 +74,16 @@ type InvestigationReports = tuple[
     BriefWriterReport,
 ]
 
+type EvidenceKey = tuple[str, str]
+
+
+@dataclass(frozen=True, slots=True)
+class _EvidenceCatalog:
+    all_sources: frozenset[EvidenceKey]
+    document_sources: frozenset[EvidenceKey]
+    attachment_sources: frozenset[EvidenceKey]
+    page_sources: dict[EvidenceKey, frozenset[int]]
+
 
 @dataclass(frozen=True, slots=True)
 class _ReviewInputs:
@@ -144,6 +154,192 @@ def _substance_observations(report: SubstanceReport) -> tuple[ReviewedObservatio
             )
         )
     return tuple(output)
+
+
+def _evidence_catalog(case: MatterCase) -> _EvidenceCatalog:
+    all_sources: set[EvidenceKey] = set()
+    document_sources: set[EvidenceKey] = set()
+    attachment_sources: set[EvidenceKey] = set()
+    page_sources: dict[EvidenceKey, set[int]] = {}
+
+    def add_source(
+        url: str,
+        captured_at: str,
+        *,
+        document: bool = False,
+        attachment: bool = False,
+        pages: tuple[int, ...] = (),
+    ) -> None:
+        key = (url, captured_at)
+        all_sources.add(key)
+        if document:
+            document_sources.add(key)
+        if attachment:
+            attachment_sources.add(key)
+        if pages:
+            page_sources.setdefault(key, set()).update(pages)
+
+    add_source(case.matter.source.url, case.matter.source.captured_at)
+    for appearance in case.appearances:
+        add_source(appearance.source.url, appearance.source.captured_at)
+        if appearance.pdf_source is not None:
+            add_source(
+                appearance.pdf_source.url,
+                appearance.pdf_source.captured_at,
+                document=True,
+                pages=appearance.pdf_evidence_pages,
+            )
+        for attachment in appearance.attachments:
+            add_source(attachment.source.url, attachment.source.captured_at)
+            if attachment.reading_source is not None:
+                pages: tuple[int, ...] = ()
+                if attachment.page_count is not None:
+                    pages = tuple(range(1, attachment.page_count + 1))
+                add_source(
+                    attachment.reading_source.url,
+                    attachment.reading_source.captured_at,
+                    document=True,
+                    attachment=True,
+                    pages=pages,
+                )
+            for anchor in attachment.anchors:
+                add_source(
+                    anchor.source.url,
+                    anchor.source.captured_at,
+                    document=True,
+                    attachment=True,
+                    pages=(anchor.page_number,),
+                )
+            capture = attachment.document_capture()
+            if capture is not None:
+                capture_source = capture[1]
+                pages = ()
+                if attachment.page_count is not None:
+                    pages = tuple(range(1, attachment.page_count + 1))
+                add_source(
+                    capture_source.url,
+                    capture_source.captured_at,
+                    document=True,
+                    attachment=True,
+                    pages=pages,
+                )
+    return _EvidenceCatalog(
+        all_sources=frozenset(all_sources),
+        document_sources=frozenset(document_sources),
+        attachment_sources=frozenset(attachment_sources),
+        page_sources={key: frozenset(values) for key, values in page_sources.items()},
+    )
+
+
+def _validate_agent_evidence(
+    evidence: AgentEvidence,
+    catalog: _EvidenceCatalog,
+    context: str,
+    *,
+    document_required: bool = False,
+    page_required: bool = False,
+) -> None:
+    key = (evidence.url, evidence.captured_at)
+    if key not in catalog.all_sources:
+        raise ValueError(
+            f"{context} cited a primary record that was not in the stored matter: {evidence.url}"
+        )
+    if document_required and key not in catalog.attachment_sources:
+        raise ValueError(f"{context} cited a non-document record for an attachment fact")
+    if page_required and evidence.page_number is None:
+        raise ValueError(f"{context} must include a PDF page number")
+    if evidence.page_number is not None:
+        pages = catalog.page_sources.get(key)
+        if pages is None or evidence.page_number not in pages:
+            raise ValueError(
+                f"{context} cited PDF page {evidence.page_number}, which is not available "
+                "at its source"
+            )
+
+
+def _validate_agent_reports(
+    reports: InvestigationReports,
+    catalog: _EvidenceCatalog,
+) -> None:
+    archivist, substance, process, _skeptic, _brief = reports
+    for role, observations in (
+        ("Archivist", archivist.observations),
+        ("Process", process.observations),
+    ):
+        for observation in observations:
+            for index, evidence in enumerate(observation.evidence):
+                _validate_agent_evidence(
+                    evidence,
+                    catalog,
+                    f"{role} observation {observation.observation_id} evidence {index}",
+                )
+    if bool(substance.changes) == substance.no_substantive_change:
+        raise ValueError(
+            "Substance report disagreed with its no-substantive-change declaration"
+        )
+    for change in substance.changes:
+        _validate_agent_evidence(
+            change.evidence,
+            catalog,
+            f"Substance change {change.observation_id} evidence",
+            document_required=True,
+            page_required=True,
+        )
+        if change.evidence.page_number != change.page_number:
+            raise ValueError(
+                f"Substance change {change.observation_id} used different page numbers "
+                "in its fields"
+            )
+
+
+def _brief_observation_id(
+    raw_id: str,
+    accepted_ids: frozenset[str],
+    aliases: dict[str, tuple[str, ...]],
+    observations: dict[str, ReviewedObservation],
+) -> str:
+    if raw_id in observations:
+        resolved = raw_id
+    else:
+        candidates = aliases.get(raw_id)
+        if candidates is None:
+            raise ValueError(f"Brief writer cited unknown observation: {raw_id}")
+        if len(candidates) != 1:
+            raise ValueError(f"Brief writer cited ambiguous observation: {raw_id}")
+        resolved = candidates[0]
+    if resolved not in accepted_ids:
+        raise ValueError(f"Brief writer cited an observation rejected by review: {raw_id}")
+    return resolved
+
+
+def _validate_brief(
+    brief: BriefWriterReport,
+    accepted_ids: frozenset[str],
+    aliases: dict[str, tuple[str, ...]],
+    observations: dict[str, ReviewedObservation],
+    catalog: _EvidenceCatalog,
+) -> None:
+    for index, line in enumerate(brief.lines):
+        observation_id = _brief_observation_id(
+            line.observation_id,
+            accepted_ids,
+            aliases,
+            observations,
+        )
+        expected = {
+            (link.url, link.captured_at) for link in observations[observation_id].evidence
+        }
+        for evidence_index, evidence in enumerate(line.evidence):
+            _validate_agent_evidence(
+                evidence,
+                catalog,
+                f"Brief line {index} evidence {evidence_index}",
+            )
+            if (evidence.url, evidence.captured_at) not in expected:
+                raise ValueError(
+                    f"Brief line {index} cited evidence not attached to observation "
+                    f"{line.observation_id}"
+                )
 
 
 def _agent_observations(
@@ -510,7 +706,9 @@ def _complete_review(
     graph_result: JSONObject,
 ) -> InvestigationOutcome:
     archivist, substance, process, skeptic, brief = reports
-    agent_reports, _aliases = _agent_reports(archivist, substance, process, skeptic)
+    catalog = _evidence_catalog(inputs.case)
+    _validate_agent_reports(reports, catalog)
+    agent_reports, aliases = _agent_reports(archivist, substance, process, skeptic)
     structural = _structural_observation(
         inputs.drift.comparisons[-1] if inputs.drift.comparisons else None
     )
@@ -527,6 +725,7 @@ def _complete_review(
     )
     decision = apply_evidence_policy(report, inputs.policy_config)
     accepted_ids = frozenset(item.observation_id for item in decision.accepted)
+    _validate_brief(brief, accepted_ids, aliases, by_id, catalog)
     safe_brief = _brief_with_resolved_ids(brief, accepted_ids, by_id)
     return InvestigationOutcome(
         run_id=run_id,
@@ -562,6 +761,31 @@ def _save_failed_run(
         )
     )
     store.commit()
+
+
+def record_failed_investigation(
+    store: RecordStore,
+    city: str,
+    matter_id: int,
+    error: Exception,
+    graph_result: JSONObject | None = None,
+) -> str:
+    """Persist a failure that happened before a graph result reached review."""
+
+    run_id = uuid4().hex
+    payload: JSONObject = {"status": "transport_failed"}
+    if graph_result is not None:
+        payload = graph_result
+    _save_failed_run(
+        store,
+        city,
+        matter_id,
+        run_id,
+        _now(),
+        payload,
+        error,
+    )
+    return run_id
 
 
 def review_graph_payload(

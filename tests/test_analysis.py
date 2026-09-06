@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import pytest
+from pydantic import ValidationError
+
 from page47.agents.schemas import (
     AgentEvidence,
     AgentObservation,
@@ -8,11 +11,17 @@ from page47.agents.schemas import (
     BriefWriterReport,
     ProcessReport,
     SkepticReport,
+    SubstanceChange,
     SubstanceReport,
 )
 from page47.analysis.case import AppearanceRecord, MatterCase, MatterRecord
 from page47.analysis.drift import EvidenceLink, PresentationConfig, compare_all_appearances
-from page47.analysis.investigation import _agent_reports, _brief_with_resolved_ids
+from page47.analysis.investigation import (
+    _agent_reports,
+    _brief_with_resolved_ids,
+    _evidence_catalog,
+    _validate_agent_reports,
+)
 from page47.analysis.policy import (
     AgentReports,
     EvidencePolicyConfig,
@@ -201,3 +210,53 @@ def test_brief_lines_use_the_accepted_record_text_and_evidence() -> None:
     assert safe.lines[0].text == observation.text
     assert safe.lines[0].evidence[0].url == record_evidence.url
     assert safe.limitation == "Page 47 does not determine why these changes were made."
+
+
+def test_agent_report_cannot_cite_a_record_outside_the_matter() -> None:
+    archivist = ArchivistReport(
+        observations=[
+            AgentObservation(
+                observation_id="outside",
+                direction="less_clear",
+                statement="The record changed.",
+                evidence=[
+                    AgentEvidence(
+                        label="unrelated record",
+                        url="https://example.invalid/unrelated",
+                        captured_at="2026-09-05T00:00:00Z",
+                    )
+                ],
+            )
+        ],
+        summary="record",
+    )
+    process = ProcessReport(observations=[], summary="presentation")
+    reports = (
+        archivist,
+        SubstanceReport(changes=[], no_substantive_change=True, summary="none"),
+        process,
+        SkepticReport(accepted_observation_ids=[], rejected_observations=[], summary="review"),
+        BriefWriterReport(heading="Review", lines=[], questions=[], limitation="Not assessed."),
+    )
+
+    with pytest.raises(ValueError, match="not in the stored matter"):
+        _validate_agent_reports(reports, _evidence_catalog(case("regular")))
+
+
+def test_substance_change_rejects_unavailable_placeholder_values() -> None:
+    with pytest.raises(ValidationError, match="recorded value"):
+        SubstanceChange(
+            observation_id="height",
+            statement="The height changed.",
+            subject="maximum height",
+            before="N/A",
+            after="75 feet",
+            page_number=1,
+            excerpt="maximum height: 75 feet",
+            evidence=AgentEvidence(
+                label="attachment",
+                url="https://records.example/attachment.pdf",
+                captured_at="2026-09-05T00:00:00Z",
+                page_number=1,
+            ),
+        )

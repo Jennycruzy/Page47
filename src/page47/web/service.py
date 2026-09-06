@@ -14,7 +14,11 @@ from page47.address.matcher import (
     match_case_to_area,
 )
 from page47.analysis.case import load_matter_case
-from page47.analysis.investigation import investigate_matter, review_graph_payload
+from page47.analysis.investigation import (
+    investigate_matter,
+    record_failed_investigation,
+    review_graph_payload,
+)
 from page47.analysis.norms import compute_historical_norms, load_norm_settings
 from page47.records.store import RecordStore, SourceReference, WatchObservation
 from page47.runtime.client import AgentCoreTransport, load_agentcore_settings
@@ -297,7 +301,11 @@ class WebService:
                 )
             else:
                 case = load_matter_case(store, city, matter_id, runtime.evidence_root)
-                graph_result = self.agentcore.invoke_case(case)
+                try:
+                    graph_result = self.agentcore.invoke_case(case)
+                except Exception as error:
+                    record_failed_investigation(store, city, matter_id, error)
+                    raise
                 outcome = review_graph_payload(
                     store=store,
                     city=city,
