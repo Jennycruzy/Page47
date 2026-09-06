@@ -15,6 +15,7 @@ from page47.records.runner import (
     content_capture,
     event_observation,
     required_integer,
+    response_hash,
     source_for_capture,
 )
 from page47.records.store import RecordStore, SourceReference
@@ -43,7 +44,7 @@ def apply_captured_events(
             if record_store.has_snapshot(capture_key):
                 continue
             source = source_for_capture(capture)
-            response_hash = text_value(capture, "response_sha256")
+            response_sha256 = text_value(capture, "response_sha256")
             complete = True
             try:
                 detail = as_object(
@@ -152,7 +153,7 @@ def apply_captured_events(
                             f"captured-event:{event_id}:{index}",
                             source.url,
                             source.captured_at,
-                            response_hash,
+                            response_sha256,
                             f"{type(error).__name__}: {error}",
                         )
                 if complete:
@@ -164,7 +165,7 @@ def apply_captured_events(
                     capture_key,
                     source.url,
                     source.captured_at,
-                    response_hash,
+                    response_sha256,
                     f"{type(error).__name__}: {error}",
                 )
         record_store.commit()
