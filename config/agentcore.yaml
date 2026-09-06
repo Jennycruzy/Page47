@@ -1,7 +1,7 @@
 runtime:
   working_directory: /tmp/page47
   invocation:
-    enabled: false
+    enabled: true
     region: eu-west-2
     runtime_arn_parameter: /page47/agentcore/runtime-arn
     qualifier: DEFAULT

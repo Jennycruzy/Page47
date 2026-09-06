@@ -10,9 +10,9 @@ from page47.runtime.transport import request_bytes, request_from_case
 from scripts.deploy_agentcore import _client_token, load_deployment_settings
 
 
-def test_agentcore_is_explicitly_disabled_until_a_runtime_arn_is_configured() -> None:
+def test_agentcore_is_enabled_after_runtime_deployment() -> None:
     settings = load_agentcore_settings(Path("config/agentcore.yaml"))
-    assert settings.enabled is False
+    assert settings.enabled is True
     assert settings.region == "eu-west-2"
     assert settings.runtime_arn_parameter == "/page47/agentcore/runtime-arn"
 
