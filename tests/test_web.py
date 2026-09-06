@@ -14,5 +14,7 @@ def test_console_configuration_has_a_public_path() -> None:
 def test_console_links_use_the_configured_public_path() -> None:
     page = _index_page("Page 47", "Seattle, Washington", "/page47")
     assert 'href="/page47/"' in page
-    assert "/page47/api/cities" in page
-    assert "/page47/matter/" in page
+    assert 'const publicPath = "/page47"' in page
+    assert "internal('/api/cities')" in page
+    assert "internal(`/matter/" in page
+    assert "Manage this private watch" in page
