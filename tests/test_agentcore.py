@@ -4,6 +4,9 @@ import json
 from datetime import UTC, datetime
 from pathlib import Path
 
+from strands.multiagent.graph import GraphState
+
+from page47.agents.graph import INVESTIGATION_GRAPH, _review_inputs_ready
 from page47.runtime.client import _aws_json_value, load_agentcore_settings
 from page47.runtime.transport import request_bytes, request_from_case
 from scripts.deploy_agentcore import _client_token, load_deployment_settings
@@ -45,3 +48,22 @@ def test_agentcore_client_token_meets_api_minimum_length() -> None:
     assert len(token) >= 33
     assert token.startswith("page47-")
     assert token[-1].isalnum()
+
+
+def test_review_node_waits_for_all_reader_nodes() -> None:
+    state = GraphState(completed_nodes={INVESTIGATION_GRAPH.nodes["archivist"]})
+    assert _review_inputs_ready(state) is False
+    state.completed_nodes.update(
+        {
+            INVESTIGATION_GRAPH.nodes["substance"],
+            INVESTIGATION_GRAPH.nodes["process"],
+        }
+    )
+    assert _review_inputs_ready(state) is True
+    review_edges = [
+        edge
+        for edge in INVESTIGATION_GRAPH.edges
+        if edge.to_node.node_id == "skeptic"
+    ]
+    assert len(review_edges) == 3
+    assert all(edge.condition is _review_inputs_ready for edge in review_edges)

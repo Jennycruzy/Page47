@@ -11,7 +11,7 @@ from strands import Agent
 from strands.agent import AgentResult
 from strands.models import BedrockModel
 from strands.multiagent import GraphBuilder, GraphResult
-from strands.multiagent.graph import Graph
+from strands.multiagent.graph import Graph, GraphState
 
 from page47.agents.schemas import (
     ArchivistReport,
@@ -72,6 +72,13 @@ def _integer(value: JSONObject, key: str, context: str, minimum: int) -> int:
     if isinstance(item, bool) or not isinstance(item, int) or item < minimum:
         raise ValueError(f"{context}.{key} must be an integer of at least {minimum}")
     return item
+
+
+def _review_inputs_ready(state: GraphState) -> bool:
+    """Allow the review node to run only after all three readers finish."""
+
+    completed_ids = {node.node_id for node in state.completed_nodes}
+    return {"archivist", "substance", "process"}.issubset(completed_ids)
 
 
 def _agent_settings() -> tuple[ModelSettings, JSONObject, JSONObject]:
@@ -137,9 +144,9 @@ def build_investigation_graph() -> Graph:
     builder.add_node(brief_writer, "brief_writer")
     builder.add_edge("archivist", "substance")
     builder.add_edge("archivist", "process")
-    builder.add_edge("archivist", "skeptic")
-    builder.add_edge("substance", "skeptic")
-    builder.add_edge("process", "skeptic")
+    builder.add_edge("archivist", "skeptic", _review_inputs_ready)
+    builder.add_edge("substance", "skeptic", _review_inputs_ready)
+    builder.add_edge("process", "skeptic", _review_inputs_ready)
     builder.add_edge("skeptic", "brief_writer")
     builder.set_entry_point("archivist")
     builder.set_graph_id(_text(graph_config, "id", "graph"))
