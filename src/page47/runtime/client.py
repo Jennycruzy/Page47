@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from collections.abc import Callable
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 from typing import Protocol, cast
 from uuid import uuid4
@@ -37,10 +38,27 @@ class AgentCoreSettings:
 
 
 def _object(value: object, context: str) -> JSONObject:
-    decoded = as_json_value(value)
+    decoded = _aws_json_value(value)
     if not isinstance(decoded, dict):
         raise ValueError(f"AgentCore {context} was not an object")
     return decoded
+
+
+def _aws_json_value(value: object) -> JSONValue:
+    if isinstance(value, datetime):
+        return value.isoformat()
+    if value is None or isinstance(value, (bool, int, float, str)):
+        return value
+    if isinstance(value, list):
+        return [_aws_json_value(item) for item in value]
+    if isinstance(value, dict):
+        output: JSONObject = {}
+        for key, item in value.items():
+            if not isinstance(key, str):
+                raise ValueError("AgentCore AWS response keys must be text")
+            output[key] = _aws_json_value(item)
+        return output
+    raise ValueError(f"Unsupported AgentCore AWS response value: {type(value).__name__}")
 
 
 def _text(value: JSONObject, key: str, context: str) -> str:

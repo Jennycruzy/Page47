@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import json
+from datetime import UTC, datetime
 from pathlib import Path
 
 from test_analysis import case
 
-from page47.runtime.client import load_agentcore_settings
+from page47.runtime.client import _aws_json_value, load_agentcore_settings
 from page47.runtime.transport import request_bytes, request_from_case
 from scripts.deploy_agentcore import _client_token, load_deployment_settings
 
@@ -20,6 +21,12 @@ def test_agentcore_is_enabled_after_runtime_deployment() -> None:
 def test_agentcore_runtime_name_matches_service_constraints() -> None:
     settings = load_deployment_settings(Path("config/agentcore.yaml"))
     assert settings.runtime_name == "page47_review"
+
+
+def test_agentcore_aws_response_normalizer_handles_timestamps() -> None:
+    timestamp = datetime(2026, 9, 6, 17, 31, 55, tzinfo=UTC)
+    normalized = _aws_json_value({"last_modified": timestamp})
+    assert normalized == {"last_modified": "2026-09-06T17:31:55+00:00"}
 
 
 def test_runtime_request_is_deterministic_and_carries_case_identity() -> None:
