@@ -3,11 +3,10 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from test_analysis import case
-
-from scripts.deploy_agentcore import _client_token
 from page47.runtime.client import load_agentcore_settings
 from page47.runtime.transport import request_bytes, request_from_case
+from scripts.deploy_agentcore import _client_token
+from test_analysis import case
 
 
 def test_agentcore_is_explicitly_disabled_until_a_runtime_arn_is_configured() -> None:
