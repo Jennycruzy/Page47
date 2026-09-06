@@ -43,3 +43,4 @@ if ! /usr/bin/flock -n /tmp/page47-snapshotter.lock sh -c '
   printf '%s\n' "Page 47 snapshot skipped because another capture is still running." >&2
   exit 1
 fi
+printf 'Page47SnapshotRunSuccess captured_at=%s\n' "$(date -u '+%Y-%m-%dT%H:%M:%SZ')"

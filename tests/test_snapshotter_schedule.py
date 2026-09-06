@@ -14,3 +14,4 @@ def test_scheduled_collector_processes_both_configured_cities() -> None:
     assert "runtime/records/denver.sqlite3" in script
     assert "runtime/evidence/denver" in script
     assert '--web-config "$1/config/web.yaml"' in script
+    assert "Page47SnapshotRunSuccess" in script

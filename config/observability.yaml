@@ -1,0 +1,12 @@
+observability:
+  region: eu-north-1
+  snapshot_log_group: /page47/lightsail/snapshotter
+  web_log_group: /page47/lightsail/web
+  success_metric_namespace: Page47/Snapshotter
+  success_metric_name: CompletedRuns
+  success_metric_filter: '"Page47SnapshotRunSuccess"'
+  missed_run_alarm_name: Page47-Snapshotter-MissedRun
+  alarm_period_seconds: 3600
+  alarm_evaluation_periods: 2
+  alarm_threshold: 1
+  log_retention_days: 14

@@ -1,0 +1,31 @@
+{
+  "agent": {
+    "metrics_collection_interval": 60,
+    "run_as_user": "root"
+  },
+  "logs": {
+    "logs_collected": {
+      "files": {
+        "collect_list": [
+          {
+            "file_path": "/home/ubuntu/page47-preflight/logs/snapshotter.log",
+            "log_group_name": "/page47/lightsail/snapshotter",
+            "log_stream_name": "{hostname}-snapshotter",
+            "retention_in_days": 14,
+            "timezone": "UTC"
+          }
+        ]
+      },
+      "journald": {
+        "collect_list": [
+          {
+            "units": ["page47-web.service"],
+            "log_group_name": "/page47/lightsail/web",
+            "log_stream_name": "{hostname}-web",
+            "retention_in_days": 14
+          }
+        ]
+      }
+    }
+  }
+}
