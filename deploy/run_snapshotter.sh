@@ -35,6 +35,10 @@ if ! /usr/bin/flock -n /tmp/page47-snapshotter.lock sh -c '
     --config "$1/config/cities/denver.yaml" \
     --database "$1/runtime/records/denver.sqlite3" \
     --evidence-root "$1/runtime/evidence/denver"
+  "$1/.venv/bin/python" "$1/scripts/notify_findings.py" \
+    --web-config "$1/config/web.yaml" \
+    --address-config "$1/config/address.yaml" \
+    --notification-config "$1/config/notifications.yaml"
 ' sh "$PAGE47_ROOT"; then
   printf '%s\n' "Page 47 snapshot skipped because another capture is still running." >&2
   exit 1

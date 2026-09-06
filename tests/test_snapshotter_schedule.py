@@ -10,5 +10,7 @@ def test_scheduled_collector_processes_both_configured_cities() -> None:
 
     assert script.count("scripts/read_captured_attachments.py") == 2
     assert script.count("scripts/apply_pdf_placements.py") == 2
+    assert script.count("scripts/notify_findings.py") == 1
     assert "runtime/records/denver.sqlite3" in script
     assert "runtime/evidence/denver" in script
+    assert '--web-config "$1/config/web.yaml"' in script
