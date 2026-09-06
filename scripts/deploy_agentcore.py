@@ -398,6 +398,11 @@ def _runtime_arguments(
     }
 
 
+def _client_token() -> str:
+    """Return a client token that meets the AgentCore API length constraint."""
+    return f"page47-{uuid.uuid4().hex}"
+
+
 def deploy(
     project_root: Path,
     config_path: Path,
@@ -438,7 +443,7 @@ def deploy(
         response = _response(
             control.create_agent_runtime(
                 agentRuntimeName=settings.runtime_name,
-                clientToken=uuid.uuid4().hex,
+                clientToken=_client_token(),
                 **arguments,
             ),
             "AgentCore create",

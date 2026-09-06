@@ -5,6 +5,7 @@ from pathlib import Path
 
 from test_analysis import case
 
+from scripts.deploy_agentcore import _client_token
 from page47.runtime.client import load_agentcore_settings
 from page47.runtime.transport import request_bytes, request_from_case
 
@@ -26,3 +27,10 @@ def test_runtime_request_is_deterministic_and_carries_case_identity() -> None:
     assert payload["city"] == "Test city"
     assert payload["matter_id"] == 7
     assert payload["documents"] == []
+
+
+def test_agentcore_client_token_meets_api_minimum_length() -> None:
+    token = _client_token()
+    assert len(token) >= 33
+    assert token.startswith("page47-")
+    assert token[-1].isalnum()
