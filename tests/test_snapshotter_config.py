@@ -11,6 +11,7 @@ def test_seattle_configuration_uses_the_verified_bodies_and_detail_switches() ->
 
     assert config.city == "Seattle, Washington"
     assert config.client == "seattle"
+    assert config.attachment_hosts == ("legistar2.granicus.com",)
     assert {body.body_id for body in config.watched_bodies} == {
         138,
         211,

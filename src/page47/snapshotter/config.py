@@ -34,6 +34,7 @@ class CityConfig:
     city: str
     client: str
     base_url: str
+    attachment_hosts: tuple[str, ...]
     accept_header: str
     page_size: int
     max_pages: int
@@ -101,6 +102,18 @@ def required_mapping(value: JSONObject, key: str) -> JSONObject:
     return as_object(value.get(key), key)
 
 
+def required_text_list(value: JSONObject, key: str) -> tuple[str, ...]:
+    raw = value.get(key)
+    if not isinstance(raw, list) or not raw:
+        raise ValueError(f"{key} must be a non-empty list")
+    output: list[str] = []
+    for index, item in enumerate(raw):
+        if not isinstance(item, str) or not item.strip():
+            raise ValueError(f"{key}[{index}] must be a non-empty string")
+        output.append(item.casefold().strip())
+    return tuple(output)
+
+
 def load_city_config(path: Path) -> CityConfig:
     decoded: object = yaml.safe_load(path.read_text(encoding="utf-8"))
     root = as_object(as_json_value(decoded), "city configuration")
@@ -129,6 +142,7 @@ def load_city_config(path: Path) -> CityConfig:
         city=required_text(root, "city"),
         client=required_text(root, "client"),
         base_url=required_text(api, "base_url").rstrip("/"),
+        attachment_hosts=required_text_list(api, "attachment_hosts"),
         accept_header=required_text(api, "accept_header"),
         page_size=required_integer(api, "page_size", minimum=1),
         max_pages=required_integer(api, "max_pages", minimum=1),

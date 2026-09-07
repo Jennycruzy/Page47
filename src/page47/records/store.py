@@ -344,6 +344,18 @@ class AttachmentObservation:
 
 
 @dataclass(frozen=True, slots=True)
+class StoredAttachmentSource:
+    """A stored attachment URL eligible for a later evidence capture."""
+
+    attachment_id: int
+    matter_id: int | None
+    name: str | None
+    url: str | None
+    version: str | None
+    last_modified_utc: str | None
+
+
+@dataclass(frozen=True, slots=True)
 class AttachmentReadingObservation:
     attachment_id: int
     content_hash: str
@@ -739,6 +751,47 @@ class RecordStore:
                 observation.attachment_id,
                 {"content_hash": observation.content_source.as_json()},
             )
+
+    def attachment_sources(self) -> tuple[StoredAttachmentSource, ...]:
+        """Return attachment URLs recovered from the normalized public record."""
+
+        rows = self.connection.execute(
+            "SELECT attachment_id, matter_id, name, url, version, last_modified_utc "
+            "FROM attachments ORDER BY attachment_id"
+        ).fetchall()
+        output: list[StoredAttachmentSource] = []
+        for row in rows:
+            attachment_id = row["attachment_id"]
+            matter_id = row["matter_id"]
+            name = row["name"]
+            url = row["url"]
+            version = row["version"]
+            last_modified_utc = row["last_modified_utc"]
+            if isinstance(attachment_id, bool) or not isinstance(attachment_id, int):
+                raise ValueError("Stored attachment ID was invalid")
+            if matter_id is not None and (
+                isinstance(matter_id, bool) or not isinstance(matter_id, int)
+            ):
+                raise ValueError(f"Stored attachment {attachment_id} matter ID was invalid")
+            for value, label in (
+                (name, "name"),
+                (url, "url"),
+                (version, "version"),
+                (last_modified_utc, "last modified time"),
+            ):
+                if value is not None and not isinstance(value, str):
+                    raise ValueError(f"Stored attachment {attachment_id} {label} was invalid")
+            output.append(
+                StoredAttachmentSource(
+                    attachment_id=attachment_id,
+                    matter_id=matter_id,
+                    name=name,
+                    url=url,
+                    version=version,
+                    last_modified_utc=last_modified_utc,
+                )
+            )
+        return tuple(output)
 
     def upsert_attachment_reading(self, observation: AttachmentReadingObservation) -> None:
         if observation.status not in {"candidate", "absent", "unreadable"}:

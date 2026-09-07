@@ -3,6 +3,8 @@ client: seattle
 
 api:
   base_url: https://webapi.legistar.com/v1
+  attachment_hosts:
+    - legistar2.granicus.com
   accept_header: "*/*"
   page_size: 100
   max_pages: 20

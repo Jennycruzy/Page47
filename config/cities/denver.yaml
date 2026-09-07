@@ -3,6 +3,8 @@ client: denver
 
 api:
   base_url: https://webapi.legistar.com/v1
+  attachment_hosts:
+    - denver.legistar1.com
   accept_header: "*/*"
   page_size: 100
   max_pages: 100
