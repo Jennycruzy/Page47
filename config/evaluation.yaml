@@ -1,0 +1,7 @@
+schema_version: 1
+city: Seattle, Washington
+minimum_appearances: 2
+sample_size: 100
+gold_size: 30
+selection_order: matter_id
+
