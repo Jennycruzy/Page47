@@ -16,6 +16,7 @@ from page47.records.runner import source_for_capture  # noqa: E402, I001
 from page47.records.store import AttachmentReadingObservation, RecordStore  # noqa: E402, I001
 from page47.snapshotter.store import SnapshotStore, text_value  # noqa: E402, I001
 from page47.substance.reader import (  # noqa: E402, I001
+    AttachmentReading,
     load_substance_config,
     read_pdf_attachment,
     reading_references,
@@ -59,7 +60,15 @@ def main() -> int:
             if records.attachment_reading_hash(item_id) == content_hash:
                 result["reused"] += 1
                 continue
-            reading = read_pdf_attachment(snapshots.body(capture), config)
+            try:
+                reading = read_pdf_attachment(snapshots.body(capture), config)
+            except Exception as error:
+                reading = AttachmentReading(
+                    status="unreadable",
+                    page_count=0,
+                    references=(),
+                    reason=f"{type(error).__name__}: {error}",
+                )
             records.upsert_attachment_reading(
                 AttachmentReadingObservation(
                     attachment_id=item_id,
