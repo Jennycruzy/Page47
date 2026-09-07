@@ -12,7 +12,11 @@ from urllib.parse import urlparse
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPOSITORY_ROOT / "src"))
 
-from page47.records.store import RecordStore, StoredAttachmentSource  # noqa: E402, I001
+from page47.records.runner import capture_observation, source_for_capture  # noqa: E402, I001
+from page47.records.store import (  # noqa: E402, I001
+    RecordStore,
+    StoredAttachmentSource,
+)
 from page47.snapshotter.config import (  # noqa: E402, I001
     CityConfig,
     JSONObject,
@@ -69,12 +73,13 @@ def _capture(
     attachment: StoredAttachmentSource,
     config: CityConfig,
     run_id: str,
-) -> tuple[str, int | None, str | None]:
+) -> tuple[str, int | None, str | None, JSONObject | None]:
     if not _fetchable(attachment, config.attachment_hosts):
         return (
             "invalid",
-            0,
+            None,
             "attachment URL was missing or outside the configured Legistar attachment hosts",
+            None,
         )
     url = attachment.url
     if url is None:
@@ -84,17 +89,17 @@ def _capture(
     response: FetchResult = client.fetch(target, url, previous)
     if response.not_modified:
         if previous is None:
-            return "invalid", response.status, "received 304 without a prior capture"
-        return "reused", response.status, None
+            return "invalid", response.status, "received 304 without a prior capture", None
+        return "reused", response.status, None, previous
     if response.status != HTTP_OK:
         reason = f"attachment download returned HTTP status {response.status!r}"
-        store.capture(response, "attachment", _unparsed_fields(attachment, reason))
-        return "failed", response.status, reason
+        failed, _ = store.capture(response, "attachment", _unparsed_fields(attachment, reason))
+        return "failed", response.status, reason, failed
     current, inserted = store.capture(response, "attachment", _fields(attachment))
     compare_document(store, run_id, target, previous, current, "attachment")
     if inserted:
-        return "captured", response.status, None
-    return "unchanged", response.status, None
+        return "captured", response.status, None, current
+    return "unchanged", response.status, None, current
 
 
 def main() -> int:
@@ -127,28 +132,43 @@ def main() -> int:
     }
     issues: list[str] = []
     with RecordStore(args.database) as records:
-        for attachment in records.attachment_sources():
-            if args.attachment_id is not None and attachment.attachment_id != args.attachment_id:
-                continue
-            if args.max_attachments is not None and selected >= args.max_attachments:
-                break
-            selected += 1
-            counts["selected"] += 1
-            status, http_status, issue = _capture(store, client, attachment, config, run_id)
-            counts[status] += 1
-            if issue is not None:
-                issues.append(
-                    f"attachment {attachment.attachment_id}: {issue} (status {http_status})"
+        attachments = records.attachment_sources()
+    captured: list[tuple[int, JSONObject]] = []
+    for attachment in attachments:
+        if args.attachment_id is not None and attachment.attachment_id != args.attachment_id:
+            continue
+        if args.max_attachments is not None and selected >= args.max_attachments:
+            break
+        selected += 1
+        counts["selected"] += 1
+        status, http_status, issue, capture = _capture(store, client, attachment, config, run_id)
+        counts[status] += 1
+        if capture is not None:
+            captured.append((attachment.attachment_id, capture))
+        if issue is not None:
+            issues.append(
+                f"attachment {attachment.attachment_id}: {issue} (status {http_status})"
+            )
+    with RecordStore(args.database) as records:
+        for attachment_id, capture in captured:
+            records.add_snapshot(capture_observation(capture, "snapshot"))
+            content_hash = capture.get("content_sha256")
+            if isinstance(content_hash, str) and content_hash:
+                records.record_attachment_content(
+                    attachment_id,
+                    content_hash,
+                    source_for_capture(capture, "snapshot"),
                 )
-        run: JSONObject = {
-            "run_id": run_id,
-            "status": "complete" if not issues else "complete_with_issues",
-            "city": config.city,
-            "mode": "normalized_record_attachments",
-            "counts": counts,
-            "issues": issues,
-        }
-        store.append_run(run)
+        records.commit()
+    run: JSONObject = {
+        "run_id": run_id,
+        "status": "complete" if not issues else "complete_with_issues",
+        "city": config.city,
+        "mode": "normalized_record_attachments",
+        "counts": counts,
+        "issues": issues,
+    }
+    store.append_run(run)
     print(json.dumps(run, indent=2, sort_keys=True))
     return 0 if not issues else 2
 

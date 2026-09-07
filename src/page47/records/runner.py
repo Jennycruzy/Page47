@@ -134,7 +134,7 @@ def agenda_snapshot(
     return matching_records[-1]
 
 
-def capture_observation(capture: JSONObject) -> SnapshotObservation:
+def capture_observation(capture: JSONObject, source_kind: str = "api") -> SnapshotObservation:
     capture_key = text_value(capture, "capture_key")
     target = text_value(capture, "target")
     kind = text_value(capture, "kind")
@@ -142,7 +142,6 @@ def capture_observation(capture: JSONObject) -> SnapshotObservation:
     captured_at = text_value(capture, "captured_at")
     response_sha256 = text_value(capture, "response_sha256")
     storage_key = text_value(capture, "storage_key")
-    source_kind = "api"
     if capture_key is None or target is None or kind is None or source_url is None:
         raise ValueError("A stored capture lacked its identifying fields")
     if captured_at is None or response_sha256 is None or storage_key is None:

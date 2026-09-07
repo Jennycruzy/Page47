@@ -163,6 +163,7 @@ def main() -> int:
                         source=source,
                     )
                 )
+                records.commit()
                 result[extraction.status] += 1
             except Exception as error:
                 records.upsert_document_extraction(
@@ -176,6 +177,7 @@ def main() -> int:
                         source=source,
                     )
                 )
+                records.commit()
                 result["failed"] += 1
         records.commit()
     print(json.dumps(result, indent=2, sort_keys=True))

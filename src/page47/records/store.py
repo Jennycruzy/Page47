@@ -490,9 +490,10 @@ class RecordStore:
     def __init__(self, path: Path) -> None:
         self.path = path
         path.parent.mkdir(parents=True, exist_ok=True)
-        self.connection = sqlite3.connect(path)
+        self.connection = sqlite3.connect(path, timeout=30.0)
         self.connection.row_factory = sqlite3.Row
         self.connection.execute("PRAGMA foreign_keys = ON")
+        self.connection.execute("PRAGMA busy_timeout = 30000")
         self.connection.executescript(SCHEMA)
         columns = {
             row[1]
@@ -751,6 +752,30 @@ class RecordStore:
                 observation.attachment_id,
                 {"content_hash": observation.content_source.as_json()},
             )
+
+    def record_attachment_content(
+        self,
+        attachment_id: int,
+        content_hash: str,
+        source: SourceReference,
+    ) -> None:
+        if attachment_id < 1:
+            raise ValueError("Attachment ID must be positive")
+        if not content_hash.strip():
+            raise ValueError("Attachment content hash must not be empty")
+        row = self.connection.execute(
+            "SELECT provenance_json FROM attachments WHERE attachment_id = ?",
+            (attachment_id,),
+        ).fetchone()
+        if row is None:
+            raise LookupError(f"Attachment {attachment_id} was not found")
+        provenance = parse_provenance(row[0], "attachments.provenance")
+        provenance["content_hash"] = source.as_json()
+        self.connection.execute(
+            "UPDATE attachments SET content_hash = ?, provenance_json = ? "
+            "WHERE attachment_id = ?",
+            (content_hash, provenance_json(provenance), attachment_id),
+        )
 
     def attachment_sources(self) -> tuple[StoredAttachmentSource, ...]:
         """Return attachment URLs recovered from the normalized public record."""

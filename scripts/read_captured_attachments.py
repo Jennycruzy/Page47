@@ -71,6 +71,7 @@ def main() -> int:
                     source=source_for_capture(capture, "snapshot"),
                 )
             )
+            records.commit()
             result["read"] += 1
             result[reading.status] += 1
         records.commit()
