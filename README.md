@@ -18,7 +18,7 @@ Seattle consent placement is read from captured agenda PDFs rather than the city
 
 Captured Seattle PDF attachments are read into page-linked references for configured dates, dollar amounts, distances, and parcel references. Twenty Seattle attachments have completed the document-specific reading run; eleven returned structured page readings and nine recorded explicit failures. The reader preserves the document URL, capture time, page, character location, and excerpt. It says when no configured reference was found and when a PDF cannot be read. The verified Bedrock routes are `amazon.nova-micro-v1:0` for text work and `amazon.nova-lite-v1:0` for page images in `eu-west-2`.
 
-The five-node Strands investigation graph and its AgentCore transport are implemented and pass strict type checking. A real Seattle matter has been reviewed locally and saved with primary-record links; failed runs remain visible in the record store. The repeatable deployment command builds a 49.8 MB Linux arm64 ZIP that expands to 137 MB and contains the required root `app.py`. Runtime `page47_review` is now deployed in `eu-west-2` and reports `READY`; the Lightsail client is being switched to it and will be checked against a real stored matter next.
+The five-node Strands investigation graph and its AgentCore transport are implemented and pass strict type checking. A real Seattle matter has now completed through the managed runtime and was saved with primary-record links; failed runs remain visible in the record store. The repeatable deployment command builds a 49.8 MB Linux arm64 ZIP that expands to 137 MB and contains the required root `app.py`. Runtime `page47_review` is deployed in `eu-west-2` and reports `READY`; the Lightsail client invoked it for matter 17394 and saved the returned review.
 
 The resident console is supervised by systemd on Lightsail and reads the live Seattle and Denver stores, shows the current ledger, supports watch setup, and opens captured documents. A temporary validation route exists on the existing TLS host, but no public demo URL is claimed here; a separate domain will be connected before launch.
 
@@ -51,6 +51,7 @@ The preflight command performs bounded live discovery and stores the public resp
 - [Snapshotter audit](docs/audits/phase-1.md)
 - [Historical record audit](docs/audits/phase-2.md)
 - [Consent calibration audit](docs/audits/phase-3.md)
+- [Managed runtime review audit](docs/audits/managed-runtime.md)
 - [Seattle configuration](config/cities/seattle.yaml)
 - [AWS discovery response cache](docs/evidence/preflight/index.json)
 
@@ -58,11 +59,11 @@ The preflight report identified eight clients that met the bounded structural ch
 
 ## Next work
 
-The remaining work is to verify one real stored Seattle matter through the deployed runtime and keep the returned review in the record store. SES still needs a verified sender and its SSM values; the code now includes a private watch-management link in each delivered message. CloudWatch resources are defined but still need installation, connection, and a deliberate missed-run test. A viewable OpenTelemetry trace still needs configuration. A separate public domain is still pending. Denver needs deeper record and document coverage. Finally, the hand-labelled comparison must run over the same matters for keyword alerts, search, latest-document reading, and Page 47; its results and every miss remain unpublished until review.
+SES still needs a verified sender and its SSM values; the code includes a private watch-management link in each delivered message. CloudWatch resources are defined but still need installation, connection, and a deliberate missed-run test. A viewable OpenTelemetry trace still needs configuration. A separate public domain is still pending. Denver needs deeper record and document coverage. Finally, the hand-labelled comparison must run over the same matters for keyword alerts, search, latest-document reading, and Page 47; its results and every miss remain unpublished until review.
 
 ## Tests
 
-The current suite has 32 tests. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request and deployment constraints, checks public-path links, checks private watch stopping, checks review email links, checks the observability configuration, and checks that the scheduled collector covers both cities and delivery. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes each city's configured placement method. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
+The current suite has 39 tests. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request and deployment constraints, checks public-path links, checks private watch stopping, checks review email links, checks the observability configuration, and checks that the scheduled collector covers both cities and delivery. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes each city's configured placement method. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment.
 
 ## Limitations
 
