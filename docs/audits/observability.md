@@ -52,5 +52,8 @@ CloudWatch Logs Transaction Search destination and its resource policy before
 the trace gate can be closed. Runtime `READY` and a successful review are not
 being treated as proof that a trace is searchable.
 
+At 2026-09-08T10:15:58Z, `GetTraceSummaries` returned zero summaries in both
+`eu-west-2` and `eu-north-1` for the recent review window.
+
 SES parameters, CloudWatch agent delivery for the Lightsail service, the missed-
 run alarm, and the controlled email receipt remain separate launch gates.
