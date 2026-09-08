@@ -1,7 +1,7 @@
 web:
   title: Page 47
   default_city: Seattle, Washington
-  public_path: /page47
+  public_path: /
   city_configs:
     Seattle, Washington:
       city_config: config/cities/seattle.yaml
