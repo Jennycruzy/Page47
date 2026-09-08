@@ -145,6 +145,20 @@ unified trace. Record the account-level result first:
 aws xray get-trace-segment-destination --region eu-north-1
 ```
 
+After the X-Ray service resource policy is in place, the administrator changes
+the account destination with:
+
+```sh
+aws xray update-trace-segment-destination \
+  --region eu-north-1 --destination CloudWatchLogs
+```
+
+The current AgentCore runtime is a runtime-hosted Strands agent, so AgentCore
+provides the runtime instrumentation at startup. If the deployment is changed
+to a non-runtime execution path, add the AWS Distro for OpenTelemetry and the
+Strands OTEL extra before using the same trace gate; do not infer trace support
+from the runtime's `READY` status.
+
 The managed runtime is in `eu-west-2`. Deploy the checked-in runtime artifact
 with `scripts/deploy_agentcore.py --deploy`; the deployment code requests
 `UNIFIED_TRACES_DESTINATION_ENABLED=true`. Verify the runtime returns `READY`
@@ -194,8 +208,10 @@ only the resource-scoped actions needed for this runbook:
 - CloudWatch Logs: log-group/stream discovery, log-stream creation, event
   writes, metric-filter creation, and retention configuration for `/page47/*`;
 - CloudWatch alarms: create/update and describe the named Page 47 alarm;
-- X-Ray/Transaction Search: the account-level destination and required log
-  resource-policy operations; and
+- X-Ray/Transaction Search: `xray:GetTraceSegmentDestination`,
+  `xray:UpdateTraceSegmentDestination`, `xray:GetIndexingRules`,
+  `xray:UpdateIndexingRule`, the required log-group creation/retention actions,
+  and `logs:PutResourcePolicy`/`logs:DescribeResourcePolicies`; and
 - the host's CloudWatch agent principal: log stream creation and log event
   writes only for the two Page 47 log groups.
 
