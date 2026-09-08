@@ -219,6 +219,34 @@ def test_brief_lines_use_the_accepted_record_text_and_evidence() -> None:
     assert safe.limitation == "Page 47 does not determine why these changes were made."
 
 
+def test_empty_review_discards_placeholder_brief_lines() -> None:
+    model_brief = BriefWriterReport(
+        heading="Skeptic Brief",
+        lines=[
+            BriefLine(
+                observation_id="N/A",
+                text="No accepted observations available.",
+                evidence=[
+                    AgentEvidence(
+                        label="N/A",
+                        url="N/A",
+                        captured_at="N/A",
+                    )
+                ],
+            )
+        ],
+        questions=["Is there additional evidence to review?"],
+        limitation="No accepted observations available.",
+    )
+
+    _validate_brief(model_brief, frozenset(), {}, {})
+    safe = _brief_with_resolved_ids(model_brief, frozenset(), {})
+
+    assert safe.heading == "No supported observations"
+    assert safe.lines == []
+    assert safe.questions == []
+
+
 def test_agent_report_cannot_cite_a_record_outside_the_matter() -> None:
     archivist = ArchivistReport(
         observations=[

@@ -15,6 +15,12 @@ This document records the AWS choices made so far and the work still required to
 | CloudWatch alarm | Alert when the scheduled collector has not completed. | The collector emits `Page47SnapshotRunSuccess` only after all city capture, record application, document reading, placement, and delivery commands finish. Its lock holds the file descriptor in the parent shell, so a failed command cannot be hidden by the lock wrapper. `scripts/configure_cloudwatch.py` creates the log metric and a two-hour missed-run alarm from `config/observability.yaml`; it still needs to be run against the live log group and tested. | A missed run would not be noticed until the overwritten city record was already gone. |
 | OpenTelemetry | Show one review from request through the five roles. | The deployment code can request the unified CloudWatch trace destination through `UNIFIED_TRACES_DESTINATION_ENABLED=true`, but the live runtime was rolled back to its previously working environment after a controlled invocation returned an application validation error. CloudWatch Transaction Search still reports the `XRay` destination, and no usable trace has been retained. | The AWS execution path cannot be demonstrated end to end. |
 
+## Launch runbook
+
+The exact DNS, certificate, root-path rollout, SES, CloudWatch, trace, and
+evaluation gates are maintained in [`docs/LAUNCH.md`](LAUNCH.md). It preserves
+the existing `/page47` route until the subdomain has passed its health checks.
+
 ## Resident watch storage
 
 The general console creates a unique server-side watch record for each submission. It stores the selected city and public bodies, the address or neighbourhood, the email address, and whether the watch is active. The response includes a private management link; opening it shows the stored watch and allows the resident to stop it. Active watches are matched against saved reviews and are deduplicated by watch and review before SES is called.

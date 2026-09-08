@@ -325,6 +325,11 @@ def _validate_brief(
     line from the accepted observations and their stored evidence.
     """
 
+    # A review with no accepted observations has no valid observation ID for the
+    # brief writer to cite. Some model responses use placeholders such as N/A in
+    # that case; the safe brief builder drops those lines below.
+    if not accepted_ids:
+        return
     for line in brief.lines:
         _brief_observation_id(
             line.observation_id,
@@ -462,9 +467,9 @@ def _brief_with_resolved_ids(
         if observation_id in accepted_ids
     ]
     return BriefWriterReport(
-        heading="Worth a look",
+        heading="Worth a look" if accepted_ids else "No supported observations",
         lines=lines,
-        questions=brief.questions,
+        questions=brief.questions if accepted_ids else [],
         limitation="Page 47 does not determine why these changes were made.",
     )
 

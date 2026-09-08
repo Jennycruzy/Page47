@@ -54,6 +54,7 @@ The preflight command performs bounded live discovery and stores the public resp
 - [Historical record audit](docs/audits/phase-2.md)
 - [Consent calibration audit](docs/audits/phase-3.md)
 - [Managed runtime review audit](docs/audits/managed-runtime.md)
+- [Production launch runbook](docs/LAUNCH.md)
 - [Comparison-set labeling instructions](docs/evaluation-labeling.md)
 - [Seattle configuration](config/cities/seattle.yaml)
 - [AWS discovery response cache](docs/evidence/preflight/index.json)
@@ -62,11 +63,11 @@ The preflight report identified eight clients that met the bounded structural ch
 
 ## Next work
 
-DNS and a certificate still need to be configured for `page47.xcover.online`, followed by the final `/page47/web/public-url` parameter. SES still needs a verified sender and its SSM value; the code includes a private watch-management link in each delivered message. CloudWatch resources are defined but still need installation, connection, and a deliberate missed-run test. A viewable OpenTelemetry trace still needs configuration. Denver's PDF reader has completed its current 268-document coverage, but the four failed URLs and the unreadable PDF remain listed for follow-up. The deterministic 100-matter evaluation export has now been generated on Lightsail, but its 30 gold cases are not labeled. Finally, the hand-labelled comparison must run over the same matters for keyword alerts, search, latest-document reading, and Page 47; its results and every miss remain unpublished until review.
+The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md): DNS and a certificate for `page47.xcover.online`, the final `/page47/web/public-url` parameter, SES sender verification, CloudWatch installation and alarm testing, and one successful searchable OpenTelemetry trace. Denver's PDF reader has completed its current 268-document coverage, but the four failed URLs and the unreadable PDF remain listed for follow-up. The deterministic 100-matter evaluation export has now been generated on Lightsail, but its 30 gold cases are not labeled. Finally, the hand-labelled comparison must run over the same matters for keyword alerts, search, latest-document reading, and Page 47; its results and every miss remain unpublished until review.
 
 ## Tests
 
-The current suite contains 40 collected tests when run with the repository root on `PYTHONPATH`. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request and deployment constraints, checks public-path links, checks private watch stopping, checks review email links, checks the observability configuration, and checks that the scheduled collector covers both cities and delivery. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes each city's configured placement method. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment; the plain `pytest` command needs the repository root added to `PYTHONPATH` for tests that import command modules.
+The current suite contains 41 collected tests when run with the repository root on `PYTHONPATH`. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request and deployment constraints, checks public-path links, checks private watch stopping, checks review email links, checks the observability configuration, and checks that the scheduled collector covers both cities and delivery. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes each city's configured placement method. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment; the plain `pytest` command needs the repository root added to `PYTHONPATH` for tests that import command modules.
 
 ## Limitations
 
