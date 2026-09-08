@@ -10,4 +10,15 @@ Open each gold matter in the Page 47 console or inspect the linked city records.
 
 Do not label motive, legality, or whether anyone acted improperly. The label concerns only the recorded presentation across appearances. Do not change the selected matter IDs or the gold subset after the comparison arms have run.
 
-The evaluation runner must refuse to report recall until every gold item has a label and evidence. Unlabeled or `cannot_determine` items remain listed as exclusions rather than being silently removed.
+While labels are pending, verify only the export shape:
+
+```sh
+python scripts/validate_evaluation_set.py \
+  --input docs/evaluation-set.json --allow-unlabeled
+```
+
+After the independent review is complete, run the same command without
+`--allow-unlabeled`. The validator refuses to pass until every gold item has a
+valid label, reason, and primary evidence. Unlabeled or `cannot_determine`
+items remain listed as exclusions rather than being silently removed. This gate
+does not calculate or publish comparison metrics.
