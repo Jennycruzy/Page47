@@ -102,8 +102,10 @@ curl -fsS https://page47.xcover.online/api/cities/Seattle%2C%20Washington/ledger
 ```
 
 The checked-in `config/web.yaml` uses `public_path: /`. Verify that generated
-review, watch, and document links begin at the subdomain root. Do not remove or
-redirect the legacy `/page47` route until these checks are recorded.
+review, watch, and document links begin at the subdomain root. After those
+checks pass, install `deploy/nginx/page47-location.conf` in the existing xCover
+virtual host and reload Nginx; it redirects old `/page47` bookmarks to the new
+subdomain without sending them to the xCover application root.
 
 ## 4. CloudWatch Logs and missed-run alarm
 

@@ -20,8 +20,10 @@ certificate. The final virtual host retains
 `/.well-known/acme-challenge/` from `/var/www/certbot` so future renewal does
 not depend on a one-time certificate issuance.
 
-The existing `https://xcover.online/page47/healthz` route also returned the
-Page 47 health response during this check. The VPS application configuration
-still uses `public_path: /page47`; the root-path configuration and
-`/page47/web/public-url` SSM value remain a separate controlled rollout step.
-No legacy route was removed or redirected.
+The VPS application now uses `public_path: /`. The subdomain page emits
+root-relative links and its APIs are readable at the root path. The existing
+`https://xcover.online/page47/healthz` bookmark now returns a `301` to
+`https://page47.xcover.online/healthz`, preserving the old entry point while
+avoiding links back to the xCover application root. The
+`/page47/web/public-url` SSM value remains a separate SES/notification
+configuration step.
