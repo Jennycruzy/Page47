@@ -21,3 +21,11 @@ The account-level X-Ray check still reports the `XRay` trace destination rather
 than CloudWatch Logs. Transaction Search enablement, the required account
 permissions, a successful review invocation, and retention of a viewable trace
 remain deployment work.
+
+Follow-up in commit `907d7e2` hardens the empty-review path: when the Skeptic
+accepts no observations, placeholder brief lines such as `N/A` are discarded
+and the saved brief is marked `No supported observations`. The focused review,
+AgentCore, observability, and web tests passed, and the complete tracked suite
+passed with 41 tests in the Python 3.12 deployment environment. The managed
+runtime artifact has not yet been redeployed with this fix, so this does not
+change the trace-completion boundary above.
