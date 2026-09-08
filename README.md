@@ -54,6 +54,7 @@ The preflight command performs bounded live discovery and stores the public resp
 - [Historical record audit](docs/audits/phase-2.md)
 - [Consent calibration audit](docs/audits/phase-3.md)
 - [Managed runtime review audit](docs/audits/managed-runtime.md)
+- [Denver attachment coverage audit](docs/audits/denver-attachment-coverage.md)
 - [Production launch runbook](docs/LAUNCH.md)
 - [Comparison-set labeling instructions](docs/evaluation-labeling.md)
 - [Seattle evaluation export](docs/evaluation-set.json)
