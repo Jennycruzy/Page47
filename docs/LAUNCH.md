@@ -184,12 +184,15 @@ from a control-plane `READY` response alone.
 
 Denver follow-up remains an evidence-quality note, not a completeness claim:
 
-- 473 attachment records were captured;
-- 469 returned HTTP 200 and 4 returned HTTP 404;
-- 268 URL-identified PDFs were read: 257 candidates, 10 absent/no reference,
-  and 1 unreadable; and
-- the remaining successful attachments are non-PDF URLs outside the current
-  PDF reader path.
+- 473 attachment records are captured and the latest response for each is HTTP
+  200; the four earlier HTTP 404 responses remain preserved in the append-only
+  manifest;
+- 270 URL-identified PDFs have reading results: 259 candidates, 10 absent/no
+  reference, and 1 unreadable;
+- the two PDFs recovered during the follow-up also have document-extraction
+  results; and
+- the remaining 203 successful attachments are non-PDF URLs outside the
+  current PDF reader path.
 
 The Seattle export is at `docs/evaluation-set.json` on the deployment host. The
 first 30 matters are the gold subset. Complete the labels according to
