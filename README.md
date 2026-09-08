@@ -22,7 +22,7 @@ Denver's historical attachment capture has now stored 469 successful attachment 
 
 The five-node Strands investigation graph and its AgentCore transport are implemented and pass strict type checking. A real Seattle matter has now completed through the managed runtime and was saved with primary-record links; failed runs remain visible in the record store. The repeatable deployment command builds a 49.8 MB Linux arm64 ZIP that expands to 137 MB and contains the required root `app.py`. Runtime `page47_review` is deployed in `eu-west-2` and reports `READY`; the Lightsail client invoked it for matter 17394 and saved the returned review.
 
-The resident console is supervised by systemd on Lightsail and reads the live Seattle and Denver stores, shows the current ledger, supports watch setup, and opens captured documents. The launch target is `https://page47.xcover.online/`; a dedicated Nginx virtual-host template is checked in, but DNS, its certificate, and the final public URL parameter still need to be configured.
+The resident console is supervised by systemd on Lightsail and reads the live Seattle and Denver stores, shows the current ledger, supports watch setup, and opens captured documents. The launch target is `https://page47.xcover.online/`; DNS, the certificate, the dedicated Nginx host, and renewal dry-run are verified live. The VPS still needs the final public URL parameter and root-path configuration rollout.
 
 Every watch is stored server-side with its city, selected public bodies, area, and email address, so residents do not need an account or a separate page. Saving a watch returns a private management link that shows its status and can stop future messages. When SES is configured, each delivered review includes that same private stop link; no message has been sent yet because the sender and public URL still need to be configured in AWS.
 
@@ -54,6 +54,7 @@ The preflight command performs bounded live discovery and stores the public resp
 - [Historical record audit](docs/audits/phase-2.md)
 - [Consent calibration audit](docs/audits/phase-3.md)
 - [Managed runtime review audit](docs/audits/managed-runtime.md)
+- [Subdomain launch audit](docs/audits/domain-launch.md)
 - [Denver attachment coverage audit](docs/audits/denver-attachment-coverage.md)
 - [Production launch runbook](docs/LAUNCH.md)
 - [Comparison-set labeling instructions](docs/evaluation-labeling.md)
@@ -65,7 +66,7 @@ The preflight report identified eight clients that met the bounded structural ch
 
 ## Next work
 
-The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md): DNS and a certificate for `page47.xcover.online`, the final `/page47/web/public-url` parameter, SES sender verification, CloudWatch installation and alarm testing, and one successful searchable OpenTelemetry trace. Denver's PDF reader has completed its current 268-document coverage, but the four failed URLs and the unreadable PDF remain listed for follow-up. The deterministic 100-matter evaluation export has now been generated on Lightsail, but its 30 gold cases are not labeled. Finally, the hand-labelled comparison must run over the same matters for keyword alerts, search, latest-document reading, and Page 47; its results and every miss remain unpublished until review.
+The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md): the final `/page47/web/public-url` parameter and root-path rollout, SES sender verification, CloudWatch installation and alarm testing, and one successful searchable OpenTelemetry trace. Denver's four failed URLs and one unreadable PDF are recorded in the coverage audit. The deterministic 100-matter evaluation export is preserved, but its 30 gold cases are not labeled. Finally, the hand-labelled comparison must run over the same matters for keyword alerts, search, latest-document reading, and Page 47; its results and every miss remain unpublished until review.
 
 ## Tests
 
