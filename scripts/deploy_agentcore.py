@@ -399,6 +399,11 @@ def _runtime_arguments(
     return {
         "agentRuntimeArtifact": _artifact(bucket, key, settings),
         "roleArn": role_arn,
+        # Existing runtimes may default to the shared spans destination. Keep
+        # the runtime's OTEL spans with its own CloudWatch runtime log group.
+        "environmentVariables": {
+            "UNIFIED_TRACES_DESTINATION_ENABLED": "true",
+        },
         "networkConfiguration": {"networkMode": settings.network_mode},
         "protocolConfiguration": {"serverProtocol": settings.protocol},
         "lifecycleConfiguration": {

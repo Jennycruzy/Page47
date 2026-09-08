@@ -9,7 +9,7 @@ from strands.multiagent.graph import GraphState
 from page47.agents.graph import INVESTIGATION_GRAPH, _review_inputs_ready
 from page47.runtime.client import _aws_json_value, load_agentcore_settings
 from page47.runtime.transport import request_bytes, request_from_case
-from scripts.deploy_agentcore import _client_token, load_deployment_settings
+from scripts.deploy_agentcore import _client_token, _runtime_arguments, load_deployment_settings
 from test_analysis import case
 
 
@@ -23,6 +23,14 @@ def test_agentcore_is_enabled_after_runtime_deployment() -> None:
 def test_agentcore_runtime_name_matches_service_constraints() -> None:
     settings = load_deployment_settings(Path("config/agentcore.yaml"))
     assert settings.runtime_name == "page47_review"
+
+
+def test_agentcore_runtime_uses_unified_trace_destination() -> None:
+    settings = load_deployment_settings(Path("config/agentcore.yaml"))
+    arguments = _runtime_arguments("bucket", "key", "arn:aws:iam::1:role/page47", settings)
+    assert arguments["environmentVariables"] == {
+        "UNIFIED_TRACES_DESTINATION_ENABLED": "true"
+    }
 
 
 def test_agentcore_aws_response_normalizer_handles_timestamps() -> None:
