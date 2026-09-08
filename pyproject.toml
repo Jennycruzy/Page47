@@ -14,12 +14,15 @@ dependencies = [
     "boto3>=1.43.88",
     "bedrock-agentcore>=1.22.0",
     "strands-agents>=1.0.0",
+    # Keep the managed runtime reproducible: these transitive versions were
+    # present in the last known-good AgentCore artifact.
+    "mcp==1.29.1",
     "pydantic>=2.4.0",
     "pypdfium2>=4.30.0",
     "Pillow>=10.0.0",
     "fonttools>=4.0.0",
     "PyYAML>=6.0.2",
-    "pypdf>=5.0.0",
+    "pypdf==6.17.0",
     "fastapi>=0.115.0",
     "uvicorn[standard]>=0.30.0",
 ]

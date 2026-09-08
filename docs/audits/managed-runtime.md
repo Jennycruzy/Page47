@@ -15,13 +15,16 @@ PYTHONPATH=/home/ubuntu/page47-preflight/src \
   --output /tmp/page47-agentcore.zip --deploy
 ```
 
-The package contained the required root `app.py`, measured 49,809,452 bytes compressed, and expanded to 137,062,304 bytes. The runtime read back from AWS is:
+The current package contains the required root `app.py`, measures 49,810,273
+bytes compressed, and expands to 137,066,621 bytes. The runtime read back from
+AWS is:
 
 ```text
 runtime: page47_review
 region: eu-west-2
-version: 7
 status: READY
+artifact: page47-review/agentcore-deployment-isolated.zip
+package_sha256: 5b1a097b29080237954b732fe4f92295478e2cb77d4b30fb6c9cee40a7bb6b22
 arn: arn:aws:bedrock-agentcore:eu-west-2:591697681173:runtime/page47_review-X5IwXt4Y7h
 ```
 
@@ -34,7 +37,7 @@ The Lightsail API submitted stored Seattle matter `17394`:
 ```text
 POST /api/cities/Seattle%2C%20Washington/matters/17394/investigate
 HTTP 200
-run_id: 4c8f8a7767e545fe9a5cabea73d5bf89
+run_id: 8ff0cc0b64d64d5c817a7275b0ad30c0
 finding_id: seattle,-washington-17394
 state: clearer
 publish: true
@@ -44,7 +47,11 @@ rejected_count: 0
 
 The saved graph state contains all five expected readers—Archivist, Substance, Process, Skeptic, and Brief Writer—with five completed nodes, zero failed nodes, and five executions. The saved resident-facing links were checked against the stored evidence catalog; they resolve to the city's Legistar record or to captured evidence, and no model-supplied placeholder URL was retained.
 
-The same record store retains failed review attempts instead of replacing them. For example, an earlier attempt for matter `17394` was saved as failed after a document page mismatch was rejected. This preserves the failure for review and prevents a bad answer from being presented as a successful one.
+The saved graph has five completed nodes, zero failed nodes, and five
+executions. The same record store retains failed review attempts instead of
+replacing them. The controlled run's AgentCore log recorded successful
+completion in 53.241 seconds. This preserves failures for review and prevents
+a bad answer from being presented as a successful one.
 
 ## Verification commands
 
@@ -54,9 +61,12 @@ The following checks were run on Lightsail after the deployment:
 curl -sS http://127.0.0.1:8090/healthz
 {"status":"ok","service":"Page 47"}
 
+curl -sS https://page47.xcover.online/healthz
+{"status":"ok","service":"Page 47"}
+
 PYTHONPATH=/home/ubuntu/page47-preflight/src:/home/ubuntu/page47-preflight/tests \
 /home/ubuntu/page47-preflight/.venv/bin/python3 -m pytest -q --import-mode=importlib tests
-39 passed
+44 passed
 
 PYTHONPATH=/home/ubuntu/page47-preflight/src \
 /home/ubuntu/page47-preflight/.venv/bin/ruff check src/page47 scripts tests
@@ -70,4 +80,7 @@ Success: no issues found in 45 source files
 
 ## Remaining operational work
 
-This verification covers the managed review request and its save path. It does not claim that email, CloudWatch delivery, a public domain, or a viewable trace is complete. Those items remain listed in `docs/AWS.md` until each one has a live check and recorded result.
+This verification covers the managed review request, the live subdomain, and
+its save path. It does not claim that email delivery, Lightsail CloudWatch
+delivery/alarming, or a viewable trace is complete. Those items remain listed
+in `docs/AWS.md` until each one has a live check and recorded result.

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+from threading import Lock
 from pathlib import Path
 
 import yaml
@@ -45,16 +46,21 @@ def _working_directory() -> Path:
 
 
 app = BedrockAgentCoreApp()
+INVOCATION_LOCK = Lock()
 
 
 @app.entrypoint
 def invoke(payload: object) -> JSONObject:
-    context = context_from_request(
-        payload,
-        _config_path("models.yaml"),
-        _working_directory(),
-    )
-    return graph_result_payload(invoke_investigation(context))
+    # Strands Agent instances are stateful and do not support overlapping
+    # requests. AgentCore can dispatch more than one request to a warm runtime,
+    # so serialize graph execution within the process.
+    with INVOCATION_LOCK:
+        context = context_from_request(
+            payload,
+            _config_path("models.yaml"),
+            _working_directory(),
+        )
+        return graph_result_payload(invoke_investigation(context))
 
 
 if __name__ == "__main__":

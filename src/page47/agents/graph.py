@@ -164,9 +164,15 @@ INVESTIGATION_GRAPH: Graph = build_investigation_graph()
 
 
 def invoke_investigation(context: InvestigationContext) -> GraphResult:
-    """Run the module-level graph with the matter carried in invocation state."""
+    """Run an isolated graph with the matter carried in invocation state.
 
-    return INVESTIGATION_GRAPH(
+    Strands agents keep invocation state on their instances and reject
+    overlapping calls. Build a fresh graph for each investigation so warm
+    AgentCore processes cannot reuse an agent from another request.
+    """
+
+    graph = build_investigation_graph()
+    return graph(
         "Investigate the supplied public matter and return the requested structured result.",
         invocation_state={"page47_context": context},
     )
