@@ -56,6 +56,7 @@ The preflight command performs bounded live discovery and stores the public resp
 - [Managed runtime review audit](docs/audits/managed-runtime.md)
 - [Production launch runbook](docs/LAUNCH.md)
 - [Comparison-set labeling instructions](docs/evaluation-labeling.md)
+- [Seattle evaluation export](docs/evaluation-set.json)
 - [Seattle configuration](config/cities/seattle.yaml)
 - [AWS discovery response cache](docs/evidence/preflight/index.json)
 

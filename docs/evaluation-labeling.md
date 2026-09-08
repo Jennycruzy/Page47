@@ -1,6 +1,6 @@
 # Hand labels for the comparison set
 
-The comparison uses real Seattle matters exported from the stored public record. The export contains 100 matters with at least two recorded appearances. The first 30 in ascending matter ID order are the smaller hand-labelled set.
+The comparison uses real Seattle matters exported from the stored public record. The checked-in [export](evaluation-set.json) contains 100 matters with at least two recorded appearances and remains `awaiting_human_labels`. The first 30 in ascending matter ID order are the smaller hand-labelled set.
 
 Open each gold matter in the Page 47 console or inspect the linked city records. Compare the appearances in order. In the matching item in `docs/evaluation-set.json`, fill in:
 
