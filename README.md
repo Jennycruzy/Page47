@@ -10,7 +10,7 @@ The current complete record source is Seattle, Washington, on the Granicus Legis
 
 The snapshotter is scheduled on the public host every 15 minutes. Its first clean capture selected five upcoming meetings and stored 30 attachment files plus five agendas. It keeps immutable bytes, SHA-256 hashes, capture times, source URLs, ETags when supplied, and explicit error records. The checked-in schedule now applies newly captured records, reads documents, uses Seattle's captured-agenda reader or Denver's verified API mapping for placement, and dispatches saved reviews to matching watches.
 
-The collector writes a success heartbeat only after the full scheduled run completes. Its lock now covers the commands directly, so a failed command stops the run instead of being mistaken for a success. The official CloudWatch agent package and checked-in configuration are installed on the host, but log delivery is paused because the agent uses a separate instance role that still lacks access to the Page 47 groups; the metric filter and missed-run alarm are not live yet.
+The collector writes a success heartbeat only after the full scheduled run completes. Its lock now covers the commands directly, so a failed command stops the run instead of being mistaken for a success. The official CloudWatch agent is active on the host, using the dedicated `Page47CloudWatchAgent` role in account `591697681173`; both Page 47 log groups, the success metric filter, and the two-hour missed-run alarm are configured.
 
 The historical record is now backfilled for the nine selected Seattle bodies: 1,332 meetings, 24,047 appearances, 25,640 attachment records, and 81 matters with at least three appearances, covering 9 February 2015 through 11 September 2026. The normalized SQLite store is running on the public host at `runtime/records/seattle.sqlite3`; all present stored fields carry a source URL and capture time.
 
@@ -66,7 +66,7 @@ The preflight report identified eight clients that met the bounded structural ch
 
 ## Next work
 
-The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md): reconcile the host instance role with the deployment account, finish CloudWatch log delivery and alarm testing, verify an SES sender and controlled message, and capture one searchable OpenTelemetry trace. Denver's four historical failed URLs and one unreadable PDF are recorded in the coverage audit. The deterministic 100-matter evaluation export is preserved, but its 30 gold cases are not labeled. Finally, the hand-labelled comparison must run over the same matters for keyword alerts, search, latest-document reading, and Page 47; its results and every miss remain unpublished until review.
+The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md): verify an SES sender and controlled message, capture one searchable OpenTelemetry trace, and complete the evaluation labels. CloudWatch log delivery and alarm configuration are live; a deliberate missed-run test can be performed as an operational check. Denver's four historical failed URLs and one unreadable PDF are recorded in the coverage audit. The deterministic 100-matter evaluation export is preserved, but its 30 gold cases are not labeled. Finally, the hand-labelled comparison must run over the same matters for keyword alerts, search, latest-document reading, and Page 47; its results and every miss remain unpublished until review.
 
 ## Tests
 

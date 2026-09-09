@@ -1,0 +1,6 @@
+# The CloudWatch agent runs as root on the Lightsail VPS. Use the existing
+# deployment identity as the source credentials, then assume the dedicated
+# Page47CloudWatchAgent role from the logs configuration.
+[credentials]
+shared_credential_profile = "default"
+shared_credential_file = "/home/ubuntu/.aws/credentials"

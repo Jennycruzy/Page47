@@ -115,28 +115,23 @@ subdomain without sending them to the xCover application root.
 ## 4. CloudWatch Logs and missed-run alarm
 
 The official CloudWatch agent package `1.300072.0b1766` is installed on the
-host and the checked-in configuration has passed validation. It is currently
-stopped for the handoff because it uses the host instance role rather than the
-`page47-vps-deploy` user. The agent log records denied
-`logs:CreateLogStream`, `logs:PutLogEvents`, and `logs:DescribeLogGroups`
-requests for `AmazonLightsailInstanceRole`.
+host. The agent runs as root and uses the existing `page47-vps-deploy`
+credentials as its source identity, then assumes the dedicated
+`Page47CloudWatchAgent` role in account `591697681173`. This avoids relying on
+the non-customer `AmazonLightsailInstanceRole` reported by the host metadata.
 
-The host's EC2 metadata reports account `000029643808`, instance
-`i-01de6496943e7a94f`, and role `AmazonLightsailInstanceRole`; the Page 47
-deployment credentials identify account `591697681173`. Grant the host role
-log access in the host account, or deliberately configure a documented
-cross-account log destination, before restarting the agent. Do not treat the
-deployment-user policy as permission for the host role.
-
-After that identity boundary is resolved, apply the checked-in configuration:
+Apply the checked-in configuration and shared credentials settings:
 
 ```sh
 cd /home/ubuntu/page47-preflight
 sudo install -m 0644 deploy/cloudwatch/page47-agent.json \
-  /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
+  /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.d/file_amazon-cloudwatch-agent.json
+sudo install -m 0644 deploy/cloudwatch/common-config.toml \
+  /opt/aws/amazon-cloudwatch-agent/etc/common-config.toml
 sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \
-  -a fetch-config -m ec2 -s \
-  -c file:/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
+  -a fetch-config -m ec2 \
+  -c file:/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.d/file_amazon-cloudwatch-agent.json
+sudo systemctl restart amazon-cloudwatch-agent
 sudo systemctl is-active amazon-cloudwatch-agent
 ```
 
@@ -152,6 +147,11 @@ Verify the two log groups, the `Page47/Snapshotter/CompletedRuns` metric, and
 the `Page47-Snapshotter-MissedRun` alarm in `eu-north-1`. Test the alarm only
 with a planned short pause of the collector and restore the cron entry
 immediately afterward; do not delete evidence or alter the append-only store.
+
+The 9 September 2026 live check found both log groups with active streams and
+14-day retention. The metric filter and alarm were created successfully; the
+alarm initially reports `INSUFFICIENT_DATA` while its two one-hour evaluation
+windows fill.
 
 ## 5. Transaction Search and one successful trace
 

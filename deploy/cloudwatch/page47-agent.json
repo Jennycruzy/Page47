@@ -4,6 +4,9 @@
     "run_as_user": "root"
   },
   "logs": {
+    "credentials": {
+      "role_arn": "arn:aws:iam::591697681173:role/Page47CloudWatchAgent"
+    },
     "logs_collected": {
       "files": {
         "collect_list": [
