@@ -43,6 +43,31 @@ failure in the `substance` node. Those attempts remain recorded as failed runs;
 they were not presented as findings. The isolated graph and dependency pins
 were deployed before the successful check above.
 
+## Post-activation review
+
+After Transaction Search became active, the same stored Seattle matter (`17394`)
+was submitted again on 9 September 2026. The VPS saved the following completed
+run:
+
+```text
+run_id: e44ba7e6a0e641759896c6c28e79a35d
+started_at: 2026-09-09T06:52:33.520535+00:00
+finished_at: 2026-09-09T06:52:58.723787+00:00
+status: completed
+graph: 5 completed nodes, 0 failed nodes, 5 executions
+execution_time: 53.973 seconds
+finding: seattle,-washington-17394, clearer, publish=true, 18 supported
+```
+
+The corresponding AgentCore runtime log recorded a successful invocation with
+request ID `9dcf6075-7f1e-40d8-94dc-2cbf82fc7e5d` and session ID
+`c3bce38645594aaaae9fec76a81a3e623a059bf847a74fa1b85a7cfba7d00994`.
+The Default X-Ray rule was at its normal 1% target during this request, and an
+exact-window `GetTraceSummaries` query returned no trace. A temporary 100%
+target was applied at 06:59:35 UTC for one retry, but it produced no new saved
+run; the target was restored to 1% at 07:03:48 UTC. No searchable trace ID has
+been retained, so the trace gate remains open.
+
 ## 9 September AWS setup
 
 The `page47-vps-deploy` identity in account `591697681173` now has the
@@ -61,12 +86,13 @@ Destination: CloudWatchLogs
 Status: ACTIVE
 ```
 
-The default X-Ray indexing rule is back at a 1% sampling target after a brief
-100% setting used only while preparing the controlled test. No review was
-invoked after activation and no trace identifier has been retained, so the
-trace gate remains open. The earlier `GetTraceSummaries` check at
-2026-09-08T10:15:58Z returned zero summaries in both `eu-west-2` and
-`eu-north-1` for the recent review window.
+The default X-Ray indexing rule is back at a 1% sampling target after the
+temporary validation setting. A post-activation review was saved as run
+`e44ba7e6a0e641759896c6c28e79a35d`, but its 1% sampling window returned no
+trace summary and no trace identifier has been retained, so the trace gate
+remains open. The earlier `GetTraceSummaries` check at 2026-09-08T10:15:58Z
+returned zero summaries in both `eu-west-2` and `eu-north-1` for its recent
+review window.
 
 ## CloudWatch host boundary
 

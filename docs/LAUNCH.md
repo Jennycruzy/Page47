@@ -198,8 +198,11 @@ If the review returns an application error, roll the runtime environment back
 to its last known-good setting before retrying. Do not claim trace completion
 from a control-plane `READY` response alone.
 
-As of 2026-09-09, no review was invoked after Transaction Search became
-`ACTIVE`, so no post-activation trace identifier exists yet.
+On 2026-09-09, a review was invoked after Transaction Search became `ACTIVE`
+and saved as completed run `e44ba7e6a0e641759896c6c28e79a35d` for matter
+`17394`. It ran while the Default rule was at its normal 1% target, and the
+exact-window trace search returned no summary. No post-activation trace
+identifier has been retained, so this gate remains open.
 
 ## 6. Evidence and evaluation gates
 
