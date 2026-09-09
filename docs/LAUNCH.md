@@ -87,6 +87,11 @@ The controlled delivery test must use a mailbox explicitly chosen for this
 deployment. Confirm the provider returns a `MessageId`, then confirm receipt;
 the recipient address is not a repository setting.
 
+Current state as of 2026-09-09: `/page47/web/public-url` is present in
+`eu-west-2`. `/page47/email/sender` is absent. SES reports
+`SendingEnabled=true` and `ProductionAccessEnabled=false`, so verify the
+sender and the controlled recipient before attempting delivery.
+
 ## 3. Deploy the root-path configuration
 
 Only after the subdomain and certificate work:
@@ -109,9 +114,21 @@ subdomain without sending them to the xCover application root.
 
 ## 4. CloudWatch Logs and missed-run alarm
 
-The CloudWatch agent must be installed on the Lightsail host and allowed to
-write to the two configured log groups. Install the agent using the official
-package for the host image, then apply the checked-in configuration:
+The official CloudWatch agent package `1.300072.0b1766` is installed on the
+host and the checked-in configuration has passed validation. It is currently
+stopped for the handoff because it uses the host instance role rather than the
+`page47-vps-deploy` user. The agent log records denied
+`logs:CreateLogStream`, `logs:PutLogEvents`, and `logs:DescribeLogGroups`
+requests for `AmazonLightsailInstanceRole`.
+
+The host's EC2 metadata reports account `000029643808`, instance
+`i-01de6496943e7a94f`, and role `AmazonLightsailInstanceRole`; the Page 47
+deployment credentials identify account `591697681173`. Grant the host role
+log access in the host account, or deliberately configure a documented
+cross-account log destination, before restarting the agent. Do not treat the
+deployment-user policy as permission for the host role.
+
+After that identity boundary is resolved, apply the checked-in configuration:
 
 ```sh
 cd /home/ubuntu/page47-preflight
@@ -138,21 +155,22 @@ immediately afterward; do not delete evidence or alter the append-only store.
 
 ## 5. Transaction Search and one successful trace
 
-The current account-level trace destination is `XRay`. An administrator must
-enable the CloudWatch Logs destination for Transaction Search and grant the
-required CloudWatch Logs resource policy before asking AgentCore to emit the
-unified trace. Record the account-level result first:
+The AgentCore runtime is in `eu-west-2`, so configure and verify the
+Transaction Search destination there. The account resource policy
+`Page47TransactionSearchXRayAccess` now exists in that region, and the current
+account-level result is:
 
 ```sh
-aws xray get-trace-segment-destination --region eu-north-1
+aws xray get-trace-segment-destination --region eu-west-2
+# Destination: CloudWatchLogs
+# Status: ACTIVE
 ```
 
-After the X-Ray service resource policy is in place, the administrator changes
-the account destination with:
+The default indexing rule is restored to a 1% target after a temporary 100%
+setting used while preparing the controlled test:
 
 ```sh
-aws xray update-trace-segment-destination \
-  --region eu-north-1 --destination CloudWatchLogs
+aws xray get-indexing-rules --region eu-west-2
 ```
 
 The current AgentCore runtime is a runtime-hosted Strands agent, so AgentCore
@@ -180,6 +198,9 @@ If the review returns an application error, roll the runtime environment back
 to its last known-good setting before retrying. Do not claim trace completion
 from a control-plane `READY` response alone.
 
+As of 2026-09-09, no review was invoked after Transaction Search became
+`ACTIVE`, so no post-activation trace identifier exists yet.
+
 ## 6. Evidence and evaluation gates
 
 Denver follow-up remains an evidence-quality note, not a completeness claim:
@@ -203,8 +224,9 @@ and their evidence have been independently reviewed. Keep `status` as
 
 ## Required permissions
 
-The current `page47-vps-deploy` identity is missing the following access. Grant
-only the resource-scoped actions needed for this runbook:
+The `page47-vps-deploy` identity now has the customer inline policy
+`Page47OperationsPermissions`. The host instance role is a separate principal
+and still needs the following log access in its own account:
 
 - SSM: `ssm:GetParameter` for `/page47/*`; `ssm:PutParameter` only for the
   Page 47 parameters;
@@ -217,8 +239,11 @@ only the resource-scoped actions needed for this runbook:
   `xray:UpdateTraceSegmentDestination`, `xray:GetIndexingRules`,
   `xray:UpdateIndexingRule`, the required log-group creation/retention actions,
   and `logs:PutResourcePolicy`/`logs:DescribeResourcePolicies`; and
-- the host's CloudWatch agent principal: log stream creation and log event
-  writes only for the two Page 47 log groups.
+- the host's `AmazonLightsailInstanceRole` principal in account `000029643808`:
+  log-group/stream discovery, log stream creation, retention configuration,
+  and log event writes only for the two Page 47 log groups. The role must be
+  granted access in that account, or the destination must be changed to a
+  deliberately configured cross-account design.
 
 Do not place AWS access keys, mailbox credentials, or certificate private keys
 in this repository.

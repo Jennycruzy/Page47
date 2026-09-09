@@ -1,6 +1,6 @@
 # Observability verification
 
-Date: 8 September 2026.
+Date: 9 September 2026.
 
 The Page 47 AgentCore runtime is currently `READY` in `eu-west-2`:
 
@@ -43,17 +43,50 @@ failure in the `substance` node. Those attempts remain recorded as failed runs;
 they were not presented as findings. The isolated graph and dependency pins
 were deployed before the successful check above.
 
-## Trace boundary
+## 9 September AWS setup
 
-The account-level X-Ray check still reports the `XRay` trace destination rather
-than CloudWatch Logs. No usable trace identifier has been retained, so unified
-trace search is not complete. An administrator still needs to enable the
-CloudWatch Logs Transaction Search destination and its resource policy before
-the trace gate can be closed. Runtime `READY` and a successful review are not
-being treated as proof that a trace is searchable.
+The `page47-vps-deploy` identity in account `591697681173` now has the
+customer inline policy `Page47OperationsPermissions`. The public URL parameter
+`/page47/web/public-url` is present in `eu-west-2`; the SES sender parameter is
+still absent. SES reports `SendingEnabled=true` and
+`ProductionAccessEnabled=false`, so a verified sender and a controlled,
+verified recipient are still required before delivery can be tested.
 
-At 2026-09-08T10:15:58Z, `GetTraceSummaries` returned zero summaries in both
-`eu-west-2` and `eu-north-1` for the recent review window.
+Transaction Search setup was completed for the AgentCore region
+`eu-west-2`. The account resource policy `Page47TransactionSearchXRayAccess`
+was created, `GetTraceSegmentDestination` now reports:
 
-SES parameters, CloudWatch agent delivery for the Lightsail service, the missed-
-run alarm, and the controlled email receipt remain separate launch gates.
+```text
+Destination: CloudWatchLogs
+Status: ACTIVE
+```
+
+The default X-Ray indexing rule is back at a 1% sampling target after a brief
+100% setting used only while preparing the controlled test. No review was
+invoked after activation and no trace identifier has been retained, so the
+trace gate remains open. The earlier `GetTraceSummaries` check at
+2026-09-08T10:15:58Z returned zero summaries in both `eu-west-2` and
+`eu-north-1` for the recent review window.
+
+## CloudWatch host boundary
+
+The official CloudWatch agent package `1.300072.0b1766` was installed on the
+host and the checked-in configuration passed validation. It was then stopped
+for this handoff because the agent uses the host's instance role rather than
+the `page47-vps-deploy` user. Its log shows denied `logs:CreateLogStream`,
+`logs:PutLogEvents`, and `logs:DescribeLogGroups` calls for
+`AmazonLightsailInstanceRole`.
+
+The SSH shell identifies as account `591697681173`, but EC2 instance metadata
+identifies the host as account `000029643808`, instance
+`i-01de6496943e7a94f`, with role `AmazonLightsailInstanceRole`. The
+`/page47` groups are therefore not visible through the deployment user's
+account, and the host role must be reconciled or granted cross-account log
+access before the agent and missed-run alarm can be configured. Runtime
+`READY`, a successful review, and an active Transaction Search destination are
+not being treated as proof that a searchable trace or monitoring pipeline
+works.
+
+SES delivery, CloudWatch log delivery and the missed-run alarm, the controlled
+email receipt, one post-activation searchable trace, and the human-labelled
+Seattle evaluation set remain separate launch gates.

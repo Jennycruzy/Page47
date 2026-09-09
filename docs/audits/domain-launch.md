@@ -1,6 +1,6 @@
 # Page 47 subdomain launch
 
-Date: 8 September 2026.
+Date: 9 September 2026.
 
 The selected public hostname is now DNS- and TLS-ready:
 
@@ -25,5 +25,5 @@ root-relative links and its APIs are readable at the root path. The existing
 `https://xcover.online/page47/healthz` bookmark now returns a `301` to
 `https://page47.xcover.online/healthz`, preserving the old entry point while
 avoiding links back to the xCover application root. The
-`/page47/web/public-url` SSM value remains a separate SES/notification
-configuration step.
+`/page47/web/public-url` SSM value is now present in `eu-west-2`. The verified
+SES sender and controlled notification test remain separate gates.
