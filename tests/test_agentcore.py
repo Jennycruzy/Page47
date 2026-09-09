@@ -5,12 +5,12 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from strands.multiagent.graph import GraphState
+from test_analysis import case
 
 from page47.agents.graph import INVESTIGATION_GRAPH, _review_inputs_ready
 from page47.runtime.client import _aws_json_value, load_agentcore_settings
 from page47.runtime.transport import request_bytes, request_from_case
 from scripts.deploy_agentcore import _client_token, _runtime_arguments, load_deployment_settings
-from test_analysis import case
 
 
 def test_agentcore_is_enabled_after_runtime_deployment() -> None:

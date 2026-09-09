@@ -71,11 +71,11 @@ been retained, so the trace gate remains open.
 ## 9 September AWS setup
 
 The `page47-vps-deploy` identity in account `591697681173` now has the
-customer inline policy `Page47OperationsPermissions`. The public URL parameter
-`/page47/web/public-url` is present in `eu-west-2`; the SES sender parameter is
-still absent. SES reports `SendingEnabled=true` and
-`ProductionAccessEnabled=false`, so a verified sender and a controlled,
-verified recipient are still required before delivery can be tested.
+customer inline policy `Page47OperationsPermissions`. The public URL and SES
+sender parameters are present in `eu-west-2`, and the sender identity is
+verified. SES reports `SendingEnabled=true` and
+`ProductionAccessEnabled=false`; a controlled sandbox recipient and receipt
+are still required before delivery is complete.
 
 Transaction Search setup was completed for the AgentCore region
 `eu-west-2`. The account resource policy `Page47TransactionSearchXRayAccess`

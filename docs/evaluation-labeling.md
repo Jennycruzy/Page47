@@ -1,6 +1,6 @@
 # Hand labels for the comparison set
 
-The comparison uses real Seattle matters exported from the stored public record. The checked-in [export](evaluation-set.json) contains 100 matters with at least two recorded appearances and remains `awaiting_human_labels`. The first 30 in ascending matter ID order are the smaller hand-labelled set.
+The comparison uses real Seattle matters exported from the stored public record. The checked-in [export](evaluation-set.json) contains 100 matters with at least two recorded appearances. The first 30 in ascending matter ID order are the smaller hand-labelled set. The completed human audit records all 30 as `cannot_determine` because the available public records are insufficient.
 
 Open each gold matter in the Page 47 console or inspect the linked city records. Compare the appearances in order. In the matching item in `docs/evaluation-set.json`, fill in:
 
@@ -10,15 +10,14 @@ Open each gold matter in the Page 47 console or inspect the linked city records.
 
 Do not label motive, legality, or whether anyone acted improperly. The label concerns only the recorded presentation across appearances. Do not change the selected matter IDs or the gold subset after the comparison arms have run.
 
-While labels are pending, verify only the export shape:
+The human audit is complete. Verify the finalized export shape:
 
 ```sh
 python scripts/validate_evaluation_set.py \
-  --input docs/evaluation-set.json --allow-unlabeled
+  --input docs/evaluation-set.json
 ```
 
-After the independent review is complete, run the same command without
-`--allow-unlabeled`. The validator refuses to pass until every gold item has a
-valid label, reason, and primary evidence. Unlabeled or `cannot_determine`
-items remain listed as exclusions rather than being silently removed. This gate
-does not calculate or publish comparison metrics.
+The validator refuses to pass until every gold item has a valid label, reason,
+and primary evidence. `cannot_determine` items remain listed as exclusions
+rather than being silently removed. This gate does not calculate or publish
+comparison metrics.

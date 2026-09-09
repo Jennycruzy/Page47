@@ -1992,9 +1992,18 @@
       "city": "Seattle, Washington",
       "current_title": null,
       "file_number": null,
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:26.143774Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2115?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:37.921264Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 1824,
       "matter_source": {
         "captured_at": "2026-09-04T19:37:51.398250Z",
@@ -2109,9 +2118,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE relating to the City Light Department; amending Ordinance 123256 to clarify the role of and support for the City Light Review Panel.",
       "file_number": "CB 118330",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:10:46.099095Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1446?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:10:43.657861Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1457?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 1843,
       "matter_source": {
         "captured_at": "2026-09-04T19:37:51.398250Z",
@@ -4154,9 +4172,18 @@
       "city": "Seattle, Washington",
       "current_title": "Full Council Agenda",
       "file_number": null,
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:10:49.331955Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1415?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:20.569884Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/3053?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 1849,
       "matter_source": {
         "captured_at": "2026-09-04T19:37:51.398250Z",
@@ -4487,9 +4514,18 @@
       "city": "Seattle, Washington",
       "current_title": "Petition of Acorn Development LLC for the vacation of the alley in Block 21, Sarah A. Bell\u2019s Second Addition to the City of Seattle, bounded by Bell Street, 7th Avenue, Blanchard Street, and 8th Avenue.",
       "file_number": "CF 314278",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:42.716304Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1944?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:40.888361Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1993?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 1876,
       "matter_source": {
         "captured_at": "2026-09-04T19:37:51.398250Z",
@@ -4652,9 +4688,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE relating to the 2015 Budget; amending Ordinance 124648, which adopted the 2015 Budget; changing appropriations to the Seattle Department of Transportation and to the Human Services Department; creating both exempt and non-exempt positions; authorizing the Director of Finance to enter into an interlocal agreement with the State Department of Licensing; and ratifying and confirming certain prior acts; all by at least a 3/4 vote of the City Council.",
       "file_number": "CB 118391",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:10:29.377121Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1615?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:10:27.136193Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1632?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 2289,
       "matter_source": {
         "captured_at": "2026-09-04T19:37:54.237850Z",
@@ -4865,9 +4910,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE relating to the Department of Parks and Recreation; authorizing the Superintendent of Parks and Recreation to enter into a lease agreement with Oiselle Running Inc. to occupy and use a portion of Building 11 at Warren G. Magnuson Park for general office purposes.",
       "file_number": "CB 118488",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:10:05.635180Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1779?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:49.475089Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1904?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 2763,
       "matter_source": {
         "captured_at": "2026-09-04T19:37:56.822440Z",
@@ -5126,9 +5180,14 @@
       "city": "Seattle, Washington",
       "current_title": "A RESOLUTION declaring the City Council's intent to consider strategies to increase the availability of affordable housing in The City of Seattle; and requesting the State Legislature to adopt new policies or modify existing policies in order to provide additional opportunities for cities and counties to increase the availability of affordable housing.",
       "file_number": "Res 31609",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:10:00.472130Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1826?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 2851,
       "matter_source": {
         "captured_at": "2026-09-04T19:37:57.603170Z",
@@ -5435,9 +5494,18 @@
       "city": "Seattle, Washington",
       "current_title": "A RESOLUTION relating to the State Route 520, Interstate 5 to Medina Bridge Replacement and High Occupancy Vehicle Project; recognizing the completion of a design refinements effort and a recommendations report for the west side portion of the project and recommending actions by the City of Seattle and State of Washington based on results of this effort.",
       "file_number": "RES 31611",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:10:00.472130Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1826?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:59.430312Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1860?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 2907,
       "matter_source": {
         "captured_at": "2026-09-04T19:37:57.603170Z",
@@ -5624,9 +5692,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE related to cable television; authorizing the Mayor or the Mayor\u2019s designee to enter into a renewed Cable Television Franchise Agreement with Comcast Cable Communications Management, LLC; and authorizing the Chief Technology Officer to enter into other agreements for the purpose of implementing or administering the renewed franchise.",
       "file_number": "CB 118549",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:44.639497Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1930?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:42.716304Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1944?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 2922,
       "matter_source": {
         "captured_at": "2026-09-04T19:37:57.603170Z",
@@ -5813,9 +5890,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE relating to the provision of tenant relocation assistance to displaced tenants; establishing requirements for residential tenancies; establishing regulations about penalties and the issuance of building permits for violators of the Tenant Relocation Assistance Ordinance; amending Sections 7.24.030, 7.24.050, 10.09.085, 22.210.030, 22.210.140, 22.210.150, and 22.210.180 of the Seattle Municipal Code and adding a new Section 22.210.136; amending Section 106.6.3 of the 2012 Seattle Building Code; and amending Section R105.6.3 of the 2012 Seattle Residential Code.",
       "file_number": "CB 118516",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:59.430312Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1860?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:59.430312Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1860?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 3015,
       "matter_source": {
         "captured_at": "2026-09-04T19:37:58.431698Z",
@@ -6002,9 +6088,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE requiring periodic building energy tune-ups for certain nonresidential buildings; adding a new Chapter 22.930 to the Seattle Municipal Code; and amending Ordinance 124927, which adopted the 2016 Budget, changing appropriations to various departments and budget control levels, and from various funds in the Budget; all by a 3/4 vote of the City Council.",
       "file_number": "CB 118631",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:28.333823Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2090?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:27.456813Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2104?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 3072,
       "matter_source": {
         "captured_at": "2026-09-04T19:37:59.258010Z",
@@ -6095,9 +6190,14 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE relating to the Construction and Land Use Fund; adding a new Section 22.202.070 to the Seattle Municipal Code.",
       "file_number": "CB 118578",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:44.639497Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1930?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 3280,
       "matter_source": {
         "captured_at": "2026-09-04T19:38:00.917989Z",
@@ -6212,9 +6312,18 @@
       "city": "Seattle, Washington",
       "current_title": "Encampment Conditions Assessment",
       "file_number": "Inf 374",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:35.941277Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2030?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:30.795684Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2074?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 3577,
       "matter_source": {
         "captured_at": "2026-09-04T19:38:02.642089Z",
@@ -7099,9 +7208,14 @@
       "city": "Seattle, Washington",
       "current_title": "Petition of WSA Properties, et al. to vacate Occidental Avenue South between the north margin of South Holgate Street and a line parallel to and 30 feet south of the centerline of South Massachusetts Street.",
       "file_number": "CF 312905",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:14.642021Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2202?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 3617,
       "matter_source": {
         "captured_at": "2026-09-04T19:38:03.414901Z",
@@ -52622,9 +52736,18 @@
       "city": "Seattle, Washington",
       "current_title": "City Council Agenda",
       "file_number": null,
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:07:34.729307Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2890?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:05:40.924797Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/3726?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 3838,
       "matter_source": {
         "captured_at": "2026-09-04T19:38:04.122879Z",
@@ -52691,9 +52814,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE relating to the Ethics Code; amending Sections 4.16.030 and 4.16.070 of the Seattle Municipal Code to require City Councilmembers to disclose financial interests in legislative matters under consideration by the City Council prior to participating in those matters, and creating a limited exception to the requirement that City Councilmembers disqualify themselves from participating in such matters.",
       "file_number": "CB 118701",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:06.433009Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2255?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:00.497707Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2291?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 4018,
       "matter_source": {
         "captured_at": "2026-09-04T19:38:05.737152Z",
@@ -52880,9 +53012,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE relating to the Seattle Fire Code, adopting as the Seattle Fire Code the 2015 edition of the International Fire Code with some exceptions, amending and adding various provisions to that code; amending Section 22.600.020 of the Seattle Municipal Code; and repealing Sections 2 through 44 of Ordinance 124288.",
       "file_number": "CB 118772",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:08:43.445223Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2457?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:41.692123Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2468?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 4306,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:49.687397Z",
@@ -52997,9 +53138,18 @@
       "city": "Seattle, Washington",
       "current_title": "A RESOLUTION granting conceptual approval to Swedish Health Services to construct and maintain a pedestrian tunnel under and across Minor Avenue, south of Columbia Street and north of Cherry Street.",
       "file_number": "Res 31700",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:08:43.445223Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2457?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:41.692123Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2468?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 4360,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:49.687397Z",
@@ -53186,9 +53336,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE relating to international affairs and the Seattle Sister Cities program, amending Sections 3.14.440, 3.14.450, 3.14.460, and 3.14.470 of the Seattle Municipal Code.",
       "file_number": "CB 118754",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:08:50.529192Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2366?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:48.873153Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2374?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 4369,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:49.687397Z",
@@ -53303,9 +53462,18 @@
       "city": "Seattle, Washington",
       "current_title": "A RESOLUTION expressing the need to accelerate the transition of the City\u2019s transportation sector away from oil and increase the use of electricity for transportation by adopting a goal to cut oil use for transportation by half by 2035; endorsing the Mayor\u2019s Drive Clean Seattle initiative; setting a goal that 30 percent of vehicles in the City will be electric by 2030; and establishing requirements for the Executive to report on initial actions to support these goals.",
       "file_number": "Res 31696",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:08:43.445223Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2457?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:41.692123Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2468?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 4382,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:49.687397Z",
@@ -53372,9 +53540,18 @@
       "city": "Seattle, Washington",
       "current_title": "July 25, 2016",
       "file_number": "Min 87",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:08:52.210648Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2356?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:50.529192Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2366?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 4387,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:49.687397Z",
@@ -53537,9 +53714,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE relating to the City Light Department; authorizing the Department to participate in the California Independent System Operator\u2019s Energy Imbalance Market, including authorizing the execution of any necessary agreements with the California Independent System Operator, as well as any additional agreements necessary or convenient for implementation and participation in the California Independent System Operator\u2019s Energy Imbalance Market.",
       "file_number": "CB 118798",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:08:38.532238Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2509?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:33.949617Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2525?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 4397,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:49.687397Z",
@@ -53750,9 +53936,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE granting Swedish Health Services permission to construct, maintain, and operate a pedestrian skybridge over and across Minor Avenue, between Columbia Street and Cherry Street, for a ten-year term, renewable for two successive ten-year terms; specifying the conditions under which this permit is granted; and providing for the acceptance of the permit and conditions.",
       "file_number": "CB 118796",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:08:43.445223Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2457?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:41.692123Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2468?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 4412,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:49.687397Z",
@@ -53939,9 +54134,18 @@
       "city": "Seattle, Washington",
       "current_title": "A RESOLUTION approving the Seattle Freight Master Plan.",
       "file_number": "Res 31706",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:08:43.445223Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2457?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:41.692123Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2468?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 4435,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:50.376182Z",
@@ -54152,9 +54356,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE relating to land use and zoning; amending Chapter 23.32 of the Seattle Municipal Code at page 112 of the Official Land Use Map to rezone property located at 2220 East Union Street from Neighborhood Commercial 2-40 (NC2-40) to Neighborhood Commercial 2-65 (NC2-65) and from Neighborhood Commercial 2-40 with a pedestrian designation (NC2P-40) to Neighborhood Commercial 2-65 with a pedestrian designation (NC2P-65); and accepting a Property Use and Development Agreement as a condition of rezone approval. (Petition by East Union 22, LLC, C.F. 314312, SDCI Project 3019001)",
       "file_number": "CB 118785",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:08:43.445223Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2457?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:41.692123Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2468?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 4488,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:50.376182Z",
@@ -54605,9 +54818,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE relating to residential rental properties; amending Sections 7.24.020, 7.24.030, 7.24.040, 7.24.050, 7.24.060, 7.24.070, and 7.24.080 of the Seattle Municipal Code (SMC); adding new Sections 7.24.035, 7.24.036, 7.24.038, 7.24.110, 7.24.120, 7.24.130, 7.24.140, 7.24.150, 7.24.160, 7.24.170, 7.24.180, 7.24.190, 7.24.200, and 7.24.210 to the SMC; and repealing Section 7.24.090 of the SMC; all to limit the amount of security deposits and non-refundable move-in fees, to allow residential tenants to pay security deposits, non-refundable move-in fees, and last month\u2019s rent in installments, and to establish enforcement provisions for Chapter 7.24.",
       "file_number": "CB 118817",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:08:36.205444Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2519?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:25.058778Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2575?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 4553,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:51.070502Z",
@@ -54674,9 +54896,18 @@
       "city": "Seattle, Washington",
       "current_title": "2018 State Legislative Agenda Overview & Priorities Feedback",
       "file_number": "Inf 960",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:07:11.616714Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/3079?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:10.120028Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/3085?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 5139,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:54.625499Z",
@@ -55007,9 +55238,18 @@
       "city": "Seattle, Washington",
       "current_title": "Housing Affordability and Livability Agenda (HALA) and Mandatory Housing Affordability (MHA) Implementation Update",
       "file_number": "Inf 712",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:08:14.448373Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2646?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:08.596291Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2681?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 5159,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:54.625499Z",
@@ -55244,9 +55484,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE authorizing the CEO/General Manager of Seattle Public Utilities to execute an amendment to the contract with Waste Management of Washington, Inc., for waste disposal and transportation services; amending Ordinance 125207, which adopted the 2017 Budget, changing appropriations for Seattle Public Utilities; and ratifying and confirming certain prior acts.",
       "file_number": "CB 118932",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:08:02.323974Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2720?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:00.838768Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2730?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 5296,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:55.329207Z",
@@ -55505,9 +55754,18 @@
       "city": "Seattle, Washington",
       "current_title": "AN ORDINANCE relating to the Seattle Office for Civil Rights; amending Section 3.14.920 of the Seattle Municipal Code to increase the membership of the Seattle Human Rights Commission, the Seattle Lesbian, Gay, Bisexual, Transgender, Queer (LGBTQ) Commission, and the Seattle Commission for People with Disabilities and change the appointment authority for these and the Seattle Women\u2019s Commission.",
       "file_number": "CB 118984",
-      "gold_evidence": [],
-      "gold_label": null,
-      "gold_label_reason": null,
+      "gold_evidence": [
+        {
+          "captured_at": "2026-09-04T20:07:37.069506Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2879?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:33.782456Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2902?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "gold_label": "cannot_determine",
+      "gold_label_reason": "The available public record is insufficient to determine whether the matter's presentation meaningfully changed.",
       "matter_id": 5519,
       "matter_source": {
         "captured_at": "2026-09-04T19:51:56.771199Z",
@@ -245218,5 +245476,5 @@
     "order": "matter_id ascending",
     "sample_size": 100
   },
-  "status": "awaiting_human_labels"
+  "status": "human_reviewed"
 }

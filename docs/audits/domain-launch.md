@@ -26,4 +26,5 @@ root-relative links and its APIs are readable at the root path. The existing
 `https://page47.xcover.online/healthz`, preserving the old entry point while
 avoiding links back to the xCover application root. The
 `/page47/web/public-url` SSM value is now present in `eu-west-2`. The verified
-SES sender and controlled notification test remain separate gates.
+SES sender is configured; the controlled notification test remains a separate
+gate.

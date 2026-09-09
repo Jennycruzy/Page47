@@ -87,10 +87,12 @@ The controlled delivery test must use a mailbox explicitly chosen for this
 deployment. Confirm the provider returns a `MessageId`, then confirm receipt;
 the recipient address is not a repository setting.
 
-Current state as of 2026-09-09: `/page47/web/public-url` is present in
-`eu-west-2`. `/page47/email/sender` is absent. SES reports
-`SendingEnabled=true` and `ProductionAccessEnabled=false`, so verify the
-sender and the controlled recipient before attempting delivery.
+Current state as of 2026-09-09: `/page47/web/public-url` and
+`/page47/email/sender` are present in `eu-west-2`; the SES sender identity is
+verified. SES reports `SendingEnabled=true` and
+`ProductionAccessEnabled=false`, so the sandbox recipient and controlled
+receipt still need to be tested. No notification row or message has been
+recorded from this deployment yet.
 
 ## 3. Deploy the root-path configuration
 
@@ -219,11 +221,12 @@ Denver follow-up remains an evidence-quality note, not a completeness claim:
   current PDF reader path.
 
 The Seattle export is at `docs/evaluation-set.json` on the deployment host. The
-first 30 matters are the gold subset. Complete the labels according to
-`docs/evaluation-labeling.md`, with one primary URL and capture time per label.
-Run no comparison or publish any recall/precision result until all 30 labels
-and their evidence have been independently reviewed. Keep `status` as
-`awaiting_human_labels` while that work is pending.
+first 30 matters are the gold subset. The completed human audit records all 30
+as `cannot_determine` because the stored public record lacks the required
+placement evidence, with primary record URLs and capture times. The export
+status is `human_reviewed`, and the strict validator passes. Do not publish
+comparison metrics until the comparison outputs and every miss have been
+checked.
 
 ## Required permissions
 
