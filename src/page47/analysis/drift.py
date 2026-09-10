@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
-from datetime import UTC, datetime
 from pathlib import Path
 from typing import Literal
 
@@ -93,11 +92,11 @@ class PresentationConfig:
 
 
 def state_from_direction_counts(
-    *, clearer_count: int, less_clear_count: int, has_observations: bool
+    *, clearer_count: int, less_clear_count: int, comparable_count: int
 ) -> DriftState:
     """Summarize supported presentation directions without cancelling them out."""
 
-    if not has_observations:
+    if comparable_count < 1:
         return "cannot_determine"
     if clearer_count > 0 and less_clear_count > 0:
         return "mixed"
@@ -105,6 +104,8 @@ def state_from_direction_counts(
         return "less_clear"
     if clearer_count > 0:
         return "clearer"
+    if comparable_count < 2:
+        return "cannot_determine"
     return "unchanged"
 
 
@@ -280,63 +281,18 @@ def _placement_observation(
     )
 
 
-def _parse_datetime(value: str | None) -> datetime | None:
-    if value is None:
-        return None
-    try:
-        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
-    except ValueError:
-        return None
-    if parsed.tzinfo is None:
-        return parsed.replace(tzinfo=UTC)
-    return parsed
-
-
-def _attachment_lag(appearance: AppearanceRecord) -> float | None:
-    event_date = _parse_datetime(appearance.event_date)
-    lags: list[float] = []
-    for attachment in appearance.attachments:
-        changed = _parse_datetime(attachment.last_modified_utc)
-        if event_date is not None and changed is not None:
-            lags.append((event_date - changed).total_seconds() / 3600.0)
-    if not lags:
-        return None
-    return min(lags)
-
-
 def _timing_observation(
     previous: AppearanceRecord,
     current: AppearanceRecord,
     config: PresentationConfig,
 ) -> PresentationObservation | None:
-    previous_lag = _attachment_lag(previous)
-    current_lag = _attachment_lag(current)
-    if previous_lag is None or current_lag is None:
-        return None
-    difference = previous_lag - current_lag
-    if abs(difference) < config.timing_difference_hours:
-        direction: Direction = "neutral"
-        text = (
-            "The recorded attachment-to-meeting timing changed by less than the configured "
-            "comparison interval."
-        )
-    elif difference > 0:
-        direction = "less_clear"
-        text = (
-            "The later appearance has an attachment timestamp closer to the meeting than "
-            "the earlier appearance."
-        )
-    else:
-        direction = "clearer"
-        text = (
-            "The later appearance has an attachment timestamp farther from the meeting than "
-            "the earlier appearance."
-        )
-    evidence = (
-        _link("earlier item record", previous.source.url, previous.source.captured_at),
-        _link("later item record", current.source.url, current.source.captured_at),
-    )
-    return PresentationObservation("attachment_timing", direction, text, evidence)
+    """Leave timing unavailable until a trustworthy publication-time source exists."""
+
+    # City API last-modified fields can be overwritten and do not prove when a
+    # document became visible to the public. Treating them as directional drift
+    # evidence would turn historical reconstruction into a false observation.
+    del previous, current, config
+    return None
 
 
 def compare_latest_appearances(case: MatterCase, config: PresentationConfig) -> DriftComparison:
@@ -370,7 +326,7 @@ def compare_latest_appearances(case: MatterCase, config: PresentationConfig) -> 
     state = state_from_direction_counts(
         clearer_count=clearer,
         less_clear_count=less_clear,
-        has_observations=True,
+        comparable_count=len(observations),
     )
     return DriftComparison(
         state,
@@ -417,7 +373,7 @@ def _compare_pair(
     state = state_from_direction_counts(
         clearer_count=clearer,
         less_clear_count=less_clear,
-        has_observations=True,
+        comparable_count=len(observations),
     )
     return DriftComparison(
         state,

@@ -59,6 +59,8 @@ The preflight command performs bounded live discovery and stores the public resp
 - [Production launch runbook](docs/LAUNCH.md)
 - [Comparison-set labeling instructions](docs/evaluation-labeling.md)
 - [Seattle evaluation export](docs/evaluation-set.json)
+- [Four-arm comparison audit](docs/comparison-audit.md)
+- [Four-arm comparison results](docs/comparison-results.json)
 - [Seattle configuration](config/cities/seattle.yaml)
 - [AWS discovery response cache](docs/evidence/preflight/index.json)
 
@@ -66,11 +68,11 @@ The preflight report identified eight clients that met the bounded structural ch
 
 ## Next work
 
-The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md): capture one searchable OpenTelemetry trace and run the hand-labelled comparison against the completed evaluation audit. CloudWatch log delivery and alarm configuration are live; a deliberate missed-run test can be performed as an operational check. Denver's four historical failed URLs and one unreadable PDF are recorded in the coverage audit. The deterministic 100-matter evaluation export is preserved, and its 30 gold cases are recorded as `cannot_determine` because the available public records are insufficient; the human audit is complete. Finally, the comparison must run over the same matters for keyword alerts, search, latest-document reading, and Page 47; its results and every miss remain unpublished until the comparison outputs are checked.
+The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md): capture one searchable OpenTelemetry trace, review the completed four-arm comparison artifact, and run a controlled directional fixture evaluation before publishing any accuracy claim. CloudWatch log delivery and alarm configuration are live; a deliberate missed-run test can be performed as an operational check. Denver's four historical failed URLs and one unreadable PDF are recorded in the coverage audit. The deterministic 100-matter evaluation export is preserved, and its 30 gold cases are recorded as `cannot_determine` because the available public records are insufficient; the human audit is complete. The current comparison artifact is `review_required` and records zero Page 47 overclaims on that abstention audit.
 
 ## Tests
 
-The current suite contains 46 collected tests when run with the repository root on `PYTHONPATH`. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request and deployment constraints, checks public-path links, checks private watch stopping, checks review email links, checks the observability configuration, checks the unlabeled-evaluation gate, and checks that the scheduled collector covers both cities and delivery. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes each city's configured placement method. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment; the plain `pytest` command needs the repository root added to `PYTHONPATH` for tests that import command modules.
+The current suite contains 51 collected tests when run with the repository root on `PYTHONPATH`. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request and deployment constraints, checks public-path links, checks private watch stopping, checks review email links, checks the observability configuration, checks the evaluation gates and four-arm comparison boundaries, and checks that the scheduled collector covers both cities and delivery. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes each city's configured placement method. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment; the plain `pytest` command needs the repository root added to `PYTHONPATH` for tests that import command modules.
 
 ## Limitations
 

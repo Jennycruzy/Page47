@@ -16,7 +16,13 @@ from page47.agents.schemas import (
     SubstanceChange,
     SubstanceReport,
 )
-from page47.analysis.case import AppearanceRecord, AttachmentRecord, MatterCase, MatterRecord
+from page47.analysis.case import (
+    AppearanceRecord,
+    AttachmentRecord,
+    MatterCase,
+    MatterRecord,
+    PageAnchor,
+)
 from page47.analysis.drift import EvidenceLink, PresentationConfig, compare_all_appearances
 from page47.analysis.investigation import (
     _agent_reports,
@@ -43,11 +49,26 @@ def appearance(
     item_id: int,
     placement: str | None,
     *,
+    title: str = "Recorded item",
     attachment_last_modified: str | None = None,
+    anchor_value: str | None = None,
 ) -> AppearanceRecord:
     item_source = source(f"item/{item_id}")
     attachments: tuple[AttachmentRecord, ...] = ()
-    if attachment_last_modified is not None:
+    if attachment_last_modified is not None or anchor_value is not None:
+        anchors = ()
+        if anchor_value is not None:
+            anchors = (
+                PageAnchor(
+                    kind="subject",
+                    value=anchor_value,
+                    page_number=1,
+                    start_character=0,
+                    end_character=len(anchor_value),
+                    excerpt=anchor_value,
+                    source=source(f"attachment/{item_id}"),
+                ),
+            )
         attachments = (
             AttachmentRecord(
                 attachment_id=item_id,
@@ -62,7 +83,7 @@ def appearance(
                 source=source(f"attachment/{item_id}"),
                 reading_status=None,
                 page_count=None,
-                anchors=(),
+                anchors=anchors,
                 reading_source=None,
                 evidence_root=Path("/tmp/page47-test"),
             ),
@@ -74,7 +95,7 @@ def appearance(
         event_date="2026-09-01T00:00:00Z",
         body_id=1,
         body_name="Test body",
-        title_as_presented="Recorded item",
+        title_as_presented=title,
         consent_value=None,
         pdf_placement=placement,
         pdf_evidence_pages=(3,) if placement is not None else (),
@@ -144,13 +165,15 @@ def test_opposing_dimensions_are_mixed_not_unchanged() -> None:
             appearances=(
                 appearance(
                     1,
-                    "regular",
-                    attachment_last_modified="2026-08-31T23:00:00Z",
+                    "consent",
+                    title="Housing item",
+                    anchor_value="housing",
                 ),
                 appearance(
                     2,
-                    "consent",
-                    attachment_last_modified="2026-08-31T00:00:00Z",
+                    "regular",
+                    title="Recorded item",
+                    anchor_value="housing",
                 ),
             ),
         ),
@@ -159,6 +182,31 @@ def test_opposing_dimensions_are_mixed_not_unchanged() -> None:
 
     assert result.counts["mixed"] == 1
     assert result.comparisons[0].state == "mixed"
+
+
+def test_unreliable_attachment_timing_stays_unavailable() -> None:
+    result = compare_all_appearances(
+        MatterCase(
+            city="Test city",
+            matter=case("regular", "regular").matter,
+            appearances=(
+                appearance(
+                    1,
+                    None,
+                    attachment_last_modified="2026-08-31T23:00:00Z",
+                ),
+                appearance(
+                    2,
+                    None,
+                    attachment_last_modified="2026-08-31T00:00:00Z",
+                ),
+            ),
+        ),
+        CONFIG,
+    )
+
+    assert result.comparisons[0].state == "cannot_determine"
+    assert result.counts["cannot_determine"] == 1
 
 
 def test_evidence_policy_is_counted_without_a_model_call() -> None:

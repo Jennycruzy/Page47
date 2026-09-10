@@ -93,7 +93,7 @@ def apply_evidence_policy(
     state = state_from_direction_counts(
         clearer_count=clearer_count,
         less_clear_count=less_clear_count,
-        has_observations=bool(accepted),
+        comparable_count=len(accepted),
     )
     publish = len(accepted) >= config.minimum_supported_observations and state != "cannot_determine"
     if publish:
