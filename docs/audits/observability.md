@@ -1,15 +1,16 @@
 # Observability verification
 
-Date: 9 September 2026.
+Date: 10 September 2026.
 
 The Page 47 AgentCore runtime is currently `READY` in `eu-west-2`:
 
 ```text
 runtime: page47_review
 arn: arn:aws:bedrock-agentcore:eu-west-2:591697681173:runtime/page47_review-X5IwXt4Y7h
-artifact: page47-review/agentcore-deployment-isolated.zip
-package_sha256: 5b1a097b29080237954b732fe4f92295478e2cb77d4b30fb6c9cee40a7bb6b22
-environment: UNIFIED_TRACES_DESTINATION_ENABLED=true
+artifact: s3://bedrock-agentcore-code-591697681173-eu-west-2/page47-review/page47-agentcore-telemetry.zip
+package_sha256: ea1724bca25bb2a2e39a9f04b2cf03bad55610ea3dd1473d843ccb38d25f500f
+runtime_version: 15
+environment: AGENT_OBSERVABILITY_ENABLED=true, UNIFIED_TRACES_DESTINATION_ENABLED=true
 ```
 
 The artifact pins the `mcp` and `pypdf` versions used by the last known-good
@@ -89,6 +90,37 @@ the runtime log search found no trace identifier. The indexing target was
 verified back at 1% at `2026-09-10T15:10:41Z`. This retry confirms another
 successful managed-runtime invocation, not a searchable OpenTelemetry trace;
 the trace gate remains open.
+
+## 10 September telemetry-enabled runtime verification
+
+The runtime was rebuilt with `aws-opentelemetry-distro==0.19.0` and deployed
+as version 15. The deployment returned `READY` and the runtime environment
+contained both `AGENT_OBSERVABILITY_ENABLED=true` and
+`UNIFIED_TRACES_DESTINATION_ENABLED=true`.
+
+The live public host then completed another controlled review:
+
+```text
+run_id: 6827c1a5528448f5add0c97427dd2c6c
+finding: seattle,-washington-17394, cannot_determine, publish=false
+runtime_request_id: 51d67146-1348-4af6-81df-88ba36c0fffa
+runtime_session_id: 4b9db9a2f1b3408693f97b42d13aedddb294712851fa4a64afe8b5f5eabd0eaf
+runtime_log: Invocation completed successfully (19.221s)
+trace_query_window: 2026-09-10T17:50:40Z through 2026-09-10T17:52:10Z
+```
+
+The application review succeeded and was saved, but the runtime log recorded
+OTLP export retries against `http://localhost:4318/v1/traces`, ending with
+`Failed to export span batch`. The runtime's `spans` log stream existed but
+contained no events in the exact review window, and no searchable trace ID was
+returned. The X-Ray destination remains `CloudWatchLogs/ACTIVE` and the
+default indexing rule is restored to 1%.
+
+This is not trace completion. AWS requires tracing to be enabled for the
+selected runtime in the AgentCore console: open **Agent Runtime**, select
+`page47_review`, choose **Tracing → Edit**, toggle **Enable**, and choose
+**Save**. After that console change, rerun the same controlled review and
+search the resulting `spans` stream or Transaction Search record.
 
 ## 9 September AWS setup
 

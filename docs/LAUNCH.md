@@ -176,16 +176,22 @@ setting used while preparing the controlled test:
 aws xray get-indexing-rules --region eu-west-2
 ```
 
-The current AgentCore runtime is a runtime-hosted Strands agent, so AgentCore
-provides the runtime instrumentation at startup. If the deployment is changed
-to a non-runtime execution path, add the AWS Distro for OpenTelemetry and the
-Strands OTEL extra before using the same trace gate; do not infer trace support
-from the runtime's `READY` status.
+The current AgentCore runtime is a runtime-hosted Strands agent. The checked-in
+package includes `aws-opentelemetry-distro>=0.18.0`, and the entrypoint enables
+the Strands OTLP exporter only when `AGENT_OBSERVABILITY_ENABLED=true`. Do not
+infer trace support from the runtime's `READY` status.
 
 The managed runtime is in `eu-west-2`. Deploy the checked-in runtime artifact
 with `scripts/deploy_agentcore.py --deploy`; the deployment code requests
+`AGENT_OBSERVABILITY_ENABLED=true` and
 `UNIFIED_TRACES_DESTINATION_ENABLED=true`. Verify the runtime returns `READY`
-and that its environment contains only the intended trace setting.
+and that its environment contains both intended settings.
+
+After deployment, open the AgentCore console's **Agent Runtime** page, select
+`page47_review`, choose **Tracing → Edit**, toggle **Enable**, and choose
+**Save**. This runtime-level switch starts the collector that accepts the
+entrypoint's OTLP spans; without it, the exporter reports a refused
+`localhost:4318` connection and no `spans` events are delivered.
 
 Use one stored Seattle matter for the controlled invocation. A successful test
 must have all of the following before it is called complete:
@@ -201,11 +207,11 @@ If the review returns an application error, roll the runtime environment back
 to its last known-good setting before retrying. Do not claim trace completion
 from a control-plane `READY` response alone.
 
-On 2026-09-09, a review was invoked after Transaction Search became `ACTIVE`
-and saved as completed run `e44ba7e6a0e641759896c6c28e79a35d` for matter
-`17394`. It ran while the Default rule was at its normal 1% target, and the
-exact-window trace search returned no summary. No post-activation trace
-identifier has been retained, so this gate remains open.
+On 2026-09-10, telemetry-enabled runtime version 15 completed run
+`6827c1a5528448f5add0c97427dd2c6c` for matter `17394`, but its exporter could
+not connect to the disabled runtime collector. No post-activation trace
+identifier has been retained, so this gate remains open until the console
+Tracing toggle is enabled and a subsequent run is searchable.
 
 ## 6. Evidence and evaluation gates
 
