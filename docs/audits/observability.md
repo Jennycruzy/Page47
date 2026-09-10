@@ -68,6 +68,28 @@ target was applied at 06:59:35 UTC for one retry, but it produced no new saved
 run; the target was restored to 1% at 07:03:48 UTC. No searchable trace ID has
 been retained, so the trace gate remains open.
 
+## 10 September trace retry
+
+Transaction Search was retried with the Default indexing target temporarily
+raised to 100% and then restored to 1% immediately after the invocation. The
+live public host returned another successful application response for matter
+`17394`:
+
+```text
+run_id: 97e02cd94e6543e38b5c44875d4b6188
+finding: seattle,-washington-17394, cannot_determine, publish=false
+runtime_request_id: 0bfee1c8-5496-4381-b4c1-736e903e837f
+runtime_session_id: 968f46201cf048bf812e9c042e24b50bacd9e5b40ffb48afa38522ebd7e42316
+runtime_log: Invocation completed successfully (20.579s)
+trace_query_window: 2026-09-10T15:08:45Z through 2026-09-10T15:10:40Z
+```
+
+The exact-window `GetTraceSummaries` query still returned zero summaries, and
+the runtime log search found no trace identifier. The indexing target was
+verified back at 1% at `2026-09-10T15:10:41Z`. This retry confirms another
+successful managed-runtime invocation, not a searchable OpenTelemetry trace;
+the trace gate remains open.
+
 ## 9 September AWS setup
 
 The `page47-vps-deploy` identity in account `591697681173` now has the

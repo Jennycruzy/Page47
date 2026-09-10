@@ -61,6 +61,8 @@ The preflight command performs bounded live discovery and stores the public resp
 - [Seattle evaluation export](docs/evaluation-set.json)
 - [Four-arm comparison audit](docs/comparison-audit.md)
 - [Four-arm comparison results](docs/comparison-results.json)
+- [Controlled directional evaluation audit](docs/controlled-evaluation-audit.md)
+- [Controlled directional evaluation results](docs/controlled-evaluation-results.json)
 - [Seattle configuration](config/cities/seattle.yaml)
 - [AWS discovery response cache](docs/evidence/preflight/index.json)
 
@@ -68,11 +70,11 @@ The preflight report identified eight clients that met the bounded structural ch
 
 ## Next work
 
-The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md): capture one searchable OpenTelemetry trace, review the completed four-arm comparison artifact, and run a controlled directional fixture evaluation before publishing any accuracy claim. CloudWatch log delivery and alarm configuration are live; a deliberate missed-run test can be performed as an operational check. Denver's four historical failed URLs and one unreadable PDF are recorded in the coverage audit. The deterministic 100-matter evaluation export is preserved, and its 30 gold cases are recorded as `cannot_determine` because the available public records are insufficient; the human audit is complete. The current comparison artifact is `review_required` and records zero Page 47 overclaims on that abstention audit.
+The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md): capture one searchable OpenTelemetry trace and complete review of the evaluation artifacts before publishing any real-world accuracy claim. CloudWatch log delivery and alarm configuration are live; a deliberate missed-run test can be performed as an operational check. Denver's four historical failed URLs and one unreadable PDF are recorded in the coverage audit. The deterministic 100-matter evaluation export is preserved, and its 30 gold cases are recorded as `cannot_determine` because the available public records are insufficient; the human audit is complete. The four-arm comparison artifact records zero Page 47 overclaims on that abstention audit, and the controlled fixture records 28/28 directional states with 2/2 reversal pairs; both remain `review_required` and are not real-world accuracy claims.
 
 ## Tests
 
-The current suite contains 51 collected tests when run with the repository root on `PYTHONPATH`. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request and deployment constraints, checks public-path links, checks private watch stopping, checks review email links, checks the observability configuration, checks the evaluation gates and four-arm comparison boundaries, and checks that the scheduled collector covers both cities and delivery. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes each city's configured placement method. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment; the plain `pytest` command needs the repository root added to `PYTHONPATH` for tests that import command modules.
+The current suite contains 53 collected tests when run with the repository root on `PYTHONPATH`. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request and deployment constraints, checks public-path links, checks private watch stopping, checks review email links, checks the observability configuration, checks the evaluation gates and four-arm comparison boundaries, exercises the controlled directional fixture, and checks that the scheduled collector covers both cities and delivery. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes each city's configured placement method. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment; the plain `pytest` command needs the repository root added to `PYTHONPATH` for tests that import command modules.
 
 ## Limitations
 

@@ -1,0 +1,2428 @@
+{
+  "case_count": 28,
+  "cases": [
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-01-title-clearer/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-01-title-clearer/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "title_word_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-01-title-clearer/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-01-title-clearer/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-01-title-clearer/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-01-title-clearer/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-01-title-clearer/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-01-title-clearer/appearance-1/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "clearer",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-01-title-clearer",
+      "expected_state": "clearer",
+      "keyword_expected_surface": true,
+      "scenario": "specificity reversal: vague title to specific title",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-02-title-less-clear/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-02-title-less-clear/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "title_word_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-02-title-less-clear/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-02-title-less-clear/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-02-title-less-clear/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-02-title-less-clear/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-02-title-less-clear/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-02-title-less-clear/appearance-1/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "less_clear",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-02-title-less-clear",
+      "expected_state": "less_clear",
+      "keyword_expected_surface": true,
+      "scenario": "specificity reversal: specific title to vague title",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [],
+          "reason": "No explicit title or attachment-name change was found by the keyword arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-03-placement-clearer/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-03-placement-clearer/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-03-placement-clearer/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-03-placement-clearer/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-03-placement-clearer/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-03-placement-clearer/appearance-1/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "clearer",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-03-placement-clearer",
+      "expected_state": "clearer",
+      "keyword_expected_surface": false,
+      "scenario": "agenda placement reversal: consent to regular",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [],
+          "reason": "No explicit title or attachment-name change was found by the keyword arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-04-placement-less-clear/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-04-placement-less-clear/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-04-placement-less-clear/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-04-placement-less-clear/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-04-placement-less-clear/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-04-placement-less-clear/appearance-1/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "less_clear",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-04-placement-less-clear",
+      "expected_state": "less_clear",
+      "keyword_expected_surface": false,
+      "scenario": "agenda placement reversal: regular to consent",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-05-mixed-less-title-clear-placement/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-05-mixed-less-title-clear-placement/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "title_word_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-05-mixed-less-title-clear-placement/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-05-mixed-less-title-clear-placement/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-05-mixed-less-title-clear-placement/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-05-mixed-less-title-clear-placement/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-05-mixed-less-title-clear-placement/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-05-mixed-less-title-clear-placement/appearance-1/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "mixed",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-05-mixed-less-title-clear-placement",
+      "expected_state": "mixed",
+      "keyword_expected_surface": true,
+      "scenario": "opposing dimensions: title less clear and placement clearer",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-06-mixed-clear-title-less-placement/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-06-mixed-clear-title-less-placement/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "title_word_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-06-mixed-clear-title-less-placement/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-06-mixed-clear-title-less-placement/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-06-mixed-clear-title-less-placement/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-06-mixed-clear-title-less-placement/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-06-mixed-clear-title-less-placement/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-06-mixed-clear-title-less-placement/appearance-1/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "mixed",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-06-mixed-clear-title-less-placement",
+      "expected_state": "mixed",
+      "keyword_expected_surface": true,
+      "scenario": "opposing dimensions: title clearer and placement less clear",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-07-neutral-wording/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-07-neutral-wording/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "title_word_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-07-neutral-wording/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-07-neutral-wording/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-07-neutral-wording/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-07-neutral-wording/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-07-neutral-wording/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-07-neutral-wording/appearance-1/agenda"
+            }
+          ],
+          "reason": "Comparable dimensions were recorded, but no directional change was found.",
+          "signals": [],
+          "state": "unchanged",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-07-neutral-wording",
+      "expected_state": "unchanged",
+      "keyword_expected_surface": true,
+      "scenario": "neutral title edit with equal subject overlap",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [],
+          "reason": "No explicit title or attachment-name change was found by the keyword arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-08-unchanged-stable/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-08-unchanged-stable/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-08-unchanged-stable/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-08-unchanged-stable/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-08-unchanged-stable/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-08-unchanged-stable/appearance-1/agenda"
+            }
+          ],
+          "reason": "Comparable dimensions were recorded, but no directional change was found.",
+          "signals": [],
+          "state": "unchanged",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-08-unchanged-stable",
+      "expected_state": "unchanged",
+      "keyword_expected_surface": false,
+      "scenario": "same title and same placement",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [],
+          "reason": "No explicit title or attachment-name change was found by the keyword arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-09-single-appearance/appearance-0/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-09-single-appearance/appearance-1/attachment-1-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [],
+          "reason": "The recorded appearances did not contain enough comparable presentation evidence.",
+          "signals": [],
+          "state": "cannot_determine",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-09-single-appearance",
+      "expected_state": "cannot_determine",
+      "keyword_expected_surface": false,
+      "scenario": "insufficient history: one recorded appearance",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [],
+          "reason": "No explicit title or attachment-name change was found by the keyword arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-10-title-only-evidence/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [],
+          "reason": "No latest document was available to the latest-document arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [],
+          "reason": "The recorded appearances did not contain enough comparable presentation evidence.",
+          "signals": [],
+          "state": "cannot_determine",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-10-title-only-evidence",
+      "expected_state": "cannot_determine",
+      "keyword_expected_surface": false,
+      "scenario": "only one neutral dimension is available",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-11-title-change-no-substance/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-11-title-change-no-substance/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "title_word_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-11-title-change-no-substance/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-11-title-change-no-substance/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [],
+          "reason": "The recorded appearances did not contain enough comparable presentation evidence.",
+          "signals": [],
+          "state": "cannot_determine",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-11-title-change-no-substance",
+      "expected_state": "cannot_determine",
+      "keyword_expected_surface": true,
+      "scenario": "title changed but no subject evidence establishes direction",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [],
+          "reason": "No explicit title or attachment-name change was found by the keyword arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-12-placement-only-less-clear/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [],
+          "reason": "No latest document was available to the latest-document arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-12-placement-only-less-clear/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-12-placement-only-less-clear/appearance-1/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "less_clear",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-12-placement-only-less-clear",
+      "expected_state": "less_clear",
+      "keyword_expected_surface": false,
+      "scenario": "placement direction with title unavailable",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [],
+          "reason": "No explicit title or attachment-name change was found by the keyword arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-13-placement-only-clearer/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [],
+          "reason": "No latest document was available to the latest-document arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-13-placement-only-clearer/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-13-placement-only-clearer/appearance-1/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "clearer",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-13-placement-only-clearer",
+      "expected_state": "clearer",
+      "keyword_expected_surface": false,
+      "scenario": "placement reversal with title unavailable",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier item record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-14-attachment-name-change/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later item record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-14-attachment-name-change/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "attachment_name_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-14-attachment-name-change/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-14-attachment-name-change/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-14-attachment-name-change/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-14-attachment-name-change/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-14-attachment-name-change/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-14-attachment-name-change/appearance-1/agenda"
+            }
+          ],
+          "reason": "Comparable dimensions were recorded, but no directional change was found.",
+          "signals": [],
+          "state": "unchanged",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-14-attachment-name-change",
+      "expected_state": "unchanged",
+      "keyword_expected_surface": true,
+      "scenario": "attachment name changed while presentation stayed neutral",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [],
+          "reason": "No explicit title or attachment-name change was found by the keyword arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-15-document-replacement/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-15-document-replacement/appearance-2/packet.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-15-document-replacement/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-15-document-replacement/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-15-document-replacement/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-15-document-replacement/appearance-1/agenda"
+            }
+          ],
+          "reason": "Comparable dimensions were recorded, but no directional change was found.",
+          "signals": [],
+          "state": "unchanged",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-15-document-replacement",
+      "expected_state": "unchanged",
+      "keyword_expected_surface": false,
+      "scenario": "same URL with changed bytes represented by different hashes",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [],
+          "reason": "No explicit title or attachment-name change was found by the keyword arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-16-duplicate-copies/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-16-duplicate-copies/appearance-2/packet.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-16-duplicate-copies/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-16-duplicate-copies/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-16-duplicate-copies/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-16-duplicate-copies/appearance-1/agenda"
+            }
+          ],
+          "reason": "Comparable dimensions were recorded, but no directional change was found.",
+          "signals": [],
+          "state": "unchanged",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-16-duplicate-copies",
+      "expected_state": "unchanged",
+      "keyword_expected_surface": false,
+      "scenario": "duplicate attachment copies do not create presentation drift",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [],
+          "reason": "No explicit title or attachment-name change was found by the keyword arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-17-prompt-injection-content/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-17-prompt-injection-content/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-17-prompt-injection-content/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-17-prompt-injection-content/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-17-prompt-injection-content/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-17-prompt-injection-content/appearance-1/agenda"
+            }
+          ],
+          "reason": "Comparable dimensions were recorded, but no directional change was found.",
+          "signals": [],
+          "state": "unchanged",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-17-prompt-injection-content",
+      "expected_state": "unchanged",
+      "keyword_expected_surface": false,
+      "scenario": "prompt-injection text is treated as evidence data",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-18-substance-justifies-change/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-18-substance-justifies-change/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "title_word_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-18-substance-justifies-change/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-18-substance-justifies-change/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-18-substance-justifies-change/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-18-substance-justifies-change/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-18-substance-justifies-change/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-18-substance-justifies-change/appearance-1/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "less_clear",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-18-substance-justifies-change",
+      "expected_state": "less_clear",
+      "keyword_expected_surface": true,
+      "scenario": "new substantive attachment explains a less-specific later title",
+      "skeptic_expected": "reject"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-19-unsupported-motive/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-19-unsupported-motive/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "title_word_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-19-unsupported-motive/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-19-unsupported-motive/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-19-unsupported-motive/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-19-unsupported-motive/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-19-unsupported-motive/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-19-unsupported-motive/appearance-1/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "less_clear",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-19-unsupported-motive",
+      "expected_state": "less_clear",
+      "keyword_expected_surface": true,
+      "scenario": "directional presentation change without evidence of motive",
+      "skeptic_expected": "abstain"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [],
+          "reason": "No explicit title or attachment-name change was found by the keyword arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-20-evidence-source-corruption/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [],
+          "reason": "No latest document was available to the latest-document arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [],
+          "reason": "The recorded appearances did not contain enough comparable presentation evidence.",
+          "signals": [],
+          "state": "cannot_determine",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-20-evidence-source-corruption",
+      "expected_state": "cannot_determine",
+      "keyword_expected_surface": false,
+      "scenario": "source detail is unavailable so the comparator abstains",
+      "skeptic_expected": "abstain"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier item record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-21-attachment-set-replacement/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later item record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-21-attachment-set-replacement/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "attachment_name_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-21-attachment-set-replacement/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-21-attachment-set-replacement/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-21-attachment-set-replacement/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-21-attachment-set-replacement/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-21-attachment-set-replacement/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-21-attachment-set-replacement/appearance-1/agenda"
+            }
+          ],
+          "reason": "Comparable dimensions were recorded, but no directional change was found.",
+          "signals": [],
+          "state": "unchanged",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-21-attachment-set-replacement",
+      "expected_state": "unchanged",
+      "keyword_expected_surface": true,
+      "scenario": "attachment set names changed without a supported presentation direction",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-22-both-clearer/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-22-both-clearer/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "title_word_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-22-both-clearer/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-22-both-clearer/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-22-both-clearer/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-22-both-clearer/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-22-both-clearer/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-22-both-clearer/appearance-1/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "clearer",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-22-both-clearer",
+      "expected_state": "clearer",
+      "keyword_expected_surface": true,
+      "scenario": "title and placement both become clearer",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-23-both-less-clear/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-23-both-less-clear/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "title_word_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-23-both-less-clear/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-23-both-less-clear/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-23-both-less-clear/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-23-both-less-clear/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-23-both-less-clear/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-23-both-less-clear/appearance-1/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "less_clear",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-23-both-less-clear",
+      "expected_state": "less_clear",
+      "keyword_expected_surface": true,
+      "scenario": "title and placement both become less clear",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-24-missing-current-title/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-24-missing-current-title/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "title_word_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-24-missing-current-title/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [],
+          "reason": "No latest document was available to the latest-document arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [],
+          "reason": "The recorded appearances did not contain enough comparable presentation evidence.",
+          "signals": [],
+          "state": "cannot_determine",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-24-missing-current-title",
+      "expected_state": "cannot_determine",
+      "keyword_expected_surface": true,
+      "scenario": "current title missing and no placement evidence",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-25-multi-appearance-history/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-25-multi-appearance-history/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-25-multi-appearance-history/appearance-2/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "title_word_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-25-multi-appearance-history/appearance-2/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-25-multi-appearance-history/appearance-3/attachment-3-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-25-multi-appearance-history/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-25-multi-appearance-history/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-25-multi-appearance-history/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-25-multi-appearance-history/appearance-1/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-25-multi-appearance-history/appearance-2/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-25-multi-appearance-history/appearance-2/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "mixed",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-25-multi-appearance-history",
+      "expected_state": "mixed",
+      "keyword_expected_surface": true,
+      "scenario": "adjacent history contains both clearer and less-clear transitions",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [],
+          "reason": "No explicit title or attachment-name change was found by the keyword arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-26-placement-only-change/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [],
+          "reason": "No latest document was available to the latest-document arm.",
+          "signals": [],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-26-placement-only-change/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-26-placement-only-change/appearance-1/agenda"
+            }
+          ],
+          "reason": "Page 47 compares adjacent recorded appearances and preserves the evidence used for the resulting direction.",
+          "signals": [],
+          "state": "less_clear",
+          "surfaced": true
+        }
+      ],
+      "case_id": "case-26-placement-only-change",
+      "expected_state": "less_clear",
+      "keyword_expected_surface": false,
+      "scenario": "placement change is the only comparable dimension",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-27-neutral-subject-edit/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-27-neutral-subject-edit/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "title_word_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-27-neutral-subject-edit/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-27-neutral-subject-edit/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-27-neutral-subject-edit/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-27-neutral-subject-edit/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-27-neutral-subject-edit/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-27-neutral-subject-edit/appearance-1/agenda"
+            }
+          ],
+          "reason": "Comparable dimensions were recorded, but no directional change was found.",
+          "signals": [],
+          "state": "unchanged",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-27-neutral-subject-edit",
+      "expected_state": "unchanged",
+      "keyword_expected_surface": true,
+      "scenario": "wording edit preserves the same subject overlap",
+      "skeptic_expected": "not_applicable"
+    },
+    {
+      "arms": [
+        {
+          "arm": "keyword",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier item record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-28-attachment-name-direction-blind/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later item record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-28-attachment-name-direction-blind/appearance-1/record"
+            }
+          ],
+          "reason": "The keyword arm flags explicit lexical changes but does not determine their direction, meaning, or cause.",
+          "signals": [
+            "attachment_name_set_changed"
+          ],
+          "state": null,
+          "surfaced": true
+        },
+        {
+          "arm": "search",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "current public record",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-28-attachment-name-direction-blind/appearance-1/record"
+            }
+          ],
+          "reason": "Current search retrieves the latest public record but does not retain the prior presentation needed to establish drift.",
+          "signals": [
+            "current_record_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "latest_document",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "latest document",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-28-attachment-name-direction-blind/appearance-2/attachment-2-1.pdf"
+            }
+          ],
+          "reason": "The latest-document arm can describe the current document but cannot compare how the matter was presented earlier.",
+          "signals": [
+            "latest_document_available"
+          ],
+          "state": null,
+          "surfaced": false
+        },
+        {
+          "arm": "page47",
+          "evidence": [
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-28-attachment-name-direction-blind/appearance-0/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later title",
+              "page_number": null,
+              "url": "https://controlled.example/page47/case-28-attachment-name-direction-blind/appearance-1/record"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "earlier agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-28-attachment-name-direction-blind/appearance-0/agenda"
+            },
+            {
+              "captured_at": "2026-09-10T00:00:00Z",
+              "label": "later agenda placement",
+              "page_number": 1,
+              "url": "https://controlled.example/page47/case-28-attachment-name-direction-blind/appearance-1/agenda"
+            }
+          ],
+          "reason": "Comparable dimensions were recorded, but no directional change was found.",
+          "signals": [],
+          "state": "unchanged",
+          "surfaced": false
+        }
+      ],
+      "case_id": "case-28-attachment-name-direction-blind",
+      "expected_state": "unchanged",
+      "keyword_expected_surface": true,
+      "scenario": "keyword-only attachment replacement with no presentation direction",
+      "skeptic_expected": "not_applicable"
+    }
+  ],
+  "fixture": "config/evaluation-controlled.json",
+  "metrics": {
+    "keyword_surface_accuracy": 1.0,
+    "keyword_surface_correct": 28,
+    "page47_correct": 28,
+    "page47_direction_accuracy": 1.0,
+    "reversal_pairs": [
+      [
+        "case-01-title-clearer",
+        "case-02-title-less-clear"
+      ],
+      [
+        "case-03-placement-clearer",
+        "case-04-placement-less-clear"
+      ]
+    ],
+    "reversal_pairs_checked": 2,
+    "reversal_pairs_correct": 2,
+    "skeptic_expectation_counts": {
+      "abstain": 2,
+      "not_applicable": 25,
+      "reject": 1,
+      "retain": 0
+    },
+    "skeptic_note": "These expectations are fixture annotations for the separate Skeptic review; this deterministic comparator run does not invoke a model review."
+  },
+  "schema_version": 1,
+  "status": "review_required"
+}

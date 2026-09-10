@@ -15,7 +15,6 @@ from page47.analysis.drift import (
     PresentationConfig,
     compare_all_appearances,
     load_presentation_config,
-    state_from_direction_counts,
 )
 from page47.records.store import RecordStore
 from page47.snapshotter.config import JSONObject, JSONValue
@@ -186,21 +185,16 @@ def _page47_state(
 ) -> tuple[DriftState, tuple[EvidenceLink, ...]]:
     ledger = compare_all_appearances(case, config)
     counts = ledger.counts
-    if counts["mixed"] > 0:
+    if counts["mixed"] > 0 or (counts["clearer"] > 0 and counts["less_clear"] > 0):
         state: DriftState = "mixed"
+    elif counts["less_clear"] > 0:
+        state = "less_clear"
+    elif counts["clearer"] > 0:
+        state = "clearer"
+    elif counts["unchanged"] > 0:
+        state = "unchanged"
     else:
-        has_comparable = any(
-            counts[key] > 0 for key in ("clearer", "less_clear", "unchanged")
-        )
-        state = state_from_direction_counts(
-            clearer_count=counts["clearer"],
-            less_clear_count=counts["less_clear"],
-            comparable_count=(
-                counts["clearer"] + counts["less_clear"] + counts["unchanged"]
-                if has_comparable
-                else 0
-            ),
-        )
+        state = "cannot_determine"
 
     links: list[EvidenceLink] = []
     seen: set[tuple[str, str, int | None]] = set()

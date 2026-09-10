@@ -229,6 +229,15 @@ status is `human_reviewed`, and the strict validator passes. Do not publish
 comparison metrics until the comparison outputs and every miss have been
 checked.
 
+The controlled fixture is separate from that historical audit. It contains 28
+known transformations covering clearer, less-clear, mixed, unchanged, and
+cannot-determine outcomes, plus two directional reversal pairs. Its current
+deterministic run is preserved in `docs/controlled-evaluation-results.json`:
+28/28 Page 47 comparator states and 2/2 reversal pairs. Those are controlled
+fixture results, not real-world accuracy, and the artifact remains marked
+`review_required`; the fixture's Skeptic annotations are not measured by this
+deterministic runner.
+
 ## Required permissions
 
 The `page47-vps-deploy` identity now has the customer inline policy
