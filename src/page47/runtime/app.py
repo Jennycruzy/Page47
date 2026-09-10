@@ -13,16 +13,6 @@ from page47.runtime.transport import context_from_request
 from page47.snapshotter.config import JSONObject, as_json_value
 
 
-def _configure_telemetry() -> None:
-    """Connect Strands spans to the AgentCore-provided OTLP collector when enabled."""
-
-    if os.environ.get("AGENT_OBSERVABILITY_ENABLED", "").casefold() != "true":
-        return
-    from strands.telemetry import StrandsTelemetry
-
-    StrandsTelemetry().setup_otlp_exporter()
-
-
 def _config_path(name: str) -> Path:
     configured_root = os.environ.get("PAGE47_CONFIG_DIR")
     if configured_root is not None and configured_root.strip():
@@ -54,7 +44,6 @@ def _working_directory() -> Path:
     return path
 
 
-_configure_telemetry()
 app = BedrockAgentCoreApp()
 INVOCATION_LOCK = Lock()
 

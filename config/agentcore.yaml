@@ -9,6 +9,7 @@ runtime:
     name: page47_review
     runtime: PYTHON_3_12
     entrypoint:
+      - opentelemetry-instrument
       - app.py
     entrypoint_source: src/page47/runtime/app.py
     protocol: HTTP

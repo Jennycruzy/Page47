@@ -23,6 +23,7 @@ def test_agentcore_is_enabled_after_runtime_deployment() -> None:
 def test_agentcore_runtime_name_matches_service_constraints() -> None:
     settings = load_deployment_settings(Path("config/agentcore.yaml"))
     assert settings.runtime_name == "page47_review"
+    assert settings.entrypoint == ("opentelemetry-instrument", "app.py")
 
 
 def test_agentcore_runtime_uses_unified_trace_destination() -> None:

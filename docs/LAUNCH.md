@@ -177,9 +177,10 @@ aws xray get-indexing-rules --region eu-west-2
 ```
 
 The current AgentCore runtime is a runtime-hosted Strands agent. The checked-in
-package includes `aws-opentelemetry-distro>=0.18.0`, and the entrypoint enables
-the Strands OTLP exporter only when `AGENT_OBSERVABILITY_ENABLED=true`. Do not
-infer trace support from the runtime's `READY` status.
+package includes `aws-opentelemetry-distro>=0.18.0`, and the entrypoint launches
+`opentelemetry-instrument app.py` so ADOT configures the active tracer provider
+before the Strands graph loads. Do not infer trace support from the runtime's
+`READY` status.
 
 The managed runtime is in `eu-west-2`. Deploy the checked-in runtime artifact
 with `scripts/deploy_agentcore.py --deploy`; the deployment code requests

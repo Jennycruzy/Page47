@@ -242,9 +242,9 @@ def build_package(
         _copy_without_cache(project_root / "src" / "page47", package_root / "page47")
 
         entrypoint_source = project_root / settings.entrypoint_source
-        if len(settings.entrypoint) != 1:
-            raise ValueError("This package builder requires exactly one Python entrypoint")
-        entrypoint = package_root / settings.entrypoint[0]
+        if not settings.entrypoint:
+            raise ValueError("AgentCore entrypoint must contain a Python file")
+        entrypoint = package_root / settings.entrypoint[-1]
         if entrypoint_source.suffix != ".py":
             raise ValueError("AgentCore entrypoint source must be a Python file")
         entrypoint.parent.mkdir(parents=True, exist_ok=True)
