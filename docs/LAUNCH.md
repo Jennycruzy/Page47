@@ -92,8 +92,8 @@ Current state as of 2026-09-10: `/page47/web/public-url` and
 verified. SES reports `SendingEnabled=true` and
 `ProductionAccessEnabled=false`. A temporary verified watch sent one controlled
 review through the application and received a provider `MessageId`; the watch
-was then deactivated. Confirming receipt in the mailbox is the remaining SES
-check.
+was then deactivated. Mailbox receipt was confirmed, so the SES delivery gate
+is complete even though the account remains in sandbox mode.
 
 ## 3. Deploy the root-path configuration
 

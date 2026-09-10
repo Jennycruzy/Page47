@@ -75,8 +75,7 @@ customer inline policy `Page47OperationsPermissions`. The public URL and SES
 sender parameters are present in `eu-west-2`, and the sender identity is
 verified. SES reports `SendingEnabled=true` and
 `ProductionAccessEnabled=false`. A temporary verified watch sent one
-controlled review through the application; mailbox receipt remains to be
-confirmed.
+controlled review through the application, and mailbox receipt was confirmed.
 
 Transaction Search setup was completed for the AgentCore region
 `eu-west-2`. The account resource policy `Page47TransactionSearchXRayAccess`
@@ -114,6 +113,5 @@ access before the agent and missed-run alarm can be configured. Runtime
 not being treated as proof that a searchable trace or monitoring pipeline
 works.
 
-SES delivery, CloudWatch log delivery and the missed-run alarm, the controlled
-email receipt, one post-activation searchable trace, and the human-labelled
-Seattle evaluation set remain separate launch gates.
+CloudWatch log delivery and the missed-run alarm, one post-activation
+searchable trace, and the comparison outputs remain separate launch gates.
