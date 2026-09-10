@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 
 import yaml
@@ -53,8 +54,10 @@ class CityConfig:
 
 
 def as_json_value(value: object) -> JSONValue:
-    """Validate YAML data before it enters typed application code."""
+    """Validate JSON-like data before it enters typed application code."""
 
+    if isinstance(value, datetime):
+        return value.isoformat()
     if value is None or isinstance(value, (bool, int, float, str)):
         return value
     if isinstance(value, list):

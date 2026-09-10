@@ -1,7 +1,25 @@
 from __future__ import annotations
 
-from page47.notifications.delivery import _plain_language, render_finding_email
+from datetime import UTC, datetime
+
+from page47.notifications.delivery import (
+    _parameter_value,
+    _plain_language,
+    render_finding_email,
+)
 from page47.snapshotter.config import JSONObject
+
+
+class ParameterClient:
+    def get_parameter(self, *, Name: str, WithDecryption: bool) -> object:
+        assert Name == "/page47/email/sender"
+        assert WithDecryption is True
+        return {
+            "Parameter": {
+                "Value": "sender@example.test",
+                "LastModifiedDate": datetime(2026, 9, 10, 12, 0, tzinfo=UTC),
+            }
+        }
 
 
 def finding() -> JSONObject:
@@ -49,6 +67,10 @@ def test_email_rejects_non_http_watch_links() -> None:
         assert "HTTP(S) URL" in str(error)
     else:
         raise AssertionError("A non-HTTP watch link was accepted")
+
+
+def test_parameter_value_accepts_boto_datetime_metadata() -> None:
+    assert _parameter_value(ParameterClient(), "/page47/email/sender") == "sender@example.test"
 
 
 def test_plain_language_matches_words_without_rejecting_identity() -> None:
