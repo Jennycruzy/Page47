@@ -61,6 +61,7 @@ The preflight command performs bounded live discovery and stores the public resp
 - [Comparison-set labeling instructions](docs/evaluation-labeling.md)
 - [Seattle evaluation export](docs/evaluation-set.json)
 - [Four-arm comparison audit](docs/comparison-audit.md)
+- [Independent evaluation review](docs/audits/evaluation-independent-review.md)
 - [Four-arm comparison results](docs/comparison-results.json)
 - [Controlled directional evaluation audit](docs/controlled-evaluation-audit.md)
 - [Controlled directional evaluation results](docs/controlled-evaluation-results.json)
@@ -71,7 +72,7 @@ The preflight report identified eight clients that met the bounded structural ch
 
 ## Next work
 
-The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md): complete review of the evaluation artifacts before publishing any real-world accuracy claim. The searchable AgentCore trace is complete. CloudWatch log delivery and alarm configuration are live; a deliberate missed-run test can be performed as an operational check. Denver's four historical failed URLs and one unreadable PDF are recorded in the coverage audit. The deterministic 100-matter evaluation export is preserved, and its 30 gold cases are recorded as `cannot_determine` because the available public records are insufficient; the human audit is complete. The four-arm comparison artifact records zero Page 47 overclaims on that abstention audit, and the controlled fixture records 28/28 directional states with 2/2 reversal pairs; both remain `review_required` and are not real-world accuracy claims.
+The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md). The searchable AgentCore trace is complete. The evaluation artifacts have passed independent structural and output review without reopening the 30 human-reviewed cases; their `review_required` status remains deliberate because the real Seattle export has no directional gold labels and the controlled fixture is not a real-world accuracy claim. CloudWatch log delivery and alarm configuration are live; a deliberate missed-run test can be performed as an operational check. Denver's four historical failed URLs and one unreadable PDF are recorded in the coverage audit. The deterministic 100-matter export is preserved, with zero Page 47 overclaims on the 30-case abstention audit and 28/28 controlled directional states with 2/2 reversal pairs.
 
 ## Tests
 
