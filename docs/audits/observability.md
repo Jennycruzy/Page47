@@ -74,8 +74,9 @@ The `page47-vps-deploy` identity in account `591697681173` now has the
 customer inline policy `Page47OperationsPermissions`. The public URL and SES
 sender parameters are present in `eu-west-2`, and the sender identity is
 verified. SES reports `SendingEnabled=true` and
-`ProductionAccessEnabled=false`; a controlled sandbox recipient and receipt
-are still required before delivery is complete.
+`ProductionAccessEnabled=false`. A temporary verified watch sent one
+controlled review through the application; mailbox receipt remains to be
+confirmed.
 
 Transaction Search setup was completed for the AgentCore region
 `eu-west-2`. The account resource policy `Page47TransactionSearchXRayAccess`

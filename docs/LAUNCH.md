@@ -87,12 +87,13 @@ The controlled delivery test must use a mailbox explicitly chosen for this
 deployment. Confirm the provider returns a `MessageId`, then confirm receipt;
 the recipient address is not a repository setting.
 
-Current state as of 2026-09-09: `/page47/web/public-url` and
+Current state as of 2026-09-10: `/page47/web/public-url` and
 `/page47/email/sender` are present in `eu-west-2`; the SES sender identity is
 verified. SES reports `SendingEnabled=true` and
-`ProductionAccessEnabled=false`, so the sandbox recipient and controlled
-receipt still need to be tested. No notification row or message has been
-recorded from this deployment yet.
+`ProductionAccessEnabled=false`. A temporary verified watch sent one controlled
+review through the application and received a provider `MessageId`; the watch
+was then deactivated. Confirming receipt in the mailbox is the remaining SES
+check.
 
 ## 3. Deploy the root-path configuration
 
