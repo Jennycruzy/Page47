@@ -8,7 +8,7 @@ from typing import Literal
 
 import yaml
 
-from page47.analysis.drift import DriftState, EvidenceLink
+from page47.analysis.drift import DriftState, EvidenceLink, state_from_direction_counts
 
 ObservationDirection = Literal["clearer", "less_clear", "neutral"]
 
@@ -53,6 +53,7 @@ class EvidenceDecision:
             "clearer": "Presentation drift: clearer",
             "unchanged": "Presentation drift: unchanged",
             "less_clear": "Presentation drift: less clear",
+            "mixed": "Presentation drift: mixed directions",
             "cannot_determine": "Presentation drift: could not determine",
         }[self.state]
         return "\n".join(
@@ -89,14 +90,11 @@ def apply_evidence_policy(
     )
     clearer_count = sum(1 for item in accepted if item.direction == "clearer")
     less_clear_count = sum(1 for item in accepted if item.direction == "less_clear")
-    if not accepted:
-        state: DriftState = "cannot_determine"
-    elif less_clear_count > clearer_count:
-        state = "less_clear"
-    elif clearer_count > less_clear_count:
-        state = "clearer"
-    else:
-        state = "unchanged"
+    state = state_from_direction_counts(
+        clearer_count=clearer_count,
+        less_clear_count=less_clear_count,
+        has_observations=bool(accepted),
+    )
     publish = len(accepted) >= config.minimum_supported_observations and state != "cannot_determine"
     if publish:
         reason = (

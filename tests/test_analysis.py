@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 from pydantic import ValidationError
 
@@ -14,7 +16,7 @@ from page47.agents.schemas import (
     SubstanceChange,
     SubstanceReport,
 )
-from page47.analysis.case import AppearanceRecord, MatterCase, MatterRecord
+from page47.analysis.case import AppearanceRecord, AttachmentRecord, MatterCase, MatterRecord
 from page47.analysis.drift import EvidenceLink, PresentationConfig, compare_all_appearances
 from page47.analysis.investigation import (
     _agent_reports,
@@ -37,8 +39,34 @@ def source(label: str) -> SourceReference:
     return SourceReference("api", f"https://records.example/{label}", "2026-09-05T00:00:00Z")
 
 
-def appearance(item_id: int, placement: str | None) -> AppearanceRecord:
+def appearance(
+    item_id: int,
+    placement: str | None,
+    *,
+    attachment_last_modified: str | None = None,
+) -> AppearanceRecord:
     item_source = source(f"item/{item_id}")
+    attachments: tuple[AttachmentRecord, ...] = ()
+    if attachment_last_modified is not None:
+        attachments = (
+            AttachmentRecord(
+                attachment_id=item_id,
+                matter_id=7,
+                name="agenda attachment",
+                url=f"https://records.example/attachment/{item_id}",
+                version=None,
+                last_modified_utc=attachment_last_modified,
+                first_observed_by_us="2026-09-01T00:00:00Z",
+                content_hash=None,
+                supporting_document=True,
+                source=source(f"attachment/{item_id}"),
+                reading_status=None,
+                page_count=None,
+                anchors=(),
+                reading_source=None,
+                evidence_root=Path("/tmp/page47-test"),
+            ),
+        )
     return AppearanceRecord(
         event_item_id=item_id,
         matter_id=7,
@@ -62,7 +90,7 @@ def appearance(item_id: int, placement: str | None) -> AppearanceRecord:
         item_last_modified_utc=None,
         source=item_source,
         pdf_source=source(f"agenda/{item_id}"),
-        attachments=(),
+        attachments=attachments,
     )
 
 
@@ -108,6 +136,31 @@ def test_all_four_recorded_states_are_kept() -> None:
     assert compare_all_appearances(case("regular"), CONFIG).counts["cannot_determine"] == 1
 
 
+def test_opposing_dimensions_are_mixed_not_unchanged() -> None:
+    result = compare_all_appearances(
+        MatterCase(
+            city="Test city",
+            matter=case("regular", "consent").matter,
+            appearances=(
+                appearance(
+                    1,
+                    "regular",
+                    attachment_last_modified="2026-08-31T23:00:00Z",
+                ),
+                appearance(
+                    2,
+                    "consent",
+                    attachment_last_modified="2026-08-31T00:00:00Z",
+                ),
+            ),
+        ),
+        CONFIG,
+    )
+
+    assert result.counts["mixed"] == 1
+    assert result.comparisons[0].state == "mixed"
+
+
 def test_evidence_policy_is_counted_without_a_model_call() -> None:
     evidence = (EvidenceLink("record", "https://records.example/1", "2026-09-05T00:00:00Z"),)
     observations = (
@@ -125,6 +178,26 @@ def test_evidence_policy_is_counted_without_a_model_call() -> None:
     assert decision.state == "less_clear"
     assert len(decision.rejected) == 1
     assert "Page 47 does not determine why" in decision.human_text
+
+
+def test_evidence_policy_preserves_opposing_directions() -> None:
+    evidence = (EvidenceLink("record", "https://records.example/1", "2026-09-05T00:00:00Z"),)
+    reports = AgentReports(
+        observations=(
+            ReviewedObservation("less", "less_clear", "The title became less specific.", evidence),
+            ReviewedObservation(
+                "clearer", "clearer", "The item moved to the regular agenda.", evidence
+            ),
+        ),
+        accepted_observation_ids=frozenset({"less", "clearer"}),
+        rejections=(),
+    )
+
+    decision = apply_evidence_policy(reports, EvidencePolicyConfig(2))
+
+    assert decision.state == "mixed"
+    assert decision.publish is True
+    assert "mixed directions" in decision.human_text
 
 
 def test_agent_observation_ids_are_scoped_when_readers_reuse_an_id() -> None:

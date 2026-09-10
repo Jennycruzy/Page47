@@ -165,6 +165,7 @@ class WebService:
                 changes = len(changes_path.read_text(encoding="utf-8").splitlines())
             less_clear = sum(1 for item in findings if item.get("state") == "less_clear")
             clearer = sum(1 for item in findings if item.get("state") == "clearer")
+            mixed = sum(1 for item in findings if item.get("state") == "mixed")
             rejected = 0
             for item in findings:
                 value = item.get("rejected_count")
@@ -176,6 +177,7 @@ class WebService:
                 "packet_changes_recorded": changes,
                 "became_less_clear": less_clear,
                 "became_clearer": clearer,
+                "mixed_presentation": mixed,
                 "reviewed_findings": len(findings),
                 "interpretations_rejected": rejected,
                 "claims_about_intent": 0,

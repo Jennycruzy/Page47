@@ -12,7 +12,7 @@ import yaml
 
 from page47.analysis.case import AppearanceRecord, MatterCase
 
-DriftState = Literal["clearer", "unchanged", "less_clear", "cannot_determine"]
+DriftState = Literal["clearer", "unchanged", "less_clear", "mixed", "cannot_determine"]
 Direction = Literal["clearer", "less_clear", "neutral"]
 
 
@@ -74,7 +74,7 @@ class DriftLedger:
     def counts(self) -> dict[DriftState, int]:
         return {
             state: sum(1 for comparison in self.comparisons if comparison.state == state)
-            for state in ("clearer", "unchanged", "less_clear", "cannot_determine")
+            for state in ("clearer", "unchanged", "less_clear", "mixed", "cannot_determine")
         }
 
     def as_json(self) -> dict[str, object]:
@@ -90,6 +90,22 @@ class PresentationConfig:
     minimum_title_overlap: int
     timing_difference_hours: int
     common_title_words: frozenset[str]
+
+
+def state_from_direction_counts(
+    *, clearer_count: int, less_clear_count: int, has_observations: bool
+) -> DriftState:
+    """Summarize supported presentation directions without cancelling them out."""
+
+    if not has_observations:
+        return "cannot_determine"
+    if clearer_count > 0 and less_clear_count > 0:
+        return "mixed"
+    if less_clear_count > 0:
+        return "less_clear"
+    if clearer_count > 0:
+        return "clearer"
+    return "unchanged"
 
 
 def _json_value(value: object) -> object:
@@ -351,12 +367,11 @@ def compare_latest_appearances(case: MatterCase, config: PresentationConfig) -> 
         )
     less_clear = sum(1 for item in observations if item.direction == "less_clear")
     clearer = sum(1 for item in observations if item.direction == "clearer")
-    if less_clear > clearer:
-        state: DriftState = "less_clear"
-    elif clearer > less_clear:
-        state = "clearer"
-    else:
-        state = "unchanged"
+    state = state_from_direction_counts(
+        clearer_count=clearer,
+        less_clear_count=less_clear,
+        has_observations=True,
+    )
     return DriftComparison(
         state,
         previous.event_item_id,
@@ -399,12 +414,11 @@ def _compare_pair(
         )
     less_clear = sum(1 for item in observations if item.direction == "less_clear")
     clearer = sum(1 for item in observations if item.direction == "clearer")
-    if less_clear > clearer:
-        state: DriftState = "less_clear"
-    elif clearer > less_clear:
-        state = "clearer"
-    else:
-        state = "unchanged"
+    state = state_from_direction_counts(
+        clearer_count=clearer,
+        less_clear_count=less_clear,
+        has_observations=True,
+    )
     return DriftComparison(
         state,
         previous.event_item_id,

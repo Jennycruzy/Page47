@@ -233,7 +233,7 @@ function chosen() {{ return citySelect.value || defaultCity; }}
 function metric(label,value) {{ return `<div class="metric"><strong>${{esc(value)}}</strong><span>${{esc(label)}}</span></div>`; }}
 async function loadBodies() {{ const city=chosen(); const data=await json(internal(`/api/cities/${{encodeURIComponent(city)}}/bodies`)); document.querySelector('#bodies').innerHTML=data.bodies.map((body,index)=>`<label><input type="checkbox" name="body" value="${{esc(body)}}" ${{index===0?'checked':''}}> ${{esc(body)}}</label>`).join(''); }}
 async function load() {{ const city=chosen(); const [ledger,matters,findings]=await Promise.all([json(internal(`/api/cities/${{encodeURIComponent(city)}}/ledger`)),json(internal(`/api/cities/${{encodeURIComponent(city)}}/matters?limit=40`)),json(internal(`/api/cities/${{encodeURIComponent(city)}}/findings?limit=40`)]);
-document.querySelector('#ledger').innerHTML=[metric('matters observed',ledger.matters_observed),metric('packet changes recorded',ledger.packet_changes_recorded),metric('became less clear',ledger.became_less_clear),metric('became clearer',ledger.became_clearer),metric('interpretations rejected',ledger.interpretations_rejected),metric('claims about intent',ledger.claims_about_intent)].join('');
+document.querySelector('#ledger').innerHTML=[metric('matters observed',ledger.matters_observed),metric('packet changes recorded',ledger.packet_changes_recorded),metric('became less clear',ledger.became_less_clear),metric('became clearer',ledger.became_clearer),metric('mixed presentation',ledger.mixed_presentation),metric('interpretations rejected',ledger.interpretations_rejected),metric('claims about intent',ledger.claims_about_intent)].join('');
 document.querySelector('#matters').innerHTML=matters.matters.length?matters.matters.map(m=>`<article class="card"><span class="tag">${{esc(m.placement_note)}}</span><h3>${{esc(m.latest_title||m.current_title||'Untitled public matter')}}</h3><p class="muted">${{esc(m.body_name)}} · ${{esc(m.latest_event_date)}} · item ${{esc(m.matter_id)}}</p><a href="${{internal(`/matter/${{encodeURIComponent(city)}}/${{m.matter_id}}`)}}">Open record</a></article>`).join(''):'<div class="empty">No stored matters were found.</div>';
 document.querySelector('#findings').innerHTML=findings.findings.length?findings.findings.map(f=>`<article class="card"><span class="tag">${{esc(f.state)}}</span><h3>Item ${{esc(f.matter_id)}}</h3><p>${{esc(f.supported_count)}} recorded observations supported · ${{esc(f.rejected_count)}} rejected in review</p><a href="${{internal(`/finding/${{encodeURIComponent(city)}}/${{encodeURIComponent(f.finding_id)}}`)}}">Read the review</a></article>`).join(''):'<div class="empty">No reviewed items have been saved yet.</div>'; }}
 async function init() {{ const data=await json(internal('/api/cities')); citySelect.innerHTML=data.cities.map(c=>`<option>${{esc(c.name)}}</option>`).join(''); citySelect.value=defaultCity; await loadBodies(); await load(); }}
@@ -278,6 +278,7 @@ def _state_text(value: object) -> str:
         "clearer": "Clearer",
         "unchanged": "Unchanged",
         "less_clear": "Less clear",
+        "mixed": "Mixed directions",
         "cannot_determine": "Could not determine",
     }.get(str(value), "Could not determine")
 
