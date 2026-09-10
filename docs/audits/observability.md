@@ -7,9 +7,9 @@ The Page 47 AgentCore runtime is currently `READY` in `eu-west-2`:
 ```text
 runtime: page47_review
 arn: arn:aws:bedrock-agentcore:eu-west-2:591697681173:runtime/page47_review-X5IwXt4Y7h
-artifact: s3://bedrock-agentcore-code-591697681173-eu-west-2/page47-review/page47-agentcore-telemetry.zip
-package_sha256: ea1724bca25bb2a2e39a9f04b2cf03bad55610ea3dd1473d843ccb38d25f500f
-runtime_version: 15
+artifact: s3://bedrock-agentcore-code-591697681173-eu-west-2/page47-review/page47-agentcore-adot.zip
+package_sha256: 8b084d1b77be49f6ebdcd4b63dc3d1b773a0884d77cd240ce410631d371a5fb9
+runtime_version: 16
 environment: AGENT_OBSERVABILITY_ENABLED=true, UNIFIED_TRACES_DESTINATION_ENABLED=true
 ```
 
@@ -91,7 +91,7 @@ verified back at 1% at `2026-09-10T15:10:41Z`. This retry confirms another
 successful managed-runtime invocation, not a searchable OpenTelemetry trace;
 the trace gate remains open.
 
-## 10 September telemetry-enabled runtime verification
+## 10 September pre-instrumentation verification
 
 The runtime was rebuilt with `aws-opentelemetry-distro==0.19.0` and deployed
 as version 15. The deployment returned `READY` and the runtime environment
@@ -116,11 +116,41 @@ contained no events in the exact review window, and no searchable trace ID was
 returned. The X-Ray destination remains `CloudWatchLogs/ACTIVE` and the
 default indexing rule is restored to 1%.
 
-This is not trace completion. AWS requires tracing to be enabled for the
-selected runtime in the AgentCore console: open **Agent Runtime**, select
+This was not trace completion. At that stage, AWS required tracing to be
+enabled for the selected runtime in the AgentCore console: open **Agent Runtime**, select
 `page47_review`, choose **Tracing → Edit**, toggle **Enable**, and choose
 **Save**. After that console change, rerun the same controlled review and
 search the resulting `spans` stream or Transaction Search record.
+
+## 10 September completed trace verification
+
+After the runtime-level tracing switch was enabled, the runtime was redeployed
+with the ADOT auto-instrumented entrypoint `opentelemetry-instrument app.py`.
+Runtime version 16 reported `READY`.
+
+The final controlled review completed through the public host:
+
+```text
+run_id: dea939b750ec412ca0921b4a31422037
+finding: seattle,-washington-17394, clearer, publish=true
+runtime_request_id: 0bbcb062-f593-4272-a752-24d2d4098dec
+runtime_session_id: 5dc3c710874d4221bb1025a4bf112ec25fa4628d0e9c41f3835739015b7a2b69
+trace_id: 6aa2f721063b98043b31e7b86ca47cfb
+xray_trace_id: 1-6aa2f721-063b98043b31e7b86ca47cfb
+trace_query_window: 2026-09-10T18:29:40Z through 2026-09-10T18:31:30Z
+```
+
+CloudWatch's runtime `spans` stream contained 51 events in that exact window,
+including `invoke_graph`, all five investigation roles, tool executions, and
+Bedrock model calls. `GetTraceSummaries` returned one complete summary for
+the X-Ray trace above: HTTP 200, duration 28.172 seconds, and
+`IsPartial=false`. The summary included the Page 47 runtime, `strands-agents`,
+Bedrock Runtime, and both configured Bedrock model routes.
+
+This satisfies the trace gate: the application review was saved, primary
+evidence was retained by the review store, the trace is searchable, and this
+audit retains the trace ID, runtime ARN, matter ID, and UTC verification
+window.
 
 ## 9 September AWS setup
 

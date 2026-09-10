@@ -20,7 +20,7 @@ Captured Seattle PDF attachments are read into page-linked references for config
 
 Denver's historical attachment capture has now stored 473 attachment records; the latest response for every attachment is HTTP 200 while the four earlier HTTP 404 responses remain preserved as explicit historical failures. The PDF reader has 270 URL-identified results: 259 candidate documents, 10 documents with no configured reference found, and 1 unreadable PDF. The remaining successful attachment files are non-PDF records and are not included in this PDF-reader count.
 
-The five-node Strands investigation graph and its AgentCore transport are implemented and pass strict type checking. A real Seattle matter has now completed through the managed runtime and was saved with primary-record links; failed runs remain visible in the record store. The repeatable deployment command builds a 49.8 MB Linux arm64 ZIP that expands to 137 MB and contains the required root `app.py`. Runtime `page47_review` is deployed in `eu-west-2` and reports `READY`; the public-host client invoked it for matter 17394 and saved the returned review.
+The five-node Strands investigation graph and its AgentCore transport are implemented and pass strict type checking. A real Seattle matter has completed through the managed runtime and was saved with primary-record links; failed runs remain visible in the record store. The repeatable deployment command builds a 59.2 MB Linux arm64 ZIP that expands to 162.3 MB, includes ADOT, and launches the required root `app.py` through `opentelemetry-instrument`. Runtime `page47_review` is deployed in `eu-west-2` and reports `READY`; the public-host client invoked it for matter 17394, saved the returned review, and produced a searchable trace retained in the [observability audit](docs/audits/observability.md).
 
 The resident console is supervised by systemd on the public host and reads the live Seattle and Denver stores, shows the current ledger, supports watch setup, and opens captured documents. The launch target is `https://page47.xcover.online/`; DNS, the certificate, the dedicated Nginx host, renewal dry-run, root-relative links, and the public URL SSM parameter are verified live. The SES sender parameter is present and its identity is verified; the controlled review was accepted by SES through the application path and its mailbox receipt was confirmed.
 
@@ -54,6 +54,7 @@ The preflight command performs bounded live discovery and stores the public resp
 - [Historical record audit](docs/audits/phase-2.md)
 - [Consent calibration audit](docs/audits/phase-3.md)
 - [Managed runtime review audit](docs/audits/managed-runtime.md)
+- [Observability and searchable trace audit](docs/audits/observability.md)
 - [Subdomain launch audit](docs/audits/domain-launch.md)
 - [Denver attachment coverage audit](docs/audits/denver-attachment-coverage.md)
 - [Production launch runbook](docs/LAUNCH.md)
@@ -70,7 +71,7 @@ The preflight report identified eight clients that met the bounded structural ch
 
 ## Next work
 
-The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md): capture one searchable OpenTelemetry trace and complete review of the evaluation artifacts before publishing any real-world accuracy claim. CloudWatch log delivery and alarm configuration are live; a deliberate missed-run test can be performed as an operational check. Denver's four historical failed URLs and one unreadable PDF are recorded in the coverage audit. The deterministic 100-matter evaluation export is preserved, and its 30 gold cases are recorded as `cannot_determine` because the available public records are insufficient; the human audit is complete. The four-arm comparison artifact records zero Page 47 overclaims on that abstention audit, and the controlled fixture records 28/28 directional states with 2/2 reversal pairs; both remain `review_required` and are not real-world accuracy claims.
+The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md): complete review of the evaluation artifacts before publishing any real-world accuracy claim. The searchable AgentCore trace is complete. CloudWatch log delivery and alarm configuration are live; a deliberate missed-run test can be performed as an operational check. Denver's four historical failed URLs and one unreadable PDF are recorded in the coverage audit. The deterministic 100-matter evaluation export is preserved, and its 30 gold cases are recorded as `cannot_determine` because the available public records are insufficient; the human audit is complete. The four-arm comparison artifact records zero Page 47 overclaims on that abstention audit, and the controlled fixture records 28/28 directional states with 2/2 reversal pairs; both remain `review_required` and are not real-world accuracy claims.
 
 ## Tests
 

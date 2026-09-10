@@ -208,11 +208,13 @@ If the review returns an application error, roll the runtime environment back
 to its last known-good setting before retrying. Do not claim trace completion
 from a control-plane `READY` response alone.
 
-On 2026-09-10, telemetry-enabled runtime version 15 completed run
-`6827c1a5528448f5add0c97427dd2c6c` for matter `17394`, but its exporter could
-not connect to the disabled runtime collector. No post-activation trace
-identifier has been retained, so this gate remains open until the console
-Tracing toggle is enabled and a subsequent run is searchable.
+On 2026-09-10, runtime version 16 completed run
+`dea939b750ec412ca0921b4a31422037` for matter `17394`. The exact window
+returned one complete X-Ray summary for trace
+`6aa2f721063b98043b31e7b86ca47cfb` and the runtime `spans` stream contained 51
+events, including the graph, five roles, tool calls, and Bedrock model calls.
+The trace gate is complete; the retained details are in
+`docs/audits/observability.md`.
 
 ## 6. Evidence and evaluation gates
 
