@@ -13,6 +13,7 @@ authors = [{ name = "Page 47 contributors" }]
 dependencies = [
     "boto3>=1.43.88",
     "bedrock-agentcore>=1.22.0",
+    "aws-opentelemetry-distro>=0.18.0",
     "strands-agents>=1.0.0",
     # Keep the managed runtime reproducible: these transitive versions were
     # present in the last known-good AgentCore artifact.

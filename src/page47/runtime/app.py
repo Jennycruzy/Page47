@@ -9,9 +9,18 @@ from threading import Lock
 import yaml
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
 
-from page47.agents.graph import graph_result_payload, invoke_investigation
 from page47.runtime.transport import context_from_request
 from page47.snapshotter.config import JSONObject, as_json_value
+
+
+def _configure_telemetry() -> None:
+    """Connect Strands spans to the AgentCore-provided OTLP collector when enabled."""
+
+    if os.environ.get("AGENT_OBSERVABILITY_ENABLED", "").casefold() != "true":
+        return
+    from strands.telemetry import StrandsTelemetry
+
+    StrandsTelemetry().setup_otlp_exporter()
 
 
 def _config_path(name: str) -> Path:
@@ -45,6 +54,7 @@ def _working_directory() -> Path:
     return path
 
 
+_configure_telemetry()
 app = BedrockAgentCoreApp()
 INVOCATION_LOCK = Lock()
 
@@ -54,6 +64,8 @@ def invoke(payload: object) -> JSONObject:
     # Strands Agent instances are stateful and do not support overlapping
     # requests. AgentCore can dispatch more than one request to a warm runtime,
     # so serialize graph execution within the process.
+    from page47.agents.graph import graph_result_payload, invoke_investigation
+
     with INVOCATION_LOCK:
         context = context_from_request(
             payload,

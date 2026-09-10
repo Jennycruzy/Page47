@@ -29,6 +29,7 @@ def test_agentcore_runtime_uses_unified_trace_destination() -> None:
     settings = load_deployment_settings(Path("config/agentcore.yaml"))
     arguments = _runtime_arguments("bucket", "key", "arn:aws:iam::1:role/page47", settings)
     assert arguments["environmentVariables"] == {
+        "AGENT_OBSERVABILITY_ENABLED": "true",
         "UNIFIED_TRACES_DESTINATION_ENABLED": "true"
     }
 
