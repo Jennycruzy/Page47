@@ -8,7 +8,15 @@ from typing import Literal
 
 import yaml
 
-from page47.analysis.drift import DriftState, EvidenceLink, state_from_direction_counts
+from page47.analysis.case import MatterCase
+from page47.analysis.drift import (
+    DriftComparison,
+    DriftLedger,
+    DriftState,
+    EvidenceLink,
+    state_from_direction_counts,
+)
+from page47.analysis.signature import material_signature_changed, title_coverage_pair
 
 ObservationDirection = Literal["clearer", "less_clear", "neutral"]
 
@@ -112,3 +120,74 @@ def apply_evidence_policy(
         rejected=reports.rejections,
         reason=reason,
     )
+
+
+def deterministic_vetoes(
+    case: MatterCase,
+    ledger: DriftLedger,
+    accepted: tuple[ReviewedObservation, ...],
+) -> tuple[ReviewRejection, ...]:
+    """Reject a presentation concern when the retained record explains it.
+
+    This is deliberately narrow. It only fires when the document anchors show a
+    material substance change and the later title represents the later substance
+    better than the earlier title. The model can still explain the decision, but
+    this boundary does not depend on the model remembering to veto itself.
+    """
+
+    explanatory_comparisons: list[DriftComparison] = []
+    for comparison in ledger.comparisons:
+        previous = next(
+            (
+                appearance
+                for appearance in case.appearances
+                if appearance.event_item_id == comparison.previous_event_item_id
+            ),
+            None,
+        )
+        current = next(
+            (
+                appearance
+                for appearance in case.appearances
+                if appearance.event_item_id == comparison.current_event_item_id
+            ),
+            None,
+        )
+        if previous is None or current is None:
+            continue
+        if not material_signature_changed(previous, current):
+            continue
+        previous_coverage, current_coverage = title_coverage_pair(previous, current)
+        if previous_coverage.total_facets == 0 or current_coverage.total_facets == 0:
+            continue
+        if current_coverage.ratio > previous_coverage.ratio:
+            explanatory_comparisons.append(comparison)
+    if not explanatory_comparisons:
+        return ()
+
+    def relates_to_explained_pair(observation: ReviewedObservation) -> bool:
+        observed_sources = {(link.url, link.captured_at) for link in observation.evidence}
+        return any(
+            any(
+                (link.url, link.captured_at) in observed_sources
+                for item in comparison.observations
+                for link in item.evidence
+            )
+            for comparison in explanatory_comparisons
+        )
+
+    output: list[ReviewRejection] = []
+    for observation in accepted:
+        if observation.direction != "less_clear" or not relates_to_explained_pair(observation):
+            continue
+        output.append(
+            ReviewRejection(
+                observation_id=observation.observation_id,
+                reason=(
+                    "The retained document anchors show a material substance change, and "
+                    "the later title represents the later substance better than the earlier "
+                    "title. The presentation concern was vetoed rather than surfaced."
+                ),
+            )
+        )
+    return tuple(output)

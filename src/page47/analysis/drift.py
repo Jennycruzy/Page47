@@ -10,6 +10,15 @@ from typing import Literal
 import yaml
 
 from page47.analysis.case import AppearanceRecord, MatterCase
+from page47.analysis.signature import title_coverage_pair
+from page47.records.store import SourceReference
+
+EvidenceOrigin = Literal[
+    "observed_by_page47",
+    "reconstructed_from_public_record",
+    "current_public_record",
+    "cannot_determine",
+]
 
 DriftState = Literal["clearer", "unchanged", "less_clear", "mixed", "cannot_determine"]
 Direction = Literal["clearer", "less_clear", "neutral"]
@@ -21,13 +30,15 @@ class EvidenceLink:
     url: str
     captured_at: str
     page_number: int | None = None
+    origin: EvidenceOrigin = "reconstructed_from_public_record"
 
-    def as_json(self) -> dict[str, str | int | None]:
+    def as_json(self) -> dict[str, object]:
         return {
             "label": self.label,
             "url": self.url,
             "captured_at": self.captured_at,
             "page_number": self.page_number,
+            "origin": self.origin,
         }
 
 
@@ -37,14 +48,18 @@ class PresentationObservation:
     direction: Direction
     text: str
     evidence: tuple[EvidenceLink, ...]
+    details: dict[str, object] | None = None
 
     def as_json(self) -> dict[str, object]:
-        return {
+        payload: dict[str, object] = {
             "key": self.key,
             "direction": self.direction,
             "text": self.text,
             "evidence": [item.as_json() for item in self.evidence],
         }
+        if self.details is not None:
+            payload["details"] = self.details
+        return payload
 
 
 @dataclass(frozen=True, slots=True)
@@ -160,10 +175,30 @@ def _subject_tokens(appearance: AppearanceRecord, common: frozenset[str]) -> set
     return output - common
 
 
-def _link(label: str, source_url: str, captured_at: str, page: int | None = None) -> EvidenceLink:
+def _link(
+    label: str,
+    source_url: str,
+    captured_at: str,
+    page: int | None = None,
+    origin: EvidenceOrigin = "reconstructed_from_public_record",
+) -> EvidenceLink:
     if not source_url or not captured_at:
         raise ValueError(f"Cannot make evidence link for {label} without source details")
-    return EvidenceLink(label, source_url, captured_at, page)
+    return EvidenceLink(label, source_url, captured_at, page, origin)
+
+
+def _transition_origin(
+    previous: SourceReference,
+    current: SourceReference,
+) -> EvidenceOrigin:
+    if (
+        previous.is_forward_capture
+        and current.is_forward_capture
+        and previous.capture_key != current.capture_key
+        and previous.captured_at != current.captured_at
+    ):
+        return "observed_by_page47"
+    return "reconstructed_from_public_record"
 
 
 def _title_observation(
@@ -175,54 +210,118 @@ def _title_observation(
     current_title = current.title_as_presented
     if previous_title is None or current_title is None:
         return None
+    origin = _transition_origin(previous.source, current.source)
     if previous_title.strip().casefold() == current_title.strip().casefold():
         return PresentationObservation(
             "title_unchanged",
             "neutral",
             "The title stayed the same at these two appearances.",
             (
-                _link("earlier title", previous.source.url, previous.source.captured_at),
-                _link("later title", current.source.url, current.source.captured_at),
+                _link(
+                    "earlier title",
+                    previous.source.url,
+                    previous.source.captured_at,
+                    origin=origin,
+                ),
+                _link(
+                    "later title",
+                    current.source.url,
+                    current.source.captured_at,
+                    origin=origin,
+                ),
             ),
         )
-    previous_overlap = len(
-        _tokens(previous_title) & _subject_tokens(previous, config.common_title_words)
-    )
-    current_overlap = len(
-        _tokens(current_title) & _subject_tokens(current, config.common_title_words)
-    )
-    if (
-        previous_overlap < config.minimum_title_overlap
-        and current_overlap < config.minimum_title_overlap
-    ):
-        direction: Direction = "neutral"
-        text = (
-            "The title changed, but the available page text does not show which title was "
-            "more specific."
-        )
-    elif current_overlap < previous_overlap:
-        direction = "less_clear"
-        text = (
-            "The later title shares fewer recorded subject words with the attached material "
-            "than the earlier title."
-        )
-    elif current_overlap > previous_overlap:
-        direction = "clearer"
-        text = (
-            "The later title shares more recorded subject words with the attached material "
-            "than the earlier title."
-        )
+    previous_coverage, current_coverage = title_coverage_pair(previous, current)
+    details: dict[str, object] | None = None
+    if previous_coverage.total_facets > 0 and current_coverage.total_facets > 0:
+        previous_score = previous_coverage.ratio
+        current_score = current_coverage.ratio
+        details = {
+            "method": "structured_substance_signature",
+            "earlier": previous_coverage.as_json(),
+            "later": current_coverage.as_json(),
+        }
+        if (
+            previous_coverage.matched_facets < config.minimum_title_overlap
+            and current_coverage.matched_facets < config.minimum_title_overlap
+        ):
+            direction: Direction = "neutral"
+            text = (
+                "The title changed, but neither title covers enough recorded substance "
+                "facets to establish a direction."
+            )
+        elif current_score < previous_score:
+            direction = "less_clear"
+            text = (
+                f"The later title covers {current_coverage.matched_facets} of "
+                f"{current_coverage.total_facets} recorded substance facets; the earlier "
+                f"title covered {previous_coverage.matched_facets} of "
+                f"{previous_coverage.total_facets}."
+            )
+        elif current_score > previous_score:
+            direction = "clearer"
+            text = (
+                f"The later title covers {current_coverage.matched_facets} of "
+                f"{current_coverage.total_facets} recorded substance facets; the earlier "
+                f"title covered {previous_coverage.matched_facets} of "
+                f"{previous_coverage.total_facets}."
+            )
+        else:
+            direction = "neutral"
+            text = (
+                "The title changed, but both titles covered the same proportion of recorded "
+                "substance facets."
+            )
     else:
-        direction = "neutral"
-        text = "The title changed, but the recorded subject-word overlap was the same."
+        previous_overlap = len(
+            _tokens(previous_title) & _subject_tokens(previous, config.common_title_words)
+        )
+        current_overlap = len(
+            _tokens(current_title) & _subject_tokens(current, config.common_title_words)
+        )
+        if (
+            previous_overlap < config.minimum_title_overlap
+            and current_overlap < config.minimum_title_overlap
+        ):
+            direction = "neutral"
+            text = (
+                "The title changed, but the available page text does not show which title was "
+                "more specific."
+            )
+        elif current_overlap < previous_overlap:
+            direction = "less_clear"
+            text = (
+                "The later title shares fewer recorded subject words with the attached material "
+                "than the earlier title."
+            )
+        elif current_overlap > previous_overlap:
+            direction = "clearer"
+            text = (
+                "The later title shares more recorded subject words with the attached material "
+                "than the earlier title."
+            )
+        else:
+            direction = "neutral"
+            text = "The title changed, but the recorded subject-word overlap was the same."
     return PresentationObservation(
         "title_changed",
         direction,
         text,
         (
-            _link("earlier title", previous.source.url, previous.source.captured_at),
-            _link("later title", current.source.url, current.source.captured_at),
+            _link(
+                "earlier title",
+                previous.source.url,
+                previous.source.captured_at,
+                origin=origin,
+            ),
+            _link(
+                "later title",
+                current.source.url,
+                current.source.captured_at,
+                origin=origin,
+            ),
         ),
+        details,
     )
 
 
@@ -243,12 +342,14 @@ def _placement_observation(
     current_source = current.pdf_source
     if current_source is None:
         current_source = current.source
+    origin = _transition_origin(previous_source, current_source)
     evidence.append(
         _link(
             "earlier agenda placement",
             previous_source.url,
             previous_source.captured_at,
             previous_page,
+            origin,
         )
     )
     evidence.append(
@@ -257,6 +358,7 @@ def _placement_observation(
             current_source.url,
             current_source.captured_at,
             current_page,
+            origin,
         )
     )
     if previous.pdf_placement == current.pdf_placement:

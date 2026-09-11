@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from pathlib import Path
 
 import pytest
@@ -37,7 +38,9 @@ from page47.analysis.policy import (
     ReviewedObservation,
     ReviewRejection,
     apply_evidence_policy,
+    deterministic_vetoes,
 )
+from page47.analysis.signature import material_signature_changed, title_coverage_pair
 from page47.records.store import SourceReference
 
 
@@ -155,6 +158,147 @@ def test_all_four_recorded_states_are_kept() -> None:
     assert compare_all_appearances(case("regular", "consent"), CONFIG).counts["less_clear"] == 1
     assert compare_all_appearances(case("regular", "regular"), CONFIG).counts["unchanged"] == 1
     assert compare_all_appearances(case("regular"), CONFIG).counts["cannot_determine"] == 1
+
+
+def test_structured_signature_detects_title_representativeness() -> None:
+    earlier = appearance(
+        1,
+        "regular",
+        title="Central Avenue Height Increase",
+        anchor_value="Central Avenue height increase from 35 feet to 75 feet",
+    )
+    later = appearance(
+        2,
+        "regular",
+        title="Miscellaneous Administrative Amendments",
+        anchor_value="Central Avenue height increase from 35 feet to 75 feet",
+    )
+
+    earlier_coverage, later_coverage = title_coverage_pair(earlier, later)
+
+    assert earlier_coverage.matched_facets > later_coverage.matched_facets
+    assert earlier_coverage.total_facets > 0
+    assert material_signature_changed(earlier, later) is False
+    comparison = compare_all_appearances(
+        MatterCase("Test city", case("regular", "regular").matter, (earlier, later)),
+        CONFIG,
+    ).comparisons[0]
+    assert comparison.state == "less_clear"
+    assert comparison.observations[0].details == {
+        "method": "structured_substance_signature",
+        "earlier": earlier_coverage.as_json(),
+        "later": later_coverage.as_json(),
+    }
+
+
+def test_observed_origin_requires_two_distinct_captures() -> None:
+    earlier_source = SourceReference(
+        "api",
+        "https://records.example/item/1",
+        "2026-09-05T00:00:00Z",
+        True,
+        "capture-1",
+        "response-1",
+        "content-1",
+    )
+    later_source = SourceReference(
+        "api",
+        "https://records.example/item/2",
+        "2026-09-06T00:00:00Z",
+        True,
+        "capture-2",
+        "response-2",
+        "content-2",
+    )
+    earlier = replace(
+        appearance(
+            1,
+            "regular",
+            title="Central Avenue Height Increase",
+            anchor_value="Central Avenue height increase",
+        ),
+        source=earlier_source,
+    )
+    later = replace(
+        appearance(
+            2,
+            "regular",
+            title="Administrative Amendments",
+            anchor_value="Central Avenue height increase",
+        ),
+        source=later_source,
+    )
+
+    comparison = compare_all_appearances(
+        MatterCase("Test city", case("regular", "regular").matter, (earlier, later)),
+        CONFIG,
+    ).comparisons[0]
+
+    assert comparison.observations[0].evidence[0].origin == "observed_by_page47"
+    assert comparison.observations[0].evidence[1].origin == "observed_by_page47"
+
+
+def test_deterministic_veto_rejects_explained_less_clear_observation() -> None:
+    earlier = appearance(
+        1,
+        "regular",
+        title="Administrative Matter",
+        anchor_value="Harbor Avenue sidewalk design",
+    )
+    later = appearance(
+        2,
+        "consent",
+        title="Central Avenue Height Increase",
+        anchor_value="Central Avenue height increase from 35 feet to 75 feet",
+    )
+    matter_case = MatterCase("Test city", case("regular", "consent").matter, (earlier, later))
+    ledger = compare_all_appearances(matter_case, CONFIG)
+    placement_evidence = next(
+        item.evidence
+        for item in ledger.comparisons[0].observations
+        if item.key == "moved_to_consent"
+    )
+    accepted = (
+        ReviewedObservation(
+            "process:placement",
+            "less_clear",
+            "The matter moved to the consent calendar.",
+            placement_evidence,
+        ),
+    )
+
+    vetoes = deterministic_vetoes(matter_case, ledger, accepted)
+
+    assert len(vetoes) == 1
+    assert vetoes[0].observation_id == "process:placement"
+    assert "material substance change" in vetoes[0].reason
+
+
+def test_deterministic_veto_does_not_reject_an_unrelated_observation() -> None:
+    earlier = appearance(
+        1,
+        "regular",
+        title="Administrative Matter",
+        anchor_value="Harbor Avenue sidewalk design",
+    )
+    later = appearance(
+        2,
+        "consent",
+        title="Central Avenue Height Increase",
+        anchor_value="Central Avenue height increase from 35 feet to 75 feet",
+    )
+    matter_case = MatterCase("Test city", case("regular", "consent").matter, (earlier, later))
+    ledger = compare_all_appearances(matter_case, CONFIG)
+    accepted = (
+        ReviewedObservation(
+            "process:other",
+            "less_clear",
+            "An unrelated process change.",
+            (EvidenceLink("other", "https://records.example/other", "2026-09-05"),),
+        ),
+    )
+
+    assert deterministic_vetoes(matter_case, ledger, accepted) == ()
 
 
 def test_opposing_dimensions_are_mixed_not_unchanged() -> None:
@@ -338,6 +482,54 @@ def test_brief_lines_use_the_accepted_record_text_and_evidence() -> None:
     assert safe.lines[0].text == observation.text
     assert safe.lines[0].evidence[0].url == record_evidence.url
     assert safe.limitation == "Page 47 does not determine why these changes were made."
+
+
+def test_captured_source_origin_survives_agent_review_and_brief_rebuild() -> None:
+    evidence = AgentEvidence(
+        label="captured record",
+        url="https://records.example/item",
+        captured_at="2026-09-05T00:00:00Z",
+    )
+    archivist = ArchivistReport(
+        observations=[
+            AgentObservation(
+                observation_id="item",
+                direction="less_clear",
+                statement="The presentation changed.",
+                evidence=[evidence],
+            )
+        ],
+        summary="record",
+    )
+    process = ProcessReport(observations=[], summary="presentation")
+    reports, _aliases = _agent_reports(
+        archivist,
+        SubstanceReport(changes=[], no_substantive_change=True, summary="none"),
+        process,
+        SkepticReport(
+            accepted_observation_ids=["item"],
+            rejected_observations=[],
+            summary="accepted",
+        ),
+        {(
+            evidence.url,
+            evidence.captured_at,
+        ): "observed_by_page47"},
+    )
+
+    observed = reports.observations[0]
+    assert observed.evidence[0].origin == "observed_by_page47"
+    safe = _brief_with_resolved_ids(
+        BriefWriterReport(
+            heading="Review",
+            lines=[],
+            questions=[],
+            limitation="Not assessed.",
+        ),
+        reports.accepted_observation_ids,
+        {observed.observation_id: observed},
+    )
+    assert safe.lines[0].evidence[0].origin == "observed_by_page47"
 
 
 def test_empty_review_discards_placeholder_brief_lines() -> None:

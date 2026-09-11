@@ -237,13 +237,33 @@ class SourceReference:
     kind: str
     url: str
     captured_at: str
+    observed_by_page47: bool = False
+    capture_key: str | None = None
+    response_sha256: str | None = None
+    content_sha256: str | None = None
+
+    @property
+    def is_forward_capture(self) -> bool:
+        """Whether this source is tied to a concrete Page 47 capture."""
+
+        return self.observed_by_page47 and self.capture_key is not None
 
     def as_json(self) -> JSONObject:
-        return {
+        payload: JSONObject = {
             "kind": self.kind,
             "url": self.url,
             "captured_at": self.captured_at,
         }
+        if self.observed_by_page47:
+            payload["observed_by_page47"] = True
+        for key, value in (
+            ("capture_key", self.capture_key),
+            ("response_sha256", self.response_sha256),
+            ("content_sha256", self.content_sha256),
+        ):
+            if value is not None:
+                payload[key] = value
+        return payload
 
 
 @dataclass(frozen=True, slots=True)

@@ -5,14 +5,16 @@ from __future__ import annotations
 import html
 import json
 import os
+from collections.abc import Awaitable, Callable
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import HTMLResponse, Response
 from pydantic import BaseModel, Field
 
 from page47.snapshotter.config import JSONObject, JSONValue
 from page47.web.config import load_web_settings
+from page47.web.limits import SlidingWindowLimiter
 from page47.web.service import WatchInput, WebService
 
 
@@ -38,6 +40,36 @@ def create_app(config_path: Path | None = None) -> FastAPI:
     settings = load_web_settings(config_path if config_path is not None else _config_path())
     service = WebService(settings)
     app = FastAPI(title=settings.title, docs_url="/docs", redoc_url=None)
+    watch_limiter = SlidingWindowLimiter(maximum=10, window_seconds=60)
+    investigation_limiter = SlidingWindowLimiter(maximum=3, window_seconds=60)
+
+    def client_key(request: Request) -> str:
+        forwarded = request.headers.get("x-real-ip")
+        if forwarded is not None and forwarded.strip():
+            return forwarded.strip()
+        return request.client.host if request.client is not None else "unknown"
+
+    def enforce_limit(request: Request, limiter: SlidingWindowLimiter, scope: str) -> None:
+        retry_after = limiter.retry_after(f"{scope}:{client_key(request)}")
+        if retry_after is not None:
+            raise HTTPException(
+                status_code=429,
+                detail="This operation is temporarily rate limited. Please try again shortly.",
+                headers={"Retry-After": str(retry_after)},
+            )
+
+    @app.middleware("http")
+    async def security_headers(
+        request: Request,
+        call_next: Callable[[Request], Awaitable[Response]],
+    ) -> Response:
+        response = await call_next(request)
+        response.headers.setdefault("X-Content-Type-Options", "nosniff")
+        response.headers.setdefault("X-Frame-Options", "DENY")
+        response.headers.setdefault("Referrer-Policy", "no-referrer")
+        if request.url.path.startswith(("/watch/", "/api/watches")):
+            response.headers["Cache-Control"] = "no-store"
+        return response
 
     @app.get("/healthz")
     def health() -> JSONObject:
@@ -99,7 +131,8 @@ def create_app(config_path: Path | None = None) -> FastAPI:
             raise HTTPException(status_code=404, detail=str(error)) from error
 
     @app.post("/api/watches")
-    def create_watch(request: WatchRequest) -> JSONObject:
+    def create_watch(request: WatchRequest, http_request: Request) -> JSONObject:
+        enforce_limit(http_request, watch_limiter, "watch")
         try:
             return service.create_watch(
                 WatchInput(
@@ -130,13 +163,16 @@ def create_app(config_path: Path | None = None) -> FastAPI:
             raise HTTPException(status_code=400, detail=str(error)) from error
 
     @app.post("/api/cities/{city}/matters/{matter_id}/investigate")
-    def investigate(city: str, matter_id: int) -> JSONObject:
+    def investigate(city: str, matter_id: int, request: Request) -> JSONObject:
+        enforce_limit(request, investigation_limiter, "investigate")
         try:
             return service.investigate(city, matter_id)
         except LookupError as error:
             raise HTTPException(status_code=404, detail=str(error)) from error
         except (ValueError, FileNotFoundError) as error:
             raise HTTPException(status_code=500, detail=str(error)) from error
+        except RuntimeError as error:
+            raise HTTPException(status_code=409, detail=str(error)) from error
 
     @app.get("/evidence/{city}/attachment/{attachment_id}/file")
     def attachment_file(city: str, attachment_id: int) -> Response:
@@ -325,7 +361,12 @@ def _source_link(source: object, label: str | None = None) -> str:
     if not isinstance(captured_at, str) or not captured_at:
         return ""
     if label is None:
-        label = "City's current record" if kind == "api" else "Page 47's captured record"
+        observed = source.get("observed_by_page47") is True
+        label = (
+            "Page 47's captured record"
+            if observed or kind == "snapshot"
+            else "City's current record"
+        )
     return (
         f'<a href="{html.escape(url, quote=True)}" target="_blank" rel="noreferrer">'
         f"{html.escape(label)}</a> <span class=muted>({html.escape(captured_at)})</span>"
@@ -488,6 +529,14 @@ def _finding_page(
             "neutral": "neutral",
         }.get(str(value), "unknown")
 
+    def origin_label(value: object, fallback: str) -> str:
+        return {
+            "observed_by_page47": "Observed by Page 47",
+            "reconstructed_from_public_record": "Reconstructed from public record",
+            "current_public_record": "Current public record",
+            "cannot_determine": "Cannot determine",
+        }.get(str(value), fallback)
+
     def evidence_markup(value: object, origin: str) -> str:
         if not isinstance(value, list):
             return '<span class="muted">No primary evidence link was retained.</span>'
@@ -506,10 +555,11 @@ def _finding_page(
             page_text = f" · PDF page {page_number}" if page_number is not None else ""
             label = _display(item.get("label"), "Primary record")
             captured_at = _display(item.get("captured_at"), "capture time unavailable")
+            saved_origin = origin_label(item.get("origin"), origin)
             links.append(
                 f'<div class="evidence-link"><a href="{html.escape(href, quote=True)}" '
                 f'target="_blank" rel="noreferrer">Open {html.escape(label)}'
-                f'{html.escape(page_text)}</a><span class="badge">{html.escape(origin)}</span>'
+                f'{html.escape(page_text)}</a><span class="badge">{html.escape(saved_origin)}</span>'
                 f'<span class="muted">{html.escape(captured_at)}</span></div>'
             )
         return "".join(links) or '<span class="muted">No primary evidence link was retained.</span>'
@@ -642,7 +692,9 @@ def _finding_page(
             page_number = page if isinstance(page, int) and not isinstance(page, bool) else None
             marker = (url, captured_at, page_number)
             if not any(existing[0] == marker[0] and existing[1] == marker[1] and existing[3] == marker[2] for existing in timeline):
-                timeline.append((url, captured_at, origin, page_number))
+                timeline.append(
+                    (url, captured_at, origin_label(item.get("origin"), origin), page_number)
+                )
 
     if title_observation:
         add_timeline(title_observation.get("evidence"), "Reconstructed from public record")

@@ -50,10 +50,12 @@ class SnapshotStore:
         self.root = root
         self.body_dir = root / "bodies"
         self.manifest_path = root / "manifest.jsonl"
+        self.integrity_path = root / "manifest-chain.jsonl"
         self.runs_path = root / "runs.jsonl"
         self.changes_path = root / "changes.jsonl"
         self.body_dir.mkdir(parents=True, exist_ok=True)
         self.records = self._load_records()
+        self._ensure_integrity_chain()
         self.capture_keys = {
             key
             for record in self.records
@@ -73,6 +75,94 @@ class SnapshotStore:
             records.append(as_object(as_json_value(decoded), f"manifest line {line_number}"))
         return records
 
+    @staticmethod
+    def _record_hash(record: JSONObject) -> str:
+        return hashlib.sha256(stable_json(record).encode("utf-8")).hexdigest()
+
+    @staticmethod
+    def _chain_hash(previous: str, record_hash: str) -> str:
+        return hashlib.sha256(f"{previous}:{record_hash}".encode()).hexdigest()
+
+    def _load_integrity_entries(self) -> list[JSONObject]:
+        if not self.integrity_path.exists():
+            return []
+        entries: list[JSONObject] = []
+        for line_number, line in enumerate(
+            self.integrity_path.read_text(encoding="utf-8").splitlines(), start=1
+        ):
+            if not line.strip():
+                raise ValueError(f"Blank line in {self.integrity_path} at line {line_number}")
+            decoded: object = json.loads(line)
+            entries.append(
+                as_object(as_json_value(decoded), f"integrity line {line_number}")
+            )
+        return entries
+
+    def _chain_for_records(self, records: list[JSONObject]) -> list[JSONObject]:
+        previous = "0" * 64
+        entries: list[JSONObject] = []
+        for index, record in enumerate(records, start=1):
+            record_hash = self._record_hash(record)
+            chain_hash = self._chain_hash(previous, record_hash)
+            capture_key = text_value(record, "capture_key")
+            if capture_key is None:
+                raise ValueError(f"Manifest record {index} had no capture key")
+            entries.append(
+                {
+                    "manifest_index": index,
+                    "capture_key": capture_key,
+                    "record_sha256": record_hash,
+                    "previous_chain_sha256": previous,
+                    "chain_sha256": chain_hash,
+                }
+            )
+            previous = chain_hash
+        return entries
+
+    def _write_integrity_entries(self, entries: list[JSONObject]) -> None:
+        payload = "".join(json.dumps(entry, sort_keys=True) + "\n" for entry in entries)
+        self.integrity_path.write_text(payload, encoding="utf-8")
+
+    def _ensure_integrity_chain(self) -> None:
+        if not self.records:
+            if self.integrity_path.exists() and self._load_integrity_entries():
+                raise ValueError("Evidence integrity chain existed without manifest records")
+            return
+        if not self.integrity_path.exists():
+            self._write_integrity_entries(self._chain_for_records(self.records))
+            self.verify_integrity()
+            return
+        self.verify_integrity()
+
+    def verify_integrity(self) -> str | None:
+        """Verify the append-only hash chain and return its current root."""
+
+        disk_records = self._load_records()
+        if disk_records != self.records:
+            raise ValueError(
+                "Evidence integrity chain cannot verify a capture manifest that changed "
+                "after the store was loaded"
+            )
+        entries = self._load_integrity_entries()
+        if len(entries) != len(disk_records):
+            raise ValueError(
+                "Evidence integrity chain length did not match the capture manifest"
+            )
+        expected_entries = self._chain_for_records(disk_records)
+        for index, (actual, expected) in enumerate(
+            zip(entries, expected_entries, strict=True), start=1
+        ):
+            if actual != expected:
+                raise ValueError(f"Evidence integrity chain failed at manifest record {index}")
+        for record in disk_records:
+            self.body(record)
+        if not entries:
+            return None
+        root = entries[-1].get("chain_sha256")
+        if not isinstance(root, str) or not root:
+            raise ValueError("Evidence integrity chain had no root")
+        return root
+
     def latest(self, target: str) -> JSONObject | None:
         for record in reversed(self.records):
             if record.get("target") == target:
@@ -83,10 +173,22 @@ class SnapshotStore:
         storage_key = text_value(record, "storage_key")
         if storage_key is None:
             raise ValueError("Capture has no storage key")
-        path = self.root / storage_key
+        root = self.root.resolve()
+        path = (self.root / storage_key).resolve()
+        if path != root and root not in path.parents:
+            raise ValueError("Capture storage path escaped the evidence root")
         if not path.exists():
             raise FileNotFoundError(path)
-        return path.read_bytes()
+        body = path.read_bytes()
+        expected_hash = text_value(record, "response_sha256")
+        if expected_hash is None:
+            raise ValueError("Capture has no response hash")
+        actual_hash = hashlib.sha256(body).hexdigest()
+        if actual_hash != expected_hash:
+            raise ValueError(
+                f"Capture body hash did not match its manifest for {storage_key}"
+            )
+        return body
 
     def capture(
         self,
@@ -111,6 +213,8 @@ class SnapshotStore:
         body_path = self.body_dir / f"{response_hash}.body"
         if not body_path.exists():
             body_path.write_bytes(response.body)
+        elif hashlib.sha256(body_path.read_bytes()).hexdigest() != response_hash:
+            raise ValueError(f"Existing capture body did not match hash {response_hash}")
         record: JSONObject = {
             "capture_key": capture_key,
             "target": response.target,
@@ -133,8 +237,28 @@ class SnapshotStore:
         with self.manifest_path.open("a", encoding="utf-8") as manifest:
             manifest.write(json.dumps(record, sort_keys=True) + "\n")
         self.records.append(record)
+        self._append_integrity_entry(record)
         self.capture_keys.add(capture_key)
         return record, True
+
+    def _append_integrity_entry(self, record: JSONObject) -> None:
+        entries = self._load_integrity_entries()
+        previous = entries[-1].get("chain_sha256") if entries else "0" * 64
+        if not isinstance(previous, str):
+            raise ValueError("Evidence integrity chain had an invalid previous root")
+        capture_key = text_value(record, "capture_key")
+        if capture_key is None:
+            raise ValueError("Cannot chain a capture without a capture key")
+        record_hash = self._record_hash(record)
+        entry: JSONObject = {
+            "manifest_index": len(entries) + 1,
+            "capture_key": capture_key,
+            "record_sha256": record_hash,
+            "previous_chain_sha256": previous,
+            "chain_sha256": self._chain_hash(previous, record_hash),
+        }
+        with self.integrity_path.open("a", encoding="utf-8") as output:
+            output.write(json.dumps(entry, sort_keys=True) + "\n")
 
     def append_run(self, run: JSONObject) -> None:
         with self.runs_path.open("a", encoding="utf-8") as output:
@@ -162,3 +286,70 @@ class SnapshotStore:
 
     def iter_target(self, target: str) -> Iterable[JSONObject]:
         return (record for record in self.records if record.get("target") == target)
+
+    def capture_history(
+        self,
+        target: str,
+        *,
+        successful_only: bool = False,
+    ) -> tuple[JSONObject, ...]:
+        records = [record for record in self.records if record.get("target") == target]
+        if successful_only:
+            records = [
+                record
+                for record in records
+                if record.get("status") == 200 and text_value(record, "content_sha256") is not None
+            ]
+        return tuple(sorted(records, key=lambda record: text_value(record, "captured_at") or ""))
+
+    def observation_window(self, target: str) -> JSONObject:
+        """Summarize the observed versions of one public target."""
+
+        records = self.capture_history(target, successful_only=True)
+        versions: dict[str, JSONObject] = {}
+        for record in records:
+            content_hash = text_value(record, "content_sha256")
+            captured_at = text_value(record, "captured_at")
+            capture_key = text_value(record, "capture_key")
+            if content_hash is None or captured_at is None or capture_key is None:
+                continue
+            version = versions.get(content_hash)
+            if version is None:
+                versions[content_hash] = {
+                    "content_sha256": content_hash,
+                    "first_seen_at": captured_at,
+                    "last_seen_at": captured_at,
+                    "capture_count": 1,
+                    "capture_keys": [capture_key],
+                }
+            else:
+                version["last_seen_at"] = captured_at
+                count = version.get("capture_count")
+                if isinstance(count, int):
+                    version["capture_count"] = count + 1
+                keys = version.get("capture_keys")
+                if isinstance(keys, list):
+                    keys.append(capture_key)
+        return {
+            "target": target,
+            "first_seen_at": text_value(records[0], "captured_at") if records else None,
+            "last_seen_at": text_value(records[-1], "captured_at") if records else None,
+            "distinct_content_hashes": len(versions),
+            "versions": list(versions.values()),
+        }
+
+    def observed_transition(self, target: str) -> tuple[JSONObject, JSONObject] | None:
+        """Return the first two distinct successful versions Page 47 captured."""
+
+        records = self.capture_history(target, successful_only=True)
+        seen_hashes: set[str] = set()
+        versions: list[JSONObject] = []
+        for record in records:
+            content_hash = text_value(record, "content_sha256")
+            if content_hash is None or content_hash in seen_hashes:
+                continue
+            seen_hashes.add(content_hash)
+            versions.append(record)
+            if len(versions) == 2:
+                return versions[0], versions[1]
+        return None

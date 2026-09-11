@@ -91,6 +91,14 @@ The product can establish that a title, placement, or attachment changed. It
 cannot establish why a public body changed it, whether anyone intended to
 reduce visibility, or what an unpublished intermediate version contained.
 
+The `Observed by Page 47` label is intentionally strict: both sides of the
+transition must carry different Page 47 capture keys and capture times. A
+single document that Page 47 captured, or two historical records that are
+available today, is not enough to claim that Page 47 observed a transition.
+Area matching follows the same discipline. A direct street or neighbourhood
+mention is reported separately from a weaker public-body or jurisdiction
+inference, and the matched record fields are retained with the watch result.
+
 ## Why an agent is useful here
 
 This is a background evidence task, not a chat prompt waiting for a resident to
@@ -152,6 +160,7 @@ flowchart LR
 | AWS component | Page 47 use |
 | --- | --- |
 | **Amazon Lightsail** | Public web service, scheduled collection, SQLite record store, and captured evidence on the deployment host. |
+| **Amazon S3 (optional)** | Verified off-host copy of captured bytes and operational evidence files using the repository backup command. |
 | **Amazon Bedrock** | Document and evidence reading models used by the investigation roles. |
 | **Amazon Bedrock AgentCore Runtime** | Managed execution for the Strands investigation graph. |
 | **AWS Distro for OpenTelemetry** | Runtime instrumentation for searchable investigation traces. |
@@ -162,7 +171,11 @@ flowchart LR
 The collector preserves bytes, SHA-256 hashes, source URLs, capture times,
 HTTP status, ETags when available, and explicit failures. A changed document at
 the same URL is therefore visible as a new captured version rather than silently
-replacing the previous observation.
+replacing the previous observation. Each capture manifest also has a local
+chained integrity record. The optional `scripts/backup_evidence.py` command
+verifies that chain before copying the captured bytes, manifest, runs, and
+changes to an S3 bucket; the current deployment has not configured that bucket
+yet, so the live evidence root remains on the host disk.
 
 ## Evaluation without overclaiming
 
@@ -186,6 +199,31 @@ Page 47 has three separate proof layers:
 The repository also retains the independent review, four-arm results, and
 controlled results so a judge can inspect the evidence rather than rely on a
 marketing percentage.
+
+The forward-observation verifier makes the remaining time-dependent claim
+explicit. It reports a positive case only when two distinct captured versions
+support a directional comparison; until then it reports
+`awaiting_real_transition`. Page 47 does not turn a fixture or historical
+reconstruction into a forward-observation claim. Run it with:
+
+```bash
+PYTHONPATH=src python scripts/check_forward_observations.py \
+  --city "Seattle, Washington" \
+  --database runtime/records/seattle.sqlite3 \
+  --evidence-root runtime/evidence/seattle \
+  --presentation config/presentation.yaml \
+  --output /tmp/page47-forward-observation.json
+```
+
+To create a verified off-host copy after configuring an S3 bucket:
+
+```bash
+PYTHONPATH=src python scripts/backup_evidence.py \
+  --evidence-root runtime/evidence/seattle \
+  --bucket YOUR_BUCKET \
+  --prefix page47-evidence/seattle \
+  --region eu-west-2
+```
 
 ## Run locally
 

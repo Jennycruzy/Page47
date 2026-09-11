@@ -69,7 +69,24 @@ class AttachmentRecord:
             raise ValueError(f"Attachment {self.attachment_id} capture had no source URL")
         if not isinstance(captured_at, str) or not captured_at:
             raise ValueError(f"Attachment {self.attachment_id} capture had no capture time")
-        return snapshots.body(capture), SourceReference("snapshot", source_url, captured_at)
+        capture_key = capture.get("capture_key")
+        response_sha256 = capture.get("response_sha256")
+        content_sha256 = capture.get("content_sha256")
+        if capture_key is not None and not isinstance(capture_key, str):
+            raise ValueError(f"Attachment {self.attachment_id} capture key was invalid")
+        if response_sha256 is not None and not isinstance(response_sha256, str):
+            raise ValueError(f"Attachment {self.attachment_id} response hash was invalid")
+        if content_sha256 is not None and not isinstance(content_sha256, str):
+            raise ValueError(f"Attachment {self.attachment_id} content hash was invalid")
+        return snapshots.body(capture), SourceReference(
+            "snapshot",
+            source_url,
+            captured_at,
+            observed_by_page47=capture_key is not None,
+            capture_key=capture_key,
+            response_sha256=response_sha256,
+            content_sha256=content_sha256,
+        )
 
     def as_index_json(self) -> JSONObject:
         return {
@@ -233,6 +250,22 @@ def _source(row: sqlite3.Row) -> SourceReference:
         raise ValueError("Stored record source URL was missing")
     if not isinstance(observed_at, str) or not observed_at:
         raise ValueError("Stored record observation time was missing")
+    raw_provenance = row["provenance_json"] if "provenance_json" in row.keys() else None
+    if isinstance(raw_provenance, str):
+        try:
+            decoded: object = json.loads(raw_provenance)
+        except json.JSONDecodeError:
+            decoded = None
+        if isinstance(decoded, dict):
+            for value in decoded.values():
+                if not isinstance(value, dict):
+                    continue
+                if value.get("url") != source_url or value.get("captured_at") != observed_at:
+                    continue
+                try:
+                    return _source_from_json(value, "stored record")
+                except ValueError:
+                    continue
     return SourceReference(kind="api", url=source_url, captured_at=observed_at)
 
 
@@ -283,6 +316,10 @@ def _source_from_json(value: object, context: str) -> SourceReference:
     kind: object = value.get("kind")
     url: object = value.get("url")
     captured_at: object = value.get("captured_at")
+    observed_by_page47: object = value.get("observed_by_page47", False)
+    capture_key: object = value.get("capture_key")
+    response_sha256: object = value.get("response_sha256")
+    content_sha256: object = value.get("content_sha256")
     if (
         not isinstance(kind, str)
         or not kind
@@ -290,9 +327,21 @@ def _source_from_json(value: object, context: str) -> SourceReference:
         or not url
         or not isinstance(captured_at, str)
         or not captured_at
+        or not isinstance(observed_by_page47, bool)
+        or (capture_key is not None and not isinstance(capture_key, str))
+        or (response_sha256 is not None and not isinstance(response_sha256, str))
+        or (content_sha256 is not None and not isinstance(content_sha256, str))
     ):
         raise ValueError(f"Stored {context} source was incomplete")
-    return SourceReference(kind=kind, url=url, captured_at=captured_at)
+    return SourceReference(
+        kind=kind,
+        url=url,
+        captured_at=captured_at,
+        observed_by_page47=observed_by_page47,
+        capture_key=capture_key,
+        response_sha256=response_sha256,
+        content_sha256=content_sha256,
+    )
 
 
 def _provenance_source(row: sqlite3.Row, key: str) -> SourceReference | None:

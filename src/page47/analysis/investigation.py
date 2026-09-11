@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from hashlib import sha256
@@ -28,6 +29,7 @@ from page47.analysis.drift import (
     DriftComparison,
     DriftLedger,
     EvidenceLink,
+    EvidenceOrigin,
     compare_all_appearances,
     load_presentation_config,
 )
@@ -43,6 +45,7 @@ from page47.analysis.policy import (
     ReviewedObservation,
     ReviewRejection,
     apply_evidence_policy,
+    deterministic_vetoes,
     load_policy_config,
 )
 from page47.models.config import ModelSettings, load_model_settings
@@ -50,6 +53,7 @@ from page47.records.store import (
     FindingObservation,
     InvestigationRunObservation,
     RecordStore,
+    SourceReference,
     stable_json,
 )
 from page47.snapshotter.config import JSONObject, JSONValue, as_json_value
@@ -83,6 +87,7 @@ class _EvidenceCatalog:
     document_sources: frozenset[EvidenceKey]
     attachment_sources: frozenset[EvidenceKey]
     page_sources: dict[EvidenceKey, frozenset[int]]
+    source_origins: dict[EvidenceKey, EvidenceOrigin]
 
 
 @dataclass(frozen=True, slots=True)
@@ -98,12 +103,19 @@ def _now() -> str:
     return datetime.now(UTC).isoformat()
 
 
-def _evidence(item: AgentEvidence) -> EvidenceLink:
+def _evidence(
+    item: AgentEvidence,
+    source_origins: Mapping[EvidenceKey, EvidenceOrigin] | None = None,
+) -> EvidenceLink:
+    origin = item.origin
+    if source_origins is not None:
+        origin = source_origins.get((item.url, item.captured_at), origin)
     return EvidenceLink(
         label=item.label,
         url=item.url,
         captured_at=item.captured_at,
         page_number=item.page_number,
+        origin=origin,
     )
 
 
@@ -113,20 +125,28 @@ def _evidence_json(link: EvidenceLink) -> JSONObject:
         "url": link.url,
         "captured_at": link.captured_at,
         "page_number": link.page_number,
+        "origin": link.origin,
     }
 
 
-def _observation(item: AgentObservation) -> ReviewedObservation:
+def _observation(
+    item: AgentObservation,
+    source_origins: Mapping[EvidenceKey, EvidenceOrigin] | None = None,
+) -> ReviewedObservation:
     return ReviewedObservation(
         observation_id=item.observation_id,
         direction=item.direction,
         text=item.statement,
-        evidence=tuple(_evidence(evidence) for evidence in item.evidence),
+        evidence=tuple(_evidence(evidence, source_origins) for evidence in item.evidence),
     )
 
 
-def _namespaced_observation(role: str, item: AgentObservation) -> ReviewedObservation:
-    observation = _observation(item)
+def _namespaced_observation(
+    role: str,
+    item: AgentObservation,
+    source_origins: Mapping[EvidenceKey, EvidenceOrigin] | None = None,
+) -> ReviewedObservation:
+    observation = _observation(item, source_origins)
     return ReviewedObservation(
         observation_id=f"{role}:{observation.observation_id}",
         direction=observation.direction,
@@ -135,7 +155,10 @@ def _namespaced_observation(role: str, item: AgentObservation) -> ReviewedObserv
     )
 
 
-def _substance_observations(report: SubstanceReport) -> tuple[ReviewedObservation, ...]:
+def _substance_observations(
+    report: SubstanceReport,
+    source_origins: Mapping[EvidenceKey, EvidenceOrigin] | None = None,
+) -> tuple[ReviewedObservation, ...]:
     output: list[ReviewedObservation] = []
     for change in report.changes:
         if change.before is not None and change.after is not None:
@@ -150,7 +173,7 @@ def _substance_observations(report: SubstanceReport) -> tuple[ReviewedObservatio
                 observation_id=f"substance:{change.observation_id}",
                 direction="neutral",
                 text=statement,
-                evidence=(_evidence(change.evidence),),
+                evidence=(_evidence(change.evidence, source_origins),),
             )
         )
     return tuple(output)
@@ -161,17 +184,21 @@ def _evidence_catalog(case: MatterCase) -> _EvidenceCatalog:
     document_sources: set[EvidenceKey] = set()
     attachment_sources: set[EvidenceKey] = set()
     page_sources: dict[EvidenceKey, set[int]] = {}
+    source_origins: dict[EvidenceKey, EvidenceOrigin] = {}
 
     def add_source(
-        url: str,
-        captured_at: str,
+        source: SourceReference,
         *,
         document: bool = False,
         attachment: bool = False,
         pages: tuple[int, ...] = (),
     ) -> None:
-        key = (url, captured_at)
+        key = (source.url, source.captured_at)
         all_sources.add(key)
+        if source.is_forward_capture:
+            source_origins[key] = "observed_by_page47"
+        else:
+            source_origins.setdefault(key, "reconstructed_from_public_record")
         if document:
             document_sources.add(key)
         if attachment:
@@ -179,33 +206,30 @@ def _evidence_catalog(case: MatterCase) -> _EvidenceCatalog:
         if pages:
             page_sources.setdefault(key, set()).update(pages)
 
-    add_source(case.matter.source.url, case.matter.source.captured_at)
+    add_source(case.matter.source)
     for appearance in case.appearances:
-        add_source(appearance.source.url, appearance.source.captured_at)
+        add_source(appearance.source)
         if appearance.pdf_source is not None:
             add_source(
-                appearance.pdf_source.url,
-                appearance.pdf_source.captured_at,
+                appearance.pdf_source,
                 document=True,
                 pages=appearance.pdf_evidence_pages,
             )
         for attachment in appearance.attachments:
-            add_source(attachment.source.url, attachment.source.captured_at)
+            add_source(attachment.source)
             if attachment.reading_source is not None:
                 pages: tuple[int, ...] = ()
                 if attachment.page_count is not None:
                     pages = tuple(range(1, attachment.page_count + 1))
                 add_source(
-                    attachment.reading_source.url,
-                    attachment.reading_source.captured_at,
+                    attachment.reading_source,
                     document=True,
                     attachment=True,
                     pages=pages,
                 )
             for anchor in attachment.anchors:
                 add_source(
-                    anchor.source.url,
-                    anchor.source.captured_at,
+                    anchor.source,
                     document=True,
                     attachment=True,
                     pages=(anchor.page_number,),
@@ -217,8 +241,7 @@ def _evidence_catalog(case: MatterCase) -> _EvidenceCatalog:
                 if attachment.page_count is not None:
                     pages = tuple(range(1, attachment.page_count + 1))
                 add_source(
-                    capture_source.url,
-                    capture_source.captured_at,
+                    capture_source,
                     document=True,
                     attachment=True,
                     pages=pages,
@@ -228,6 +251,7 @@ def _evidence_catalog(case: MatterCase) -> _EvidenceCatalog:
         document_sources=frozenset(document_sources),
         attachment_sources=frozenset(attachment_sources),
         page_sources={key: frozenset(values) for key, values in page_sources.items()},
+        source_origins=source_origins,
     )
 
 
@@ -342,8 +366,11 @@ def _validate_brief(
 def _agent_observations(
     role: str,
     observations: tuple[AgentObservation, ...],
+    source_origins: Mapping[EvidenceKey, EvidenceOrigin] | None = None,
 ) -> tuple[tuple[ReviewedObservation, ...], dict[str, tuple[str, ...]]]:
-    output = tuple(_namespaced_observation(role, item) for item in observations)
+    output = tuple(
+        _namespaced_observation(role, item, source_origins) for item in observations
+    )
     aliases: dict[str, list[str]] = {}
     for item in output:
         raw_id = item.observation_id.removeprefix(f"{role}:")
@@ -393,17 +420,18 @@ def _agent_reports(
     substance: SubstanceReport,
     process: ProcessReport,
     skeptic: SkepticReport,
+    source_origins: Mapping[EvidenceKey, EvidenceOrigin] | None = None,
 ) -> tuple[AgentReports, dict[str, tuple[str, ...]]]:
     archivist_observations, archivist_aliases = _agent_observations(
-        "archivist", tuple(archivist.observations)
+        "archivist", tuple(archivist.observations), source_origins
     )
-    substance_observations = _substance_observations(substance)
+    substance_observations = _substance_observations(substance, source_origins)
     substance_aliases: dict[str, tuple[str, ...]] = {}
     for item in substance.changes:
         substance_aliases.setdefault(item.observation_id, ())
         substance_aliases[item.observation_id] += (f"substance:{item.observation_id}",)
     process_observations, process_aliases = _agent_observations(
-        "process", tuple(process.observations)
+        "process", tuple(process.observations), source_origins
     )
     aliases = _merge_aliases((archivist_aliases, substance_aliases, process_aliases))
     observations = archivist_observations + substance_observations + process_observations
@@ -459,6 +487,7 @@ def _brief_with_resolved_ids(
                     url=link.url,
                     captured_at=link.captured_at,
                     page_number=link.page_number,
+                    origin=link.origin,
                 )
                 for link in observations[observation_id].evidence
             ],
@@ -705,7 +734,13 @@ def _complete_review(
     archivist, substance, process, skeptic, brief = reports
     catalog = _evidence_catalog(inputs.case)
     _validate_agent_reports(reports, catalog)
-    agent_reports, aliases = _agent_reports(archivist, substance, process, skeptic)
+    agent_reports, aliases = _agent_reports(
+        archivist,
+        substance,
+        process,
+        skeptic,
+        catalog.source_origins,
+    )
     structural = _structural_observation(
         inputs.drift.comparisons[-1] if inputs.drift.comparisons else None
     )
@@ -720,6 +755,19 @@ def _complete_review(
         accepted_observation_ids=agent_reports.accepted_observation_ids,
         rejections=agent_reports.rejections,
     )
+    accepted_before_veto = tuple(
+        observation
+        for observation in report.observations
+        if observation.observation_id in report.accepted_observation_ids
+    )
+    vetoes = deterministic_vetoes(inputs.case, inputs.drift, accepted_before_veto)
+    if vetoes:
+        vetoed_ids = frozenset(item.observation_id for item in vetoes)
+        report = AgentReports(
+            observations=report.observations,
+            accepted_observation_ids=report.accepted_observation_ids - vetoed_ids,
+            rejections=report.rejections + vetoes,
+        )
     decision = apply_evidence_policy(report, inputs.policy_config)
     accepted_ids = frozenset(item.observation_id for item in decision.accepted)
     _validate_brief(brief, accepted_ids, aliases, by_id)

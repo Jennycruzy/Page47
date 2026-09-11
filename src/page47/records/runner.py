@@ -107,7 +107,15 @@ def source_for_capture(capture: JSONObject, kind: str = "api") -> SourceReferenc
     captured_at = text_value(capture, "captured_at")
     if target is None or source_url is None or captured_at is None:
         raise ValueError("A stored capture lacked its target, URL, or capture time")
-    return SourceReference(kind=kind, url=source_url, captured_at=captured_at)
+    return SourceReference(
+        kind=kind,
+        url=source_url,
+        captured_at=captured_at,
+        observed_by_page47=text_value(capture, "capture_key") is not None,
+        capture_key=text_value(capture, "capture_key"),
+        response_sha256=text_value(capture, "response_sha256"),
+        content_sha256=text_value(capture, "content_sha256"),
+    )
 
 
 def response_hash(capture: JSONObject) -> str | None:

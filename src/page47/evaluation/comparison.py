@@ -43,6 +43,7 @@ class ArmResult:
                     "url": item.url,
                     "captured_at": item.captured_at,
                     "page_number": item.page_number,
+                    "origin": item.origin,
                 }
             )
         return {

@@ -18,6 +18,7 @@ from page47.records.store import SourceReference
 from page47.snapshotter.config import JSONObject, JSONValue, as_json_value
 
 AreaMatchStatus = Literal["confirmed", "may_affect"]
+AreaMatchBasis = Literal["direct_public_text", "inferred_relevance"]
 
 
 @dataclass(frozen=True, slots=True)
@@ -87,12 +88,16 @@ class AreaMatch:
     matched_terms: tuple[str, ...]
     evidence: tuple[SourceReference, ...]
     address: CensusAddress | None
+    basis: AreaMatchBasis = "inferred_relevance"
+    matched_fields: tuple[str, ...] = ()
 
     def as_json(self) -> JSONObject:
         return {
             "status": self.status,
             "reason": self.reason,
             "matched_terms": list(self.matched_terms),
+            "basis": self.basis,
+            "matched_fields": list(self.matched_fields),
             "evidence": [item.as_json() for item in self.evidence],
             "address": self.address.as_json() if self.address is not None else None,
         }
@@ -218,32 +223,52 @@ def _tokens(value: str) -> set[str]:
     return {token.casefold() for token in re.findall(r"[A-Za-z0-9]+", value) if len(token) > 1}
 
 
-def _case_text(case: MatterCase) -> tuple[str, tuple[SourceReference, ...]]:
-    pieces: list[str] = []
+def _case_fields(case: MatterCase) -> tuple[
+    tuple[tuple[str, str], ...], tuple[tuple[str, str], ...], tuple[SourceReference, ...]
+]:
+    direct_fields: list[tuple[str, str]] = []
+    inferred_fields: list[tuple[str, str]] = []
     sources: dict[str, SourceReference] = {}
-    pieces.extend(
-        item
-        for item in (case.matter.current_title, case.matter.matter_name, case.matter.file_number)
-        if isinstance(item, str)
-    )
+    for field, value in (
+        ("matter.current_title", case.matter.current_title),
+        ("matter.matter_name", case.matter.matter_name),
+        ("matter.file_number", case.matter.file_number),
+    ):
+        if isinstance(value, str):
+            direct_fields.append((field, value))
     sources[case.matter.source.url] = case.matter.source
     for appearance in case.appearances:
-        pieces.extend(
-            item
-            for item in (
-                appearance.title_as_presented,
-                appearance.agenda_note,
-                appearance.minutes_note,
-                appearance.body_name,
-            )
-            if isinstance(item, str)
-        )
+        for field, value in (
+            ("appearance.title_as_presented", appearance.title_as_presented),
+            ("appearance.agenda_note", appearance.agenda_note),
+            ("appearance.minutes_note", appearance.minutes_note),
+        ):
+            if isinstance(value, str):
+                direct_fields.append((field, value))
+        if isinstance(appearance.body_name, str):
+            inferred_fields.append(("appearance.body_name", appearance.body_name))
         sources[appearance.source.url] = appearance.source
         for attachment in appearance.attachments:
             if attachment.name is not None:
-                pieces.append(attachment.name)
+                direct_fields.append(("attachment.name", attachment.name))
             sources[attachment.source.url] = attachment.source
-    return " ".join(pieces), tuple(sources.values())
+    return tuple(direct_fields), tuple(inferred_fields), tuple(sources.values())
+
+
+def _field_matches(
+    fields: tuple[tuple[str, str], ...], requested_terms: tuple[str, ...]
+) -> tuple[tuple[str, ...], tuple[str, ...]]:
+    matched_terms: list[str] = []
+    matched_fields: list[str] = []
+    for field, text in fields:
+        hits = tuple(term for term in requested_terms if term in _tokens(text))
+        if not hits:
+            continue
+        matched_fields.append(field)
+        for term in hits:
+            if term not in matched_terms:
+                matched_terms.append(term)
+    return tuple(matched_terms), tuple(matched_fields)
 
 
 def match_case_to_area(
@@ -253,26 +278,43 @@ def match_case_to_area(
 ) -> AreaMatch:
     if address is None and (neighbourhood is None or not neighbourhood.strip()):
         raise ValueError("An address or neighbourhood is required")
-    text, sources = _case_text(case)
-    searchable = _tokens(text)
+    direct_fields, inferred_fields, sources = _case_fields(case)
     requested_terms: list[str] = []
     if address is not None and address.street_name is not None:
         requested_terms.extend(sorted(_tokens(address.street_name)))
     if neighbourhood is not None and neighbourhood.strip():
         requested_terms.extend(sorted(_tokens(neighbourhood)))
-    matched = tuple(term for term in dict.fromkeys(requested_terms) if term in searchable)
+    terms = tuple(dict.fromkeys(requested_terms))
+    matched, matched_fields = _field_matches(direct_fields, terms)
     if matched:
         return AreaMatch(
             "confirmed",
-            "The stored public record contains the requested street or neighbourhood words.",
+            "The requested area appears in the stored public record's direct text "
+            f"({', '.join(matched_fields)}).",
             matched,
             sources,
             address,
+            "direct_public_text",
+            matched_fields,
+        )
+    inferred_terms, inferred_fields_matched = _field_matches(inferred_fields, terms)
+    if inferred_terms:
+        return AreaMatch(
+            "may_affect",
+            "The record matches a public-body or jurisdiction term, but the requested "
+            "area was not identified directly in the matter text.",
+            inferred_terms,
+            sources,
+            address,
+            "inferred_relevance",
+            inferred_fields_matched,
         )
     return AreaMatch(
         "may_affect",
-        "May affect your area — could not confirm it from street, neighbourhood, or district text.",
+        "May affect your area — no direct street or neighbourhood text match was found.",
         (),
         sources,
         address,
+        "inferred_relevance",
+        (),
     )

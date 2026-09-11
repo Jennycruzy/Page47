@@ -78,6 +78,15 @@ The collector writes a success heartbeat only after the complete scheduled run
 finishes. A failed run remains visible as a failure and does not look like a
 successful check.
 
+The capture manifest is accompanied by a chained integrity log. Each entry
+commits to the previous chain value and the canonical hash of the corresponding
+manifest record. `SnapshotStore.verify_integrity()` checks the manifest and
+chain before an evidence backup can run. The repository includes an optional
+S3 exporter that copies the original bytes and operational JSON files after
+verification. The current deployment has not configured that bucket, so this is
+an available durability path rather than a claim that the live host already has
+object-storage redundancy.
+
 ### 3. Comparison boundary
 
 The normalizer converts city responses into a common matter history. The
@@ -137,6 +146,7 @@ Every alert includes the private stop-watch link.
 | Amazon CloudWatch | Log delivery, collector completion metric, and missed-run alarm. |
 | Amazon SES | Transactional review email. |
 | AWS Systems Manager | Runtime parameters and deployment configuration. |
+| Amazon S3 (optional) | Verified off-host copy of captured bytes and evidence metadata. |
 
 ## Security and trust model
 
@@ -146,6 +156,11 @@ Every alert includes the private stop-watch link.
 - Secrets are supplied through the host role or secret configuration, never
   committed to the repository.
 - A private watch link is the management credential; it is not an account login.
+- Watch links use high-entropy tokens, are marked `no-store`, and are not
+  exposed to referrers by the web service.
+- Watch creation and investigation-triggering endpoints have bounded
+  process-local rate limits; expensive investigations are also serialized per
+  city and matter.
 - Historical gaps produce abstention rather than invented transitions.
 - The system describes supported public-record changes and does not infer
   motive, corruption, legality, or a political position.

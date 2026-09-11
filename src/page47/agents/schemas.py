@@ -7,6 +7,12 @@ from typing import Literal, Self
 from pydantic import BaseModel, Field, model_validator
 
 Direction = Literal["clearer", "less_clear", "neutral"]
+EvidenceOrigin = Literal[
+    "observed_by_page47",
+    "reconstructed_from_public_record",
+    "current_public_record",
+    "cannot_determine",
+]
 
 _UNAVAILABLE_VALUES = frozenset(
     {
@@ -29,6 +35,7 @@ class AgentEvidence(BaseModel):
     url: str = Field(min_length=1)
     captured_at: str = Field(min_length=1)
     page_number: int | None = Field(default=None, ge=1)
+    origin: EvidenceOrigin = "reconstructed_from_public_record"
 
 
 class AgentObservation(BaseModel):

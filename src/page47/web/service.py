@@ -4,7 +4,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import UTC, datetime
-from uuid import uuid4
+from secrets import token_urlsafe
+from threading import Lock
 
 from page47.address.matcher import (
     AreaMatch,
@@ -52,6 +53,8 @@ class WebService:
             if self.agentcore_settings.enabled
             else None
         )
+        self._investigation_lock = Lock()
+        self._investigations_in_flight: set[tuple[str, int]] = set()
 
     def _runtime(self, city: str) -> CityRuntime:
         return self.settings.city(city)
@@ -226,7 +229,7 @@ class WebService:
                 self.address_settings,
                 runtime.evidence_root,
             )
-        watch_id = uuid4().hex
+        watch_id = token_urlsafe(32)
         now = datetime.now(UTC).isoformat()
         with self._store(data.city) as store:
             store.save_watch(
@@ -319,45 +322,54 @@ class WebService:
     def investigate(self, city: str, matter_id: int) -> JSONObject:
         runtime = self._runtime(city)
         root = self.settings.repository_root
-        with self._store(city) as store:
-            if self.agentcore is None:
-                outcome = investigate_matter(
-                    store=store,
-                    city=city,
-                    matter_id=matter_id,
-                    evidence_root=runtime.evidence_root,
-                    models_path=root / "config" / "models.yaml",
-                    presentation_path=root / "config" / "presentation.yaml",
-                    policy_path=root / "config" / "policy.yaml",
-                    norms_path=root / "config" / "norms.yaml",
-                )
-            else:
-                case = load_matter_case(store, city, matter_id, runtime.evidence_root)
-                try:
-                    graph_result = self.agentcore.invoke_case(case)
-                except Exception as error:
-                    record_failed_investigation(store, city, matter_id, error)
-                    raise
-                outcome = review_graph_payload(
-                    store=store,
-                    city=city,
-                    matter_id=matter_id,
-                    evidence_root=runtime.evidence_root,
-                    models_path=root / "config" / "models.yaml",
-                    presentation_path=root / "config" / "presentation.yaml",
-                    policy_path=root / "config" / "policy.yaml",
-                    norms_path=root / "config" / "norms.yaml",
-                    graph_result=graph_result,
-                )
-            return {
-                "run_id": outcome.run_id,
-                "finding_id": f"{city.casefold().replace(' ', '-')}-{matter_id}",
-                "state": outcome.decision.state,
-                "publish": outcome.decision.publish,
-                "message": (
-                    "The stored public record was reviewed and the result is available below."
-                ),
-            }
+        key = (city, matter_id)
+        with self._investigation_lock:
+            if key in self._investigations_in_flight:
+                raise RuntimeError("An investigation for this matter is already in progress")
+            self._investigations_in_flight.add(key)
+        try:
+            with self._store(city) as store:
+                if self.agentcore is None:
+                    outcome = investigate_matter(
+                        store=store,
+                        city=city,
+                        matter_id=matter_id,
+                        evidence_root=runtime.evidence_root,
+                        models_path=root / "config" / "models.yaml",
+                        presentation_path=root / "config" / "presentation.yaml",
+                        policy_path=root / "config" / "policy.yaml",
+                        norms_path=root / "config" / "norms.yaml",
+                    )
+                else:
+                    case = load_matter_case(store, city, matter_id, runtime.evidence_root)
+                    try:
+                        graph_result = self.agentcore.invoke_case(case)
+                    except Exception as error:
+                        record_failed_investigation(store, city, matter_id, error)
+                        raise
+                    outcome = review_graph_payload(
+                        store=store,
+                        city=city,
+                        matter_id=matter_id,
+                        evidence_root=runtime.evidence_root,
+                        models_path=root / "config" / "models.yaml",
+                        presentation_path=root / "config" / "presentation.yaml",
+                        policy_path=root / "config" / "policy.yaml",
+                        norms_path=root / "config" / "norms.yaml",
+                        graph_result=graph_result,
+                    )
+                return {
+                    "run_id": outcome.run_id,
+                    "finding_id": f"{city.casefold().replace(' ', '-')}-{matter_id}",
+                    "state": outcome.decision.state,
+                    "publish": outcome.decision.publish,
+                    "message": (
+                        "The stored public record was reviewed and the result is available below."
+                    ),
+                }
+        finally:
+            with self._investigation_lock:
+                self._investigations_in_flight.discard(key)
 
     def attachment_file(self, city: str, attachment_id: int) -> tuple[bytes, SourceReference]:
         runtime = self._runtime(city)

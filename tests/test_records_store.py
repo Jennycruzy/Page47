@@ -4,12 +4,15 @@ import json
 from dataclasses import replace
 from pathlib import Path
 
+from page47.analysis.case import load_matter_case
 from page47.records.runner import (
     appearance_observation,
     attachment_observation,
     matter_observation,
 )
 from page47.records.store import (
+    AppearanceObservation,
+    MatterObservation,
     NotificationObservation,
     RecordStore,
     SnapshotObservation,
@@ -168,6 +171,83 @@ def test_recorded_detail_can_be_read_as_a_typed_object() -> None:
     detail = as_object(decoded, "recorded event detail")
     items = as_objects(detail["EventItems"], "recorded event items")
     assert len(items) > 0
+
+
+def test_forward_capture_metadata_survives_record_roundtrip(tmp_path: Path) -> None:
+    matter_source = SourceReference(
+        kind="api",
+        url="https://records.example/matters/7",
+        captured_at="2026-09-10T00:00:00Z",
+        observed_by_page47=True,
+        capture_key="matter-capture-1",
+        response_sha256="matter-response-1",
+        content_sha256="matter-content-1",
+    )
+    appearance_source = SourceReference(
+        kind="api",
+        url="https://records.example/items/7",
+        captured_at="2026-09-11T00:00:00Z",
+        observed_by_page47=True,
+        capture_key="item-capture-2",
+        response_sha256="item-response-2",
+        content_sha256="item-content-2",
+    )
+    with RecordStore(tmp_path / "records.sqlite3") as store:
+        store.upsert_matter(
+            MatterObservation(
+                matter_id=7,
+                file_number="AB-7",
+                matter_name=None,
+                current_title="Pine Street improvements",
+                type_name=None,
+                status_name=None,
+                body_id=1,
+                body_name="Full Council",
+                intro_date=None,
+                agenda_date=None,
+                version=None,
+                last_modified_utc=None,
+                source=matter_source,
+                provenance={"current_title": matter_source.as_json()},
+            )
+        )
+        store.upsert_appearance(
+            AppearanceObservation(
+                event_item_id=7,
+                matter_id=7,
+                event_id=7,
+                event_date="2026-09-11T00:00:00Z",
+                body_id=1,
+                body_name="Full Council",
+                title_as_presented="Pine Street improvements",
+                consent_value=None,
+                pdf_placement="regular",
+                pdf_evidence_pages_json="[1]",
+                pdf_placement_reason="Captured agenda page",
+                agenda_sequence=1,
+                agenda_number="1",
+                action_taken=None,
+                action_text=None,
+                passed_flag_name=None,
+                matter_version_at_event=None,
+                agenda_note=None,
+                minutes_note=None,
+                item_last_modified_utc=None,
+                source=appearance_source,
+                provenance={
+                    "title_as_presented": appearance_source.as_json(),
+                    "pdf_placement": appearance_source.as_json(),
+                },
+            )
+        )
+        store.commit()
+
+        loaded = load_matter_case(store, "Seattle, Washington", 7, tmp_path / "evidence")
+
+    assert loaded.matter.source.is_forward_capture is True
+    assert loaded.matter.source.capture_key == "matter-capture-1"
+    assert loaded.appearances[0].source.is_forward_capture is True
+    assert loaded.appearances[0].source.capture_key == "item-capture-2"
 
 
 def test_recorded_snapshot_marks_a_detail_as_applied(tmp_path: Path) -> None:
