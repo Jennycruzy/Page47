@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="960" viewBox="0 0 1500 960" role="img" aria-labelledby="title desc">
+  <title id="title">Page 47 architecture</title>
+  <desc id="desc">Resident watch setup flows through city adapters, append-only evidence capture, deterministic comparison, a five-role Strands investigation graph, evidence policy, and an evidence-linked alert.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52665b"/>
+    </marker>
+    <marker id="dashed-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7186a8"/>
+    </marker>
+    <style>
+      .bg { fill: #f7f8f3; }
+      .title { fill: #14231b; font: 800 32px Inter, ui-sans-serif, system-ui, sans-serif; }
+      .subtitle { fill: #52665b; font: 400 16px Inter, ui-sans-serif, system-ui, sans-serif; }
+      .section { fill: #22664b; font: 800 13px Inter, ui-sans-serif, system-ui, sans-serif; letter-spacing: 2px; }
+      .node { fill: #ffffff; stroke: #b9cbbd; stroke-width: 2; }
+      .node-green { fill: #e8f2e9; stroke: #82ae91; stroke-width: 2; }
+      .node-blue { fill: #edf3fb; stroke: #9db4d4; stroke-width: 2; }
+      .node-amber { fill: #fff5d9; stroke: #d7b461; stroke-width: 2; }
+      .node-title { fill: #14231b; font: 750 17px Inter, ui-sans-serif, system-ui, sans-serif; }
+      .node-copy { fill: #52665b; font: 400 13px Inter, ui-sans-serif, system-ui, sans-serif; }
+      .small { fill: #52665b; font: 600 12px Inter, ui-sans-serif, system-ui, sans-serif; }
+      .arrow { fill: none; stroke: #52665b; stroke-width: 2.5; marker-end: url(#arrow); }
+      .dashed { fill: none; stroke: #7186a8; stroke-width: 2; stroke-dasharray: 7 6; marker-end: url(#dashed-arrow); }
+      .boundary { fill: none; stroke: #d4dfd5; stroke-width: 2; stroke-dasharray: 8 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1500" height="960" rx="24"/>
+  <text class="title" x="64" y="68">Page 47 · evidence before interpretation</text>
+  <text class="subtitle" x="64" y="98">A resident watch becomes a retained observation, a skeptical review, and an evidence-linked question.</text>
+
+  <text class="section" x="64" y="148">RESIDENT EXPERIENCE</text>
+  <rect class="boundary" x="48" y="166" width="1404" height="134" rx="18"/>
+  <rect class="node-green" x="78" y="196" width="215" height="72" rx="12"/>
+  <text class="node-title" x="185" y="225" text-anchor="middle">Resident</text>
+  <text class="node-copy" x="185" y="248" text-anchor="middle">city · area · email</text>
+  <rect class="node-green" x="362" y="196" width="235" height="72" rx="12"/>
+  <text class="node-title" x="479" y="225" text-anchor="middle">Watch setup</text>
+  <text class="node-copy" x="479" y="248" text-anchor="middle">private management link</text>
+  <rect class="node-green" x="666" y="196" width="235" height="72" rx="12"/>
+  <text class="node-title" x="783" y="225" text-anchor="middle">Page 47 web</text>
+  <text class="node-copy" x="783" y="248" text-anchor="middle">findings · replay · stop</text>
+  <rect class="node-amber" x="970" y="196" width="420" height="72" rx="12"/>
+  <text class="node-title" x="1180" y="225" text-anchor="middle">Evidence-linked resident brief</text>
+  <text class="node-copy" x="1180" y="248" text-anchor="middle">what changed · what is unknown · questions</text>
+  <path class="arrow" d="M293 232 H362"/>
+  <path class="arrow" d="M597 232 H666"/>
+  <path class="arrow" d="M901 232 H970"/>
+
+  <text class="section" x="64" y="348">OBSERVE AND PRESERVE</text>
+  <rect class="boundary" x="48" y="366" width="1404" height="178" rx="18"/>
+  <rect class="node" x="78" y="403" width="225" height="100" rx="12"/>
+  <text class="node-title" x="190" y="432" text-anchor="middle">15-minute scheduler</text>
+  <text class="node-copy" x="190" y="457" text-anchor="middle">completed-run heartbeat</text>
+  <text class="node-copy" x="190" y="478" text-anchor="middle">failed runs stay visible</text>
+  <rect class="node" x="355" y="403" width="250" height="100" rx="12"/>
+  <text class="node-title" x="480" y="432" text-anchor="middle">City adapters</text>
+  <text class="node-copy" x="480" y="457" text-anchor="middle">Seattle · Denver</text>
+  <text class="node-copy" x="480" y="478" text-anchor="middle">separate source semantics</text>
+  <rect class="node-green" x="657" y="390" width="305" height="126" rx="12"/>
+  <text class="node-title" x="810" y="420" text-anchor="middle">Append-only capture store</text>
+  <text class="node-copy" x="810" y="445" text-anchor="middle">bytes · SHA-256 · URL</text>
+  <text class="node-copy" x="810" y="465" text-anchor="middle">capture time · status · ETag</text>
+  <text class="node-copy" x="810" y="485" text-anchor="middle">explicit retrieval errors</text>
+  <rect class="node" x="1014" y="403" width="190" height="100" rx="12"/>
+  <text class="node-title" x="1109" y="432" text-anchor="middle">Normalizer</text>
+  <text class="node-copy" x="1109" y="457" text-anchor="middle">common matter history</text>
+  <text class="node-copy" x="1109" y="478" text-anchor="middle">version lineage</text>
+  <rect class="node-green" x="1256" y="403" width="160" height="100" rx="12"/>
+  <text class="node-title" x="1336" y="432" text-anchor="middle">Comparator</text>
+  <text class="node-copy" x="1336" y="457" text-anchor="middle">clearer · less clear</text>
+  <text class="node-copy" x="1336" y="478" text-anchor="middle">mixed · abstain</text>
+  <path class="arrow" d="M303 453 H355"/>
+  <path class="arrow" d="M605 453 H657"/>
+  <path class="arrow" d="M962 453 H1014"/>
+  <path class="arrow" d="M1204 453 H1256"/>
+
+  <text class="section" x="64" y="592">INVESTIGATE, CHALLENGE, SURFACE</text>
+  <rect class="boundary" x="48" y="610" width="1404" height="220" rx="18"/>
+  <rect class="node-blue" x="78" y="662" width="180" height="110" rx="12"/>
+  <text class="node-title" x="168" y="691" text-anchor="middle">Strands graph</text>
+  <text class="node-copy" x="168" y="716" text-anchor="middle">evidence branches</text>
+  <text class="node-copy" x="168" y="737" text-anchor="middle">shared matter context</text>
+  <rect class="node" x="313" y="643" width="170" height="64" rx="12"/>
+  <text class="node-title" x="398" y="670" text-anchor="middle">Archivist</text>
+  <text class="node-copy" x="398" y="690" text-anchor="middle">history + links</text>
+  <rect class="node" x="313" y="726" width="170" height="64" rx="12"/>
+  <text class="node-title" x="398" y="753" text-anchor="middle">Substance</text>
+  <text class="node-copy" x="398" y="773" text-anchor="middle">captured pages</text>
+  <rect class="node" x="520" y="684" width="170" height="64" rx="12"/>
+  <text class="node-title" x="605" y="711" text-anchor="middle">Process</text>
+  <text class="node-copy" x="605" y="731" text-anchor="middle">title + placement</text>
+  <rect class="node-amber" x="733" y="662" width="190" height="110" rx="12"/>
+  <text class="node-title" x="828" y="691" text-anchor="middle">Skeptic</text>
+  <text class="node-copy" x="828" y="716" text-anchor="middle">accept · reject</text>
+  <text class="node-copy" x="828" y="737" text-anchor="middle">or insufficient</text>
+  <rect class="node" x="966" y="662" width="190" height="110" rx="12"/>
+  <text class="node-title" x="1061" y="691" text-anchor="middle">Brief Writer</text>
+  <text class="node-copy" x="1061" y="716" text-anchor="middle">accepted evidence</text>
+  <text class="node-copy" x="1061" y="737" text-anchor="middle">≤ 3 questions</text>
+  <rect class="node-green" x="1199" y="662" width="217" height="110" rx="12"/>
+  <text class="node-title" x="1307" y="691" text-anchor="middle">Evidence policy</text>
+  <text class="node-copy" x="1307" y="716" text-anchor="middle">save finding</text>
+  <text class="node-copy" x="1307" y="737" text-anchor="middle">then alert</text>
+  <path class="arrow" d="M258 717 H313"/>
+  <path class="arrow" d="M483 675 C590 620 660 640 733 695"/>
+  <path class="arrow" d="M483 758 C590 790 660 780 733 740"/>
+  <path class="arrow" d="M690 716 H733"/>
+  <path class="arrow" d="M923 717 H966"/>
+  <path class="arrow" d="M1156 717 H1199"/>
+  <path class="arrow" d="M1307 662 V566 H783 V300"/>
+  <text class="small" x="1058" y="583" text-anchor="middle">saved review returns to the resident UI</text>
+
+  <text class="section" x="64" y="878">AWS CONTROL PLANE AND TRUST BOUNDARY</text>
+  <rect class="node-blue" x="78" y="895" width="250" height="42" rx="10"/>
+  <text class="node-title" x="203" y="922" text-anchor="middle" font-size="15">Bedrock · AgentCore Runtime</text>
+  <rect class="node-blue" x="372" y="895" width="250" height="42" rx="10"/>
+  <text class="node-title" x="497" y="922" text-anchor="middle" font-size="15">ADOT/OpenTelemetry</text>
+  <rect class="node-blue" x="666" y="895" width="250" height="42" rx="10"/>
+  <text class="node-title" x="791" y="922" text-anchor="middle" font-size="15">CloudWatch · Lightsail</text>
+  <rect class="node-blue" x="960" y="895" width="190" height="42" rx="10"/>
+  <text class="node-title" x="1055" y="922" text-anchor="middle" font-size="15">SES</text>
+  <rect class="node-blue" x="1194" y="895" width="222" height="42" rx="10"/>
+  <text class="node-title" x="1305" y="922" text-anchor="middle" font-size="15">Systems Manager</text>
+  <path class="dashed" d="M203 895 V834"/>
+  <path class="dashed" d="M497 895 V834"/>
+  <path class="dashed" d="M791 895 V834"/>
+  <path class="dashed" d="M1055 895 V834"/>
+  <path class="dashed" d="M1305 895 V834"/>
+  <text class="small" x="1420" y="923" text-anchor="end">public documents are data, never instructions</text>
+</svg>

@@ -114,6 +114,8 @@ reviewer must be able to veto a weak interpretation.
 The full judge-facing diagram and system boundaries are in
 [docs/architecture.md](docs/architecture.md).
 
+![Page 47 architecture](docs/architecture.svg)
+
 ```mermaid
 flowchart LR
     R[Resident] --> W[Watch setup]

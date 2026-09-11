@@ -49,7 +49,7 @@ and a retained searchable managed-runtime trace.
 | Public code repository | `https://github.com/Jennycruzy/Page47` |
 | Live demo | `https://page47.xcover.online/` |
 | README | `https://github.com/Jennycruzy/Page47#readme` |
-| Architecture | `https://github.com/Jennycruzy/Page47/blob/main/docs/architecture.md` |
+| Architecture | `https://github.com/Jennycruzy/Page47/blob/main/docs/architecture.svg` (diagram) · `https://github.com/Jennycruzy/Page47/blob/main/docs/architecture.md` (details) |
 | License | MIT: `https://github.com/Jennycruzy/Page47/blob/main/LICENSE` |
 | Demo video | **TODO: paste public video URL; maximum 5 minutes** |
 | AWS Builder ID | **TODO: paste the submitting Builder ID** |
@@ -193,7 +193,7 @@ architecture diagram, demo plan, tests, evaluation artifacts, and limitations.
 - [ ] Repository visibility is **Public**.
 - [ ] `README.md` leads with the product and live demo.
 - [ ] `LICENSE` is MIT and visible in the repository.
-- [ ] Architecture diagram renders from `docs/architecture.md`.
+- [ ] Architecture diagram opens at `docs/architecture.svg`; detailed Mermaid/source explanation is in `docs/architecture.md`.
 - [ ] Demo video is public and no longer than five minutes.
 - [ ] Video covers the problem, users, why it matters, and the working product.
 - [ ] AWS Builder ID is entered in the submission form.

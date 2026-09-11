@@ -5,6 +5,8 @@ scheduled public-record collector, a deterministic presentation comparator, and
 a five-role investigation graph. Seattle and Denver share the product flow but
 keep their city rules in separate adapters.
 
+![Page 47 architecture diagram](architecture.svg)
+
 ## End-to-end flow
 
 ```mermaid
