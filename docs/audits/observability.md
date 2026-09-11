@@ -197,5 +197,6 @@ access before the agent and missed-run alarm can be configured. Runtime
 not being treated as proof that a searchable trace or monitoring pipeline
 works.
 
-CloudWatch log delivery and the missed-run alarm, one post-activation
-searchable trace, and the comparison outputs remain separate launch gates.
+CloudWatch log delivery and the missed-run alarm remain separate operational
+gates. The post-activation searchable trace and comparison outputs are now
+complete and retained above.

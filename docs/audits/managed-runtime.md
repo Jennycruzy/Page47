@@ -2,6 +2,11 @@
 
 This record proves that the Lightsail service can send a real stored matter to the deployed AgentCore runtime and save the returned review. It does not use a fabricated matter or a test-only response.
 
+> Historical note: the package measurements in this record describe the
+> initial managed-runtime review. The final ADOT package, runtime version, and
+> searchable trace are recorded in the [observability verification](observability.md)
+> and [AWS inventory](../AWS.md).
+
 ## Deployment evidence
 
 The deployment was run on Lightsail with the checked-in deployment script and the configured execution-role parameter:
@@ -81,6 +86,7 @@ Success: no issues found in 45 source files
 ## Remaining operational work
 
 This verification covers the managed review request, the live subdomain, and
-its save path. It does not claim that email delivery, Lightsail CloudWatch
-delivery/alarming, or a viewable trace is complete. Those items remain listed
-in `docs/AWS.md` until each one has a live check and recorded result.
+its save path. The searchable trace gate is closed by the final verification
+recorded in `observability.md`. SES production access and the remaining
+CloudWatch alarm evaluation are separate operational concerns and remain
+listed in `docs/AWS.md` with their actual status.
