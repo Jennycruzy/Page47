@@ -231,8 +231,7 @@ runtime secrets.
 | `tests/` | Offline application, evidence, evaluation, delivery, and deployment tests. |
 | `docs/audits/` | Dated operational, evaluation, delivery, and observability records. |
 | `docs/architecture.md` | Detailed judge-facing architecture and trust boundaries. |
-| `docs/submission.md` | Copy-ready submission description, demo script, and rubric crosswalk. |
-| `docs/builder-aws-post.md` | Draft bonus post for Builder.aws. |
+| `docs/submission.md` | Copy-ready submission description, required links, and rubric crosswalk. |
 
 ## Current limitations
 
