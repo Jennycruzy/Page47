@@ -14,6 +14,7 @@ from page47.address.matcher import (
     match_case_to_area,
 )
 from page47.analysis.case import load_matter_case
+from page47.analysis.drift import compare_all_appearances, load_presentation_config
 from page47.analysis.investigation import (
     investigate_matter,
     record_failed_investigation,
@@ -146,13 +147,26 @@ class WebService:
             return {"city": city, "findings": findings}
 
     def finding(self, city: str, finding_id: str) -> JSONObject:
+        runtime = self._runtime(city)
+        presentation = load_presentation_config(
+            self.settings.repository_root / "config" / "presentation.yaml"
+        )
         with self._store(city) as store:
             matches = [
                 item for item in store.finding_rows(city, 200) if item["finding_id"] == finding_id
             ]
             if not matches:
                 raise LookupError(f"Finding {finding_id} was not found")
-            return matches[0]
+            result = dict(matches[0])
+            matter_id = result.get("matter_id")
+            if isinstance(matter_id, bool) or not isinstance(matter_id, int):
+                raise ValueError("Stored finding matter ID was invalid")
+            case = load_matter_case(store, city, matter_id, runtime.evidence_root)
+            result["case"] = case.structural_payload()
+            result["drift"] = as_json_value(
+                compare_all_appearances(case, presentation).as_json()
+            )
+            return result
 
     def ledger(self, city: str) -> JSONObject:
         runtime = self._runtime(city)
@@ -248,7 +262,23 @@ class WebService:
             with self._store(city.name) as store:
                 watch = store.watch_row(watch_id)
                 if watch is not None:
+                    sent_row = store.connection.execute(
+                        "SELECT COUNT(*) FROM notifications "
+                        "WHERE watch_id = ? AND status = 'sent'",
+                        (watch_id,),
+                    ).fetchone()
+                    if sent_row is None or not isinstance(sent_row[0], int):
+                        raise ValueError("Stored watch delivery count was invalid")
+                    run_row = store.connection.execute(
+                        "SELECT finished_at FROM collection_runs "
+                        "WHERE status = 'completed' ORDER BY finished_at DESC LIMIT 1"
+                    ).fetchone()
+                    last_check = run_row[0] if run_row is not None else None
+                    if last_check is not None and not isinstance(last_check, str):
+                        raise ValueError("Stored collector check time was invalid")
                     watch["manage_path"] = f"/watch/{watch_id}"
+                    watch["reviews_delivered"] = sent_row[0]
+                    watch["last_successful_check"] = last_check
                     return watch
         raise LookupError(f"Watch {watch_id} was not found")
 

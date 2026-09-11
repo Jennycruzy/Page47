@@ -91,8 +91,10 @@ links, capture times, and hashes.
 
 ### 1:35–2:15 — Show a stored review
 
-Open the strongest genuine stored review from the homepage. Clearly label it as
-a review of captured public records, not a live event.
+Open the strongest genuine stored review from the homepage, then choose
+**Replay captured case**. The replay uses the saved public records and the same
+finding presentation as the live review path; it is clearly labeled as stored
+public records, not a live event.
 
 ### 2:15–2:45 — Show dimensions
 

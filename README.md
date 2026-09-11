@@ -51,8 +51,10 @@ agenda semantics.
    record and ends with no more than three questions worth asking. The resident
    can stop the watch at any time.
 
-The live site also exposes the stored record, matter history, evidence links,
-and private watch management path used by the application.
+The live site also exposes stored reviews, a captured-case replay path, matter
+history, evidence links, and the private watch management path used by the
+application. Replay is explicitly labeled as stored public records, not a live
+event.
 
 ## What a finding means
 
