@@ -1,83 +1,249 @@
 # Page 47
 
-Page 47 helps residents see how a public matter was presented across the meetings where it appeared. It compares the public record over time and links every reported fact back to the city record.
+## When the packet changes, residents should know.
 
-The named primitive is **presentation drift**: the gap between how a matter is described to the public and what the matter actually does, measured across every appearance.
+Page 47 is an evidence-first civic record watcher. A resident chooses a city
+and area once; Page 47 keeps checking public meeting records, compares how a
+matter appeared across meetings, investigates the change, and sends an
+evidence-linked review only when the record supports one.
 
-## Current build
+**Tell Page 47 what you care about. It watches the public record while you are away.**
 
-The current complete record source is Seattle, Washington, on the Granicus Legistar public API. Denver, Colorado is also configured with a separately verified consent mapping so the console can demonstrate that the city-specific meaning is never copied from Seattle. The live preflight sampled 20 events, found 73 event items and 66 attachments, and found Seattle records reaching the observed sample boundary of 2015-02-02. Nine Seattle council bodies are recorded in `config/cities/seattle.yaml`.
+[Try the live demo](https://page47.xcover.online/) · [Read the submission kit](docs/submission.md) · [View the architecture](docs/architecture.md) · [Browse the code](https://github.com/Jennycruzy/Page47)
 
-The snapshotter is scheduled on the public host every 15 minutes. Its first clean capture selected five upcoming meetings and stored 30 attachment files plus five agendas. It keeps immutable bytes, SHA-256 hashes, capture times, source URLs, ETags when supplied, and explicit error records. The checked-in schedule now applies newly captured records, reads documents, uses Seattle's captured-agenda reader or Denver's verified API mapping for placement, and dispatches saved reviews to matching watches.
+> Page 47 does not guess intent, assign a political position, or turn an
+> uncertain record into a confident story. It shows what changed, what supports
+> the observation, and what remains unknown.
 
-The collector writes a success heartbeat only after the full scheduled run completes. Its lock now covers the commands directly, so a failed command stops the run instead of being mistaken for a success. The official CloudWatch agent is active on the host, using the dedicated `Page47CloudWatchAgent` role in account `591697681173`; both Page 47 log groups, the success metric filter, and the two-hour missed-run alarm are configured.
+## The problem
 
-The historical record is now backfilled for the nine selected Seattle bodies: 1,332 meetings, 24,047 appearances, 25,640 attachment records, and 81 matters with at least three appearances, covering 9 February 2015 through 11 September 2026. The normalized SQLite store is running on the public host at `runtime/records/seattle.sqlite3`; all present stored fields carry a source URL and capture time.
+Public decisions are often spread across meeting agendas, consent calendars,
+attachments, and revised packets. A resident may care deeply about one area
+without having the time to check every meeting or notice when the same matter
+is presented differently later.
 
-Seattle consent placement is read from captured agenda PDFs rather than the city's unusable API integer. Denver uses its own verified mapping: `1` means consent and `0` means regular agenda in the calibrated meeting. Seattle and Denver both have live append-only captures on the public host.
+Page 47 watches the public record between visits. Its core question is not only
+“What does the latest document say?” but also “How did this matter appear the
+last time, and what evidence supports the difference?”
 
-Captured Seattle PDF attachments are read into page-linked references for configured dates, dollar amounts, distances, and parcel references. Twenty Seattle attachments have completed the document-specific reading run; eleven returned structured page readings and nine recorded explicit failures. The reader preserves the document URL, capture time, page, character location, and excerpt. It says when no configured reference was found and when a PDF cannot be read. The verified Bedrock routes are `amazon.nova-micro-v1:0` for text work and `amazon.nova-lite-v1:0` for page images in `eu-west-2`.
+## Who it is for
 
-Denver's historical attachment capture has now stored 473 attachment records; the latest response for every attachment is HTTP 200 while the four earlier HTTP 404 responses remain preserved as explicit historical failures. The PDF reader has 270 URL-identified results: 259 candidate documents, 10 documents with no configured reference found, and 1 unreadable PDF. The remaining successful attachment files are non-PDF records and are not included in this PDF-reader count.
+Page 47 is for residents, neighbourhood groups, local journalists, and civic
+organisations that need a practical way to follow public matters without
+turning civic participation into a full-time monitoring job.
 
-The five-node Strands investigation graph and its AgentCore transport are implemented and pass strict type checking. A real Seattle matter has completed through the managed runtime and was saved with primary-record links; failed runs remain visible in the record store. The repeatable deployment command builds a 59.2 MB Linux arm64 ZIP that expands to 162.3 MB, includes ADOT, and launches the required root `app.py` through `opentelemetry-instrument`. Runtime `page47_review` is deployed in `eu-west-2` and reports `READY`; the public-host client invoked it for matter 17394, saved the returned review, and produced a searchable trace retained in the [observability audit](docs/audits/observability.md).
+Seattle is the flagship deployment. Denver is the portability proof: it uses
+the same product flow with a separate city adapter and separately calibrated
+agenda semantics.
 
-The resident console is supervised by systemd on the public host and reads the live Seattle and Denver stores, shows the current ledger, supports watch setup, and opens captured documents. The launch target is `https://page47.xcover.online/`; DNS, the certificate, the dedicated Nginx host, renewal dry-run, root-relative links, and the public URL SSM parameter are verified live. The SES sender parameter is present and its identity is verified; the controlled review was accepted by SES through the application path and its mailbox receipt was confirmed.
+## The resident experience
 
-Every watch is stored server-side with its city, selected public bodies, area, and email address, so residents do not need an account or a separate page. Saving a watch returns a private management link that shows its status and can stop future messages. Each delivered review includes that same private stop link. A temporary verified watch successfully exercised the application delivery path; the watch was stopped after the test and SES remains in sandbox mode.
+1. **Watch an area.** Choose a city, neighbourhood or address, and email.
+2. **Walk away.** The watch is stored server-side; the browser does not need to
+   remain open.
+3. **Page 47 observes.** A scheduled collector preserves public responses,
+   document bytes, hashes, URLs, capture times, and errors.
+4. **Page 47 compares.** Titles, agenda placement, and supported document
+   substance are evaluated as separate dimensions.
+5. **Page 47 investigates.** Archivist, Substance, and Process readers gather
+   evidence; the Skeptic can reject an attractive but unsupported interpretation.
+6. **The resident decides.** A surfaced finding links to the exact public
+   record and ends with no more than three questions worth asking. The resident
+   can stop the watch at any time.
 
-## What Page 47 does not do
+The live site also exposes the stored record, matter history, evidence links,
+and private watch management path used by the application.
 
-Page 47 reports public records. It does not determine why a change was made, claim that anyone intended to hide information, or make a legal finding. A record that was never published is outside what this tool can see.
+## What a finding means
 
-## Run it
+Page 47 never compresses the evidence into an unexplained risk score. The
+result is a directional description of the presentation, with the dimensions
+shown separately:
 
-Use Python 3.12 or newer:
+| Result | Meaning |
+| --- | --- |
+| `clearer` | At least one supported dimension became clearer and none became less clear. |
+| `less_clear` | At least one supported dimension became less clear and none became clearer. |
+| `mixed` | Comparable dimensions moved in opposite directions. |
+| `unchanged` | At least two comparable dimensions were neutral. |
+| `cannot_determine` | The available evidence cannot establish a direction. |
+
+For example, a title becoming less specific while agenda placement becomes
+more visible is `mixed`, not `unchanged`. A single neutral observation is not
+treated as proof that nothing changed. Unreliable city attachment timestamps
+are not used as publication-timing evidence.
+
+## Evidence before interpretation
+
+Each consequential observation carries the primary URL, capture time, and page
+reference when applicable. Page 47 keeps the boundary between:
+
+| Evidence position | What it means |
+| --- | --- |
+| **Observed by Page 47** | Page 47 captured the earlier and later public versions itself. |
+| **Reconstructed from public record** | Earlier and later records are available now, but Page 47 did not witness the transition. |
+| **Current public record** | The claim describes the record that is available now, without asserting a historical transition. |
+| **Cannot determine** | The record does not support a directional or causal conclusion. |
+
+The product can establish that a title, placement, or attachment changed. It
+cannot establish why a public body changed it, whether anyone intended to
+reduce visibility, or what an unpublished intermediate version contained.
+
+## Why an agent is useful here
+
+This is a background evidence task, not a chat prompt waiting for a resident to
+ask the right question. The graph gives distinct evidence responsibilities to
+five roles:
+
+| Role | Responsibility |
+| --- | --- |
+| **Archivist** | Reads the stored matter history and anchors observations to captured records. |
+| **Substance** | Reads only captured document pages and reports concrete provision changes. |
+| **Process** | Examines titles, bodies, agenda placement, order, and supported process facts. |
+| **Skeptic** | Reviews the branches, rejects unsupported observations, and does not add facts. |
+| **Brief Writer** | Turns accepted observations into a short, plain-language resident brief. |
+
+The deterministic comparator handles directional semantics. The graph is used
+where evidence roles need different views of the record and where a separate
+reviewer must be able to veto a weak interpretation.
+
+## Architecture
+
+The full judge-facing diagram and system boundaries are in
+[docs/architecture.md](docs/architecture.md).
+
+```mermaid
+flowchart LR
+    R[Resident] --> W[Watch setup]
+    W --> WEB[Page 47 web service]
+    WEB --> STORE[(Private watch and record store)]
+    S[15-minute scheduler] --> C[Collector]
+    C --> SEA[Seattle adapter]
+    C --> DEN[Denver adapter]
+    SEA --> CAP[(Append-only captures)]
+    DEN --> CAP
+    CAP --> N[Record normalizer]
+    N --> CMP[Presentation comparator]
+    CMP --> G[Strands investigation graph]
+    G --> A[Archivist]
+    G --> SU[Substance]
+    G --> P[Process]
+    A --> SK[Skeptic]
+    SU --> SK
+    P --> SK
+    SK --> B[Brief Writer]
+    B --> POL[Evidence policy]
+    POL --> STORE
+    STORE --> WEB
+    POL --> SES[SES alert]
+    BED[Amazon Bedrock] -.-> A
+    BED -.-> SU
+    BED -.-> P
+    BED -.-> SK
+    BED -.-> B
+```
+
+## AWS implementation
+
+| AWS component | Page 47 use |
+| --- | --- |
+| **Amazon Lightsail** | Public web service, scheduled collection, SQLite record store, and captured evidence on the deployment host. |
+| **Amazon Bedrock** | Document and evidence reading models used by the investigation roles. |
+| **Amazon Bedrock AgentCore Runtime** | Managed execution for the Strands investigation graph. |
+| **AWS Distro for OpenTelemetry** | Runtime instrumentation for searchable investigation traces. |
+| **Amazon CloudWatch** | Service logs, collector completion metric, and missed-run alarm. |
+| **Amazon SES** | Evidence-linked transactional review alerts. |
+| **AWS Systems Manager** | Deployment parameters and secret-free host configuration. |
+
+The collector preserves bytes, SHA-256 hashes, source URLs, capture times,
+HTTP status, ETags when available, and explicit failures. A changed document at
+the same URL is therefore visible as a new captured version rather than silently
+replacing the previous observation.
+
+## Evaluation without overclaiming
+
+Page 47 has three separate proof layers:
+
+1. **Real Seattle export:** 100 matters were evaluated across four arms. All
+   four arms surfaced zero cases, and Page 47 returned `cannot_determine` for
+   all 100. The completed 30-case human audit is preserved; all 30 historical
+   gold labels are `cannot_determine`. This demonstrates abstention when the
+   available history is insufficient. It is not a directional accuracy claim.
+2. **Controlled directional fixture:** 28 frozen transformations produced
+   28/28 expected comparator states, including mixed directions, abstentions,
+   replacement hashes, duplicate copies, unsupported-motive cases, and
+   instruction-like document text. Two reversal pairs were correct in both
+   directions. The deterministic fixture is not a real-world accuracy claim.
+3. **Managed runtime proof:** a real stored Seattle matter completed through the
+   deployed AgentCore runtime, retained its investigation, and produced a
+   searchable trace. See the [observability audit](docs/audits/observability.md)
+   and [managed runtime review](docs/audits/managed-runtime.md).
+
+The repository also retains the independent review, four-arm results, and
+controlled results so a judge can inspect the evidence rather than rely on a
+marketing percentage.
+
+## Run locally
+
+Requires Python 3.12 or newer.
 
 ```bash
+git clone https://github.com/Jennycruzy/Page47.git
+cd Page47
 python3.12 -m venv .venv
 . .venv/bin/activate
 python -m pip install -e '.[dev]'
-python scripts/preflight.py --config config/preflight.json --output docs/preflight.json
-python scripts/snapshotter.py --config config/cities/seattle.yaml
-python scripts/backfill.py --config config/cities/seattle.yaml --database runtime/records/seattle.sqlite3 --evidence-root runtime/evidence/seattle
-pytest
+PYTHONPATH=src pytest
+ruff check src/page47 scripts tests
+MYPYPATH=src mypy --strict --explicit-package-bases src/page47
 ```
 
-The preflight command performs bounded live discovery and stores the public responses used for its report. The snapshotter stores runtime evidence under the configured storage root. Do not add credentials to this repository; AWS credentials belong in the instance role or an AWS secret service.
+To run the controlled comparator evaluation:
 
-## Evidence and records
+```bash
+PYTHONPATH=src python scripts/run_controlled_evaluation.py \
+  --fixture config/evaluation-controlled.json \
+  --presentation config/presentation.yaml \
+  --output /tmp/page47-controlled-results.json
+```
 
-- [Preflight report](docs/preflight.json)
-- [Preflight audit](docs/audits/phase-0.md)
-- [Snapshotter audit](docs/audits/phase-1.md)
-- [Historical record audit](docs/audits/phase-2.md)
-- [Consent calibration audit](docs/audits/phase-3.md)
-- [Managed runtime review audit](docs/audits/managed-runtime.md)
-- [Observability and searchable trace audit](docs/audits/observability.md)
-- [Subdomain launch audit](docs/audits/domain-launch.md)
-- [Denver attachment coverage audit](docs/audits/denver-attachment-coverage.md)
-- [Production launch runbook](docs/LAUNCH.md)
-- [Comparison-set labeling instructions](docs/evaluation-labeling.md)
-- [Seattle evaluation export](docs/evaluation-set.json)
-- [Four-arm comparison audit](docs/comparison-audit.md)
-- [Independent evaluation review](docs/audits/evaluation-independent-review.md)
-- [Four-arm comparison results](docs/comparison-results.json)
-- [Controlled directional evaluation audit](docs/controlled-evaluation-audit.md)
-- [Controlled directional evaluation results](docs/controlled-evaluation-results.json)
-- [Seattle configuration](config/cities/seattle.yaml)
-- [AWS discovery response cache](docs/evidence/preflight/index.json)
+To run the web service against local configuration:
 
-The preflight report identified eight clients that met the bounded structural checks. Seattle is selected because its sampled records were viable and its observed history reached 2015. The exact historical boundary will be measured during backfill rather than inferred from a small sample.
+```bash
+PYTHONPATH=src uvicorn page47.web.app:app --host 127.0.0.1 --port 8090
+```
 
-## Next work
+Live collection and managed AgentCore execution require AWS access configured
+outside the repository. Never commit credentials, tokens, private keys, or
+runtime secrets.
 
-The exact remaining launch sequence is in [the production runbook](docs/LAUNCH.md). The searchable AgentCore trace is complete. The evaluation artifacts have passed independent structural and output review without reopening the 30 human-reviewed cases; their `review_required` status remains deliberate because the real Seattle export has no directional gold labels and the controlled fixture is not a real-world accuracy claim. CloudWatch log delivery and alarm configuration are live; a deliberate missed-run test can be performed as an operational check. Denver's four historical failed URLs and one unreadable PDF are recorded in the coverage audit. The deterministic 100-matter export is preserved, with zero Page 47 overclaims on the 30-case abstention audit and 28/28 controlled directional states with 2/2 reversal pairs.
+## Repository map
 
-## Tests
+| Path | Purpose |
+| --- | --- |
+| `src/page47/` | Application, adapters, comparison, evidence, investigation, notifications, and web service. |
+| `config/` | City mappings, presentation rules, agent roles, policy, and deployment configuration. |
+| `scripts/` | Preflight, capture, backfill, evaluation, validation, deployment, and operational checks. |
+| `tests/` | Offline application, evidence, evaluation, delivery, and deployment tests. |
+| `docs/audits/` | Dated operational, evaluation, delivery, and observability records. |
+| `docs/architecture.md` | Detailed judge-facing architecture and trust boundaries. |
+| `docs/submission.md` | Copy-ready submission description, demo script, and rubric crosswalk. |
+| `docs/builder-aws-post.md` | Draft bonus post for Builder.aws. |
 
-The current suite contains 53 collected tests when run with the repository root on `PYTHONPATH`. It replays captured real Legistar responses offline, verifies duplicate suppression and changed-copy detection, checks city-specific placement, validates stored matter history, checks page-linked document reading, validates the managed-runtime request and deployment constraints, checks public-path links, checks private watch stopping, checks review email links, checks the observability configuration, checks the evaluation gates and four-arm comparison boundaries, exercises the controlled directional fixture, and checks that the scheduled collector covers both cities and delivery. Lightsail applies newly captured event details to the record store, reads changed PDFs, and refreshes each city's configured placement method. Core source passes `mypy --strict` and `ruff check` in the Python 3.12 Lightsail environment; the plain `pytest` command needs the repository root added to `PYTHONPATH` for tests that import command modules.
+## Current limitations
 
-## Limitations
+The public city APIs expose only records that are currently available. A city
+may replace a PDF at the same URL, overwrite a last-modified value, or remove
+an intermediate version; Page 47 cannot reconstruct what it never captured.
+Seattle placement is read from captured agenda PDFs because its API placement
+integer is not reliable. Denver uses its own calibrated mapping.
 
-The public API only exposes records marked public and viewable on the city site. Its last-published timestamp can overwrite earlier publication times; a PDF can be replaced at the same URL; intermediate modifications and deleted attachments leave no historical record. The running snapshotter preserves those forward-looking observations, but it cannot reconstruct what was lost before it started. Seattle's API consent integer is not used: Page 47 reads a captured agenda PDF, records the page supporting a matched title, and says it cannot determine placement when the PDF or match is unavailable. Denver's mapping is valid only for Denver's recorded calibration. Address matching is limited to street, neighbourhood, and council-district evidence and says when an area could not be confirmed.
+SES production access was requested for `eu-west-2` on 11 September 2026 and is
+currently under review. The sender identity and `page47.xcover.online` sending
+domain are verified. Until production access is approved, SES sandbox rules
+require the recipient of a live test alert to be verified; the web finding and
+its evidence remain independently usable.
+
+## License
+
+Released under the [MIT License](LICENSE).
