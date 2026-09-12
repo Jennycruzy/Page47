@@ -1383,19 +1383,41 @@
   "matter_id": 17402,
   "review": {
     "adjudicated": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "adjudication_basis": "Both independent reviewers supplied the same label.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:38:23.365439Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6866?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "event 6866 \u2192 later committee appearance",
+      "label": "cannot_determine",
+      "reason": "The document set evolves, but the title remains stable and the retained placement evidence is not comparable enough to establish a direction."
     },
     "reviewer_a": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:38:23.365439Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6866?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "event 6866 \u2192 later committee appearance",
+      "label": "cannot_determine",
+      "reason": "The document set evolves, but the title remains stable and the retained placement evidence is not comparable enough to establish a direction."
     },
     "reviewer_b": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:38:23.365439Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6866?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "event 6866 \u2192 later committee appearance",
+      "label": "cannot_determine",
+      "reason": "The document set evolves, but the title remains stable and the retained placement evidence is not comparable enough to establish a direction."
     }
   },
   "review_pair": {

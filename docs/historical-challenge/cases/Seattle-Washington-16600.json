@@ -1,0 +1,179 @@
+{
+  "case_id": "Seattle, Washington:16600",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "confirm",
+        "action_text": "The Committee recommends that City Council confirm the Appointment (Appt).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing, Discussion, and Possible Vote\\b0  \\par\r\n\\par\r\n\\pard\\sa160\\sl252\\slmult1\\cf1\\b\\f1 Presenter:\\b0  Chair Rivera\\cf0\\b\\f0\\par\r\n\\pard\\par\r\n}\r\n",
+        "agenda_number": "18.",
+        "agenda_sequence": 24,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 46160,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:31.589302Z",
+            "last_modified_utc": "2025-10-08T19:34:34.267",
+            "matter_id": 16600,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:36.257029Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6493?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/203db432-8bbe-4af9-9c46-bc3e831b7cfd.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 268,
+        "body_name": "Libraries, Education, and Neighborhoods Committee",
+        "consent_value": 0,
+        "event_date": "2025-12-12T00:00:00",
+        "event_id": 6493,
+        "event_item_id": 119763,
+        "item_last_modified_utc": "2025-12-12T19:47:34.967",
+        "matter_id": 16600,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:40:36.257029Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6493?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Reappointment of Anthony R. Salazar as member, Ballard Avenue Landmark District Board, for a term to June 30, 2027."
+      },
+      {
+        "action_taken": "confirmed",
+        "action_text": "The Appointment (Appt) was confirmed on the Consent Calendar by the following vote:",
+        "agenda_note": null,
+        "agenda_number": "50.",
+        "agenda_sequence": 66,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 46160,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:31.589302Z",
+            "last_modified_utc": "2025-10-08T19:34:34.267",
+            "matter_id": 16600,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:31.589302Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6506?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/203db432-8bbe-4af9-9c46-bc3e831b7cfd.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2025-12-16T00:00:00",
+        "event_id": 6506,
+        "event_item_id": 120141,
+        "item_last_modified_utc": "2025-12-17T23:24:12.99",
+        "matter_id": 16600,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:40:31.589302Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6506?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Reappointment of Anthony R. Salazar as member, Ballard Avenue Landmark District Board, for a term to June 30, 2027."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2025-12-16T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "Reappointment of Anthony R. Salazar as member, Ballard Avenue Landmark District Board, for a term to June 30, 2027.",
+      "file_number": "Appt 03433",
+      "intro_date": "2025-10-08T00:00:00",
+      "last_modified_utc": "2025-12-16T22:47:54.72",
+      "matter_id": 16600,
+      "matter_name": null,
+      "source": {
+        "captured_at": "2026-09-04T20:15:50.631808Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=13000&%24orderby=MatterId+asc"
+      },
+      "status_name": "Confirmed",
+      "type_name": "Appointment (Appt)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "matter_id": 16600,
+  "review": {
+    "adjudicated": {
+      "adjudication_basis": "Both independent reviewers supplied the same label.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:40:36.257029Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6493?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6493 \u2192 6506",
+      "label": "less_clear",
+      "reason": "The appointment received an explicit committee briefing/discussion/vote presentation, then was confirmed on the Council Consent Calendar."
+    },
+    "reviewer_a": {
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:40:36.257029Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6493?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6493 \u2192 6506",
+      "label": "less_clear",
+      "reason": "The appointment received an explicit committee briefing/discussion/vote presentation, then was confirmed on the Council Consent Calendar."
+    },
+    "reviewer_b": {
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:40:36.257029Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6493?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6493 \u2192 6506",
+      "label": "less_clear",
+      "reason": "The appointment received an explicit committee briefing/discussion/vote presentation, then was confirmed on the Council Consent Calendar."
+    }
+  },
+  "review_pair": {
+    "current_event_date": "2025-12-16T00:00:00",
+    "current_event_item_id": 120141,
+    "current_placement": null,
+    "current_title": "Reappointment of Anthony R. Salazar as member, Ballard Avenue Landmark District Board, for a term to June 30, 2027.",
+    "previous_event_date": "2025-12-12T00:00:00",
+    "previous_event_item_id": 119763,
+    "previous_placement": null,
+    "previous_title": "Reappointment of Anthony R. Salazar as member, Ballard Avenue Landmark District Board, for a term to June 30, 2027."
+  }
+}

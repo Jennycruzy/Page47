@@ -49,8 +49,8 @@ def validate(path: Path, packet: Path | None = None) -> dict[str, int | str]:
         raise ValueError("schema_version must be 1")
     if key.get("artifact") != "page47_historical_challenge_answer_key":
         raise ValueError("artifact type is invalid")
-    if key.get("status") != "withheld_from_reviewers":
-        raise ValueError("status must remain withheld_from_reviewers")
+    if key.get("status") not in {"withheld_from_reviewers", "published_after_review"}:
+        raise ValueError("status must be withheld_from_reviewers or published_after_review")
 
     snapshot = key.get("source_snapshot")
     if not isinstance(snapshot, dict):
@@ -59,11 +59,12 @@ def validate(path: Path, packet: Path | None = None) -> dict[str, int | str]:
         if not isinstance(snapshot.get(field), str) or not snapshot[field].strip():
             raise ValueError(f"source_snapshot.{field} must be non-empty text")
     source_paths = snapshot.get("source_paths")
-    if not isinstance(source_paths, dict):
-        raise ValueError("source_snapshot.source_paths must be an object")
-    for field, value in source_paths.items():
-        if not isinstance(value, str) or value.startswith("/"):
-            raise ValueError(f"source_snapshot.source_paths.{field} must be a relative path")
+    if source_paths is not None:
+        if not isinstance(source_paths, dict):
+            raise ValueError("source_snapshot.source_paths must be an object")
+        for field, value in source_paths.items():
+            if not isinstance(value, str) or value.startswith("/"):
+                raise ValueError(f"source_snapshot.source_paths.{field} must be a relative path")
 
     selection = key.get("selection")
     if not isinstance(selection, dict):

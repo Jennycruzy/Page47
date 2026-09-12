@@ -76,6 +76,15 @@ def main() -> int:
         "source_packet": str(args.input),
         "source_snapshot": packet.get("source_snapshot"),
         "blind_review": packet.get("blind_review"),
+        "review": {
+            "status": packet.get("status"),
+            "reviewers": "Two independent human reviews are retained for every case.",
+            "answer_key": (
+                "../historical-challenge-answer-key.json"
+                if packet.get("status") == "labels_complete"
+                else None
+            ),
+        },
         "items": index_items,
         "note": (
             "Each linked case file contains the same neutral retained case payload, one fixed "

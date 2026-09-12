@@ -195,15 +195,20 @@ Page 47 has three separate proof layers:
    replacement hashes, duplicate copies, unsupported-motive cases, and
    instruction-like document text. Two reversal pairs were correct in both
    directions. The deterministic fixture is not a real-world accuracy claim.
-3. **Historical challenge cohort:** the repository includes 40 real Seattle
-   matters selected without using Page 47's result. The reviewer-facing packet
-   is blind: candidate/control roles, selection reasons, and selected-pair
-   metadata are withheld in a separate answer key until two independent labels
-   and adjudication are complete. The neutral case payloads and one fixed
-   review pair per matter are available through the
-   [browser-friendly case index](docs/historical-challenge/index.json) and the
-   [complete review packet](docs/historical-challenge-cohort.json). No
-   challenge-cohort accuracy claim is published yet.
+3. **Independently reviewed historical challenge cohort:** the repository
+   includes 37 real Seattle matters selected without using Page 47's result: 5
+   mechanically selected candidates and 32 controls. Three recurring agenda or
+   minutes container records were excluded before the completed reviews were
+   imported. Reviewer A and Reviewer B labels, reasons, primary evidence, and
+   matching adjudicated labels are retained in the [complete review
+   packet](docs/historical-challenge-cohort.json). The [browser-friendly case
+   index](docs/historical-challenge/index.json) links to each case, and the
+   [public answer key](docs/historical-challenge-answer-key.json) exposes the
+   selection roles now that review is complete. This is a challenge cohort, not
+   a prevalence sample or a representative accuracy estimate. The current
+   comparator score is in the [challenge results](docs/historical-challenge-results.json):
+   2 of 37 cases were surfaced, both candidate cases, with no surfaced control;
+   all 89 adjudicated evidence records passed provenance checks.
 4. **Managed runtime proof:** a real stored Seattle matter completed through the
    deployed AgentCore runtime, retained its investigation, and produced a
    searchable trace. See the [observability audit](docs/audits/observability.md)

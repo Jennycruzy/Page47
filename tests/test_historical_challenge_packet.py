@@ -53,11 +53,11 @@ def test_attachment_change_ids_are_deduplicated() -> None:
     assert payload["attachment_ids_with_multiple_captured_hashes"] == [46838]
 
 
-def test_checked_in_reviewer_packet_is_blind_and_uniform() -> None:
+def test_checked_in_reviewer_packet_is_uniform_and_labelled() -> None:
     packet = Path("docs/historical-challenge-cohort.json")
-    summary = validate(packet, require_labels=False)
+    summary = validate(packet, require_labels=True)
 
-    assert summary["items"] == 40
+    assert summary["items"] == 37
     assert all(
         set(item) == {"case_id", "city", "matter_id", "review_pair", "review", "case_payload"}
         for item in json.loads(packet.read_text())["items"]

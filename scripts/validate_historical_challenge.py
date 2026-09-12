@@ -115,7 +115,11 @@ def validate(path: Path, *, require_labels: bool) -> dict[str, int | str]:
     if root.get("schema_version") != 2:
         errors.append("schema_version must be 2")
     status = _text(root.get("status"), "status", errors)
-    if status is not None and status not in {"awaiting_independent_labels", "labels_complete"}:
+    if status is not None and status not in {
+        "awaiting_independent_labels",
+        "awaiting_adjudication",
+        "labels_complete",
+    }:
         errors.append("status is invalid")
     city = _text(root.get("city"), "city", errors)
 

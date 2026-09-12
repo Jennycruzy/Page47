@@ -1,0 +1,339 @@
+{
+  "case_id": "Seattle, Washington:17140",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "pass",
+        "action_text": "The Committee recommends that City Council pass the Council Bill (CB).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\b\\fs24 Briefing, Discussion, and Possible Vote \\b0 (25 min) \\par\r\n\\par\r\n\\b Presenters:\\b0  Kimberly Loving and William Winfield, Seattle Department of Human Resources (SDHR); Shannon Smith and Will Smith, Seattle Information Technology (Seattle IT)\\par\r\n}\r\n",
+        "agenda_number": "1.",
+        "agenda_sequence": 7,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 48067,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:36.834654Z",
+            "last_modified_utc": "2026-05-21T13:49:11.15",
+            "matter_id": 17140,
+            "name": "Att 1 \u2013 Information Technology Talent Modernization Classification Program",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:45.573365Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6822?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/bac38cb8-8332-43f8-9d3d-7ae77d5b4d35.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48068,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:36.834654Z",
+            "last_modified_utc": "2026-05-21T13:49:11.753",
+            "matter_id": 17140,
+            "name": "Att 2 \u2013 Information Technology Talent Modernization Compensation Grade Structure",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:45.573365Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6822?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/72624b6f-371d-450c-9ee9-1efb926ab7e1.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48069,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:36.834654Z",
+            "last_modified_utc": "2026-05-21T13:49:12.31",
+            "matter_id": 17140,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:45.573365Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6822?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/545fa7fe-1050-4f96-847a-c484a4151f4f.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48733,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:36.834654Z",
+            "last_modified_utc": "2026-07-15T18:56:22.293",
+            "matter_id": 17140,
+            "name": "Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:45.573365Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6822?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/502f839b-aa7a-43c7-a631-13eb20556349.pptx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48984,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:36.834654Z",
+            "last_modified_utc": "2026-08-04T21:51:23.643",
+            "matter_id": 17140,
+            "name": "Signed Ordinance 127476",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:45.573365Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6822?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/6925f9a6-28f6-40b7-b70d-eaf572d91019.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 279,
+        "body_name": "Human Services, Labor, and Economic Development Committee",
+        "consent_value": 0,
+        "event_date": "2026-07-17T00:00:00",
+        "event_id": 6822,
+        "event_item_id": 124403,
+        "item_last_modified_utc": "2026-07-17T16:59:49.547",
+        "matter_id": 17140,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:38:45.573365Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6822?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance relating to City employment; establishing the new Information Technology (IT) Talent Modernization classification title structure and corresponding rates of pay for IT positions across City departments."
+      },
+      {
+        "action_taken": "passed",
+        "action_text": "The Council Bill (CB) was passed on the Consent Calendar by the following vote, and the President signed the Council Bill (CB):",
+        "agenda_note": null,
+        "agenda_number": "3.",
+        "agenda_sequence": 15,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 48067,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:36.834654Z",
+            "last_modified_utc": "2026-05-21T13:49:11.15",
+            "matter_id": 17140,
+            "name": "Att 1 \u2013 Information Technology Talent Modernization Classification Program",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:36.834654Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6839?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/bac38cb8-8332-43f8-9d3d-7ae77d5b4d35.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48068,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:36.834654Z",
+            "last_modified_utc": "2026-05-21T13:49:11.753",
+            "matter_id": 17140,
+            "name": "Att 2 \u2013 Information Technology Talent Modernization Compensation Grade Structure",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:36.834654Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6839?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/72624b6f-371d-450c-9ee9-1efb926ab7e1.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48069,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:36.834654Z",
+            "last_modified_utc": "2026-05-21T13:49:12.31",
+            "matter_id": 17140,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:36.834654Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6839?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/545fa7fe-1050-4f96-847a-c484a4151f4f.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48733,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:36.834654Z",
+            "last_modified_utc": "2026-07-15T18:56:22.293",
+            "matter_id": 17140,
+            "name": "Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:36.834654Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6839?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/502f839b-aa7a-43c7-a631-13eb20556349.pptx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48984,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:36.834654Z",
+            "last_modified_utc": "2026-08-04T21:51:23.643",
+            "matter_id": 17140,
+            "name": "Signed Ordinance 127476",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:36.834654Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6839?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/6925f9a6-28f6-40b7-b70d-eaf572d91019.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2026-07-28T00:00:00",
+        "event_id": 6839,
+        "event_item_id": 124864,
+        "item_last_modified_utc": "2026-07-29T18:38:54.237",
+        "matter_id": 17140,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:38:36.834654Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6839?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance relating to City employment; establishing the new Information Technology (IT) Talent Modernization classification title structure and corresponding rates of pay for IT positions across City departments."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2026-07-28T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "An ordinance relating to City employment; establishing the new Information Technology (IT) Talent Modernization classification title structure and corresponding rates of pay for IT positions across City departments.",
+      "file_number": "CB 121225",
+      "intro_date": "2026-05-07T00:00:00",
+      "last_modified_utc": "2026-08-04T21:51:32.92",
+      "matter_id": 17140,
+      "matter_name": "CB 121225",
+      "source": {
+        "captured_at": "2026-09-04T20:15:53.927185Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=13400&%24orderby=MatterId+asc"
+      },
+      "status_name": "Passed",
+      "type_name": "Ordinance (Ord)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "matter_id": 17140,
+  "review": {
+    "adjudicated": {
+      "adjudication_basis": "Both independent reviewers supplied the same label.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:38:45.573365Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6822?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6822 \u2192 6839",
+      "label": "less_clear",
+      "reason": "Committee presentation was Briefing, Discussion, and Possible Vote; the later Council record explicitly says the bill passed on the Consent Calendar."
+    },
+    "reviewer_a": {
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:38:45.573365Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6822?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6822 \u2192 6839",
+      "label": "less_clear",
+      "reason": "Committee presentation was Briefing, Discussion, and Possible Vote; the later Council record explicitly says the bill passed on the Consent Calendar."
+    },
+    "reviewer_b": {
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:38:45.573365Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6822?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6822 \u2192 6839",
+      "label": "less_clear",
+      "reason": "Committee presentation was Briefing, Discussion, and Possible Vote; the later Council record explicitly says the bill passed on the Consent Calendar."
+    }
+  },
+  "review_pair": {
+    "current_event_date": "2026-07-28T00:00:00",
+    "current_event_item_id": 124864,
+    "current_placement": null,
+    "current_title": "An ordinance relating to City employment; establishing the new Information Technology (IT) Talent Modernization classification title structure and corresponding rates of pay for IT positions across City departments.",
+    "previous_event_date": "2026-07-17T00:00:00",
+    "previous_event_item_id": 124403,
+    "previous_placement": null,
+    "previous_title": "An ordinance relating to City employment; establishing the new Information Technology (IT) Talent Modernization classification title structure and corresponding rates of pay for IT positions across City departments."
+  }
+}

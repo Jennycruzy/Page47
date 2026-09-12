@@ -1289,19 +1289,44 @@
   "matter_id": 14765,
   "review": {
     "adjudicated": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "adjudication_basis": "Both independent reviewers supplied the same label.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:39:24.708989Z",
+          "page_number": 4,
+          "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "event 6691 regular agenda p4 \u2192 City Council consent agenda p8",
+      "label": "less_clear",
+      "reason": "Same matter/title moved from a public-hearing/regular committee presentation to the City Council consent calendar."
     },
     "reviewer_a": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:39:24.708989Z",
+          "page_number": 4,
+          "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "event 6691 regular agenda p4 \u2192 City Council consent agenda p8",
+      "label": "less_clear",
+      "reason": "Same matter/title moved from a public-hearing/regular committee presentation to the City Council consent calendar."
     },
     "reviewer_b": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:39:24.708989Z",
+          "page_number": 4,
+          "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "event 6691 regular agenda p4 \u2192 City Council consent agenda p8",
+      "label": "less_clear",
+      "reason": "Same matter/title moved from a public-hearing/regular committee presentation to the City Council consent calendar."
     }
   },
   "review_pair": {

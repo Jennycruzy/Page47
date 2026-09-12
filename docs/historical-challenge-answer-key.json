@@ -1,0 +1,949 @@
+{
+  "artifact": "page47_historical_challenge_answer_key",
+  "city": "Seattle, Washington",
+  "items": [
+    {
+      "case_id": "Seattle, Washington:14765",
+      "city": "Seattle, Washington",
+      "cohort_role": "candidate",
+      "matter_id": 14765,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-08-04T00:00:00",
+        "current_event_item_id": 124999,
+        "current_placement": "consent",
+        "current_title": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N.",
+        "previous_event_date": "2026-07-27T00:00:00",
+        "previous_event_item_id": 124621,
+        "previous_placement": "regular",
+        "previous_title": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N.",
+        "reasons": [
+          "agenda_placement_changed"
+        ]
+      },
+      "selected_pairs": [
+        {
+          "attachment_ids_with_multiple_captured_hashes": [],
+          "current_event_date": "2026-08-04T00:00:00",
+          "current_event_item_id": 124999,
+          "current_placement": "consent",
+          "current_title": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N.",
+          "previous_event_date": "2026-07-27T00:00:00",
+          "previous_event_item_id": 124621,
+          "previous_placement": "regular",
+          "previous_title": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N.",
+          "reasons": [
+            "agenda_placement_changed"
+          ]
+        }
+      ],
+      "selection_reasons": [
+        "agenda_placement_changed"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:16995",
+      "city": "Seattle, Washington",
+      "cohort_role": "candidate",
+      "matter_id": 16995,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-08-04T00:00:00",
+        "current_event_item_id": 124998,
+        "current_placement": "consent",
+        "current_title": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions.",
+        "previous_event_date": "2026-07-27T00:00:00",
+        "previous_event_item_id": 124622,
+        "previous_placement": "regular",
+        "previous_title": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions.",
+        "reasons": [
+          "agenda_placement_changed"
+        ]
+      },
+      "selected_pairs": [
+        {
+          "attachment_ids_with_multiple_captured_hashes": [],
+          "current_event_date": "2026-08-04T00:00:00",
+          "current_event_item_id": 124998,
+          "current_placement": "consent",
+          "current_title": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions.",
+          "previous_event_date": "2026-07-27T00:00:00",
+          "previous_event_item_id": 124622,
+          "previous_placement": "regular",
+          "previous_title": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions.",
+          "reasons": [
+            "agenda_placement_changed"
+          ]
+        }
+      ],
+      "selection_reasons": [
+        "agenda_placement_changed"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:17368",
+      "city": "Seattle, Washington",
+      "cohort_role": "candidate",
+      "matter_id": 17368,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-09-11T00:00:00",
+        "current_event_item_id": 125630,
+        "current_placement": "regular",
+        "current_title": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code.",
+        "previous_event_date": "2026-08-21T00:00:00",
+        "previous_event_item_id": 125331,
+        "previous_placement": null,
+        "previous_title": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code.",
+        "reasons": [
+          "attachment_set_changed"
+        ]
+      },
+      "selected_pairs": [
+        {
+          "attachment_ids_with_multiple_captured_hashes": [],
+          "current_event_date": "2026-09-11T00:00:00",
+          "current_event_item_id": 125630,
+          "current_placement": "regular",
+          "current_title": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code.",
+          "previous_event_date": "2026-08-21T00:00:00",
+          "previous_event_item_id": 125331,
+          "previous_placement": null,
+          "previous_title": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code.",
+          "reasons": [
+            "attachment_set_changed"
+          ]
+        }
+      ],
+      "selection_reasons": [
+        "attachment_set_changed"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:17402",
+      "city": "Seattle, Washington",
+      "cohort_role": "candidate",
+      "matter_id": 17402,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-09-11T00:00:00",
+        "current_event_item_id": 125567,
+        "current_placement": "cannot_determine",
+        "current_title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones.",
+        "previous_event_date": "2026-08-19T00:00:00",
+        "previous_event_item_id": 125436,
+        "previous_placement": null,
+        "previous_title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones.",
+        "reasons": [
+          "attachment_set_changed"
+        ]
+      },
+      "selected_pairs": [
+        {
+          "attachment_ids_with_multiple_captured_hashes": [],
+          "current_event_date": "2026-09-11T00:00:00",
+          "current_event_item_id": 125567,
+          "current_placement": "cannot_determine",
+          "current_title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones.",
+          "previous_event_date": "2026-08-19T00:00:00",
+          "previous_event_item_id": 125436,
+          "previous_placement": null,
+          "previous_title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones.",
+          "reasons": [
+            "attachment_set_changed"
+          ]
+        }
+      ],
+      "selection_reasons": [
+        "attachment_set_changed"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:17456",
+      "city": "Seattle, Washington",
+      "cohort_role": "candidate",
+      "matter_id": 17456,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-09-15T00:00:00",
+        "current_event_item_id": 125767,
+        "current_placement": "consent",
+        "current_title": "A resolution declaring the Seattle City Council\u2019s intent for the City of Seattle to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College.",
+        "previous_event_date": "2026-09-08T00:00:00",
+        "previous_event_item_id": 125550,
+        "previous_placement": "cannot_determine",
+        "previous_title": "A resolution declaring the City of Seattle\u2019s intent to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College.",
+        "reasons": [
+          "title_changed"
+        ]
+      },
+      "selected_pairs": [
+        {
+          "attachment_ids_with_multiple_captured_hashes": [],
+          "current_event_date": "2026-09-15T00:00:00",
+          "current_event_item_id": 125767,
+          "current_placement": "consent",
+          "current_title": "A resolution declaring the Seattle City Council\u2019s intent for the City of Seattle to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College.",
+          "previous_event_date": "2026-09-08T00:00:00",
+          "previous_event_item_id": 125550,
+          "previous_placement": "cannot_determine",
+          "previous_title": "A resolution declaring the City of Seattle\u2019s intent to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College.",
+          "reasons": [
+            "title_changed"
+          ]
+        }
+      ],
+      "selection_reasons": [
+        "title_changed"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:1824",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 1824,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2016-03-21T00:00:00",
+        "current_event_item_id": 29790,
+        "current_placement": null,
+        "current_title": "Full Council Agenda",
+        "previous_event_date": "2016-03-14T00:00:00",
+        "previous_event_item_id": 29646,
+        "previous_placement": null,
+        "previous_title": "Full Council Agenda",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:2289",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 2289,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2015-05-26T00:00:00",
+        "current_event_item_id": 21064,
+        "current_placement": null,
+        "current_title": "AN ORDINANCE relating to the 2015 Budget; amending Ordinance 124648, which adopted the 2015 Budget; changing appropriations to the Seattle Department of Transportation and to the Human Services Department; creating both exempt and non-exempt positions; authorizing the Director of Finance to enter into an interlocal agreement with the State Department of Licensing; and ratifying and confirming certain prior acts; all by at least a 3/4 vote of the City Council.",
+        "previous_event_date": "2015-05-18T00:00:00",
+        "previous_event_item_id": 20723,
+        "previous_placement": null,
+        "previous_title": "AN ORDINANCE relating to the 2015 Budget; amending Ordinance 124648, which adopted the 2015 Budget; changing appropriations to the Seattle Department of Transportation and to the Human Services Department; creating both exempt and non-exempt positions; authorizing the Director of Finance to enter into an interlocal agreement with the State Department of Licensing; and ratifying and confirming certain prior acts; all by at least a 3/4 vote of the City Council.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:3577",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 3577,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2016-02-22T00:00:00",
+        "current_event_item_id": 29040,
+        "current_placement": null,
+        "current_title": "Encampment Conditions Assessment",
+        "previous_event_date": "2016-01-25T00:00:00",
+        "previous_event_item_id": 28399,
+        "previous_placement": null,
+        "previous_title": "Encampment Conditions Assessment",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:4360",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 4360,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2016-09-26T00:00:00",
+        "current_event_item_id": 35544,
+        "current_placement": null,
+        "current_title": "A RESOLUTION granting conceptual approval to Swedish Health Services to construct and maintain a pedestrian tunnel under and across Minor Avenue, south of Columbia Street and north of Cherry Street.",
+        "previous_event_date": "2016-09-19T00:00:00",
+        "previous_event_item_id": 35300,
+        "previous_placement": null,
+        "previous_title": "A RESOLUTION granting conceptual approval to Swedish Health Services to construct and maintain a pedestrian tunnel under and across Minor Avenue, south of Columbia Street and north of Cherry Street.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:4387",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 4387,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2016-08-08T00:00:00",
+        "current_event_item_id": 34123,
+        "current_placement": null,
+        "current_title": "July 25, 2016",
+        "previous_event_date": "2016-08-01T00:00:00",
+        "previous_event_item_id": 33856,
+        "previous_placement": null,
+        "previous_title": "July 25, 2016",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:8371",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 8371,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2020-02-03T00:00:00",
+        "current_event_item_id": 71645,
+        "current_placement": null,
+        "current_title": "State Legislative Session Updates (2020)",
+        "previous_event_date": "2020-01-27T00:00:00",
+        "previous_event_item_id": 71493,
+        "previous_placement": null,
+        "previous_title": "State Legislative Session Updates (2020)",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:14803",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 14803,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2024-01-22T00:00:00",
+        "current_event_item_id": 104691,
+        "current_placement": null,
+        "current_title": "State Legislative Session Update (2024)",
+        "previous_event_date": "2024-01-08T00:00:00",
+        "previous_event_item_id": 104400,
+        "previous_placement": null,
+        "previous_title": "State Legislative Session Update (2024)",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:14870",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 14870,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2024-05-14T00:00:00",
+        "current_event_item_id": 106990,
+        "current_placement": null,
+        "current_title": "Reappointment of Jan Hendrickson as member, Pike Place Market Preservation and Development Authority Governing Council, for a term to June 30, 2027.",
+        "previous_event_date": "2024-05-09T00:00:00",
+        "previous_event_item_id": 106843,
+        "previous_placement": null,
+        "previous_title": "Reappointment of Jan Hendrickson as member, Pike Place Market Preservation and Development Authority Governing Council, for a term to June 30, 2027.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:14874",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 14874,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2024-03-19T00:00:00",
+        "current_event_item_id": 105619,
+        "current_placement": null,
+        "current_title": "Reappointment of Mark C. Childs as member, Pike Place Market Historical Commission, for a term to December 1, 2026.",
+        "previous_event_date": "2024-03-14T00:00:00",
+        "previous_event_item_id": 105402,
+        "previous_placement": null,
+        "previous_title": "Reappointment of Mark C. Childs as member, Pike Place Market Historical Commission, for a term to December 1, 2026.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:14991",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 14991,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2024-04-16T00:00:00",
+        "current_event_item_id": 106260,
+        "current_placement": null,
+        "current_title": "Appointment of Caroline Lemay as member, Historic Seattle Preservation and Development Authority Governing Council, for a term to November 30, 2026.",
+        "previous_event_date": "2024-04-11T00:00:00",
+        "previous_event_item_id": 106141,
+        "previous_placement": null,
+        "previous_title": "Appointment of Caroline Lemay as member, Historic Seattle Preservation and Development Authority Governing Council, for a term to November 30, 2026.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:15436",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 15436,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2024-09-17T00:00:00",
+        "current_event_item_id": 109929,
+        "current_placement": null,
+        "current_title": "Reappointment of Taber Jossi Caton as member, Landmarks Preservation Board, for a term to August 14, 2027.",
+        "previous_event_date": "2024-09-12T00:00:00",
+        "previous_event_item_id": 109683,
+        "previous_placement": null,
+        "previous_title": "Reappointment of Taber Jossi Caton as member, Landmarks Preservation Board, for a term to August 14, 2027.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:15562",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 15562,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2024-09-17T00:00:00",
+        "current_event_item_id": 109947,
+        "current_placement": null,
+        "current_title": "Appointment of Daniel Tu Le as member, Seattle Youth Commission, for a term to August 31, 2026.",
+        "previous_event_date": "2024-09-12T00:00:00",
+        "previous_event_item_id": 109704,
+        "previous_placement": null,
+        "previous_title": "Appointment of Daniel Tu Le as member, Seattle Youth Commission, for a term to August 31, 2026.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:15685",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 15685,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2025-01-14T00:00:00",
+        "current_event_item_id": 112046,
+        "current_placement": null,
+        "current_title": "Appointment of Bert Gregory as member, Historic Seattle Preservation and Development Authority Governing Council, for a term to November 30, 2027.",
+        "previous_event_date": "2025-01-09T00:00:00",
+        "previous_event_item_id": 111891,
+        "previous_placement": null,
+        "previous_title": "Appointment of Bert Gregory as member, Historic Seattle Preservation and Development Authority Governing Council, for a term to November 30, 2027.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:15801",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 15801,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2025-02-04T00:00:00",
+        "current_event_item_id": 112492,
+        "current_placement": null,
+        "current_title": "Appointment of David Benchlouch as member, Community Police Commission, for a term to December 31, 2027.",
+        "previous_event_date": "2025-01-28T00:00:00",
+        "previous_event_item_id": 112380,
+        "previous_placement": null,
+        "previous_title": "Appointment of David Benchlouch as member, Community Police Commission, for a term to December 31, 2027.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:16000",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 16000,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2025-07-29T00:00:00",
+        "current_event_item_id": 116885,
+        "current_placement": null,
+        "current_title": "Appointment of Raam D. Wong as member, Historic Seattle Preservation and Development Authority Governing Council, for a term to November 30, 2027.",
+        "previous_event_date": "2025-07-24T00:00:00",
+        "previous_event_item_id": 116571,
+        "previous_placement": null,
+        "previous_title": "Appointment of Raam D. Wong as member, Historic Seattle Preservation and Development Authority Governing Council, for a term to November 30, 2027.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:16092",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 16092,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-01-20T00:00:00",
+        "current_event_item_id": 120790,
+        "current_placement": null,
+        "current_title": "AN ORDINANCE granting HST Lessee West Seattle LLC permission to continue maintaining and operating a pedestrian skybridge over and across Virginia Street, between 5th Avenue and 6th Avenue, for a 15-year term, renewable for one successive 15-year term; specifying the conditions under which this permit is granted; and providing for the acceptance of the permit and conditions.",
+        "previous_event_date": "2026-01-15T00:00:00",
+        "previous_event_item_id": 120649,
+        "previous_placement": null,
+        "previous_title": "AN ORDINANCE granting HST Lessee West Seattle LLC permission to continue maintaining and operating a pedestrian skybridge over and across Virginia Street, between 5th Avenue and 6th Avenue, for a 15-year term, renewable for one successive 15-year term; specifying the conditions under which this permit is granted; and providing for the acceptance of the permit and conditions.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:16163",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 16163,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2025-07-29T00:00:00",
+        "current_event_item_id": 116889,
+        "current_placement": null,
+        "current_title": "Reappointment of Jonathan Cracolici as member, Pike Place Market Historical Commission, for a term to December 1, 2027.",
+        "previous_event_date": "2025-07-24T00:00:00",
+        "previous_event_item_id": 116575,
+        "previous_placement": null,
+        "previous_title": "Reappointment of Jonathan Cracolici as member, Pike Place Market Historical Commission, for a term to December 1, 2027.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:16427",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 16427,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2025-10-14T00:00:00",
+        "current_event_item_id": 118564,
+        "current_placement": null,
+        "current_title": "Appointment of Jeremy Holmes as member, Community Police Commission, for a term to December 31, 2026.",
+        "previous_event_date": "2025-09-23T00:00:00",
+        "previous_event_item_id": 118203,
+        "previous_placement": null,
+        "previous_title": "Appointment of Jeremy Holmes as member, Community Police Commission, for a term to December 31, 2026.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:16600",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 16600,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2025-12-16T00:00:00",
+        "current_event_item_id": 120141,
+        "current_placement": null,
+        "current_title": "Reappointment of Anthony R. Salazar as member, Ballard Avenue Landmark District Board, for a term to June 30, 2027.",
+        "previous_event_date": "2025-12-12T00:00:00",
+        "previous_event_item_id": 119763,
+        "previous_placement": null,
+        "previous_title": "Reappointment of Anthony R. Salazar as member, Ballard Avenue Landmark District Board, for a term to June 30, 2027.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:16601",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 16601,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2025-12-16T00:00:00",
+        "current_event_item_id": 120144,
+        "current_placement": null,
+        "current_title": "Appointment of Matthew D. Zinski as member, Landmarks Preservation Board, for a term to August 14, 2028.",
+        "previous_event_date": "2025-12-12T00:00:00",
+        "previous_event_item_id": 119764,
+        "previous_placement": null,
+        "previous_title": "Appointment of Matthew D. Zinski as member, Landmarks Preservation Board, for a term to August 14, 2028.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:16759",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 16759,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2025-12-16T00:00:00",
+        "current_event_item_id": 120145,
+        "current_placement": null,
+        "current_title": "Appointment of Gabriel de los Angeles as member, Community Involvement Commission, for a term to May 31, 2026.",
+        "previous_event_date": "2025-12-12T00:00:00",
+        "previous_event_item_id": 119769,
+        "previous_placement": null,
+        "previous_title": "Appointment of Gabriel de los Angeles as member, Community Involvement Commission, for a term to May 31, 2026.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:16836",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 16836,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-03-24T00:00:00",
+        "current_event_item_id": 121980,
+        "current_placement": null,
+        "current_title": "AN ORDINANCE relating to cable television; authorizing the Mayor or the Mayor\u2019s designee to execute an amendment to the Cable Television Franchise Agreement with Comcast Cable Communications Management, LLC, authorized by Ordinance 124957; authorizing the Chief Technology Officer to enter into other agreements for the purpose of implementing or administering the amended franchise; amending Section 21.60.050 of the Seattle Municipal Code; and ratifying and confirming certain prior acts.",
+        "previous_event_date": "2026-03-12T00:00:00",
+        "previous_event_item_id": 121532,
+        "previous_placement": null,
+        "previous_title": "AN ORDINANCE relating to cable television; authorizing the Mayor or the Mayor\u2019s designee to execute an amendment to the Cable Television Franchise Agreement with Comcast Cable Communications Management, LLC, authorized by Ordinance 124957; authorizing the Chief Technology Officer to enter into other agreements for the purpose of implementing or administering the amended franchise; amending Section 21.60.050 of the Seattle Municipal Code; and ratifying and confirming certain prior acts.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:16876",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 16876,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-03-17T00:00:00",
+        "current_event_item_id": 121824,
+        "current_placement": null,
+        "current_title": "Reappointment of Avery Barnes as member, Seattle Arts Commission, for a term to December 31, 2027.",
+        "previous_event_date": "2026-03-11T00:00:00",
+        "previous_event_item_id": 121652,
+        "previous_placement": null,
+        "previous_title": "Reappointment of Avery Barnes as member, Seattle Arts Commission, for a term to December 31, 2027.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:16880",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 16880,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-03-17T00:00:00",
+        "current_event_item_id": 121823,
+        "current_placement": null,
+        "current_title": "Appointment of Carlin Llorente as member, Burke-Gilman Place Public Development Authority Governing Council, for a term to December 31, 2026.",
+        "previous_event_date": "2026-03-11T00:00:00",
+        "previous_event_item_id": 121651,
+        "previous_placement": null,
+        "previous_title": "Appointment of Carlin Llorente as member, Burke-Gilman Place Public Development Authority Governing Council, for a term to December 31, 2026.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:16984",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 16984,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-05-20T00:00:00",
+        "current_event_item_id": 123123,
+        "current_placement": null,
+        "current_title": "An ordinance relating to land use and zoning; rezoning certain land in the University District, the Fremont neighborhood, the Madison/Miller neighborhood, the Rainier Beach neighborhood, and the Downtown neighborhood; rezoning land and amending development standards to increase housing supply, support multi-purpose redevelopment on certain sites with community-based uses, remove code barriers to passive house, modular, and mass timber construction and to conversion from commercial space to housing in more zones, and incentivize community-serving uses along with the construction of more housing in certain areas; amending Sections 23.40.080, 23.47A.009, 23.49.008, 23.49.011, 23.49.036, 23.49.058, and 23.49.158 of the Seattle Municipal Code; adding a new Section 23.40.090 to the Seattle Municipal Code; adding a new Map 1L to Chapter 23.49 of the Seattle Municipal Code; and amending Chapter 23.32 of the Seattle Municipal Code at pages 60, 76, 109, 112, and 188 of the Official Land Use Map.",
+        "previous_event_date": "2026-04-15T00:00:00",
+        "previous_event_item_id": 122377,
+        "previous_placement": null,
+        "previous_title": "An ordinance relating to land use and zoning; rezoning certain land in the University District, the Fremont neighborhood, the Madison/Miller neighborhood, the Rainier Beach neighborhood, and the Downtown neighborhood; rezoning land and amending development standards to increase housing supply, support multi-purpose redevelopment on certain sites with community-based uses, remove code barriers to passive house, modular, and mass timber construction and to conversion from commercial space to housing in more zones, and incentivize community-serving uses along with the construction of more housing in certain areas; amending Sections 23.40.080, 23.47A.009, 23.49.008, 23.49.011, 23.49.036, 23.49.058, and 23.49.158 of the Seattle Municipal Code; adding a new Section 23.40.090 to the Seattle Municipal Code; adding a new Map 1L to Chapter 23.49 of the Seattle Municipal Code; and amending Chapter 23.32 of the Seattle Municipal Code at pages 60, 76, 109, 112, and 188 of the Official Land Use Map.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:17045",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 17045,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-04-28T00:00:00",
+        "current_event_item_id": 122698,
+        "current_placement": null,
+        "current_title": "Reappointment of Sam Wolfson as member, Seattle Renters\u2019 Commission, for a term to February 28, 2028.",
+        "previous_event_date": "2026-04-22T00:00:00",
+        "previous_event_item_id": 122592,
+        "previous_placement": null,
+        "previous_title": "Reappointment of Sam Wolfson as member, Seattle Renters\u2019 Commission, for a term to February 28, 2028.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:17140",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 17140,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-07-28T00:00:00",
+        "current_event_item_id": 124864,
+        "current_placement": null,
+        "current_title": "An ordinance relating to City employment; establishing the new Information Technology (IT) Talent Modernization classification title structure and corresponding rates of pay for IT positions across City departments.",
+        "previous_event_date": "2026-07-17T00:00:00",
+        "previous_event_item_id": 124403,
+        "previous_placement": null,
+        "previous_title": "An ordinance relating to City employment; establishing the new Information Technology (IT) Talent Modernization classification title structure and corresponding rates of pay for IT positions across City departments.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:17161",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 17161,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-08-18T00:00:00",
+        "current_event_item_id": 125384,
+        "current_placement": "consent",
+        "current_title": "Appointment of Dan Sloat as member, Landmarks Preservation Board, for a term to August 14, 2028.",
+        "previous_event_date": "2026-08-12T00:00:00",
+        "previous_event_item_id": 125234,
+        "previous_placement": null,
+        "previous_title": "Appointment of Dan Sloat as member, Landmarks Preservation Board, for a term to August 14, 2028.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:17240",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 17240,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-07-29T00:00:00",
+        "current_event_item_id": 124544,
+        "current_placement": null,
+        "current_title": "An ordinance relating to emergency assistance for Seattle Public Utilities customers; amending Section 21.76.065 of the Seattle Municipal Code to adjust program terms and conditions and expand eligibility guidelines for emergency bill assistance.",
+        "previous_event_date": "2026-07-09T00:00:00",
+        "previous_event_item_id": 124217,
+        "previous_placement": null,
+        "previous_title": "An ordinance relating to emergency assistance for Seattle Public Utilities customers; amending Section 21.76.065 of the Seattle Municipal Code to adjust program terms and conditions and expand eligibility guidelines for emergency bill assistance.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:17242",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 17242,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-07-07T00:00:00",
+        "current_event_item_id": 124348,
+        "current_placement": null,
+        "current_title": "Reappointment of Andrew L. Dannenberg as member, Seattle Planning Commission, for a term to April 15, 2029.",
+        "previous_event_date": "2026-07-01T00:00:00",
+        "previous_event_item_id": 124204,
+        "previous_placement": null,
+        "previous_title": "Reappointment of Andrew L. Dannenberg as member, Seattle Planning Commission, for a term to April 15, 2029.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:17296",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 17296,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-08-11T00:00:00",
+        "current_event_item_id": 125158,
+        "current_placement": "consent",
+        "current_title": "Reappointment of Eric Berlinberg as member, Seattle Center Advisory Commission, for a term to September 28, 2029.",
+        "previous_event_date": "2026-08-06T00:00:00",
+        "previous_event_item_id": 125014,
+        "previous_placement": null,
+        "previous_title": "Reappointment of Eric Berlinberg as member, Seattle Center Advisory Commission, for a term to September 28, 2029.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    },
+    {
+      "case_id": "Seattle, Washington:17398",
+      "city": "Seattle, Washington",
+      "cohort_role": "control",
+      "matter_id": 17398,
+      "review_pair": {
+        "attachment_ids_with_multiple_captured_hashes": [],
+        "current_event_date": "2026-09-15T00:00:00",
+        "current_event_item_id": 125771,
+        "current_placement": "consent",
+        "current_title": "An ordinance relating to the Capitol Hill Business Improvement Area; modifying the boundaries; amending Ordinance 113029, as previously amended by Ordinances 115998, 120303, and 124514; modifying the assessment structure for the Capitol Hill Business Improvement Area; and ratifying and confirming certain prior acts.",
+        "previous_event_date": "2026-08-21T00:00:00",
+        "previous_event_item_id": 125333,
+        "previous_placement": null,
+        "previous_title": "An ordinance relating to the Capitol Hill Business Improvement Area; modifying the boundaries; amending Ordinance 113029, as previously amended by Ordinances 115998, 120303, and 124514; modifying the assessment structure for the Capitol Hill Business Improvement Area; and ratifying and confirming certain prior acts.",
+        "reasons": []
+      },
+      "selected_pairs": [],
+      "selection_reasons": [
+        "mechanical_control"
+      ]
+    }
+  ],
+  "review_packet_sha256": "93c08de187be7a50fdffc4a71e71e97924b58251048a3faef6a054548fffbd5c",
+  "schema_version": 1,
+  "selection": {
+    "candidate_count": 5,
+    "candidate_pool_size": 5,
+    "control_count": 32,
+    "control_pool_size": 32,
+    "eligible_review_matters": 37,
+    "excluded_recurring_container_count": 3,
+    "excluded_recurring_containers": [
+      {
+        "matter_id": 15756,
+        "reason": "excluded_recurring_container"
+      },
+      {
+        "matter_id": 16819,
+        "reason": "excluded_recurring_container"
+      },
+      {
+        "matter_id": 16820,
+        "reason": "excluded_recurring_container"
+      }
+    ],
+    "legacy_source_note": "This packet preserves completed reviews for valid matters from the prior cohort; the prior packet exposed selection metadata and is not described as blind.",
+    "review_unit": "one fixed adjacent appearance pair per matter",
+    "rules": [
+      "retain the previously selected candidate and control matters",
+      "exclude recurring agenda, minutes, and calendar container matters",
+      "shuffle the corrected reviewer packet with the seed",
+      "page47_result_used_for_selection: false"
+    ],
+    "seed": 47,
+    "selection_mode": "corrected_legacy_cohort"
+  },
+  "source_snapshot": {
+    "code_revision": "6adb7c3ab7aad1f0aee7ef3cd9a16b77889de096",
+    "created_at_utc": "2026-09-12T18:59:14.379999Z",
+    "database_sha256": "c848038abf4322b11aab296eafcb25c209b1e2428a79dedecb6aab93b55f7ded",
+    "evidence_chain_sha256": "f377ca1441085c05e0f4effd39423bf6c81c487e6741bbba5e7a3f7f74c0a336",
+    "evidence_integrity_root": "bb58760ee3fb8397127159a6aa97faa76821ec2c217a318acec97631b6d393d9",
+    "evidence_manifest_sha256": "a8722977d52670e7ad0d6fc8b6e58febbf2045bb33c9e99b9a850fb6e78bb7f4",
+    "legacy_source_packet_sha256": "3a2cc2ed2c6e66017945266816e41065fb541ed194376cccb104d64502c3a016"
+  },
+  "status": "published_after_review"
+}

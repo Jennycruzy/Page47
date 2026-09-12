@@ -3539,19 +3539,497 @@
   "matter_id": 1824,
   "review": {
     "adjudicated": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "adjudication_basis": "Both independent reviewers supplied the same label.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:26.143774Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2115?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:24.627789Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2130?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:23.161924Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2143?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:21.001285Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2159?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:19.408407Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2172?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:17.999624Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2183?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:16.425603Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2193?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:12.338845Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2218?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:49.782048Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2368?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:48.219272Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2380?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:47.549480Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2418?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:45.039931Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2436?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:42.791101Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2458?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:41.036461Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2469?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:40.384567Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2483?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:37.866475Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2510?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:37.148198Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2511?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:34.753237Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2524?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:33.301527Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2526?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:32.604951Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2531?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:31.282082Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2534?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:29.844841Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2544?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:28.046711Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2551?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:24.405156Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2578?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:21.820879Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2596?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:16.154180Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2641?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:14.448373Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2646?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:11.571159Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2655?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:08.596291Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2681?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:06.309918Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2695?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:01.656579Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2721?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:00.143611Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2733?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:58.568074Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2740?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:56.371318Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2758?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:48.614163Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2810?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:47.942954Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2816?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:45.631228Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2828?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:39.236172Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2859?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:37.921264Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "recurring Council Briefing events",
+      "label": "unchanged",
+      "reason": "Repeated Council Briefing appearances keep the same 'Full Council Agenda' presentation and the retained document pattern does not show a directional change."
     },
     "reviewer_a": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:26.143774Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2115?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:24.627789Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2130?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:23.161924Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2143?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:21.001285Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2159?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:19.408407Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2172?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:17.999624Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2183?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:16.425603Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2193?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:12.338845Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2218?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:49.782048Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2368?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:48.219272Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2380?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:47.549480Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2418?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:45.039931Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2436?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:42.791101Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2458?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:41.036461Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2469?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:40.384567Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2483?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:37.866475Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2510?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:37.148198Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2511?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:34.753237Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2524?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:33.301527Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2526?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:32.604951Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2531?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:31.282082Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2534?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:29.844841Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2544?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:28.046711Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2551?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:24.405156Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2578?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:21.820879Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2596?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:16.154180Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2641?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:14.448373Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2646?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:11.571159Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2655?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:08.596291Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2681?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:06.309918Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2695?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:01.656579Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2721?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:00.143611Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2733?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:58.568074Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2740?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:56.371318Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2758?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:48.614163Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2810?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:47.942954Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2816?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:45.631228Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2828?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:39.236172Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2859?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:37.921264Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "recurring Council Briefing events",
+      "label": "unchanged",
+      "reason": "Repeated Council Briefing appearances keep the same 'Full Council Agenda' presentation and the retained document pattern does not show a directional change."
     },
     "reviewer_b": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:26.143774Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2115?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:24.627789Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2130?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:23.161924Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2143?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:21.001285Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2159?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:19.408407Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2172?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:17.999624Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2183?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:16.425603Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2193?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:09:12.338845Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2218?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:49.782048Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2368?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:48.219272Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2380?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:47.549480Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2418?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:45.039931Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2436?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:42.791101Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2458?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:41.036461Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2469?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:40.384567Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2483?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:37.866475Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2510?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:37.148198Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2511?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:34.753237Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2524?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:33.301527Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2526?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:32.604951Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2531?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:31.282082Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2534?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:29.844841Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2544?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:28.046711Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2551?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:24.405156Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2578?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:21.820879Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2596?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:16.154180Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2641?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:14.448373Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2646?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:11.571159Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2655?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:08.596291Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2681?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:06.309918Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2695?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:01.656579Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2721?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:08:00.143611Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2733?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:58.568074Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2740?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:56.371318Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2758?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:48.614163Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2810?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:47.942954Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2816?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:45.631228Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2828?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:39.236172Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2859?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T20:07:37.921264Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "recurring Council Briefing events",
+      "label": "unchanged",
+      "reason": "Repeated Council Briefing appearances keep the same 'Full Council Agenda' presentation and the retained document pattern does not show a directional change."
     }
   },
   "review_pair": {

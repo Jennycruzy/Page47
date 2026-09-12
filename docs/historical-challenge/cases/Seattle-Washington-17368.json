@@ -615,19 +615,41 @@
   "matter_id": 17368,
   "review": {
     "adjudicated": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "adjudication_basis": "Both independent reviewers supplied the same label.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:38:24.782970Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6864 \u2192 later committee appearance",
+      "label": "cannot_determine",
+      "reason": "The attachment set and committee stage change, but the title is stable and no comparable supported agenda-placement baseline establishes a direction."
     },
     "reviewer_a": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:38:24.782970Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6864 \u2192 later committee appearance",
+      "label": "cannot_determine",
+      "reason": "The attachment set and committee stage change, but the title is stable and no comparable supported agenda-placement baseline establishes a direction."
     },
     "reviewer_b": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:38:24.782970Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6864 \u2192 later committee appearance",
+      "label": "cannot_determine",
+      "reason": "The attachment set and committee stage change, but the title is stable and no comparable supported agenda-placement baseline establishes a direction."
     }
   },
   "review_pair": {

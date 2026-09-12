@@ -1,0 +1,459 @@
+{
+  "case_id": "Seattle, Washington:16092",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "pass",
+        "action_text": "The Committee recommends that City Council pass the Council Bill (CB).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing, Discussion, and Possible Vote\\b0\\par\r\n\\par\r\n\\pard\\sa160\\sl252\\slmult1\\cf1\\b\\f1 Presenter:\\b0  Lish Whitson, Council Central Staff\\cf0\\b\\f0\\par\r\n\\pard\\cf1\\b0\\par\r\n}\r\n",
+        "agenda_number": "2.",
+        "agenda_sequence": 8,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 44469,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2025-05-27T18:33:09.32",
+            "matter_id": 16092,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:24.783841Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6542?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/56d63edc-6c12-42a8-898e-b9ae64a7976a.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 44470,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2025-05-27T18:33:09.92",
+            "matter_id": 16092,
+            "name": "Summary Att A \u2013 Map",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:24.783841Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6542?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/170faa39-e19f-457c-bdd3-0f826d07a85b.doc",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 44471,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2025-05-27T18:33:10.557",
+            "matter_id": 16092,
+            "name": "Summary Att B \u2013 Photos",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:24.783841Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6542?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/461e3ef0-a4de-4714-bb9a-1d17a5bf027a.doc",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 44472,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2025-05-27T18:33:11.127",
+            "matter_id": 16092,
+            "name": "Summary Att C \u2013 Annual Fee Assessment Summary",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:24.783841Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6542?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/18c64c38-cbc0-4730-84a4-1515fc705afb.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 46559,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2025-11-25T16:45:35.26",
+            "matter_id": 16092,
+            "name": "Central Staff Memo",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:24.783841Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6542?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/8ae2e624-a21c-41a3-b659-e5bc246d18a0.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 46567,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2025-11-25T21:52:55.67",
+            "matter_id": 16092,
+            "name": "Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:24.783841Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6542?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/aee32cb8-6608-4aac-8cf7-f02a01afc281.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47451,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2026-03-18T21:54:14.373",
+            "matter_id": 16092,
+            "name": "Signed Ordinance 127386",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:24.783841Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6542?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/3244003f-9d44-4602-8b34-e697d0eab7b0.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47452,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2026-03-18T21:54:38.883",
+            "matter_id": 16092,
+            "name": "Affidavit of Publication",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:24.783841Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6542?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/5bd7410b-67be-436e-90b7-fe6f6b1ea3f9.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 282,
+        "body_name": "Transportation, Waterfront, and Seattle Center Committee",
+        "consent_value": 0,
+        "event_date": "2026-01-15T00:00:00",
+        "event_id": 6542,
+        "event_item_id": 120649,
+        "item_last_modified_utc": "2026-01-15T22:45:41.54",
+        "matter_id": 16092,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:40:24.783841Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6542?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "AN ORDINANCE granting HST Lessee West Seattle LLC permission to continue maintaining and operating a pedestrian skybridge over and across Virginia Street, between 5th Avenue and 6th Avenue, for a 15-year term, renewable for one successive 15-year term; specifying the conditions under which this permit is granted; and providing for the acceptance of the permit and conditions."
+      },
+      {
+        "action_taken": "passed",
+        "action_text": "The Council Bill (CB) was passed by the following vote, and the President signed the Council Bill (CB):",
+        "agenda_note": null,
+        "agenda_number": "1.",
+        "agenda_sequence": 16,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 44469,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2025-05-27T18:33:09.32",
+            "matter_id": 16092,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:23.972472Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6554?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/56d63edc-6c12-42a8-898e-b9ae64a7976a.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 44470,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2025-05-27T18:33:09.92",
+            "matter_id": 16092,
+            "name": "Summary Att A \u2013 Map",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:23.972472Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6554?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/170faa39-e19f-457c-bdd3-0f826d07a85b.doc",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 44471,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2025-05-27T18:33:10.557",
+            "matter_id": 16092,
+            "name": "Summary Att B \u2013 Photos",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:23.972472Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6554?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/461e3ef0-a4de-4714-bb9a-1d17a5bf027a.doc",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 44472,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2025-05-27T18:33:11.127",
+            "matter_id": 16092,
+            "name": "Summary Att C \u2013 Annual Fee Assessment Summary",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:23.972472Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6554?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/18c64c38-cbc0-4730-84a4-1515fc705afb.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 46559,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2025-11-25T16:45:35.26",
+            "matter_id": 16092,
+            "name": "Central Staff Memo",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:23.972472Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6554?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/8ae2e624-a21c-41a3-b659-e5bc246d18a0.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 46567,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2025-11-25T21:52:55.67",
+            "matter_id": 16092,
+            "name": "Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:23.972472Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6554?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/aee32cb8-6608-4aac-8cf7-f02a01afc281.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47451,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2026-03-18T21:54:14.373",
+            "matter_id": 16092,
+            "name": "Signed Ordinance 127386",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:23.972472Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6554?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/3244003f-9d44-4602-8b34-e697d0eab7b0.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47452,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:23.972472Z",
+            "last_modified_utc": "2026-03-18T21:54:38.883",
+            "matter_id": 16092,
+            "name": "Affidavit of Publication",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:23.972472Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6554?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/5bd7410b-67be-436e-90b7-fe6f6b1ea3f9.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2026-01-20T00:00:00",
+        "event_id": 6554,
+        "event_item_id": 120790,
+        "item_last_modified_utc": "2026-01-20T23:12:57.307",
+        "matter_id": 16092,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:40:23.972472Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6554?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "AN ORDINANCE granting HST Lessee West Seattle LLC permission to continue maintaining and operating a pedestrian skybridge over and across Virginia Street, between 5th Avenue and 6th Avenue, for a 15-year term, renewable for one successive 15-year term; specifying the conditions under which this permit is granted; and providing for the acceptance of the permit and conditions."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2026-01-20T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "AN ORDINANCE granting HST Lessee West Seattle LLC permission to continue maintaining and operating a pedestrian skybridge over and across Virginia Street, between 5th Avenue and 6th Avenue, for a 15-year term, renewable for one successive 15-year term; specifying the conditions under which this permit is granted; and providing for the acceptance of the permit and conditions.",
+      "file_number": "CB 121022",
+      "intro_date": "2025-04-30T00:00:00",
+      "last_modified_utc": "2026-03-18T21:54:55.16",
+      "matter_id": 16092,
+      "matter_name": "CB 121022",
+      "source": {
+        "captured_at": "2026-09-04T20:15:46.415248Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=12500&%24orderby=MatterId+asc"
+      },
+      "status_name": "Passed",
+      "type_name": "Ordinance (Ord)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "matter_id": 16092,
+  "review": {
+    "adjudicated": {
+      "adjudication_basis": "Both independent reviewers supplied the same label.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:40:24.783841Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6542?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6542 \u2192 6554",
+      "label": "unchanged",
+      "reason": "The ordinance title and document set remain stable from committee consideration to Council passage; no consent placement or other directional presentation evidence is retained."
+    },
+    "reviewer_a": {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:40:24.783841Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6542?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6542 \u2192 6554",
+      "label": "unchanged",
+      "reason": "The ordinance title and document set remain stable from committee consideration to Council passage; no consent placement or other directional presentation evidence is retained."
+    },
+    "reviewer_b": {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:40:24.783841Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6542?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6542 \u2192 6554",
+      "label": "unchanged",
+      "reason": "The ordinance title and document set remain stable from committee consideration to Council passage; no consent placement or other directional presentation evidence is retained."
+    }
+  },
+  "review_pair": {
+    "current_event_date": "2026-01-20T00:00:00",
+    "current_event_item_id": 120790,
+    "current_placement": null,
+    "current_title": "AN ORDINANCE granting HST Lessee West Seattle LLC permission to continue maintaining and operating a pedestrian skybridge over and across Virginia Street, between 5th Avenue and 6th Avenue, for a 15-year term, renewable for one successive 15-year term; specifying the conditions under which this permit is granted; and providing for the acceptance of the permit and conditions.",
+    "previous_event_date": "2026-01-15T00:00:00",
+    "previous_event_item_id": 120649,
+    "previous_placement": null,
+    "previous_title": "AN ORDINANCE granting HST Lessee West Seattle LLC permission to continue maintaining and operating a pedestrian skybridge over and across Virginia Street, between 5th Avenue and 6th Avenue, for a 15-year term, renewable for one successive 15-year term; specifying the conditions under which this permit is granted; and providing for the acceptance of the permit and conditions."
+  }
+}

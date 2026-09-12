@@ -39,12 +39,13 @@ Systems Manager.
 Page 47 does not infer intent, make a legal finding, or tell residents what
 political position to take. When the available history is insufficient, it says
 so. The repository preserves the 30-case historical abstention audit, a
-28-case controlled directional evaluation, a mechanically selected 40-case
-historical challenge packet awaiting independent labels, an independent
-evaluation review, and a retained searchable managed-runtime trace. The
-challenge packet is blind: its selection answer key is withheld outside the
-reviewer packet, which has a compact browser index and separate neutral case
-files alongside the complete canonical JSON artifact.
+28-case controlled directional evaluation, and a completed independently
+reviewed historical challenge cohort containing 37 real Seattle matters: 5
+mechanically selected candidates and 32 controls. Three recurring agenda or
+minutes containers were excluded before the completed review files were
+imported. The packet retains both reviewer records, the adjudicated labels, the
+public answer key, the source fingerprints, an independent evaluation review,
+and a searchable managed-runtime trace.
 
 ## Required links
 

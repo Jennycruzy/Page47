@@ -77,9 +77,12 @@ made more aggressive after seeing the result.
 
 This artifact demonstrates a conservative evidence boundary on a random
 historical cohort. It does not claim that Page 47 has directional accuracy on
-real-world cases. The controlled directional fixture and a separately labelled
-historical challenge cohort answer that question independently.
+real-world cases. The controlled directional fixture and the separately
+labelled historical challenge cohort provide the complementary behavior check;
+the challenge-cohort score is preserved in
+[`docs/historical-challenge-results.json`](historical-challenge-results.json).
 
-The generated per-case results remain `review_required` until the outputs have
-been checked. The independent review must cite this exact artifact and its
-input fingerprints rather than an earlier run.
+The generated four-arm comparison artifact retains `review_required` as its
+schema status. That status is a machine-readable guard against treating this
+descriptive random-cohort run as an accuracy benchmark. The independent review
+above cites this exact artifact and its input fingerprints.

@@ -1,0 +1,179 @@
+{
+  "case_id": "Seattle, Washington:16759",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "confirm",
+        "action_text": "The Committee recommends that City Council confirm the Appointment (Appt).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing, Discussion, and Possible Vote\\b0  \\par\r\n\\par\r\n\\cf1\\b\\f1 Presenter:\\b0  Lydia Faitalia, Department of Neighborhoods\\f0\\par\r\n}\r\n",
+        "agenda_number": "10.",
+        "agenda_sequence": 16,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 46605,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:31.589302Z",
+            "last_modified_utc": "2025-12-02T20:26:27.09",
+            "matter_id": 16759,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:36.257029Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6493?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/e9e779de-4c0a-4640-a1fe-20f759f8a222.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 268,
+        "body_name": "Libraries, Education, and Neighborhoods Committee",
+        "consent_value": 0,
+        "event_date": "2025-12-12T00:00:00",
+        "event_id": 6493,
+        "event_item_id": 119769,
+        "item_last_modified_utc": "2025-12-12T19:45:44.98",
+        "matter_id": 16759,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:40:36.257029Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6493?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Appointment of Gabriel de los Angeles as member, Community Involvement Commission, for a term to May 31, 2026."
+      },
+      {
+        "action_taken": "confirmed",
+        "action_text": "The Appointment (Appt) was confirmed on the Consent Calendar by the following vote:",
+        "agenda_note": null,
+        "agenda_number": "34.",
+        "agenda_sequence": 50,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 46605,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:31.589302Z",
+            "last_modified_utc": "2025-12-02T20:26:27.09",
+            "matter_id": 16759,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:31.589302Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6506?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/e9e779de-4c0a-4640-a1fe-20f759f8a222.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2025-12-16T00:00:00",
+        "event_id": 6506,
+        "event_item_id": 120145,
+        "item_last_modified_utc": "2025-12-17T23:24:12.98",
+        "matter_id": 16759,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:40:31.589302Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6506?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Appointment of Gabriel de los Angeles as member, Community Involvement Commission, for a term to May 31, 2026."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2025-12-16T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "Appointment of Gabriel de los Angeles as member, Community Involvement Commission, for a term to May 31, 2026.",
+      "file_number": "Appt 03417",
+      "intro_date": "2025-12-02T00:00:00",
+      "last_modified_utc": "2025-12-16T22:44:16.06",
+      "matter_id": 16759,
+      "matter_name": null,
+      "source": {
+        "captured_at": "2026-09-04T20:15:51.459535Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=13100&%24orderby=MatterId+asc"
+      },
+      "status_name": "Confirmed",
+      "type_name": "Appointment (Appt)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "matter_id": 16759,
+  "review": {
+    "adjudicated": {
+      "adjudication_basis": "Both independent reviewers supplied the same label.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:40:36.257029Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6493?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6493 \u2192 6506",
+      "label": "less_clear",
+      "reason": "The appointment received an explicit committee briefing/discussion/vote presentation, then was confirmed on the Council Consent Calendar."
+    },
+    "reviewer_a": {
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:40:36.257029Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6493?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6493 \u2192 6506",
+      "label": "less_clear",
+      "reason": "The appointment received an explicit committee briefing/discussion/vote presentation, then was confirmed on the Council Consent Calendar."
+    },
+    "reviewer_b": {
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:40:36.257029Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6493?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6493 \u2192 6506",
+      "label": "less_clear",
+      "reason": "The appointment received an explicit committee briefing/discussion/vote presentation, then was confirmed on the Council Consent Calendar."
+    }
+  },
+  "review_pair": {
+    "current_event_date": "2025-12-16T00:00:00",
+    "current_event_item_id": 120145,
+    "current_placement": null,
+    "current_title": "Appointment of Gabriel de los Angeles as member, Community Involvement Commission, for a term to May 31, 2026.",
+    "previous_event_date": "2025-12-12T00:00:00",
+    "previous_event_item_id": 119769,
+    "previous_placement": null,
+    "previous_title": "Appointment of Gabriel de los Angeles as member, Community Involvement Commission, for a term to May 31, 2026."
+  }
+}

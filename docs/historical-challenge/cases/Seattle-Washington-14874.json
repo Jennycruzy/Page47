@@ -1,0 +1,179 @@
+{
+  "case_id": "Seattle, Washington:14874",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "confirm",
+        "action_text": "The Committee recommends that City Council confirm the Appointment (Appt).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fswiss\\fprq2\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Aptos;}{\\f2\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\f0\\fs24 Briefing, Discussion, and Possible Vote\\b0\\par\r\n\\par\r\n\\cf1\\b Presenter:\\b0  Minh Chau Le, Department of Neighborhoods\\cf0\\lang1024\\kerning2\\f1\\fs22\\par\r\n\\lang1033\\par\r\n\\pard\\sa160\\sl252\\slmult1\\kerning0\\b\\f2\\fs24\\par\r\n\\pard\\cf1\\b0\\par\r\n}\r\n",
+        "agenda_number": "3.",
+        "agenda_sequence": 9,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 40006,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:43:37.298280Z",
+            "last_modified_utc": "2024-02-08T20:08:06.527",
+            "matter_id": 14874,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:43:41.166013Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/5776?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/671ad595-6a09-4757-8ca6-50d75671d37c.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 268,
+        "body_name": "Libraries, Education, and Neighborhoods Committee",
+        "consent_value": 0,
+        "event_date": "2024-03-14T00:00:00",
+        "event_id": 5776,
+        "event_item_id": 105402,
+        "item_last_modified_utc": "2024-03-14T22:07:10.477",
+        "matter_id": 14874,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:43:41.166013Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/5776?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Reappointment of Mark C. Childs as member, Pike Place Market Historical Commission, for a term to December 1, 2026."
+      },
+      {
+        "action_taken": "confirmed",
+        "action_text": "The Appointment (Appt) was confirmed on the Consent Calendar by the following vote:",
+        "agenda_note": null,
+        "agenda_number": "6.",
+        "agenda_sequence": 20,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 40006,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:43:37.298280Z",
+            "last_modified_utc": "2024-02-08T20:08:06.527",
+            "matter_id": 14874,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:43:37.298280Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/5790?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/671ad595-6a09-4757-8ca6-50d75671d37c.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2024-03-19T00:00:00",
+        "event_id": 5790,
+        "event_item_id": 105619,
+        "item_last_modified_utc": "2024-03-19T22:18:19.917",
+        "matter_id": 14874,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:43:37.298280Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/5790?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Reappointment of Mark C. Childs as member, Pike Place Market Historical Commission, for a term to December 1, 2026."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2024-03-19T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "Reappointment of Mark C. Childs as member, Pike Place Market Historical Commission, for a term to December 1, 2026.",
+      "file_number": "Appt 02754",
+      "intro_date": "2024-02-08T00:00:00",
+      "last_modified_utc": "2024-03-19T22:15:58.95",
+      "matter_id": 14874,
+      "matter_name": null,
+      "source": {
+        "captured_at": "2026-09-04T20:15:37.220504Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=11500&%24orderby=MatterId+asc"
+      },
+      "status_name": "Confirmed",
+      "type_name": "Appointment (Appt)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "matter_id": 14874,
+  "review": {
+    "adjudicated": {
+      "adjudication_basis": "Both independent reviewers supplied the same label.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:43:41.166013Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/5776?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 5776 \u2192 5790",
+      "label": "less_clear",
+      "reason": "Committee record says Briefing, Discussion, and Possible Vote; the later Council record explicitly says confirmed on the Consent Calendar."
+    },
+    "reviewer_a": {
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:43:41.166013Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/5776?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 5776 \u2192 5790",
+      "label": "less_clear",
+      "reason": "Committee record says Briefing, Discussion, and Possible Vote; the later Council record explicitly says confirmed on the Consent Calendar."
+    },
+    "reviewer_b": {
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:43:41.166013Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/5776?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 5776 \u2192 5790",
+      "label": "less_clear",
+      "reason": "Committee record says Briefing, Discussion, and Possible Vote; the later Council record explicitly says confirmed on the Consent Calendar."
+    }
+  },
+  "review_pair": {
+    "current_event_date": "2024-03-19T00:00:00",
+    "current_event_item_id": 105619,
+    "current_placement": null,
+    "current_title": "Reappointment of Mark C. Childs as member, Pike Place Market Historical Commission, for a term to December 1, 2026.",
+    "previous_event_date": "2024-03-14T00:00:00",
+    "previous_event_item_id": 105402,
+    "previous_placement": null,
+    "previous_title": "Reappointment of Mark C. Childs as member, Pike Place Market Historical Commission, for a term to December 1, 2026."
+  }
+}

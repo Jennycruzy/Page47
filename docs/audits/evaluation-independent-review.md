@@ -46,15 +46,37 @@ The real comparison remains descriptive. Because the 30 gold labels contain no
 
 ## Historical challenge packet
 
-The repository now also contains a mechanically selected 40-case Seattle
-challenge packet: 7 available raw-change candidates and 33 controls. Selection
+The repository now contains a corrected, independently reviewed 37-case Seattle
+challenge packet: 5 available raw-change candidates and 32 controls. Selection
 uses raw title, supported placement, attachment identity, and retained
-attachment-hash changes without using Page 47 output. The packet preserves its
-source snapshot and is validated with `scripts/validate_historical_challenge.py`.
+attachment-hash changes without using Page 47 output. Three recurring agenda or
+minutes container records were excluded before the existing review files were
+imported. The packet preserves its source snapshot and is validated with
+`scripts/validate_historical_challenge.py`.
 
-It is intentionally still `awaiting_independent_labels`. No real-data
-precision, recall, or confusion matrix is claimed until two blind labels and an
-adjudicated label are retained for every case.
+Reviewer A and Reviewer B supplied labels, reasons, and primary evidence for all
+37 retained matters. They agreed on all 37 labels; the packet records those
+matching labels as adjudicated results. The original packet exposed selection
+metadata, so the corrected artifact is not described as a blind re-review. It
+preserves the independent completed work and records the correction openly. The
+public answer key is available because labelling is complete.
+
+The current comparator score is preserved in
+[`docs/historical-challenge-results.json`](../historical-challenge-results.json):
+
+- 2 of 37 cases were surfaced, both `less_clear` candidate cases;
+- no control case was surfaced;
+- 89 of 89 adjudicated evidence records passed URL and capture-time provenance
+  checks;
+- title evidence was comparable for all 37 cases, placement for 2 cases,
+  substance for 0 cases, and trustworthy timing for 0 cases; and
+- all 3 cases labelled `cannot_determine` were correctly abstained on.
+
+This result is intentionally reported as challenge-cohort behavior rather than
+representative Seattle accuracy. The cohort contains only 5 mechanically
+selected candidates, while controls can still contain genuine presentation
+changes. The result demonstrates conservative surfacing under the retained
+evidence boundary and makes the remaining coverage limitation visible.
 
 ## Controlled directional fixture
 

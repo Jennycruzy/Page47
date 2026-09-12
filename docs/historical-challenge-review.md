@@ -1,37 +1,34 @@
-# Historical challenge cohort review
+# Historical challenge cohort review record
 
-This is a blind review packet for real Seattle records retained by Page 47.
-It tests whether the detector behaves correctly on historical transitions that
-are mechanically selected from raw record changes, without using Page 47's
-classification or output to choose cases.
+This record describes the completed review of real Seattle records retained by
+Page 47. It is a challenge cohort, not a prevalence sample. Cases were selected
+from mechanical record-change signals rather than from Page 47's classification
+or published result.
 
-## Reviewer materials
+## What is included
 
-Use the [browser-friendly packet](historical-challenge/README.md), beginning
-with its [compact index](historical-challenge/index.json). The complete
-[canonical packet](historical-challenge-cohort.json) is preserved for download
-and audit, but is too large for comfortable browser rendering.
+The corrected packet contains 37 matters: 5 candidate matters and 32 controls.
+Each matter has one fixed adjacent appearance pair and one matter-level label.
+Three recurring container records from the previously reviewed packet were
+removed before import:
 
-The reviewer-facing packet contains 40 cases in a shuffled order. Every item
-has the same fields: a case ID, city, matter ID, one fixed adjacent
-`review_pair`, the complete retained case payload, and empty review slots. It
-does not contain candidate/control roles, selection reasons, selected-pair
-metadata, or comparator output. The individual case files contain the same
-neutral fields.
+- 15756
+- 16819
+- 16820
 
-The separate selection answer key is held outside the repository. Do not give
-it to either reviewer before both independent labels are complete. It records
-the candidate/control composition, exclusions, selection rules, selected raw
-pairs, and source hashes needed for later scoring.
+The two supplied human review files were retained as Reviewer A and Reviewer B.
+Both reviewers supplied a label, reason, and evidence reference for every
+retained matter. Where the labels matched, that label is recorded as the
+adjudicated result. No case was sent back for relabelling.
 
-## What is being labelled
+The original packet exposed selection information. The corrected public packet
+does not expose that information in its case payloads, and the correction is
+recorded here rather than being described as a blind re-review. This keeps the
+record accurate while preserving the independent work already completed.
 
-The unit is one matter-level judgment for the fixed adjacent pair shown in
-`review_pair`. Review that pair against the complete case payload and the
-retained primary evidence. Do not combine multiple transitions into one
-judgment. The same unit applies to every case, including controls.
+## Labels
 
-Use exactly one of these five states:
+Exactly one of these five labels is used for each matter:
 
 - `clearer`: supported presentation became more representative or visible;
 - `less_clear`: supported presentation became less representative or visible;
@@ -40,38 +37,20 @@ Use exactly one of these five states:
 - `cannot_determine`: the retained public record is insufficient to establish a
   direction.
 
-Do not label motive, legality, policy merits, or whether anyone acted
-improperly. A raw title, placement, or attachment change is a reason to inspect
-a case, not a directional label by itself.
+Reviewers were asked not to label motive, legality, policy merits, or whether
+anyone acted improperly. A raw title, placement, or attachment change is a
+reason to inspect a case, not a directional label by itself.
 
-## Reviewer record
+## Evidence rule
 
-Each reviewer records:
+Each completed review retains at least one primary source URL and capture time,
+with a PDF page number when the judgment relies on a page. The importer maps
+the evidence references in the supplied review files to the matching captured
+primary records in each retained case.
 
-- one state;
-- one plain-language reason;
-- at least one primary source URL and capture time;
-- a PDF page number when the judgment relies on a page.
+## Validation and scoring
 
-Reviewer A and Reviewer B must work from separate copies and must not inspect
-Page 47 comparator output or the withheld answer key. Keep their original
-labels unchanged. After both are retained, adjudicate disagreements in a third
-field with the evidence and reason for the decision.
-
-## Validation
-
-Before labelling, validate the neutral packet:
-
-```sh
-PYTHONPATH=src python scripts/validate_historical_challenge.py \
-  --input docs/historical-challenge-cohort.json
-```
-
-The validator rejects candidate/control fields, non-uniform item shapes,
-missing review-pair fields, duplicate case IDs, and invalid review slots.
-
-After both independent labels and adjudications are complete, set the packet
-status to `labels_complete` and run:
+Validate the completed packet with:
 
 ```sh
 PYTHONPATH=src python scripts/validate_historical_challenge.py \
@@ -79,13 +58,20 @@ PYTHONPATH=src python scripts/validate_historical_challenge.py \
   --require-labels
 ```
 
-Score only with the withheld answer key generated alongside the packet and
-kept outside the repository:
+Validate the public answer key with:
+
+```sh
+PYTHONPATH=src python scripts/validate_historical_challenge_answer_key.py \
+  --input docs/historical-challenge-answer-key.json \
+  --packet docs/historical-challenge-cohort.json
+```
+
+Score the current comparator against the pinned records with:
 
 ```sh
 PYTHONPATH=src python scripts/score_historical_challenge.py \
   --cohort docs/historical-challenge-cohort.json \
-  --answer-key /path/outside/repository/page47-historical-challenge-answer-key.json \
+  --answer-key docs/historical-challenge-answer-key.json \
   --database runtime/records/seattle.sqlite3 \
   --evidence-root runtime/evidence/seattle \
   --presentation config/presentation.yaml \
@@ -93,21 +79,7 @@ PYTHONPATH=src python scripts/score_historical_challenge.py \
   --code-revision <scoring-code-revision>
 ```
 
-The scorer verifies the packet hash, database hash, evidence chain, and
-integrity root before calculating the five-way confusion matrix, per-state
-precision and recall, surfaced-positive precision, abstention correctness,
-reviewer agreement, evidence coverage, and provenance validity.
-
-## Selection boundary after review
-
-The withheld answer key is the place to inspect the counts and exclusions. The
-current construction starts with 470 repeated Seattle matters, excludes
-recurring agenda/minutes containers, and selects all remaining mechanical
-candidates plus randomly sampled controls. The exact post-exclusion counts,
-candidate IDs, and selection reasons remain withheld until labelling is
-complete so that the review remains blind.
-
-This is a mechanically selected historical challenge cohort, not a prevalence
-sample and not a representative accuracy estimate. Its purpose is to test
-behavior on real retained records while keeping the evidence boundary
-inspectable.
+The scorer reports a five-way confusion matrix, per-label precision and recall,
+surfaced-positive precision, abstention correctness, reviewer agreement,
+evidence coverage, and provenance validity. Results from this cohort must be
+described as challenge-cohort results, not representative Seattle accuracy.

@@ -194,19 +194,41 @@
   "matter_id": 17456,
   "review": {
     "adjudicated": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "adjudication_basis": "Both independent reviewers supplied the same label.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "captured_at": "2026-09-08T23:31:04.458004Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6870?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6870 \u2192 6885",
+      "label": "clearer",
+      "reason": "The later title identifies the actor more precisely: it changes from the City of Seattle's intent to the Seattle City Council's intent for the City to implement the strategy."
     },
     "reviewer_a": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "medium",
+      "evidence": [
+        {
+          "captured_at": "2026-09-08T23:31:04.458004Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6870?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6870 \u2192 6885",
+      "label": "clearer",
+      "reason": "The later title identifies the actor more precisely: it changes from the City of Seattle's intent to the Seattle City Council's intent for the City to implement the strategy."
     },
     "reviewer_b": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "medium",
+      "evidence": [
+        {
+          "captured_at": "2026-09-08T23:31:04.458004Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6870?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 6870 \u2192 6885",
+      "label": "clearer",
+      "reason": "The later title identifies the actor more precisely: it changes from the City of Seattle's intent to the Seattle City Council's intent for the City to implement the strategy."
     }
   },
   "review_pair": {

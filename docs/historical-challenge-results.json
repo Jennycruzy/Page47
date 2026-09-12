@@ -1,0 +1,6006 @@
+{
+  "cases": [
+    {
+      "case_id": "Seattle, Washington:14991",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 106260,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 106141,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 14991,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:16601",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 120144,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 119764,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 16601,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:14803",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 7,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 6,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 6
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 6
+          },
+          "title": {
+            "comparable_pairs": 6,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 6,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 104691,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 104400,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 104747,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 104691,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 104964,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 104747,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 105164,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 104964,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 105272,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 105164,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 105352,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 105272,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 6,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 70,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 10,
+          "unreadable_or_missing_reading": 10,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "unchanged",
+      "matter_id": 14803,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:17368",
+      "cohort_role": "candidate",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 2,
+            "anchored_pairs": 1,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 2,
+            "readable_pairs": 1
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 125630,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": "regular",
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 125331,
+            "substance": {
+              "material_signature_changed": false,
+              "status": "anchored"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 4,
+          "occurrences": 12,
+          "readable": 5,
+          "readable_occurrences": 7,
+          "unique_attachments": 8,
+          "unreadable_or_missing_reading": 3,
+          "with_anchors": 2
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "cannot_determine",
+      "matter_id": 17368,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:17296",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 125158,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": "consent",
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 125014,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 17296,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:17045",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 122698,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 122592,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 17045,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:16836",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 121980,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 121532,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 20,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 10,
+          "unreadable_or_missing_reading": 10,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "unchanged",
+      "matter_id": 16836,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:3577",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 29040,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 28399,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 6,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 3,
+          "unreadable_or_missing_reading": 3,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "unchanged",
+      "matter_id": 3577,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:1824",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 39,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 38,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 38
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 38
+          },
+          "title": {
+            "comparable_pairs": 38,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 38,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 29790,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 29646,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 29889,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 29790,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 30084,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 29889,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 30326,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 30084,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 30541,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 30326,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 30798,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 30541,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 31241,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 30798,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 34126,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 31241,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 34380,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 34126,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 34776,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 34380,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 35038,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 34776,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 35373,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 35038,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 35580,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 35373,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 35862,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 35580,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 36262,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 35862,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 36263,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 36262,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 36364,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 36263,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 36424,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 36364,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 36762,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 36424,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 36984,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 36762,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 37509,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 36984,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 37638,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 37509,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 38080,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 37638,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 38422,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 38080,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 39075,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 38422,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 39232,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 39075,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 39399,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 39232,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 39746,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 39399,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 39955,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 39746,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 40527,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 39955,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 40677,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 40527,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 40806,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 40677,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 41260,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 40806,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 42199,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 41260,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 42362,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 42199,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 42631,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 42362,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 43153,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 42631,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 43478,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 43153,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 38,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 117,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 3,
+          "unreadable_or_missing_reading": 3,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "unchanged",
+      "matter_id": 1824,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:15801",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 112492,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 112380,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 15801,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:17242",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 124348,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 124204,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 17242,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:16880",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 121823,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 121651,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 16880,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:16600",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 120141,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 119763,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 16600,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:2289",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 21064,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 20723,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 10,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 5,
+          "unreadable_or_missing_reading": 5,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "cannot_determine",
+      "matter_id": 2289,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:4387",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 34123,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 33856,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "clearer",
+      "matter_id": 4387,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:8371",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 7,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 6,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 6
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 6
+          },
+          "title": {
+            "comparable_pairs": 6,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 6,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 71645,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 71493,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 71799,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 71645,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 71910,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 71799,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 72087,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 71910,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 72158,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 72087,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 73253,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 72158,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 6,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 35,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 5,
+          "unreadable_or_missing_reading": 5,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "unchanged",
+      "matter_id": 8371,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:16092",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 120790,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 120649,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 16,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 8,
+          "unreadable_or_missing_reading": 8,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "unchanged",
+      "matter_id": 16092,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:15685",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 112046,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 111891,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 15685,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:15436",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 109929,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 109683,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 15436,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:4360",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 35544,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 35300,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 6,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 3,
+          "unreadable_or_missing_reading": 3,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "unchanged",
+      "matter_id": 4360,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:17398",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "insufficient_substance_anchors",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "insufficient_substance_anchors",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 2,
+            "readable_pairs": 1
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 125771,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": "consent",
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 125333,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "readable_without_anchors"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 10,
+          "readable": 1,
+          "readable_occurrences": 2,
+          "unique_attachments": 5,
+          "unreadable_or_missing_reading": 4,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "insufficient_substance_anchors",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 17398,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:17402",
+      "cohort_role": "candidate",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 3,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 2,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 2
+          },
+          "substance": {
+            "anchored_appearance_count": 3,
+            "anchored_pairs": 2,
+            "material_change_pairs": 1,
+            "readable_appearance_count": 3,
+            "readable_pairs": 2
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 2
+          },
+          "title": {
+            "comparable_pairs": 2,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 2,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 125567,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": "cannot_determine",
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 125436,
+            "substance": {
+              "material_signature_changed": true,
+              "status": "anchored"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 125808,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": "cannot_determine",
+              "later": "regular",
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 125567,
+            "substance": {
+              "material_signature_changed": false,
+              "status": "anchored"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 2,
+        "readable_attachments": {
+          "anchored_occurrences": 11,
+          "occurrences": 20,
+          "readable": 5,
+          "readable_occurrences": 14,
+          "unique_attachments": 7,
+          "unreadable_or_missing_reading": 2,
+          "with_anchors": 4
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "cannot_determine",
+      "matter_id": 17402,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:14765",
+      "cohort_role": "candidate",
+      "diagnostics": {
+        "abstention_reason_codes": [],
+        "appearances": 4,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 3,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 1,
+            "directional_pairs": 1,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 2
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 3
+          },
+          "title": {
+            "comparable_pairs": 3,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 3,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 123179,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 122830,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 124621,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": "regular",
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 123179,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 124999,
+            "placement": {
+              "direction": "less_clear",
+              "earlier": "regular",
+              "later": "consent",
+              "status": "compared"
+            },
+            "previous_event_item_id": 124621,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 3,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 56,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 14,
+          "unreadable_or_missing_reading": 14,
+          "with_anchors": 0
+        },
+        "reason_codes": [],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "less_clear"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 14765,
+      "predicted_state": "less_clear",
+      "surfaced": true
+    },
+    {
+      "case_id": "Seattle, Washington:17161",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 125384,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": "consent",
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 125234,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 17161,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:14874",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 105619,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 105402,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 14874,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:16759",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 120145,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 119769,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 16759,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:16995",
+      "cohort_role": "candidate",
+      "diagnostics": {
+        "abstention_reason_codes": [],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 1,
+            "directional_pairs": 1,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 0
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 124998,
+            "placement": {
+              "direction": "less_clear",
+              "earlier": "regular",
+              "later": "consent",
+              "status": "compared"
+            },
+            "previous_event_item_id": 124622,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 10,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 5,
+          "unreadable_or_missing_reading": 5,
+          "with_anchors": 0
+        },
+        "reason_codes": [],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "less_clear"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 16995,
+      "predicted_state": "less_clear",
+      "surfaced": true
+    },
+    {
+      "case_id": "Seattle, Washington:16000",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 116885,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 116571,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 16000,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:17240",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 3,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 2,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 2
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 2
+          },
+          "title": {
+            "comparable_pairs": 2,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 2,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 124544,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 124217,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 124990,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": "consent",
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 124544,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 2,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 18,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 6,
+          "unreadable_or_missing_reading": 6,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "unchanged",
+      "matter_id": 17240,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:14870",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 106990,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 106843,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 14870,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:17140",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 124864,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 124403,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 10,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 5,
+          "unreadable_or_missing_reading": 5,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 17140,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:15562",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 109947,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 109704,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 15562,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:16163",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 116889,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 116575,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 16163,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:16984",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 3,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 2,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 2
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 2
+          },
+          "title": {
+            "comparable_pairs": 2,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 2,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 123123,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 122377,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          },
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 123426,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 123123,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 2,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 42,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 14,
+          "unreadable_or_missing_reading": 14,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "clearer",
+      "matter_id": 16984,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:16876",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 121824,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 121652,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 16876,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:17456",
+      "cohort_role": "candidate",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "insufficient_substance_anchors",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "insufficient_substance_anchors",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 2,
+            "readable_pairs": 1
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 1,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 125767,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": "cannot_determine",
+              "later": "consent",
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 125550,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "readable_without_anchors"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "lexical_fallback",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 4,
+          "readable": 1,
+          "readable_occurrences": 2,
+          "unique_attachments": 2,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "insufficient_substance_anchors",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "clearer",
+      "matter_id": 17456,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    },
+    {
+      "case_id": "Seattle, Washington:16427",
+      "cohort_role": "control",
+      "diagnostics": {
+        "abstention_reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "appearances": 2,
+        "chronology": {
+          "missing_or_invalid_dates": 0,
+          "note": "Event dates order the recorded meeting appearances; they do not establish publication timing.",
+          "ordered_pairs": 1,
+          "status": "trusted_for_meeting_sequence",
+          "untrusted_pairs": 0
+        },
+        "config": {
+          "minimum_appearances": 2,
+          "minimum_title_overlap": 1
+        },
+        "coverage_gaps": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable"
+        ],
+        "dimensions": {
+          "placement": {
+            "comparable_pairs": 0,
+            "directional_pairs": 0,
+            "neutral_pairs": 0,
+            "unavailable_pairs": 1
+          },
+          "substance": {
+            "anchored_appearance_count": 0,
+            "anchored_pairs": 0,
+            "material_change_pairs": 0,
+            "readable_appearance_count": 0,
+            "readable_pairs": 0
+          },
+          "timing": {
+            "comparable_pairs": 0,
+            "reason": "City last-modified fields do not prove public visibility time.",
+            "status": "unavailable",
+            "unavailable_pairs": 1
+          },
+          "title": {
+            "comparable_pairs": 1,
+            "directional_pairs": 0,
+            "lexical_fallback_pairs": 0,
+            "missing_pairs": 0,
+            "neutral_pairs": 1,
+            "structured_signature_pairs": 0,
+            "unavailable_pairs": 0
+          }
+        },
+        "pair_details": [
+          {
+            "chronology": {
+              "status": "trusted"
+            },
+            "current_event_item_id": 118564,
+            "placement": {
+              "direction": "unavailable",
+              "earlier": null,
+              "later": null,
+              "status": "unavailable"
+            },
+            "previous_event_item_id": 118203,
+            "substance": {
+              "material_signature_changed": null,
+              "status": "not_readable"
+            },
+            "timing": {
+              "reason": "A city last-modified field does not prove public visibility time.",
+              "status": "unavailable"
+            },
+            "title": {
+              "direction": "neutral",
+              "earlier_ratio": null,
+              "later_ratio": null,
+              "method": "exact_match",
+              "status": "compared"
+            }
+          }
+        ],
+        "pairs": 1,
+        "readable_attachments": {
+          "anchored_occurrences": 0,
+          "occurrences": 2,
+          "readable": 0,
+          "readable_occurrences": 0,
+          "unique_attachments": 1,
+          "unreadable_or_missing_reading": 1,
+          "with_anchors": 0
+        },
+        "reason_codes": [
+          "placement_unavailable",
+          "substance_not_readable",
+          "timing_unavailable",
+          "no_directional_signal"
+        ],
+        "skeptic": {
+          "note": "The four-arm comparison runs the deterministic comparator only; model-level Skeptic review is evaluated separately.",
+          "rejected_count": null,
+          "status": "not_run"
+        },
+        "state": "cannot_determine"
+      },
+      "expected_state": "less_clear",
+      "matter_id": 16427,
+      "predicted_state": "cannot_determine",
+      "surfaced": false
+    }
+  ],
+  "city": "Seattle, Washington",
+  "cohort": "historical-challenge-cohort.json",
+  "evaluation_inputs": {
+    "answer_key_sha256": "d18462e7d30808caebb79ab2356dcfba2141223249131864b3e54502308820fa",
+    "code_revision": "8b9c7d0",
+    "cohort_sha256": "93c08de187be7a50fdffc4a71e71e97924b58251048a3faef6a054548fffbd5c",
+    "database_sha256": "c848038abf4322b11aab296eafcb25c209b1e2428a79dedecb6aab93b55f7ded",
+    "evidence_integrity_root": "bb58760ee3fb8397127159a6aa97faa76821ec2c217a318acec97631b6d393d9",
+    "presentation_sha256": "78c8bc749ee35b8020f5a063c3549fff8ed09738e5bd7d9bccdfa8c206f0fbd2"
+  },
+  "methodology": {
+    "cohort_warning": "This is a mechanically selected historical challenge cohort, not a representative accuracy estimate.",
+    "label": "Adjudicated five-way labels retained after two independent reviews.",
+    "prediction": "Current deterministic Page 47 comparator run over the pinned database and evidence root."
+  },
+  "metrics": {
+    "by_cohort_role": {
+      "candidate": {
+        "abstention": {
+          "actual": 2,
+          "correct": 2,
+          "correctness": 1.0,
+          "predicted": 3
+        },
+        "cases": 5,
+        "confusion_matrix": {
+          "cannot_determine": {
+            "cannot_determine": 2,
+            "clearer": 0,
+            "less_clear": 0,
+            "mixed": 0,
+            "unchanged": 0
+          },
+          "clearer": {
+            "cannot_determine": 1,
+            "clearer": 0,
+            "less_clear": 0,
+            "mixed": 0,
+            "unchanged": 0
+          },
+          "less_clear": {
+            "cannot_determine": 0,
+            "clearer": 0,
+            "less_clear": 2,
+            "mixed": 0,
+            "unchanged": 0
+          },
+          "mixed": {
+            "cannot_determine": 0,
+            "clearer": 0,
+            "less_clear": 0,
+            "mixed": 0,
+            "unchanged": 0
+          },
+          "unchanged": {
+            "cannot_determine": 0,
+            "clearer": 0,
+            "less_clear": 0,
+            "mixed": 0,
+            "unchanged": 0
+          }
+        },
+        "per_state": {
+          "cannot_determine": {
+            "precision": 0.667,
+            "predicted": 3,
+            "recall": 1.0,
+            "support": 2,
+            "true_positive": 2
+          },
+          "clearer": {
+            "precision": null,
+            "predicted": 0,
+            "recall": 0.0,
+            "support": 1,
+            "true_positive": 0
+          },
+          "less_clear": {
+            "precision": 1.0,
+            "predicted": 2,
+            "recall": 1.0,
+            "support": 2,
+            "true_positive": 2
+          },
+          "mixed": {
+            "precision": null,
+            "predicted": 0,
+            "recall": null,
+            "support": 0,
+            "true_positive": 0
+          },
+          "unchanged": {
+            "precision": null,
+            "predicted": 0,
+            "recall": null,
+            "support": 0,
+            "true_positive": 0
+          }
+        },
+        "surfaced_positive_precision": 1.0,
+        "surfaced_positive_recall": 0.667
+      },
+      "control": {
+        "abstention": {
+          "actual": 1,
+          "correct": 1,
+          "correctness": 1.0,
+          "predicted": 32
+        },
+        "cases": 32,
+        "confusion_matrix": {
+          "cannot_determine": {
+            "cannot_determine": 1,
+            "clearer": 0,
+            "less_clear": 0,
+            "mixed": 0,
+            "unchanged": 0
+          },
+          "clearer": {
+            "cannot_determine": 2,
+            "clearer": 0,
+            "less_clear": 0,
+            "mixed": 0,
+            "unchanged": 0
+          },
+          "less_clear": {
+            "cannot_determine": 21,
+            "clearer": 0,
+            "less_clear": 0,
+            "mixed": 0,
+            "unchanged": 0
+          },
+          "mixed": {
+            "cannot_determine": 0,
+            "clearer": 0,
+            "less_clear": 0,
+            "mixed": 0,
+            "unchanged": 0
+          },
+          "unchanged": {
+            "cannot_determine": 8,
+            "clearer": 0,
+            "less_clear": 0,
+            "mixed": 0,
+            "unchanged": 0
+          }
+        },
+        "per_state": {
+          "cannot_determine": {
+            "precision": 0.031,
+            "predicted": 32,
+            "recall": 1.0,
+            "support": 1,
+            "true_positive": 1
+          },
+          "clearer": {
+            "precision": null,
+            "predicted": 0,
+            "recall": 0.0,
+            "support": 2,
+            "true_positive": 0
+          },
+          "less_clear": {
+            "precision": null,
+            "predicted": 0,
+            "recall": 0.0,
+            "support": 21,
+            "true_positive": 0
+          },
+          "mixed": {
+            "precision": null,
+            "predicted": 0,
+            "recall": null,
+            "support": 0,
+            "true_positive": 0
+          },
+          "unchanged": {
+            "precision": null,
+            "predicted": 0,
+            "recall": 0.0,
+            "support": 8,
+            "true_positive": 0
+          }
+        },
+        "surfaced_positive_precision": null,
+        "surfaced_positive_recall": 0.0
+      }
+    },
+    "evidence_coverage": {
+      "placement": {
+        "cases_with_comparable_pair": 2,
+        "comparable_pairs": 2
+      },
+      "substance": {
+        "cases_with_comparable_pair": 0,
+        "comparable_pairs": 0
+      },
+      "timing": {
+        "cases_with_comparable_pair": 0,
+        "comparable_pairs": 0
+      },
+      "title": {
+        "cases_with_comparable_pair": 37,
+        "comparable_pairs": 89
+      }
+    },
+    "overall": {
+      "abstention": {
+        "actual": 3,
+        "correct": 3,
+        "correctness": 1.0,
+        "predicted": 35
+      },
+      "cases": 37,
+      "confusion_matrix": {
+        "cannot_determine": {
+          "cannot_determine": 3,
+          "clearer": 0,
+          "less_clear": 0,
+          "mixed": 0,
+          "unchanged": 0
+        },
+        "clearer": {
+          "cannot_determine": 3,
+          "clearer": 0,
+          "less_clear": 0,
+          "mixed": 0,
+          "unchanged": 0
+        },
+        "less_clear": {
+          "cannot_determine": 21,
+          "clearer": 0,
+          "less_clear": 2,
+          "mixed": 0,
+          "unchanged": 0
+        },
+        "mixed": {
+          "cannot_determine": 0,
+          "clearer": 0,
+          "less_clear": 0,
+          "mixed": 0,
+          "unchanged": 0
+        },
+        "unchanged": {
+          "cannot_determine": 8,
+          "clearer": 0,
+          "less_clear": 0,
+          "mixed": 0,
+          "unchanged": 0
+        }
+      },
+      "per_state": {
+        "cannot_determine": {
+          "precision": 0.086,
+          "predicted": 35,
+          "recall": 1.0,
+          "support": 3,
+          "true_positive": 3
+        },
+        "clearer": {
+          "precision": null,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 3,
+          "true_positive": 0
+        },
+        "less_clear": {
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.087,
+          "support": 23,
+          "true_positive": 2
+        },
+        "mixed": {
+          "precision": null,
+          "predicted": 0,
+          "recall": null,
+          "support": 0,
+          "true_positive": 0
+        },
+        "unchanged": {
+          "precision": null,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 8,
+          "true_positive": 0
+        }
+      },
+      "surfaced_positive_precision": 1.0,
+      "surfaced_positive_recall": 0.077
+    },
+    "provenance": {
+      "cases": 37,
+      "cases_with_valid_adjudicated_evidence": 37,
+      "evidence_items": 89,
+      "valid_evidence_items": 89,
+      "validity_rate": 1.0
+    },
+    "reviewer_agreement": {
+      "agreement_rate": 1.0,
+      "cases": 37,
+      "cohen_kappa": 1.0,
+      "exact_agreement": 37,
+      "reviewer_a_distribution": {
+        "cannot_determine": 3,
+        "clearer": 3,
+        "less_clear": 23,
+        "unchanged": 8
+      },
+      "reviewer_b_distribution": {
+        "cannot_determine": 3,
+        "clearer": 3,
+        "less_clear": 23,
+        "unchanged": 8
+      }
+    }
+  },
+  "schema_version": 1,
+  "status": "complete"
+}

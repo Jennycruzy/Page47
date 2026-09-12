@@ -289,19 +289,41 @@
   "matter_id": 2289,
   "review": {
     "adjudicated": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "adjudication_basis": "Both independent reviewers supplied the same label.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T20:10:29.377121Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1615?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 1615 \u2192 1632",
+      "label": "cannot_determine",
+      "reason": "The bill was held and later passed as amended, with substantive amendment activity, but the retained record does not establish whether presentation itself became clearer or less clear."
     },
     "reviewer_a": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "medium",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T20:10:29.377121Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1615?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 1615 \u2192 1632",
+      "label": "cannot_determine",
+      "reason": "The bill was held and later passed as amended, with substantive amendment activity, but the retained record does not establish whether presentation itself became clearer or less clear."
     },
     "reviewer_b": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "medium",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T20:10:29.377121Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1615?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 1615 \u2192 1632",
+      "label": "cannot_determine",
+      "reason": "The bill was held and later passed as amended, with substantive amendment activity, but the retained record does not establish whether presentation itself became clearer or less clear."
     }
   },
   "review_pair": {

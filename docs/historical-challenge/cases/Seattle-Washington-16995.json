@@ -309,19 +309,56 @@
   "matter_id": 16995,
   "review": {
     "adjudicated": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "adjudication_basis": "Both independent reviewers supplied the same label.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:38:40.849628Z",
+          "page_number": 3,
+          "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T19:38:33.975128Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "event 6833 regular p3 \u2192 event 6847 consent p7",
+      "label": "less_clear",
+      "reason": "The same ordinance moved from a supported regular committee agenda to the City Council consent calendar."
     },
     "reviewer_a": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:38:40.849628Z",
+          "page_number": 3,
+          "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T19:38:33.975128Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "event 6833 regular p3 \u2192 event 6847 consent p7",
+      "label": "less_clear",
+      "reason": "The same ordinance moved from a supported regular committee agenda to the City Council consent calendar."
     },
     "reviewer_b": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T19:38:40.849628Z",
+          "page_number": 3,
+          "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        {
+          "captured_at": "2026-09-04T19:38:33.975128Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "event 6833 regular p3 \u2192 event 6847 consent p7",
+      "label": "less_clear",
+      "reason": "The same ordinance moved from a supported regular committee agenda to the City Council consent calendar."
     }
   },
   "review_pair": {

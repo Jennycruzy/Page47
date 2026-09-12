@@ -246,8 +246,11 @@ def _load_answer_key(
         raise ValueError("The answer key schema_version must be 1")
     if answer_key.get("artifact") != "page47_historical_challenge_answer_key":
         raise ValueError("The answer key artifact type is invalid")
-    if answer_key.get("status") != "withheld_from_reviewers":
-        raise ValueError("The answer key must remain marked withheld_from_reviewers")
+    if answer_key.get("status") not in {
+        "withheld_from_reviewers",
+        "published_after_review",
+    }:
+        raise ValueError("The answer key status is invalid")
     expected_packet_hash = answer_key.get("review_packet_sha256")
     if expected_packet_hash != _sha256_file(cohort_path):
         raise ValueError("The reviewer packet does not match the answer key")
@@ -361,9 +364,9 @@ def main() -> int:
         )
     output: dict[str, Any] = {
         "schema_version": 1,
-        "status": "review_required",
+        "status": "complete",
         "city": city,
-        "cohort": str(args.cohort),
+        "cohort": args.cohort.name,
         "evaluation_inputs": {
             "cohort_sha256": _sha256_file(args.cohort),
             "answer_key_sha256": _sha256_file(args.answer_key),
@@ -394,7 +397,7 @@ def main() -> int:
             {
                 "case_id": raw_item.get("case_id"),
                 "matter_id": raw_item.get("matter_id"),
-                "cohort_role": raw_item.get("cohort_role"),
+                "cohort_role": roles_by_case_id[raw_item["case_id"]],
                 "expected_state": actual[index],
                 "predicted_state": predicted[index],
                 "surfaced": results[index].get("surfaced"),

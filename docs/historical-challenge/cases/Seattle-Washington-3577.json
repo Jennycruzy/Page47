@@ -209,19 +209,41 @@
   "matter_id": 3577,
   "review": {
     "adjudicated": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "adjudication_basis": "Both independent reviewers supplied the same label.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:35.941277Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2030?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 2030 \u2192 2074",
+      "label": "unchanged",
+      "reason": "Both Council Briefing appearances use the same title, same agenda position, and same retained supporting documents."
     },
     "reviewer_a": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:35.941277Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2030?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 2030 \u2192 2074",
+      "label": "unchanged",
+      "reason": "Both Council Briefing appearances use the same title, same agenda position, and same retained supporting documents."
     },
     "reviewer_b": {
-      "evidence": [],
-      "label": null,
-      "reason": null
+      "confidence": "high",
+      "evidence": [
+        {
+          "captured_at": "2026-09-04T20:09:35.941277Z",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2030?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        }
+      ],
+      "evidence_key": "events 2030 \u2192 2074",
+      "label": "unchanged",
+      "reason": "Both Council Briefing appearances use the same title, same agenda position, and same retained supporting documents."
     }
   },
   "review_pair": {

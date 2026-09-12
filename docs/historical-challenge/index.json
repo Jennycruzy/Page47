@@ -1,176 +1,27 @@
 {
   "blind_review": {
     "answer_key_withheld": true,
-    "order": "Items are shuffled after sampling with the recorded seed; item order carries no cohort meaning.",
-    "review_unit": "Each item has one fixed adjacent appearance pair for one matter-level label. The same review_pair shape is present for every item.",
+    "correction": "Three recurring container records were removed from the previously reviewed cohort.",
+    "order": "Items are shuffled after removing recurring containers; order carries no cohort meaning.",
+    "review_unit": "Each item has one fixed adjacent appearance pair for one matter-level label.",
     "shuffle_seed": 47
   },
   "city": "Seattle, Washington",
   "items": [
     {
-      "case_id": "Seattle, Washington:15083",
-      "file": "cases/Seattle-Washington-15083.json",
-      "matter_id": 15083
+      "case_id": "Seattle, Washington:14991",
+      "file": "cases/Seattle-Washington-14991.json",
+      "matter_id": 14991
     },
     {
-      "case_id": "Seattle, Washington:16946",
-      "file": "cases/Seattle-Washington-16946.json",
-      "matter_id": 16946
+      "case_id": "Seattle, Washington:16601",
+      "file": "cases/Seattle-Washington-16601.json",
+      "matter_id": 16601
     },
     {
-      "case_id": "Seattle, Washington:16995",
-      "file": "cases/Seattle-Washington-16995.json",
-      "matter_id": 16995
-    },
-    {
-      "case_id": "Seattle, Washington:15876",
-      "file": "cases/Seattle-Washington-15876.json",
-      "matter_id": 15876
-    },
-    {
-      "case_id": "Seattle, Washington:4397",
-      "file": "cases/Seattle-Washington-4397.json",
-      "matter_id": 4397
-    },
-    {
-      "case_id": "Seattle, Washington:17079",
-      "file": "cases/Seattle-Washington-17079.json",
-      "matter_id": 17079
-    },
-    {
-      "case_id": "Seattle, Washington:16847",
-      "file": "cases/Seattle-Washington-16847.json",
-      "matter_id": 16847
-    },
-    {
-      "case_id": "Seattle, Washington:14765",
-      "file": "cases/Seattle-Washington-14765.json",
-      "matter_id": 14765
-    },
-    {
-      "case_id": "Seattle, Washington:1824",
-      "file": "cases/Seattle-Washington-1824.json",
-      "matter_id": 1824
-    },
-    {
-      "case_id": "Seattle, Washington:16835",
-      "file": "cases/Seattle-Washington-16835.json",
-      "matter_id": 16835
-    },
-    {
-      "case_id": "Seattle, Washington:16348",
-      "file": "cases/Seattle-Washington-16348.json",
-      "matter_id": 16348
-    },
-    {
-      "case_id": "Seattle, Washington:16567",
-      "file": "cases/Seattle-Washington-16567.json",
-      "matter_id": 16567
-    },
-    {
-      "case_id": "Seattle, Washington:17456",
-      "file": "cases/Seattle-Washington-17456.json",
-      "matter_id": 17456
-    },
-    {
-      "case_id": "Seattle, Washington:16828",
-      "file": "cases/Seattle-Washington-16828.json",
-      "matter_id": 16828
-    },
-    {
-      "case_id": "Seattle, Washington:16169",
-      "file": "cases/Seattle-Washington-16169.json",
-      "matter_id": 16169
-    },
-    {
-      "case_id": "Seattle, Washington:16886",
-      "file": "cases/Seattle-Washington-16886.json",
-      "matter_id": 16886
-    },
-    {
-      "case_id": "Seattle, Washington:15001",
-      "file": "cases/Seattle-Washington-15001.json",
-      "matter_id": 15001
-    },
-    {
-      "case_id": "Seattle, Washington:16198",
-      "file": "cases/Seattle-Washington-16198.json",
-      "matter_id": 16198
-    },
-    {
-      "case_id": "Seattle, Washington:17149",
-      "file": "cases/Seattle-Washington-17149.json",
-      "matter_id": 17149
-    },
-    {
-      "case_id": "Seattle, Washington:2289",
-      "file": "cases/Seattle-Washington-2289.json",
-      "matter_id": 2289
-    },
-    {
-      "case_id": "Seattle, Washington:8766",
-      "file": "cases/Seattle-Washington-8766.json",
-      "matter_id": 8766
-    },
-    {
-      "case_id": "Seattle, Washington:3577",
-      "file": "cases/Seattle-Washington-3577.json",
-      "matter_id": 3577
-    },
-    {
-      "case_id": "Seattle, Washington:15986",
-      "file": "cases/Seattle-Washington-15986.json",
-      "matter_id": 15986
-    },
-    {
-      "case_id": "Seattle, Washington:16943",
-      "file": "cases/Seattle-Washington-16943.json",
-      "matter_id": 16943
-    },
-    {
-      "case_id": "Seattle, Washington:17037",
-      "file": "cases/Seattle-Washington-17037.json",
-      "matter_id": 17037
-    },
-    {
-      "case_id": "Seattle, Washington:15693",
-      "file": "cases/Seattle-Washington-15693.json",
-      "matter_id": 15693
-    },
-    {
-      "case_id": "Seattle, Washington:15553",
-      "file": "cases/Seattle-Washington-15553.json",
-      "matter_id": 15553
-    },
-    {
-      "case_id": "Seattle, Washington:17299",
-      "file": "cases/Seattle-Washington-17299.json",
-      "matter_id": 17299
-    },
-    {
-      "case_id": "Seattle, Washington:15747",
-      "file": "cases/Seattle-Washington-15747.json",
-      "matter_id": 15747
-    },
-    {
-      "case_id": "Seattle, Washington:14949",
-      "file": "cases/Seattle-Washington-14949.json",
-      "matter_id": 14949
-    },
-    {
-      "case_id": "Seattle, Washington:17402",
-      "file": "cases/Seattle-Washington-17402.json",
-      "matter_id": 17402
-    },
-    {
-      "case_id": "Seattle, Washington:17326",
-      "file": "cases/Seattle-Washington-17326.json",
-      "matter_id": 17326
-    },
-    {
-      "case_id": "Seattle, Washington:4369",
-      "file": "cases/Seattle-Washington-4369.json",
-      "matter_id": 4369
+      "case_id": "Seattle, Washington:14803",
+      "file": "cases/Seattle-Washington-14803.json",
+      "matter_id": 14803
     },
     {
       "case_id": "Seattle, Washington:17368",
@@ -178,46 +29,187 @@
       "matter_id": 17368
     },
     {
-      "case_id": "Seattle, Washington:15275",
-      "file": "cases/Seattle-Washington-15275.json",
-      "matter_id": 15275
+      "case_id": "Seattle, Washington:17296",
+      "file": "cases/Seattle-Washington-17296.json",
+      "matter_id": 17296
     },
     {
-      "case_id": "Seattle, Washington:14990",
-      "file": "cases/Seattle-Washington-14990.json",
-      "matter_id": 14990
+      "case_id": "Seattle, Washington:17045",
+      "file": "cases/Seattle-Washington-17045.json",
+      "matter_id": 17045
     },
     {
-      "case_id": "Seattle, Washington:17205",
-      "file": "cases/Seattle-Washington-17205.json",
-      "matter_id": 17205
+      "case_id": "Seattle, Washington:16836",
+      "file": "cases/Seattle-Washington-16836.json",
+      "matter_id": 16836
     },
     {
-      "case_id": "Seattle, Washington:17191",
-      "file": "cases/Seattle-Washington-17191.json",
-      "matter_id": 17191
+      "case_id": "Seattle, Washington:3577",
+      "file": "cases/Seattle-Washington-3577.json",
+      "matter_id": 3577
     },
     {
-      "case_id": "Seattle, Washington:16017",
-      "file": "cases/Seattle-Washington-16017.json",
-      "matter_id": 16017
+      "case_id": "Seattle, Washington:1824",
+      "file": "cases/Seattle-Washington-1824.json",
+      "matter_id": 1824
     },
     {
-      "case_id": "Seattle, Washington:17314",
-      "file": "cases/Seattle-Washington-17314.json",
-      "matter_id": 17314
+      "case_id": "Seattle, Washington:15801",
+      "file": "cases/Seattle-Washington-15801.json",
+      "matter_id": 15801
+    },
+    {
+      "case_id": "Seattle, Washington:17242",
+      "file": "cases/Seattle-Washington-17242.json",
+      "matter_id": 17242
+    },
+    {
+      "case_id": "Seattle, Washington:16880",
+      "file": "cases/Seattle-Washington-16880.json",
+      "matter_id": 16880
+    },
+    {
+      "case_id": "Seattle, Washington:16600",
+      "file": "cases/Seattle-Washington-16600.json",
+      "matter_id": 16600
+    },
+    {
+      "case_id": "Seattle, Washington:2289",
+      "file": "cases/Seattle-Washington-2289.json",
+      "matter_id": 2289
+    },
+    {
+      "case_id": "Seattle, Washington:4387",
+      "file": "cases/Seattle-Washington-4387.json",
+      "matter_id": 4387
+    },
+    {
+      "case_id": "Seattle, Washington:8371",
+      "file": "cases/Seattle-Washington-8371.json",
+      "matter_id": 8371
+    },
+    {
+      "case_id": "Seattle, Washington:16092",
+      "file": "cases/Seattle-Washington-16092.json",
+      "matter_id": 16092
+    },
+    {
+      "case_id": "Seattle, Washington:15685",
+      "file": "cases/Seattle-Washington-15685.json",
+      "matter_id": 15685
+    },
+    {
+      "case_id": "Seattle, Washington:15436",
+      "file": "cases/Seattle-Washington-15436.json",
+      "matter_id": 15436
+    },
+    {
+      "case_id": "Seattle, Washington:4360",
+      "file": "cases/Seattle-Washington-4360.json",
+      "matter_id": 4360
+    },
+    {
+      "case_id": "Seattle, Washington:17398",
+      "file": "cases/Seattle-Washington-17398.json",
+      "matter_id": 17398
+    },
+    {
+      "case_id": "Seattle, Washington:17402",
+      "file": "cases/Seattle-Washington-17402.json",
+      "matter_id": 17402
+    },
+    {
+      "case_id": "Seattle, Washington:14765",
+      "file": "cases/Seattle-Washington-14765.json",
+      "matter_id": 14765
+    },
+    {
+      "case_id": "Seattle, Washington:17161",
+      "file": "cases/Seattle-Washington-17161.json",
+      "matter_id": 17161
+    },
+    {
+      "case_id": "Seattle, Washington:14874",
+      "file": "cases/Seattle-Washington-14874.json",
+      "matter_id": 14874
+    },
+    {
+      "case_id": "Seattle, Washington:16759",
+      "file": "cases/Seattle-Washington-16759.json",
+      "matter_id": 16759
+    },
+    {
+      "case_id": "Seattle, Washington:16995",
+      "file": "cases/Seattle-Washington-16995.json",
+      "matter_id": 16995
+    },
+    {
+      "case_id": "Seattle, Washington:16000",
+      "file": "cases/Seattle-Washington-16000.json",
+      "matter_id": 16000
+    },
+    {
+      "case_id": "Seattle, Washington:17240",
+      "file": "cases/Seattle-Washington-17240.json",
+      "matter_id": 17240
+    },
+    {
+      "case_id": "Seattle, Washington:14870",
+      "file": "cases/Seattle-Washington-14870.json",
+      "matter_id": 14870
+    },
+    {
+      "case_id": "Seattle, Washington:17140",
+      "file": "cases/Seattle-Washington-17140.json",
+      "matter_id": 17140
+    },
+    {
+      "case_id": "Seattle, Washington:15562",
+      "file": "cases/Seattle-Washington-15562.json",
+      "matter_id": 15562
+    },
+    {
+      "case_id": "Seattle, Washington:16163",
+      "file": "cases/Seattle-Washington-16163.json",
+      "matter_id": 16163
+    },
+    {
+      "case_id": "Seattle, Washington:16984",
+      "file": "cases/Seattle-Washington-16984.json",
+      "matter_id": 16984
+    },
+    {
+      "case_id": "Seattle, Washington:16876",
+      "file": "cases/Seattle-Washington-16876.json",
+      "matter_id": 16876
+    },
+    {
+      "case_id": "Seattle, Washington:17456",
+      "file": "cases/Seattle-Washington-17456.json",
+      "matter_id": 17456
+    },
+    {
+      "case_id": "Seattle, Washington:16427",
+      "file": "cases/Seattle-Washington-16427.json",
+      "matter_id": 16427
     }
   ],
   "note": "Each linked case file contains the same neutral retained case payload, one fixed review pair, and review slots. The complete packet remains the canonical audit file.",
+  "review": {
+    "answer_key": "../historical-challenge-answer-key.json",
+    "reviewers": "Two independent human reviews are retained for every case.",
+    "status": "labels_complete"
+  },
   "schema_version": 1,
   "source_packet": "docs/historical-challenge-cohort.json",
   "source_snapshot": {
-    "code_revision": "8553e67",
-    "created_at_utc": "2026-09-12T21:01:26.065306Z",
+    "code_revision": "6adb7c3ab7aad1f0aee7ef3cd9a16b77889de096",
+    "created_at_utc": "2026-09-12T18:59:14.379999Z",
     "database_sha256": "c848038abf4322b11aab296eafcb25c209b1e2428a79dedecb6aab93b55f7ded",
     "evidence_chain_sha256": "f377ca1441085c05e0f4effd39423bf6c81c487e6741bbba5e7a3f7f74c0a336",
     "evidence_integrity_root": "bb58760ee3fb8397127159a6aa97faa76821ec2c217a318acec97631b6d393d9",
-    "evidence_manifest_sha256": "a8722977d52670e7ad0d6fc8b6e58febbf2045bb33c9e99b9a850fb6e78bb7f4"
+    "evidence_manifest_sha256": "a8722977d52670e7ad0d6fc8b6e58febbf2045bb33c9e99b9a850fb6e78bb7f4",
+    "legacy_source_packet_sha256": "3a2cc2ed2c6e66017945266816e41065fb541ed194376cccb104d64502c3a016"
   },
-  "status": "awaiting_independent_labels"
+  "status": "labels_complete"
 }
