@@ -162,7 +162,7 @@ flowchart LR
 | AWS component | Page 47 use |
 | --- | --- |
 | **Amazon Lightsail** | Public web service, scheduled collection, SQLite record store, and captured evidence on the deployment host. |
-| **Amazon S3 (optional)** | Verified off-host copy of captured bytes and operational evidence files using the repository backup command. |
+| **Amazon S3** | Private, versioned off-host copy of captured bytes and operational evidence files, verified by the scheduled backup path. |
 | **Amazon Bedrock** | Document and evidence reading models used by the investigation roles. |
 | **Amazon Bedrock AgentCore Runtime** | Managed execution for the Strands investigation graph. |
 | **AWS Distro for OpenTelemetry** | Runtime instrumentation for searchable investigation traces. |
@@ -174,12 +174,12 @@ The collector preserves bytes, SHA-256 hashes, source URLs, capture times,
 HTTP status, ETags when available, and explicit failures. A changed document at
 the same URL is therefore visible as a new captured version rather than silently
 replacing the previous observation. Each capture manifest also has a local
-chained integrity record. The optional `scripts/backup_evidence.py` command
-verifies that chain before incrementally copying captured bytes, manifests,
-runs, and changes to S3. The scheduled collector invokes it automatically when
-`PAGE47_EVIDENCE_BACKUP_BUCKET` is configured. The current deployment identity
-cannot create or authorize the dedicated bucket, so the live evidence root
-remains on host disk until an AWS administrator completes that setup.
+chained integrity record. The `scripts/backup_evidence.py` command verifies
+that chain before incrementally copying captured bytes, manifests, runs, and
+changes to S3. The scheduled collector invokes it automatically with the
+private, versioned bucket `page47-evidence-591697681173-eu-west-2-an`. The
+first verified backup copied 2,047 Seattle objects and 1,313 Denver objects;
+a repeat backup uploaded zero objects and skipped all unchanged objects.
 
 ## Evaluation without overclaiming
 

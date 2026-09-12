@@ -5,8 +5,8 @@ This document records the AWS choices made so far and the work still required to
 | Service or resource | Job here | Current state | What breaks without it |
 |---|---|---|---|
 | Public host, previously recorded as Lightsail (`eu-north-1`) | Keep the collector, record store, and public service running continuously. | The host at `13.62.181.128` is reachable and the collector/service remain healthy. Current EC2 metadata reports a `t3.micro` in account `000029643808`, instance `i-01de6496943e7a94f`, while the Page 47 deployment credentials belong to account `591697681173`; the hosting/account classification must be reconciled. | Scheduled public-record captures stop, and the service loses the forward-looking record that cannot be reconstructed later. |
-| Local host disk | Hold immutable API responses, agenda PDFs, attachment PDFs, and SQLite records during the build. | Seattle and Denver captures and records are on the host under `runtime/`. Denver's follow-up now has HTTP 200 as the latest response for all 473 attachment IDs; the four earlier HTTP 404 responses remain preserved in the append-only evidence manifest. The current Denver PDF reader has 270 results: 259 candidates, 10 with no configured reference, and 1 unreadable PDF. The two recovered candidate PDFs have document-extraction results. The manifest now has a chained integrity record; an object-storage backup is not configured yet. | A disk failure would remove the only stored copy until the verified S3 backup is configured. |
-| Optional S3 evidence backup | Keep a recoverable off-host copy of the exact bytes and metadata Page 47 observed. | `scripts/backup_evidence.py` verifies the manifest chain, then uploads captured bodies, manifest files, and operational JSON with the integrity root recorded as object metadata. No production bucket is configured yet. | A host-disk failure would still remove the live copy; the exporter is ready for a deliberately configured bucket and schedule. |
+| Local host disk | Hold the active working copies of immutable API responses, agenda PDFs, attachment PDFs, and SQLite records. | Seattle and Denver captures and records are on the host under `runtime/`. Denver's follow-up now has HTTP 200 as the latest response for all 473 attachment IDs; the four earlier HTTP 404 responses remain preserved in the append-only evidence manifest. The current Denver PDF reader has 270 results: 259 candidates, 10 with no configured reference, and 1 unreadable PDF. The manifest has a chained integrity record. | The host remains the active working store; recovery uses the verified S3 copy if the host is lost. |
+| Amazon S3 evidence backup | Keep a recoverable off-host copy of the exact bytes and metadata Page 47 observed. | Bucket `page47-evidence-591697681173-eu-west-2-an` is private, versioned, and encrypted with SSE-S3. The scheduled collector is configured to back up Seattle under `cities/seattle/` and Denver under `cities/denver/`. The first backup uploaded 2,047 Seattle objects and 1,313 Denver objects; a repeat run uploaded zero and skipped 3,360 unchanged objects. | If the backup schedule fails, new observations remain only on the host until the failure is corrected. |
 | Amazon Bedrock in `eu-west-2` | Run text triage, page reading, and the five review roles. | Live model discovery on 6 September 2026 returned the configured IDs. `amazon.nova-micro-v1:0` is the text route; `amazon.nova-lite-v1:0` is the page-image route. The choices are recorded in `config/models.yaml` and `docs/model-verification.json`. | The application cannot read attachment pages or run a review. |
 | AgentCore Runtime | Host the bursty five-role review graph separately from the always-on Lightsail service. | Runtime `page47_review` is `READY` in `eu-west-2`, version 17. ARN: `arn:aws:bedrock-agentcore:eu-west-2:591697681173:runtime/page47_review-X5IwXt4Y7h`. The ADOT auto-instrumented package is 59.2 MB compressed and 162.3 MB expanded; version 17 includes the explicit untrusted-document prompt guard. The Lightsail client previously invoked stored Seattle matter `17394`; run `dea939b750ec412ca0921b4a31422037` completed and saved a `clearer` result. | The graph cannot run as the managed AWS workload or save a managed-runtime review. |
 | Systems Manager Parameter Store | Hold the SES sender address, public service URL, AgentCore execution-role ARN, and managed runtime ARN outside source control. | Delivery code expects `/page47/email/sender` and `/page47/web/public-url`. `/page47/agentcore/execution-role-arn` contains the Page 47 role ARN, deployment wrote `/page47/agentcore/runtime-arn` with the `page47_review` runtime ARN, and `/page47/web/public-url` is present with `https://page47.xcover.online/`. `/page47/email/sender` is present and resolves to a verified SES email identity; no recipient parameter is stored. | Email or managed review deployment fails loudly instead of exposing a secret, using an unknown sender, or silently falling back to an unconfigured runtime. |
@@ -59,19 +59,17 @@ The collector's delivery step does not create a message by itself. It loads only
 
 ## Evidence backup handoff
 
-The collector script now runs the incremental durable-copy step inside the
-existing collector lock whenever `PAGE47_EVIDENCE_BACKUP_BUCKET` is configured.
-It remains disabled until a private bucket and least-privilege permission are
-available. Use a dedicated bucket in `eu-west-2`, separate from the AgentCore
-artifact bucket. Enable versioning, default encryption, ownership controls, and
-the S3 public-access block. Do not make evidence objects public.
+The collector script runs the incremental durable-copy step inside the existing
+collector lock with `PAGE47_EVIDENCE_BACKUP_BUCKET` set to
+`page47-evidence-591697681173-eu-west-2-an`. The bucket is dedicated to Page 47
+and separate from the AgentCore artifact bucket. It uses versioning, SSE-S3,
+bucket-owner-enforced object ownership, and the S3 public-access block.
 
-After the bucket exists, grant the deployment identity only the permissions
-needed for the exporter: `s3:GetBucketLocation` on the bucket and
-`s3:PutObject` plus `s3:GetObject` on the Page 47 evidence prefix. `GetObject`
-allows the exporter to use `HeadObject` metadata checks and skip objects whose
-verified SHA-256 is already stored. Do not grant object deletion to the backup
-job. Then run one controlled backup for each city:
+The deployment identity has only the permissions needed for the exporter:
+`s3:GetBucketLocation` on the bucket and `s3:PutObject` plus `s3:GetObject` on
+the Page 47 evidence prefix. `GetObject` allows the exporter to use
+`HeadObject` metadata checks and skip objects whose verified SHA-256 is already
+stored. The backup job has no object-deletion permission.
 
 ```bash
 cd /home/ubuntu/page47-preflight
@@ -90,8 +88,7 @@ cd /home/ubuntu/page47-preflight
 
 The command must finish only after verifying the local body hashes and
 manifest chain. Keep its JSON result, including `integrity_root`, in the
-deployment audit. Verify the bucket's versioning and inspect a few object
-metadata records, then set `PAGE47_EVIDENCE_BACKUP_BUCKET` in the collector
-environment. The current AWS deployment identity cannot create the bucket or
-grant itself access, so the code does not claim S3 durability until an
-administrator completes that setup and the first scheduled backup is verified.
+deployment audit. The first scheduled-path backup was verified on 12 September
+2026. A sample object returned an S3 version ID, SSE-S3 encryption, and matching
+capture and response SHA-256 metadata. A repeat backup uploaded zero objects,
+confirming incremental deduplication.
