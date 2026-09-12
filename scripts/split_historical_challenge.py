@@ -58,10 +58,7 @@ def main() -> int:
             {
                 "case_id": case_id,
                 "matter_id": raw_item.get("matter_id"),
-                "cohort_role": raw_item.get("cohort_role"),
                 "file": str(case_path.relative_to(args.index.parent)),
-                "selection_reasons": raw_item.get("selection_reasons"),
-                "selected_pairs": raw_item.get("selected_pairs"),
             }
         )
 
@@ -71,12 +68,11 @@ def main() -> int:
         "city": packet.get("city"),
         "source_packet": str(args.input),
         "source_snapshot": packet.get("source_snapshot"),
-        "selection": packet.get("selection"),
-        "label_policy": packet.get("label_policy"),
+        "blind_review": packet.get("blind_review"),
         "items": index_items,
         "note": (
-            "Each linked case file contains the complete retained case payload and review slots. "
-            "The complete packet remains the canonical audit file."
+            "Each linked case file contains the same neutral retained case payload, one fixed "
+            "review pair, and review slots. The complete packet remains the canonical audit file."
         ),
     }
     args.index.parent.mkdir(parents=True, exist_ok=True)

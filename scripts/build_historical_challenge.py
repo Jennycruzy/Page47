@@ -24,6 +24,17 @@ from page47.snapshotter.store import SnapshotStore  # noqa: E402, I001
 SUPPORTED_PLACEMENTS = frozenset({"consent", "regular"})
 ATTACHMENT_FIELDS = ("attachment_id", "name", "url", "content_hash", "version")
 LABELS = frozenset({"clearer", "less_clear", "mixed", "unchanged", "cannot_determine"})
+CONTAINER_TITLE_PATTERNS = (
+    ("recurring_council_agenda", re.compile(r"^(?:city )?council agenda(?: \(\d{4}\))?$")),
+    (
+        "recurring_council_briefing_minutes",
+        re.compile(r"^(?:city )?council briefing minutes(?: \(\d{4}\))?$"),
+    ),
+    ("recurring_council_minutes", re.compile(r"^(?:city )?council minutes(?: \(\d{4}\))?$")),
+    ("recurring_meeting_agenda", re.compile(r"^meeting agenda(?: \(\d{4}\))?$")),
+    ("recurring_meeting_minutes", re.compile(r"^meeting minutes(?: \(\d{4}\))?$")),
+    ("recurring_council_calendar", re.compile(r"^(?:city )?council calendar(?: \(\d{4}\))?$")),
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -45,12 +56,37 @@ class RawMatter:
     def is_candidate(self) -> bool:
         return bool(self.candidate_pairs)
 
+    @property
+    def container_exclusion_reason(self) -> str | None:
+        return _container_exclusion_reason(self.appearances)
+
 
 def _normalise(value: str | None) -> str | None:
     if value is None:
         return None
     normalized = re.sub(r"\s+", " ", value).strip().casefold()
     return normalized or None
+
+
+def _container_exclusion_reason(appearances: tuple[RawAppearance, ...]) -> str | None:
+    """Exclude recurring agenda/minutes containers, not substantive matters."""
+
+    if len(appearances) < 3:
+        return None
+    kinds: set[str] = set()
+    for appearance in appearances:
+        title = _normalise(appearance.title)
+        if title is None:
+            return None
+        for kind, pattern in CONTAINER_TITLE_PATTERNS:
+            if pattern.fullmatch(title):
+                kinds.add(kind)
+                break
+        else:
+            return None
+    if len(kinds) != 1:
+        return None
+    return f"excluded_{next(iter(kinds))}"
 
 
 def _attachment_signature(appearance: RawAppearance) -> tuple[tuple[object, ...], ...]:
@@ -90,11 +126,13 @@ def _pair_payload(
     changed_attachment_ids: frozenset[int],
 ) -> dict[str, object]:
     changed_ids = sorted(
-        item[0]
-        for item in (*previous.attachments, *current.attachments)
-        if isinstance(item[0], int)
-        and not isinstance(item[0], bool)
-        and item[0] in changed_attachment_ids
+        {
+            item[0]
+            for item in (*previous.attachments, *current.attachments)
+            if isinstance(item[0], int)
+            and not isinstance(item[0], bool)
+            and item[0] in changed_attachment_ids
+        }
     )
     return {
         "previous_event_item_id": previous.event_item_id,
@@ -107,6 +145,24 @@ def _pair_payload(
         "current_placement": current.placement,
         "attachment_ids_with_multiple_captured_hashes": changed_ids,
         "reasons": list(reasons),
+    }
+
+
+def _review_pair_context(
+    previous: RawAppearance,
+    current: RawAppearance,
+) -> dict[str, object]:
+    """Return the same one-pair review context for every reviewer item."""
+
+    return {
+        "previous_event_item_id": previous.event_item_id,
+        "current_event_item_id": current.event_item_id,
+        "previous_event_date": previous.event_date,
+        "current_event_date": current.event_date,
+        "previous_title": previous.title,
+        "current_title": current.title,
+        "previous_placement": previous.placement,
+        "current_placement": current.placement,
     }
 
 
@@ -192,24 +248,29 @@ def _raw_matters(
     for matter_id, raw_appearances in grouped.items():
         if len(raw_appearances) < minimum_appearances:
             continue
-        appearances = tuple(
-            RawAppearance(
-                event_item_id=event_item_id,
-                event_date=raw["event_date"] if isinstance(raw["event_date"], str) else None,
-                title=raw["title"] if isinstance(raw["title"], str) else None,
-                placement=raw["placement"] if isinstance(raw["placement"], str) else None,
-                attachments=tuple(
-                    sorted(
-                        raw["attachments"],
-                        key=lambda item: tuple(str(part) for part in item),
-                    )
-                ),
+        appearance_items: list[RawAppearance] = []
+        for event_item_id, raw in sorted(
+            raw_appearances.items(),
+            key=lambda item: (str(item[1]["event_date"] or ""), item[0]),
+        ):
+            raw_attachments = raw["attachments"]
+            if not isinstance(raw_attachments, list):
+                raise ValueError("Challenge attachment accumulator was invalid")
+            appearance_items.append(
+                RawAppearance(
+                    event_item_id=event_item_id,
+                    event_date=raw["event_date"] if isinstance(raw["event_date"], str) else None,
+                    title=raw["title"] if isinstance(raw["title"], str) else None,
+                    placement=raw["placement"] if isinstance(raw["placement"], str) else None,
+                    attachments=tuple(
+                        sorted(
+                            raw_attachments,
+                            key=lambda item: tuple(str(part) for part in item),
+                        )
+                    ),
+                )
             )
-            for event_item_id, raw in sorted(
-                raw_appearances.items(),
-                key=lambda item: (str(item[1]["event_date"] or ""), item[0]),
-            )
-        )
+        appearances = tuple(appearance_items)
         pair_payloads: list[dict[str, object]] = []
         for previous, current in zip(appearances, appearances[1:], strict=False):
             reasons = _pair_reasons(previous, current, changed_attachment_ids)
@@ -243,7 +304,9 @@ def _source_snapshot(
     code_revision: str,
     selected_ids: tuple[int, ...],
     eligible_ids: tuple[int, ...],
-    raw_matters: tuple[RawMatter, ...],
+    raw_eligible_ids: tuple[int, ...],
+    excluded_ids: tuple[int, ...],
+    eligible_matters: tuple[RawMatter, ...],
 ) -> dict[str, object]:
     manifest_sha256 = (
         _sha256_file(evidence.manifest_path) if evidence.manifest_path.is_file() else None
@@ -258,7 +321,13 @@ def _source_snapshot(
         "evidence_manifest_sha256": manifest_sha256,
         "evidence_chain_sha256": chain_sha256,
         "evidence_integrity_root": evidence.verify_integrity(),
+        "raw_eligible_matter_ids_sha256": _canonical_hash(
+            [f"{city}:{item}" for item in raw_eligible_ids]
+        ),
         "eligible_matter_ids_sha256": _canonical_hash([f"{city}:{item}" for item in eligible_ids]),
+        "excluded_container_ids_sha256": _canonical_hash(
+            [f"{city}:{item}" for item in excluded_ids]
+        ),
         "selected_matter_ids_sha256": _canonical_hash([f"{city}:{item}" for item in selected_ids]),
         "candidate_pool_sha256": _canonical_hash(
             [
@@ -266,12 +335,12 @@ def _source_snapshot(
                     "matter_id": matter.matter_id,
                     "candidate_pairs": list(matter.candidate_pairs),
                 }
-                for matter in raw_matters
+                for matter in eligible_matters
             ]
         ),
         "source_paths": {
-            "record_database": str(database),
-            "evidence_root": str(evidence_root),
+            "record_database": "runtime/records/seattle.sqlite3",
+            "evidence_root": "runtime/evidence/seattle",
         },
         "note": (
             "Selection uses raw titles, supported agenda-placement values, and attachment "
@@ -291,26 +360,62 @@ def _review_slots() -> dict[str, object]:
     }
 
 
-def _item(
+def _reviewer_item(
+    *,
+    city: str,
+    case: MatterCase,
+    review_pair: dict[str, object],
+) -> dict[str, object]:
+    return {
+        "case_id": f"{city}:{case.matter_id}",
+        "city": city,
+        "matter_id": case.matter_id,
+        "review_pair": review_pair,
+        "review": _review_slots(),
+        "case_payload": case.structural_payload(),
+    }
+
+
+def _answer_item(
     *,
     city: str,
     case: MatterCase,
     role: str,
     selection_reasons: tuple[str, ...],
     selected_pairs: tuple[dict[str, object], ...],
-    selection_index: int,
+    review_pair: dict[str, object],
 ) -> dict[str, object]:
     return {
-        "selection_index": selection_index,
         "case_id": f"{city}:{case.matter_id}",
         "city": city,
         "matter_id": case.matter_id,
         "cohort_role": role,
         "selection_reasons": list(selection_reasons),
         "selected_pairs": list(selected_pairs),
-        "review": _review_slots(),
-        "case_payload": case.structural_payload(),
+        "review_pair": review_pair,
     }
+
+
+def _review_pair_for_matter(
+    matter: RawMatter,
+) -> tuple[dict[str, object], dict[str, object]]:
+    """Choose one deterministic adjacent pair for the matter-level review unit."""
+
+    if matter.candidate_pairs:
+        selected = matter.candidate_pairs[0]
+        previous_id = selected.get("previous_event_item_id")
+        current_id = selected.get("current_event_item_id")
+        if isinstance(previous_id, int) and isinstance(current_id, int):
+            appearances_by_id = {item.event_item_id: item for item in matter.appearances}
+            previous = appearances_by_id.get(previous_id)
+            current = appearances_by_id.get(current_id)
+            if previous is not None and current is not None:
+                return _review_pair_context(previous, current), selected
+    if len(matter.appearances) < 2:
+        raise ValueError(f"Matter {matter.matter_id} has no adjacent pair for review")
+    previous, current = matter.appearances[0:2]
+    context = _review_pair_context(previous, current)
+    return context, {**context, "attachment_ids_with_multiple_captured_hashes": [], "reasons": []}
 
 
 def _positive_integer(value: object, name: str) -> int:
@@ -327,8 +432,19 @@ def main() -> int:
     parser.add_argument("--database", type=Path, required=True)
     parser.add_argument("--evidence-root", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--candidate-count", type=int, default=35)
-    parser.add_argument("--control-count", type=int, default=10)
+    parser.add_argument(
+        "--answer-key",
+        type=Path,
+        required=True,
+        help="write the withheld selection answer key outside the repository",
+    )
+    parser.add_argument(
+        "--candidate-count",
+        type=int,
+        default=None,
+        help="number of candidates to sample; defaults to every eligible candidate",
+    )
+    parser.add_argument("--control-count", type=int, default=35)
     parser.add_argument("--minimum-appearances", type=int, default=2)
     parser.add_argument("--seed", type=int, default=47)
     parser.add_argument("--code-revision", required=True)
@@ -342,6 +458,12 @@ def main() -> int:
     minimum_appearances = _positive_integer(args.minimum_appearances, "minimum-appearances")
     if not args.code_revision.strip():
         raise ValueError("code-revision must be non-empty text")
+    try:
+        args.answer_key.resolve().relative_to(REPOSITORY_ROOT.resolve())
+    except ValueError:
+        pass
+    else:
+        raise ValueError("answer-key must be outside the repository so reviewers cannot see it")
 
     evidence = SnapshotStore(args.evidence_root)
     with RecordStore(args.database) as records:
@@ -351,8 +473,19 @@ def main() -> int:
             minimum_appearances,
             changed_attachment_ids,
         )
-        candidates = tuple(matter for matter in raw_matters if matter.is_candidate)
-        controls = tuple(matter for matter in raw_matters if not matter.is_candidate)
+        excluded_containers = tuple(
+            matter for matter in raw_matters if matter.container_exclusion_reason is not None
+        )
+        eligible_matters = tuple(
+            matter for matter in raw_matters if matter.container_exclusion_reason is None
+        )
+        candidates = tuple(matter for matter in eligible_matters if matter.is_candidate)
+        controls = tuple(matter for matter in eligible_matters if not matter.is_candidate)
+        candidate_count = (
+            len(candidates)
+            if args.candidate_count is None
+            else _positive_integer(args.candidate_count, "candidate-count")
+        )
         if len(candidates) < candidate_count:
             raise ValueError(
                 f"Only {len(candidates)} mechanically selected candidates are available; "
@@ -370,9 +503,12 @@ def main() -> int:
         selected_controls = tuple(
             sorted(randomizer.sample(controls, control_count), key=lambda item: item.matter_id)
         )
-        selected = selected_candidates + selected_controls
-        selected_ids = tuple(item.matter_id for item in selected)
-        eligible_ids = tuple(item.matter_id for item in raw_matters)
+        selected = list(selected_candidates + selected_controls)
+        randomizer.shuffle(selected)
+        selected_ids = tuple(sorted(item.matter_id for item in selected))
+        raw_eligible_ids = tuple(item.matter_id for item in raw_matters)
+        eligible_ids = tuple(item.matter_id for item in eligible_matters)
+        excluded_ids = tuple(item.matter_id for item in excluded_containers)
         source_snapshot = _source_snapshot(
             database=args.database,
             evidence_root=args.evidence_root,
@@ -381,59 +517,75 @@ def main() -> int:
             code_revision=args.code_revision,
             selected_ids=selected_ids,
             eligible_ids=eligible_ids,
-            raw_matters=raw_matters,
+            raw_eligible_ids=raw_eligible_ids,
+            excluded_ids=excluded_ids,
+            eligible_matters=eligible_matters,
         )
-        items: list[dict[str, object]] = []
-        for index, raw_matter in enumerate(selected, start=1):
+        reviewer_items: list[dict[str, object]] = []
+        answer_items: list[dict[str, object]] = []
+        for raw_matter in selected:
             case = load_matter_case(records, city, raw_matter.matter_id, args.evidence_root)
             if raw_matter.is_candidate:
-                reasons = tuple(
-                    dict.fromkeys(
-                        reason
-                        for pair in raw_matter.candidate_pairs
-                        for reason in pair["reasons"]
-                        if isinstance(reason, str)
-                    )
-                )
+                reason_values: list[str] = []
+                for pair in raw_matter.candidate_pairs:
+                    raw_reasons = pair.get("reasons")
+                    if isinstance(raw_reasons, list):
+                        reason_values.extend(
+                            reason for reason in raw_reasons if isinstance(reason, str)
+                        )
+                reasons = tuple(dict.fromkeys(reason_values))
                 pairs = raw_matter.candidate_pairs
                 role = "candidate"
             else:
                 reasons = ("mechanical_control",)
                 pairs = ()
                 role = "control"
-            items.append(
-                _item(
+            review_pair, answer_review_pair = _review_pair_for_matter(raw_matter)
+            reviewer_items.append(
+                _reviewer_item(
+                    city=city,
+                    case=case,
+                    review_pair=review_pair,
+                )
+            )
+            answer_items.append(
+                _answer_item(
                     city=city,
                     case=case,
                     role=role,
                     selection_reasons=reasons,
                     selected_pairs=pairs,
-                    selection_index=index,
+                    review_pair=answer_review_pair,
                 )
             )
 
+    reviewer_snapshot = {
+        field: source_snapshot[field]
+        for field in (
+            "code_revision",
+            "created_at_utc",
+            "database_sha256",
+            "evidence_manifest_sha256",
+            "evidence_chain_sha256",
+            "evidence_integrity_root",
+        )
+    }
     output: dict[str, object] = {
-        "schema_version": 1,
+        "schema_version": 2,
         "city": city,
         "status": "awaiting_independent_labels",
-        "source_snapshot": source_snapshot,
-        "selection": {
-            "seed": args.seed,
-            "minimum_appearances": minimum_appearances,
-            "candidate_count": candidate_count,
-            "control_count": control_count,
-            "eligible_repeated_matters": len(raw_matters),
-            "candidate_pool_size": len(candidates),
-            "control_pool_size": len(controls),
-            "order": "mechanically sampled candidates by matter ID, then controls by matter ID",
-            "rules": [
-                "candidate: adjacent title text changed",
-                "candidate: adjacent supported agenda placement changed",
-                "candidate: adjacent attachment identity set changed",
-                "candidate: a retained attachment target has multiple successful content hashes",
-                "control: no candidate rule matched any adjacent pair",
-            ],
-            "page47_result_used_for_selection": False,
+        "source_snapshot": reviewer_snapshot,
+        "blind_review": {
+            "answer_key_withheld": True,
+            "shuffle_seed": args.seed,
+            "order": (
+                "Items are shuffled after sampling with the recorded seed; item order carries "
+                "no cohort meaning."
+            ),
+            "review_unit": (
+                "Each item has one fixed adjacent appearance pair for one matter-level label. "
+                "The same review_pair shape is present for every item."
+            ),
         },
         "label_policy": {
             "allowed_labels": sorted(LABELS),
@@ -454,23 +606,71 @@ def main() -> int:
                 "capture time; add a page number when applicable."
             ),
             "cohort_warning": (
-                "This is a mechanically selected historical challenge cohort, not a "
+                "This is a blind, mechanically selected historical challenge cohort, not a "
                 "prevalence sample or representative accuracy estimate."
             ),
         },
-        "items": items,
+        "items": reviewer_items,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(output, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    answer_key: dict[str, object] = {
+        "schema_version": 1,
+        "artifact": "page47_historical_challenge_answer_key",
+        "status": "withheld_from_reviewers",
+        "city": city,
+        "review_packet_sha256": _sha256_file(args.output),
+        "source_snapshot": source_snapshot,
+        "selection": {
+            "seed": args.seed,
+            "minimum_appearances": minimum_appearances,
+            "candidate_count": candidate_count,
+            "control_count": control_count,
+            "raw_eligible_repeated_matters": len(raw_matters),
+            "excluded_recurring_container_count": len(excluded_containers),
+            "excluded_recurring_containers": [
+                {
+                    "matter_id": matter.matter_id,
+                    "reason": matter.container_exclusion_reason,
+                }
+                for matter in excluded_containers
+            ],
+            "eligible_review_matters": len(eligible_matters),
+            "candidate_pool_size": len(candidates),
+            "control_pool_size": len(controls),
+            "order": "sampled candidates and controls are shuffled together with the seed",
+            "review_unit": "one fixed adjacent appearance pair per matter",
+            "rules": [
+                "candidate: adjacent title text changed",
+                "candidate: adjacent supported agenda placement changed",
+                "candidate: adjacent attachment identity set changed",
+                "candidate: a retained attachment target has multiple successful content hashes",
+                (
+                    "exclude: at least three appearances whose titles are the same recurring "
+                    "agenda, minutes, or calendar container"
+                ),
+                "control: no candidate rule matched any adjacent pair after exclusions",
+            ],
+            "page47_result_used_for_selection": False,
+        },
+        "items": answer_items,
+    }
+    args.answer_key.parent.mkdir(parents=True, exist_ok=True)
+    args.answer_key.write_text(
+        json.dumps(answer_key, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
     print(
         json.dumps(
             {
                 "city": city,
-                "items": len(items),
+                "items": len(reviewer_items),
                 "candidates": candidate_count,
                 "controls": control_count,
+                "excluded_containers": len(excluded_containers),
                 "status": output["status"],
                 "output": str(args.output),
+                "answer_key": str(args.answer_key),
             },
             indent=2,
         )

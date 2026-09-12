@@ -10,9 +10,23 @@ from pathlib import Path
 from typing import Any
 
 ALLOWED_LABELS = frozenset({"clearer", "less_clear", "mixed", "unchanged", "cannot_determine"})
-ROLES = frozenset({"candidate", "control"})
 SLOTS = ("reviewer_a", "reviewer_b", "adjudicated")
 SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
+REVIEWER_ITEM_KEYS = frozenset(
+    {"case_id", "city", "matter_id", "review_pair", "review", "case_payload"}
+)
+REVIEW_PAIR_KEYS = frozenset(
+    {
+        "previous_event_item_id",
+        "current_event_item_id",
+        "previous_event_date",
+        "current_event_date",
+        "previous_title",
+        "current_title",
+        "previous_placement",
+        "current_placement",
+    }
+)
 
 
 def _text(value: object, context: str, errors: list[str]) -> str | None:
@@ -20,6 +34,11 @@ def _text(value: object, context: str, errors: list[str]) -> str | None:
         errors.append(f"{context} must be non-empty text")
         return None
     return value.strip()
+
+
+def _optional_text(value: object, context: str, errors: list[str]) -> None:
+    if value is not None and (not isinstance(value, str) or not value.strip()):
+        errors.append(f"{context} must be text or null")
 
 
 def _object(value: object, context: str, errors: list[str]) -> dict[str, Any] | None:
@@ -93,8 +112,8 @@ def validate(path: Path, *, require_labels: bool) -> dict[str, int | str]:
     root = _object(decoded, "historical challenge cohort", errors)
     if root is None:
         raise ValueError("; ".join(errors))
-    if root.get("schema_version") != 1:
-        errors.append("schema_version must be 1")
+    if root.get("schema_version") != 2:
+        errors.append("schema_version must be 2")
     status = _text(root.get("status"), "status", errors)
     if status is not None and status not in {"awaiting_independent_labels", "labels_complete"}:
         errors.append("status is invalid")
@@ -109,9 +128,6 @@ def validate(path: Path, *, require_labels: bool) -> dict[str, int | str]:
             "evidence_manifest_sha256",
             "evidence_chain_sha256",
             "evidence_integrity_root",
-            "eligible_matter_ids_sha256",
-            "selected_matter_ids_sha256",
-            "candidate_pool_sha256",
         ):
             _hash(
                 source_snapshot.get(field),
@@ -119,40 +135,42 @@ def validate(path: Path, *, require_labels: bool) -> dict[str, int | str]:
                 errors,
                 optional=field.startswith("evidence_"),
             )
+        if "source_paths" in source_snapshot:
+            errors.append("source_snapshot must not expose source_paths in the reviewer packet")
 
-    selection = _object(root.get("selection"), "selection", errors)
-    candidate_count = 0
-    control_count = 0
-    if selection is not None:
-        _positive_integer(selection.get("candidate_count"), "selection.candidate_count", errors)
-        _positive_integer(selection.get("control_count"), "selection.control_count", errors)
-        raw_candidate_count = selection.get("candidate_count")
-        raw_control_count = selection.get("control_count")
-        if isinstance(raw_candidate_count, int) and not isinstance(raw_candidate_count, bool):
-            candidate_count = raw_candidate_count
-        if isinstance(raw_control_count, int) and not isinstance(raw_control_count, bool):
-            control_count = raw_control_count
-        if selection.get("page47_result_used_for_selection") is not False:
-            errors.append("selection.page47_result_used_for_selection must be false")
-        rules = selection.get("rules")
-        if (
-            not isinstance(rules, list)
-            or not rules
-            or not all(isinstance(item, str) for item in rules)
-        ):
-            errors.append("selection.rules must be a non-empty text list")
+    if "selection" in root:
+        errors.append("selection metadata must be withheld from the reviewer packet")
+    blind_review = _object(root.get("blind_review"), "blind_review", errors)
+    if blind_review is not None:
+        if blind_review.get("answer_key_withheld") is not True:
+            errors.append("blind_review.answer_key_withheld must be true")
+        _positive_integer(blind_review.get("shuffle_seed"), "blind_review.shuffle_seed", errors)
+        _text(blind_review.get("order"), "blind_review.order", errors)
+        _text(blind_review.get("review_unit"), "blind_review.review_unit", errors)
 
     raw_items = root.get("items")
     if not isinstance(raw_items, list) or not raw_items:
         errors.append("items must be a non-empty list")
         raw_items = []
     case_ids: set[str] = set()
-    role_counts = {"candidate": 0, "control": 0}
     labels = {slot: 0 for slot in SLOTS}
+    pair_keys: frozenset[str] | None = None
     for index, raw_item in enumerate(raw_items):
         item = _object(raw_item, f"items[{index}]", errors)
         if item is None:
             continue
+        unexpected_keys = set(item) - REVIEWER_ITEM_KEYS
+        missing_keys = REVIEWER_ITEM_KEYS - set(item)
+        if unexpected_keys:
+            errors.append(
+                f"items[{index}] contains withheld or unknown fields: "
+                f"{sorted(unexpected_keys)}"
+            )
+        if missing_keys:
+            errors.append(f"items[{index}] is missing fields: {sorted(missing_keys)}")
+        for forbidden in ("cohort_role", "selection_reasons", "selected_pairs", "selection_index"):
+            if forbidden in item:
+                errors.append(f"items[{index}] exposes withheld field {forbidden}")
         case_id = _text(item.get("case_id"), f"items[{index}].case_id", errors)
         if case_id is not None:
             if case_id in case_ids:
@@ -162,22 +180,62 @@ def validate(path: Path, *, require_labels: bool) -> dict[str, int | str]:
             errors.append(f"items[{index}].city does not match the cohort city")
         matter_id = item.get("matter_id")
         _positive_integer(matter_id, f"items[{index}].matter_id", errors)
-        role = _text(item.get("cohort_role"), f"items[{index}].cohort_role", errors)
-        if role not in ROLES:
-            errors.append(f"items[{index}].cohort_role is invalid")
-        else:
-            role_counts[role] += 1
+        pair = _object(item.get("review_pair"), f"items[{index}].review_pair", errors)
+        if pair is not None:
+            current_pair_keys = frozenset(pair)
+            if current_pair_keys != REVIEW_PAIR_KEYS:
+                errors.append(
+                    f"items[{index}].review_pair must have the same neutral fields for every case"
+                )
+            if pair_keys is None:
+                pair_keys = current_pair_keys
+            elif pair_keys != current_pair_keys:
+                errors.append("review_pair fields are not structurally identical across cases")
+            _positive_integer(
+                pair.get("previous_event_item_id"),
+                f"items[{index}].review_pair.previous_event_item_id",
+                errors,
+            )
+            _positive_integer(
+                pair.get("current_event_item_id"),
+                f"items[{index}].review_pair.current_event_item_id",
+                errors,
+            )
+            _optional_text(
+                pair.get("previous_event_date"),
+                f"items[{index}].review_pair.previous_event_date",
+                errors,
+            )
+            _optional_text(
+                pair.get("current_event_date"),
+                f"items[{index}].review_pair.current_event_date",
+                errors,
+            )
+            _optional_text(
+                pair.get("previous_title"),
+                f"items[{index}].review_pair.previous_title",
+                errors,
+            )
+            _optional_text(
+                pair.get("current_title"),
+                f"items[{index}].review_pair.current_title",
+                errors,
+            )
+            _optional_text(
+                pair.get("previous_placement"),
+                f"items[{index}].review_pair.previous_placement",
+                errors,
+            )
+            _optional_text(
+                pair.get("current_placement"),
+                f"items[{index}].review_pair.current_placement",
+                errors,
+            )
         payload = _object(item.get("case_payload"), f"items[{index}].case_payload", errors)
         if payload is not None:
-            if not isinstance(payload.get("appearances"), list) or not payload.get("appearances"):
+            appearances = payload.get("appearances")
+            if not isinstance(appearances, list) or not appearances:
                 errors.append(f"items[{index}].case_payload.appearances must be non-empty")
-        selected_pairs = item.get("selected_pairs")
-        if not isinstance(selected_pairs, list):
-            errors.append(f"items[{index}].selected_pairs must be a list")
-        elif role == "candidate" and not selected_pairs:
-            errors.append(f"items[{index}].selected_pairs must identify a candidate transition")
-        elif role == "control" and selected_pairs:
-            errors.append(f"items[{index}].selected_pairs must be empty for controls")
         review = _object(item.get("review"), f"items[{index}].review", errors)
         if review is None:
             continue
@@ -190,10 +248,6 @@ def validate(path: Path, *, require_labels: bool) -> dict[str, int | str]:
             ):
                 labels[slot] += 1
 
-    if role_counts["candidate"] != candidate_count:
-        errors.append("candidate item count does not match selection.candidate_count")
-    if role_counts["control"] != control_count:
-        errors.append("control item count does not match selection.control_count")
     if require_labels and status != "labels_complete":
         errors.append("status must be labels_complete when labels are required")
     if errors:
@@ -201,8 +255,6 @@ def validate(path: Path, *, require_labels: bool) -> dict[str, int | str]:
     return {
         "city": city or "",
         "items": len(case_ids),
-        "candidates": role_counts["candidate"],
-        "controls": role_counts["control"],
         "reviewer_a_labels": labels["reviewer_a"],
         "reviewer_b_labels": labels["reviewer_b"],
         "adjudicated_labels": labels["adjudicated"],

@@ -22,6 +22,15 @@ from page47.snapshotter.store import SnapshotStore  # noqa: E402, I001
 
 STATES = ("clearer", "less_clear", "mixed", "unchanged", "cannot_determine")
 SURFACED_STATES = frozenset({"clearer", "less_clear", "mixed"})
+ROLES = frozenset({"candidate", "control"})
+SNAPSHOT_FIELDS = (
+    "code_revision",
+    "created_at_utc",
+    "database_sha256",
+    "evidence_manifest_sha256",
+    "evidence_chain_sha256",
+    "evidence_integrity_root",
+)
 
 
 def _sha256_file(path: Path) -> str:
@@ -199,11 +208,10 @@ def _coverage(results: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def _verify_snapshot(
-    cohort: dict[str, Any], database: Path, evidence_root: Path
+    snapshot: dict[str, Any], database: Path, evidence_root: Path
 ) -> dict[str, Any]:
-    snapshot = cohort.get("source_snapshot")
     if not isinstance(snapshot, dict):
-        raise ValueError("The cohort has no source_snapshot")
+        raise ValueError("The answer key has no source_snapshot")
     expected_database = snapshot.get("database_sha256")
     actual_database = _sha256_file(database)
     if expected_database != actual_database:
@@ -228,9 +236,65 @@ def _verify_snapshot(
     }
 
 
+def _load_answer_key(
+    path: Path,
+    cohort_path: Path,
+    cohort: dict[str, Any],
+) -> tuple[dict[str, Any], dict[str, str]]:
+    answer_key = _load(path)
+    if answer_key.get("schema_version") != 1:
+        raise ValueError("The answer key schema_version must be 1")
+    if answer_key.get("artifact") != "page47_historical_challenge_answer_key":
+        raise ValueError("The answer key artifact type is invalid")
+    if answer_key.get("status") != "withheld_from_reviewers":
+        raise ValueError("The answer key must remain marked withheld_from_reviewers")
+    expected_packet_hash = answer_key.get("review_packet_sha256")
+    if expected_packet_hash != _sha256_file(cohort_path):
+        raise ValueError("The reviewer packet does not match the answer key")
+    packet_city = cohort.get("city")
+    if answer_key.get("city") != packet_city:
+        raise ValueError("The answer key city does not match the reviewer packet")
+    packet_snapshot = cohort.get("source_snapshot")
+    answer_snapshot = answer_key.get("source_snapshot")
+    if not isinstance(packet_snapshot, dict) or not isinstance(answer_snapshot, dict):
+        raise ValueError("The reviewer packet and answer key must both have source snapshots")
+    for field in SNAPSHOT_FIELDS:
+        if packet_snapshot.get(field) != answer_snapshot.get(field):
+            raise ValueError(
+                f"The answer key and reviewer packet differ at source_snapshot.{field}"
+            )
+
+    raw_answer_items = answer_key.get("items")
+    if not isinstance(raw_answer_items, list) or not raw_answer_items:
+        raise ValueError("The answer key items are invalid")
+    roles: dict[str, str] = {}
+    for index, raw_item in enumerate(raw_answer_items):
+        if not isinstance(raw_item, dict):
+            raise ValueError(f"answer_key.items[{index}] must be an object")
+        case_id = raw_item.get("case_id")
+        role = raw_item.get("cohort_role")
+        if not isinstance(case_id, str) or not case_id.strip() or case_id in roles:
+            raise ValueError(f"answer_key.items[{index}] has an invalid or duplicate case_id")
+        if role not in ROLES:
+            raise ValueError(f"answer_key.items[{index}] has an invalid cohort_role")
+        roles[case_id] = role
+    raw_packet_items = cohort.get("items")
+    if not isinstance(raw_packet_items, list):
+        raise ValueError("The reviewer packet items are invalid")
+    packet_ids = {
+        item.get("case_id")
+        for item in raw_packet_items
+        if isinstance(item, dict) and isinstance(item.get("case_id"), str)
+    }
+    if packet_ids != set(roles):
+        raise ValueError("The answer key and reviewer packet contain different case IDs")
+    return answer_key, roles
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Score the labelled Page 47 historical cohort")
     parser.add_argument("--cohort", type=Path, required=True)
+    parser.add_argument("--answer-key", type=Path, required=True)
     parser.add_argument("--database", type=Path, required=True)
     parser.add_argument("--evidence-root", type=Path, required=True)
     parser.add_argument("--presentation", type=Path, required=True)
@@ -248,7 +312,11 @@ def main() -> int:
         raise ValueError("The cohort city or items are invalid")
     if not args.code_revision.strip():
         raise ValueError("code-revision must be non-empty text")
-    snapshot = _verify_snapshot(cohort, args.database, args.evidence_root)
+    answer_key, roles_by_case_id = _load_answer_key(args.answer_key, args.cohort, cohort)
+    answer_snapshot = answer_key.get("source_snapshot")
+    if not isinstance(answer_snapshot, dict):
+        raise ValueError("The answer key source snapshot is invalid")
+    snapshot = _verify_snapshot(answer_snapshot, args.database, args.evidence_root)
     config = load_presentation_config(args.presentation)
     actual: list[str] = []
     predicted: list[str] = []
@@ -274,9 +342,10 @@ def main() -> int:
             if arm.state is None:
                 raise ValueError(f"items[{index}] produced no Page 47 state")
             expected = adjudicated["label"]
-            role = raw_item.get("cohort_role")
-            if not isinstance(role, str):
-                raise ValueError(f"items[{index}] has no cohort role")
+            case_id = raw_item.get("case_id")
+            if not isinstance(case_id, str) or case_id not in roles_by_case_id:
+                raise ValueError(f"items[{index}] has no answer-key role")
+            role = roles_by_case_id[case_id]
             actual.append(expected)
             predicted.append(arm.state)
             roles.append(role)
@@ -297,6 +366,7 @@ def main() -> int:
         "cohort": str(args.cohort),
         "evaluation_inputs": {
             "cohort_sha256": _sha256_file(args.cohort),
+            "answer_key_sha256": _sha256_file(args.answer_key),
             "database_sha256": snapshot["database_sha256"],
             "evidence_integrity_root": snapshot["evidence_integrity_root"],
             "presentation_sha256": _sha256_file(args.presentation),
