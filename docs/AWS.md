@@ -56,3 +56,38 @@ The two-stage document route is already measured on the stored Seattle run: 20 a
 6. Export one real post-activation review trace and retain its trace identifier. **Complete:** runtime version 16 uses `opentelemetry-instrument app.py`; run `dea939b750ec412ca0921b4a31422037` produced searchable trace `6aa2f721063b98043b31e7b86ca47cfb`, with 51 span events and one complete X-Ray summary.
 
 The collector's delivery step does not create a message by itself. It loads only saved reviews marked for delivery, matches them against active watches, records one outcome for each watch and review pair, and calls SES only for a confirmed area match. A failed SES call is retained as a failed delivery and is retried on the next scheduled run.
+
+## Evidence backup handoff
+
+The durable-copy step is intentionally separate from the capture loop until a
+private bucket and least-privilege permission are configured. The next operator
+should use a dedicated bucket in `eu-west-2`, separate from the AgentCore
+artifact bucket. Enable versioning, default encryption, ownership controls, and
+the S3 public-access block. Do not make evidence objects public.
+
+After the bucket exists, grant the deployment identity only the permissions
+needed for the exporter: `s3:PutObject` on the Page 47 evidence prefix and
+`s3:GetBucketLocation` on the bucket. Do not grant object deletion to the
+backup job. Then run one controlled backup for each city:
+
+```bash
+cd /home/ubuntu/page47-preflight
+.venv/bin/python scripts/backup_evidence.py \
+  --evidence-root runtime/evidence/seattle \
+  --bucket YOUR_PAGE47_EVIDENCE_BUCKET \
+  --prefix seattle \
+  --region eu-west-2
+
+.venv/bin/python scripts/backup_evidence.py \
+  --evidence-root runtime/evidence/denver \
+  --bucket YOUR_PAGE47_EVIDENCE_BUCKET \
+  --prefix denver \
+  --region eu-west-2
+```
+
+The command must finish only after verifying the local body hashes and
+manifest chain. Keep its JSON result, including `integrity_root`, in the
+deployment audit. Verify the bucket's versioning and inspect a few object
+metadata records before scheduling recurring backups after successful
+collector runs. The current code does not claim S3 durability until this
+bucket, permission, first backup, and recurring schedule are all verified.
