@@ -1,0 +1,233 @@
+{
+  "case_id": "Seattle, Washington:17456",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "adopt as amended",
+        "action_text": "The Committee recommends that City Council adopt as amended the Resolution (Res).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing, Discussion, and Possible Vote\\b0  (20 minutes)\\par\r\n\\par\r\n\\cf1\\b\\f1 Presenter:\\b0  Councilmember Rivera\\f0\\par\r\n}\r\n",
+        "agenda_number": "2.",
+        "agenda_sequence": 8,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 49114,
+            "content_hash": "cb604f65673cf4b09dc0193eed5c41af758d9bddea77a3c37ab7cdd6b55111e5",
+            "first_observed_by_us": "2026-09-04T18:07:09.598074Z",
+            "last_modified_utc": "2026-08-17T19:07:51.053",
+            "matter_id": 17456,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-08T23:31:04.458004Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6870?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/26fc57f4-28b6-4adf-be3a-018dd9fd114f.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49301,
+            "content_hash": "5d2a3e4284620c145e19cdb385566e556a519d9fd6f1bc23a3bbeb4803b1bde8",
+            "first_observed_by_us": "2026-09-04T18:07:09.598074Z",
+            "last_modified_utc": "2026-09-03T22:51:06.777",
+            "matter_id": 17456,
+            "name": "Amendment 1",
+            "page_count": 2,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:07:11.305764Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/34374a47-69e8-4967-acdc-076f86d4b4bd.pdf"
+            },
+            "reading_status": "absent",
+            "source": {
+              "captured_at": "2026-09-08T23:31:04.458004Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6870?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/34374a47-69e8-4967-acdc-076f86d4b4bd.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 270,
+        "body_name": "Public Safety Committee",
+        "consent_value": 0,
+        "event_date": "2026-09-08T00:00:00",
+        "event_id": 6870,
+        "event_item_id": 125550,
+        "item_last_modified_utc": "2026-09-08T20:23:01.057",
+        "matter_id": 17456,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": "cannot_determine",
+        "pdf_placement_reason": "ValueError: Captured agenda response had HTTP status 404, not 200",
+        "pdf_source": {
+          "capture_key": "54d9f07e61eb1f702ca0baeeed2f61ef4f471f0826d9d048aaf0414dafaaa005",
+          "captured_at": "2026-09-07T00:00:40.610342Z",
+          "kind": "snapshot",
+          "observed_by_page47": true,
+          "response_sha256": "dc1d54dab6ec8c00f70137927504e4f222c8395f10760b6beecfcfa94e08249f",
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/9/6870_A_Public_Safety_Committee_26-09-08_Committee_Agenda.pdf"
+        },
+        "source": {
+          "captured_at": "2026-09-08T23:31:04.458004Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6870?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "A resolution declaring the City of Seattle\u2019s intent to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College."
+      },
+      {
+        "action_taken": null,
+        "action_text": null,
+        "agenda_note": null,
+        "agenda_number": "3.",
+        "agenda_sequence": 46,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 49114,
+            "content_hash": "cb604f65673cf4b09dc0193eed5c41af758d9bddea77a3c37ab7cdd6b55111e5",
+            "first_observed_by_us": "2026-09-04T18:07:09.598074Z",
+            "last_modified_utc": "2026-08-17T19:07:51.053",
+            "matter_id": 17456,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-11T21:02:08.932225Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6885?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/26fc57f4-28b6-4adf-be3a-018dd9fd114f.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49301,
+            "content_hash": "5d2a3e4284620c145e19cdb385566e556a519d9fd6f1bc23a3bbeb4803b1bde8",
+            "first_observed_by_us": "2026-09-04T18:07:09.598074Z",
+            "last_modified_utc": "2026-09-03T22:51:06.777",
+            "matter_id": 17456,
+            "name": "Amendment 1",
+            "page_count": 2,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:07:11.305764Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/34374a47-69e8-4967-acdc-076f86d4b4bd.pdf"
+            },
+            "reading_status": "absent",
+            "source": {
+              "captured_at": "2026-09-11T21:02:08.932225Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6885?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/34374a47-69e8-4967-acdc-076f86d4b4bd.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2026-09-15T00:00:00",
+        "event_id": 6885,
+        "event_item_id": 125767,
+        "item_last_modified_utc": "2026-09-11T18:55:29.853",
+        "matter_id": 17456,
+        "matter_version_at_event": "2",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [
+          7
+        ],
+        "pdf_placement": "consent",
+        "pdf_placement_reason": "The item title appears under the consent heading.",
+        "pdf_source": {
+          "capture_key": "8ca9fba044ec569835cd8768b3bed61917d82031502df16c8abe4000f8e0c05c",
+          "captured_at": "2026-09-11T21:02:10.091919Z",
+          "content_sha256": "e0348228be71aa28e12489ca9d156d02d4447342c49c59ebc699bb6b256d8faf",
+          "kind": "snapshot",
+          "observed_by_page47": true,
+          "response_sha256": "e0348228be71aa28e12489ca9d156d02d4447342c49c59ebc699bb6b256d8faf",
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/9/6885_A_City_Council_26-09-15_Full_Council_Meeting_Agenda.pdf"
+        },
+        "source": {
+          "captured_at": "2026-09-11T21:02:08.932225Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6885?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "A resolution declaring the Seattle City Council\u2019s intent for the City of Seattle to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2026-09-08T00:00:00",
+      "body_id": 270,
+      "body_name": "Public Safety Committee",
+      "current_title": "A resolution declaring the City of Seattle\u2019s intent to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College.",
+      "file_number": "Res 32217",
+      "intro_date": "2026-08-14T00:00:00",
+      "last_modified_utc": "2026-09-03T22:51:19.177",
+      "matter_id": 17456,
+      "matter_name": null,
+      "source": {
+        "captured_at": "2026-09-04T20:15:56.149634Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=13700&%24orderby=MatterId+asc"
+      },
+      "status_name": "Committee Agenda Ready",
+      "type_name": "Resolution (Res)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "cohort_role": "candidate",
+  "matter_id": 17456,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "selected_pairs": [
+    {
+      "attachment_ids_with_multiple_captured_hashes": [],
+      "current_event_date": "2026-09-15T00:00:00",
+      "current_event_item_id": 125767,
+      "current_placement": "consent",
+      "current_title": "A resolution declaring the Seattle City Council\u2019s intent for the City of Seattle to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College.",
+      "previous_event_date": "2026-09-08T00:00:00",
+      "previous_event_item_id": 125550,
+      "previous_placement": "cannot_determine",
+      "previous_title": "A resolution declaring the City of Seattle\u2019s intent to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College.",
+      "reasons": [
+        "title_changed"
+      ]
+    }
+  ],
+  "selection_index": 7,
+  "selection_reasons": [
+    "title_changed"
+  ]
+}

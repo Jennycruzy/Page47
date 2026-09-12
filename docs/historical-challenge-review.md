@@ -7,7 +7,17 @@ selection rule.
 
 The checked-in packet is
 [`docs/historical-challenge-cohort.json`](historical-challenge-cohort.json).
-It contains 40 Seattle matters:
+It contains 40 Seattle matters. Because the complete packet is a large JSON
+download, the repository also provides a browser-friendly
+[case index](historical-challenge/index.json),
+[case directory](historical-challenge/), and one retained JSON file per case.
+Use the case files to inspect individual records in a browser; the complete
+packet remains the canonical audit artifact:
+
+- [browser-friendly challenge packet](historical-challenge/README.md)
+- [complete canonical packet](historical-challenge-cohort.json)
+
+The packet contains:
 
 - 7 candidates: all matters in the retained dataset that met the mechanical
   change rules;

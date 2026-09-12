@@ -1,0 +1,233 @@
+{
+  "case_id": "Seattle, Washington:4360",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": null,
+        "action_text": null,
+        "agenda_note": null,
+        "agenda_number": "10.",
+        "agenda_sequence": 27,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 8432,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:41.692123Z",
+            "last_modified_utc": "2016-11-10T23:20:23.89",
+            "matter_id": 4360,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:43.445223Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2457?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4beed507-0865-42aa-9e08-b739d6069b77.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 8433,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:41.692123Z",
+            "last_modified_utc": "2021-01-15T20:59:36.583",
+            "matter_id": 4360,
+            "name": "Summary Att A \u2013 Swedish Minor Tunnel Area Map",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:43.445223Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2457?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/6d4ff39a-437c-4de4-9917-9c3f6bb3c4b5.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 8917,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:41.692123Z",
+            "last_modified_utc": "2016-09-16T15:58:41.117",
+            "matter_id": 4360,
+            "name": "Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:43.445223Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2457?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4779eb4f-cb2c-45b3-89a8-48b78a2e0af8.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2016-09-19T00:00:00",
+        "event_id": 2457,
+        "event_item_id": 35300,
+        "item_last_modified_utc": "2016-09-30T00:09:51.9",
+        "matter_id": 4360,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:43.445223Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2457?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "A RESOLUTION granting conceptual approval to Swedish Health Services to construct and maintain a pedestrian tunnel under and across Minor Avenue, south of Columbia Street and north of Cherry Street."
+      },
+      {
+        "action_taken": "adopted",
+        "action_text": "The Resolution (Res) was adopted by the following vote, and the President signed the Resolution:",
+        "agenda_note": null,
+        "agenda_number": "20.",
+        "agenda_sequence": 39,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 8432,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:41.692123Z",
+            "last_modified_utc": "2016-11-10T23:20:23.89",
+            "matter_id": 4360,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:41.692123Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2468?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4beed507-0865-42aa-9e08-b739d6069b77.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 8433,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:41.692123Z",
+            "last_modified_utc": "2021-01-15T20:59:36.583",
+            "matter_id": 4360,
+            "name": "Summary Att A \u2013 Swedish Minor Tunnel Area Map",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:41.692123Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2468?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/6d4ff39a-437c-4de4-9917-9c3f6bb3c4b5.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 8917,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:41.692123Z",
+            "last_modified_utc": "2016-09-16T15:58:41.117",
+            "matter_id": 4360,
+            "name": "Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:41.692123Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2468?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4779eb4f-cb2c-45b3-89a8-48b78a2e0af8.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2016-09-26T00:00:00",
+        "event_id": 2468,
+        "event_item_id": 35544,
+        "item_last_modified_utc": "2016-09-26T23:40:45.353",
+        "matter_id": 4360,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:41.692123Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2468?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "A RESOLUTION granting conceptual approval to Swedish Health Services to construct and maintain a pedestrian tunnel under and across Minor Avenue, south of Columbia Street and north of Cherry Street."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2016-09-26T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "A RESOLUTION granting conceptual approval to Swedish Health Services to construct and maintain a pedestrian tunnel under and across Minor Avenue, south of Columbia Street and north of Cherry Street.",
+      "file_number": "Res 31700",
+      "intro_date": "2016-07-26T00:00:00",
+      "last_modified_utc": "2021-01-15T20:59:36.647",
+      "matter_id": 4360,
+      "matter_name": null,
+      "source": {
+        "captured_at": "2026-09-04T19:51:49.687397Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=2000&%24orderby=MatterId+asc"
+      },
+      "status_name": "Adopted",
+      "type_name": "Resolution (Res)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "cohort_role": "control",
+  "matter_id": 4360,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "selected_pairs": [],
+  "selection_index": 11,
+  "selection_reasons": [
+    "mechanical_control"
+  ]
+}

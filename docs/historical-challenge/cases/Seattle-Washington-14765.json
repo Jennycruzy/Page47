@@ -1,0 +1,1328 @@
+{
+  "case_id": "Seattle, Washington:14765",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "discussed",
+        "action_text": "The Clerk File (CF) was discussed.",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}{\\f2\\fswiss\\fprq2\\fcharset0 Aptos;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Public Hearing, Briefing, and Discussion\\b0\\par\r\n\\par\r\n\\cf1\\b\\f1 Presenters:\\b0  \\cf0\\f2\\fs22 Amy Gray and Kelsey Timmer, Seattle Department of Transportation (SDOT); Michael Jenkins, Seattle Design Commission (SDC); Molly Lawrence, Van Ness Feldman; Jeff Swanson, Greenwood Shopping Center; Kevin Cleary, Baylis Architects\\cf1\\f0\\fs24\\par\r\n}\r\n",
+        "agenda_number": "3.",
+        "agenda_sequence": 9,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 39596,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:38:41.25",
+            "matter_id": 14765,
+            "name": "Alley Vacation Petition",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/04be925c-56cf-4316-be1e-fd3df16cc9a2.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39597,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:38:51.23",
+            "matter_id": 14765,
+            "name": "Binding Documents",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/af0b7363-9991-4c29-9f46-bdb628a3bd5c.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39598,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:39:03.613",
+            "matter_id": 14765,
+            "name": "Exhibits Combined",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/74ac6506-c791-4330-8b6b-7ce30d25d301.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39599,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:39:50.53",
+            "matter_id": 14765,
+            "name": "Notarized Petition Form",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/33320332-c2fd-4696-ba52-fb2e9da16bd2.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39600,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:40:27.373",
+            "matter_id": 14765,
+            "name": "Vacation Map",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/68b0b8a3-fc68-45e7-b196-fffd111c519b.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 40042,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2024-02-14T19:59:08.577",
+            "matter_id": 14765,
+            "name": "Presentation (2/20/24)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/6a5fe434-e029-4bd8-9358-f29533326df3.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 40044,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2024-02-14T19:59:13.51",
+            "matter_id": 14765,
+            "name": "Central Staff Memo (2/20/24)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/9f4da0d6-a3e9-48b5-a10f-37d3c953b819.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 40053,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2024-02-15T21:44:32.51",
+            "matter_id": 14765,
+            "name": "Flow Chart",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/eff46587-cdb5-4111-aa03-418362332a61.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47884,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-05-05T17:04:25.047",
+            "matter_id": 14765,
+            "name": "Central Staff Memo (5/7/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/79ded8b2-6baa-4681-bcfd-efd5d2b2de48.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47885,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-05-05T17:04:42.767",
+            "matter_id": 14765,
+            "name": "Presentation (5/7/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/282d9d6c-7aaa-4c35-8f26-4e0b8c99ee20.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47886,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-05-05T17:05:01.703",
+            "matter_id": 14765,
+            "name": "SDOT Recommendation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b09a9af1-2c6d-4c5f-b2f0-5885ac05a12c.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48824,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-23T21:33:46.24",
+            "matter_id": 14765,
+            "name": "Presentation (7/27/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/c72415ce-13a1-4716-9cb0-1417e5d78904.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48931,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-30T22:19:45.013",
+            "matter_id": 14765,
+            "name": "Unexecuted Conditions of the City Council",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/026cb653-d72a-4a94-995c-26c4e8599f1c.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49022,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-08-06T21:54:02.723",
+            "matter_id": 14765,
+            "name": "Executed Conditions of the City Council",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:24.708989Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/9b9c1212-f3fe-46c9-9d81-7862cd695d6a.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 282,
+        "body_name": "Transportation, Waterfront, and Seattle Center Committee",
+        "consent_value": 0,
+        "event_date": "2026-05-07T00:00:00",
+        "event_id": 6691,
+        "event_item_id": 122830,
+        "item_last_modified_utc": "2026-05-07T18:52:57.7",
+        "matter_id": 14765,
+        "matter_version_at_event": "1",
+        "minutes_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\fs24 A Public Hearing was held.\\par\r\n}\r\n",
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:39:24.708989Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6691?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N."
+      },
+      {
+        "action_taken": "not heard in Committee ",
+        "action_text": "The Clerk File (CF) was not heard in Committee.",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing, Discussion, and Possible Vote\\b0  \\par\r\n\\par\r\n\\pard\\sa160\\sl252\\slmult1\\cf1\\b\\f1 Presenters:\\b0  Amy Gray, Seattle Department of Transportation (SDOT); Lish Whitson, Council Central Staff\\f0\\par\r\n}\r\n",
+        "agenda_number": "4.",
+        "agenda_sequence": 10,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 39596,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:38:41.25",
+            "matter_id": 14765,
+            "name": "Alley Vacation Petition",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/04be925c-56cf-4316-be1e-fd3df16cc9a2.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39597,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:38:51.23",
+            "matter_id": 14765,
+            "name": "Binding Documents",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/af0b7363-9991-4c29-9f46-bdb628a3bd5c.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39598,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:39:03.613",
+            "matter_id": 14765,
+            "name": "Exhibits Combined",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/74ac6506-c791-4330-8b6b-7ce30d25d301.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39599,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:39:50.53",
+            "matter_id": 14765,
+            "name": "Notarized Petition Form",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/33320332-c2fd-4696-ba52-fb2e9da16bd2.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39600,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:40:27.373",
+            "matter_id": 14765,
+            "name": "Vacation Map",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/68b0b8a3-fc68-45e7-b196-fffd111c519b.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 40042,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2024-02-14T19:59:08.577",
+            "matter_id": 14765,
+            "name": "Presentation (2/20/24)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/6a5fe434-e029-4bd8-9358-f29533326df3.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 40044,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2024-02-14T19:59:13.51",
+            "matter_id": 14765,
+            "name": "Central Staff Memo (2/20/24)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/9f4da0d6-a3e9-48b5-a10f-37d3c953b819.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 40053,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2024-02-15T21:44:32.51",
+            "matter_id": 14765,
+            "name": "Flow Chart",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/eff46587-cdb5-4111-aa03-418362332a61.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47884,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-05-05T17:04:25.047",
+            "matter_id": 14765,
+            "name": "Central Staff Memo (5/7/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/79ded8b2-6baa-4681-bcfd-efd5d2b2de48.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47885,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-05-05T17:04:42.767",
+            "matter_id": 14765,
+            "name": "Presentation (5/7/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/282d9d6c-7aaa-4c35-8f26-4e0b8c99ee20.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47886,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-05-05T17:05:01.703",
+            "matter_id": 14765,
+            "name": "SDOT Recommendation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b09a9af1-2c6d-4c5f-b2f0-5885ac05a12c.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48824,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-23T21:33:46.24",
+            "matter_id": 14765,
+            "name": "Presentation (7/27/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/c72415ce-13a1-4716-9cb0-1417e5d78904.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48931,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-30T22:19:45.013",
+            "matter_id": 14765,
+            "name": "Unexecuted Conditions of the City Council",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/026cb653-d72a-4a94-995c-26c4e8599f1c.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49022,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-08-06T21:54:02.723",
+            "matter_id": 14765,
+            "name": "Executed Conditions of the City Council",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:39:14.363750Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/9b9c1212-f3fe-46c9-9d81-7862cd695d6a.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 282,
+        "body_name": "Transportation, Waterfront, and Seattle Center Committee",
+        "consent_value": 0,
+        "event_date": "2026-05-21T00:00:00",
+        "event_id": 6715,
+        "event_item_id": 123179,
+        "item_last_modified_utc": "2026-05-21T22:12:51.64",
+        "matter_id": 14765,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:39:14.363750Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6715?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N."
+      },
+      {
+        "action_taken": "grant as conditioned",
+        "action_text": "The Committee recommends that City Council grant as conditioned the Clerk File (CF).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing, Discussion, and Possible Vote\\b0  \\par\r\n\\par\r\n\\pard\\sa160\\sl252\\slmult1\\cf1\\b\\f1 Presenters:\\b0  Amy Gray, Seattle Department of Transportation (SDOT); Rebeccah Maskin, Council Central Staff\\f0\\par\r\n}\r\n",
+        "agenda_number": "2.",
+        "agenda_sequence": 8,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 39596,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:38:41.25",
+            "matter_id": 14765,
+            "name": "Alley Vacation Petition",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/04be925c-56cf-4316-be1e-fd3df16cc9a2.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39597,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:38:51.23",
+            "matter_id": 14765,
+            "name": "Binding Documents",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/af0b7363-9991-4c29-9f46-bdb628a3bd5c.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39598,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:39:03.613",
+            "matter_id": 14765,
+            "name": "Exhibits Combined",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/74ac6506-c791-4330-8b6b-7ce30d25d301.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39599,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:39:50.53",
+            "matter_id": 14765,
+            "name": "Notarized Petition Form",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/33320332-c2fd-4696-ba52-fb2e9da16bd2.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39600,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:40:27.373",
+            "matter_id": 14765,
+            "name": "Vacation Map",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/68b0b8a3-fc68-45e7-b196-fffd111c519b.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 40042,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2024-02-14T19:59:08.577",
+            "matter_id": 14765,
+            "name": "Presentation (2/20/24)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/6a5fe434-e029-4bd8-9358-f29533326df3.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 40044,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2024-02-14T19:59:13.51",
+            "matter_id": 14765,
+            "name": "Central Staff Memo (2/20/24)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/9f4da0d6-a3e9-48b5-a10f-37d3c953b819.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 40053,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2024-02-15T21:44:32.51",
+            "matter_id": 14765,
+            "name": "Flow Chart",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/eff46587-cdb5-4111-aa03-418362332a61.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47884,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-05-05T17:04:25.047",
+            "matter_id": 14765,
+            "name": "Central Staff Memo (5/7/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/79ded8b2-6baa-4681-bcfd-efd5d2b2de48.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47885,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-05-05T17:04:42.767",
+            "matter_id": 14765,
+            "name": "Presentation (5/7/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/282d9d6c-7aaa-4c35-8f26-4e0b8c99ee20.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47886,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-05-05T17:05:01.703",
+            "matter_id": 14765,
+            "name": "SDOT Recommendation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b09a9af1-2c6d-4c5f-b2f0-5885ac05a12c.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48824,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-23T21:33:46.24",
+            "matter_id": 14765,
+            "name": "Presentation (7/27/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/c72415ce-13a1-4716-9cb0-1417e5d78904.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48931,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-30T22:19:45.013",
+            "matter_id": 14765,
+            "name": "Unexecuted Conditions of the City Council",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/026cb653-d72a-4a94-995c-26c4e8599f1c.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49022,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-08-06T21:54:02.723",
+            "matter_id": 14765,
+            "name": "Executed Conditions of the City Council",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/9b9c1212-f3fe-46c9-9d81-7862cd695d6a.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 282,
+        "body_name": "Transportation, Waterfront, and Seattle Center Committee",
+        "consent_value": 0,
+        "event_date": "2026-07-27T00:00:00",
+        "event_id": 6833,
+        "event_item_id": 124621,
+        "item_last_modified_utc": "2026-07-27T17:31:03.223",
+        "matter_id": 14765,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [
+          4
+        ],
+        "pdf_placement": "regular",
+        "pdf_placement_reason": "The agenda has no consent section and the item title appears in its text.",
+        "pdf_source": {
+          "capture_key": "3cb8d841fc05b331757669fb2dce981a660a39b972130def6ea621b1bb828571",
+          "captured_at": "2026-09-05T00:30:51.443435Z",
+          "content_sha256": "8fd9ee5d816d16d314a104974eb1434a83d16a7063211fa41e3da78c46a25372",
+          "kind": "snapshot",
+          "observed_by_page47": true,
+          "response_sha256": "8fd9ee5d816d16d314a104974eb1434a83d16a7063211fa41e3da78c46a25372",
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/7/6833_A_Transportation%2C_Waterfront%2C_and_Seattle_Center_Committee_26-07-27_Committee_Agenda.pdf"
+        },
+        "source": {
+          "captured_at": "2026-09-04T19:38:40.849628Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N."
+      },
+      {
+        "action_taken": "granted as conditioned",
+        "action_text": "The Clerk File (CF) was granted as conditioned by the following vote, and the President signed the Conditions of the City Council:",
+        "agenda_note": null,
+        "agenda_number": "10.",
+        "agenda_sequence": 30,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 39596,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:38:41.25",
+            "matter_id": 14765,
+            "name": "Alley Vacation Petition",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/04be925c-56cf-4316-be1e-fd3df16cc9a2.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39597,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:38:51.23",
+            "matter_id": 14765,
+            "name": "Binding Documents",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/af0b7363-9991-4c29-9f46-bdb628a3bd5c.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39598,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:39:03.613",
+            "matter_id": 14765,
+            "name": "Exhibits Combined",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/74ac6506-c791-4330-8b6b-7ce30d25d301.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39599,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:39:50.53",
+            "matter_id": 14765,
+            "name": "Notarized Petition Form",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/33320332-c2fd-4696-ba52-fb2e9da16bd2.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 39600,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2023-11-29T22:40:27.373",
+            "matter_id": 14765,
+            "name": "Vacation Map",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/68b0b8a3-fc68-45e7-b196-fffd111c519b.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 40042,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2024-02-14T19:59:08.577",
+            "matter_id": 14765,
+            "name": "Presentation (2/20/24)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/6a5fe434-e029-4bd8-9358-f29533326df3.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 40044,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2024-02-14T19:59:13.51",
+            "matter_id": 14765,
+            "name": "Central Staff Memo (2/20/24)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/9f4da0d6-a3e9-48b5-a10f-37d3c953b819.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 40053,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2024-02-15T21:44:32.51",
+            "matter_id": 14765,
+            "name": "Flow Chart",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/eff46587-cdb5-4111-aa03-418362332a61.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47884,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-05-05T17:04:25.047",
+            "matter_id": 14765,
+            "name": "Central Staff Memo (5/7/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/79ded8b2-6baa-4681-bcfd-efd5d2b2de48.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47885,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-05-05T17:04:42.767",
+            "matter_id": 14765,
+            "name": "Presentation (5/7/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/282d9d6c-7aaa-4c35-8f26-4e0b8c99ee20.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47886,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-05-05T17:05:01.703",
+            "matter_id": 14765,
+            "name": "SDOT Recommendation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b09a9af1-2c6d-4c5f-b2f0-5885ac05a12c.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48824,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-23T21:33:46.24",
+            "matter_id": 14765,
+            "name": "Presentation (7/27/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/c72415ce-13a1-4716-9cb0-1417e5d78904.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48931,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-30T22:19:45.013",
+            "matter_id": 14765,
+            "name": "Unexecuted Conditions of the City Council",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/026cb653-d72a-4a94-995c-26c4e8599f1c.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49022,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-08-06T21:54:02.723",
+            "matter_id": 14765,
+            "name": "Executed Conditions of the City Council",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/9b9c1212-f3fe-46c9-9d81-7862cd695d6a.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2026-08-04T00:00:00",
+        "event_id": 6847,
+        "event_item_id": 124999,
+        "item_last_modified_utc": "2026-08-04T23:22:21.393",
+        "matter_id": 14765,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [
+          8
+        ],
+        "pdf_placement": "consent",
+        "pdf_placement_reason": "The item title appears under the consent heading.",
+        "pdf_source": {
+          "capture_key": "876d0c5acbd334d2332e98859be7f84089f7bbab5e01e2e563761f2003faee89",
+          "captured_at": "2026-09-05T00:19:16.774828Z",
+          "content_sha256": "597eb6daa175ee17c7395e91e52576bc00832227e2d8f003ecc7217b8e4735e2",
+          "kind": "snapshot",
+          "observed_by_page47": true,
+          "response_sha256": "597eb6daa175ee17c7395e91e52576bc00832227e2d8f003ecc7217b8e4735e2",
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/8/6847_A_City_Council_26-08-04_Full_Council_Meeting_Agenda.pdf"
+        },
+        "source": {
+          "captured_at": "2026-09-04T19:38:33.975128Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2026-08-04T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N.",
+      "file_number": "CF 314530",
+      "intro_date": "2023-11-29T00:00:00",
+      "last_modified_utc": "2026-08-07T14:42:26.267",
+      "matter_id": 14765,
+      "matter_name": null,
+      "source": {
+        "captured_at": "2026-09-04T20:15:36.284077Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=11400&%24orderby=MatterId+asc"
+      },
+      "status_name": "Granted",
+      "type_name": "Clerk File (CF)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "cohort_role": "candidate",
+  "matter_id": 14765,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "selected_pairs": [
+    {
+      "attachment_ids_with_multiple_captured_hashes": [],
+      "current_event_date": "2026-08-04T00:00:00",
+      "current_event_item_id": 124999,
+      "current_placement": "consent",
+      "current_title": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N.",
+      "previous_event_date": "2026-07-27T00:00:00",
+      "previous_event_item_id": 124621,
+      "previous_placement": "regular",
+      "previous_title": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N.",
+      "reasons": [
+        "agenda_placement_changed"
+      ]
+    }
+  ],
+  "selection_index": 1,
+  "selection_reasons": [
+    "agenda_placement_changed"
+  ]
+}

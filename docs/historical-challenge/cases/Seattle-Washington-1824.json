@@ -1,0 +1,3563 @@
+{
+  "case_id": "Seattle, Washington:1824",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:26.143774Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2115?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:26.143774Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2115?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:26.143774Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2115?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-03-14T00:00:00",
+        "event_id": 2115,
+        "event_item_id": 29646,
+        "item_last_modified_utc": "2019-10-25T21:20:53.14",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:09:26.143774Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2115?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:24.627789Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2130?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:24.627789Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2130?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:24.627789Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2130?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-03-21T00:00:00",
+        "event_id": 2130,
+        "event_item_id": 29790,
+        "item_last_modified_utc": "2019-10-25T21:21:35.503",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:09:24.627789Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2130?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:23.161924Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2143?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:23.161924Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2143?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:23.161924Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2143?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-03-28T00:00:00",
+        "event_id": 2143,
+        "event_item_id": 29889,
+        "item_last_modified_utc": "2019-10-25T21:21:58.803",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:09:23.161924Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2143?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:21.001285Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2159?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:21.001285Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2159?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:21.001285Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2159?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-04-04T00:00:00",
+        "event_id": 2159,
+        "event_item_id": 30084,
+        "item_last_modified_utc": "2019-10-25T21:22:16.1",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:09:21.001285Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2159?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:19.408407Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2172?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:19.408407Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2172?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:19.408407Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2172?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-04-11T00:00:00",
+        "event_id": 2172,
+        "event_item_id": 30326,
+        "item_last_modified_utc": "2019-10-25T21:22:50.65",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:09:19.408407Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2172?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": null,
+        "action_text": null,
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:17.999624Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2183?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:17.999624Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2183?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:17.999624Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2183?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-04-18T00:00:00",
+        "event_id": 2183,
+        "event_item_id": 30541,
+        "item_last_modified_utc": "2016-04-15T21:11:29.597",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:09:17.999624Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2183?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:16.425603Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2193?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:16.425603Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2193?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:16.425603Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2193?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-04-25T00:00:00",
+        "event_id": 2193,
+        "event_item_id": 30798,
+        "item_last_modified_utc": "2019-10-25T22:19:59.283",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:09:16.425603Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2193?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:12.338845Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2218?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:12.338845Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2218?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:12.338845Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2218?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-05-09T00:00:00",
+        "event_id": 2218,
+        "event_item_id": 31241,
+        "item_last_modified_utc": "2019-10-25T21:24:53.95",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:09:12.338845Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2218?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 3,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:49.782048Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2368?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:49.782048Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2368?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:49.782048Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2368?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-08-08T00:00:00",
+        "event_id": 2368,
+        "event_item_id": 34126,
+        "item_last_modified_utc": "2019-10-25T21:31:42.823",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:49.782048Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2368?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:48.219272Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2380?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:48.219272Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2380?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:48.219272Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2380?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-08-15T00:00:00",
+        "event_id": 2380,
+        "event_item_id": 34380,
+        "item_last_modified_utc": "2019-10-25T21:32:14.343",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:48.219272Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2380?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:47.549480Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2418?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:47.549480Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2418?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:47.549480Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2418?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-09-06T00:00:00",
+        "event_id": 2418,
+        "event_item_id": 34776,
+        "item_last_modified_utc": "2019-10-25T21:32:59.52",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:47.549480Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2418?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:45.039931Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2436?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:45.039931Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2436?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:45.039931Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2436?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-09-12T00:00:00",
+        "event_id": 2436,
+        "event_item_id": 35038,
+        "item_last_modified_utc": "2019-10-25T21:33:18.913",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:45.039931Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2436?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:42.791101Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2458?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:42.791101Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2458?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:42.791101Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2458?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-09-19T00:00:00",
+        "event_id": 2458,
+        "event_item_id": 35373,
+        "item_last_modified_utc": "2019-10-25T21:33:59.073",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:42.791101Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2458?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:41.036461Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2469?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:41.036461Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2469?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:41.036461Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2469?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-09-26T00:00:00",
+        "event_id": 2469,
+        "event_item_id": 35580,
+        "item_last_modified_utc": "2019-10-25T21:34:34.83",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:41.036461Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2469?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:40.384567Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2483?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:40.384567Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2483?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:40.384567Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2483?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-10-03T00:00:00",
+        "event_id": 2483,
+        "event_item_id": 35862,
+        "item_last_modified_utc": "2019-10-25T21:34:53.517",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:40.384567Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2483?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:37.866475Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2510?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:37.866475Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2510?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:37.866475Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2510?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-10-10T00:00:00",
+        "event_id": 2510,
+        "event_item_id": 36262,
+        "item_last_modified_utc": "2019-10-25T21:35:19.257",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:37.866475Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2510?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 6,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:37.148198Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2511?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:37.148198Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2511?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:37.148198Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2511?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-10-17T00:00:00",
+        "event_id": 2511,
+        "event_item_id": 36263,
+        "item_last_modified_utc": "2019-10-25T21:36:19.95",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:37.148198Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2511?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:34.753237Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2524?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:34.753237Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2524?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:34.753237Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2524?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-10-24T00:00:00",
+        "event_id": 2524,
+        "event_item_id": 36364,
+        "item_last_modified_utc": "2019-10-25T21:36:57.233",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:34.753237Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2524?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:33.301527Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2526?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:33.301527Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2526?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:33.301527Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2526?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-10-31T00:00:00",
+        "event_id": 2526,
+        "event_item_id": 36424,
+        "item_last_modified_utc": "2019-10-25T21:37:37.817",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:33.301527Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2526?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:32.604951Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2531?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:32.604951Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2531?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:32.604951Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2531?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-11-07T00:00:00",
+        "event_id": 2531,
+        "event_item_id": 36762,
+        "item_last_modified_utc": "2019-10-25T21:38:04.96",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:32.604951Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2531?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:31.282082Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2534?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:31.282082Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2534?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:31.282082Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2534?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-11-14T00:00:00",
+        "event_id": 2534,
+        "event_item_id": 36984,
+        "item_last_modified_utc": "2019-10-25T21:51:37.28",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:31.282082Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2534?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:29.844841Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2544?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:29.844841Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2544?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:29.844841Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2544?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-11-21T00:00:00",
+        "event_id": 2544,
+        "event_item_id": 37509,
+        "item_last_modified_utc": "2019-10-25T21:38:53.64",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:29.844841Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2544?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:28.046711Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2551?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:28.046711Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2551?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:28.046711Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2551?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-11-28T00:00:00",
+        "event_id": 2551,
+        "event_item_id": 37638,
+        "item_last_modified_utc": "2019-10-25T21:39:12.733",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:28.046711Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2551?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:24.405156Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2578?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:24.405156Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2578?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:24.405156Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2578?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-12-12T00:00:00",
+        "event_id": 2578,
+        "event_item_id": 38080,
+        "item_last_modified_utc": "2019-10-25T21:40:04.003",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:24.405156Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2578?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:21.820879Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2596?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:21.820879Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2596?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:21.820879Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2596?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-01-03T00:00:00",
+        "event_id": 2596,
+        "event_item_id": 38422,
+        "item_last_modified_utc": "2019-10-30T17:18:05.59",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:21.820879Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2596?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:16.154180Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2641?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:16.154180Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2641?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:16.154180Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2641?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-01-30T00:00:00",
+        "event_id": 2641,
+        "event_item_id": 39075,
+        "item_last_modified_utc": "2019-10-30T17:51:37.89",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:16.154180Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2641?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": null,
+        "action_text": null,
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:14.448373Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2646?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:14.448373Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2646?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:14.448373Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2646?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-02-06T00:00:00",
+        "event_id": 2646,
+        "event_item_id": 39232,
+        "item_last_modified_utc": "2017-02-03T23:33:16.343",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:14.448373Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2646?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:11.571159Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2655?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:11.571159Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2655?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:11.571159Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2655?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-02-13T00:00:00",
+        "event_id": 2655,
+        "event_item_id": 39399,
+        "item_last_modified_utc": "2019-10-30T18:13:16.93",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:11.571159Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2655?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": null,
+        "action_text": null,
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:08.596291Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2681?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:08.596291Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2681?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:08.596291Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2681?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-02-27T00:00:00",
+        "event_id": 2681,
+        "event_item_id": 39746,
+        "item_last_modified_utc": "2019-10-30T18:24:55.29",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:08.596291Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2681?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:06.309918Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2695?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:06.309918Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2695?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:06.309918Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2695?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-03-06T00:00:00",
+        "event_id": 2695,
+        "event_item_id": 39955,
+        "item_last_modified_utc": "2019-11-01T20:05:14.057",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:06.309918Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2695?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:01.656579Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2721?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:01.656579Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2721?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:01.656579Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2721?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-03-27T00:00:00",
+        "event_id": 2721,
+        "event_item_id": 40527,
+        "item_last_modified_utc": "2019-11-04T18:10:36.803",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:01.656579Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2721?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:00.143611Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2733?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:00.143611Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2733?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:00.143611Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2733?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-04-03T00:00:00",
+        "event_id": 2733,
+        "event_item_id": 40677,
+        "item_last_modified_utc": "2019-11-04T18:53:35.45",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:00.143611Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2733?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:58.568074Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2740?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:58.568074Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2740?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:58.568074Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2740?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-04-10T00:00:00",
+        "event_id": 2740,
+        "event_item_id": 40806,
+        "item_last_modified_utc": "2019-11-04T19:03:08.74",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:07:58.568074Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2740?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:56.371318Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2758?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:56.371318Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2758?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:56.371318Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2758?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-04-24T00:00:00",
+        "event_id": 2758,
+        "event_item_id": 41260,
+        "item_last_modified_utc": "2019-11-04T19:14:45.35",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:07:56.371318Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2758?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:48.614163Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2810?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:48.614163Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2810?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:48.614163Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2810?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-05-22T00:00:00",
+        "event_id": 2810,
+        "event_item_id": 42199,
+        "item_last_modified_utc": "2019-11-12T17:09:51.543",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:07:48.614163Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2810?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 3,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:47.942954Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2816?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:47.942954Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2816?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:47.942954Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2816?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-05-30T00:00:00",
+        "event_id": 2816,
+        "event_item_id": 42362,
+        "item_last_modified_utc": "2019-11-12T17:15:11.043",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:07:47.942954Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2816?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:45.631228Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2828?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:45.631228Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2828?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:45.631228Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2828?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-06-05T00:00:00",
+        "event_id": 2828,
+        "event_item_id": 42631,
+        "item_last_modified_utc": "2019-11-12T17:36:23.17",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:07:45.631228Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2828?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:39.236172Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2859?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:39.236172Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2859?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:39.236172Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2859?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-06-26T00:00:00",
+        "event_id": 2859,
+        "event_item_id": 43153,
+        "item_last_modified_utc": "2019-11-12T17:53:50.31",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:07:39.236172Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2859?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 5,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 12279,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2021-01-12T19:47:26.94",
+            "matter_id": 1824,
+            "name": "June 26, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:37.921264Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6a41f55-4a14-419e-824c-6488d734a6fa.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 12476,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-09-13T16:49:39.46",
+            "matter_id": 1824,
+            "name": "July 10, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:37.921264Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d861eacc-75ec-4ca4-941c-87e16eb741b8.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 15072,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:07:37.921264Z",
+            "last_modified_utc": "2019-12-07T00:43:02.59",
+            "matter_id": 1824,
+            "name": "November 27, 2017",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:07:37.921264Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/351edf71-b05d-4574-b37f-1f99faa03d7d.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2017-07-10T00:00:00",
+        "event_id": 2876,
+        "event_item_id": 43478,
+        "item_last_modified_utc": "2019-11-12T18:25:31.653",
+        "matter_id": 1824,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:07:37.921264Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Full Council Agenda"
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2018-05-14T00:00:00",
+      "body_id": 138,
+      "body_name": "City Council",
+      "current_title": null,
+      "file_number": null,
+      "intro_date": "2015-02-04T00:00:00",
+      "last_modified_utc": "2026-07-06T17:18:00.52",
+      "matter_id": 1824,
+      "matter_name": null,
+      "source": {
+        "captured_at": "2026-09-04T19:37:51.398250Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=0&%24orderby=MatterId+asc"
+      },
+      "status_name": "Filed with City Clerk",
+      "type_name": "Appointment (Appt)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "cohort_role": "control",
+  "matter_id": 1824,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "selected_pairs": [],
+  "selection_index": 8,
+  "selection_reasons": [
+    "mechanical_control"
+  ]
+}

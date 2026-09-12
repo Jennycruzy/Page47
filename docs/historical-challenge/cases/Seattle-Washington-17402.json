@@ -1,0 +1,1422 @@
+{
+  "case_id": "Seattle, Washington:17402",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "discussed",
+        "action_text": "The Council Bill (CB) was discussed in Committee.",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing and Discussion\\b0\\par\r\n\\par\r\n\\pard\\sa160\\sl252\\slmult1\\cf1\\b\\f1 Presenter:\\cf0\\f0  \\b0 Ketil Freeman, Council Central Staff\\cf1\\par\r\n}\r\n",
+        "agenda_number": "1.",
+        "agenda_sequence": 7,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 48966,
+            "content_hash": "f2e5b840b0fcbcff13e89c83adbffa84dd47dafb381d33c2bb2560b7acda57a0",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-10T17:31:15.267",
+            "matter_id": 17402,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:23.365439Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6866?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/a5cd0fac-631a-48e9-a2e9-54856d679dfd.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49097,
+            "content_hash": "8c11dd2bdb94bf8a77f4b0eaa9801169b40307b46d2860424f83b35cbe846452",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-13T22:26:44.893",
+            "matter_id": 17402,
+            "name": "Public Hearing Notice",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:23.365439Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6866?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/831ffa85-7031-4e08-9d3b-e7b8ce74f472.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 171,
+                "excerpt": "Council Bill 121276 \u2013Development Standards for Institutions in Multifamily Zones KETIL FREEMAN, LEGISLATIVE ANALYST LAND USE AND SUSTAINABILITY COMMITTEE AUGUST 17, 2026",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-04T18:06:59.495832Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf"
+                },
+                "start_character": 156,
+                "value": "AUGUST 17, 2026"
+              },
+              {
+                "end_character": 271,
+                "excerpt": "evelopment Standards Proposed Lowrise Institutional Development Standards Setbacks \uf0a7 Front - 7\u2019 average 5\u2019 minimum \uf0a7 Rear \u2013 0\u2019 abutting an alley; 7\u2019 average 5\u2019 minimum \uf0a7 Side \u2013 5 feet \uf0a7 Upper-level setbacks \u2013 12\u2019 from front, side and rear depending on height \uf0a7 Front \u2013 10\u2019 average 5\u2019 minimum \uf0a7 Rear \u2013 10\u2019 \uf0a7 Side \u2013 5\u2019, increasing with structure depth Same as",
+                "kind": "height_or_distance",
+                "page_number": 4,
+                "source": {
+                  "captured_at": "2026-09-04T18:06:59.495832Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf"
+                },
+                "start_character": 265,
+                "value": "5 feet"
+              },
+              {
+                "end_character": 612,
+                "excerpt": "th structure depth Same as residential Structure Width \uf0a7 LR1 and LR 2 \u2013 90\u2019 \uf0a7 LR3 \u2013 150\u2019 Varies depending on zone and Green Factor Same as residential Structure Depth NA 65% of lot depth Same as residential Green Factor and Landscaping 0.6 or greater 0.5 or greater, but only required to exceed structure width 0.5 or greater regardless of structure width Height",
+                "kind": "parcel_number",
+                "page_number": 4,
+                "source": {
+                  "captured_at": "2026-09-04T18:06:59.495832Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf"
+                },
+                "start_character": 603,
+                "value": "lot depth"
+              }
+            ],
+            "attachment_id": 49118,
+            "content_hash": "907c92dc0f8ff2f3ea0380b7ee9dafdfff0f78aae285ee57903be5fb2fd75163",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-18T16:20:22.493",
+            "matter_id": 17402,
+            "name": "Presentation (8/19/26)",
+            "page_count": 6,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:06:59.495832Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "captured_at": "2026-09-04T19:38:23.365439Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6866?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 186,
+                "excerpt": "An equal opportunity employer 600 Fourth Avenue, Floor 2 | PO Box 34025, Seattle | Washington 98124-4025 Phone (206) 684-8888 Email council@seattle.gov August 24, 2026 NOTICE OF LAND USE CODE TEXT AMENDMENTS AND DETERMINATION OF NON-SIGNIFICANCE FOR LEGISLATION ON INSTITUTIONS IN MULTIFAMILY ZONES Pursuant to SMC 25.05.340 and WAC 197-11",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.144321Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/a42e45fc-11ff-41da-b537-f0ab9d0efd3f.pdf"
+                },
+                "start_character": 171,
+                "value": "August 24, 2026"
+              },
+              {
+                "end_character": 915,
+                "excerpt": "l Impact Statement required). How to Comment/Comment Period: Comments on this Determination of Non- Significance (DNS) may be submitted to Ketil.Freeman@seattle.gov by 5PM on September 8, 2026. NO APPEAL OPPORTUNITY Issuance of a SEPA DNS is not subject to administrative appeal. Information Available: More information is available on the Seattle City Clerk webs",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.144321Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/a42e45fc-11ff-41da-b537-f0ab9d0efd3f.pdf"
+                },
+                "start_character": 898,
+                "value": "September 8, 2026"
+              }
+            ],
+            "attachment_id": 49167,
+            "content_hash": "889f33f1dc863e3c3cb3cd9ca6082f6c902b380bd4bcf1a556a104ff188cbee9",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-25T20:36:23.62",
+            "matter_id": 17402,
+            "name": "Public Notice",
+            "page_count": 1,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:07:00.144321Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/a42e45fc-11ff-41da-b537-f0ab9d0efd3f.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "captured_at": "2026-09-04T19:38:23.365439Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6866?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/a42e45fc-11ff-41da-b537-f0ab9d0efd3f.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 550,
+                "excerpt": "ty Council Central Staff Ketil Freeman, AICP, Legislative Analyst PO Box 34025 Seattle, WA 98124-4025 (206) 684.8178 Ketil.freeman@seattle.gov 4. Date checklist prepared: August 11, 2026 5. Agency requesting checklist: Seattle Office of Planning and Community Development 6. Proposed timing of schedule (including phasing, if applicable): The City Council antici",
+                "kind": "calendar_date",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 535,
+                "value": "August 11, 2026"
+              },
+              {
+                "end_character": 2094,
+                "excerpt": "e units no alley; 0\u2019 abutting an alley \uf0a7 Side \u2013 5\u2019 average, 3\u2019 minimum \uf0a7 Front - 7\u2019 average 5\u2019 minimum \uf0a7 Rear \u2013 0\u2019 abutting an alley; 7\u2019 average 5\u2019 minimum \uf0a7 Side \u2013 5 feet \uf0a7 Upper-level setbacks \u2013 12\u2019 from front, side and rear depending on height \uf0a7 Front \u2013 10\u2019 average 5\u2019 minimum \uf0a7 Rear \u2013 10\u2019 \uf0a7 Side \u2013 5\u2019, increasing with structure d",
+                "kind": "height_or_distance",
+                "page_number": 3,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 2088,
+                "value": "5 feet"
+              },
+              {
+                "end_character": 2488,
+                "excerpt": "ntial Structure Width \uf0a7 90\u2019 \uf0a7 LR1 and LR 2 \u2013 90\u2019 \uf0a7 LR3 \u2013 150\u2019 \uf0a7 Varies depending on zone and Green Factor \uf0a7 Same as residential Structure Depth \uf0a7 NA \uf0a7 NA \uf0a7 65% of lot depth \uf0a7 Same as residential Green Factor and Landscaping \uf0a7 0.3 or greater \uf0a7 0.6 or greater \uf0a7 0.5 or greater, but only required to exceed structure width \uf0a7 0.5 or greater",
+                "kind": "parcel_number",
+                "page_number": 3,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 2479,
+                "value": "lot depth"
+              },
+              {
+                "end_character": 2271,
+                "excerpt": "Creek, and other smaller creeks drain runoff from the eastern portions of the City to Lake Washington. 2. Will the project require any work over, in, or adjacent to (within 200 feet) the described waters? If yes, please describe and attach available plans. The proposed non- project action does not include any construction or development",
+                "kind": "height_or_distance",
+                "page_number": 7,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 2263,
+                "value": "200 feet"
+              },
+              {
+                "end_character": 1014,
+                "excerpt": "led murrelet and northern spotted owl; no designated critical habitat is located in Seattle. Bald eagle (Haliaeetus leucocephalus) was removed from the federal list under ESA on August 8, 2007, but is federally protected under the Bald and Golden Eagle Protection Act. Bald eagles are known to reside in Seattle. Fish species listed as endangered or threatened under",
+                "kind": "calendar_date",
+                "page_number": 12,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 1000,
+                "value": "August 8, 2007"
+              },
+              {
+                "end_character": 1224,
+                "excerpt": "reline resources regulated under the SMP include all marine waters, larger streams and lakes, associated wetlands and floodplains, and upland areas called shorelands that extend 200 feet landward from the edges of these waters. Individual projects subject to the provisions of this proposal may be located in areas subject to the SMP. Project-specific information",
+                "kind": "height_or_distance",
+                "page_number": 17,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 1216,
+                "value": "200 feet"
+              },
+              {
+                "end_character": 1482,
+                "excerpt": "hem to make its decision. X Type name of signee: Ketil Freeman, AICP Position and agency/organization: Legislative Analyst, Seattle City Council Central Staff Date submitted: August 11, 2026 D. Supplemental sheet for nonproject actions Do not use this section for project actions. Because these questions are very general, it may be helpful to read them in conjunc",
+                "kind": "calendar_date",
+                "page_number": 23,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 1467,
+                "value": "August 11, 2026"
+              }
+            ],
+            "attachment_id": 49168,
+            "content_hash": "67d442d478cee4bffe3c390b3d4bb8d705f7b0e7a08a748fed8da8ad86fc25c0",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-25T20:36:37.767",
+            "matter_id": 17402,
+            "name": "SEPA Checklist",
+            "page_count": 25,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:07:00.763265Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "captured_at": "2026-09-04T19:38:23.365439Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6866?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49169,
+            "content_hash": "4caf392634367621593971e099d49ab75ef754ce687bc0307be0f64fa862d2b3",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-25T20:37:01.993",
+            "matter_id": 17402,
+            "name": "Determination of Non-Significance",
+            "page_count": 3,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:07:01.716990Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/4c91fad7-489a-4574-8449-50c99df868ee.pdf"
+            },
+            "reading_status": "absent",
+            "source": {
+              "captured_at": "2026-09-04T19:38:23.365439Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6866?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4c91fad7-489a-4574-8449-50c99df868ee.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 280,
+        "body_name": "Land Use and Sustainability Committee",
+        "consent_value": 0,
+        "event_date": "2026-08-19T00:00:00",
+        "event_id": 6866,
+        "event_item_id": 125436,
+        "item_last_modified_utc": "2026-08-19T17:08:54.753",
+        "matter_id": 17402,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:38:23.365439Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6866?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones."
+      },
+      {
+        "action_taken": "discussed",
+        "action_text": "The Council Bill (CB) was discussed in Committee.",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing and Discussion\\b0\\par\r\n\\par\r\n\\pard\\sa160\\sl252\\slmult1\\cf1\\b\\f1 Presenter:\\b0  Ketil Freeman, Council Central Staff\\f0\\par\r\n}\r\n",
+        "agenda_number": "2.",
+        "agenda_sequence": 8,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 48966,
+            "content_hash": "f2e5b840b0fcbcff13e89c83adbffa84dd47dafb381d33c2bb2560b7acda57a0",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-10T17:31:15.267",
+            "matter_id": 17402,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-11T22:15:34.737634Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6868?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/a5cd0fac-631a-48e9-a2e9-54856d679dfd.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49097,
+            "content_hash": "8c11dd2bdb94bf8a77f4b0eaa9801169b40307b46d2860424f83b35cbe846452",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-13T22:26:44.893",
+            "matter_id": 17402,
+            "name": "Public Hearing Notice",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-11T22:15:34.737634Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6868?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/831ffa85-7031-4e08-9d3b-e7b8ce74f472.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 171,
+                "excerpt": "Council Bill 121276 \u2013Development Standards for Institutions in Multifamily Zones KETIL FREEMAN, LEGISLATIVE ANALYST LAND USE AND SUSTAINABILITY COMMITTEE AUGUST 17, 2026",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-04T18:06:59.495832Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf"
+                },
+                "start_character": 156,
+                "value": "AUGUST 17, 2026"
+              },
+              {
+                "end_character": 271,
+                "excerpt": "evelopment Standards Proposed Lowrise Institutional Development Standards Setbacks \uf0a7 Front - 7\u2019 average 5\u2019 minimum \uf0a7 Rear \u2013 0\u2019 abutting an alley; 7\u2019 average 5\u2019 minimum \uf0a7 Side \u2013 5 feet \uf0a7 Upper-level setbacks \u2013 12\u2019 from front, side and rear depending on height \uf0a7 Front \u2013 10\u2019 average 5\u2019 minimum \uf0a7 Rear \u2013 10\u2019 \uf0a7 Side \u2013 5\u2019, increasing with structure depth Same as",
+                "kind": "height_or_distance",
+                "page_number": 4,
+                "source": {
+                  "captured_at": "2026-09-04T18:06:59.495832Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf"
+                },
+                "start_character": 265,
+                "value": "5 feet"
+              },
+              {
+                "end_character": 612,
+                "excerpt": "th structure depth Same as residential Structure Width \uf0a7 LR1 and LR 2 \u2013 90\u2019 \uf0a7 LR3 \u2013 150\u2019 Varies depending on zone and Green Factor Same as residential Structure Depth NA 65% of lot depth Same as residential Green Factor and Landscaping 0.6 or greater 0.5 or greater, but only required to exceed structure width 0.5 or greater regardless of structure width Height",
+                "kind": "parcel_number",
+                "page_number": 4,
+                "source": {
+                  "captured_at": "2026-09-04T18:06:59.495832Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf"
+                },
+                "start_character": 603,
+                "value": "lot depth"
+              }
+            ],
+            "attachment_id": 49118,
+            "content_hash": "907c92dc0f8ff2f3ea0380b7ee9dafdfff0f78aae285ee57903be5fb2fd75163",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-18T16:20:22.493",
+            "matter_id": 17402,
+            "name": "Presentation (8/19/26)",
+            "page_count": 6,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:06:59.495832Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "captured_at": "2026-09-11T22:15:34.737634Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6868?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 186,
+                "excerpt": "An equal opportunity employer 600 Fourth Avenue, Floor 2 | PO Box 34025, Seattle | Washington 98124-4025 Phone (206) 684-8888 Email council@seattle.gov August 24, 2026 NOTICE OF LAND USE CODE TEXT AMENDMENTS AND DETERMINATION OF NON-SIGNIFICANCE FOR LEGISLATION ON INSTITUTIONS IN MULTIFAMILY ZONES Pursuant to SMC 25.05.340 and WAC 197-11",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.144321Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/a42e45fc-11ff-41da-b537-f0ab9d0efd3f.pdf"
+                },
+                "start_character": 171,
+                "value": "August 24, 2026"
+              },
+              {
+                "end_character": 915,
+                "excerpt": "l Impact Statement required). How to Comment/Comment Period: Comments on this Determination of Non- Significance (DNS) may be submitted to Ketil.Freeman@seattle.gov by 5PM on September 8, 2026. NO APPEAL OPPORTUNITY Issuance of a SEPA DNS is not subject to administrative appeal. Information Available: More information is available on the Seattle City Clerk webs",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.144321Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/a42e45fc-11ff-41da-b537-f0ab9d0efd3f.pdf"
+                },
+                "start_character": 898,
+                "value": "September 8, 2026"
+              }
+            ],
+            "attachment_id": 49167,
+            "content_hash": "889f33f1dc863e3c3cb3cd9ca6082f6c902b380bd4bcf1a556a104ff188cbee9",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-25T20:36:23.62",
+            "matter_id": 17402,
+            "name": "Public Notice",
+            "page_count": 1,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:07:00.144321Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/a42e45fc-11ff-41da-b537-f0ab9d0efd3f.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "captured_at": "2026-09-11T22:15:34.737634Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6868?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/a42e45fc-11ff-41da-b537-f0ab9d0efd3f.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 550,
+                "excerpt": "ty Council Central Staff Ketil Freeman, AICP, Legislative Analyst PO Box 34025 Seattle, WA 98124-4025 (206) 684.8178 Ketil.freeman@seattle.gov 4. Date checklist prepared: August 11, 2026 5. Agency requesting checklist: Seattle Office of Planning and Community Development 6. Proposed timing of schedule (including phasing, if applicable): The City Council antici",
+                "kind": "calendar_date",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 535,
+                "value": "August 11, 2026"
+              },
+              {
+                "end_character": 2094,
+                "excerpt": "e units no alley; 0\u2019 abutting an alley \uf0a7 Side \u2013 5\u2019 average, 3\u2019 minimum \uf0a7 Front - 7\u2019 average 5\u2019 minimum \uf0a7 Rear \u2013 0\u2019 abutting an alley; 7\u2019 average 5\u2019 minimum \uf0a7 Side \u2013 5 feet \uf0a7 Upper-level setbacks \u2013 12\u2019 from front, side and rear depending on height \uf0a7 Front \u2013 10\u2019 average 5\u2019 minimum \uf0a7 Rear \u2013 10\u2019 \uf0a7 Side \u2013 5\u2019, increasing with structure d",
+                "kind": "height_or_distance",
+                "page_number": 3,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 2088,
+                "value": "5 feet"
+              },
+              {
+                "end_character": 2488,
+                "excerpt": "ntial Structure Width \uf0a7 90\u2019 \uf0a7 LR1 and LR 2 \u2013 90\u2019 \uf0a7 LR3 \u2013 150\u2019 \uf0a7 Varies depending on zone and Green Factor \uf0a7 Same as residential Structure Depth \uf0a7 NA \uf0a7 NA \uf0a7 65% of lot depth \uf0a7 Same as residential Green Factor and Landscaping \uf0a7 0.3 or greater \uf0a7 0.6 or greater \uf0a7 0.5 or greater, but only required to exceed structure width \uf0a7 0.5 or greater",
+                "kind": "parcel_number",
+                "page_number": 3,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 2479,
+                "value": "lot depth"
+              },
+              {
+                "end_character": 2271,
+                "excerpt": "Creek, and other smaller creeks drain runoff from the eastern portions of the City to Lake Washington. 2. Will the project require any work over, in, or adjacent to (within 200 feet) the described waters? If yes, please describe and attach available plans. The proposed non- project action does not include any construction or development",
+                "kind": "height_or_distance",
+                "page_number": 7,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 2263,
+                "value": "200 feet"
+              },
+              {
+                "end_character": 1014,
+                "excerpt": "led murrelet and northern spotted owl; no designated critical habitat is located in Seattle. Bald eagle (Haliaeetus leucocephalus) was removed from the federal list under ESA on August 8, 2007, but is federally protected under the Bald and Golden Eagle Protection Act. Bald eagles are known to reside in Seattle. Fish species listed as endangered or threatened under",
+                "kind": "calendar_date",
+                "page_number": 12,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 1000,
+                "value": "August 8, 2007"
+              },
+              {
+                "end_character": 1224,
+                "excerpt": "reline resources regulated under the SMP include all marine waters, larger streams and lakes, associated wetlands and floodplains, and upland areas called shorelands that extend 200 feet landward from the edges of these waters. Individual projects subject to the provisions of this proposal may be located in areas subject to the SMP. Project-specific information",
+                "kind": "height_or_distance",
+                "page_number": 17,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 1216,
+                "value": "200 feet"
+              },
+              {
+                "end_character": 1482,
+                "excerpt": "hem to make its decision. X Type name of signee: Ketil Freeman, AICP Position and agency/organization: Legislative Analyst, Seattle City Council Central Staff Date submitted: August 11, 2026 D. Supplemental sheet for nonproject actions Do not use this section for project actions. Because these questions are very general, it may be helpful to read them in conjunc",
+                "kind": "calendar_date",
+                "page_number": 23,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 1467,
+                "value": "August 11, 2026"
+              }
+            ],
+            "attachment_id": 49168,
+            "content_hash": "67d442d478cee4bffe3c390b3d4bb8d705f7b0e7a08a748fed8da8ad86fc25c0",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-25T20:36:37.767",
+            "matter_id": 17402,
+            "name": "SEPA Checklist",
+            "page_count": 25,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:07:00.763265Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "captured_at": "2026-09-11T22:15:34.737634Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6868?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49169,
+            "content_hash": "4caf392634367621593971e099d49ab75ef754ce687bc0307be0f64fa862d2b3",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-25T20:37:01.993",
+            "matter_id": 17402,
+            "name": "Determination of Non-Significance",
+            "page_count": 3,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:07:01.716990Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/4c91fad7-489a-4574-8449-50c99df868ee.pdf"
+            },
+            "reading_status": "absent",
+            "source": {
+              "captured_at": "2026-09-11T22:15:34.737634Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6868?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4c91fad7-489a-4574-8449-50c99df868ee.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 899,
+                "excerpt": "as follows: 23.45.570 Institutions * * * E. Landscaping 1. Landscaping that achieves a Green Factor score of 0.5 or greater, pursuant to Section 23.86.019, is required on any lot with: a. Development, either a new structure or an addition to an existing structure, containing more than 4,000 new square feet of non-residential uses; or b. Any parking lot conta",
+                "kind": "parcel_number",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 891,
+                "value": "lot with"
+              },
+              {
+                "end_character": 1084,
+                "excerpt": "lot with: a. Development, either a new structure or an addition to an existing structure, containing more than 4,000 new square feet of non-residential uses; or b. Any parking lot containing more than 20 new parking spaces for automobiles. 2. All required trees shall meet standards promulgated by the Director to provide for the long-term health, viability, and cove",
+                "kind": "parcel_number",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 1070,
+                "value": "lot containing"
+              },
+              {
+                "end_character": 71,
+                "excerpt": "Ketil Freeman Land Use and Sustainability Committee September 9, 2026 D1 1 Amendment 1 Version 1 to CB 121276 \u2013 LEG MF Institutions ORD Sponsor: Councilmember Lin Surface Parking Landscaping Requirements Effect: This amendment wou",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 54,
+                "value": "September 9, 2026"
+              },
+              {
+                "end_character": 1078,
+                "excerpt": "faces across a street, alley, or access easement, a lot in a residential zone. b. Screening shall consist of a fence, solid evergreen hedge, or wall ((between 4 and 6)) at least 3 feet in height. ((Sight triangles must be provided. Fences surrounding sports fields/recreation areas may be 8 feet high. The Director may permit higher fencing when necessary for sp",
+                "kind": "height_or_distance",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 1072,
+                "value": "3 feet"
+              },
+              {
+                "end_character": 1190,
+                "excerpt": "fence, solid evergreen hedge, or wall ((between 4 and 6)) at least 3 feet in height. ((Sight triangles must be provided. Fences surrounding sports fields/recreation areas may be 8 feet high. The Director may permit higher fencing when necessary for sports fields. c. The height of the visual barrier created by the screen required in subsection 23.45.570.G.3 sh",
+                "kind": "height_or_distance",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 1184,
+                "value": "8 feet"
+              },
+              {
+                "end_character": 1652,
+                "excerpt": "hed elevation of the parking surface, the difference in elevation may be measured as a portion of the required height of the screen, so long as the screen itself is a minimum of 3 feet in height.))",
+                "kind": "height_or_distance",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 1646,
+                "value": "3 feet"
+              },
+              {
+                "end_character": 511,
+                "excerpt": "loading is required pursuant to Section 23.54.015, except as modified by Section 23.54.020. 2. Location of parking. Parking areas and facilities may be located anywhere on the lot except in the required front setback or side street side setback or offsite according to Section 23.54.025. 3. Screening of surface parking areas. Surface parking areas for more than",
+                "kind": "parcel_number",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 501,
+                "value": "lot except"
+              },
+              {
+                "end_character": 1438,
+                "excerpt": "ry for sports fields. c. The height of the visual barrier created by the screen required in subsection 23.45.570.G.3 shall be measured from street level. If the elevation of the lot line is different from the finished elevation of the parking surface, the difference in elevation may be measured as a portion of the required height of the screen, so long as the sc",
+                "kind": "parcel_number",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 1429,
+                "value": "lot \nline"
+              },
+              {
+                "end_character": 71,
+                "excerpt": "Ketil Freeman Land Use and Sustainability Committee September 9, 2026 D1 2 may include, but are not limited to, the type and size of plants, spacing of plants, depth, and quality of soil, access to light and air, and protection practices dur",
+                "kind": "calendar_date",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 54,
+                "value": "September 9, 2026"
+              },
+              {
+                "end_character": 376,
+                "excerpt": "dscaped according to the following requirements: a. One tree per every five parking spaces is required. b. Each required tree shall be planted in a landscaped area and shall be 3 feet away from any curb of a landscaped area or edge of the parking area. Permanent curbs or structural barriers shall protect landscaping, but may include openings to allow movement",
+                "kind": "height_or_distance",
+                "page_number": 3,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 370,
+                "value": "3 feet"
+              },
+              {
+                "end_character": 1092,
+                "excerpt": "cording to the following requirements: a. One tree per every ((five)) four parking spaces is required. b. Each required tree shall be planted in a landscaped area and shall be 3 feet away from any curb of a landscaped area or edge of the parking area. Permanent curbs or structural barriers shall protect landscaping((,)) but may include openings to allow move",
+                "kind": "height_or_distance",
+                "page_number": 3,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 1086,
+                "value": "3 feet"
+              },
+              {
+                "end_character": 71,
+                "excerpt": "Ketil Freeman Land Use and Sustainability Committee September 9, 2026 D1 3 4. Landscaping of surface parking. Accessory surface parking areas for more than 20 vehicles shall be landscaped according to the following requirements: a. One tree",
+                "kind": "calendar_date",
+                "page_number": 3,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 54,
+                "value": "September 9, 2026"
+              }
+            ],
+            "attachment_id": 49434,
+            "content_hash": "4e81bf94909bd2e96ded9f2c78cb2489e15406127fb54e90ee0cb3b2829ecb1a",
+            "first_observed_by_us": "2026-09-11T21:45:38.237924Z",
+            "last_modified_utc": "2026-09-11T21:36:06.333",
+            "matter_id": 17402,
+            "name": "Amendment 1",
+            "page_count": 3,
+            "reading_source": {
+              "captured_at": "2026-09-11T21:46:31.829244Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "captured_at": "2026-09-11T22:15:34.737634Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6868?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 280,
+        "body_name": "Land Use and Sustainability Committee",
+        "consent_value": 0,
+        "event_date": "2026-09-11T00:00:00",
+        "event_id": 6868,
+        "event_item_id": 125567,
+        "item_last_modified_utc": "2026-09-11T17:37:04.07",
+        "matter_id": 17402,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": "cannot_determine",
+        "pdf_placement_reason": "ValueError: Captured agenda response had HTTP status 404, not 200",
+        "pdf_source": {
+          "capture_key": "818405724c82e8685b981ba380bb6d8d3655c6b89f584c860e588f8c481d084f",
+          "captured_at": "2026-09-09T22:30:28.564559Z",
+          "kind": "snapshot",
+          "observed_by_page47": true,
+          "response_sha256": "dc1d54dab6ec8c00f70137927504e4f222c8395f10760b6beecfcfa94e08249f",
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/9/6868_A_Land_Use_and_Sustainability_Committee_26-09-11_Committee_Agenda.pdf"
+        },
+        "source": {
+          "captured_at": "2026-09-11T22:15:34.737634Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6868?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones."
+      },
+      {
+        "action_taken": null,
+        "action_text": null,
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Public Hearing, Briefing, Discussion, and Possible Vote\\b0\\par\r\n\\par\r\n\\pard\\sa160\\sl252\\slmult1\\cf1\\b\\f1 Presenter:\\b0  Ketil Freeman, Council Central Staff\\f0\\par\r\n}\r\n",
+        "agenda_number": "17.",
+        "agenda_sequence": 23,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 48966,
+            "content_hash": "f2e5b840b0fcbcff13e89c83adbffa84dd47dafb381d33c2bb2560b7acda57a0",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-10T17:31:15.267",
+            "matter_id": 17402,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-11T22:47:47.588688Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6887?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/a5cd0fac-631a-48e9-a2e9-54856d679dfd.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49097,
+            "content_hash": "8c11dd2bdb94bf8a77f4b0eaa9801169b40307b46d2860424f83b35cbe846452",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-13T22:26:44.893",
+            "matter_id": 17402,
+            "name": "Public Hearing Notice",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-11T22:47:47.588688Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6887?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/831ffa85-7031-4e08-9d3b-e7b8ce74f472.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 171,
+                "excerpt": "Council Bill 121276 \u2013Development Standards for Institutions in Multifamily Zones KETIL FREEMAN, LEGISLATIVE ANALYST LAND USE AND SUSTAINABILITY COMMITTEE AUGUST 17, 2026",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-04T18:06:59.495832Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf"
+                },
+                "start_character": 156,
+                "value": "AUGUST 17, 2026"
+              },
+              {
+                "end_character": 271,
+                "excerpt": "evelopment Standards Proposed Lowrise Institutional Development Standards Setbacks \uf0a7 Front - 7\u2019 average 5\u2019 minimum \uf0a7 Rear \u2013 0\u2019 abutting an alley; 7\u2019 average 5\u2019 minimum \uf0a7 Side \u2013 5 feet \uf0a7 Upper-level setbacks \u2013 12\u2019 from front, side and rear depending on height \uf0a7 Front \u2013 10\u2019 average 5\u2019 minimum \uf0a7 Rear \u2013 10\u2019 \uf0a7 Side \u2013 5\u2019, increasing with structure depth Same as",
+                "kind": "height_or_distance",
+                "page_number": 4,
+                "source": {
+                  "captured_at": "2026-09-04T18:06:59.495832Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf"
+                },
+                "start_character": 265,
+                "value": "5 feet"
+              },
+              {
+                "end_character": 612,
+                "excerpt": "th structure depth Same as residential Structure Width \uf0a7 LR1 and LR 2 \u2013 90\u2019 \uf0a7 LR3 \u2013 150\u2019 Varies depending on zone and Green Factor Same as residential Structure Depth NA 65% of lot depth Same as residential Green Factor and Landscaping 0.6 or greater 0.5 or greater, but only required to exceed structure width 0.5 or greater regardless of structure width Height",
+                "kind": "parcel_number",
+                "page_number": 4,
+                "source": {
+                  "captured_at": "2026-09-04T18:06:59.495832Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf"
+                },
+                "start_character": 603,
+                "value": "lot depth"
+              }
+            ],
+            "attachment_id": 49118,
+            "content_hash": "907c92dc0f8ff2f3ea0380b7ee9dafdfff0f78aae285ee57903be5fb2fd75163",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-18T16:20:22.493",
+            "matter_id": 17402,
+            "name": "Presentation (8/19/26)",
+            "page_count": 6,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:06:59.495832Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "captured_at": "2026-09-11T22:47:47.588688Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6887?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/0a901b97-aa97-4a0a-802b-df23b3cc2b1b.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 186,
+                "excerpt": "An equal opportunity employer 600 Fourth Avenue, Floor 2 | PO Box 34025, Seattle | Washington 98124-4025 Phone (206) 684-8888 Email council@seattle.gov August 24, 2026 NOTICE OF LAND USE CODE TEXT AMENDMENTS AND DETERMINATION OF NON-SIGNIFICANCE FOR LEGISLATION ON INSTITUTIONS IN MULTIFAMILY ZONES Pursuant to SMC 25.05.340 and WAC 197-11",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.144321Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/a42e45fc-11ff-41da-b537-f0ab9d0efd3f.pdf"
+                },
+                "start_character": 171,
+                "value": "August 24, 2026"
+              },
+              {
+                "end_character": 915,
+                "excerpt": "l Impact Statement required). How to Comment/Comment Period: Comments on this Determination of Non- Significance (DNS) may be submitted to Ketil.Freeman@seattle.gov by 5PM on September 8, 2026. NO APPEAL OPPORTUNITY Issuance of a SEPA DNS is not subject to administrative appeal. Information Available: More information is available on the Seattle City Clerk webs",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.144321Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/a42e45fc-11ff-41da-b537-f0ab9d0efd3f.pdf"
+                },
+                "start_character": 898,
+                "value": "September 8, 2026"
+              }
+            ],
+            "attachment_id": 49167,
+            "content_hash": "889f33f1dc863e3c3cb3cd9ca6082f6c902b380bd4bcf1a556a104ff188cbee9",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-25T20:36:23.62",
+            "matter_id": 17402,
+            "name": "Public Notice",
+            "page_count": 1,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:07:00.144321Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/a42e45fc-11ff-41da-b537-f0ab9d0efd3f.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "captured_at": "2026-09-11T22:47:47.588688Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6887?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/a42e45fc-11ff-41da-b537-f0ab9d0efd3f.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 550,
+                "excerpt": "ty Council Central Staff Ketil Freeman, AICP, Legislative Analyst PO Box 34025 Seattle, WA 98124-4025 (206) 684.8178 Ketil.freeman@seattle.gov 4. Date checklist prepared: August 11, 2026 5. Agency requesting checklist: Seattle Office of Planning and Community Development 6. Proposed timing of schedule (including phasing, if applicable): The City Council antici",
+                "kind": "calendar_date",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 535,
+                "value": "August 11, 2026"
+              },
+              {
+                "end_character": 2094,
+                "excerpt": "e units no alley; 0\u2019 abutting an alley \uf0a7 Side \u2013 5\u2019 average, 3\u2019 minimum \uf0a7 Front - 7\u2019 average 5\u2019 minimum \uf0a7 Rear \u2013 0\u2019 abutting an alley; 7\u2019 average 5\u2019 minimum \uf0a7 Side \u2013 5 feet \uf0a7 Upper-level setbacks \u2013 12\u2019 from front, side and rear depending on height \uf0a7 Front \u2013 10\u2019 average 5\u2019 minimum \uf0a7 Rear \u2013 10\u2019 \uf0a7 Side \u2013 5\u2019, increasing with structure d",
+                "kind": "height_or_distance",
+                "page_number": 3,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 2088,
+                "value": "5 feet"
+              },
+              {
+                "end_character": 2488,
+                "excerpt": "ntial Structure Width \uf0a7 90\u2019 \uf0a7 LR1 and LR 2 \u2013 90\u2019 \uf0a7 LR3 \u2013 150\u2019 \uf0a7 Varies depending on zone and Green Factor \uf0a7 Same as residential Structure Depth \uf0a7 NA \uf0a7 NA \uf0a7 65% of lot depth \uf0a7 Same as residential Green Factor and Landscaping \uf0a7 0.3 or greater \uf0a7 0.6 or greater \uf0a7 0.5 or greater, but only required to exceed structure width \uf0a7 0.5 or greater",
+                "kind": "parcel_number",
+                "page_number": 3,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 2479,
+                "value": "lot depth"
+              },
+              {
+                "end_character": 2271,
+                "excerpt": "Creek, and other smaller creeks drain runoff from the eastern portions of the City to Lake Washington. 2. Will the project require any work over, in, or adjacent to (within 200 feet) the described waters? If yes, please describe and attach available plans. The proposed non- project action does not include any construction or development",
+                "kind": "height_or_distance",
+                "page_number": 7,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 2263,
+                "value": "200 feet"
+              },
+              {
+                "end_character": 1014,
+                "excerpt": "led murrelet and northern spotted owl; no designated critical habitat is located in Seattle. Bald eagle (Haliaeetus leucocephalus) was removed from the federal list under ESA on August 8, 2007, but is federally protected under the Bald and Golden Eagle Protection Act. Bald eagles are known to reside in Seattle. Fish species listed as endangered or threatened under",
+                "kind": "calendar_date",
+                "page_number": 12,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 1000,
+                "value": "August 8, 2007"
+              },
+              {
+                "end_character": 1224,
+                "excerpt": "reline resources regulated under the SMP include all marine waters, larger streams and lakes, associated wetlands and floodplains, and upland areas called shorelands that extend 200 feet landward from the edges of these waters. Individual projects subject to the provisions of this proposal may be located in areas subject to the SMP. Project-specific information",
+                "kind": "height_or_distance",
+                "page_number": 17,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 1216,
+                "value": "200 feet"
+              },
+              {
+                "end_character": 1482,
+                "excerpt": "hem to make its decision. X Type name of signee: Ketil Freeman, AICP Position and agency/organization: Legislative Analyst, Seattle City Council Central Staff Date submitted: August 11, 2026 D. Supplemental sheet for nonproject actions Do not use this section for project actions. Because these questions are very general, it may be helpful to read them in conjunc",
+                "kind": "calendar_date",
+                "page_number": 23,
+                "source": {
+                  "captured_at": "2026-09-04T18:07:00.763265Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+                },
+                "start_character": 1467,
+                "value": "August 11, 2026"
+              }
+            ],
+            "attachment_id": 49168,
+            "content_hash": "67d442d478cee4bffe3c390b3d4bb8d705f7b0e7a08a748fed8da8ad86fc25c0",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-25T20:36:37.767",
+            "matter_id": 17402,
+            "name": "SEPA Checklist",
+            "page_count": 25,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:07:00.763265Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "captured_at": "2026-09-11T22:47:47.588688Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6887?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b4193087-f771-412f-9e0c-de522037aedd.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49169,
+            "content_hash": "4caf392634367621593971e099d49ab75ef754ce687bc0307be0f64fa862d2b3",
+            "first_observed_by_us": "2026-09-04T18:03:15.906680Z",
+            "last_modified_utc": "2026-08-25T20:37:01.993",
+            "matter_id": 17402,
+            "name": "Determination of Non-Significance",
+            "page_count": 3,
+            "reading_source": {
+              "captured_at": "2026-09-04T18:07:01.716990Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/4c91fad7-489a-4574-8449-50c99df868ee.pdf"
+            },
+            "reading_status": "absent",
+            "source": {
+              "captured_at": "2026-09-11T22:47:47.588688Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6887?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4c91fad7-489a-4574-8449-50c99df868ee.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 899,
+                "excerpt": "as follows: 23.45.570 Institutions * * * E. Landscaping 1. Landscaping that achieves a Green Factor score of 0.5 or greater, pursuant to Section 23.86.019, is required on any lot with: a. Development, either a new structure or an addition to an existing structure, containing more than 4,000 new square feet of non-residential uses; or b. Any parking lot conta",
+                "kind": "parcel_number",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 891,
+                "value": "lot with"
+              },
+              {
+                "end_character": 1084,
+                "excerpt": "lot with: a. Development, either a new structure or an addition to an existing structure, containing more than 4,000 new square feet of non-residential uses; or b. Any parking lot containing more than 20 new parking spaces for automobiles. 2. All required trees shall meet standards promulgated by the Director to provide for the long-term health, viability, and cove",
+                "kind": "parcel_number",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 1070,
+                "value": "lot containing"
+              },
+              {
+                "end_character": 71,
+                "excerpt": "Ketil Freeman Land Use and Sustainability Committee September 9, 2026 D1 1 Amendment 1 Version 1 to CB 121276 \u2013 LEG MF Institutions ORD Sponsor: Councilmember Lin Surface Parking Landscaping Requirements Effect: This amendment wou",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 54,
+                "value": "September 9, 2026"
+              },
+              {
+                "end_character": 1078,
+                "excerpt": "faces across a street, alley, or access easement, a lot in a residential zone. b. Screening shall consist of a fence, solid evergreen hedge, or wall ((between 4 and 6)) at least 3 feet in height. ((Sight triangles must be provided. Fences surrounding sports fields/recreation areas may be 8 feet high. The Director may permit higher fencing when necessary for sp",
+                "kind": "height_or_distance",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 1072,
+                "value": "3 feet"
+              },
+              {
+                "end_character": 1190,
+                "excerpt": "fence, solid evergreen hedge, or wall ((between 4 and 6)) at least 3 feet in height. ((Sight triangles must be provided. Fences surrounding sports fields/recreation areas may be 8 feet high. The Director may permit higher fencing when necessary for sports fields. c. The height of the visual barrier created by the screen required in subsection 23.45.570.G.3 sh",
+                "kind": "height_or_distance",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 1184,
+                "value": "8 feet"
+              },
+              {
+                "end_character": 1652,
+                "excerpt": "hed elevation of the parking surface, the difference in elevation may be measured as a portion of the required height of the screen, so long as the screen itself is a minimum of 3 feet in height.))",
+                "kind": "height_or_distance",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 1646,
+                "value": "3 feet"
+              },
+              {
+                "end_character": 511,
+                "excerpt": "loading is required pursuant to Section 23.54.015, except as modified by Section 23.54.020. 2. Location of parking. Parking areas and facilities may be located anywhere on the lot except in the required front setback or side street side setback or offsite according to Section 23.54.025. 3. Screening of surface parking areas. Surface parking areas for more than",
+                "kind": "parcel_number",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 501,
+                "value": "lot except"
+              },
+              {
+                "end_character": 1438,
+                "excerpt": "ry for sports fields. c. The height of the visual barrier created by the screen required in subsection 23.45.570.G.3 shall be measured from street level. If the elevation of the lot line is different from the finished elevation of the parking surface, the difference in elevation may be measured as a portion of the required height of the screen, so long as the sc",
+                "kind": "parcel_number",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 1429,
+                "value": "lot \nline"
+              },
+              {
+                "end_character": 71,
+                "excerpt": "Ketil Freeman Land Use and Sustainability Committee September 9, 2026 D1 2 may include, but are not limited to, the type and size of plants, spacing of plants, depth, and quality of soil, access to light and air, and protection practices dur",
+                "kind": "calendar_date",
+                "page_number": 2,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 54,
+                "value": "September 9, 2026"
+              },
+              {
+                "end_character": 376,
+                "excerpt": "dscaped according to the following requirements: a. One tree per every five parking spaces is required. b. Each required tree shall be planted in a landscaped area and shall be 3 feet away from any curb of a landscaped area or edge of the parking area. Permanent curbs or structural barriers shall protect landscaping, but may include openings to allow movement",
+                "kind": "height_or_distance",
+                "page_number": 3,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 370,
+                "value": "3 feet"
+              },
+              {
+                "end_character": 1092,
+                "excerpt": "cording to the following requirements: a. One tree per every ((five)) four parking spaces is required. b. Each required tree shall be planted in a landscaped area and shall be 3 feet away from any curb of a landscaped area or edge of the parking area. Permanent curbs or structural barriers shall protect landscaping((,)) but may include openings to allow move",
+                "kind": "height_or_distance",
+                "page_number": 3,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 1086,
+                "value": "3 feet"
+              },
+              {
+                "end_character": 71,
+                "excerpt": "Ketil Freeman Land Use and Sustainability Committee September 9, 2026 D1 3 4. Landscaping of surface parking. Accessory surface parking areas for more than 20 vehicles shall be landscaped according to the following requirements: a. One tree",
+                "kind": "calendar_date",
+                "page_number": 3,
+                "source": {
+                  "captured_at": "2026-09-11T21:46:31.829244Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+                },
+                "start_character": 54,
+                "value": "September 9, 2026"
+              }
+            ],
+            "attachment_id": 49434,
+            "content_hash": "4e81bf94909bd2e96ded9f2c78cb2489e15406127fb54e90ee0cb3b2829ecb1a",
+            "first_observed_by_us": "2026-09-11T21:45:38.237924Z",
+            "last_modified_utc": "2026-09-11T21:36:06.333",
+            "matter_id": 17402,
+            "name": "Amendment 1",
+            "page_count": 3,
+            "reading_source": {
+              "captured_at": "2026-09-11T21:46:31.829244Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "captured_at": "2026-09-11T22:47:47.588688Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6887?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d9c6dc2a-d9aa-49dd-95ea-217a5a73c95e.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 280,
+        "body_name": "Land Use and Sustainability Committee",
+        "consent_value": 0,
+        "event_date": "2026-09-16T00:00:00",
+        "event_id": 6887,
+        "event_item_id": 125808,
+        "item_last_modified_utc": "2026-09-11T21:45:28.76",
+        "matter_id": 17402,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [
+          7
+        ],
+        "pdf_placement": "regular",
+        "pdf_placement_reason": "The agenda has no consent section and the item title appears in its text.",
+        "pdf_source": {
+          "capture_key": "8c9e8e921744913150d9234829712049e6cf6f40dab0fdeafc5e31bf6a82d740",
+          "captured_at": "2026-09-11T22:47:48.413448Z",
+          "content_sha256": "6735a2a8165d80b18cf64e70273ef5fcd2f94c340ba523ec51c979c51018d114",
+          "kind": "snapshot",
+          "observed_by_page47": true,
+          "response_sha256": "6735a2a8165d80b18cf64e70273ef5fcd2f94c340ba523ec51c979c51018d114",
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/9/6887_A_Land_Use_and_Sustainability_Committee_26-09-16_Committee_Agenda.pdf"
+        },
+        "source": {
+          "captured_at": "2026-09-11T22:47:47.588688Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6887?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": null,
+      "body_id": 280,
+      "body_name": "Land Use and Sustainability Committee",
+      "current_title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones.",
+      "file_number": "CB 121276",
+      "intro_date": "2026-08-03T00:00:00",
+      "last_modified_utc": "2026-09-03T19:26:21.78",
+      "matter_id": 17402,
+      "matter_name": "CB 121276",
+      "source": {
+        "captured_at": "2026-09-04T20:15:55.459643Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=13600&%24orderby=MatterId+asc"
+      },
+      "status_name": "In Committee",
+      "type_name": "Council Bill (CB)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "cohort_role": "candidate",
+  "matter_id": 17402,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "selected_pairs": [
+    {
+      "attachment_ids_with_multiple_captured_hashes": [],
+      "current_event_date": "2026-09-11T00:00:00",
+      "current_event_item_id": 125567,
+      "current_placement": "cannot_determine",
+      "current_title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones.",
+      "previous_event_date": "2026-08-19T00:00:00",
+      "previous_event_item_id": 125436,
+      "previous_placement": null,
+      "previous_title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones.",
+      "reasons": [
+        "attachment_set_changed"
+      ]
+    }
+  ],
+  "selection_index": 6,
+  "selection_reasons": [
+    "attachment_set_changed"
+  ]
+}

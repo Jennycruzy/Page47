@@ -1,0 +1,348 @@
+{
+  "case_id": "Seattle, Washington:16995",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "pass",
+        "action_text": "The Committee recommends that City Council pass the Council Bill (CB).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing, Discussion, and Possible Vote\\b0  \\par\r\n\\par\r\n\\pard\\sa160\\sl252\\slmult1\\cf1\\b\\f1 Presenters:\\b0  Amy Gray, Seattle Department of Transportation (SDOT); Rebeccah Maskin, Council Central Staff\\f0\\par\r\n}\r\n",
+        "agenda_number": "1.",
+        "agenda_sequence": 7,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 47595,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-06-29T17:21:30.467",
+            "matter_id": 16995,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/2bb840ed-736e-4296-93ee-fbee55eaa8c6.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47596,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-03-31T22:36:20.457",
+            "matter_id": 16995,
+            "name": "Summary Att A - Skyline Skybridge Area Map",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/28349582-5e90-4b1d-a7fd-4606aa842f01.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47597,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-03-31T22:36:21.08",
+            "matter_id": 16995,
+            "name": "Summary Att B - Skyline Skybridge Annual Fee Assessment",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/c2c6d42e-60fa-4e73-a1ca-d3388fee1c0f.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48822,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-23T21:27:30.867",
+            "matter_id": 16995,
+            "name": "SDOT Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/bfa848bf-804e-4ac8-84c0-4116d56b4bec.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49099,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-08-14T16:08:45.91",
+            "matter_id": 16995,
+            "name": "Signed Ordinance 127488",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:40.849628Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/a3d7c667-3c9c-411e-9e75-d0865e86630a.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 282,
+        "body_name": "Transportation, Waterfront, and Seattle Center Committee",
+        "consent_value": 0,
+        "event_date": "2026-07-27T00:00:00",
+        "event_id": 6833,
+        "event_item_id": 124622,
+        "item_last_modified_utc": "2026-07-27T21:24:07.5",
+        "matter_id": 16995,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [
+          3
+        ],
+        "pdf_placement": "regular",
+        "pdf_placement_reason": "The agenda has no consent section and the item title appears in its text.",
+        "pdf_source": {
+          "capture_key": "3cb8d841fc05b331757669fb2dce981a660a39b972130def6ea621b1bb828571",
+          "captured_at": "2026-09-05T00:30:51.443435Z",
+          "content_sha256": "8fd9ee5d816d16d314a104974eb1434a83d16a7063211fa41e3da78c46a25372",
+          "kind": "snapshot",
+          "observed_by_page47": true,
+          "response_sha256": "8fd9ee5d816d16d314a104974eb1434a83d16a7063211fa41e3da78c46a25372",
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/7/6833_A_Transportation%2C_Waterfront%2C_and_Seattle_Center_Committee_26-07-27_Committee_Agenda.pdf"
+        },
+        "source": {
+          "captured_at": "2026-09-04T19:38:40.849628Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6833?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions."
+      },
+      {
+        "action_taken": "passed",
+        "action_text": "The Council Bill (CB) was passed by the following vote, and the President signed the Council Bill (CB):",
+        "agenda_note": null,
+        "agenda_number": "9.",
+        "agenda_sequence": 29,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 47595,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-06-29T17:21:30.467",
+            "matter_id": 16995,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/2bb840ed-736e-4296-93ee-fbee55eaa8c6.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47596,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-03-31T22:36:20.457",
+            "matter_id": 16995,
+            "name": "Summary Att A - Skyline Skybridge Area Map",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/28349582-5e90-4b1d-a7fd-4606aa842f01.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47597,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-03-31T22:36:21.08",
+            "matter_id": 16995,
+            "name": "Summary Att B - Skyline Skybridge Annual Fee Assessment",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/c2c6d42e-60fa-4e73-a1ca-d3388fee1c0f.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48822,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-23T21:27:30.867",
+            "matter_id": 16995,
+            "name": "SDOT Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/bfa848bf-804e-4ac8-84c0-4116d56b4bec.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49099,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-08-14T16:08:45.91",
+            "matter_id": 16995,
+            "name": "Signed Ordinance 127488",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/a3d7c667-3c9c-411e-9e75-d0865e86630a.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2026-08-04T00:00:00",
+        "event_id": 6847,
+        "event_item_id": 124998,
+        "item_last_modified_utc": "2026-08-04T23:06:39.19",
+        "matter_id": 16995,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [
+          7
+        ],
+        "pdf_placement": "consent",
+        "pdf_placement_reason": "The item title appears under the consent heading.",
+        "pdf_source": {
+          "capture_key": "876d0c5acbd334d2332e98859be7f84089f7bbab5e01e2e563761f2003faee89",
+          "captured_at": "2026-09-05T00:19:16.774828Z",
+          "content_sha256": "597eb6daa175ee17c7395e91e52576bc00832227e2d8f003ecc7217b8e4735e2",
+          "kind": "snapshot",
+          "observed_by_page47": true,
+          "response_sha256": "597eb6daa175ee17c7395e91e52576bc00832227e2d8f003ecc7217b8e4735e2",
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/8/6847_A_City_Council_26-08-04_Full_Council_Meeting_Agenda.pdf"
+        },
+        "source": {
+          "captured_at": "2026-09-04T19:38:33.975128Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2026-08-04T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions.",
+      "file_number": "CB 121242",
+      "intro_date": "2026-03-17T00:00:00",
+      "last_modified_utc": "2026-08-14T16:14:33.103",
+      "matter_id": 16995,
+      "matter_name": "CB 121242",
+      "source": {
+        "captured_at": "2026-09-04T20:15:53.127115Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=13300&%24orderby=MatterId+asc"
+      },
+      "status_name": "Passed",
+      "type_name": "Ordinance (Ord)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "cohort_role": "candidate",
+  "matter_id": 16995,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "selected_pairs": [
+    {
+      "attachment_ids_with_multiple_captured_hashes": [],
+      "current_event_date": "2026-08-04T00:00:00",
+      "current_event_item_id": 124998,
+      "current_placement": "consent",
+      "current_title": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions.",
+      "previous_event_date": "2026-07-27T00:00:00",
+      "previous_event_item_id": 124622,
+      "previous_placement": "regular",
+      "previous_title": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions.",
+      "reasons": [
+        "agenda_placement_changed"
+      ]
+    }
+  ],
+  "selection_index": 4,
+  "selection_reasons": [
+    "agenda_placement_changed"
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "case_id": "Seattle, Washington:17398",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "pass",
+        "action_text": "The Committee recommends that City Council pass the Council Bill (CB).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\b\\fs24 Public Hearing, Briefing, Discussion, and Possible Vote \\b0 (20 min)\\b\\par\r\n\\par\r\nPresenters: \\b0 Egan Orion, Executive Director, Broadway Business Improvement Area; Casey Rogers, Office of Economic Development\\par\r\n}\r\n",
+        "agenda_number": "2.",
+        "agenda_sequence": 8,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 49011,
+            "content_hash": "54a679bc2e2e137cd8f0c34730819a334977b4a6d7aac3a5502cc6926d461e1e",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-05T17:36:25.95",
+            "matter_id": 17398,
+            "name": "Ex A - Proposed Boundary Modification",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:24.782970Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/416f9326-95d3-4f83-965a-2747034d30ee.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49012,
+            "content_hash": "a7234f02b01f66b1a4244c51071cd8d24cae678780805a3fe028e582a8e6b320",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-05T17:36:26.487",
+            "matter_id": 17398,
+            "name": "Ex B - Existing Boundaries",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:24.782970Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/c036fdcf-4d7d-4e0e-b29a-b25bc0e8351f.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49013,
+            "content_hash": "1b464571a01cedf41cbedbb4a47dc894eebb79231a4444a1e346233af804edc8",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-05T17:36:27.027",
+            "matter_id": 17398,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:24.782970Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4defd40f-d716-4de3-acf1-dd61359ed663.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49143,
+            "content_hash": "dcf2f57ac75f5faa6803466ce41bb5bb57830e15af4edbfa6ec4b487cb23d900",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-19T00:05:07.923",
+            "matter_id": 17398,
+            "name": "Presentation",
+            "page_count": 8,
+            "reading_source": {
+              "captured_at": "2026-09-11T21:02:42.517418Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/4570655a-b0be-4c1d-9d84-00199e086b2e.pdf"
+            },
+            "reading_status": "absent",
+            "source": {
+              "captured_at": "2026-09-04T19:38:24.782970Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4570655a-b0be-4c1d-9d84-00199e086b2e.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49158,
+            "content_hash": "6239d6c72fcd6ecb7c01b155b04d56bc554bc000cfcd45dc93fd6cb819d39d2f",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-21T20:12:43.85",
+            "matter_id": 17398,
+            "name": "Updated Presentation (added; 8/21/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:24.782970Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b8808961-fc9d-4dcc-8cec-caa6702652d9.pptx",
+            "version": "0"
+          }
+        ],
+        "body_id": 279,
+        "body_name": "Human Services, Labor, and Economic Development Committee",
+        "consent_value": 0,
+        "event_date": "2026-08-21T00:00:00",
+        "event_id": 6864,
+        "event_item_id": 125333,
+        "item_last_modified_utc": "2026-08-21T19:44:04.367",
+        "matter_id": 17398,
+        "matter_version_at_event": "1",
+        "minutes_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\fs24 A Public Hearing was held.\\par\r\n}\r\n",
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:38:24.782970Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance relating to the Capitol Hill Business Improvement Area; modifying the boundaries; amending Ordinance 113029, as previously amended by Ordinances 115998, 120303, and 124514; modifying the assessment structure for the Capitol Hill Business Improvement Area; and ratifying and confirming certain prior acts."
+      },
+      {
+        "action_taken": null,
+        "action_text": null,
+        "agenda_note": null,
+        "agenda_number": null,
+        "agenda_sequence": 13,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 49011,
+            "content_hash": "54a679bc2e2e137cd8f0c34730819a334977b4a6d7aac3a5502cc6926d461e1e",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-05T17:36:25.95",
+            "matter_id": 17398,
+            "name": "Ex A - Proposed Boundary Modification",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-11T21:02:08.932225Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6885?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/416f9326-95d3-4f83-965a-2747034d30ee.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49012,
+            "content_hash": "a7234f02b01f66b1a4244c51071cd8d24cae678780805a3fe028e582a8e6b320",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-05T17:36:26.487",
+            "matter_id": 17398,
+            "name": "Ex B - Existing Boundaries",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-11T21:02:08.932225Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6885?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/c036fdcf-4d7d-4e0e-b29a-b25bc0e8351f.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49013,
+            "content_hash": "1b464571a01cedf41cbedbb4a47dc894eebb79231a4444a1e346233af804edc8",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-05T17:36:27.027",
+            "matter_id": 17398,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-11T21:02:08.932225Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6885?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4defd40f-d716-4de3-acf1-dd61359ed663.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49143,
+            "content_hash": "dcf2f57ac75f5faa6803466ce41bb5bb57830e15af4edbfa6ec4b487cb23d900",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-19T00:05:07.923",
+            "matter_id": 17398,
+            "name": "Presentation",
+            "page_count": 8,
+            "reading_source": {
+              "captured_at": "2026-09-11T21:02:42.517418Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/4570655a-b0be-4c1d-9d84-00199e086b2e.pdf"
+            },
+            "reading_status": "absent",
+            "source": {
+              "captured_at": "2026-09-11T21:02:08.932225Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6885?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4570655a-b0be-4c1d-9d84-00199e086b2e.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49158,
+            "content_hash": "6239d6c72fcd6ecb7c01b155b04d56bc554bc000cfcd45dc93fd6cb819d39d2f",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-21T20:12:43.85",
+            "matter_id": 17398,
+            "name": "Updated Presentation (added; 8/21/26)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-11T21:02:08.932225Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6885?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b8808961-fc9d-4dcc-8cec-caa6702652d9.pptx",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2026-09-15T00:00:00",
+        "event_id": 6885,
+        "event_item_id": 125771,
+        "item_last_modified_utc": "2026-09-11T19:15:23.927",
+        "matter_id": 17398,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [
+          4
+        ],
+        "pdf_placement": "consent",
+        "pdf_placement_reason": "The item title appears under the consent heading.",
+        "pdf_source": {
+          "capture_key": "8ca9fba044ec569835cd8768b3bed61917d82031502df16c8abe4000f8e0c05c",
+          "captured_at": "2026-09-11T21:02:10.091919Z",
+          "content_sha256": "e0348228be71aa28e12489ca9d156d02d4447342c49c59ebc699bb6b256d8faf",
+          "kind": "snapshot",
+          "observed_by_page47": true,
+          "response_sha256": "e0348228be71aa28e12489ca9d156d02d4447342c49c59ebc699bb6b256d8faf",
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/9/6885_A_City_Council_26-09-15_Full_Council_Meeting_Agenda.pdf"
+        },
+        "source": {
+          "captured_at": "2026-09-11T21:02:08.932225Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6885?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance relating to the Capitol Hill Business Improvement Area; modifying the boundaries; amending Ordinance 113029, as previously amended by Ordinances 115998, 120303, and 124514; modifying the assessment structure for the Capitol Hill Business Improvement Area; and ratifying and confirming certain prior acts."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2026-09-15T00:00:00",
+      "body_id": 279,
+      "body_name": "Human Services, Labor, and Economic Development Committee",
+      "current_title": "An ordinance relating to the Capitol Hill Business Improvement Area; modifying the boundaries; amending Ordinance 113029, as previously amended by Ordinances 115998, 120303, and 124514; modifying the assessment structure for the Capitol Hill Business Improvement Area; and ratifying and confirming certain prior acts.",
+      "file_number": "CB 121272",
+      "intro_date": "2026-07-31T00:00:00",
+      "last_modified_utc": "2026-08-25T21:19:40.63",
+      "matter_id": 17398,
+      "matter_name": "CB 121272",
+      "source": {
+        "captured_at": "2026-09-04T20:15:55.459643Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=13600&%24orderby=MatterId+asc"
+      },
+      "status_name": "Full Council Agenda Ready",
+      "type_name": "Council Bill (CB)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "cohort_role": "control",
+  "matter_id": 17398,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "selected_pairs": [],
+  "selection_index": 40,
+  "selection_reasons": [
+    "mechanical_control"
+  ]
+}

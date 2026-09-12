@@ -1,0 +1,233 @@
+{
+  "case_id": "Seattle, Washington:3577",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n\\viewkind4\\uc1\\pard\\fs24 (King County Assessor John Wilson, King County Assessor's Office)\\par\r\n9:50 a.m. - 10:10 a.m.\\par\r\n}\r\n",
+        "agenda_number": "3.",
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 6201,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:09:30.795684Z",
+            "last_modified_utc": "2016-02-20T00:06:37.507",
+            "matter_id": 3577,
+            "name": "I-5 East Duwamish Encampment Conditions Assessment",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:35.941277Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2030?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/eb11cc08-bdc7-4791-b71c-3ec475519590.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 6202,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:09:30.795684Z",
+            "last_modified_utc": "2016-02-20T00:07:43.437",
+            "matter_id": 3577,
+            "name": "Map 1: Joint Assessment Area",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:35.941277Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2030?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/31e05dc6-cc25-4274-b02d-1dcb00cb82d3.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 6203,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:09:30.795684Z",
+            "last_modified_utc": "2016-02-19T00:18:04.543",
+            "matter_id": 3577,
+            "name": "Map 2: North Area, South Area",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:35.941277Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2030?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/7f6fdd97-f39e-4ab0-ab8f-5b8ca6862003.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-01-25T00:00:00",
+        "event_id": 2030,
+        "event_item_id": 28399,
+        "item_last_modified_utc": "2019-10-25T20:15:27.073",
+        "matter_id": 3577,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:09:35.941277Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2030?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Encampment Conditions Assessment"
+      },
+      {
+        "action_taken": "heard in Committee",
+        "action_text": "The Information Item (Inf) was heard in Committee.",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n\\viewkind4\\uc1\\pard\\fs24 Chief Harold Scoggins and Assistant Chief Steve Wilske, Seattle Fire Department; Jason Johnson, Human Services Department; Darrell Rodgers, Public Health King County-Seattle\\par\r\n9:50 a.m. - 10:10 a.m.\\par\r\n\\par\r\n}\r\n",
+        "agenda_number": "3.",
+        "agenda_sequence": 4,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 6201,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:09:30.795684Z",
+            "last_modified_utc": "2016-02-20T00:06:37.507",
+            "matter_id": 3577,
+            "name": "I-5 East Duwamish Encampment Conditions Assessment",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:30.795684Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2074?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/eb11cc08-bdc7-4791-b71c-3ec475519590.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 6202,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:09:30.795684Z",
+            "last_modified_utc": "2016-02-20T00:07:43.437",
+            "matter_id": 3577,
+            "name": "Map 1: Joint Assessment Area",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:30.795684Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2074?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/31e05dc6-cc25-4274-b02d-1dcb00cb82d3.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 6203,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:09:30.795684Z",
+            "last_modified_utc": "2016-02-19T00:18:04.543",
+            "matter_id": 3577,
+            "name": "Map 2: North Area, South Area",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:09:30.795684Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2074?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/7f6fdd97-f39e-4ab0-ab8f-5b8ca6862003.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 211,
+        "body_name": "Council Briefing",
+        "consent_value": 0,
+        "event_date": "2016-02-22T00:00:00",
+        "event_id": 2074,
+        "event_item_id": 29040,
+        "item_last_modified_utc": "2016-04-14T21:33:30.207",
+        "matter_id": 3577,
+        "matter_version_at_event": "1",
+        "minutes_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\fs24\\par\r\n}\r\n",
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:09:30.795684Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2074?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Encampment Conditions Assessment"
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2016-02-22T00:00:00",
+      "body_id": 181,
+      "body_name": "Legislative Department",
+      "current_title": "Encampment Conditions Assessment",
+      "file_number": "Inf 374",
+      "intro_date": "2016-01-21T00:00:00",
+      "last_modified_utc": "2019-10-25T20:15:25.887",
+      "matter_id": 3577,
+      "matter_name": null,
+      "source": {
+        "captured_at": "2026-09-04T19:38:02.642089Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=1300&%24orderby=MatterId+asc"
+      },
+      "status_name": "Heard in Committee",
+      "type_name": "Information Item (Inf)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "cohort_role": "control",
+  "matter_id": 3577,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "selected_pairs": [],
+  "selection_index": 10,
+  "selection_reasons": [
+    "mechanical_control"
+  ]
+}

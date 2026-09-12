@@ -1,0 +1,153 @@
+{
+  "case_id": "Seattle, Washington:14870",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "confirm",
+        "action_text": "The Committee recommends that City Council confirm the Appointment (Appt).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing, Discussion, and Possible Vote\\b0  \\par\r\n\\par\r\n\\b Presenter: \\b0 Sierra Howlett Browne, Office of Intergovernmental Relations\\cf1\\par\r\n}\r\n",
+        "agenda_number": "1.",
+        "agenda_sequence": 7,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 40004,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:43:19.264915Z",
+            "last_modified_utc": "2024-02-08T20:02:58.57",
+            "matter_id": 14870,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:43:21.005744Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/5858?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/343c969b-734b-4068-a2e0-93c528cd80d7.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 268,
+        "body_name": "Libraries, Education, and Neighborhoods Committee",
+        "consent_value": 0,
+        "event_date": "2024-05-09T00:00:00",
+        "event_id": 5858,
+        "event_item_id": 106843,
+        "item_last_modified_utc": "2024-05-09T18:50:53.69",
+        "matter_id": 14870,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:43:21.005744Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/5858?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Reappointment of Jan Hendrickson as member, Pike Place Market Preservation and Development Authority Governing Council, for a term to June 30, 2027."
+      },
+      {
+        "action_taken": "confirmed",
+        "action_text": "The Appointment (Appt) was confirmed on the Consent Calendar by the following vote:",
+        "agenda_note": null,
+        "agenda_number": "8.",
+        "agenda_sequence": 24,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 40004,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:43:19.264915Z",
+            "last_modified_utc": "2024-02-08T20:02:58.57",
+            "matter_id": 14870,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:43:19.264915Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/5863?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/343c969b-734b-4068-a2e0-93c528cd80d7.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2024-05-14T00:00:00",
+        "event_id": 5863,
+        "event_item_id": 106990,
+        "item_last_modified_utc": "2024-05-14T22:44:23.303",
+        "matter_id": 14870,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:43:19.264915Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/5863?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Reappointment of Jan Hendrickson as member, Pike Place Market Preservation and Development Authority Governing Council, for a term to June 30, 2027."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2024-05-14T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "Reappointment of Jan Hendrickson as member, Pike Place Market Preservation and Development Authority Governing Council, for a term to June 30, 2027.",
+      "file_number": "Appt 02756",
+      "intro_date": "2024-02-08T00:00:00",
+      "last_modified_utc": "2024-10-29T17:12:50.17",
+      "matter_id": 14870,
+      "matter_name": null,
+      "source": {
+        "captured_at": "2026-09-04T20:15:37.220504Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=11500&%24orderby=MatterId+asc"
+      },
+      "status_name": "Confirmed",
+      "type_name": "Appointment (Appt)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "cohort_role": "control",
+  "matter_id": 14870,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "selected_pairs": [],
+  "selection_index": 15,
+  "selection_reasons": [
+    "mechanical_control"
+  ]
+}

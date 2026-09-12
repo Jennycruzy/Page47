@@ -1,0 +1,513 @@
+{
+  "case_id": "Seattle, Washington:17240",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "discussed",
+        "action_text": "The Council Bill (CB) was discussed.",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing and Discussion\\b0  (10 minutes)\\par\r\n\\par\r\n\\pard\\sa160\\sl252\\slmult1\\cf1\\b\\f1 Presenters:\\b0  Andrew Lee, General Manager and CEO, and Leslie Brinson, Seattle Public Utilities; Rob Santoff, Interim General Manager and CEO, and Marcus Jackson, Seattle City Light\\cf0\\b\\f0\\par\r\n\\pard\\cf1\\b0\\par\r\n}\r\n",
+        "agenda_number": "5.",
+        "agenda_sequence": 11,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 48505,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-06-30T17:26:10.07",
+            "matter_id": 17240,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:50.489964Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6809?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/90903231-9a9e-45da-a4a9-64954550b89e.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48534,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-06-30T20:25:27.223",
+            "matter_id": 17240,
+            "name": "Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:50.489964Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6809?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/44065826-8299-4855-9e37-2f31156efcb7.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48845,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-24T21:22:16.797",
+            "matter_id": 17240,
+            "name": "Amendment 1",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:50.489964Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6809?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/5bd0c3d9-82af-4d9d-a33e-dc4328525506.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48911,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-29T21:10:34.827",
+            "matter_id": 17240,
+            "name": "July 29 Amendment Vote Tally",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:50.489964Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6809?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/c0071de1-75d1-43db-a85d-e3e04f04177f.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48970,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-08-03T22:33:54.563",
+            "matter_id": 17240,
+            "name": "Summary and Fiscal Note v2",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:50.489964Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6809?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/9e1ad13b-182c-436f-a99d-b7d30b898b2e.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49102,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-08-14T16:10:33.043",
+            "matter_id": 17240,
+            "name": "Signed Ordinance 127490",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:50.489964Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6809?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/e67878ef-701f-482c-bc39-d6a44544e64c.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 283,
+        "body_name": "Governance and Utilities Committee",
+        "consent_value": 0,
+        "event_date": "2026-07-09T00:00:00",
+        "event_id": 6809,
+        "event_item_id": 124217,
+        "item_last_modified_utc": "2026-07-09T19:30:26.223",
+        "matter_id": 17240,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:38:50.489964Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6809?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance relating to emergency assistance for Seattle Public Utilities customers; amending Section 21.76.065 of the Seattle Municipal Code to adjust program terms and conditions and expand eligibility guidelines for emergency bill assistance."
+      },
+      {
+        "action_taken": "pass as amended",
+        "action_text": "The Committee recommends that City Council pass as amended the Council Bill (CB).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing, Discussion, and Possible Vote\\b0  (5 minutes)\\par\r\n\\par\r\n\\pard\\sa160\\sl252\\slmult1\\cf1\\b\\f1 Presenters: \\b0 Leslie Brinson, Seattle Public Utilities; Melissa Bookwalter, Seattle City Light\\f0\\par\r\n}\r\n",
+        "agenda_number": "1.",
+        "agenda_sequence": 7,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 48505,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-06-30T17:26:10.07",
+            "matter_id": 17240,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:42.161522Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6829?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/90903231-9a9e-45da-a4a9-64954550b89e.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48534,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-06-30T20:25:27.223",
+            "matter_id": 17240,
+            "name": "Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:42.161522Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6829?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/44065826-8299-4855-9e37-2f31156efcb7.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48845,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-24T21:22:16.797",
+            "matter_id": 17240,
+            "name": "Amendment 1",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:42.161522Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6829?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/5bd0c3d9-82af-4d9d-a33e-dc4328525506.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48911,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-29T21:10:34.827",
+            "matter_id": 17240,
+            "name": "July 29 Amendment Vote Tally",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:42.161522Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6829?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/c0071de1-75d1-43db-a85d-e3e04f04177f.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48970,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-08-03T22:33:54.563",
+            "matter_id": 17240,
+            "name": "Summary and Fiscal Note v2",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:42.161522Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6829?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/9e1ad13b-182c-436f-a99d-b7d30b898b2e.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49102,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-08-14T16:10:33.043",
+            "matter_id": 17240,
+            "name": "Signed Ordinance 127490",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:42.161522Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6829?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/e67878ef-701f-482c-bc39-d6a44544e64c.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 283,
+        "body_name": "Governance and Utilities Committee",
+        "consent_value": 0,
+        "event_date": "2026-07-29T00:00:00",
+        "event_id": 6829,
+        "event_item_id": 124544,
+        "item_last_modified_utc": "2026-07-29T23:34:14.867",
+        "matter_id": 17240,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:38:42.161522Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6829?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance relating to emergency assistance for Seattle Public Utilities customers; amending Section 21.76.065 of the Seattle Municipal Code to adjust program terms and conditions and expand eligibility guidelines for emergency bill assistance."
+      },
+      {
+        "action_taken": "passed",
+        "action_text": "The Council Bill (CB) was passed by the following vote, and the President signed the Council Bill (CB):",
+        "agenda_note": null,
+        "agenda_number": "7.",
+        "agenda_sequence": 25,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 48505,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-06-30T17:26:10.07",
+            "matter_id": 17240,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/90903231-9a9e-45da-a4a9-64954550b89e.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48534,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-06-30T20:25:27.223",
+            "matter_id": 17240,
+            "name": "Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/44065826-8299-4855-9e37-2f31156efcb7.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48845,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-24T21:22:16.797",
+            "matter_id": 17240,
+            "name": "Amendment 1",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/5bd0c3d9-82af-4d9d-a33e-dc4328525506.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48911,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-07-29T21:10:34.827",
+            "matter_id": 17240,
+            "name": "July 29 Amendment Vote Tally",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/c0071de1-75d1-43db-a85d-e3e04f04177f.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 48970,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-08-03T22:33:54.563",
+            "matter_id": 17240,
+            "name": "Summary and Fiscal Note v2",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/9e1ad13b-182c-436f-a99d-b7d30b898b2e.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49102,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:33.975128Z",
+            "last_modified_utc": "2026-08-14T16:10:33.043",
+            "matter_id": 17240,
+            "name": "Signed Ordinance 127490",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:33.975128Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/e67878ef-701f-482c-bc39-d6a44544e64c.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2026-08-04T00:00:00",
+        "event_id": 6847,
+        "event_item_id": 124990,
+        "item_last_modified_utc": "2026-08-04T23:05:15.917",
+        "matter_id": 17240,
+        "matter_version_at_event": "2",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [
+          6
+        ],
+        "pdf_placement": "consent",
+        "pdf_placement_reason": "The item title appears under the consent heading.",
+        "pdf_source": {
+          "capture_key": "876d0c5acbd334d2332e98859be7f84089f7bbab5e01e2e563761f2003faee89",
+          "captured_at": "2026-09-05T00:19:16.774828Z",
+          "content_sha256": "597eb6daa175ee17c7395e91e52576bc00832227e2d8f003ecc7217b8e4735e2",
+          "kind": "snapshot",
+          "observed_by_page47": true,
+          "response_sha256": "597eb6daa175ee17c7395e91e52576bc00832227e2d8f003ecc7217b8e4735e2",
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/8/6847_A_City_Council_26-08-04_Full_Council_Meeting_Agenda.pdf"
+        },
+        "source": {
+          "captured_at": "2026-09-04T19:38:33.975128Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6847?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance relating to emergency assistance for Seattle Public Utilities customers; amending Section 21.76.065 of the Seattle Municipal Code to adjust program terms and conditions and expand eligibility guidelines for emergency bill assistance."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2026-08-04T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "An ordinance relating to emergency assistance for Seattle Public Utilities customers; amending Section 21.76.065 of the Seattle Municipal Code to adjust program terms and conditions and expand eligibility guidelines for emergency bill assistance.",
+      "file_number": "CB 121246",
+      "intro_date": "2026-06-09T00:00:00",
+      "last_modified_utc": "2026-08-14T16:14:13.693",
+      "matter_id": 17240,
+      "matter_name": "CB 121246",
+      "source": {
+        "captured_at": "2026-09-04T20:15:54.629243Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=13500&%24orderby=MatterId+asc"
+      },
+      "status_name": "Passed",
+      "type_name": "Ordinance (Ord)",
+      "version": "2"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "cohort_role": "control",
+  "matter_id": 17240,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "selected_pairs": [],
+  "selection_index": 37,
+  "selection_reasons": [
+    "mechanical_control"
+  ]
+}

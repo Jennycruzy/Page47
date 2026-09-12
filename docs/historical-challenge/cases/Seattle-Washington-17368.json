@@ -1,0 +1,654 @@
+{
+  "case_id": "Seattle, Washington:17368",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "discussed",
+        "action_text": "The Council Bill (CB) was discussed.",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\b\\fs24 Briefing and Discussion \\b0 (40 min) \\par\r\n\\par\r\n\\b Presenters: \\b0 Jasmine Marwaha and Tamaso Johnson, Council Central Staff\\par\r\n}\r\n",
+        "agenda_number": "4.",
+        "agenda_sequence": 10,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 48792,
+            "content_hash": "f240c3cf7d665627d10de37e74106c9b0a4da53f2adf2a64307ecab185e12051",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-07-22T16:55:30.43",
+            "matter_id": 17368,
+            "name": "Att A \u2013 Personal Information",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:24.782970Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/193ab213-d7a8-40e7-bc91-c7e030d37b40.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49023,
+            "content_hash": "0cee8136b93ccf55db35cb4302c6321aede0eec505e89c60ac214733e860e782",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-10T18:57:37.44",
+            "matter_id": 17368,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:24.782970Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/51773a77-b803-4762-8125-4577fb22af8d.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 30,
+                "excerpt": "Page 1 of 8 August 13, 2026 M E M O R A N D U M To: Human Services, Labor, and Economic Development Committee From: Tamaso Johnson and Jasmine Marwaha, Analysts Subject: Fair Pricing and Trans",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 15,
+                "value": "August 13, 2026"
+              },
+              {
+                "end_character": 1429,
+                "excerpt": "d provide authority to the City Attorney\u2019s Office to investigate violations of Chapter 7.35, and file civil actions in court to enforce compliance, with civil penalties of up to $3,000 per violation and up to $10,000 for each subsequent violation per aggrieved party, as well as liquidated damages of up to $10,000. The legislation may also be enforced by private",
+                "kind": "dollar_amount",
+                "page_number": 5,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 1423,
+                "value": "$3,000"
+              },
+              {
+                "end_character": 1461,
+                "excerpt": "Attorney\u2019s Office to investigate violations of Chapter 7.35, and file civil actions in court to enforce compliance, with civil penalties of up to $3,000 per violation and up to $10,000 for each subsequent violation per aggrieved party, as well as liquidated damages of up to $10,000. The legislation may also be enforced by private right of action, with similar",
+                "kind": "dollar_amount",
+                "page_number": 5,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 1454,
+                "value": "$10,000"
+              },
+              {
+                "end_character": 1560,
+                "excerpt": "nforce compliance, with civil penalties of up to $3,000 per violation and up to $10,000 for each subsequent violation per aggrieved party, as well as liquidated damages of up to $10,000. The legislation may also be enforced by private right of action, with similar penalties, capped at $1 million, as well as liquidated damages. A private right of action may only",
+                "kind": "dollar_amount",
+                "page_number": 5,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 1553,
+                "value": "$10,000"
+              },
+              {
+                "end_character": 1664,
+                "excerpt": "violation per aggrieved party, as well as liquidated damages of up to $10,000. The legislation may also be enforced by private right of action, with similar penalties, capped at $1 million, as well as liquidated damages. A private right of action may only be pursued against grocery businesses if the business owns or controls more than 25 establishments in",
+                "kind": "dollar_amount",
+                "page_number": 5,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 1662,
+                "value": "$1"
+              },
+              {
+                "end_character": 2650,
+                "excerpt": "sion. Central Staff\u2019s understanding is that the possibility of a state bill passing in the legislature is part of the reason why CB 121267 would have a delayed effective date of September 1, 2027. If a state bill passes, it may necessitate administrative rulemaking to make clarifications, require Council to adopt further legislation to conform to state regulations, or pr",
+                "kind": "calendar_date",
+                "page_number": 7,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 2633,
+                "value": "September 1, 2027"
+              },
+              {
+                "end_character": 1075,
+                "excerpt": "goods based on individual consumer data analysis 2. Use of \"surge pricing\"-- increasing price based on demand or willingness to pay 3. Use of electronic shelf label until January 1, 2030 Uniform discounts based on disclosed eligibility criteria, and available to all customers who meet the criteria. \"Grocery establishment[s] 15,000 sq ft or larger, and pr",
+                "kind": "calendar_date",
+                "page_number": 11,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 1060,
+                "value": "January 1, 2030"
+              }
+            ],
+            "attachment_id": 49149,
+            "content_hash": "22d2404694c02dd6bc4092507a98ffdf839d572a3951619e73f337a3860a8684",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-19T17:10:19.327",
+            "matter_id": 17368,
+            "name": "Central Staff Memo",
+            "page_count": 12,
+            "reading_source": {
+              "captured_at": "2026-09-09T16:46:04.652290Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "captured_at": "2026-09-04T19:38:24.782970Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 168,
+                "excerpt": "Fair Pricing and Transparency Ordinance (CB 121267) TAMASOJOHNSON& JASMINE MARWAHA, ANALYSTS HUMAN SERVICES, LABOR, AND ECONOMIC DEVELOPMENT COMMITTEE AUGUST 21, 2026",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:05.609969Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/e78183c5-5f15-480a-b53b-bf91cee789ab.pdf"
+                },
+                "start_character": 153,
+                "value": "AUGUST 21, 2026"
+              }
+            ],
+            "attachment_id": 49154,
+            "content_hash": "e4330a391f0b66220f4c8d4f358cde5c28b70ec87ad5d462c66bf2fe160cd7d1",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-19T22:01:32.733",
+            "matter_id": 17368,
+            "name": "Presentation",
+            "page_count": 11,
+            "reading_source": {
+              "captured_at": "2026-09-09T16:46:05.609969Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/e78183c5-5f15-480a-b53b-bf91cee789ab.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "captured_at": "2026-09-04T19:38:24.782970Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/e78183c5-5f15-480a-b53b-bf91cee789ab.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 279,
+        "body_name": "Human Services, Labor, and Economic Development Committee",
+        "consent_value": 0,
+        "event_date": "2026-08-21T00:00:00",
+        "event_id": 6864,
+        "event_item_id": 125331,
+        "item_last_modified_utc": "2026-08-21T19:39:39.38",
+        "matter_id": 17368,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:38:24.782970Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6864?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code."
+      },
+      {
+        "action_taken": "pass as amended",
+        "action_text": "The Committee recommends that City Council pass the Council Bill (CB) as amended.",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\b\\fs24 Discussion and Possible Vote \\b0 (40 min) \\par\r\n\\par\r\n\\b Presenters: \\b0 Jasmine Marwaha and Tamaso Johnson, Council Central Staff\\par\r\n}\r\n",
+        "agenda_number": "1.",
+        "agenda_sequence": 7,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 48792,
+            "content_hash": "f240c3cf7d665627d10de37e74106c9b0a4da53f2adf2a64307ecab185e12051",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-07-22T16:55:30.43",
+            "matter_id": 17368,
+            "name": "Att A \u2013 Personal Information",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "capture_key": "2c1db234e6daee3deb414c00db812f0d5b3050aefbd2d76d501fdc2b49ad416c",
+              "captured_at": "2026-09-11T23:47:09.728803Z",
+              "content_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "kind": "api",
+              "observed_by_page47": true,
+              "response_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/193ab213-d7a8-40e7-bc91-c7e030d37b40.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49023,
+            "content_hash": "0cee8136b93ccf55db35cb4302c6321aede0eec505e89c60ac214733e860e782",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-10T18:57:37.44",
+            "matter_id": 17368,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "capture_key": "2c1db234e6daee3deb414c00db812f0d5b3050aefbd2d76d501fdc2b49ad416c",
+              "captured_at": "2026-09-11T23:47:09.728803Z",
+              "content_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "kind": "api",
+              "observed_by_page47": true,
+              "response_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/51773a77-b803-4762-8125-4577fb22af8d.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 30,
+                "excerpt": "Page 1 of 8 August 13, 2026 M E M O R A N D U M To: Human Services, Labor, and Economic Development Committee From: Tamaso Johnson and Jasmine Marwaha, Analysts Subject: Fair Pricing and Trans",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 15,
+                "value": "August 13, 2026"
+              },
+              {
+                "end_character": 1429,
+                "excerpt": "d provide authority to the City Attorney\u2019s Office to investigate violations of Chapter 7.35, and file civil actions in court to enforce compliance, with civil penalties of up to $3,000 per violation and up to $10,000 for each subsequent violation per aggrieved party, as well as liquidated damages of up to $10,000. The legislation may also be enforced by private",
+                "kind": "dollar_amount",
+                "page_number": 5,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 1423,
+                "value": "$3,000"
+              },
+              {
+                "end_character": 1461,
+                "excerpt": "Attorney\u2019s Office to investigate violations of Chapter 7.35, and file civil actions in court to enforce compliance, with civil penalties of up to $3,000 per violation and up to $10,000 for each subsequent violation per aggrieved party, as well as liquidated damages of up to $10,000. The legislation may also be enforced by private right of action, with similar",
+                "kind": "dollar_amount",
+                "page_number": 5,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 1454,
+                "value": "$10,000"
+              },
+              {
+                "end_character": 1560,
+                "excerpt": "nforce compliance, with civil penalties of up to $3,000 per violation and up to $10,000 for each subsequent violation per aggrieved party, as well as liquidated damages of up to $10,000. The legislation may also be enforced by private right of action, with similar penalties, capped at $1 million, as well as liquidated damages. A private right of action may only",
+                "kind": "dollar_amount",
+                "page_number": 5,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 1553,
+                "value": "$10,000"
+              },
+              {
+                "end_character": 1664,
+                "excerpt": "violation per aggrieved party, as well as liquidated damages of up to $10,000. The legislation may also be enforced by private right of action, with similar penalties, capped at $1 million, as well as liquidated damages. A private right of action may only be pursued against grocery businesses if the business owns or controls more than 25 establishments in",
+                "kind": "dollar_amount",
+                "page_number": 5,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 1662,
+                "value": "$1"
+              },
+              {
+                "end_character": 2650,
+                "excerpt": "sion. Central Staff\u2019s understanding is that the possibility of a state bill passing in the legislature is part of the reason why CB 121267 would have a delayed effective date of September 1, 2027. If a state bill passes, it may necessitate administrative rulemaking to make clarifications, require Council to adopt further legislation to conform to state regulations, or pr",
+                "kind": "calendar_date",
+                "page_number": 7,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 2633,
+                "value": "September 1, 2027"
+              },
+              {
+                "end_character": 1075,
+                "excerpt": "goods based on individual consumer data analysis 2. Use of \"surge pricing\"-- increasing price based on demand or willingness to pay 3. Use of electronic shelf label until January 1, 2030 Uniform discounts based on disclosed eligibility criteria, and available to all customers who meet the criteria. \"Grocery establishment[s] 15,000 sq ft or larger, and pr",
+                "kind": "calendar_date",
+                "page_number": 11,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:04.652290Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+                },
+                "start_character": 1060,
+                "value": "January 1, 2030"
+              }
+            ],
+            "attachment_id": 49149,
+            "content_hash": "22d2404694c02dd6bc4092507a98ffdf839d572a3951619e73f337a3860a8684",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-19T17:10:19.327",
+            "matter_id": 17368,
+            "name": "Central Staff Memo",
+            "page_count": 12,
+            "reading_source": {
+              "captured_at": "2026-09-09T16:46:04.652290Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "capture_key": "2c1db234e6daee3deb414c00db812f0d5b3050aefbd2d76d501fdc2b49ad416c",
+              "captured_at": "2026-09-11T23:47:09.728803Z",
+              "content_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "kind": "api",
+              "observed_by_page47": true,
+              "response_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/f7b699a7-8bf1-4f73-9097-e8e09071c18b.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [
+              {
+                "end_character": 168,
+                "excerpt": "Fair Pricing and Transparency Ordinance (CB 121267) TAMASOJOHNSON& JASMINE MARWAHA, ANALYSTS HUMAN SERVICES, LABOR, AND ECONOMIC DEVELOPMENT COMMITTEE AUGUST 21, 2026",
+                "kind": "calendar_date",
+                "page_number": 1,
+                "source": {
+                  "captured_at": "2026-09-09T16:46:05.609969Z",
+                  "kind": "snapshot",
+                  "url": "https://legistar2.granicus.com/seattle/attachments/e78183c5-5f15-480a-b53b-bf91cee789ab.pdf"
+                },
+                "start_character": 153,
+                "value": "AUGUST 21, 2026"
+              }
+            ],
+            "attachment_id": 49154,
+            "content_hash": "e4330a391f0b66220f4c8d4f358cde5c28b70ec87ad5d462c66bf2fe160cd7d1",
+            "first_observed_by_us": "2026-09-04T19:38:24.782970Z",
+            "last_modified_utc": "2026-08-19T22:01:32.733",
+            "matter_id": 17368,
+            "name": "Presentation",
+            "page_count": 11,
+            "reading_source": {
+              "captured_at": "2026-09-09T16:46:05.609969Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/e78183c5-5f15-480a-b53b-bf91cee789ab.pdf"
+            },
+            "reading_status": "candidate",
+            "source": {
+              "capture_key": "2c1db234e6daee3deb414c00db812f0d5b3050aefbd2d76d501fdc2b49ad416c",
+              "captured_at": "2026-09-11T23:47:09.728803Z",
+              "content_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "kind": "api",
+              "observed_by_page47": true,
+              "response_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/e78183c5-5f15-480a-b53b-bf91cee789ab.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49397,
+            "content_hash": "40783e684feae69fdcfa43336ff55f10704ead8e4dbf1bef3dc663e0d3797cdd",
+            "first_observed_by_us": "2026-09-09T16:46:02.795796Z",
+            "last_modified_utc": "2026-09-09T15:54:04.653",
+            "matter_id": 17368,
+            "name": "Amendment 1",
+            "page_count": 1,
+            "reading_source": {
+              "captured_at": "2026-09-09T16:46:06.365924Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/06314934-7899-4015-bbd2-805a15698477.pdf"
+            },
+            "reading_status": "absent",
+            "source": {
+              "capture_key": "2c1db234e6daee3deb414c00db812f0d5b3050aefbd2d76d501fdc2b49ad416c",
+              "captured_at": "2026-09-11T23:47:09.728803Z",
+              "content_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "kind": "api",
+              "observed_by_page47": true,
+              "response_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/06314934-7899-4015-bbd2-805a15698477.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49398,
+            "content_hash": "b7bf0e6f21ead55ac67706191292213422e77e097d931afe1141f833130b1334",
+            "first_observed_by_us": "2026-09-09T16:46:02.795796Z",
+            "last_modified_utc": "2026-09-09T15:54:06.42",
+            "matter_id": 17368,
+            "name": "Amendment 2",
+            "page_count": 2,
+            "reading_source": {
+              "captured_at": "2026-09-09T16:46:07.028986Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/ebc2dd10-644c-4b3f-8281-949115dd6815.pdf"
+            },
+            "reading_status": "absent",
+            "source": {
+              "capture_key": "2c1db234e6daee3deb414c00db812f0d5b3050aefbd2d76d501fdc2b49ad416c",
+              "captured_at": "2026-09-11T23:47:09.728803Z",
+              "content_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "kind": "api",
+              "observed_by_page47": true,
+              "response_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/ebc2dd10-644c-4b3f-8281-949115dd6815.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49415,
+            "content_hash": "ba052379849ed1b8a1bf5cb75c2d43efaeb3e5ee33ad62082d781f0c8ae9f729",
+            "first_observed_by_us": "2026-09-10T21:16:27.268119Z",
+            "last_modified_utc": "2026-09-10T21:15:53.003",
+            "matter_id": 17368,
+            "name": "Amendment 3",
+            "page_count": 2,
+            "reading_source": {
+              "captured_at": "2026-09-10T21:16:32.801034Z",
+              "kind": "snapshot",
+              "url": "https://legistar2.granicus.com/seattle/attachments/6be526bb-11ed-4a98-b29f-2fde17317553.pdf"
+            },
+            "reading_status": "absent",
+            "source": {
+              "capture_key": "2c1db234e6daee3deb414c00db812f0d5b3050aefbd2d76d501fdc2b49ad416c",
+              "captured_at": "2026-09-11T23:47:09.728803Z",
+              "content_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "kind": "api",
+              "observed_by_page47": true,
+              "response_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/6be526bb-11ed-4a98-b29f-2fde17317553.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 49435,
+            "content_hash": "48dabc7fa13b8dac67c2032a175c6069ee183c321cc700a95db87e58afae51b2",
+            "first_observed_by_us": "2026-09-11T23:17:08.318925Z",
+            "last_modified_utc": "2026-09-11T23:05:29.11",
+            "matter_id": 17368,
+            "name": "September 11 Amendment Vote Tally",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "capture_key": "2c1db234e6daee3deb414c00db812f0d5b3050aefbd2d76d501fdc2b49ad416c",
+              "captured_at": "2026-09-11T23:47:09.728803Z",
+              "content_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "kind": "api",
+              "observed_by_page47": true,
+              "response_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/006cfcf8-f468-4bf0-a952-6d2b107235c7.docx",
+            "version": "0"
+          }
+        ],
+        "body_id": 279,
+        "body_name": "Human Services, Labor, and Economic Development Committee",
+        "consent_value": 0,
+        "event_date": "2026-09-11T00:00:00",
+        "event_id": 6876,
+        "event_item_id": 125630,
+        "item_last_modified_utc": "2026-09-11T23:20:19.143",
+        "matter_id": 17368,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [
+          3
+        ],
+        "pdf_placement": "regular",
+        "pdf_placement_reason": "The agenda has no consent section and the item title appears in its text.",
+        "pdf_source": {
+          "capture_key": "b4d6057385614925d5ff81c21e216d4bc10d82ecea1c73e999f11e315cb03bf2",
+          "captured_at": "2026-09-10T21:31:28.763295Z",
+          "content_sha256": "e3878db5383aad3163c066ea5086f1e1f45ebf4d40116889dad4adf3c9ccdd42",
+          "kind": "snapshot",
+          "observed_by_page47": true,
+          "response_sha256": "e3878db5383aad3163c066ea5086f1e1f45ebf4d40116889dad4adf3c9ccdd42",
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/9/6876_A_Human_Services%2C_Labor%2C_and_Economic_Development_Committee_26-09-11_Committee_Agenda.pdf"
+        },
+        "source": {
+          "capture_key": "2c1db234e6daee3deb414c00db812f0d5b3050aefbd2d76d501fdc2b49ad416c",
+          "captured_at": "2026-09-11T23:47:09.728803Z",
+          "content_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+          "kind": "api",
+          "observed_by_page47": true,
+          "response_sha256": "59f5db03d1f1e45c3d617619cf8be393b0efafffe48bdccdbfcbaeb5114a6ec4",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6876?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2026-08-21T00:00:00",
+      "body_id": 279,
+      "body_name": "Human Services, Labor, and Economic Development Committee",
+      "current_title": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code.",
+      "file_number": "CB 121267",
+      "intro_date": "2026-07-20T00:00:00",
+      "last_modified_utc": "2026-08-21T18:34:47.513",
+      "matter_id": 17368,
+      "matter_name": "CB 121267",
+      "source": {
+        "captured_at": "2026-09-04T20:15:55.459643Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=13600&%24orderby=MatterId+asc"
+      },
+      "status_name": "In Committee",
+      "type_name": "Council Bill (CB)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "cohort_role": "candidate",
+  "matter_id": 17368,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "selected_pairs": [
+    {
+      "attachment_ids_with_multiple_captured_hashes": [],
+      "current_event_date": "2026-09-11T00:00:00",
+      "current_event_item_id": 125630,
+      "current_placement": "regular",
+      "current_title": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code.",
+      "previous_event_date": "2026-08-21T00:00:00",
+      "previous_event_item_id": 125331,
+      "previous_placement": null,
+      "previous_title": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code.",
+      "reasons": [
+        "attachment_set_changed"
+      ]
+    }
+  ],
+  "selection_index": 5,
+  "selection_reasons": [
+    "attachment_set_changed"
+  ]
+}

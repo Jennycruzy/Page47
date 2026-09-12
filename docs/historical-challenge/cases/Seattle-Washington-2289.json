@@ -1,0 +1,313 @@
+{
+  "case_id": "Seattle, Washington:2289",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "postponed",
+        "action_text": "The Motion carried and the Council Bill (CB) was held by the following vote:",
+        "agenda_note": null,
+        "agenda_number": "11.",
+        "agenda_sequence": 27,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 2064,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:10:27.136193Z",
+            "last_modified_utc": "2015-04-28T17:40:55.73",
+            "matter_id": 2289,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:10:29.377121Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/1615?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/48e2cddc-6fbd-4d28-8365-de7d1180104b.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 2173,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:10:27.136193Z",
+            "last_modified_utc": "2015-05-07T21:20:28.567",
+            "matter_id": 2289,
+            "name": "Proposition 1 Budget Amendment Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:10:29.377121Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/1615?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/16e9cc44-03c5-4619-854c-59843b487cb2.pptx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 2345,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:10:27.136193Z",
+            "last_modified_utc": "2015-05-18T19:21:10.83",
+            "matter_id": 2289,
+            "name": "Proposed Amendment v1",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:10:29.377121Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/1615?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/75bae211-202b-47ed-8380-0115ffa20917.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 2436,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:10:27.136193Z",
+            "last_modified_utc": "2017-03-08T17:41:16.457",
+            "matter_id": 2289,
+            "name": "CB 118391 Amendment v2",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:10:29.377121Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/1615?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/a32483ea-0080-447f-a13f-66eadaa99dac.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 3338,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:10:27.136193Z",
+            "last_modified_utc": "2015-07-23T00:51:41.123",
+            "matter_id": 2289,
+            "name": "Signed Ord 124782",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:10:29.377121Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/1615?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/e9e6a543-0801-468e-b1fc-5d7984db70ca.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2015-05-18T00:00:00",
+        "event_id": 1615,
+        "event_item_id": 20723,
+        "item_last_modified_utc": "2015-05-14T18:15:44.9",
+        "matter_id": 2289,
+        "matter_version_at_event": "1",
+        "minutes_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\fs24 Motion was made by Councilmember Rasmussen and duly seconded to hold Agenda item 11, Council Bill 118391, until May 26, 2015.\\par\r\n}\r\n",
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:10:29.377121Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1615?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "AN ORDINANCE relating to the 2015 Budget; amending Ordinance 124648, which adopted the 2015 Budget; changing appropriations to the Seattle Department of Transportation and to the Human Services Department; creating both exempt and non-exempt positions; authorizing the Director of Finance to enter into an interlocal agreement with the State Department of Licensing; and ratifying and confirming certain prior acts; all by at least a 3/4 vote of the City Council."
+      },
+      {
+        "action_taken": "passed as amended",
+        "action_text": "The Motion carried, the Council Bill (CB) passed as amended by the following vote, and the President signed the Bill:",
+        "agenda_note": null,
+        "agenda_number": "1.",
+        "agenda_sequence": 14,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 2064,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:10:27.136193Z",
+            "last_modified_utc": "2015-04-28T17:40:55.73",
+            "matter_id": 2289,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:10:27.136193Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/1632?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/48e2cddc-6fbd-4d28-8365-de7d1180104b.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 2173,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:10:27.136193Z",
+            "last_modified_utc": "2015-05-07T21:20:28.567",
+            "matter_id": 2289,
+            "name": "Proposition 1 Budget Amendment Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:10:27.136193Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/1632?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/16e9cc44-03c5-4619-854c-59843b487cb2.pptx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 2345,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:10:27.136193Z",
+            "last_modified_utc": "2015-05-18T19:21:10.83",
+            "matter_id": 2289,
+            "name": "Proposed Amendment v1",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:10:27.136193Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/1632?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/75bae211-202b-47ed-8380-0115ffa20917.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 2436,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:10:27.136193Z",
+            "last_modified_utc": "2017-03-08T17:41:16.457",
+            "matter_id": 2289,
+            "name": "CB 118391 Amendment v2",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:10:27.136193Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/1632?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/a32483ea-0080-447f-a13f-66eadaa99dac.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 3338,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:10:27.136193Z",
+            "last_modified_utc": "2015-07-23T00:51:41.123",
+            "matter_id": 2289,
+            "name": "Signed Ord 124782",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:10:27.136193Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/1632?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/e9e6a543-0801-468e-b1fc-5d7984db70ca.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2015-05-26T00:00:00",
+        "event_id": 1632,
+        "event_item_id": 21064,
+        "item_last_modified_utc": "2015-05-21T22:48:37.543",
+        "matter_id": 2289,
+        "matter_version_at_event": "2",
+        "minutes_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\fs24 Motion was made by Councilmember Rasmussen, duly seconded and carried, to amend Council Bill No. 118391, Section 1 as follows:\\par\r\n\\par\r\n\\ul Action 1:\\par\r\n\\ulnone\\par\r\n\\pard\\sl276\\slmult1\\cf0 Of the money appropriated in the 2015 budget for the Seattle Department of Transportation\\rquote s Mobility-Operations BCL and the Human Services Department\\rquote s Community Support and Assistance BCL, $100,000 in each BCL may not be spent until the chair of the City Council Transportation Committee files with the City Clerk his certification that the Executive has submitted a report to the Transportation Committee on how the money is proposed to be spent for the Vehicle License Fee rebate and the Low Income Access programs or whether it will instead be used for other transportation priorities consistent with Seattle Transportation Benefit District Proposition 1.\\par\r\n\\par\r\n\\pard\\sa120\\sl276\\slmult1 The report should include:\\par\r\n\\pard\\fi-360\\li720\\sa120 1.\\tab An accounting of how funds within the Human Services Department\\rquote s (HSD) Community Support and Assistance BCL have been used to date to implement the Vehicle License Fee rebate and the Low Income Access programs, including:\\par\r\n\\pard\\fi-360\\li1440\\sa120 a.\\tab The number of Vehicle License Fee rebate applications received by HSD and how many rebates have been issued by HSD;\\par\r\nb.\\tab The average processing time for Vehicle License Fee rebate applications and any backlog of applications; and\\par\r\nc.\\tab The number of Seattle residents enrolled in the ORCA Lift program by HSD.\\par\r\n\\pard\\fi-360\\li720\\sa120 2.\\tab An Outreach and Enrollment Plan for the Executive\\rquote s future implementation of the Vehicle License Fee rebate and Low Income Access programs, including:\\par\r\n\\pard\\fi-360\\li1440\\sa120 a.\\tab Short- and long-term goals related to outreach and marketing of both programs in order to increase awareness and increase enrollment in the programs;\\par\r\nb.\\tab Short- and long-term goals related to the number of Vehicle License Fee rebates and ORCA Lift cards to be distributed to Seattle residents on a monthly basis;\\par\r\nc.\\tab Strategies related to lowering the cost of processing and distributing Vehicle License Fee rebates; and\\par\r\nd.\\tab A list of relevant organizations and/or community groups that HSD and the Seattle Department of Transportation have met with to assist in developing strategy to promote the Vehicle License Fee rebate and Low Income Access programs.\\par\r\n\\pard\\sa200\\sl276\\slmult1\\tx4084\\par\r\n\\pard\\cf1\\ul Action 2:\\par\r\n\\ulnone\\par\r\nMotion was made and duly seconded to pass Council Bill 118391 as amended.\\par\r\n\\par\r\n}\r\n",
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:10:27.136193Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/1632?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "AN ORDINANCE relating to the 2015 Budget; amending Ordinance 124648, which adopted the 2015 Budget; changing appropriations to the Seattle Department of Transportation and to the Human Services Department; creating both exempt and non-exempt positions; authorizing the Director of Finance to enter into an interlocal agreement with the State Department of Licensing; and ratifying and confirming certain prior acts; all by at least a 3/4 vote of the City Council."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2015-05-26T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "AN ORDINANCE relating to the 2015 Budget; amending Ordinance 124648, which adopted the 2015 Budget; changing appropriations to the Seattle Department of Transportation and to the Human Services Department; creating both exempt and non-exempt positions; authorizing the Director of Finance to enter into an interlocal agreement with the State Department of Licensing; and ratifying and confirming certain prior acts; all by at least a 3/4 vote of the City Council.",
+      "file_number": "CB 118391",
+      "intro_date": "2015-04-24T00:00:00",
+      "last_modified_utc": "2017-03-08T17:41:16.46",
+      "matter_id": 2289,
+      "matter_name": "CB 118391",
+      "source": {
+        "captured_at": "2026-09-04T19:37:54.237850Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=300&%24orderby=MatterId+asc"
+      },
+      "status_name": "Passed",
+      "type_name": "Ordinance (Ord)",
+      "version": "3"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "cohort_role": "control",
+  "matter_id": 2289,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "selected_pairs": [],
+  "selection_index": 9,
+  "selection_reasons": [
+    "mechanical_control"
+  ]
+}

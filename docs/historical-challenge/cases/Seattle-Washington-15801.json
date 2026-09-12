@@ -1,0 +1,153 @@
+{
+  "case_id": "Seattle, Washington:15801",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "confirm",
+        "action_text": "The Committee recommends that City Council confirm the Appointment (Appt).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing, Discussion, and Possible Vote\\b0  (30 minutes)\\par\r\n\\par\r\n\\pard\\sa160\\sl252\\slmult1\\cf1\\b\\f1 Presenters:\\b0  Eci Ameh, Interim Director, and Joel Merkel, Chair, Community Police Commission; Chair Kettle\\f0\\par\r\n}\r\n",
+        "agenda_number": "1.",
+        "agenda_sequence": 7,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 43218,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:42:05.408396Z",
+            "last_modified_utc": "2025-01-16T01:25:41.28",
+            "matter_id": 15801,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:42:06.942218Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6129?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b5e6f2b3-2b19-4f99-ab9e-ae11ee4b3179.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 270,
+        "body_name": "Public Safety Committee",
+        "consent_value": 0,
+        "event_date": "2025-01-28T00:00:00",
+        "event_id": 6129,
+        "event_item_id": 112380,
+        "item_last_modified_utc": "2025-01-30T00:11:09.267",
+        "matter_id": 15801,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:42:06.942218Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6129?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Appointment of David Benchlouch as member, Community Police Commission, for a term to December 31, 2027."
+      },
+      {
+        "action_taken": "confirmed",
+        "action_text": "The Appointment (Appt) was confirmed on the Consent Calendar by the following vote:",
+        "agenda_note": null,
+        "agenda_number": "4.",
+        "agenda_sequence": 19,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 43218,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:42:05.408396Z",
+            "last_modified_utc": "2025-01-16T01:25:41.28",
+            "matter_id": 15801,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:42:05.408396Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6137?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b5e6f2b3-2b19-4f99-ab9e-ae11ee4b3179.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2025-02-04T00:00:00",
+        "event_id": 6137,
+        "event_item_id": 112492,
+        "item_last_modified_utc": "2025-02-04T23:03:19.18",
+        "matter_id": 15801,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:42:05.408396Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6137?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Appointment of David Benchlouch as member, Community Police Commission, for a term to December 31, 2027."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2025-02-04T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "Appointment of David Benchlouch as member, Community Police Commission, for a term to December 31, 2027.",
+      "file_number": "Appt 03066",
+      "intro_date": "2025-01-15T00:00:00",
+      "last_modified_utc": "2025-02-04T23:03:18.987",
+      "matter_id": 15801,
+      "matter_name": null,
+      "source": {
+        "captured_at": "2026-09-04T20:15:44.572263Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=12300&%24orderby=MatterId+asc"
+      },
+      "status_name": "Confirmed",
+      "type_name": "Appointment (Appt)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "cohort_role": "control",
+  "matter_id": 15801,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "selected_pairs": [],
+  "selection_index": 22,
+  "selection_reasons": [
+    "mechanical_control"
+  ]
+}

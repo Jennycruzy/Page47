@@ -199,9 +199,10 @@ Page 47 has three separate proof layers:
    matters selected without using Page 47's result: all 7 available raw-change
    candidates and 33 controls. The complete case payloads, source snapshot,
    selection rules, and independent label slots are preserved in the
-   [review packet](docs/historical-challenge-cohort.json). It remains pending
-   two independent labels and adjudication, so no challenge-cohort accuracy
-   claim is published yet.
+   [browser-friendly case index](docs/historical-challenge/index.json) and the
+   [complete review packet](docs/historical-challenge-cohort.json). It remains
+   pending two independent labels and adjudication, so no challenge-cohort
+   accuracy claim is published yet.
 4. **Managed runtime proof:** a real stored Seattle matter completed through the
    deployed AgentCore runtime, retained its investigation, and produced a
    searchable trace. See the [observability audit](docs/audits/observability.md)
