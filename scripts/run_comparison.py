@@ -21,6 +21,11 @@ def main() -> int:
     parser.add_argument("--evidence-root", type=Path, required=True)
     parser.add_argument("--presentation", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--code-revision",
+        required=True,
+        help="Git revision (or immutable build identifier) for the code used in the run",
+    )
     args = parser.parse_args()
     result = run_comparison(
         input_path=args.input,
@@ -28,6 +33,7 @@ def main() -> int:
         evidence_root=args.evidence_root,
         presentation_path=args.presentation,
         output_path=args.output,
+        code_revision=args.code_revision,
     )
     print(
         json.dumps(

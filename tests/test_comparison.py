@@ -97,6 +97,32 @@ def test_four_arms_keep_their_boundaries_explicit() -> None:
     assert page47.surfaced is True
 
 
+def test_page47_diagnostics_explain_dimension_coverage() -> None:
+    matter = case(
+        "Recorded item",
+        "Renamed housing item",
+        placements=("regular", "consent"),
+    )
+
+    result = _page47_arm(matter, CONFIG)
+
+    diagnostics = result.diagnostics
+    assert isinstance(diagnostics, dict)
+    dimensions = diagnostics["dimensions"]
+    assert isinstance(dimensions, dict)
+    title = dimensions["title"]
+    placement = dimensions["placement"]
+    timing = dimensions["timing"]
+    assert isinstance(title, dict)
+    assert isinstance(placement, dict)
+    assert isinstance(timing, dict)
+    assert title["comparable_pairs"] == 1
+    assert placement["comparable_pairs"] == 1
+    assert timing["status"] == "unavailable"
+    assert "timing_unavailable" in diagnostics["coverage_gaps"]
+    assert diagnostics["skeptic"]["status"] == "not_run"
+
+
 def test_comparison_metrics_preserve_historical_abstention_audit() -> None:
     rows = [
         {
