@@ -10,6 +10,14 @@ from pathlib import Path
 from page47.snapshotter.config import JSONObject, JSONValue
 from page47.snapshotter.http import FetchResult
 
+PDF_HEADER = b"%PDF-"
+
+
+def body_is_pdf(body: bytes) -> bool:
+    """Recognize PDF bytes even when a public server labels them incorrectly."""
+
+    return PDF_HEADER in body[:1024]
+
 
 def as_json_value(value: object) -> JSONValue:
     if value is None or isinstance(value, (bool, int, float, str)):
@@ -195,6 +203,8 @@ class SnapshotStore:
         response: FetchResult,
         kind: str,
         fields: JSONObject,
+        *,
+        collector_run_id: str | None = None,
     ) -> tuple[JSONObject, bool]:
         response_hash = hashlib.sha256(response.body).hexdigest()
         fingerprint_fields: JSONObject = {
@@ -230,6 +240,8 @@ class SnapshotStore:
             "error_type": response.error_type,
             "error": response.error,
         }
+        if collector_run_id is not None:
+            record["collector_run_id"] = collector_run_id
         for key, value in fields.items():
             if key in record:
                 raise ValueError(f"Capture field conflicts with reserved key: {key}")

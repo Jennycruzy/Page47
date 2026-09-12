@@ -6,7 +6,13 @@ from pathlib import Path
 
 from page47.snapshotter.client import LegistarClient, as_object
 from page47.snapshotter.config import CityConfig, load_city_config, text_field
-from page47.snapshotter.runner import HTTP_OK, binary_capture, parse_response, source_url_is_usable
+from page47.snapshotter.runner import (
+    HTTP_OK,
+    binary_capture,
+    parse_response,
+    response_is_pdf,
+    source_url_is_usable,
+)
 from page47.snapshotter.store import SnapshotStore
 
 
@@ -53,6 +59,11 @@ def capture_historical_agenda(
             },
         )
         raise ValueError(f"Event {event_id} agenda download returned HTTP {response.status}")
+    if not response_is_pdf(response):
+        content_type = response.headers.get("content-type", "unknown")
+        raise ValueError(
+            f"Event {event_id} agenda URL returned non-PDF content ({content_type})"
+        )
     _record, inserted = binary_capture(
         store,
         response,

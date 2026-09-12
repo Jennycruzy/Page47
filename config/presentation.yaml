@@ -1,4 +1,6 @@
 comparison:
+  # Captures before this corrected collector run are historical evidence only.
+  forward_observation_baseline: "2026-09-12T09:34:44Z"
   minimum_appearances: 2
   minimum_title_overlap: 1
   timing_difference_hours: 6

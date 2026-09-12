@@ -200,6 +200,7 @@ def test_observed_origin_requires_two_distinct_captures() -> None:
         "capture-1",
         "response-1",
         "content-1",
+        "2026-09-05T00:00:00Z",
     )
     later_source = SourceReference(
         "api",
@@ -209,6 +210,7 @@ def test_observed_origin_requires_two_distinct_captures() -> None:
         "capture-2",
         "response-2",
         "content-2",
+        "2026-09-06T00:00:00Z",
     )
     earlier = replace(
         appearance(
@@ -231,11 +233,52 @@ def test_observed_origin_requires_two_distinct_captures() -> None:
 
     comparison = compare_all_appearances(
         MatterCase("Test city", case("regular", "regular").matter, (earlier, later)),
-        CONFIG,
+        replace(CONFIG, forward_observation_baseline="2026-09-05T12:00:00Z"),
     ).comparisons[0]
 
     assert comparison.observations[0].evidence[0].origin == "observed_by_page47"
     assert comparison.observations[0].evidence[1].origin == "observed_by_page47"
+    assert comparison.observations[0].evidence[1].capture_key == "capture-2"
+
+
+def test_observed_origin_rejects_reverse_capture_chronology() -> None:
+    earlier = replace(
+        appearance(1, "regular"),
+        source=SourceReference(
+            "api",
+            "https://records.example/item/1",
+            "2026-09-06T00:00:00Z",
+            True,
+            "capture-1",
+            "response-1",
+            "content-1",
+            "2026-09-06T00:00:00Z",
+        ),
+    )
+    later = replace(
+        appearance(2, "consent"),
+        source=SourceReference(
+            "api",
+            "https://records.example/item/2",
+            "2026-09-05T00:00:00Z",
+            True,
+            "capture-2",
+            "response-2",
+            "content-2",
+            "2026-09-05T00:00:00Z",
+        ),
+    )
+
+    comparison = compare_all_appearances(
+        MatterCase("Test city", case("regular", "consent").matter, (earlier, later)),
+        replace(CONFIG, forward_observation_baseline="2026-09-04T00:00:00Z"),
+    ).comparisons[0]
+
+    assert all(
+        evidence.origin == "reconstructed_from_public_record"
+        for observation in comparison.observations
+        for evidence in observation.evidence
+    )
 
 
 def test_deterministic_veto_rejects_explained_less_clear_observation() -> None:

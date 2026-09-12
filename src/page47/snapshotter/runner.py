@@ -21,7 +21,7 @@ from page47.snapshotter.config import (
     text_field,
 )
 from page47.snapshotter.http import ConditionalHttpClient, FetchResult, utc_now
-from page47.snapshotter.store import SnapshotStore, text_value
+from page47.snapshotter.store import SnapshotStore, body_is_pdf, text_value
 
 HTTP_OK = 200
 HTTP_NOT_MODIFIED = 304
@@ -73,11 +73,13 @@ def capture_unparsed(
     response: FetchResult,
     kind: str,
     reason: str,
+    run_id: str | None = None,
 ) -> JSONObject:
     record, _ = store.capture(
         response,
         kind,
         {"parse_status": "unparsed", "parse_error": reason},
+        collector_run_id=run_id,
     )
     return record
 
@@ -87,6 +89,7 @@ def parse_response(
     response: FetchResult,
     previous: JSONObject | None,
     kind: str,
+    run_id: str | None = None,
 ) -> tuple[JSONValue | None, JSONObject | None, str | None]:
     body = response_body(response, store, previous)
     if body is None:
@@ -96,13 +99,13 @@ def parse_response(
             reason = "request did not return an HTTP status"
         else:
             reason = f"HTTP status {response.status} did not provide a usable JSON response"
-        record = capture_unparsed(store, response, kind, reason)
+        record = capture_unparsed(store, response, kind, reason, run_id)
         return None, record, reason
     try:
         decoded = parse_json(body)
     except (ValueError, UnicodeDecodeError) as error:
         reason = error_text(error)
-        record = capture_unparsed(store, response, kind, reason)
+        record = capture_unparsed(store, response, kind, reason, run_id)
         return None, record, reason
     if response.not_modified:
         return decoded, previous, None
@@ -114,8 +117,9 @@ def binary_capture(
     response: FetchResult,
     kind: str,
     fields: JSONObject,
+    run_id: str | None = None,
 ) -> tuple[JSONObject, bool]:
-    return store.capture(response, kind, fields)
+    return store.capture(response, kind, fields, collector_run_id=run_id)
 
 
 def source_url_is_usable(value: str | None) -> bool:
@@ -123,6 +127,12 @@ def source_url_is_usable(value: str | None) -> bool:
         return False
     parsed = urlparse(value)
     return parsed.scheme in {"http", "https"} and bool(parsed.netloc)
+
+
+def response_is_pdf(response: FetchResult) -> bool:
+    """Accept document bytes only when they contain a PDF file header."""
+
+    return response.status == HTTP_OK and body_is_pdf(response.body)
 
 
 def event_is_in_window(event: JSONObject, config: CityConfig, now: datetime) -> bool:
@@ -326,7 +336,7 @@ def run_once(config: CityConfig, store: SnapshotStore, now: datetime | None = No
         pages_fetched += 1
         previous = store.latest(f"events-page:{page_number}")
         decoded, _, parse_issue = parse_response(
-            store, response, previous, "event_page"
+            store, response, previous, "event_page", run_id
         )
         if response.not_modified:
             pages_reused += 1
@@ -340,13 +350,17 @@ def run_once(config: CityConfig, store: SnapshotStore, now: datetime | None = No
             events = as_objects(decoded, f"events page {page_number}")
         except ValueError as error:
             issues.append(f"events page {page_number}: {error_text(error)}")
-            capture_unparsed(store, response, "event_page", error_text(error))
+            capture_unparsed(store, response, "event_page", error_text(error), run_id)
             continue
         if not response.not_modified:
             store.capture(
                 response,
                 "event_page",
-                {"parse_status": "parsed", "record_count": len(events)},
+                {
+                    "parse_status": "parsed",
+                    "record_count": len(events),
+                },
+                collector_run_id=run_id,
             )
         for event in events:
             event_id = integer_field(event, config.event_fields, "id")
@@ -374,13 +388,14 @@ def run_once(config: CityConfig, store: SnapshotStore, now: datetime | None = No
     agenda_reused = 0
     attachment_count = 0
     attachment_reused = 0
+    non_pdf_attachments_skipped = 0
     changes_count = 0
     for event_id, event in selected_events:
         detail_target = f"event:{event_id}"
         previous_detail = store.latest(detail_target)
         response = client.fetch_event_detail(event_id)
         decoded, _, parse_issue = parse_response(
-            store, response, previous_detail, "event_detail"
+            store, response, previous_detail, "event_detail", run_id
         )
         if parse_issue is not None:
             issues.append(f"event {event_id}: {parse_issue}")
@@ -399,7 +414,7 @@ def run_once(config: CityConfig, store: SnapshotStore, now: datetime | None = No
         except ValueError as error:
             reason = error_text(error)
             issues.append(f"event {event_id}: {reason}")
-            capture_unparsed(store, response, "event_detail", reason)
+            capture_unparsed(store, response, "event_detail", reason, run_id)
             continue
         current_fields = detail_fields(detail, event_id, event, attachments, config)
         if response.not_modified:
@@ -408,7 +423,12 @@ def run_once(config: CityConfig, store: SnapshotStore, now: datetime | None = No
                 issues.append(f"event {event_id}: 304 response had no stored detail")
                 continue
         else:
-            current_detail, inserted = store.capture(response, "event_detail", current_fields)
+            current_detail, inserted = store.capture(
+                response,
+                "event_detail",
+                current_fields,
+                collector_run_id=run_id,
+            )
             if inserted:
                 detail_count += 1
         if current_detail is None:
@@ -439,28 +459,37 @@ def run_once(config: CityConfig, store: SnapshotStore, now: datetime | None = No
                         store, run_id, agenda_target, previous_agenda, agenda_record, "agenda"
                     )
             elif agenda_response.status == HTTP_OK:
-                agenda_record, inserted = binary_capture(
-                    store,
-                    agenda_response,
-                    "agenda_pdf",
-                    {
-                        "parse_status": "binary",
-                        "event_id": event_id,
-                        "event_date": event_date,
-                        "agenda_last_published": published,
-                    },
-                )
-                if inserted:
-                    agenda_count += 1
-                changes_count += compare_document(
-                    store, run_id, agenda_target, previous_agenda, agenda_record, "agenda"
-                )
+                if not response_is_pdf(agenda_response):
+                    content_type = agenda_response.headers.get("content-type", "unknown")
+                    issues.append(
+                        f"event {event_id}: agenda URL returned non-PDF content "
+                        f"({content_type})"
+                    )
+                else:
+                    agenda_record, inserted = binary_capture(
+                        store,
+                        agenda_response,
+                        "agenda_pdf",
+                        {
+                            "parse_status": "binary",
+                            "event_id": event_id,
+                            "event_date": event_date,
+                            "agenda_last_published": published,
+                        },
+                        run_id,
+                    )
+                    if inserted:
+                        agenda_count += 1
+                    changes_count += compare_document(
+                        store, run_id, agenda_target, previous_agenda, agenda_record, "agenda"
+                    )
             else:
                 capture_unparsed(
                     store,
                     agenda_response,
                     "agenda_pdf",
                     "agenda download did not return HTTP 200",
+                    run_id,
                 )
                 issues.append(f"event {event_id}: agenda download failed")
         for attachment_id, attachment in sorted(attachments.items()):
@@ -490,6 +519,9 @@ def run_once(config: CityConfig, store: SnapshotStore, now: datetime | None = No
                         "attachment",
                     )
             elif attachment_response.status == HTTP_OK:
+                if not response_is_pdf(attachment_response):
+                    non_pdf_attachments_skipped += 1
+                    continue
                 attachment_record, inserted = binary_capture(
                     store,
                     attachment_response,
@@ -502,6 +534,7 @@ def run_once(config: CityConfig, store: SnapshotStore, now: datetime | None = No
                         "last_modified": text_value(attachment, "last_modified"),
                         "matter_version": text_value(attachment, "matter_version"),
                     },
+                    run_id,
                 )
                 if inserted:
                     attachment_count += 1
@@ -519,6 +552,7 @@ def run_once(config: CityConfig, store: SnapshotStore, now: datetime | None = No
                     attachment_response,
                     "attachment",
                     "attachment download did not return HTTP 200",
+                    run_id,
                 )
                 issues.append(f"attachment {attachment_id}: download failed")
     status = "complete" if not issues else "complete_with_issues"
@@ -534,6 +568,7 @@ def run_once(config: CityConfig, store: SnapshotStore, now: datetime | None = No
         "agendas_reused": agenda_reused,
         "attachments_captured": attachment_count,
         "attachments_reused": attachment_reused,
+        "non_pdf_attachments_skipped": non_pdf_attachments_skipped,
         "changes_observed": changes_count,
         "issues": json_list(issues),
     }

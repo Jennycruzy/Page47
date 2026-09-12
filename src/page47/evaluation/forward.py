@@ -2,11 +2,13 @@
 
 from __future__ import annotations
 
+from datetime import UTC, datetime
 from pathlib import Path
 
 from page47.analysis.case import MatterCase, load_matter_case
 from page47.analysis.drift import (
     PresentationConfig,
+    PresentationObservation,
     compare_all_appearances,
     load_presentation_config,
 )
@@ -17,6 +19,39 @@ from page47.snapshotter.store import SnapshotStore
 
 def _directional(value: object) -> bool:
     return value in {"clearer", "less_clear", "mixed"}
+
+
+def _time(value: str) -> datetime | None:
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        return None
+    return parsed.astimezone(UTC)
+
+
+def _verified_forward_evidence(observation: PresentationObservation) -> bool:
+    evidence = observation.evidence
+    if len(evidence) < 2:
+        return False
+    if any(
+        link.origin != "observed_by_page47"
+        or link.capture_key is None
+        or link.response_sha256 is None
+        for link in evidence
+    ):
+        return False
+    if len({link.capture_key for link in evidence}) != len(evidence):
+        return False
+    earlier = _time(evidence[0].captured_at)
+    later = _time(evidence[-1].captured_at)
+    return (
+        earlier is not None
+        and later is not None
+        and earlier < later
+        and evidence[-1].collector_run_id is not None
+    )
 
 
 def forward_case_candidates(
@@ -34,8 +69,7 @@ def forward_case_candidates(
             observation
             for observation in comparison.observations
             if observation.direction in {"clearer", "less_clear"}
-            and observation.evidence
-            and all(link.origin == "observed_by_page47" for link in observation.evidence)
+            and _verified_forward_evidence(observation)
         ]
         if not observed:
             continue

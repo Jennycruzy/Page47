@@ -120,13 +120,22 @@ def _evidence(
 
 
 def _evidence_json(link: EvidenceLink) -> JSONObject:
-    return {
+    payload: JSONObject = {
         "label": link.label,
         "url": link.url,
         "captured_at": link.captured_at,
         "page_number": link.page_number,
         "origin": link.origin,
     }
+    for key, value in (
+        ("capture_key", link.capture_key),
+        ("response_sha256", link.response_sha256),
+        ("content_sha256", link.content_sha256),
+        ("collector_run_id", link.collector_run_id),
+    ):
+        if value is not None:
+            payload[key] = value
+    return payload
 
 
 def _observation(
@@ -195,10 +204,10 @@ def _evidence_catalog(case: MatterCase) -> _EvidenceCatalog:
     ) -> None:
         key = (source.url, source.captured_at)
         all_sources.add(key)
-        if source.is_forward_capture:
-            source_origins[key] = "observed_by_page47"
-        else:
-            source_origins.setdefault(key, "reconstructed_from_public_record")
+        # A single captured source does not prove that Page 47 witnessed a
+        # transition. Only the deterministic comparator can promote a paired,
+        # chronological before/after observation to observed_by_page47.
+        source_origins.setdefault(key, "reconstructed_from_public_record")
         if document:
             document_sources.add(key)
         if attachment:

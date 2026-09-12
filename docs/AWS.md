@@ -59,16 +59,19 @@ The collector's delivery step does not create a message by itself. It loads only
 
 ## Evidence backup handoff
 
-The durable-copy step is intentionally separate from the capture loop until a
-private bucket and least-privilege permission are configured. The next operator
-should use a dedicated bucket in `eu-west-2`, separate from the AgentCore
+The collector script now runs the incremental durable-copy step inside the
+existing collector lock whenever `PAGE47_EVIDENCE_BACKUP_BUCKET` is configured.
+It remains disabled until a private bucket and least-privilege permission are
+available. Use a dedicated bucket in `eu-west-2`, separate from the AgentCore
 artifact bucket. Enable versioning, default encryption, ownership controls, and
 the S3 public-access block. Do not make evidence objects public.
 
 After the bucket exists, grant the deployment identity only the permissions
-needed for the exporter: `s3:PutObject` on the Page 47 evidence prefix and
-`s3:GetBucketLocation` on the bucket. Do not grant object deletion to the
-backup job. Then run one controlled backup for each city:
+needed for the exporter: `s3:GetBucketLocation` on the bucket and
+`s3:PutObject` plus `s3:GetObject` on the Page 47 evidence prefix. `GetObject`
+allows the exporter to use `HeadObject` metadata checks and skip objects whose
+verified SHA-256 is already stored. Do not grant object deletion to the backup
+job. Then run one controlled backup for each city:
 
 ```bash
 cd /home/ubuntu/page47-preflight
@@ -88,6 +91,7 @@ cd /home/ubuntu/page47-preflight
 The command must finish only after verifying the local body hashes and
 manifest chain. Keep its JSON result, including `integrity_root`, in the
 deployment audit. Verify the bucket's versioning and inspect a few object
-metadata records before scheduling recurring backups after successful
-collector runs. The current code does not claim S3 durability until this
-bucket, permission, first backup, and recurring schedule are all verified.
+metadata records, then set `PAGE47_EVIDENCE_BACKUP_BUCKET` in the collector
+environment. The current AWS deployment identity cannot create the bucket or
+grant itself access, so the code does not claim S3 durability until an
+administrator completes that setup and the first scheduled backup is verified.

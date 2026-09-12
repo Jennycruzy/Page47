@@ -182,6 +182,7 @@ def test_forward_capture_metadata_survives_record_roundtrip(tmp_path: Path) -> N
         capture_key="matter-capture-1",
         response_sha256="matter-response-1",
         content_sha256="matter-content-1",
+        collector_run_id="2026-09-10T00:00:00Z",
     )
     appearance_source = SourceReference(
         kind="api",
@@ -191,6 +192,7 @@ def test_forward_capture_metadata_survives_record_roundtrip(tmp_path: Path) -> N
         capture_key="item-capture-2",
         response_sha256="item-response-2",
         content_sha256="item-content-2",
+        collector_run_id="2026-09-11T00:00:00Z",
     )
     with RecordStore(tmp_path / "records.sqlite3") as store:
         store.upsert_matter(
@@ -248,6 +250,7 @@ def test_forward_capture_metadata_survives_record_roundtrip(tmp_path: Path) -> N
     assert loaded.matter.source.capture_key == "matter-capture-1"
     assert loaded.appearances[0].source.is_forward_capture is True
     assert loaded.appearances[0].source.capture_key == "item-capture-2"
+    assert loaded.appearances[0].source.collector_run_id == "2026-09-11T00:00:00Z"
 
 
 def test_recorded_snapshot_marks_a_detail_as_applied(tmp_path: Path) -> None:

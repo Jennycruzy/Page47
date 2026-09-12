@@ -40,6 +40,19 @@ fi
   --config "$PAGE47_ROOT/config/cities/denver.yaml" \
   --database "$PAGE47_ROOT/runtime/records/denver.sqlite3" \
   --evidence-root "$PAGE47_ROOT/runtime/evidence/denver"
+if [ -n "${PAGE47_EVIDENCE_BACKUP_BUCKET:-}" ]; then
+  PAGE47_EVIDENCE_BACKUP_REGION_VALUE=${PAGE47_EVIDENCE_BACKUP_REGION:-eu-west-2}
+  "$PAGE47_ROOT/.venv/bin/python" "$PAGE47_ROOT/scripts/backup_evidence.py" \
+    --evidence-root "$PAGE47_ROOT/runtime/evidence/seattle" \
+    --bucket "$PAGE47_EVIDENCE_BACKUP_BUCKET" \
+    --prefix cities/seattle \
+    --region "$PAGE47_EVIDENCE_BACKUP_REGION_VALUE"
+  "$PAGE47_ROOT/.venv/bin/python" "$PAGE47_ROOT/scripts/backup_evidence.py" \
+    --evidence-root "$PAGE47_ROOT/runtime/evidence/denver" \
+    --bucket "$PAGE47_EVIDENCE_BACKUP_BUCKET" \
+    --prefix cities/denver \
+    --region "$PAGE47_EVIDENCE_BACKUP_REGION_VALUE"
+fi
 "$PAGE47_ROOT/.venv/bin/python" "$PAGE47_ROOT/scripts/notify_findings.py" \
   --web-config "$PAGE47_ROOT/config/web.yaml" \
   --address-config "$PAGE47_ROOT/config/address.yaml" \

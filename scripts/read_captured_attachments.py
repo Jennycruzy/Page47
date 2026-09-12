@@ -14,7 +14,11 @@ sys.path.insert(0, str(REPOSITORY_ROOT / "src"))
 
 from page47.records.runner import source_for_capture  # noqa: E402, I001
 from page47.records.store import AttachmentReadingObservation, RecordStore  # noqa: E402, I001
-from page47.snapshotter.store import SnapshotStore, text_value  # noqa: E402, I001
+from page47.snapshotter.store import (  # noqa: E402, I001
+    SnapshotStore,
+    body_is_pdf,
+    text_value,
+)
 from page47.substance.reader import (  # noqa: E402, I001
     AttachmentReading,
     load_substance_config,
@@ -54,14 +58,15 @@ def main() -> int:
             content_hash = text_value(capture, "content_sha256")
             if source_url is None or content_hash is None:
                 raise ValueError("Captured attachment has no source URL or content hash")
-            if not source_url.casefold().endswith(".pdf"):
+            body = snapshots.body(capture)
+            if not body_is_pdf(body):
                 continue
             item_id = attachment_id(capture)
             if records.attachment_reading_hash(item_id) == content_hash:
                 result["reused"] += 1
                 continue
             try:
-                reading = read_pdf_attachment(snapshots.body(capture), config)
+                reading = read_pdf_attachment(body, config)
             except Exception as error:
                 reading = AttachmentReading(
                     status="unreadable",

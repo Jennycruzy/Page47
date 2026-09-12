@@ -15,6 +15,14 @@ class FakeS3:
         self.objects.append(kwargs)
         return {}
 
+    def head_object(self, **kwargs: object) -> object:
+        bucket = kwargs.get("Bucket")
+        key = kwargs.get("Key")
+        for item in reversed(self.objects):
+            if item.get("Bucket") == bucket and item.get("Key") == key:
+                return {"Metadata": item.get("Metadata", {})}
+        return {}
+
 
 def response() -> FetchResult:
     return FetchResult(
@@ -39,6 +47,7 @@ def test_backup_copies_bytes_and_integrity_manifests(tmp_path: Path) -> None:
 
     assert result.capture_count == 1
     assert result.uploaded_objects == 3
+    assert result.skipped_objects == 0
     assert result.integrity_root is not None
     keys = {item["Key"] for item in client.objects}
     assert any(
@@ -47,6 +56,11 @@ def test_backup_copies_bytes_and_integrity_manifests(tmp_path: Path) -> None:
     )
     assert "evidence/manifest.jsonl" in keys
     assert "evidence/manifest-chain.jsonl" in keys
+
+    repeated = backup_evidence(store, client, bucket="page47-test", prefix="evidence")
+    assert repeated.uploaded_objects == 0
+    assert repeated.skipped_objects == 3
+    assert len(client.objects) == 3
 
 
 def test_backup_refuses_tampered_capture_manifest(tmp_path: Path) -> None:

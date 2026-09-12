@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Protocol
@@ -13,12 +14,15 @@ from page47.snapshotter.store import SnapshotStore, text_value
 class S3PutClient(Protocol):
     def put_object(self, **kwargs: object) -> object: ...
 
+    def head_object(self, **kwargs: object) -> object: ...
+
 
 @dataclass(frozen=True, slots=True)
 class EvidenceBackup:
     bucket: str
     prefix: str
     uploaded_objects: int
+    skipped_objects: int
     capture_count: int
     integrity_root: str | None
 
@@ -27,6 +31,7 @@ class EvidenceBackup:
             "bucket": self.bucket,
             "prefix": self.prefix,
             "uploaded_objects": self.uploaded_objects,
+            "skipped_objects": self.skipped_objects,
             "capture_count": self.capture_count,
             "integrity_root": self.integrity_root,
         }
@@ -61,6 +66,55 @@ def _put(
     )
 
 
+def _remote_hash(
+    client: S3PutClient,
+    bucket: str,
+    key: str,
+) -> str | None:
+    try:
+        result = client.head_object(Bucket=bucket, Key=key)
+    except Exception as error:
+        response = getattr(error, "response", None)
+        if isinstance(response, dict):
+            details = response.get("Error")
+            if isinstance(details, dict) and str(details.get("Code")) in {
+                "404",
+                "NoSuchKey",
+                "NotFound",
+            }:
+                return None
+        raise
+    if not isinstance(result, dict):
+        return None
+    metadata = result.get("Metadata")
+    if not isinstance(metadata, dict):
+        return None
+    value = metadata.get("sha256")
+    return value if isinstance(value, str) and value else None
+
+
+def _put_if_changed(
+    client: S3PutClient,
+    bucket: str,
+    key: str,
+    body: bytes,
+    content_type: str,
+    metadata: dict[str, str],
+) -> bool:
+    digest = hashlib.sha256(body).hexdigest()
+    if _remote_hash(client, bucket, key) == digest:
+        return False
+    _put(
+        client,
+        bucket,
+        key,
+        body,
+        content_type,
+        {**metadata, "sha256": digest},
+    )
+    return True
+
+
 def backup_evidence(
     store: SnapshotStore,
     client: S3PutClient,
@@ -74,22 +128,28 @@ def backup_evidence(
         raise ValueError("Evidence backup bucket must not be empty")
     integrity_root = store.verify_integrity()
     uploaded = 0
+    skipped = 0
+    seen_storage_keys: set[str] = set()
     for record in store.records:
         capture_key = text_value(record, "capture_key")
         storage_key = text_value(record, "storage_key")
         response_hash = text_value(record, "response_sha256")
         if capture_key is None or storage_key is None or response_hash is None:
             raise ValueError("Capture manifest was incomplete")
+        if storage_key in seen_storage_keys:
+            continue
+        seen_storage_keys.add(storage_key)
         body = store.body(record)
-        _put(
+        changed = _put_if_changed(
             client,
             bucket,
             _object_key(prefix, storage_key),
             body,
             "application/octet-stream",
-            {"capture-key": capture_key, "sha256": response_hash},
+            {"capture-key": capture_key, "response-sha256": response_hash},
         )
-        uploaded += 1
+        uploaded += int(changed)
+        skipped += int(not changed)
 
     for relative_path, content_type in (
         ("manifest.jsonl", "application/x-ndjson"),
@@ -100,19 +160,22 @@ def backup_evidence(
         path = store.root / relative_path
         if not path.exists():
             continue
-        _put(
+        body = path.read_bytes()
+        changed = _put_if_changed(
             client,
             bucket,
             _object_key(prefix, relative_path),
-            path.read_bytes(),
+            body,
             content_type,
             {"integrity-root": integrity_root or "empty"},
         )
-        uploaded += 1
+        uploaded += int(changed)
+        skipped += int(not changed)
     return EvidenceBackup(
         bucket=bucket,
         prefix=prefix.strip("/"),
         uploaded_objects=uploaded,
+        skipped_objects=skipped,
         capture_count=len(store.records),
         integrity_root=integrity_root,
     )

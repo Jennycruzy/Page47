@@ -26,15 +26,20 @@ def test_forward_candidate_requires_directional_evidence_from_distinct_captures(
                 f"capture-{index + 1}",
                 f"response-{index + 1}",
                 f"content-{index + 1}",
+                f"2026-09-{index + 1:02d}T00:00:00Z",
             ),
         )
         for index, appearance in enumerate(controlled.matter.appearances)
     )
     case = replace(controlled.matter, appearances=observed_appearances)
+    config = replace(
+        load_presentation_config(Path("config/presentation.yaml")),
+        forward_observation_baseline="2026-09-01T12:00:00Z",
+    )
 
     candidates = forward_case_candidates(
         case,
-        load_presentation_config(Path("config/presentation.yaml")),
+        config,
     )
 
     assert len(candidates) == 1

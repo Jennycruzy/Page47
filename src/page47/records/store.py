@@ -241,12 +241,17 @@ class SourceReference:
     capture_key: str | None = None
     response_sha256: str | None = None
     content_sha256: str | None = None
+    collector_run_id: str | None = None
 
     @property
     def is_forward_capture(self) -> bool:
-        """Whether this source is tied to a concrete Page 47 capture."""
+        """Whether this source was captured by the scheduled forward collector."""
 
-        return self.observed_by_page47 and self.capture_key is not None
+        return (
+            self.observed_by_page47
+            and self.capture_key is not None
+            and self.collector_run_id is not None
+        )
 
     def as_json(self) -> JSONObject:
         payload: JSONObject = {
@@ -260,6 +265,7 @@ class SourceReference:
             ("capture_key", self.capture_key),
             ("response_sha256", self.response_sha256),
             ("content_sha256", self.content_sha256),
+            ("collector_run_id", self.collector_run_id),
         ):
             if value is not None:
                 payload[key] = value

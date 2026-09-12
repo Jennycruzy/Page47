@@ -99,16 +99,18 @@ def test_finding_page_exposes_dimensions_provenance_and_rejections() -> None:
                             "key": "title_changed",
                             "direction": "less_clear",
                             "evidence": [
-                                {
-                                    "label": "earlier title",
-                                    "url": "https://records.example/old",
-                                    "captured_at": "2026-09-01",
-                                },
-                                {
-                                    "label": "later title",
-                                    "url": "https://records.example/new",
-                                    "captured_at": "2026-09-02",
-                                },
+                                    {
+                                        "label": "earlier title",
+                                        "url": "https://records.example/old",
+                                        "captured_at": "2026-09-01",
+                                        "origin": "observed_by_page47",
+                                    },
+                                    {
+                                        "label": "later title",
+                                        "url": "https://records.example/new",
+                                        "captured_at": "2026-09-02",
+                                        "origin": "observed_by_page47",
+                                    },
                             ],
                         },
                         {

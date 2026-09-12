@@ -46,12 +46,23 @@ def test_replaying_the_same_record_does_not_add_a_duplicate_row(tmp_path: Path) 
     store = SnapshotStore(tmp_path / "evidence")
     fields = {"parse_status": "parsed"}
 
-    first, first_inserted = store.capture(response, "event_detail", fields)
-    second, second_inserted = store.capture(response, "event_detail", fields)
+    first, first_inserted = store.capture(
+        response,
+        "event_detail",
+        fields,
+        collector_run_id="2026-09-04T18:00:00Z",
+    )
+    second, second_inserted = store.capture(
+        response,
+        "event_detail",
+        fields,
+        collector_run_id="2026-09-04T18:15:00Z",
+    )
 
     assert first_inserted
     assert not second_inserted
     assert first == second
+    assert first["collector_run_id"] == "2026-09-04T18:00:00Z"
     assert store.count_manifest_rows() == 1
 
 

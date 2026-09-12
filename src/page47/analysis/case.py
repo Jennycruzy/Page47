@@ -11,7 +11,7 @@ from pathlib import Path
 from page47.models.config import ModelSettings
 from page47.records.store import RecordStore, SourceReference
 from page47.snapshotter.config import as_json_value
-from page47.snapshotter.store import SnapshotStore
+from page47.snapshotter.store import SnapshotStore, body_is_pdf
 
 type JSONScalar = None | bool | int | float | str
 type JSONValue = JSONScalar | list[JSONValue] | dict[str, JSONValue]
@@ -72,13 +72,19 @@ class AttachmentRecord:
         capture_key = capture.get("capture_key")
         response_sha256 = capture.get("response_sha256")
         content_sha256 = capture.get("content_sha256")
+        collector_run_id = capture.get("collector_run_id")
         if capture_key is not None and not isinstance(capture_key, str):
             raise ValueError(f"Attachment {self.attachment_id} capture key was invalid")
         if response_sha256 is not None and not isinstance(response_sha256, str):
             raise ValueError(f"Attachment {self.attachment_id} response hash was invalid")
         if content_sha256 is not None and not isinstance(content_sha256, str):
             raise ValueError(f"Attachment {self.attachment_id} content hash was invalid")
-        return snapshots.body(capture), SourceReference(
+        if collector_run_id is not None and not isinstance(collector_run_id, str):
+            raise ValueError(f"Attachment {self.attachment_id} collector run ID was invalid")
+        body = snapshots.body(capture)
+        if not body_is_pdf(body):
+            return None
+        return body, SourceReference(
             "snapshot",
             source_url,
             captured_at,
@@ -86,6 +92,7 @@ class AttachmentRecord:
             capture_key=capture_key,
             response_sha256=response_sha256,
             content_sha256=content_sha256,
+            collector_run_id=collector_run_id,
         )
 
     def as_index_json(self) -> JSONObject:
@@ -320,6 +327,7 @@ def _source_from_json(value: object, context: str) -> SourceReference:
     capture_key: object = value.get("capture_key")
     response_sha256: object = value.get("response_sha256")
     content_sha256: object = value.get("content_sha256")
+    collector_run_id: object = value.get("collector_run_id")
     if (
         not isinstance(kind, str)
         or not kind
@@ -331,6 +339,7 @@ def _source_from_json(value: object, context: str) -> SourceReference:
         or (capture_key is not None and not isinstance(capture_key, str))
         or (response_sha256 is not None and not isinstance(response_sha256, str))
         or (content_sha256 is not None and not isinstance(content_sha256, str))
+        or (collector_run_id is not None and not isinstance(collector_run_id, str))
     ):
         raise ValueError(f"Stored {context} source was incomplete")
     return SourceReference(
@@ -341,6 +350,7 @@ def _source_from_json(value: object, context: str) -> SourceReference:
         capture_key=capture_key,
         response_sha256=response_sha256,
         content_sha256=content_sha256,
+        collector_run_id=collector_run_id,
     )
 
 

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Literal
 
@@ -31,15 +32,28 @@ class EvidenceLink:
     captured_at: str
     page_number: int | None = None
     origin: EvidenceOrigin = "reconstructed_from_public_record"
+    capture_key: str | None = None
+    response_sha256: str | None = None
+    content_sha256: str | None = None
+    collector_run_id: str | None = None
 
     def as_json(self) -> dict[str, object]:
-        return {
+        payload: dict[str, object] = {
             "label": self.label,
             "url": self.url,
             "captured_at": self.captured_at,
             "page_number": self.page_number,
             "origin": self.origin,
         }
+        for key, value in (
+            ("capture_key", self.capture_key),
+            ("response_sha256", self.response_sha256),
+            ("content_sha256", self.content_sha256),
+            ("collector_run_id", self.collector_run_id),
+        ):
+            if value is not None:
+                payload[key] = value
+        return payload
 
 
 @dataclass(frozen=True, slots=True)
@@ -104,6 +118,7 @@ class PresentationConfig:
     minimum_title_overlap: int
     timing_difference_hours: int
     common_title_words: frozenset[str]
+    forward_observation_baseline: str | None = None
 
 
 def state_from_direction_counts(
@@ -154,11 +169,19 @@ def load_presentation_config(path: Path) -> PresentationConfig:
     words = frozenset(item.casefold() for item in raw_words if item.strip())
     if not words:
         raise ValueError("comparison.common_title_words must not be empty")
+    baseline = comparison.get("forward_observation_baseline")
+    if baseline is not None and (
+        not isinstance(baseline, str) or _capture_time(baseline) is None
+    ):
+        raise ValueError(
+            "comparison.forward_observation_baseline must be an ISO-8601 timestamp"
+        )
     return PresentationConfig(
         minimum_appearances=integer("minimum_appearances", 2),
         minimum_title_overlap=integer("minimum_title_overlap", 1),
         timing_difference_hours=integer("timing_difference_hours", 1),
         common_title_words=words,
+        forward_observation_baseline=baseline,
     )
 
 
@@ -177,25 +200,66 @@ def _subject_tokens(appearance: AppearanceRecord, common: frozenset[str]) -> set
 
 def _link(
     label: str,
-    source_url: str,
-    captured_at: str,
+    source: SourceReference,
     page: int | None = None,
     origin: EvidenceOrigin = "reconstructed_from_public_record",
 ) -> EvidenceLink:
-    if not source_url or not captured_at:
+    if not source.url or not source.captured_at:
         raise ValueError(f"Cannot make evidence link for {label} without source details")
-    return EvidenceLink(label, source_url, captured_at, page, origin)
+    return EvidenceLink(
+        label=label,
+        url=source.url,
+        captured_at=source.captured_at,
+        page_number=page,
+        origin=origin,
+        capture_key=source.capture_key,
+        response_sha256=source.response_sha256,
+        content_sha256=source.content_sha256,
+        collector_run_id=source.collector_run_id,
+    )
+
+
+def _capture_time(value: str | None) -> datetime | None:
+    if value is None:
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        return None
+    return parsed.astimezone(UTC)
 
 
 def _transition_origin(
     previous: SourceReference,
     current: SourceReference,
+    config: PresentationConfig,
 ) -> EvidenceOrigin:
+    baseline = _capture_time(config.forward_observation_baseline)
+    previous_time = _capture_time(previous.captured_at)
+    current_time = _capture_time(current.captured_at)
+    current_run = _capture_time(current.collector_run_id)
+    if (
+        baseline is None
+        or previous_time is None
+        or current_time is None
+        or current_run is None
+        or not current.is_forward_capture
+        or previous.capture_key == current.capture_key
+        or current_time <= baseline
+        or current_time <= previous_time
+        or current_run > current_time
+    ):
+        return "reconstructed_from_public_record"
+    if previous_time <= baseline:
+        return "observed_by_page47"
+    previous_run = _capture_time(previous.collector_run_id)
     if (
         previous.is_forward_capture
-        and current.is_forward_capture
-        and previous.capture_key != current.capture_key
-        and previous.captured_at != current.captured_at
+        and previous_run is not None
+        and previous_run <= previous_time
+        and previous_run < current_run
     ):
         return "observed_by_page47"
     return "reconstructed_from_public_record"
@@ -210,7 +274,7 @@ def _title_observation(
     current_title = current.title_as_presented
     if previous_title is None or current_title is None:
         return None
-    origin = _transition_origin(previous.source, current.source)
+    origin = _transition_origin(previous.source, current.source, config)
     if previous_title.strip().casefold() == current_title.strip().casefold():
         return PresentationObservation(
             "title_unchanged",
@@ -219,14 +283,12 @@ def _title_observation(
             (
                 _link(
                     "earlier title",
-                    previous.source.url,
-                    previous.source.captured_at,
+                    previous.source,
                     origin=origin,
                 ),
                 _link(
                     "later title",
-                    current.source.url,
-                    current.source.captured_at,
+                    current.source,
                     origin=origin,
                 ),
             ),
@@ -310,14 +372,12 @@ def _title_observation(
         (
             _link(
                 "earlier title",
-                previous.source.url,
-                previous.source.captured_at,
+                previous.source,
                 origin=origin,
             ),
             _link(
                 "later title",
-                current.source.url,
-                current.source.captured_at,
+                current.source,
                 origin=origin,
             ),
         ),
@@ -328,6 +388,7 @@ def _title_observation(
 def _placement_observation(
     previous: AppearanceRecord,
     current: AppearanceRecord,
+    config: PresentationConfig,
 ) -> PresentationObservation | None:
     if previous.pdf_placement not in {"consent", "regular"}:
         return None
@@ -342,12 +403,11 @@ def _placement_observation(
     current_source = current.pdf_source
     if current_source is None:
         current_source = current.source
-    origin = _transition_origin(previous_source, current_source)
+    origin = _transition_origin(previous_source, current_source, config)
     evidence.append(
         _link(
             "earlier agenda placement",
-            previous_source.url,
-            previous_source.captured_at,
+            previous_source,
             previous_page,
             origin,
         )
@@ -355,8 +415,7 @@ def _placement_observation(
     evidence.append(
         _link(
             "later agenda placement",
-            current_source.url,
-            current_source.captured_at,
+            current_source,
             current_page,
             origin,
         )
@@ -411,7 +470,7 @@ def compare_latest_appearances(case: MatterCase, config: PresentationConfig) -> 
     current = case.appearances[-1]
     possible = (
         _title_observation(previous, current, config),
-        _placement_observation(previous, current),
+        _placement_observation(previous, current, config),
         _timing_observation(previous, current, config),
     )
     observations = tuple(item for item in possible if item is not None)
@@ -458,7 +517,7 @@ def _compare_pair(
 ) -> DriftComparison:
     possible = (
         _title_observation(previous, current, config),
-        _placement_observation(previous, current),
+        _placement_observation(previous, current, config),
         _timing_observation(previous, current, config),
     )
     observations = tuple(item for item in possible if item is not None)

@@ -636,7 +636,7 @@ def _finding_page(
     for item in substance_items:
         substance_blocks.append(
             f'<li><p>{html.escape(_display(item.get("text"), "Recorded document change."))}</p>'
-            f'<div class="evidence">{evidence_markup(item.get("evidence"), "Observed by Page 47")}</div></li>'
+            f'<div class="evidence">{evidence_markup(item.get("evidence"), "Reconstructed from public record")}</div></li>'
         )
     substance_content = (
         "<ul>" + "".join(substance_blocks) + "</ul>"
@@ -674,7 +674,7 @@ def _finding_page(
         else '<p class="muted">No observation survived review with a resident-facing evidence link.</p>'
     )
 
-    timeline: list[tuple[str, str, str, int | None]] = []
+    timeline: list[tuple[str, str, str, int | None, str | None]] = []
 
     def add_timeline(value: object, origin: str) -> None:
         if not isinstance(value, list):
@@ -690,10 +690,18 @@ def _finding_page(
                 continue
             page = item.get("page_number")
             page_number = page if isinstance(page, int) and not isinstance(page, bool) else None
-            marker = (url, captured_at, page_number)
-            if not any(existing[0] == marker[0] and existing[1] == marker[1] and existing[3] == marker[2] for existing in timeline):
+            raw_hash = item.get("content_sha256") or item.get("response_sha256")
+            content_hash = raw_hash if isinstance(raw_hash, str) and raw_hash else None
+            marker = (url, captured_at, page_number, content_hash)
+            if not any(existing[0] == marker[0] and existing[1] == marker[1] and existing[3] == marker[2] and existing[4] == marker[3] for existing in timeline):
                 timeline.append(
-                    (url, captured_at, origin_label(item.get("origin"), origin), page_number)
+                    (
+                        url,
+                        captured_at,
+                        origin_label(item.get("origin"), origin),
+                        page_number,
+                        content_hash,
+                    )
                 )
 
     if title_observation:
@@ -701,14 +709,17 @@ def _finding_page(
     if placement_observation:
         add_timeline(placement_observation.get("evidence"), "Reconstructed from public record")
     for item in substance_items:
-        add_timeline(item.get("evidence"), "Observed by Page 47")
+        add_timeline(item.get("evidence"), "Reconstructed from public record")
     timeline_blocks: list[str] = []
-    for url, captured_at, origin, page_number in sorted(timeline, key=lambda item: item[1]):
+    for url, captured_at, origin, page_number, content_hash in sorted(
+        timeline, key=lambda item: item[1]
+    ):
         page_text = f" · PDF page {page_number}" if page_number is not None else ""
+        hash_text = f" · SHA-256 {content_hash[:12]}…" if content_hash is not None else ""
         href = f"{url}#page={page_number}" if page_number is not None else url
         timeline_blocks.append(
             f'<li><span class="badge">{html.escape(origin)}</span><strong>'
-            f"{html.escape(captured_at)}</strong><span>{html.escape(page_text or 'Primary record')}</span>"
+            f"{html.escape(captured_at)}</strong><span>{html.escape((page_text + hash_text) or 'Primary record')}</span>"
             f'<a href="{html.escape(href, quote=True)}" target="_blank" rel="noreferrer">'
             "Open evidence →</a></li>"
         )

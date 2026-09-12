@@ -115,6 +115,7 @@ def source_for_capture(capture: JSONObject, kind: str = "api") -> SourceReferenc
         capture_key=text_value(capture, "capture_key"),
         response_sha256=text_value(capture, "response_sha256"),
         content_sha256=text_value(capture, "content_sha256"),
+        collector_run_id=text_value(capture, "collector_run_id"),
     )
 
 
