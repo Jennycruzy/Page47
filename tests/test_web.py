@@ -2,14 +2,14 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from page47.web.app import (
-    _captured_review_unavailable_page,
-    _finding_page,
-    _index_page,
-    _internal_url,
-    _watch_page,
-)
 from page47.web.config import load_web_settings
+from page47.web.frontend import (
+    captured_review_unavailable_page,
+    finding_page,
+    index_page,
+    watch_page,
+    watch_setup_page,
+)
 from page47.web.service import WebService
 
 
@@ -27,41 +27,52 @@ def test_web_service_defers_managed_runtime_client_creation() -> None:
 
 
 def test_console_links_use_the_configured_public_path() -> None:
-    page = _index_page("Page 47", "Seattle, Washington", "/page47")
+    page = index_page("Page 47", "Seattle, Washington", "/page47")
     assert 'href="/page47/"' in page
     assert 'const publicPath = "/page47"' in page
     assert "internal('/api/cities')" in page
-    assert "internal(`/matter/" in page
-    assert "Manage this private watch" in page
+    assert "'/matter/'" in page
+    assert "Start a watch" in page
 
 
 def test_console_supports_a_domain_root_public_path() -> None:
-    assert _internal_url("/", "/api/cities") == "/api/cities"
-    assert _internal_url("/", "/watch/watch-1") == "/watch/watch-1"
-    page = _index_page("Page 47", "Seattle, Washington", "/")
+    page = index_page("Page 47", "Seattle, Washington", "/")
     assert 'href="/"' in page
     assert "publicPath === '/'" in page
 
 
 def test_captured_review_fallback_explains_when_no_saved_review_exists() -> None:
-    page = _captured_review_unavailable_page("Page 47", "/")
+    page = captured_review_unavailable_page("Page 47", "/")
 
-    assert "No saved review is available yet." in page
-    assert 'href="/#watch"' in page
+    assert "The record is still being assembled." in page
+    assert 'href="/watch"' in page
 
 
 def test_homepage_leads_with_resident_promise() -> None:
-    page = _index_page("Page 47", "Seattle, Washington", "/")
-    assert "City packets change." in page
-    assert "Page 47 watches what you care about." in page
-    assert "You do not need to keep this page open." in page
-    assert "Advanced options — public bodies" in page
-    assert "See what survived review." in page
-    assert "Replay captured case" in page
-    assert "Choose how to explore Page 47" in page
+    page = index_page("Page 47", "Seattle, Washington", "/")
+    assert "The record can change." in page
+    assert "Your attention shouldn't have to chase it." in page
+    assert "The resident steps away. The record does not." in page
+    assert "Not another civic dashboard." in page
+    assert "Start with the evidence, not the machinery." in page
+    assert "Read a captured review" in page
     assert 'href="/explore"' in page
-    assert "evidence roles" in page
+    assert "5 roles" in page
     assert "28 / 28" in page
+    assert "Manrope" in page
+    assert "IBM Plex Mono" in page
+    assert "IntersectionObserver" in page
+    assert "prefers-reduced-motion" in page
+    assert 'id="watch-form"' not in page
+
+
+def test_watch_setup_is_a_separate_resident_flow() -> None:
+    page = watch_setup_page("Page 47", "Seattle, Washington", "/")
+
+    assert "Put one place on watch." in page
+    assert 'id="watch-form"' in page
+    assert "Advanced options — public bodies" in page
+    assert "Start watching" in page
 
 
 def test_finding_page_exposes_dimensions_provenance_and_rejections() -> None:
@@ -124,18 +135,18 @@ def test_finding_page_exposes_dimensions_provenance_and_rejections() -> None:
                             "key": "title_changed",
                             "direction": "less_clear",
                             "evidence": [
-                                    {
-                                        "label": "earlier title",
-                                        "url": "https://records.example/old",
-                                        "captured_at": "2026-09-01",
-                                        "origin": "observed_by_page47",
-                                    },
-                                    {
-                                        "label": "later title",
-                                        "url": "https://records.example/new",
-                                        "captured_at": "2026-09-02",
-                                        "origin": "observed_by_page47",
-                                    },
+                                {
+                                    "label": "earlier title",
+                                    "url": "https://records.example/old",
+                                    "captured_at": "2026-09-01",
+                                    "origin": "observed_by_page47",
+                                },
+                                {
+                                    "label": "later title",
+                                    "url": "https://records.example/new",
+                                    "captured_at": "2026-09-02",
+                                    "origin": "observed_by_page47",
+                                },
                             ],
                         },
                         {
@@ -155,7 +166,7 @@ def test_finding_page_exposes_dimensions_provenance_and_rejections() -> None:
             ]
         },
     }
-    page = _finding_page("Page 47", "Seattle, Washington", data, "/")
+    page = finding_page("Page 47", "Seattle, Washington", data, "/")
     assert "This matter changed in mixed directions" in page
     assert "Title" in page
     assert "Agenda placement" in page
@@ -163,7 +174,7 @@ def test_finding_page_exposes_dimensions_provenance_and_rejections() -> None:
     assert "Observed by Page 47" in page
     assert "Rejected interpretation" in page
     assert "The record establishes timing but not its effect." in page
-    replay_page = _finding_page("Page 47", "Seattle, Washington", data, "/", replay=True)
+    replay_page = finding_page("Page 47", "Seattle, Washington", data, "/", replay=True)
     assert "Captured-case replay" in replay_page
     assert "not a live event" in replay_page
 
@@ -180,7 +191,7 @@ def test_watch_page_shows_background_status_and_stop_control() -> None:
         "last_successful_check": "2026-09-11T10:15:00Z",
         "reviews_delivered": 1,
     }
-    page = _watch_page("Page 47", data, "/")
+    page = watch_page("Page 47", data, "/")
     assert "Page 47 is watching." in page
     assert "You do not need to keep this page open." in page
     assert "Last successful collector check" in page

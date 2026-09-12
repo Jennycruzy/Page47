@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 from page47.notifications.delivery import BANNED_HUMAN_WORDS
-from page47.web.app import _index_page
+from page47.web.frontend import index_page
 
 
 def _check(text: str, context: str) -> None:
@@ -29,7 +29,7 @@ def main() -> None:
     for relative in ("README.md", "docs/AWS.md"):
         path = repository_root / relative
         _check(path.read_text(encoding="utf-8"), relative)
-    rendered_console = _index_page("Page 47", "Seattle, Washington", "/page47")
+    rendered_console = index_page("Page 47", "Seattle, Washington", "/page47")
     _check(rendered_console, "rendered console")
 
 
