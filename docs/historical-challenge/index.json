@@ -212,8 +212,8 @@
   "schema_version": 1,
   "source_packet": "docs/historical-challenge-cohort.json",
   "source_snapshot": {
-    "code_revision": "69e735c205fea5e615bec9ecb89ae10bbe729378",
-    "created_at_utc": "2026-09-12T20:48:08.050264Z",
+    "code_revision": "8553e67",
+    "created_at_utc": "2026-09-12T21:01:26.065306Z",
     "database_sha256": "c848038abf4322b11aab296eafcb25c209b1e2428a79dedecb6aab93b55f7ded",
     "evidence_chain_sha256": "f377ca1441085c05e0f4effd39423bf6c81c487e6741bbba5e7a3f7f74c0a336",
     "evidence_integrity_root": "bb58760ee3fb8397127159a6aa97faa76821ec2c217a318acec97631b6d393d9",
