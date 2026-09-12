@@ -57,7 +57,11 @@ def _attachment_signature(appearance: RawAppearance) -> tuple[tuple[object, ...]
     return tuple(sorted(appearance.attachments, key=lambda item: tuple(str(part) for part in item)))
 
 
-def _pair_reasons(previous: RawAppearance, current: RawAppearance) -> tuple[str, ...]:
+def _pair_reasons(
+    previous: RawAppearance,
+    current: RawAppearance,
+    changed_attachment_ids: frozenset[int],
+) -> tuple[str, ...]:
     reasons: list[str] = []
     if _normalise(previous.title) != _normalise(current.title):
         reasons.append("title_changed")
@@ -69,6 +73,13 @@ def _pair_reasons(previous: RawAppearance, current: RawAppearance) -> tuple[str,
         reasons.append("agenda_placement_changed")
     if _attachment_signature(previous) != _attachment_signature(current):
         reasons.append("attachment_set_changed")
+    appearance_attachment_ids = {
+        item[0]
+        for item in (*previous.attachments, *current.attachments)
+        if isinstance(item[0], int) and not isinstance(item[0], bool)
+    }
+    if appearance_attachment_ids & changed_attachment_ids:
+        reasons.append("attachment_content_hash_changed")
     return tuple(reasons)
 
 
@@ -76,7 +87,15 @@ def _pair_payload(
     previous: RawAppearance,
     current: RawAppearance,
     reasons: tuple[str, ...],
+    changed_attachment_ids: frozenset[int],
 ) -> dict[str, object]:
+    changed_ids = sorted(
+        item[0]
+        for item in (*previous.attachments, *current.attachments)
+        if isinstance(item[0], int)
+        and not isinstance(item[0], bool)
+        and item[0] in changed_attachment_ids
+    )
     return {
         "previous_event_item_id": previous.event_item_id,
         "current_event_item_id": current.event_item_id,
@@ -86,11 +105,41 @@ def _pair_payload(
         "current_title": current.title,
         "previous_placement": previous.placement,
         "current_placement": current.placement,
+        "attachment_ids_with_multiple_captured_hashes": changed_ids,
         "reasons": list(reasons),
     }
 
 
-def _raw_matters(connection: Any, minimum_appearances: int) -> tuple[RawMatter, ...]:
+def _changed_attachment_ids(evidence: SnapshotStore) -> frozenset[int]:
+    hashes_by_attachment: dict[int, set[str]] = {}
+    for record in evidence.records:
+        target = record.get("target")
+        status = record.get("status")
+        content_hash = record.get("content_sha256")
+        if (
+            not isinstance(target, str)
+            or not target.startswith("attachment:")
+            or status != 200
+            or not isinstance(content_hash, str)
+        ):
+            continue
+        raw_id = target.removeprefix("attachment:")
+        if not raw_id.isdigit():
+            continue
+        attachment_id = int(raw_id)
+        hashes_by_attachment.setdefault(attachment_id, set()).add(content_hash)
+    return frozenset(
+        attachment_id
+        for attachment_id, hashes in hashes_by_attachment.items()
+        if len(hashes) > 1
+    )
+
+
+def _raw_matters(
+    connection: Any,
+    minimum_appearances: int,
+    changed_attachment_ids: frozenset[int],
+) -> tuple[RawMatter, ...]:
     rows = connection.execute(
         "SELECT a.matter_id, a.event_item_id, a.event_date, a.title_as_presented, "
         "a.pdf_placement, aa.attachment_id, aa.name AS attachment_name, aa.url AS attachment_url, "
@@ -163,9 +212,11 @@ def _raw_matters(connection: Any, minimum_appearances: int) -> tuple[RawMatter, 
         )
         pair_payloads: list[dict[str, object]] = []
         for previous, current in zip(appearances, appearances[1:], strict=False):
-            reasons = _pair_reasons(previous, current)
+            reasons = _pair_reasons(previous, current, changed_attachment_ids)
             if reasons:
-                pair_payloads.append(_pair_payload(previous, current, reasons))
+                pair_payloads.append(
+                    _pair_payload(previous, current, reasons, changed_attachment_ids)
+                )
         output.append(RawMatter(matter_id, appearances, tuple(pair_payloads)))
     return tuple(sorted(output, key=lambda item: item.matter_id))
 
@@ -294,7 +345,12 @@ def main() -> int:
 
     evidence = SnapshotStore(args.evidence_root)
     with RecordStore(args.database) as records:
-        raw_matters = _raw_matters(records.connection, minimum_appearances)
+        changed_attachment_ids = _changed_attachment_ids(evidence)
+        raw_matters = _raw_matters(
+            records.connection,
+            minimum_appearances,
+            changed_attachment_ids,
+        )
         candidates = tuple(matter for matter in raw_matters if matter.is_candidate)
         controls = tuple(matter for matter in raw_matters if not matter.is_candidate)
         if len(candidates) < candidate_count:
@@ -374,6 +430,7 @@ def main() -> int:
                 "candidate: adjacent title text changed",
                 "candidate: adjacent supported agenda placement changed",
                 "candidate: adjacent attachment identity set changed",
+                "candidate: a retained attachment target has multiple successful content hashes",
                 "control: no candidate rule matched any adjacent pair",
             ],
             "page47_result_used_for_selection": False,
