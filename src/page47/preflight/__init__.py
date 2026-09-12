@@ -1,1 +1,1 @@
-"""Phase 0 runtime discovery."""
+"""Runtime source discovery and configuration checks."""

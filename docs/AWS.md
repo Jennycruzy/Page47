@@ -1,6 +1,7 @@
 # AWS inventory
 
-This document records the AWS choices made so far and the work still required to make the public service complete. It is intentionally specific about what is live and what is only present in the repository.
+This document records the live AWS architecture, operational configuration, and
+external dependencies for the public Page 47 service.
 
 | Service or resource | Job here | Current state | What breaks without it |
 |---|---|---|---|
@@ -46,7 +47,7 @@ The checked-in preflight arithmetic uses the original USD 50 planning limit, 14 
 
 The two-stage document route is already measured on the stored Seattle run: 20 attachments were selected for page reading after text reading, 11 completed, and 9 recorded a visible failure. Denver currently has 270 selected-attachment reading results, with 259 candidate documents, 10 explicit no-reference results, and 1 unreadable document; two newly recovered candidates also have document-extraction results. The denominator for a future cost statement must be the full number of captured attachments, not only the selected candidates; no model-savings claim is published yet.
 
-## Deployment sequence still required
+## Deployment record
 
 1. Create the least-privilege AgentCore execution role with Bedrock invocation, S3 package read, CloudWatch Logs, and trace permissions. Grant the deployment identity `ssm:GetParameter`, `ssm:PutParameter`, and `iam:PassRole` limited to that role. **Complete.**
 2. Put the execution-role ARN in `/page47/agentcore/execution-role-arn`, run `scripts/deploy_agentcore.py --deploy`, and verify the runtime reaches a healthy state. The script uploads the package, creates or updates `page47_review`, and writes `/page47/agentcore/runtime-arn`. **Complete: runtime reports `READY`.**
@@ -57,7 +58,7 @@ The two-stage document route is already measured on the stored Seattle run: 20 a
 
 The collector's delivery step does not create a message by itself. It loads only saved reviews marked for delivery, matches them against active watches, records one outcome for each watch and review pair, and calls SES only for a confirmed area match. A failed SES call is retained as a failed delivery and is retried on the next scheduled run.
 
-## Evidence backup handoff
+## Evidence backup
 
 The collector script runs the incremental durable-copy step inside the existing
 collector lock with `PAGE47_EVIDENCE_BACKUP_BUCKET` set to

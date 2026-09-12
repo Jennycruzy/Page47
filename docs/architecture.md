@@ -81,11 +81,10 @@ successful check.
 The capture manifest is accompanied by a chained integrity log. Each entry
 commits to the previous chain value and the canonical hash of the corresponding
 manifest record. `SnapshotStore.verify_integrity()` checks the manifest and
-chain before an evidence backup can run. The repository includes an optional
-S3 exporter that copies the original bytes and operational JSON files after
-verification. The current deployment has not configured that bucket, so this is
-an available durability path rather than a claim that the live host already has
-object-storage redundancy.
+chain before an evidence backup can run. The scheduled collector verifies and
+incrementally copies the original bytes and operational JSON files to the
+private, versioned Page 47 evidence bucket in S3. A repeat backup skips objects
+whose recorded SHA-256 is unchanged.
 
 ### 3. Comparison boundary
 
@@ -146,7 +145,7 @@ Every alert includes the private stop-watch link.
 | Amazon CloudWatch | Log delivery, collector completion metric, and missed-run alarm. |
 | Amazon SES | Transactional review email. |
 | AWS Systems Manager | Runtime parameters and deployment configuration. |
-| Amazon S3 (optional) | Verified off-host copy of captured bytes and evidence metadata. |
+| Amazon S3 | Private, versioned off-host copy of captured bytes and evidence metadata. |
 
 ## Security and trust model
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Command-line entry point for the Phase 0 discovery."""
+"""Command-line entry point for source discovery."""
 
 from __future__ import annotations
 

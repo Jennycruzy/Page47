@@ -219,7 +219,7 @@ PYTHONPATH=src python scripts/check_forward_observations.py \
   --output /tmp/page47-forward-observation.json
 ```
 
-To create a verified off-host copy after configuring an S3 bucket:
+To run the evidence backup manually against a configured bucket:
 
 ```bash
 PYTHONPATH=src python scripts/backup_evidence.py \
@@ -269,7 +269,7 @@ runtime secrets.
 | --- | --- |
 | `src/page47/` | Application, adapters, comparison, evidence, investigation, notifications, and web service. |
 | `config/` | City mappings, presentation rules, agent roles, policy, and deployment configuration. |
-| `scripts/` | Preflight, capture, backfill, evaluation, validation, deployment, and operational checks. |
+| `scripts/` | Source discovery, capture, backfill, evaluation, validation, deployment, and operational checks. |
 | `tests/` | Offline application, evidence, evaluation, delivery, and deployment tests. |
 | `docs/audits/` | Dated operational, evaluation, delivery, and observability records. |
 | `docs/architecture.md` | Detailed judge-facing architecture and trust boundaries. |

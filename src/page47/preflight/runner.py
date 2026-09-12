@@ -1,4 +1,4 @@
-"""Run the Phase 0 discovery without assuming a city's field meanings."""
+"""Run source discovery without assuming a city's field meanings."""
 
 from __future__ import annotations
 
@@ -896,7 +896,7 @@ def run(config_path: Path, output_path: Path) -> JSONObject:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Run Page 47 Phase 0 discovery")
+    parser = argparse.ArgumentParser(description="Run Page 47 source discovery")
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     return parser.parse_args()
