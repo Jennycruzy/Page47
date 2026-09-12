@@ -1,7 +1,7 @@
 # Page 47 submission kit
 
 This is the copy-ready package for the Agents for Humans hackathon submission.
-Replace the two placeholders for the demo video and AWS Builder ID before
+Replace the two placeholders for the product video and AWS Builder ID before
 submitting.
 
 ## Submission title
@@ -47,11 +47,11 @@ and a retained searchable managed-runtime trace.
 | Submission field | Value |
 | --- | --- |
 | Public code repository | `https://github.com/Jennycruzy/Page47` |
-| Live demo | `https://page47.xcover.online/` · [open a captured review directly](https://page47.xcover.online/explore) |
+| Live product | `https://page47.xcover.online/` · [open a captured review directly](https://page47.xcover.online/explore) |
 | README | `https://github.com/Jennycruzy/Page47#readme` |
 | Architecture | `https://github.com/Jennycruzy/Page47/blob/main/docs/architecture.svg` (diagram) · `https://github.com/Jennycruzy/Page47/blob/main/docs/architecture.md` (details) |
 | License | MIT: `https://github.com/Jennycruzy/Page47/blob/main/LICENSE` |
-| Demo video | **TODO: paste public video URL; maximum 5 minutes** |
+| Product video | **TODO: paste public video URL; maximum 5 minutes** |
 | AWS Builder ID | **TODO: paste the submitting Builder ID** |
 | Builder.aws post | **TODO: paste the published post URL after publication** |
 
@@ -103,15 +103,16 @@ whether the interpretation survives.
 
 Seattle provides depth and Denver provides a second city adapter. The final
 package includes a live URL, public source code, visible MIT license, README,
-architecture diagram, demo plan, tests, evaluation artifacts, and limitations.
+architecture diagram, walkthrough plan, tests, evaluation artifacts, and
+limitations.
 
 ## Submission checklist
 
 - [ ] Repository visibility is **Public**.
-- [ ] `README.md` leads with the product and live demo.
+- [ ] `README.md` leads with the product and live product link.
 - [ ] `LICENSE` is MIT and visible in the repository.
 - [ ] Architecture diagram opens at `docs/architecture.svg`; detailed Mermaid/source explanation is in `docs/architecture.md`.
-- [ ] Demo video is public and no longer than five minutes.
+- [ ] Product video is public and no longer than five minutes.
 - [ ] Video covers the problem, users, why it matters, and the working product.
 - [ ] AWS Builder ID is entered in the submission form.
 - [ ] Builder.aws post is published publicly before submission, if claiming the

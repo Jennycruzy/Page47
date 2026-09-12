@@ -188,7 +188,7 @@ Page 47 has three separate proof layers:
 1. **Real Seattle export:** 100 matters were evaluated across four arms. All
    four arms surfaced zero cases, and Page 47 returned `cannot_determine` for
    all 100. The completed 30-case human audit is preserved; all 30 historical
-   gold labels are `cannot_determine`. This demonstrates abstention when the
+   gold labels are `cannot_determine`. This shows abstention when the
    available history is insufficient. It is not a directional accuracy claim.
 2. **Controlled directional fixture:** 28 frozen transformations produced
    28/28 expected comparator states, including mixed directions, abstentions,
