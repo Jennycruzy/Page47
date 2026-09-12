@@ -1,0 +1,557 @@
+{
+  "case_id": "Seattle, Washington:8766",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "passed as amended",
+        "action_text": "The Motion carried, the Council Bill (CB) was passed as amended by the following vote, and the President signed the Bill:",
+        "agenda_note": null,
+        "agenda_number": "2.",
+        "agenda_sequence": 15,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 21586,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-08-05T18:54:54.137",
+            "matter_id": 8766,
+            "name": "Summary and Fiscal Note v1",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:50.925050Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4042?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/2fab1c8a-0385-4d8b-ba62-f17046e82540.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 21898,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-08-05T18:54:53.357",
+            "matter_id": 8766,
+            "name": "Central Staff Memo",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:50.925050Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4042?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4b3ed40b-9bfa-446d-8a32-da820786c276.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22009,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-12-06T17:50:50.213",
+            "matter_id": 8766,
+            "name": "Summary and Fiscal Note v2",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:50.925050Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4042?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b4ea1352-3d24-471b-99a7-f77a268e7682.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22126,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-08-09T18:55:45.327",
+            "matter_id": 8766,
+            "name": "Proposed Amendment 3 (added; 7/23/19)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:50.925050Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4042?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/9e826802-9d86-4465-938e-ba14581aa9b2.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22127,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-08-09T18:55:43.37",
+            "matter_id": 8766,
+            "name": "Proposed Amendment 2 (added; 7/23/19)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:50.925050Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4042?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/dee08a89-6416-4043-af0c-2077aac7d154.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22128,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-08-13T17:23:13.76",
+            "matter_id": 8766,
+            "name": "Proposed Amendment 1 (added; 7/23/19)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:50.925050Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4042?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/f082f83b-da04-4415-b5ab-48f2d253fa12.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22129,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-08-09T18:55:51.857",
+            "matter_id": 8766,
+            "name": "Proposed Amendment 4 (added; 7/23/19)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:50.925050Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4042?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/5f8ff547-b762-4cbd-a5ff-40aa63688d2a.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22284,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-10-07T18:21:31.26",
+            "matter_id": 8766,
+            "name": "Mayor's Veto of Council Bill 119551",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:50.925050Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4042?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/751e81dc-7e6b-449d-b871-5dc23370f0d9.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22858,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-09-12T23:42:10.167",
+            "matter_id": 8766,
+            "name": "Signed Ordinance 125886",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:50.925050Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4042?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/94d69f1f-6722-4999-91ed-682f2b269e1d.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 23244,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-10-07T18:21:02.303",
+            "matter_id": 8766,
+            "name": "Affidavit of Publication - Veto Notice",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:50.925050Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4042?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/eb0089b1-e43a-4b9a-9b8f-0d40a3c7c237.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 23245,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-10-07T18:21:43.383",
+            "matter_id": 8766,
+            "name": "Affidavit of Publication",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:50.925050Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4042?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/69eebd76-f970-46d0-a579-523d5035886b.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2019-07-22T00:00:00",
+        "event_id": 4042,
+        "event_item_id": 65759,
+        "item_last_modified_utc": "2019-07-26T18:48:43.92",
+        "matter_id": 8766,
+        "matter_version_at_event": "2",
+        "minutes_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\ul\\f0\\fs24 ACTION 1:\\par\r\n\\ulnone\\par\r\nMotion was made by Councilmember O\\rquote Brien, duly seconded and carried, to amend Council Bill 119551, by amending Section 2, adding a new Seattle Municipal Code Section 5.53.055, as shown in Attachment 2 to the Minutes.\\par\r\n\\par\r\n\\ul ACTION 2:\\par\r\n\\ulnone\\par\r\nMotion was made by Councilmember Herbold, duly seconded and carried, to amend Council Bill 119551, by adding a new fourth recital, as shown in the underlined language below:\\par\r\n\\line WHEREAS, on November 19, 2018, the City Council passed Ordinance 125718, amending Section 3 of Ordinance 125324 concerning use of proceeds of the Sweetened Beverage Tax, to account for higher revenue projections; \\ul and\\par\r\n\\ulnone\\par\r\n\\ul WHEREAS, this legislation is not intended to reduce funding for any impacted programs, and the Executive and City Council are expected to identify other funding sources to maintain full funding for these programs; \\ulnone NOW, THEREFORE,\\par\r\n\\par\r\n\\ul ACTION 3\\par\r\n\\ulnone\\par\r\nMotion was made by Councilmember Gonz\\'e1lez, duly seconded and carried, to amend Council Bill 119551, Section 2, Seattle Municipal Code Section 5.53.055.B.2, first sentence, by deleting the word \\lquote birth\\rquote  before '-to-age-three' and adding the word \\lquote prenatal.\\rquote\\par\r\n\\par\r\n\\ul ACTION 4:\\par\r\n\\ulnone\\par\r\nMotion was made by Councilmember Pacheco and duly seconded, to amend Council Bill 119551, Section 2, Seattle Municipal Code Section 5.53.055.C, as shown in Attachment 3 to the Minutes.\\par\r\n\\par\r\n\\par\r\n\\par\r\nThe Motion failed by the following vote:\\par\r\n\\par\r\nIn Favor: 2 - Bagshaw, Pacheco\\par\r\nOpposed: 6 - Gonz\\'e1lez, Harrell, Herbold, Mosqueda, O\\rquote Brien, Sawant\\par\r\n\\par\r\n\\ul ACTION 5:\\par\r\n\\ulnone\\par\r\nMotion was made and duly seconded to pass Council Bill 119551 as amended.\\cf1\\par\r\n\\cf0\\ul\\b\\par\r\n}\r\n",
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:04:50.925050Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/4042?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "AN ORDINANCE related to creating a fund for Sweetened Beverage Tax revenues; adding a new Section 5.53.055 to the Seattle Municipal Code; and providing additional guidelines for expending proceeds."
+      },
+      {
+        "action_taken": "overridden",
+        "action_text": "Council Bill 119551 passed by the following vote, and the Mayor's Veto was overridden:",
+        "agenda_note": null,
+        "agenda_number": "1.",
+        "agenda_sequence": 14,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 21586,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-08-05T18:54:54.137",
+            "matter_id": 8766,
+            "name": "Summary and Fiscal Note v1",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:45.347703Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4069?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/2fab1c8a-0385-4d8b-ba62-f17046e82540.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 21898,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-08-05T18:54:53.357",
+            "matter_id": 8766,
+            "name": "Central Staff Memo",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:45.347703Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4069?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4b3ed40b-9bfa-446d-8a32-da820786c276.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22009,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-12-06T17:50:50.213",
+            "matter_id": 8766,
+            "name": "Summary and Fiscal Note v2",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:45.347703Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4069?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b4ea1352-3d24-471b-99a7-f77a268e7682.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22126,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-08-09T18:55:45.327",
+            "matter_id": 8766,
+            "name": "Proposed Amendment 3 (added; 7/23/19)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:45.347703Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4069?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/9e826802-9d86-4465-938e-ba14581aa9b2.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22127,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-08-09T18:55:43.37",
+            "matter_id": 8766,
+            "name": "Proposed Amendment 2 (added; 7/23/19)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:45.347703Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4069?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/dee08a89-6416-4043-af0c-2077aac7d154.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22128,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-08-13T17:23:13.76",
+            "matter_id": 8766,
+            "name": "Proposed Amendment 1 (added; 7/23/19)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:45.347703Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4069?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/f082f83b-da04-4415-b5ab-48f2d253fa12.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22129,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-08-09T18:55:51.857",
+            "matter_id": 8766,
+            "name": "Proposed Amendment 4 (added; 7/23/19)",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:45.347703Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4069?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/5f8ff547-b762-4cbd-a5ff-40aa63688d2a.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22284,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-10-07T18:21:31.26",
+            "matter_id": 8766,
+            "name": "Mayor's Veto of Council Bill 119551",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:45.347703Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4069?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/751e81dc-7e6b-449d-b871-5dc23370f0d9.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 22858,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-09-12T23:42:10.167",
+            "matter_id": 8766,
+            "name": "Signed Ordinance 125886",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:45.347703Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4069?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/94d69f1f-6722-4999-91ed-682f2b269e1d.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 23244,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-10-07T18:21:02.303",
+            "matter_id": 8766,
+            "name": "Affidavit of Publication - Veto Notice",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:45.347703Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4069?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/eb0089b1-e43a-4b9a-9b8f-0d40a3c7c237.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 23245,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:04:45.347703Z",
+            "last_modified_utc": "2019-10-07T18:21:43.383",
+            "matter_id": 8766,
+            "name": "Affidavit of Publication",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:04:45.347703Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/4069?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/69eebd76-f970-46d0-a579-523d5035886b.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2019-08-12T00:00:00",
+        "event_id": 4069,
+        "event_item_id": 66323,
+        "item_last_modified_utc": "2019-08-28T19:49:43.583",
+        "matter_id": 8766,
+        "matter_version_at_event": "3",
+        "minutes_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\fs24 The Mayor's Veto Letter is provided as Attachment 1 to the Minutes.\\par\r\n\\par\r\nThe Motion to reconsider passage of Council Bill 119551 was called up and Councilmembers voted to reconsider passage of Council Bill 119551 as amended, with an \"Aye\" vote to override the Mayor's Veto and a \"No\" vote to sustain the Mayor's Veto.\\par\r\n\\par\r\n\\par\r\n\\par\r\n\\par\r\n\\par\r\n}\r\n",
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:04:45.347703Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/4069?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "AN ORDINANCE related to creating a fund for Sweetened Beverage Tax revenues; adding a new Section 5.53.055 to the Seattle Municipal Code; and providing additional guidelines for expending proceeds."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2019-08-12T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "AN ORDINANCE related to creating a fund for Sweetened Beverage Tax revenues; adding a new Section 5.53.055 to the Seattle Municipal Code; and providing additional guidelines for expending proceeds.",
+      "file_number": "CB 119551",
+      "intro_date": "2019-06-05T00:00:00",
+      "last_modified_utc": "2022-02-04T00:40:26.79",
+      "matter_id": 8766,
+      "matter_name": "CB 119551",
+      "source": {
+        "captured_at": "2026-09-04T19:52:18.166095Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=5900&%24orderby=MatterId+asc"
+      },
+      "status_name": "Passed",
+      "type_name": "Ordinance (Ord)",
+      "version": "4"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "matter_id": 8766,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "review_pair": {
+    "current_event_date": "2019-08-12T00:00:00",
+    "current_event_item_id": 66323,
+    "current_placement": null,
+    "current_title": "AN ORDINANCE related to creating a fund for Sweetened Beverage Tax revenues; adding a new Section 5.53.055 to the Seattle Municipal Code; and providing additional guidelines for expending proceeds.",
+    "previous_event_date": "2019-07-22T00:00:00",
+    "previous_event_item_id": 65759,
+    "previous_placement": null,
+    "previous_title": "AN ORDINANCE related to creating a fund for Sweetened Beverage Tax revenues; adding a new Section 5.53.055 to the Seattle Municipal Code; and providing additional guidelines for expending proceeds."
+  }
+}

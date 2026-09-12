@@ -1,0 +1,387 @@
+{
+  "case_id": "Seattle, Washington:16847",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "discussed",
+        "action_text": "The Resolution (Res) was discussed.",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\b\\fs24 Briefing and Discussion \\b0 (30 min) \\par\r\n\\par\r\n\\b Presenter: \\b0 Alicia Teel, Interim Director, Office of Economic Development\\par\r\n}\r\n",
+        "agenda_number": "3.",
+        "agenda_sequence": 9,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 46990,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:00.004241Z",
+            "last_modified_utc": "2026-01-28T01:50:55.983",
+            "matter_id": 16847,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:15.522644Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6573?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6af3a34-f9d5-4aff-b6f4-6a6118a61424.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47191,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:00.004241Z",
+            "last_modified_utc": "2026-02-19T22:47:37.77",
+            "matter_id": 16847,
+            "name": "Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:15.522644Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6573?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/af34d775-c3d4-4999-854e-361c0f212bbc.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47737,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:00.004241Z",
+            "last_modified_utc": "2026-04-21T15:51:40.05",
+            "matter_id": 16847,
+            "name": "Affidavit of Publication",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:15.522644Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6573?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/aeb8ea9e-af49-41c7-a98a-61167c23324d.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47836,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:00.004241Z",
+            "last_modified_utc": "2026-04-29T20:52:59.913",
+            "matter_id": 16847,
+            "name": "Signed Resolution 32191",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:15.522644Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6573?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/3270014b-7dc9-4365-9797-b4e80013f582.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 279,
+        "body_name": "Human Services, Labor, and Economic Development Committee",
+        "consent_value": 0,
+        "event_date": "2026-02-06T00:00:00",
+        "event_id": 6573,
+        "event_item_id": 121038,
+        "item_last_modified_utc": "2026-02-09T18:29:35.657",
+        "matter_id": 16847,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": null,
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:40:15.522644Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6573?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "A RESOLUTION identifying the opportunity to develop a regional transportation hub adjacent to Westlake Park; creating a vision for how this hub will integrate with the surrounding neighborhoods; and setting forth directions for functionality, safety, and urban compatibility, along with guiding principles for the public projects planned for the area adjacent to Westlake Park."
+      },
+      {
+        "action_taken": "adopt",
+        "action_text": "The Committee recommends that City Council adopt the Resolution (Res).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\b\\fs24 Discussion and Possible Vote \\b0 (20 min)\\par\r\n\\par\r\n\\b Presenter: \\b0 Alicia Teel, Acting Director, Office of Economic Development\\par\r\n}\r\n",
+        "agenda_number": "1.",
+        "agenda_sequence": 7,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 46990,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:00.004241Z",
+            "last_modified_utc": "2026-01-28T01:50:55.983",
+            "matter_id": 16847,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:07.673829Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6593?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6af3a34-f9d5-4aff-b6f4-6a6118a61424.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47191,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:00.004241Z",
+            "last_modified_utc": "2026-02-19T22:47:37.77",
+            "matter_id": 16847,
+            "name": "Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:07.673829Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6593?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/af34d775-c3d4-4999-854e-361c0f212bbc.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47737,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:00.004241Z",
+            "last_modified_utc": "2026-04-21T15:51:40.05",
+            "matter_id": 16847,
+            "name": "Affidavit of Publication",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:07.673829Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6593?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/aeb8ea9e-af49-41c7-a98a-61167c23324d.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47836,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:00.004241Z",
+            "last_modified_utc": "2026-04-29T20:52:59.913",
+            "matter_id": 16847,
+            "name": "Signed Resolution 32191",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:07.673829Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6593?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/3270014b-7dc9-4365-9797-b4e80013f582.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 279,
+        "body_name": "Human Services, Labor, and Economic Development Committee",
+        "consent_value": 0,
+        "event_date": "2026-02-20T00:00:00",
+        "event_id": 6593,
+        "event_item_id": 121255,
+        "item_last_modified_utc": "2026-02-23T23:14:04.34",
+        "matter_id": 16847,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:40:07.673829Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6593?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "A RESOLUTION identifying the opportunity to develop a regional transportation hub adjacent to Westlake Park; creating a vision for how this hub will integrate with the surrounding neighborhoods; and setting forth directions for functionality, safety, and urban compatibility, along with guiding principles for the public projects planned for the area adjacent to Westlake Park."
+      },
+      {
+        "action_taken": "adopted",
+        "action_text": "The Resolution (Res) was adopted by the following vote, and the President signed the Resolution (Res):",
+        "agenda_note": null,
+        "agenda_number": "2.",
+        "agenda_sequence": 18,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 46990,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:00.004241Z",
+            "last_modified_utc": "2026-01-28T01:50:55.983",
+            "matter_id": 16847,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:00.004241Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6608?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/d6af3a34-f9d5-4aff-b6f4-6a6118a61424.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47191,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:00.004241Z",
+            "last_modified_utc": "2026-02-19T22:47:37.77",
+            "matter_id": 16847,
+            "name": "Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:00.004241Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6608?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/af34d775-c3d4-4999-854e-361c0f212bbc.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47737,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:00.004241Z",
+            "last_modified_utc": "2026-04-21T15:51:40.05",
+            "matter_id": 16847,
+            "name": "Affidavit of Publication",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:00.004241Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6608?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/aeb8ea9e-af49-41c7-a98a-61167c23324d.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 47836,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:40:00.004241Z",
+            "last_modified_utc": "2026-04-29T20:52:59.913",
+            "matter_id": 16847,
+            "name": "Signed Resolution 32191",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:40:00.004241Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6608?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/3270014b-7dc9-4365-9797-b4e80013f582.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2026-03-03T00:00:00",
+        "event_id": 6608,
+        "event_item_id": 121494,
+        "item_last_modified_utc": "2026-03-03T23:19:29.27",
+        "matter_id": 16847,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:40:00.004241Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6608?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "A RESOLUTION identifying the opportunity to develop a regional transportation hub adjacent to Westlake Park; creating a vision for how this hub will integrate with the surrounding neighborhoods; and setting forth directions for functionality, safety, and urban compatibility, along with guiding principles for the public projects planned for the area adjacent to Westlake Park."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2026-03-03T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "A RESOLUTION identifying the opportunity to develop a regional transportation hub adjacent to Westlake Park; creating a vision for how this hub will integrate with the surrounding neighborhoods; and setting forth directions for functionality, safety, and urban compatibility, along with guiding principles for the public projects planned for the area adjacent to Westlake Park.",
+      "file_number": "Res 32191",
+      "intro_date": "2026-01-27T00:00:00",
+      "last_modified_utc": "2026-04-29T20:53:14.95",
+      "matter_id": 16847,
+      "matter_name": null,
+      "source": {
+        "captured_at": "2026-09-04T20:15:52.300329Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=13200&%24orderby=MatterId+asc"
+      },
+      "status_name": "Adopted",
+      "type_name": "Resolution (Res)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "matter_id": 16847,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "review_pair": {
+    "current_event_date": "2026-02-20T00:00:00",
+    "current_event_item_id": 121255,
+    "current_placement": null,
+    "current_title": "A RESOLUTION identifying the opportunity to develop a regional transportation hub adjacent to Westlake Park; creating a vision for how this hub will integrate with the surrounding neighborhoods; and setting forth directions for functionality, safety, and urban compatibility, along with guiding principles for the public projects planned for the area adjacent to Westlake Park.",
+    "previous_event_date": "2026-02-06T00:00:00",
+    "previous_event_item_id": 121038,
+    "previous_placement": null,
+    "previous_title": "A RESOLUTION identifying the opportunity to develop a regional transportation hub adjacent to Westlake Park; creating a vision for how this hub will integrate with the surrounding neighborhoods; and setting forth directions for functionality, safety, and urban compatibility, along with guiding principles for the public projects planned for the area adjacent to Westlake Park."
+  }
+}

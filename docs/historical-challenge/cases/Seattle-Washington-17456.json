@@ -191,7 +191,6 @@
     "record_limit": "This record contains only public material returned by the city service."
   },
   "city": "Seattle, Washington",
-  "cohort_role": "candidate",
   "matter_id": 17456,
   "review": {
     "adjudicated": {
@@ -210,24 +209,14 @@
       "reason": null
     }
   },
-  "selected_pairs": [
-    {
-      "attachment_ids_with_multiple_captured_hashes": [],
-      "current_event_date": "2026-09-15T00:00:00",
-      "current_event_item_id": 125767,
-      "current_placement": "consent",
-      "current_title": "A resolution declaring the Seattle City Council\u2019s intent for the City of Seattle to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College.",
-      "previous_event_date": "2026-09-08T00:00:00",
-      "previous_event_item_id": 125550,
-      "previous_placement": "cannot_determine",
-      "previous_title": "A resolution declaring the City of Seattle\u2019s intent to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College.",
-      "reasons": [
-        "title_changed"
-      ]
-    }
-  ],
-  "selection_index": 7,
-  "selection_reasons": [
-    "title_changed"
-  ]
+  "review_pair": {
+    "current_event_date": "2026-09-15T00:00:00",
+    "current_event_item_id": 125767,
+    "current_placement": "consent",
+    "current_title": "A resolution declaring the Seattle City Council\u2019s intent for the City of Seattle to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College.",
+    "previous_event_date": "2026-09-08T00:00:00",
+    "previous_event_item_id": 125550,
+    "previous_placement": "cannot_determine",
+    "previous_title": "A resolution declaring the City of Seattle\u2019s intent to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College."
+  }
 }

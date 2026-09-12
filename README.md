@@ -196,13 +196,14 @@ Page 47 has three separate proof layers:
    instruction-like document text. Two reversal pairs were correct in both
    directions. The deterministic fixture is not a real-world accuracy claim.
 3. **Historical challenge cohort:** the repository includes 40 real Seattle
-   matters selected without using Page 47's result: all 7 available raw-change
-   candidates and 33 controls. The complete case payloads, source snapshot,
-   selection rules, and independent label slots are preserved in the
+   matters selected without using Page 47's result. The reviewer-facing packet
+   is blind: candidate/control roles, selection reasons, and selected-pair
+   metadata are withheld in a separate answer key until two independent labels
+   and adjudication are complete. The neutral case payloads and one fixed
+   review pair per matter are available through the
    [browser-friendly case index](docs/historical-challenge/index.json) and the
-   [complete review packet](docs/historical-challenge-cohort.json). It remains
-   pending two independent labels and adjudication, so no challenge-cohort
-   accuracy claim is published yet.
+   [complete review packet](docs/historical-challenge-cohort.json). No
+   challenge-cohort accuracy claim is published yet.
 4. **Managed runtime proof:** a real stored Seattle matter completed through the
    deployed AgentCore runtime, retained its investigation, and produced a
    searchable trace. See the [observability audit](docs/audits/observability.md)

@@ -1,0 +1,157 @@
+{
+  "case_id": "Seattle, Washington:17326",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "confirm",
+        "action_text": "The Committee recommends that City Council confirm the Appointment (Appt).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing, Discussion, and Possible Vote\\cf1\\b0\\par\r\n}\r\n",
+        "agenda_number": "13.",
+        "agenda_sequence": 19,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 48582,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:36.834654Z",
+            "last_modified_utc": "2026-07-06T17:06:38.227",
+            "matter_id": 17326,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:39.204286Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6835?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/cfb81c4f-64c0-491f-acd6-20c043fad7cb.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 278,
+        "body_name": "Housing, Arts, and Civil Rights Committee",
+        "consent_value": 0,
+        "event_date": "2026-07-22T00:00:00",
+        "event_id": 6835,
+        "event_item_id": 124724,
+        "item_last_modified_utc": "2026-07-23T17:01:59.673",
+        "matter_id": 17326,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:38:39.204286Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6835?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Reappointment of Shelby Dey as member, Seattle Disability Commission, for a term to April 30, 2028."
+      },
+      {
+        "action_taken": "confirmed",
+        "action_text": "The Appointment (Appt) was confirmed on the Consent Calendar by the following vote:",
+        "agenda_note": null,
+        "agenda_number": "16.",
+        "agenda_sequence": 30,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 48582,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:38:36.834654Z",
+            "last_modified_utc": "2026-07-06T17:06:38.227",
+            "matter_id": 17326,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:38:36.834654Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6839?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/cfb81c4f-64c0-491f-acd6-20c043fad7cb.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2026-07-28T00:00:00",
+        "event_id": 6839,
+        "event_item_id": 124829,
+        "item_last_modified_utc": "2026-07-29T18:43:10.56",
+        "matter_id": 17326,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:38:36.834654Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6839?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Reappointment of Shelby Dey as member, Seattle Disability Commission, for a term to April 30, 2028."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2026-07-28T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "Reappointment of Shelby Dey as member, Seattle Disability Commission, for a term to April 30, 2028.",
+      "file_number": "Appt 03559",
+      "intro_date": "2026-07-06T00:00:00",
+      "last_modified_utc": "2026-07-29T18:43:10.373",
+      "matter_id": 17326,
+      "matter_name": null,
+      "source": {
+        "captured_at": "2026-09-04T20:15:55.459643Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=13600&%24orderby=MatterId+asc"
+      },
+      "status_name": "Confirmed",
+      "type_name": "Appointment (Appt)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "matter_id": 17326,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "review_pair": {
+    "current_event_date": "2026-07-28T00:00:00",
+    "current_event_item_id": 124829,
+    "current_placement": null,
+    "current_title": "Reappointment of Shelby Dey as member, Seattle Disability Commission, for a term to April 30, 2028.",
+    "previous_event_date": "2026-07-22T00:00:00",
+    "previous_event_item_id": 124724,
+    "previous_placement": null,
+    "previous_title": "Reappointment of Shelby Dey as member, Seattle Disability Commission, for a term to April 30, 2028."
+  }
+}

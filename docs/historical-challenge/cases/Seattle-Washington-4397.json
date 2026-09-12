@@ -1,0 +1,317 @@
+{
+  "case_id": "Seattle, Washington:4397",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "postponed",
+        "action_text": "The Motion carried and the Council Bill (CB) was held until October 31, 2016 by the following vote:",
+        "agenda_note": null,
+        "agenda_number": "1.",
+        "agenda_sequence": 14,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 8532,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:33.949617Z",
+            "last_modified_utc": "2019-07-09T23:20:40.713",
+            "matter_id": 4397,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:38.532238Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2509?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/ef3dc226-786d-4ad5-bc62-fe7ff6cdf34a.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 8899,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:33.949617Z",
+            "last_modified_utc": "2016-12-22T18:32:59.7",
+            "matter_id": 4397,
+            "name": "SCL Enery Imbalance Market Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:38.532238Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2509?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4ca3da37-d9b2-46ed-864d-d62c4f11fb85.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 9388,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:33.949617Z",
+            "last_modified_utc": "2019-07-09T23:20:04.303",
+            "matter_id": 4397,
+            "name": "Proposed Amendment",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:38.532238Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2509?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/33b8ec57-b598-4436-a890-0b6e9093292c.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 10160,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:33.949617Z",
+            "last_modified_utc": "2016-12-22T18:32:08.1",
+            "matter_id": 4397,
+            "name": "Signed Ordinance 125176",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:38.532238Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2509?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/2eedae29-9ee6-4b4e-9fed-37733a9ba7ab.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 16735,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:33.949617Z",
+            "last_modified_utc": "2018-05-02T17:53:59.33",
+            "matter_id": 4397,
+            "name": "Affidavit of Publication",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:38.532238Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2509?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b5d2a6c2-a82a-467d-bef6-f4aa05c3f81c.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2016-10-10T00:00:00",
+        "event_id": 2509,
+        "event_item_id": 35984,
+        "item_last_modified_utc": "2016-10-13T16:38:49.257",
+        "matter_id": 4397,
+        "matter_version_at_event": "2",
+        "minutes_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\fs24 Motion was made and duly seconded to hold Council Bill 118798, until October 31, 2016.\\par\r\n}\r\n",
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:38.532238Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2509?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "AN ORDINANCE relating to the City Light Department; authorizing the Department to participate in the California Independent System Operator\u2019s Energy Imbalance Market, including authorizing the execution of any necessary agreements with the California Independent System Operator, as well as any additional agreements necessary or convenient for implementation and participation in the California Independent System Operator\u2019s Energy Imbalance Market."
+      },
+      {
+        "action_taken": "passed as amended",
+        "action_text": "The Motion carried, the Council Bill (CB) was passed as amended by the following vote, and the President signed the Bill:",
+        "agenda_note": null,
+        "agenda_number": "1.",
+        "agenda_sequence": 14,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 8532,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:33.949617Z",
+            "last_modified_utc": "2019-07-09T23:20:40.713",
+            "matter_id": 4397,
+            "name": "Summary and Fiscal Note",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:33.949617Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2525?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/ef3dc226-786d-4ad5-bc62-fe7ff6cdf34a.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 8899,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:33.949617Z",
+            "last_modified_utc": "2016-12-22T18:32:59.7",
+            "matter_id": 4397,
+            "name": "SCL Enery Imbalance Market Presentation",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:33.949617Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2525?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/4ca3da37-d9b2-46ed-864d-d62c4f11fb85.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 9388,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:33.949617Z",
+            "last_modified_utc": "2019-07-09T23:20:04.303",
+            "matter_id": 4397,
+            "name": "Proposed Amendment",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:33.949617Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2525?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/33b8ec57-b598-4436-a890-0b6e9093292c.docx",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 10160,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:33.949617Z",
+            "last_modified_utc": "2016-12-22T18:32:08.1",
+            "matter_id": 4397,
+            "name": "Signed Ordinance 125176",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:33.949617Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2525?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/2eedae29-9ee6-4b4e-9fed-37733a9ba7ab.pdf",
+            "version": "0"
+          },
+          {
+            "anchors": [],
+            "attachment_id": 16735,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T20:08:33.949617Z",
+            "last_modified_utc": "2018-05-02T17:53:59.33",
+            "matter_id": 4397,
+            "name": "Affidavit of Publication",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T20:08:33.949617Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/2525?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": true,
+            "url": "https://legistar2.granicus.com/seattle/attachments/b5d2a6c2-a82a-467d-bef6-f4aa05c3f81c.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2016-10-31T00:00:00",
+        "event_id": 2525,
+        "event_item_id": 36399,
+        "item_last_modified_utc": "2016-11-01T18:17:56.047",
+        "matter_id": 4397,
+        "matter_version_at_event": "2",
+        "minutes_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\ul\\fs24 ACTION 1:\\ulnone\\par\r\n\\par\r\nMotion was made by Councilmember \\cf0\\f1 Gonz\\'e1lez\\cf1\\f0 , duly seconded and carried, to amend Council Bill 118798, by substituting Section 4, with the underlined and strike through language below:\\par\r\n\\par\r\n\\cf0\\f1 Section 4. \\ul By April 10, 2017,\\ulnone  City Light will provide the Council\\rquote s Energy and Environment Committee with a detailed analysis of costs, benefits, and potential risks of participation in the CAISO EIM\\strike  as the information becomes available \\strike0 to support the Council\\rquote s decision about its participation in the market.\\par\r\n\\cf1\\f0\\par\r\n\\ul ACTION 2:\\ulnone\\par\r\n\\par\r\nMotion was made and duly seconded to pass Council Bill 118798 as amended.\\par\r\n}\r\n",
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T20:08:33.949617Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/2525?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "AN ORDINANCE relating to the City Light Department; authorizing the Department to participate in the California Independent System Operator\u2019s Energy Imbalance Market, including authorizing the execution of any necessary agreements with the California Independent System Operator, as well as any additional agreements necessary or convenient for implementation and participation in the California Independent System Operator\u2019s Energy Imbalance Market."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2016-10-31T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "AN ORDINANCE relating to the City Light Department; authorizing the Department to participate in the California Independent System Operator\u2019s Energy Imbalance Market, including authorizing the execution of any necessary agreements with the California Independent System Operator, as well as any additional agreements necessary or convenient for implementation and participation in the California Independent System Operator\u2019s Energy Imbalance Market.",
+      "file_number": "CB 118798",
+      "intro_date": "2016-08-02T00:00:00",
+      "last_modified_utc": "2019-07-09T23:20:40.713",
+      "matter_id": 4397,
+      "matter_name": "CB 118798",
+      "source": {
+        "captured_at": "2026-09-04T19:51:49.687397Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=2000&%24orderby=MatterId+asc"
+      },
+      "status_name": "Passed",
+      "type_name": "Ordinance (Ord)",
+      "version": "3"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "matter_id": 4397,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "review_pair": {
+    "current_event_date": "2016-10-31T00:00:00",
+    "current_event_item_id": 36399,
+    "current_placement": null,
+    "current_title": "AN ORDINANCE relating to the City Light Department; authorizing the Department to participate in the California Independent System Operator\u2019s Energy Imbalance Market, including authorizing the execution of any necessary agreements with the California Independent System Operator, as well as any additional agreements necessary or convenient for implementation and participation in the California Independent System Operator\u2019s Energy Imbalance Market.",
+    "previous_event_date": "2016-10-10T00:00:00",
+    "previous_event_item_id": 35984,
+    "previous_placement": null,
+    "previous_title": "AN ORDINANCE relating to the City Light Department; authorizing the Department to participate in the California Independent System Operator\u2019s Energy Imbalance Market, including authorizing the execution of any necessary agreements with the California Independent System Operator, as well as any additional agreements necessary or convenient for implementation and participation in the California Independent System Operator\u2019s Energy Imbalance Market."
+  }
+}

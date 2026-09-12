@@ -17,3 +17,6 @@ runtime/
 .env
 .env.*
 !.env.example
+
+# Keep the historical-cohort selection answer key outside the reviewer packet.
+*historical-challenge-answer-key*.json

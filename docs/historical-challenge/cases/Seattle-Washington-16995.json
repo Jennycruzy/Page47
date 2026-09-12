@@ -306,7 +306,6 @@
     "record_limit": "This record contains only public material returned by the city service."
   },
   "city": "Seattle, Washington",
-  "cohort_role": "candidate",
   "matter_id": 16995,
   "review": {
     "adjudicated": {
@@ -325,24 +324,14 @@
       "reason": null
     }
   },
-  "selected_pairs": [
-    {
-      "attachment_ids_with_multiple_captured_hashes": [],
-      "current_event_date": "2026-08-04T00:00:00",
-      "current_event_item_id": 124998,
-      "current_placement": "consent",
-      "current_title": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions.",
-      "previous_event_date": "2026-07-27T00:00:00",
-      "previous_event_item_id": 124622,
-      "previous_placement": "regular",
-      "previous_title": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions.",
-      "reasons": [
-        "agenda_placement_changed"
-      ]
-    }
-  ],
-  "selection_index": 4,
-  "selection_reasons": [
-    "agenda_placement_changed"
-  ]
+  "review_pair": {
+    "current_event_date": "2026-08-04T00:00:00",
+    "current_event_item_id": 124998,
+    "current_placement": "consent",
+    "current_title": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions.",
+    "previous_event_date": "2026-07-27T00:00:00",
+    "previous_event_item_id": 124622,
+    "previous_placement": "regular",
+    "previous_title": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions."
+  }
 }

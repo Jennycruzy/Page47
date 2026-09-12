@@ -1380,7 +1380,6 @@
     "record_limit": "This record contains only public material returned by the city service."
   },
   "city": "Seattle, Washington",
-  "cohort_role": "candidate",
   "matter_id": 17402,
   "review": {
     "adjudicated": {
@@ -1399,24 +1398,14 @@
       "reason": null
     }
   },
-  "selected_pairs": [
-    {
-      "attachment_ids_with_multiple_captured_hashes": [],
-      "current_event_date": "2026-09-11T00:00:00",
-      "current_event_item_id": 125567,
-      "current_placement": "cannot_determine",
-      "current_title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones.",
-      "previous_event_date": "2026-08-19T00:00:00",
-      "previous_event_item_id": 125436,
-      "previous_placement": null,
-      "previous_title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones.",
-      "reasons": [
-        "attachment_set_changed"
-      ]
-    }
-  ],
-  "selection_index": 6,
-  "selection_reasons": [
-    "attachment_set_changed"
-  ]
+  "review_pair": {
+    "current_event_date": "2026-09-11T00:00:00",
+    "current_event_item_id": 125567,
+    "current_placement": "cannot_determine",
+    "current_title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones.",
+    "previous_event_date": "2026-08-19T00:00:00",
+    "previous_event_item_id": 125436,
+    "previous_placement": null,
+    "previous_title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones."
+  }
 }

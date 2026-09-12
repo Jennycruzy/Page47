@@ -1,0 +1,157 @@
+{
+  "case_id": "Seattle, Washington:16017",
+  "case_payload": {
+    "appearances": [
+      {
+        "action_taken": "confirm",
+        "action_text": "The Committee recommends that City Council confirm the Appointment (Appt).",
+        "agenda_note": "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}{\\f1\\fswiss\\fprq2\\fcharset0 Arial;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\b\\fs24 Briefing, Discussion, and Possible Vote\\b0\\par\r\n\\par\r\n\\pard\\sa160\\sl252\\slmult1\\cf1\\b\\f1 Presenter:\\b0  Eci Ameh, Interim Executive Director, Community Police Commission\\f0\\par\r\n}\r\n",
+        "agenda_number": "1.",
+        "agenda_sequence": 7,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 43894,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:41:37.935565Z",
+            "last_modified_utc": "2025-04-09T21:57:58.76",
+            "matter_id": 16017,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:41:41.000972Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6242?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/05612038-c871-4d6e-8f7d-63966408d24b.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 270,
+        "body_name": "Public Safety Committee",
+        "consent_value": 0,
+        "event_date": "2025-04-29T00:00:00",
+        "event_id": 6242,
+        "event_item_id": 114265,
+        "item_last_modified_utc": "2025-04-30T17:16:43.73",
+        "matter_id": 16017,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:41:41.000972Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6242?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Appointment of Ken Nsimbi as member, Community Police Commission, for a term to December 31, 2026."
+      },
+      {
+        "action_taken": "confirmed",
+        "action_text": "The Appointment (Appt) was confirmed on the Consent Calendar by the following vote:",
+        "agenda_note": null,
+        "agenda_number": "5.",
+        "agenda_sequence": 19,
+        "attachments": [
+          {
+            "anchors": [],
+            "attachment_id": 43894,
+            "content_hash": null,
+            "first_observed_by_us": "2026-09-04T19:41:37.935565Z",
+            "last_modified_utc": "2025-04-09T21:57:58.76",
+            "matter_id": 16017,
+            "name": "Appointment Packet",
+            "page_count": null,
+            "reading_source": null,
+            "reading_status": null,
+            "source": {
+              "captured_at": "2026-09-04T19:41:37.935565Z",
+              "kind": "api",
+              "url": "https://webapi.legistar.com/v1/seattle/events/6268?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+            },
+            "supporting_document": false,
+            "url": "https://legistar2.granicus.com/seattle/attachments/05612038-c871-4d6e-8f7d-63966408d24b.pdf",
+            "version": "0"
+          }
+        ],
+        "body_id": 138,
+        "body_name": "City Council",
+        "consent_value": 0,
+        "event_date": "2025-05-06T00:00:00",
+        "event_id": 6268,
+        "event_item_id": 114538,
+        "item_last_modified_utc": "2025-05-07T22:29:11.52",
+        "matter_id": 16017,
+        "matter_version_at_event": "1",
+        "minutes_note": null,
+        "passed_flag_name": "Pass",
+        "pdf_evidence_pages": [],
+        "pdf_placement": null,
+        "pdf_placement_reason": null,
+        "pdf_source": null,
+        "source": {
+          "captured_at": "2026-09-04T19:41:37.935565Z",
+          "kind": "api",
+          "url": "https://webapi.legistar.com/v1/seattle/events/6268?EventItems=1&AgendaNote=1&MinutesNote=1&EventItemAttachments=1"
+        },
+        "title_as_presented": "Appointment of Ken Nsimbi as member, Community Police Commission, for a term to December 31, 2026."
+      }
+    ],
+    "city": "Seattle, Washington",
+    "matter": {
+      "agenda_date": "2025-05-06T00:00:00",
+      "body_id": 169,
+      "body_name": "City Clerk",
+      "current_title": "Appointment of Ken Nsimbi as member, Community Police Commission, for a term to December 31, 2026.",
+      "file_number": "Appt 03129",
+      "intro_date": "2025-04-07T00:00:00",
+      "last_modified_utc": "2025-05-07T16:24:37.957",
+      "matter_id": 16017,
+      "matter_name": null,
+      "source": {
+        "captured_at": "2026-09-04T20:15:46.415248Z",
+        "kind": "api",
+        "url": "https://webapi.legistar.com/v1/seattle/matters?%24top=100&%24skip=12500&%24orderby=MatterId+asc"
+      },
+      "status_name": "Confirmed",
+      "type_name": "Appointment (Appt)",
+      "version": "1"
+    },
+    "record_limit": "This record contains only public material returned by the city service."
+  },
+  "city": "Seattle, Washington",
+  "matter_id": 16017,
+  "review": {
+    "adjudicated": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_a": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    },
+    "reviewer_b": {
+      "evidence": [],
+      "label": null,
+      "reason": null
+    }
+  },
+  "review_pair": {
+    "current_event_date": "2025-05-06T00:00:00",
+    "current_event_item_id": 114538,
+    "current_placement": null,
+    "current_title": "Appointment of Ken Nsimbi as member, Community Police Commission, for a term to December 31, 2026.",
+    "previous_event_date": "2025-04-29T00:00:00",
+    "previous_event_item_id": 114265,
+    "previous_placement": null,
+    "previous_title": "Appointment of Ken Nsimbi as member, Community Police Commission, for a term to December 31, 2026."
+  }
+}

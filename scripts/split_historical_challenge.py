@@ -9,6 +9,10 @@ import re
 from pathlib import Path
 from typing import Any
 
+WITHHELD_FIELDS = frozenset(
+    {"cohort_role", "selection_reasons", "selected_pairs", "selection_index"}
+)
+
 
 def _load(path: Path) -> dict[str, Any]:
     try:
@@ -44,6 +48,9 @@ def main() -> int:
     for raw_item in raw_items:
         if not isinstance(raw_item, dict):
             raise ValueError("Challenge packet item must be an object")
+        leaked = sorted(WITHHELD_FIELDS.intersection(raw_item))
+        if leaked:
+            raise ValueError(f"Reviewer packet exposes withheld fields: {leaked}")
         case_id = raw_item.get("case_id")
         if not isinstance(case_id, str) or not case_id.strip() or case_id in seen_ids:
             raise ValueError("Challenge packet case IDs must be unique non-empty text")

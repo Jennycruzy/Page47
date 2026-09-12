@@ -286,7 +286,6 @@
     "record_limit": "This record contains only public material returned by the city service."
   },
   "city": "Seattle, Washington",
-  "cohort_role": "control",
   "matter_id": 2289,
   "review": {
     "adjudicated": {
@@ -305,9 +304,14 @@
       "reason": null
     }
   },
-  "selected_pairs": [],
-  "selection_index": 9,
-  "selection_reasons": [
-    "mechanical_control"
-  ]
+  "review_pair": {
+    "current_event_date": "2015-05-26T00:00:00",
+    "current_event_item_id": 21064,
+    "current_placement": null,
+    "current_title": "AN ORDINANCE relating to the 2015 Budget; amending Ordinance 124648, which adopted the 2015 Budget; changing appropriations to the Seattle Department of Transportation and to the Human Services Department; creating both exempt and non-exempt positions; authorizing the Director of Finance to enter into an interlocal agreement with the State Department of Licensing; and ratifying and confirming certain prior acts; all by at least a 3/4 vote of the City Council.",
+    "previous_event_date": "2015-05-18T00:00:00",
+    "previous_event_item_id": 20723,
+    "previous_placement": null,
+    "previous_title": "AN ORDINANCE relating to the 2015 Budget; amending Ordinance 124648, which adopted the 2015 Budget; changing appropriations to the Seattle Department of Transportation and to the Human Services Department; creating both exempt and non-exempt positions; authorizing the Director of Finance to enter into an interlocal agreement with the State Department of Licensing; and ratifying and confirming certain prior acts; all by at least a 3/4 vote of the City Council."
+  }
 }

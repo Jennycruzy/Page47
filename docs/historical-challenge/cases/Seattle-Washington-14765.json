@@ -1286,7 +1286,6 @@
     "record_limit": "This record contains only public material returned by the city service."
   },
   "city": "Seattle, Washington",
-  "cohort_role": "candidate",
   "matter_id": 14765,
   "review": {
     "adjudicated": {
@@ -1305,24 +1304,14 @@
       "reason": null
     }
   },
-  "selected_pairs": [
-    {
-      "attachment_ids_with_multiple_captured_hashes": [],
-      "current_event_date": "2026-08-04T00:00:00",
-      "current_event_item_id": 124999,
-      "current_placement": "consent",
-      "current_title": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N.",
-      "previous_event_date": "2026-07-27T00:00:00",
-      "previous_event_item_id": 124621,
-      "previous_placement": "regular",
-      "previous_title": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N.",
-      "reasons": [
-        "agenda_placement_changed"
-      ]
-    }
-  ],
-  "selection_index": 1,
-  "selection_reasons": [
-    "agenda_placement_changed"
-  ]
+  "review_pair": {
+    "current_event_date": "2026-08-04T00:00:00",
+    "current_event_item_id": 124999,
+    "current_placement": "consent",
+    "current_title": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N.",
+    "previous_event_date": "2026-07-27T00:00:00",
+    "previous_event_item_id": 124621,
+    "previous_placement": "regular",
+    "previous_title": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N."
+  }
 }

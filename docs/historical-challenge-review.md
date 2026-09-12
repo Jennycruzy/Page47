@@ -1,70 +1,37 @@
 # Historical challenge cohort review
 
-This artifact is a mechanically selected historical challenge cohort for Page
-47. It is designed to test the detector on real stored records where a raw
-record change is present, while keeping a control group that did not match any
-selection rule.
+This is a blind review packet for real Seattle records retained by Page 47.
+It tests whether the detector behaves correctly on historical transitions that
+are mechanically selected from raw record changes, without using Page 47's
+classification or output to choose cases.
 
-The checked-in packet is
-[`docs/historical-challenge-cohort.json`](historical-challenge-cohort.json).
-It contains 40 Seattle matters. Because the complete packet is a large JSON
-download, the repository also provides a browser-friendly
-[case index](historical-challenge/index.json),
-[case directory](historical-challenge/), and one retained JSON file per case.
-Use the case files to inspect individual records in a browser; the complete
-packet remains the canonical audit artifact:
+## Reviewer materials
 
-- [browser-friendly challenge packet](historical-challenge/README.md)
-- [complete canonical packet](historical-challenge-cohort.json)
+Use the [browser-friendly packet](historical-challenge/README.md), beginning
+with its [compact index](historical-challenge/index.json). The complete
+[canonical packet](historical-challenge-cohort.json) is preserved for download
+and audit, but is too large for comfortable browser rendering.
 
-The packet contains:
+The reviewer-facing packet contains 40 cases in a shuffled order. Every item
+has the same fields: a case ID, city, matter ID, one fixed adjacent
+`review_pair`, the complete retained case payload, and empty review slots. It
+does not contain candidate/control roles, selection reasons, selected-pair
+metadata, or comparator output. The individual case files contain the same
+neutral fields.
 
-- 7 candidates: all matters in the retained dataset that met the mechanical
-  change rules;
-- 33 controls: matters with at least two appearances where no candidate rule
-  matched.
+The separate selection answer key is held outside the repository. Do not give
+it to either reviewer before both independent labels are complete. It records
+the candidate/control composition, exclusions, selection rules, selected raw
+pairs, and source hashes needed for later scoring.
 
-The candidate pool could not honestly support the originally suggested 35
-candidate cases. The packet therefore includes every available candidate and
-states the limitation in its selection metadata. The controls bring the cohort
-to 40 cases; they must not be presented as additional positive cases.
+## What is being labelled
 
-## Selection boundary
+The unit is one matter-level judgment for the fixed adjacent pair shown in
+`review_pair`. Review that pair against the complete case payload and the
+retained primary evidence. Do not combine multiple transitions into one
+judgment. The same unit applies to every case, including controls.
 
-The builder uses only raw stored record fields and the evidence manifest. It
-does not import Page 47's comparator, read its output, or select cases because
-they look alarming.
-
-A matter enters the candidate pool when an adjacent pair has at least one of
-these properties:
-
-- title text changed;
-- supported agenda placement changed between `regular` and `consent`;
-- the attachment identity set changed;
-- a retained attachment target has more than one successful captured content
-  hash.
-
-Controls have at least two recorded appearances and match none of those rules.
-The selection seed is 47 and the source snapshot records the database hash,
-evidence-chain hash, integrity root, candidate-pool hash, selected-ID hash, and
-builder revision.
-
-## Independent labelling
-
-Do not open Page 47's comparison output while labelling. The packet contains no
-comparator result, but the selection metadata is included for auditability. If
-the strongest possible blind review is required, give each reviewer a copy with
-`cohort_role`, `selection_reasons`, and `selected_pairs` removed while retaining
-`case_id` and `case_payload`.
-
-Two reviewers label every case independently. Each reviewer records:
-
-- one state;
-- one plain-language reason;
-- at least one primary source URL and capture time;
-- a PDF page number when the judgment relies on a page.
-
-Use only these states:
+Use exactly one of these five states:
 
 - `clearer`: supported presentation became more representative or visible;
 - `less_clear`: supported presentation became less representative or visible;
@@ -74,23 +41,36 @@ Use only these states:
   direction.
 
 Do not label motive, legality, policy merits, or whether anyone acted
-improperly. A changed attachment or title is a reason to inspect a case, not a
-directional label by itself.
+improperly. A raw title, placement, or attachment change is a reason to inspect
+a case, not a directional label by itself.
 
-After both labels are retained, adjudicate disagreements. Keep both original
-labels, the adjudicated state, the evidence, and the reason. Never overwrite an
-original reviewer label.
+## Reviewer record
 
-## Validation gates
+Each reviewer records:
 
-Before review:
+- one state;
+- one plain-language reason;
+- at least one primary source URL and capture time;
+- a PDF page number when the judgment relies on a page.
+
+Reviewer A and Reviewer B must work from separate copies and must not inspect
+Page 47 comparator output or the withheld answer key. Keep their original
+labels unchanged. After both are retained, adjudicate disagreements in a third
+field with the evidence and reason for the decision.
+
+## Validation
+
+Before labelling, validate the neutral packet:
 
 ```sh
 PYTHONPATH=src python scripts/validate_historical_challenge.py \
   --input docs/historical-challenge-cohort.json
 ```
 
-After all independent labels and adjudications are complete, change the packet
+The validator rejects candidate/control fields, non-uniform item shapes,
+missing review-pair fields, duplicate case IDs, and invalid review slots.
+
+After both independent labels and adjudications are complete, set the packet
 status to `labels_complete` and run:
 
 ```sh
@@ -99,18 +79,13 @@ PYTHONPATH=src python scripts/validate_historical_challenge.py \
   --require-labels
 ```
 
-Only then should a separate scoring script calculate a five-way confusion
-matrix, per-state precision and recall, surfaced-positive precision,
-abstention correctness, reviewer agreement, evidence coverage, and provenance
-validity. Until that gate passes, the packet is a review input, not an
-evaluation result.
-
-Run the scoring gate with the same database and evidence root recorded in the
-packet:
+Score only with the withheld answer key generated alongside the packet and
+kept outside the repository:
 
 ```sh
 PYTHONPATH=src python scripts/score_historical_challenge.py \
   --cohort docs/historical-challenge-cohort.json \
+  --answer-key /path/outside/repository/page47-historical-challenge-answer-key.json \
   --database runtime/records/seattle.sqlite3 \
   --evidence-root runtime/evidence/seattle \
   --presentation config/presentation.yaml \
@@ -118,10 +93,21 @@ PYTHONPATH=src python scripts/score_historical_challenge.py \
   --code-revision <scoring-code-revision>
 ```
 
-The scorer refuses to run if the labels are incomplete or if the database or
-evidence chain no longer matches the packet's source snapshot. Its output stays
-`review_required` until the results receive an independent check.
+The scorer verifies the packet hash, database hash, evidence chain, and
+integrity root before calculating the five-way confusion matrix, per-state
+precision and recall, surfaced-positive precision, abstention correctness,
+reviewer agreement, evidence coverage, and provenance validity.
 
-This is a mechanically selected challenge cohort, not a representative sample
-of Seattle public records. Its purpose is to test behavior on real retained
-transitions and to make the evidence boundary inspectable.
+## Selection boundary after review
+
+The withheld answer key is the place to inspect the counts and exclusions. The
+current construction starts with 470 repeated Seattle matters, excludes
+recurring agenda/minutes containers, and selects all remaining mechanical
+candidates plus randomly sampled controls. The exact post-exclusion counts,
+candidate IDs, and selection reasons remain withheld until labelling is
+complete so that the review remains blind.
+
+This is a mechanically selected historical challenge cohort, not a prevalence
+sample and not a representative accuracy estimate. Its purpose is to test
+behavior on real retained records while keeping the evidence boundary
+inspectable.

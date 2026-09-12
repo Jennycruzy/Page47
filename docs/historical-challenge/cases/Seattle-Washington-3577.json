@@ -206,7 +206,6 @@
     "record_limit": "This record contains only public material returned by the city service."
   },
   "city": "Seattle, Washington",
-  "cohort_role": "control",
   "matter_id": 3577,
   "review": {
     "adjudicated": {
@@ -225,9 +224,14 @@
       "reason": null
     }
   },
-  "selected_pairs": [],
-  "selection_index": 10,
-  "selection_reasons": [
-    "mechanical_control"
-  ]
+  "review_pair": {
+    "current_event_date": "2016-02-22T00:00:00",
+    "current_event_item_id": 29040,
+    "current_placement": null,
+    "current_title": "Encampment Conditions Assessment",
+    "previous_event_date": "2016-01-25T00:00:00",
+    "previous_event_item_id": 28399,
+    "previous_placement": null,
+    "previous_title": "Encampment Conditions Assessment"
+  }
 }

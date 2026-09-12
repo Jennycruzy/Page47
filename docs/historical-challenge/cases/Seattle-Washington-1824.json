@@ -3536,7 +3536,6 @@
     "record_limit": "This record contains only public material returned by the city service."
   },
   "city": "Seattle, Washington",
-  "cohort_role": "control",
   "matter_id": 1824,
   "review": {
     "adjudicated": {
@@ -3555,9 +3554,14 @@
       "reason": null
     }
   },
-  "selected_pairs": [],
-  "selection_index": 8,
-  "selection_reasons": [
-    "mechanical_control"
-  ]
+  "review_pair": {
+    "current_event_date": "2016-03-21T00:00:00",
+    "current_event_item_id": 29790,
+    "current_placement": null,
+    "current_title": "Full Council Agenda",
+    "previous_event_date": "2016-03-14T00:00:00",
+    "previous_event_item_id": 29646,
+    "previous_placement": null,
+    "previous_title": "Full Council Agenda"
+  }
 }

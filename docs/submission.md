@@ -42,8 +42,9 @@ so. The repository preserves the 30-case historical abstention audit, a
 28-case controlled directional evaluation, a mechanically selected 40-case
 historical challenge packet awaiting independent labels, an independent
 evaluation review, and a retained searchable managed-runtime trace. The
-challenge packet has a compact browser index and separate case files for
-inspection, alongside the complete canonical JSON artifact.
+challenge packet is blind: its selection answer key is withheld outside the
+reviewer packet, which has a compact browser index and separate neutral case
+files alongside the complete canonical JSON artifact.
 
 ## Required links
 

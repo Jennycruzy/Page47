@@ -612,7 +612,6 @@
     "record_limit": "This record contains only public material returned by the city service."
   },
   "city": "Seattle, Washington",
-  "cohort_role": "candidate",
   "matter_id": 17368,
   "review": {
     "adjudicated": {
@@ -631,24 +630,14 @@
       "reason": null
     }
   },
-  "selected_pairs": [
-    {
-      "attachment_ids_with_multiple_captured_hashes": [],
-      "current_event_date": "2026-09-11T00:00:00",
-      "current_event_item_id": 125630,
-      "current_placement": "regular",
-      "current_title": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code.",
-      "previous_event_date": "2026-08-21T00:00:00",
-      "previous_event_item_id": 125331,
-      "previous_placement": null,
-      "previous_title": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code.",
-      "reasons": [
-        "attachment_set_changed"
-      ]
-    }
-  ],
-  "selection_index": 5,
-  "selection_reasons": [
-    "attachment_set_changed"
-  ]
+  "review_pair": {
+    "current_event_date": "2026-09-11T00:00:00",
+    "current_event_item_id": 125630,
+    "current_placement": "regular",
+    "current_title": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code.",
+    "previous_event_date": "2026-08-21T00:00:00",
+    "previous_event_item_id": 125331,
+    "previous_placement": null,
+    "previous_title": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code."
+  }
 }

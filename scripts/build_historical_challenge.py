@@ -306,7 +306,7 @@ def _source_snapshot(
     eligible_ids: tuple[int, ...],
     raw_eligible_ids: tuple[int, ...],
     excluded_ids: tuple[int, ...],
-    eligible_matters: tuple[RawMatter, ...],
+    candidate_matters: tuple[RawMatter, ...],
 ) -> dict[str, object]:
     manifest_sha256 = (
         _sha256_file(evidence.manifest_path) if evidence.manifest_path.is_file() else None
@@ -335,7 +335,7 @@ def _source_snapshot(
                     "matter_id": matter.matter_id,
                     "candidate_pairs": list(matter.candidate_pairs),
                 }
-                for matter in eligible_matters
+                for matter in candidate_matters
             ]
         ),
         "source_paths": {
@@ -519,7 +519,7 @@ def main() -> int:
             eligible_ids=eligible_ids,
             raw_eligible_ids=raw_eligible_ids,
             excluded_ids=excluded_ids,
-            eligible_matters=eligible_matters,
+            candidate_matters=candidates,
         )
         reviewer_items: list[dict[str, object]] = []
         answer_items: list[dict[str, object]] = []

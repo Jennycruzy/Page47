@@ -1,873 +1,223 @@
 {
+  "blind_review": {
+    "answer_key_withheld": true,
+    "order": "Items are shuffled after sampling with the recorded seed; item order carries no cohort meaning.",
+    "review_unit": "Each item has one fixed adjacent appearance pair for one matter-level label. The same review_pair shape is present for every item.",
+    "shuffle_seed": 47
+  },
   "city": "Seattle, Washington",
   "items": [
     {
-      "case_id": "Seattle, Washington:14765",
-      "cohort_role": "candidate",
-      "file": "cases/Seattle-Washington-14765.json",
-      "matter_id": 14765,
-      "selected_pairs": [
-        {
-          "attachment_ids_with_multiple_captured_hashes": [],
-          "current_event_date": "2026-08-04T00:00:00",
-          "current_event_item_id": 124999,
-          "current_placement": "consent",
-          "current_title": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N.",
-          "previous_event_date": "2026-07-27T00:00:00",
-          "previous_event_item_id": 124621,
-          "previous_placement": "regular",
-          "previous_title": "Petition of THE YEW, LLC, for the vacation of a portion the alley lying within Block 2, Wegener\u2019s Addition to the City of Seattle, being the block bounded by N 87th Street, 1st Avenue NW, Palatine Avenue N, and N 85th Street, at 8623 Palatine Ave N.",
-          "reasons": [
-            "agenda_placement_changed"
-          ]
-        }
-      ],
-      "selection_reasons": [
-        "agenda_placement_changed"
-      ]
+      "case_id": "Seattle, Washington:15083",
+      "file": "cases/Seattle-Washington-15083.json",
+      "matter_id": 15083
     },
     {
-      "case_id": "Seattle, Washington:16819",
-      "cohort_role": "candidate",
-      "file": "cases/Seattle-Washington-16819.json",
-      "matter_id": 16819,
-      "selected_pairs": [
-        {
-          "attachment_ids_with_multiple_captured_hashes": [],
-          "current_event_date": "2026-09-14T00:00:00",
-          "current_event_item_id": 125782,
-          "current_placement": "regular",
-          "current_title": "Council Briefing Minutes (2026)",
-          "previous_event_date": "2026-08-10T00:00:00",
-          "previous_event_item_id": 125194,
-          "previous_placement": null,
-          "previous_title": "Council Briefing Minutes (2026)",
-          "reasons": [
-            "attachment_set_changed"
-          ]
-        }
-      ],
-      "selection_reasons": [
-        "attachment_set_changed"
-      ]
-    },
-    {
-      "case_id": "Seattle, Washington:16820",
-      "cohort_role": "candidate",
-      "file": "cases/Seattle-Washington-16820.json",
-      "matter_id": 16820,
-      "selected_pairs": [
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-01-26T00:00:00",
-          "current_event_item_id": 120861,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-01-12T00:00:00",
-          "previous_event_item_id": 120639,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-02-02T00:00:00",
-          "current_event_item_id": 121033,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-01-26T00:00:00",
-          "previous_event_item_id": 120861,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-02-09T00:00:00",
-          "current_event_item_id": 121137,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-02-02T00:00:00",
-          "previous_event_item_id": 121033,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-02-23T00:00:00",
-          "current_event_item_id": 121377,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-02-09T00:00:00",
-          "previous_event_item_id": 121137,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-03-02T00:00:00",
-          "current_event_item_id": 121517,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-02-23T00:00:00",
-          "previous_event_item_id": 121377,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-03-09T00:00:00",
-          "current_event_item_id": 121619,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-03-02T00:00:00",
-          "previous_event_item_id": 121517,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-03-16T00:00:00",
-          "current_event_item_id": 121865,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-03-09T00:00:00",
-          "previous_event_item_id": 121619,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-03-23T00:00:00",
-          "current_event_item_id": 122000,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-03-16T00:00:00",
-          "previous_event_item_id": 121865,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-03-30T00:00:00",
-          "current_event_item_id": 122178,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-03-23T00:00:00",
-          "previous_event_item_id": 122000,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-04-13T00:00:00",
-          "current_event_item_id": 122450,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-03-30T00:00:00",
-          "previous_event_item_id": 122178,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-04-13T00:00:00",
-          "current_event_item_id": 122452,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-04-13T00:00:00",
-          "previous_event_item_id": 122450,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-04-27T00:00:00",
-          "current_event_item_id": 122742,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-04-13T00:00:00",
-          "previous_event_item_id": 122452,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-05-04T00:00:00",
-          "current_event_item_id": 122907,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-04-27T00:00:00",
-          "previous_event_item_id": 122742,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-05-18T00:00:00",
-          "current_event_item_id": 123163,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-05-04T00:00:00",
-          "previous_event_item_id": 122907,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-06-01T00:00:00",
-          "current_event_item_id": 123464,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-05-18T00:00:00",
-          "previous_event_item_id": 123163,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-06-29T00:00:00",
-          "current_event_item_id": 124288,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-06-01T00:00:00",
-          "previous_event_item_id": 123464,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-07-27T00:00:00",
-          "current_event_item_id": 124872,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-06-29T00:00:00",
-          "previous_event_item_id": 124288,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-08-10T00:00:00",
-          "current_event_item_id": 125195,
-          "current_placement": null,
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-07-27T00:00:00",
-          "previous_event_item_id": 124872,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_content_hash_changed"
-          ]
-        },
-        {
-          "attachment_ids_with_multiple_captured_hashes": [
-            46838,
-            46838
-          ],
-          "current_event_date": "2026-09-14T00:00:00",
-          "current_event_item_id": 125783,
-          "current_placement": "regular",
-          "current_title": "City Council Agenda (2026)",
-          "previous_event_date": "2026-08-10T00:00:00",
-          "previous_event_item_id": 125195,
-          "previous_placement": null,
-          "previous_title": "City Council Agenda (2026)",
-          "reasons": [
-            "attachment_set_changed",
-            "attachment_content_hash_changed"
-          ]
-        }
-      ],
-      "selection_reasons": [
-        "attachment_content_hash_changed",
-        "attachment_set_changed"
-      ]
+      "case_id": "Seattle, Washington:16946",
+      "file": "cases/Seattle-Washington-16946.json",
+      "matter_id": 16946
     },
     {
       "case_id": "Seattle, Washington:16995",
-      "cohort_role": "candidate",
       "file": "cases/Seattle-Washington-16995.json",
-      "matter_id": 16995,
-      "selected_pairs": [
-        {
-          "attachment_ids_with_multiple_captured_hashes": [],
-          "current_event_date": "2026-08-04T00:00:00",
-          "current_event_item_id": 124998,
-          "current_placement": "consent",
-          "current_title": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions.",
-          "previous_event_date": "2026-07-27T00:00:00",
-          "previous_event_item_id": 124622,
-          "previous_placement": "regular",
-          "previous_title": "An ordinance granting FH, LLC d/b/a Skyline permission to construct, maintain, and operate a pedestrian skybridge over and across 8th Avenue, south of Columbia Street and north of Cherry Street, in the First Hill neighborhood; and providing for the acceptance of the permit and conditions.",
-          "reasons": [
-            "agenda_placement_changed"
-          ]
-        }
-      ],
-      "selection_reasons": [
-        "agenda_placement_changed"
-      ]
+      "matter_id": 16995
     },
     {
-      "case_id": "Seattle, Washington:17368",
-      "cohort_role": "candidate",
-      "file": "cases/Seattle-Washington-17368.json",
-      "matter_id": 17368,
-      "selected_pairs": [
-        {
-          "attachment_ids_with_multiple_captured_hashes": [],
-          "current_event_date": "2026-09-11T00:00:00",
-          "current_event_item_id": 125630,
-          "current_placement": "regular",
-          "current_title": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code.",
-          "previous_event_date": "2026-08-21T00:00:00",
-          "previous_event_item_id": 125331,
-          "previous_placement": null,
-          "previous_title": "An ordinance relating to prohibiting algorithmic-based price discrimination; requiring covered retailer disclosures to consumers; requiring that covered retailers retain certain records; and adding a new Chapter 7.35 to the Seattle Municipal Code.",
-          "reasons": [
-            "attachment_set_changed"
-          ]
-        }
-      ],
-      "selection_reasons": [
-        "attachment_set_changed"
-      ]
+      "case_id": "Seattle, Washington:15876",
+      "file": "cases/Seattle-Washington-15876.json",
+      "matter_id": 15876
     },
     {
-      "case_id": "Seattle, Washington:17402",
-      "cohort_role": "candidate",
-      "file": "cases/Seattle-Washington-17402.json",
-      "matter_id": 17402,
-      "selected_pairs": [
-        {
-          "attachment_ids_with_multiple_captured_hashes": [],
-          "current_event_date": "2026-09-11T00:00:00",
-          "current_event_item_id": 125567,
-          "current_placement": "cannot_determine",
-          "current_title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones.",
-          "previous_event_date": "2026-08-19T00:00:00",
-          "previous_event_item_id": 125436,
-          "previous_placement": null,
-          "previous_title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones.",
-          "reasons": [
-            "attachment_set_changed"
-          ]
-        }
-      ],
-      "selection_reasons": [
-        "attachment_set_changed"
-      ]
+      "case_id": "Seattle, Washington:4397",
+      "file": "cases/Seattle-Washington-4397.json",
+      "matter_id": 4397
     },
     {
-      "case_id": "Seattle, Washington:17456",
-      "cohort_role": "candidate",
-      "file": "cases/Seattle-Washington-17456.json",
-      "matter_id": 17456,
-      "selected_pairs": [
-        {
-          "attachment_ids_with_multiple_captured_hashes": [],
-          "current_event_date": "2026-09-15T00:00:00",
-          "current_event_item_id": 125767,
-          "current_placement": "consent",
-          "current_title": "A resolution declaring the Seattle City Council\u2019s intent for the City of Seattle to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College.",
-          "previous_event_date": "2026-09-08T00:00:00",
-          "previous_event_item_id": 125550,
-          "previous_placement": "cannot_determine",
-          "previous_title": "A resolution declaring the City of Seattle\u2019s intent to implement an evidence-based, comprehensive gun violence reduction strategy, that includes partnering with national experts who have helped other cities significantly reduce gun violence, such as the National Network for Safe Communities (NNSC) at John Jay College.",
-          "reasons": [
-            "title_changed"
-          ]
-        }
-      ],
-      "selection_reasons": [
-        "title_changed"
-      ]
+      "case_id": "Seattle, Washington:17079",
+      "file": "cases/Seattle-Washington-17079.json",
+      "matter_id": 17079
+    },
+    {
+      "case_id": "Seattle, Washington:16847",
+      "file": "cases/Seattle-Washington-16847.json",
+      "matter_id": 16847
+    },
+    {
+      "case_id": "Seattle, Washington:14765",
+      "file": "cases/Seattle-Washington-14765.json",
+      "matter_id": 14765
     },
     {
       "case_id": "Seattle, Washington:1824",
-      "cohort_role": "control",
       "file": "cases/Seattle-Washington-1824.json",
-      "matter_id": 1824,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "matter_id": 1824
+    },
+    {
+      "case_id": "Seattle, Washington:16835",
+      "file": "cases/Seattle-Washington-16835.json",
+      "matter_id": 16835
+    },
+    {
+      "case_id": "Seattle, Washington:16348",
+      "file": "cases/Seattle-Washington-16348.json",
+      "matter_id": 16348
+    },
+    {
+      "case_id": "Seattle, Washington:16567",
+      "file": "cases/Seattle-Washington-16567.json",
+      "matter_id": 16567
+    },
+    {
+      "case_id": "Seattle, Washington:17456",
+      "file": "cases/Seattle-Washington-17456.json",
+      "matter_id": 17456
+    },
+    {
+      "case_id": "Seattle, Washington:16828",
+      "file": "cases/Seattle-Washington-16828.json",
+      "matter_id": 16828
+    },
+    {
+      "case_id": "Seattle, Washington:16169",
+      "file": "cases/Seattle-Washington-16169.json",
+      "matter_id": 16169
+    },
+    {
+      "case_id": "Seattle, Washington:16886",
+      "file": "cases/Seattle-Washington-16886.json",
+      "matter_id": 16886
+    },
+    {
+      "case_id": "Seattle, Washington:15001",
+      "file": "cases/Seattle-Washington-15001.json",
+      "matter_id": 15001
+    },
+    {
+      "case_id": "Seattle, Washington:16198",
+      "file": "cases/Seattle-Washington-16198.json",
+      "matter_id": 16198
+    },
+    {
+      "case_id": "Seattle, Washington:17149",
+      "file": "cases/Seattle-Washington-17149.json",
+      "matter_id": 17149
     },
     {
       "case_id": "Seattle, Washington:2289",
-      "cohort_role": "control",
       "file": "cases/Seattle-Washington-2289.json",
-      "matter_id": 2289,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "matter_id": 2289
+    },
+    {
+      "case_id": "Seattle, Washington:8766",
+      "file": "cases/Seattle-Washington-8766.json",
+      "matter_id": 8766
     },
     {
       "case_id": "Seattle, Washington:3577",
-      "cohort_role": "control",
       "file": "cases/Seattle-Washington-3577.json",
-      "matter_id": 3577,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "matter_id": 3577
     },
     {
-      "case_id": "Seattle, Washington:4360",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-4360.json",
-      "matter_id": 4360,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:15986",
+      "file": "cases/Seattle-Washington-15986.json",
+      "matter_id": 15986
     },
     {
-      "case_id": "Seattle, Washington:4387",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-4387.json",
-      "matter_id": 4387,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:16943",
+      "file": "cases/Seattle-Washington-16943.json",
+      "matter_id": 16943
     },
     {
-      "case_id": "Seattle, Washington:8371",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-8371.json",
-      "matter_id": 8371,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:17037",
+      "file": "cases/Seattle-Washington-17037.json",
+      "matter_id": 17037
     },
     {
-      "case_id": "Seattle, Washington:14803",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-14803.json",
-      "matter_id": 14803,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:15693",
+      "file": "cases/Seattle-Washington-15693.json",
+      "matter_id": 15693
     },
     {
-      "case_id": "Seattle, Washington:14870",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-14870.json",
-      "matter_id": 14870,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:15553",
+      "file": "cases/Seattle-Washington-15553.json",
+      "matter_id": 15553
     },
     {
-      "case_id": "Seattle, Washington:14874",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-14874.json",
-      "matter_id": 14874,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:17299",
+      "file": "cases/Seattle-Washington-17299.json",
+      "matter_id": 17299
     },
     {
-      "case_id": "Seattle, Washington:14991",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-14991.json",
-      "matter_id": 14991,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:15747",
+      "file": "cases/Seattle-Washington-15747.json",
+      "matter_id": 15747
     },
     {
-      "case_id": "Seattle, Washington:15436",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-15436.json",
-      "matter_id": 15436,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:14949",
+      "file": "cases/Seattle-Washington-14949.json",
+      "matter_id": 14949
     },
     {
-      "case_id": "Seattle, Washington:15562",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-15562.json",
-      "matter_id": 15562,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:17402",
+      "file": "cases/Seattle-Washington-17402.json",
+      "matter_id": 17402
     },
     {
-      "case_id": "Seattle, Washington:15685",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-15685.json",
-      "matter_id": 15685,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:17326",
+      "file": "cases/Seattle-Washington-17326.json",
+      "matter_id": 17326
     },
     {
-      "case_id": "Seattle, Washington:15756",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-15756.json",
-      "matter_id": 15756,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:4369",
+      "file": "cases/Seattle-Washington-4369.json",
+      "matter_id": 4369
     },
     {
-      "case_id": "Seattle, Washington:15801",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-15801.json",
-      "matter_id": 15801,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:17368",
+      "file": "cases/Seattle-Washington-17368.json",
+      "matter_id": 17368
     },
     {
-      "case_id": "Seattle, Washington:16000",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-16000.json",
-      "matter_id": 16000,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:15275",
+      "file": "cases/Seattle-Washington-15275.json",
+      "matter_id": 15275
     },
     {
-      "case_id": "Seattle, Washington:16092",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-16092.json",
-      "matter_id": 16092,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:14990",
+      "file": "cases/Seattle-Washington-14990.json",
+      "matter_id": 14990
     },
     {
-      "case_id": "Seattle, Washington:16163",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-16163.json",
-      "matter_id": 16163,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:17205",
+      "file": "cases/Seattle-Washington-17205.json",
+      "matter_id": 17205
     },
     {
-      "case_id": "Seattle, Washington:16427",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-16427.json",
-      "matter_id": 16427,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:17191",
+      "file": "cases/Seattle-Washington-17191.json",
+      "matter_id": 17191
     },
     {
-      "case_id": "Seattle, Washington:16600",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-16600.json",
-      "matter_id": 16600,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:16017",
+      "file": "cases/Seattle-Washington-16017.json",
+      "matter_id": 16017
     },
     {
-      "case_id": "Seattle, Washington:16601",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-16601.json",
-      "matter_id": 16601,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
-    },
-    {
-      "case_id": "Seattle, Washington:16759",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-16759.json",
-      "matter_id": 16759,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
-    },
-    {
-      "case_id": "Seattle, Washington:16836",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-16836.json",
-      "matter_id": 16836,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
-    },
-    {
-      "case_id": "Seattle, Washington:16876",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-16876.json",
-      "matter_id": 16876,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
-    },
-    {
-      "case_id": "Seattle, Washington:16880",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-16880.json",
-      "matter_id": 16880,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
-    },
-    {
-      "case_id": "Seattle, Washington:16984",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-16984.json",
-      "matter_id": 16984,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
-    },
-    {
-      "case_id": "Seattle, Washington:17045",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-17045.json",
-      "matter_id": 17045,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
-    },
-    {
-      "case_id": "Seattle, Washington:17140",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-17140.json",
-      "matter_id": 17140,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
-    },
-    {
-      "case_id": "Seattle, Washington:17161",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-17161.json",
-      "matter_id": 17161,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
-    },
-    {
-      "case_id": "Seattle, Washington:17240",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-17240.json",
-      "matter_id": 17240,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
-    },
-    {
-      "case_id": "Seattle, Washington:17242",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-17242.json",
-      "matter_id": 17242,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
-    },
-    {
-      "case_id": "Seattle, Washington:17296",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-17296.json",
-      "matter_id": 17296,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
-    },
-    {
-      "case_id": "Seattle, Washington:17398",
-      "cohort_role": "control",
-      "file": "cases/Seattle-Washington-17398.json",
-      "matter_id": 17398,
-      "selected_pairs": [],
-      "selection_reasons": [
-        "mechanical_control"
-      ]
+      "case_id": "Seattle, Washington:17314",
+      "file": "cases/Seattle-Washington-17314.json",
+      "matter_id": 17314
     }
   ],
-  "label_policy": {
-    "adjudication": "Resolve disagreements after both blind labels are retained; record the evidence and a plain-language reason.",
-    "allowed_labels": [
-      "cannot_determine",
-      "clearer",
-      "less_clear",
-      "mixed",
-      "unchanged"
-    ],
-    "cohort_warning": "This is a mechanically selected historical challenge cohort, not a prevalence sample or representative accuracy estimate.",
-    "evidence_requirement": "Every non-pending label must retain at least one primary source URL and capture time; add a page number when applicable.",
-    "reviewer_a": "Label from the retained case payload and primary evidence without looking at Page 47's comparator output.",
-    "reviewer_b": "Label independently from the retained case payload and primary evidence without looking at Page 47's comparator output."
-  },
-  "note": "Each linked case file contains the complete retained case payload and review slots. The complete packet remains the canonical audit file.",
+  "note": "Each linked case file contains the same neutral retained case payload, one fixed review pair, and review slots. The complete packet remains the canonical audit file.",
   "schema_version": 1,
-  "selection": {
-    "candidate_count": 7,
-    "candidate_pool_size": 7,
-    "control_count": 33,
-    "control_pool_size": 463,
-    "eligible_repeated_matters": 470,
-    "minimum_appearances": 2,
-    "order": "mechanically sampled candidates by matter ID, then controls by matter ID",
-    "page47_result_used_for_selection": false,
-    "rules": [
-      "candidate: adjacent title text changed",
-      "candidate: adjacent supported agenda placement changed",
-      "candidate: adjacent attachment identity set changed",
-      "candidate: a retained attachment target has multiple successful content hashes",
-      "control: no candidate rule matched any adjacent pair"
-    ],
-    "seed": 47
-  },
   "source_packet": "docs/historical-challenge-cohort.json",
   "source_snapshot": {
-    "candidate_pool_sha256": "0e47a56eef287db7951c325f2b30559c214173286da4b1a62b63f71a2a3f4b3b",
-    "code_revision": "6adb7c3ab7aad1f0aee7ef3cd9a16b77889de096",
-    "created_at_utc": "2026-09-12T18:59:14.379999Z",
+    "code_revision": "69e735c205fea5e615bec9ecb89ae10bbe729378",
+    "created_at_utc": "2026-09-12T20:48:08.050264Z",
     "database_sha256": "c848038abf4322b11aab296eafcb25c209b1e2428a79dedecb6aab93b55f7ded",
-    "eligible_matter_ids_sha256": "cf6b5b40550f6644696439fb21d17b00a6d02de08d2f8ded5ee7d5aca7e1acdd",
     "evidence_chain_sha256": "f377ca1441085c05e0f4effd39423bf6c81c487e6741bbba5e7a3f7f74c0a336",
     "evidence_integrity_root": "bb58760ee3fb8397127159a6aa97faa76821ec2c217a318acec97631b6d393d9",
-    "evidence_manifest_sha256": "a8722977d52670e7ad0d6fc8b6e58febbf2045bb33c9e99b9a850fb6e78bb7f4",
-    "note": "Selection uses raw titles, supported agenda-placement values, and attachment identity fields only. It does not read or use Page 47 comparator results.",
-    "selected_matter_ids_sha256": "30002511e4d08830d6b55bf0658eddb820325d95cd8229e0eb85141eb5a195ae",
-    "source_paths": {
-      "evidence_root": "/home/ubuntu/page47-preflight/runtime/evidence/seattle",
-      "record_database": "/home/ubuntu/page47-preflight/runtime/records/seattle.sqlite3"
-    }
+    "evidence_manifest_sha256": "a8722977d52670e7ad0d6fc8b6e58febbf2045bb33c9e99b9a850fb6e78bb7f4"
   },
   "status": "awaiting_independent_labels"
 }
