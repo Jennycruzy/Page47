@@ -1,6 +1,6 @@
 # Independent evaluation review
 
-Date: 10 September 2026.
+Date: 12 September 2026.
 
 This review checks the generated evaluation artifacts and their deterministic
 invariants. It does not reopen or relabel the 30 historical cases whose human
@@ -21,8 +21,11 @@ The evaluation export passed with 100 matters, 30 gold items, and 30 completed
 labels. Every gold label is `cannot_determine`, matching the completed human
 audit. No gold case or label was changed during this review.
 
-The four-arm comparison passed with 100 cases and 400 arm results. An
-independent per-row check confirmed:
+The four-arm comparison passed with 100 cases and 400 arm results. The schema 2
+artifact records the code revision `3ef76ece820df4bbf71c0beb0c7e31d8033af108`
+and SHA-256 fingerprints for the manifest, presentation configuration, SQLite
+database, evidence manifest, evidence chain, and matter-ID list. An independent
+per-row check confirmed:
 
 - each arm has exactly 100 results;
 - all four arms are present once per case;
@@ -30,6 +33,13 @@ independent per-row check confirmed:
 - all four arms surfaced zero cases in this real Seattle export; and
 - Page 47 returned `cannot_determine` for all 100 cases, including all 30 gold
   cases, producing zero historical overclaims.
+
+The new diagnostics explain the abstentions: 623 adjacent pairs had comparable
+titles, but all 623 titles were exact matches; no pair had comparable agenda
+placement; no stored attachment in the cohort had readable extracted substance;
+and publication timing remained unavailable. Meeting-date ordering was trusted
+for the recorded sequence. These are evidence-coverage results, not directional
+accuracy claims.
 
 The real comparison remains descriptive. Because the 30 gold labels contain no
 `yes` or `no` cases, no directional accuracy percentage is published.
@@ -65,4 +75,3 @@ The generated JSON artifacts intentionally retain `status:
 "review_required"`. That status prevents their descriptive results from being
 mistaken for a published real-world accuracy claim. The independent output
 review is complete; no unsupported benchmark percentage should be added.
-
