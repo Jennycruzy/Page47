@@ -73,11 +73,21 @@ def scan_forward_observations(
     config = load_presentation_config(presentation_path)
     candidates: list[JSONValue] = []
     checked = 0
+    skipped_orphan_matter_count = 0
     with RecordStore(database) as records:
         rows = records.connection.execute(
-            "SELECT DISTINCT matter_id FROM appearances "
-            "WHERE matter_id IS NOT NULL ORDER BY matter_id"
+            "SELECT DISTINCT a.matter_id FROM appearances a "
+            "JOIN matters m ON m.matter_id = a.matter_id "
+            "WHERE a.matter_id IS NOT NULL ORDER BY a.matter_id"
         ).fetchall()
+        orphan_row = records.connection.execute(
+            "SELECT COUNT(DISTINCT a.matter_id) FROM appearances a "
+            "LEFT JOIN matters m ON m.matter_id = a.matter_id "
+            "WHERE a.matter_id IS NOT NULL AND m.matter_id IS NULL"
+        ).fetchone()
+        if orphan_row is None or not isinstance(orphan_row[0], int):
+            raise ValueError("Could not count orphaned appearances")
+        skipped_orphan_matter_count = orphan_row[0]
         for row in rows:
             matter_id = row[0]
             if isinstance(matter_id, bool) or not isinstance(matter_id, int) or matter_id < 1:
@@ -90,6 +100,7 @@ def scan_forward_observations(
         "city": city,
         "status": "forward_positive_case_found" if candidates else "awaiting_real_transition",
         "case_count_checked": checked,
+        "skipped_orphan_matter_count": skipped_orphan_matter_count,
         "candidate_count": len(candidates),
         "integrity_root": integrity_root,
         "candidates": candidates,
