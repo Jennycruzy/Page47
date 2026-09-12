@@ -44,6 +44,18 @@ accuracy claims.
 The real comparison remains descriptive. Because the 30 gold labels contain no
 `yes` or `no` cases, no directional accuracy percentage is published.
 
+## Historical challenge packet
+
+The repository now also contains a mechanically selected 40-case Seattle
+challenge packet: 7 available raw-change candidates and 33 controls. Selection
+uses raw title, supported placement, attachment identity, and retained
+attachment-hash changes without using Page 47 output. The packet preserves its
+source snapshot and is validated with `scripts/validate_historical_challenge.py`.
+
+It is intentionally still `awaiting_independent_labels`. No real-data
+precision, recall, or confusion matrix is claimed until two blind labels and an
+adjudicated label are retained for every case.
+
 ## Controlled directional fixture
 
 The controlled run contains 28 frozen transformations. The independent output

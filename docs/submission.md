@@ -39,8 +39,9 @@ Systems Manager.
 Page 47 does not infer intent, make a legal finding, or tell residents what
 political position to take. When the available history is insufficient, it says
 so. The repository preserves the 30-case historical abstention audit, a
-28-case controlled directional evaluation, an independent evaluation review,
-and a retained searchable managed-runtime trace.
+28-case controlled directional evaluation, a mechanically selected 40-case
+historical challenge packet awaiting independent labels, an independent
+evaluation review, and a retained searchable managed-runtime trace.
 
 ## Required links
 
@@ -69,7 +70,7 @@ the problem, and the limits of the claim.
 The repository contains the application, city adapters, scheduled collector,
 append-only capture records, deterministic comparator, five-role Strands graph,
 AgentCore deployment, ADOT instrumentation, CloudWatch checks, SES delivery
-path, tests, setup commands, and dated audits.
+path, tests, setup commands, reproducible evaluation artifacts, and audits.
 
 ### Appropriate use of agents
 
@@ -97,13 +98,15 @@ and retains rejected interpretations for inspection.
 The key product primitive is forward observation of presentation changes. Page
 47 does not only retrieve the latest document; it preserves what it saw, shows
 how a matter was presented before and after, and asks an independent reviewer
-whether the interpretation survives.
+whether the interpretation survives. The evaluation separates prevalence,
+real-data challenge cases, controlled behavior, and prospective observation so
+the product does not turn a small fixture into an inflated accuracy claim.
 
 ### Portability and completeness
 
 Seattle provides depth and Denver provides a second city adapter. The final
 package includes a live URL, public source code, visible MIT license, README,
-architecture diagram, walkthrough plan, tests, evaluation artifacts, and
+architecture diagram, tests, evaluation artifacts, reviewer protocol, and
 limitations.
 
 ## Submission checklist

@@ -95,6 +95,23 @@ abstention correctness, reviewer agreement, evidence coverage, and provenance
 validity. Until that gate passes, the packet is a review input, not an
 evaluation result.
 
+Run the scoring gate with the same database and evidence root recorded in the
+packet:
+
+```sh
+PYTHONPATH=src python scripts/score_historical_challenge.py \
+  --cohort docs/historical-challenge-cohort.json \
+  --database runtime/records/seattle.sqlite3 \
+  --evidence-root runtime/evidence/seattle \
+  --presentation config/presentation.yaml \
+  --output docs/historical-challenge-results.json \
+  --code-revision <scoring-code-revision>
+```
+
+The scorer refuses to run if the labels are incomplete or if the database or
+evidence chain no longer matches the packet's source snapshot. Its output stays
+`review_required` until the results receive an independent check.
+
 This is a mechanically selected challenge cohort, not a representative sample
 of Seattle public records. Its purpose is to test behavior on real retained
 transitions and to make the evidence boundary inspectable.

@@ -195,14 +195,21 @@ Page 47 has three separate proof layers:
    replacement hashes, duplicate copies, unsupported-motive cases, and
    instruction-like document text. Two reversal pairs were correct in both
    directions. The deterministic fixture is not a real-world accuracy claim.
-3. **Managed runtime proof:** a real stored Seattle matter completed through the
+3. **Historical challenge cohort:** the repository includes 40 real Seattle
+   matters selected without using Page 47's result: all 7 available raw-change
+   candidates and 33 controls. The complete case payloads, source snapshot,
+   selection rules, and independent label slots are preserved in the
+   [review packet](docs/historical-challenge-cohort.json). It remains pending
+   two independent labels and adjudication, so no challenge-cohort accuracy
+   claim is published yet.
+4. **Managed runtime proof:** a real stored Seattle matter completed through the
    deployed AgentCore runtime, retained its investigation, and produced a
    searchable trace. See the [observability audit](docs/audits/observability.md)
    and [managed runtime review](docs/audits/managed-runtime.md).
 
-The repository also retains the independent review, four-arm results, and
-controlled results so a judge can inspect the evidence rather than rely on a
-marketing percentage.
+The repository also retains the [independent comparison review](docs/audits/evaluation-independent-review.md),
+[four-arm results](docs/comparison-results.json), and controlled results so a
+judge can inspect the evidence rather than rely on a marketing percentage.
 
 The forward-observation verifier makes the remaining time-dependent claim
 explicit. It reports a positive case only when two distinct captured versions
