@@ -47,7 +47,7 @@ and a retained searchable managed-runtime trace.
 | Submission field | Value |
 | --- | --- |
 | Public code repository | `https://github.com/Jennycruzy/Page47` |
-| Live demo | `https://page47.xcover.online/` |
+| Live demo | `https://page47.xcover.online/` · [open a captured review directly](https://page47.xcover.online/explore) |
 | README | `https://github.com/Jennycruzy/Page47#readme` |
 | Architecture | `https://github.com/Jennycruzy/Page47/blob/main/docs/architecture.svg` (diagram) · `https://github.com/Jennycruzy/Page47/blob/main/docs/architecture.md` (details) |
 | License | MIT: `https://github.com/Jennycruzy/Page47/blob/main/LICENSE` |

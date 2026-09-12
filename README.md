@@ -9,7 +9,7 @@ evidence-linked review only when the record supports one.
 
 **Tell Page 47 what you care about. It watches the public record while you are away.**
 
-[Try the live demo](https://page47.xcover.online/) · [Read the submission kit](docs/submission.md) · [View the architecture](docs/architecture.md) · [Browse the code](https://github.com/Jennycruzy/Page47)
+[Create a watch](https://page47.xcover.online/) · [Open a captured review](https://page47.xcover.online/explore) · [Read the submission kit](docs/submission.md) · [View the architecture](docs/architecture.md) · [Browse the code](https://github.com/Jennycruzy/Page47)
 
 > Page 47 does not guess intent, assign a political position, or turn an
 > uncertain record into a confident story. It shows what changed, what supports

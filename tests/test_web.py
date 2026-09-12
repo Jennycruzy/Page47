@@ -2,14 +2,28 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from page47.web.app import _finding_page, _index_page, _internal_url, _watch_page
+from page47.web.app import (
+    _captured_review_unavailable_page,
+    _finding_page,
+    _index_page,
+    _internal_url,
+    _watch_page,
+)
 from page47.web.config import load_web_settings
+from page47.web.service import WebService
 
 
 def test_console_configuration_has_a_public_path() -> None:
     settings = load_web_settings(Path("config/web.yaml"))
     # The configured domain root is represented internally by an empty prefix.
     assert settings.public_path == ""
+
+
+def test_web_service_defers_managed_runtime_client_creation() -> None:
+    settings = load_web_settings(Path("config/web.yaml"))
+    service = WebService(settings)
+
+    assert service.agentcore is None
 
 
 def test_console_links_use_the_configured_public_path() -> None:
@@ -29,6 +43,13 @@ def test_console_supports_a_domain_root_public_path() -> None:
     assert "publicPath === '/'" in page
 
 
+def test_captured_review_fallback_explains_when_no_saved_review_exists() -> None:
+    page = _captured_review_unavailable_page("Page 47", "/")
+
+    assert "No saved review is available yet." in page
+    assert 'href="/#watch"' in page
+
+
 def test_homepage_leads_with_resident_promise() -> None:
     page = _index_page("Page 47", "Seattle, Washington", "/")
     assert "City packets change." in page
@@ -37,6 +58,10 @@ def test_homepage_leads_with_resident_promise() -> None:
     assert "Advanced options — public bodies" in page
     assert "See what survived review." in page
     assert "Replay captured case" in page
+    assert "Choose how to explore Page 47" in page
+    assert 'href="/explore"' in page
+    assert "evidence roles" in page
+    assert "28 / 28" in page
 
 
 def test_finding_page_exposes_dimensions_provenance_and_rejections() -> None:

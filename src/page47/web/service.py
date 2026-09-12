@@ -48,13 +48,23 @@ class WebService:
         self.agentcore_settings = load_agentcore_settings(
             settings.repository_root / "config" / "agentcore.yaml"
         )
-        self.agentcore = (
-            AgentCoreTransport(self.agentcore_settings)
-            if self.agentcore_settings.enabled
-            else None
-        )
+        # Do not create AWS clients while importing the public web app. The
+        # resident pages and offline tests must remain available when a local
+        # developer has no AWS credentials or network route. The first actual
+        # managed investigation creates the transport at the point where it is
+        # needed and failures remain visible to the caller.
+        self.agentcore: AgentCoreTransport | None = None
+        self._agentcore_lock = Lock()
         self._investigation_lock = Lock()
         self._investigations_in_flight: set[tuple[str, int]] = set()
+
+    def _agentcore_transport(self) -> AgentCoreTransport | None:
+        if not self.agentcore_settings.enabled:
+            return None
+        with self._agentcore_lock:
+            if self.agentcore is None:
+                self.agentcore = AgentCoreTransport(self.agentcore_settings)
+            return self.agentcore
 
     def _runtime(self, city: str) -> CityRuntime:
         return self.settings.city(city)
@@ -329,7 +339,8 @@ class WebService:
             self._investigations_in_flight.add(key)
         try:
             with self._store(city) as store:
-                if self.agentcore is None:
+                agentcore = self._agentcore_transport()
+                if agentcore is None:
                     outcome = investigate_matter(
                         store=store,
                         city=city,
@@ -343,7 +354,7 @@ class WebService:
                 else:
                     case = load_matter_case(store, city, matter_id, runtime.evidence_root)
                     try:
-                        graph_result = self.agentcore.invoke_case(case)
+                        graph_result = agentcore.invoke_case(case)
                     except Exception as error:
                         record_failed_investigation(store, city, matter_id, error)
                         raise
