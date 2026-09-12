@@ -601,11 +601,11 @@ def index_page(title: str, default_city: str, public_path: str) -> str:
     body = f"""
 <header class="site-header"><div class="site-nav-wrap">{_site_nav(home_url, watch_url)}</div>
   <div class="hero-wrap"><div class="hero-grid"><div>
-    <p class="kicker">Public records, held to account</p>
-    <h1 class="display">The record can change.<br><em>Your attention shouldn't have to chase it.</em></h1>
-    <p class="hero-lede">Page 47 watches public meeting records for the places you care about, then brings you the evidence when a matter’s presentation changes.</p>
-    <div class="button-row"><a class="button" href="{watch_url}">Put a place on watch <span aria-hidden="true">↗</span></a><a id="hero-review-link" class="button button--quiet" href="{explore_url}">Read a captured review</a></div>
-    <p class="trust-line">No account required · Evidence-linked · Seattle + Denver</p>
+    <p class="kicker">PUBLIC RECORD WATCH</p>
+    <h1 class="display">City packets change.<br><em>Page 47 watches what you care about.</em></h1>
+    <p class="hero-lede">Tell Page 47 your neighbourhood or address. It watches public meeting records in the background and emails you only when a change survives an evidence review.</p>
+    <div class="button-row"><a class="button" href="{watch_url}">Watch my area <span aria-hidden="true">↗</span></a><a id="hero-review-link" class="button button--quiet" href="{explore_url}">Open a real review</a></div>
+    <p class="trust-line">Every reported fact links to the public record. Page 47 does not infer intent.</p>
   </div><div class="hero-art" aria-label="A Page 47 watch follows a public record in the background">
     <div class="watch-card"><div class="watch-card-top"><span>PAGE 47 / ACTIVE WATCH</span><span class="live-dot">RUNNING</span></div><h2>One place.<br>Kept in view.</h2><p>The resident steps away. The record does not.</p><div class="watch-rail"><div class="watch-step"><span>01</span><strong>Capture public record</strong><small>stored</small></div><div class="watch-step"><span>02</span><strong>Compare appearances</strong><small>separate</small></div><div class="watch-step"><span>03</span><strong>Challenge the finding</strong><small>skeptic</small></div><div class="watch-step"><span>04</span><strong>Return the evidence</strong><small>linked</small></div></div></div>
   </div></div><div class="hero-proof" aria-label="Page 47 proof points"><div class="hero-proof-item"><strong>5 roles</strong><span>bounded evidence review</span></div><div class="hero-proof-item"><strong>2 cities</strong><span>Seattle + Denver</span></div><div class="hero-proof-item"><strong>28 / 28</strong><span>controlled states correct</span></div><div class="hero-proof-item"><strong>0</strong><span>motive claims published</span></div></div></div>
@@ -668,7 +668,7 @@ if ('IntersectionObserver' in window) {
 }
 </script>
 """.replace("__PUBLIC_PATH__", json.dumps(public_path))
-    return _page(f"{title} — when the record changes", body, script)
+    return _page(f"{title} — when the packet changes", body, script)
 
 
 def watch_setup_page(title: str, default_city: str, public_path: str) -> str:

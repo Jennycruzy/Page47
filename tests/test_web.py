@@ -50,12 +50,13 @@ def test_captured_review_fallback_explains_when_no_saved_review_exists() -> None
 
 def test_homepage_leads_with_resident_promise() -> None:
     page = index_page("Page 47", "Seattle, Washington", "/")
-    assert "The record can change." in page
-    assert "Your attention shouldn't have to chase it." in page
+    assert "City packets change." in page
+    assert "Page 47 watches what you care about." in page
+    assert "It watches public meeting records in the background" in page
     assert "The resident steps away. The record does not." in page
     assert "Not another civic dashboard." in page
     assert "Start with the evidence, not the machinery." in page
-    assert "Read a captured review" in page
+    assert "Open a real review" in page
     assert 'href="/explore"' in page
     assert "5 roles" in page
     assert "28 / 28" in page
