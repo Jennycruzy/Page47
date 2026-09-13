@@ -740,7 +740,6 @@ def _evaluation_inputs(
     *,
     input_path: Path,
     database: Path,
-    evidence_root: Path,
     presentation_path: Path,
     raw_items: list[JSONValue],
     city: str,
@@ -765,12 +764,6 @@ def _evaluation_inputs(
         "matter_ids_sha256": sha256(
             "\n".join(f"{city}:{matter_id}" for matter_id in matter_ids).encode("utf-8")
         ).hexdigest(),
-        "source_paths": {
-            "evaluation_manifest": str(input_path),
-            "presentation_config": str(presentation_path),
-            "record_database": str(database),
-            "evidence_root": str(evidence_root),
-        },
         "note": (
             "The runner reloads cases from the SQLite database. These hashes pin the exact "
             "inputs used for this artifact, including the evidence integrity chain."
@@ -805,7 +798,6 @@ def run_comparison(
     evaluation_inputs = _evaluation_inputs(
         input_path=input_path,
         database=database,
-        evidence_root=evidence_root,
         presentation_path=presentation_path,
         raw_items=raw_items,
         city=city,
@@ -844,7 +836,7 @@ def run_comparison(
     output: JSONObject = {
         "schema_version": 2,
         "evaluation_inputs": evaluation_inputs,
-        "source_manifest": str(input_path),
+        "source_manifest": input_path.name,
         "city": city,
         "case_count": len(rows),
         "methodology": {
