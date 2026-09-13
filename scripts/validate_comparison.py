@@ -141,21 +141,22 @@ def validate(path: Path) -> dict[str, int | str]:
             "matter_ids_sha256",
         ):
             _hash(inputs.get(field), f"evaluation_inputs.{field}", errors)
-        source_paths = _object(
-            inputs.get("source_paths"), "evaluation_inputs.source_paths", errors
-        )
-        if source_paths is not None:
-            for field in (
-                "evaluation_manifest",
-                "presentation_config",
-                "record_database",
-                "evidence_root",
-            ):
-                _text(
-                    source_paths.get(field),
-                    f"evaluation_inputs.source_paths.{field}",
-                    errors,
-                )
+        if "source_paths" in inputs:
+            source_paths = _object(
+                inputs.get("source_paths"), "evaluation_inputs.source_paths", errors
+            )
+            if source_paths is not None:
+                for field in (
+                    "evaluation_manifest",
+                    "presentation_config",
+                    "record_database",
+                    "evidence_root",
+                ):
+                    _text(
+                        source_paths.get(field),
+                        f"evaluation_inputs.source_paths.{field}",
+                        errors,
+                    )
     city = _text(root.get("city"), "city", errors)
     raw_cases = root.get("cases")
     if not isinstance(raw_cases, list) or not raw_cases:

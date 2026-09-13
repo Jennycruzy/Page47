@@ -1,6 +1,6 @@
 # Independent evaluation review
 
-Date: 12 September 2026.
+Date: 13 September 2026.
 
 This review checks the generated evaluation artifacts and their deterministic
 invariants. It does not reopen or relabel the 30 historical cases whose human
@@ -22,7 +22,7 @@ labels. Every gold label is `cannot_determine`, matching the completed human
 audit. No gold case or label was changed during this review.
 
 The four-arm comparison passed with 100 cases and 400 arm results. The schema 2
-artifact records the code revision `3ef76ece820df4bbf71c0beb0c7e31d8033af108`
+artifact records the current code revision `7b0cfab`
 and SHA-256 fingerprints for the manifest, presentation configuration, SQLite
 database, evidence manifest, evidence chain, and matter-ID list. An independent
 per-row check confirmed:
@@ -76,7 +76,9 @@ This result is intentionally reported as challenge-cohort behavior rather than
 representative Seattle accuracy. The cohort contains only 5 mechanically
 selected candidates, while controls can still contain genuine presentation
 changes. The result demonstrates conservative surfacing under the retained
-evidence boundary and makes the remaining coverage limitation visible.
+evidence boundary and makes the remaining coverage limitation visible. Its
+evaluation inputs are separately pinned in that artifact; the live collector
+may add records after a scored snapshot without changing the published result.
 
 ## Controlled directional fixture
 

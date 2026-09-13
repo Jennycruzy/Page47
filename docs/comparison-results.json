@@ -31348,22 +31348,16 @@
   ],
   "city": "Seattle, Washington",
   "evaluation_inputs": {
-    "code_revision": "3ef76ece820df4bbf71c0beb0c7e31d8033af108",
+    "code_revision": "7b0cfab",
     "evaluation_manifest_sha256": "433c6c3103f475679c7e29df12cfc339013f78f080890f54b5329f173f7b2c1b",
-    "evaluation_timestamp_utc": "2026-09-12T18:40:12.348893Z",
-    "evidence_chain_sha256": "f377ca1441085c05e0f4effd39423bf6c81c487e6741bbba5e7a3f7f74c0a336",
-    "evidence_integrity_root": "bb58760ee3fb8397127159a6aa97faa76821ec2c217a318acec97631b6d393d9",
-    "evidence_manifest_sha256": "a8722977d52670e7ad0d6fc8b6e58febbf2045bb33c9e99b9a850fb6e78bb7f4",
+    "evaluation_timestamp_utc": "2026-09-13T20:21:52.493067Z",
+    "evidence_chain_sha256": "2368efec5a29282b4bcf00aeb441a027d532c5842d12b78d229b981cfb4fd9bd",
+    "evidence_integrity_root": "5decd035078867f66116d63aba219b4783d886eae6f2fd5434ed2df7cad939f5",
+    "evidence_manifest_sha256": "a0a09a36b44922df57b44f0c1a212e8e82678b28b22d7c52d48b2da4aa6bdbdc",
     "matter_ids_sha256": "9e62cd9d11fd779fda006b4f3b41d6bf0c3a94191b2f66e8b1f199859a6f32ad",
     "note": "The runner reloads cases from the SQLite database. These hashes pin the exact inputs used for this artifact, including the evidence integrity chain.",
     "presentation_config_sha256": "78c8bc749ee35b8020f5a063c3549fff8ed09738e5bd7d9bccdfa8c206f0fbd2",
-    "record_database_sha256": "c848038abf4322b11aab296eafcb25c209b1e2428a79dedecb6aab93b55f7ded",
-    "source_paths": {
-      "evaluation_manifest": "/home/ubuntu/page47-preflight/docs/evaluation-set.json",
-      "evidence_root": "/home/ubuntu/page47-preflight/runtime/evidence/seattle",
-      "presentation_config": "/home/ubuntu/page47-preflight/config/presentation.yaml",
-      "record_database": "/home/ubuntu/page47-preflight/runtime/records/seattle.sqlite3"
-    }
+    "record_database_sha256": "f0fbdf816937caca8aa04b9882fc8b7d42bc98a61d462d43f3682838422a5e06"
   },
   "methodology": {
     "gold_policy": "The 30 cannot_determine cases are an abstention audit, not a directional accuracy benchmark.",
@@ -31485,6 +31479,6 @@
     }
   },
   "schema_version": 2,
-  "source_manifest": "/home/ubuntu/page47-preflight/docs/evaluation-set.json",
+  "source_manifest": "evaluation-set.json",
   "status": "review_required"
 }

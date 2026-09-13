@@ -1,6 +1,6 @@
 # Four-arm comparison audit
 
-Date: 12 September 2026.
+Date: 13 September 2026.
 
 The comparison was rerun over the checked-in 100-matter Seattle manifest with
 the current comparator. The selected matter IDs and labels were unchanged. The
@@ -18,7 +18,7 @@ the exact code revision and input fingerprints in the generated artifact:
   --evidence-root runtime/evidence/seattle \
   --presentation config/presentation.yaml \
   --output docs/comparison-results.json \
-  --code-revision 3ef76ece820df4bbf71c0beb0c7e31d8033af108
+  --code-revision 7b0cfab
 ```
 
 The artifact is schema version 2 and passes
