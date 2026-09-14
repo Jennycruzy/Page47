@@ -1,5 +1,7 @@
 # Page 47
 
+[![Page 47 checks](https://github.com/Jennycruzy/Page47/actions/workflows/ci.yml/badge.svg)](https://github.com/Jennycruzy/Page47/actions/workflows/ci.yml)
+
 ## When the packet changes, residents should know.
 
 Page 47 is an evidence-first civic record watcher. A resident chooses a city

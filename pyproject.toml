@@ -41,12 +41,14 @@ dev = [
 packages = ["src/page47"]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = [".", "src"]
 addopts = "-q"
+testpaths = ["tests"]
 
 [tool.mypy]
 python_version = "3.12"
 strict = true
+mypy_path = ["src"]
 files = ["src/page47"]
 
 [tool.ruff]
