@@ -1,0 +1,38 @@
+version: 2.1
+
+jobs:
+  verify:
+    docker:
+      - image: cimg/python:3.12
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - page47-pip-v1-{{ checksum "pyproject.toml" }}
+            - page47-pip-v1-
+      - run:
+          name: Install project and development tools
+          command: |
+            python -m pip install --upgrade pip
+            python -m pip install -e '.[dev]'
+      - save_cache:
+          key: page47-pip-v1-{{ checksum "pyproject.toml" }}
+          paths:
+            - ~/.cache/pip
+      - run:
+          name: Run tests
+          command: python -m pytest -q
+      - run:
+          name: Check formatting and imports
+          command: ruff check src/page47 scripts tests
+      - run:
+          name: Check strict types
+          command: MYPYPATH=src mypy --strict --explicit-package-bases src/page47
+      - run:
+          name: Check resident-facing language
+          command: python scripts/check_plain_language.py
+
+workflows:
+  quality:
+    jobs:
+      - verify

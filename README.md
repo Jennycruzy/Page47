@@ -1,6 +1,6 @@
 # Page 47
 
-[![Page 47 checks](https://github.com/Jennycruzy/Page47/actions/workflows/ci.yml/badge.svg)](https://github.com/Jennycruzy/Page47/actions/workflows/ci.yml)
+[![Page 47 checks](https://dl.circleci.com/status-badge/img/gh/Jennycruzy/Page47/tree/main.svg?style=shield)](https://app.circleci.com/pipelines/github/Jennycruzy/Page47)
 
 ## When the packet changes, residents should know.
 
