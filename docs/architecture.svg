@@ -109,7 +109,7 @@
   <path class="arrow" d="M690 716 H733"/>
   <path class="arrow" d="M923 717 H966"/>
   <path class="arrow" d="M1156 717 H1199"/>
-  <path class="arrow" d="M1307 662 V566 H783 V300"/>
+  <path class="arrow" d="M1307 662 V566 H1434 V330 H783 V268"/>
   <text class="small" x="1058" y="583" text-anchor="middle">saved review returns to the resident UI</text>
 
   <text class="section" x="64" y="878">AWS CONTROL PLANE AND TRUST BOUNDARY</text>
@@ -128,5 +128,5 @@
   <path class="dashed" d="M791 895 V834"/>
   <path class="dashed" d="M1055 895 V834"/>
   <path class="dashed" d="M1305 895 V834"/>
-  <text class="small" x="1420" y="923" text-anchor="end">public documents are data, never instructions</text>
+  <text class="small" x="1420" y="864" text-anchor="end">public document text is data, never instructions</text>
 </svg>
