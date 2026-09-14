@@ -57,6 +57,14 @@ def create_app(config_path: Path | None = None) -> FastAPI:
                 headers={"Retry-After": str(retry_after)},
             )
 
+    @app.get("/favicon.svg")
+    def favicon() -> Response:
+        return Response(
+            content=frontend.favicon_svg(),
+            media_type="image/svg+xml",
+            headers={"Cache-Control": "public, max-age=86400, immutable"},
+        )
+
     @app.middleware("http")
     async def security_headers(
         request: Request,

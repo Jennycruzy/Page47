@@ -8,6 +8,11 @@ submitting.
 
 **Page 47 — When the packet changes, residents should know**
 
+## Hackathon entry
+
+**AWS Agents for Humans Hackathon**
+**Track:** Good Neighbor Agents
+
 ## One-sentence pitch
 
 Page 47 watches public meeting records for the places residents care about,

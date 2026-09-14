@@ -2,9 +2,13 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from fastapi.testclient import TestClient
+
+from page47.web.app import create_app
 from page47.web.config import load_web_settings
 from page47.web.frontend import (
     captured_review_unavailable_page,
+    favicon_svg,
     finding_page,
     index_page,
     watch_page,
@@ -39,6 +43,24 @@ def test_console_supports_a_domain_root_public_path() -> None:
     page = index_page("Page 47", "Seattle, Washington", "/")
     assert 'href="/"' in page
     assert "publicPath === '/'" in page
+
+
+def test_pages_advertise_the_page47_favicon_with_public_prefix() -> None:
+    page = index_page("Page 47", "Seattle, Washington", "/page47")
+
+    assert '<link rel="icon" type="image/svg+xml" href="/page47/favicon.svg">' in page
+    assert '<title id="title">Page 47</title>' in favicon_svg()
+
+
+def test_favicon_endpoint_returns_cacheable_svg() -> None:
+    client = TestClient(create_app(Path("config/web.yaml")))
+
+    response = client.get("/favicon.svg")
+
+    assert response.status_code == 200
+    assert response.headers["content-type"].startswith("image/svg+xml")
+    assert response.headers["cache-control"] == "public, max-age=86400, immutable"
+    assert "Page 47" in response.text
 
 
 def test_captured_review_fallback_explains_when_no_saved_review_exists() -> None:

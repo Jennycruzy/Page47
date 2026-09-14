@@ -13,6 +13,8 @@ evidence-linked review only when the record supports one.
 
 [Create a watch](https://page47.xcover.online/) · [Open a captured review](https://page47.xcover.online/explore) · [Read the submission kit](docs/submission.md) · [View the architecture](docs/architecture.md) · [Browse the code](https://github.com/Jennycruzy/Page47)
 
+Built for the **AWS Agents for Humans Hackathon** · Track: **Good Neighbor Agents**
+
 > Page 47 does not guess intent, assign a political position, or turn an
 > uncertain record into a confident story. It shows what changed, what supports
 > the observation, and what remains unknown.

@@ -13,6 +13,14 @@ import json
 
 from page47.snapshotter.config import JSONObject, JSONValue
 
+_FAVICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+<title id="title">Page 47</title>
+<rect width="64" height="64" rx="16" fill="#0d3428"/>
+<circle cx="32" cy="32" r="22" fill="none" stroke="#c9ef72" stroke-width="3"/>
+<text x="32" y="39" fill="#c9ef72" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="-1" text-anchor="middle">47</text>
+</svg>
+"""
+
 _SITE_CSS = r"""
 :root {
   color-scheme: light;
@@ -577,13 +585,20 @@ def _object_list(value: object) -> list[dict[str, JSONValue]]:
     return [item for item in _json_list(value) if isinstance(item, dict)]
 
 
-def _page(title: str, body: str, script: str = "") -> str:
+def favicon_svg() -> str:
+    """Return the small brand mark used by browsers and pinned tabs."""
+    return _FAVICON_SVG
+
+
+def _page(title: str, body: str, script: str = "", public_path: str = "") -> str:
     safe_title = html.escape(title)
+    favicon_url = html.escape(_url(public_path, "/favicon.svg"), quote=True)
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0d3428"><meta name="referrer" content="no-referrer">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="{favicon_url}">
 <title>{safe_title}</title><style>{_SITE_CSS}</style></head><body>{body}{script}</body></html>"""
 
 
@@ -668,7 +683,7 @@ if ('IntersectionObserver' in window) {
 }
 </script>
 """.replace("__PUBLIC_PATH__", json.dumps(public_path))
-    return _page(f"{title} — when the packet changes", body, script)
+    return _page(f"{title} — when the packet changes", body, script, public_path)
 
 
 def watch_setup_page(title: str, default_city: str, public_path: str) -> str:
@@ -696,14 +711,14 @@ init().catch((error) => { document.querySelector('#bodies').innerHTML = '<span c
 """.replace("__PUBLIC_PATH__", json.dumps(public_path)).replace(
         "__DEFAULT_CITY__", json.dumps(default_city)
     )
-    return _page(f"{title} — start a watch", body, script)
+    return _page(f"{title} — start a watch", body, script, public_path)
 
 
 def captured_review_unavailable_page(title: str, public_path: str) -> str:
     home_url = html.escape(_url(public_path, "/"), quote=True)
     watch_url = html.escape(_url(public_path, "/watch"), quote=True)
     body = f"""<header class="inner-header"><div class="inner-wrap">{_site_nav(home_url, html.escape(_url(public_path, "/watch"), quote=True))}<div class="inner-copy"><p class="breadcrumb"><a href="{home_url}">Page 47</a> / Review</p><h1 class="inner-title">The record is still being assembled.</h1><p class="inner-lede">There is no saved review available yet. The collector is watching the configured public sources, and the live watch path is ready.</p></div></div></header><main class="evidence-main"><article class="fallback-card" style="padding:30px"><p class="kicker">Captured review</p><h2 class="section-title" style="font-size:2.2rem">Come back to a review with a receipt.</h2><p class="record-intro">When a stored review is available, this link opens the same evidence page a resident uses: separate dimensions, captured sources, the Skeptic’s decision, and the limits of what Page 47 knows.</p><a class="button button--dark" href="{watch_url}">Put a place on watch ↗</a></article></main><footer class="site-footer"><div class="footer-rule"></div><a href="{home_url}">Back to Page 47</a></footer>"""
-    return _page(f"{title} — captured review", body)
+    return _page(f"{title} — captured review", body, public_path=public_path)
 
 
 def _origin_label(value: object, fallback: str) -> str:
@@ -762,7 +777,7 @@ def evidence_page(title: str, city: str, data: JSONObject, public_path: str) -> 
         )
     home_url = html.escape(_url(public_path, "/"), quote=True)
     body = f"""<header class="inner-header"><div class="inner-wrap">{_site_nav(home_url, html.escape(_url(public_path, "/watch"), quote=True))}<div class="inner-copy"><p class="breadcrumb"><a href="{home_url}">Page 47</a> / {html.escape(city)} / Evidence</p><h1 class="inner-title">{name}</h1><p class="inner-lede">The exact captured passage used in the review, with the primary document one click away.</p></div></div></header><main class="evidence-main"><div class="evidence-note">This page shows the captured document passage used by Page 47. The PDF is the primary record; the excerpt is provided to make the relevant page easy to inspect.</div><a class="pdf-link" href="{pdf_url}" target="_blank" rel="noreferrer">Open the captured PDF in a new tab ↗</a>{"".join(blocks)}<div class="surface boundary"><p>Page 47 reports the public record. It does not determine why this change was made.</p></div></main><footer class="site-footer"><div class="footer-rule"></div><a href="{home_url}">Back to Page 47</a></footer>"""
-    return _page(f"{title} — evidence", body)
+    return _page(f"{title} — evidence", body, public_path=public_path)
 
 
 def matter_page(title: str, city: str, data: JSONObject, public_path: str) -> str:
@@ -817,7 +832,7 @@ def matter_page(title: str, city: str, data: JSONObject, public_path: str) -> st
         finding_link = f'<a class="button button--dark" href="{html.escape(finding_url, quote=True)}">Read the saved review ↗</a>'
     home_url = html.escape(_url(public_path, "/"), quote=True)
     body = f"""<header class="inner-header"><div class="inner-wrap">{_site_nav(home_url, html.escape(_url(public_path, "/watch"), quote=True))}<div class="inner-copy"><p class="breadcrumb"><a href="{home_url}">Page 47</a> / {html.escape(city)} / Matter</p><h1 class="inner-title">{current_title}</h1><p class="inner-lede">A chronological view of how this public matter appeared in the records Page 47 captured.</p>{finding_link}</div></div></header><main class="record-main"><p class="kicker">Recorded appearances · matter {html.escape(_display(matter.get("matter_id")))}</p><p class="record-intro">Each entry keeps the title, meeting, body, placement, source, and available captured documents together. The links identify the source and capture boundary.</p><div class="appearance-list">{"".join(blocks)}</div><div class="surface boundary"><p>Page 47 reports public records. It does not determine why these changes were made.</p></div></main><footer class="site-footer"><div class="footer-rule"></div><a href="{home_url}">Back to Page 47</a></footer>"""
-    return _page(f"{title} — matter", body)
+    return _page(f"{title} — matter", body, public_path=public_path)
 
 
 def _state_text(value: object) -> str:
@@ -1082,7 +1097,7 @@ def finding_page(
     actions_html = '<div class="detail-actions">' + "".join(actions) + "</div>" if actions else ""
     home_url = html.escape(_url(public_path, "/"), quote=True)
     body = f"""<header class="inner-header"><div class="inner-wrap">{_site_nav(home_url, html.escape(_url(public_path, "/watch"), quote=True))}</div></header><main class="detail-main">{replay_html}<section class="review-hero"><div><p class="breadcrumb"><a href="{home_url}">Page 47</a> / {html.escape(city)} / Evidence review</p><p class="review-matter">{html.escape(matter_title)} · matter {html.escape(_display(matter_id))}</p><h1>{html.escape(heading)}</h1><span class="state-chip">{html.escape(_state_text(state))}</span><p class="lead">{html.escape(explanation)}</p>{actions_html}</div><aside class="review-sidecar"><strong>{len(timeline)}</strong><span>evidence links retained</span><strong style="margin-top:20px">{accepted_count} / {rejected_count}</strong><span>supported / rejected</span></aside></section><section class="surface"><h2>The review at a glance</h2><p>Page 47 keeps the decision, evidence origin, and uncertainty visible so a reader can inspect the reasoning.</p><div class="glance-grid"><div class="glance-item"><strong>{len(timeline)}</strong><span>evidence links</span></div><div class="glance-item"><strong>{accepted_count}</strong><span>supported</span></div><div class="glance-item"><strong>{rejected_count}</strong><span>rejected after review</span></div></div></section><section class="surface"><h2>What changed</h2><p>Presentation dimensions stay separate so a change in one cannot cancel a change in another.</p><div class="dimensions">{"".join(dimensions)}</div></section><section class="surface facts"><h2>What Page 47 knows</h2>{know_html}</section><section class="surface"><h2>Evidence timeline</h2><p>Each entry identifies the evidence position. Historical comparisons may be reconstructed; captured document pages are marked separately.</p>{timeline_html}</section><section class="surface"><h2>Evidence review</h2><p>The Skeptic reviews the branch results before publication.</p><div class="review-counts"><div class="count"><strong>{accepted_count}</strong><span>supported</span></div><div class="count"><strong>{rejected_count}</strong><span>rejected</span></div><div class="count"><strong>{html.escape("Yes" if str(state) == "cannot_determine" else "No")}</strong><span>insufficient evidence</span></div></div>{rejected_html}</section><section class="surface"><h2>How this review was assembled</h2><p>Each role has a bounded evidence view. The Skeptic can reject an attractive interpretation, but cannot add facts or links.</p><p class="role-line"><span class="tag">Archivist</span> records appearances · <span class="tag">Substance</span> reads captured pages · <span class="tag">Process</span> reads title and placement · <span class="tag">Skeptic</span> accepts or rejects observations · <span class="tag">Brief Writer</span> returns resident questions.</p></section><section class="surface"><h2>What the public record normally shows</h2><p>{html.escape(norm_sentence)}</p></section><section class="surface"><h2>Questions worth asking</h2>{questions_html}</section><section class="surface boundary"><h2>What Page 47 cannot establish</h2><p>{html.escape(limitation)}</p><p class="note">Page 47 reports public records. It does not determine motive, legality, or a political position.</p></section></main><footer class="site-footer"><div class="footer-rule"></div>Review observations investigated: {investigated_count} · <a href="https://github.com/Jennycruzy/Page47">Source repository</a></footer>"""
-    return _page(f"{title} — evidence review", body)
+    return _page(f"{title} — evidence review", body, public_path=public_path)
 
 
 def watch_page(title: str, data: JSONObject, public_path: str) -> str:
@@ -1107,4 +1122,4 @@ def watch_page(title: str, data: JSONObject, public_path: str) -> str:
         f'<span class="body-pill">{html.escape(str(item))}</span>' for item in bodies
     )
     body = f"""<header class="inner-header"><div class="inner-wrap">{_site_nav(home_url, html.escape(_url(public_path, "/watch"), quote=True))}</div></header><main class="watch-main"><p class="breadcrumb"><a href="{home_url}">Page 47</a> / Private watch</p><p class="kicker">Private watch</p><h1 class="section-title">Page 47 is watching.</h1><p class="inner-lede" style="color:var(--muted)">This watch lives on the server. You do not need to keep this page open. When a supported change survives review, Page 47 can send an evidence-linked alert.</p><p id="watch-status" class="watch-status{" stopped" if not active else ""}">{status}</p><p style="margin-top:17px"><a href="{explore_url}">Read a captured review ↗</a></p><section class="surface"><h2>Watch details</h2><div class="watch-facts"><div class="watch-fact"><strong>City</strong><span>{html.escape(city)}</span></div><div class="watch-fact"><strong>Area</strong><span>{html.escape(area)}</span></div><div class="watch-fact"><strong>Created</strong><span>{html.escape(_display(data.get("created_at"), "Not recorded"))}</span></div><div class="watch-fact"><strong>Last successful collector check</strong><span>{html.escape(_display(data.get("last_successful_check"), "Not recorded"))}</span></div><div class="watch-fact"><strong>Reviews delivered</strong><span>{html.escape(_display(data.get("reviews_delivered"), "0"))}</span></div><div class="watch-fact"><strong>Status</strong><span>{status}</span></div></div></section><section class="surface"><h2>Public bodies monitored</h2><div class="body-pills">{body_pills or '<span class="form-help">No public bodies recorded.</span>'}</div></section><section class="surface"><h2>Manage this watch</h2><p>Keep this private link private. It is the control for this watch.</p>{stop_action}</section></main><footer class="site-footer"><div class="footer-rule"></div><a href="{home_url}">Back to Page 47</a> · Page 47 does not determine motive or tell you what position to take.</footer>"""
-    return _page(f"{title} — private watch", body)
+    return _page(f"{title} — private watch", body, public_path=public_path)
