@@ -87,6 +87,6 @@ Success: no issues found in 45 source files
 
 This verification covers the managed review request, the live subdomain, and
 its save path. The searchable trace gate is closed by the final verification
-recorded in `observability.md`. SES production access and the remaining
-CloudWatch alarm evaluation are separate operational concerns and remain
-listed in `docs/AWS.md` with their actual status.
+recorded in `observability.md`. SES production access is now verified; the
+remaining CloudWatch alarm evaluation is a separate operational concern and is
+listed in `docs/AWS.md` with its actual status.

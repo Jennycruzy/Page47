@@ -87,13 +87,15 @@ The controlled delivery test must use a mailbox explicitly chosen for this
 deployment. Confirm the provider returns a `MessageId`, then confirm receipt;
 the recipient address is not a repository setting.
 
-Current state as of 2026-09-10: `/page47/web/public-url` and
+Current state verified from the VPS on 2026-09-17: `/page47/web/public-url` and
 `/page47/email/sender` are present in `eu-west-2`; the SES sender identity is
-verified. SES reports `SendingEnabled=true` and
-`ProductionAccessEnabled=false`. A temporary verified watch sent one controlled
-review through the application and received a provider `MessageId`; the watch
-was then deactivated. Mailbox receipt was confirmed, so the SES delivery gate
-is complete even though the account remains in sandbox mode.
+verified. SES reports `SendingEnabled=true`, `ProductionAccessEnabled=true`, a
+`Max24HourSend` quota of `50000`, and a `MaxSendRate` of `14`. AWS Support
+approved production access on 15 September 2026, so the account is out of the
+SES sandbox. The controlled verified-watch review and mailbox receipt remain
+historical delivery evidence from 10 September; the recipient address is not a
+repository setting. Continue sending only to consented watches and monitor
+bounces, complaints, and quota usage.
 
 ## 3. Deploy the root-path configuration
 

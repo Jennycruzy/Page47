@@ -301,11 +301,11 @@ an intermediate version; Page 47 cannot reconstruct what it never captured.
 Seattle placement is read from captured agenda PDFs because its API placement
 integer is not reliable. Denver uses its own calibrated mapping.
 
-SES production access was requested for `eu-west-2` on 11 September 2026 and is
-currently under review. The sender identity and `page47.xcover.online` sending
-domain are verified. Until production access is approved, SES sandbox rules
-require the recipient of a live test alert to be verified; the web finding and
-its evidence remain independently usable.
+SES production access for `eu-west-2` was approved on 15 September 2026. The
+account now reports a 50,000-message daily quota and a 14 messages-per-second
+maximum send rate. The sender identity and `page47.xcover.online` sending
+domain are verified. Page 47 still sends only consented, evidence-linked
+transactional alerts and must retain bounce, complaint, and quota monitoring.
 
 ## License
 

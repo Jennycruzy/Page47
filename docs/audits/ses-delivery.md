@@ -34,3 +34,23 @@ confirmed receipt in the verified mailbox. The SES delivery gate is complete;
 production access is not required for this controlled verified-recipient test.
 
 No email address or credential is stored in this audit.
+
+## Production-access follow-up
+
+Dates: 15–17 September 2026.
+
+AWS Support approved Page 47's SES production-access request for the Europe
+(London) region on 15 September 2026. A read-only verification from the Page 47
+VPS on 17 September 2026 at `2026-09-17T00:58:05Z` confirmed:
+
+- SES `SendingEnabled=true`;
+- SES `ProductionAccessEnabled=true` (the account is out of the sandbox);
+- `Max24HourSend=50000`; and
+- `MaxSendRate=14` messages per second.
+
+The sender, public URL, and managed-runtime parameters were still present in
+Systems Manager Parameter Store, and the local web health check returned
+`{"status":"ok","service":"Page 47"}`. This closes the sandbox gate for
+ordinary consented recipients. The controlled message and mailbox receipt
+above remain the historical delivery evidence; no email address or credential
+is stored in this audit.

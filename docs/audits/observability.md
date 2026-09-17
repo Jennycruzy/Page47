@@ -172,9 +172,10 @@ adversarial invocation was not used to manufacture a runtime accuracy claim.
 The `page47-vps-deploy` identity in account `591697681173` now has the
 customer inline policy `Page47OperationsPermissions`. The public URL and SES
 sender parameters are present in `eu-west-2`, and the sender identity is
-verified. SES reports `SendingEnabled=true` and
-`ProductionAccessEnabled=false`. A temporary verified watch sent one
-controlled review through the application, and mailbox receipt was confirmed.
+verified. At the time of this 9 September setup check, SES reported
+`SendingEnabled=true` and `ProductionAccessEnabled=false`. A temporary
+verified watch sent one controlled review through the application, and mailbox
+receipt was confirmed.
 
 Transaction Search setup was completed for the AgentCore region
 `eu-west-2`. The account resource policy `Page47TransactionSearchXRayAccess`
@@ -192,6 +193,14 @@ trace summary and no trace identifier has been retained, so the trace gate
 remains open. The earlier `GetTraceSummaries` check at 2026-09-08T10:15:58Z
 returned zero summaries in both `eu-west-2` and `eu-north-1` for its recent
 review window.
+
+## 17 September SES status follow-up
+
+AWS Support approved production access for SES in `eu-west-2` on 15 September
+2026. The Page 47 VPS check at `2026-09-17T00:58:05Z` returned
+`SendingEnabled=true`, `ProductionAccessEnabled=true`, a 50,000-message daily
+quota, and a 14-message-per-second maximum send rate. This updates the SES
+account status only; the dated trace findings above remain unchanged.
 
 ## CloudWatch host boundary
 
