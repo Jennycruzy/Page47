@@ -54,9 +54,24 @@ class _SubstanceChangeFields(BaseModel):
     observation_id: str = Field(min_length=1)
     statement: str = Field(min_length=1)
     subject: str = Field(min_length=1)
-    before: str | None = Field(default=None, min_length=1)
-    after: str | None = Field(default=None, min_length=1)
-    value: str | None = Field(default=None, min_length=1)
+    before: str | None = Field(
+        default=None,
+        min_length=1,
+        description="Earlier recorded value; use only with a different recorded after value.",
+    )
+    after: str | None = Field(
+        default=None,
+        min_length=1,
+        description="Later recorded value; use only with a different recorded before value.",
+    )
+    value: str | None = Field(
+        default=None,
+        min_length=1,
+        description=(
+            "Exact concrete provision or value visible in the cited document. Required "
+            "unless distinct before and after values are both supplied."
+        ),
+    )
     unit: str | None = None
     excerpt: str = Field(min_length=1)
     evidence: AgentEvidence
