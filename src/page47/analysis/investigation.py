@@ -432,6 +432,7 @@ def _agent_reports(
     process: ProcessReport,
     skeptic: SkepticReport,
     source_origins: Mapping[EvidenceKey, EvidenceOrigin] | None = None,
+    structural_observations: tuple[ReviewedObservation, ...] = (),
 ) -> tuple[AgentReports, dict[str, tuple[str, ...]]]:
     archivist_observations, archivist_aliases = _agent_observations(
         "archivist", tuple(archivist.observations), source_origins
@@ -445,7 +446,23 @@ def _agent_reports(
         "process", tuple(process.observations), source_origins
     )
     aliases = _merge_aliases((archivist_aliases, substance_aliases, process_aliases))
-    observations = archivist_observations + substance_observations + process_observations
+    for structural_item in structural_observations:
+        if structural_item.observation_id in aliases:
+            raise ValueError(
+                "Agent observation used reserved Page 47 ID "
+                f"{structural_item.observation_id}"
+            )
+    structural_aliases: dict[str, tuple[str, ...]] = {
+        structural_item.observation_id: (structural_item.observation_id,)
+        for structural_item in structural_observations
+    }
+    aliases = _merge_aliases((aliases, structural_aliases))
+    observations = (
+        archivist_observations
+        + substance_observations
+        + process_observations
+        + structural_observations
+    )
     by_id: dict[str, ReviewedObservation] = {}
     for observation in observations:
         if observation.observation_id in by_id:
@@ -772,17 +789,18 @@ def _complete_review(
     archivist, substance, process, skeptic, brief = reports
     catalog = _evidence_catalog(inputs.case)
     _validate_agent_reports(reports, catalog)
+    structural = _structural_observation(
+        inputs.drift.comparisons[-1] if inputs.drift.comparisons else None
+    )
     agent_reports, aliases = _agent_reports(
         archivist,
         substance,
         process,
         skeptic,
         catalog.source_origins,
+        structural,
     )
-    structural = _structural_observation(
-        inputs.drift.comparisons[-1] if inputs.drift.comparisons else None
-    )
-    observations = agent_reports.observations + structural
+    observations = agent_reports.observations
     by_id: dict[str, ReviewedObservation] = {}
     for observation in observations:
         if observation.observation_id in by_id:
@@ -937,6 +955,11 @@ def investigate_matter(
                 case=inputs.case,
                 evidence_root=evidence_root,
                 models=inputs.model_settings,
+                presentation_comparison=(
+                    inputs.drift.comparisons[-1].as_json()
+                    if inputs.drift.comparisons
+                    else None
+                ),
             )
         )
         graph_result = _graph_payload(graph)

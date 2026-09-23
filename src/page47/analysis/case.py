@@ -248,6 +248,7 @@ class InvestigationContext:
     evidence_root: Path
     models: ModelSettings
     document_captures: Mapping[int, tuple[bytes, SourceReference]] | None = None
+    presentation_comparison: dict[str, object] | None = None
 
 
 def _source(row: sqlite3.Row) -> SourceReference:

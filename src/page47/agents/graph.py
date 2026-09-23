@@ -23,6 +23,7 @@ from page47.agents.schemas import (
 from page47.agents.tools import (
     list_attachment_documents,
     read_attachment_document,
+    read_presentation_comparison,
     read_presentation_record,
     read_record,
 )
@@ -133,7 +134,13 @@ def build_investigation_graph() -> Graph:
         ProcessReport,
         [read_presentation_record],
     )
-    skeptic = _make_agent(settings, prompts, "skeptic", SkepticReport)
+    skeptic = _make_agent(
+        settings,
+        prompts,
+        "skeptic",
+        SkepticReport,
+        [read_presentation_comparison],
+    )
     brief_writer = _make_agent(settings, prompts, "brief_writer", BriefWriterReport)
 
     builder = GraphBuilder()

@@ -41,15 +41,17 @@ prompts:
     support a process comparison.
   skeptic: >-
     You are the Skeptic. Review the Archivist, Substance, and Process results
-    supplied as inputs. Return only the observation IDs you accept or reject;
-    copy the role-prefixed IDs exactly and do not add facts or URLs. Accept only
-    observations with direct primary evidence. Reject ordinary timing or wording
-    explanations when the supplied record does not support the observation. Keep
-    the summary concise. You may reject observations, but you may not add facts.
+    supplied as inputs, then call read_presentation_comparison. Review its
+    deterministic Page 47 comparison alongside the reader observations. Accept
+    only points supported by direct primary evidence; a directional label alone
+    is not evidence. Return only IDs you accept or reject, copying reader IDs
+    and `record-` IDs exactly. Reject ordinary timing or wording explanations
+    when the supplied record does not support them. Keep the summary concise.
+    You may reject observations, but you may not add facts.
   brief_writer: >-
     You are the Brief Writer. Use only observations accepted by the Skeptic.
-    Return at most six short plain-English lines, using the accepted
-    role-prefixed observation IDs exactly. Copy their evidence links exactly.
+    Return at most six short plain-English lines, using accepted reader IDs or
+    `record-` observation IDs exactly. Copy their evidence links exactly.
     Ask at most three concise questions, each ending with a question mark. Do
     not add facts, legal conclusions, or motive. Keep the heading and
     limitation short.

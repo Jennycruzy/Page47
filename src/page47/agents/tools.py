@@ -59,6 +59,36 @@ def read_presentation_record(tool_context: ToolContext) -> str:
 
 
 @tool(context=True)
+def read_presentation_comparison(tool_context: ToolContext) -> str:
+    """Return Page 47's deterministic comparison for the Skeptic to review."""
+
+    context = _context(tool_context)
+    comparison = context.presentation_comparison
+    if comparison is None:
+        return json.dumps({"state": "cannot_determine", "observations": []})
+    raw_observations = comparison.get("observations")
+    if not isinstance(raw_observations, list):
+        raise ValueError("Page 47 presentation comparison observations were invalid")
+    observations: list[dict[str, object]] = []
+    for item in raw_observations:
+        if not isinstance(item, dict):
+            raise ValueError("Page 47 presentation comparison observation was invalid")
+        key = item.get("key")
+        if not isinstance(key, str) or not key:
+            raise ValueError("Page 47 presentation comparison observation had no key")
+        observations.append({"observation_id": f"record-{key}", **item})
+    return json.dumps(
+        {
+            "state": comparison.get("state"),
+            "previous_event_item_id": comparison.get("previous_event_item_id"),
+            "current_event_item_id": comparison.get("current_event_item_id"),
+            "observations": observations,
+        },
+        sort_keys=True,
+    )
+
+
+@tool(context=True)
 def list_attachment_documents(tool_context: ToolContext) -> str:
     """List captured document IDs and page counts without structural fields."""
 

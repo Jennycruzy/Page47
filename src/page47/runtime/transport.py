@@ -9,6 +9,7 @@ from hashlib import sha256
 from pathlib import Path
 
 from page47.analysis.case import InvestigationContext, MatterCase, case_from_structural_payload
+from page47.analysis.drift import compare_all_appearances, load_presentation_config
 from page47.models.config import load_model_settings
 from page47.records.store import SourceReference
 from page47.snapshotter.config import JSONObject, JSONValue, as_json_value
@@ -125,9 +126,12 @@ def context_from_request(
     if request_city != case.city or request_matter_id != case.matter_id:
         raise ValueError("Runtime request identity did not match the supplied case")
     captures = _decode_documents(root.get("documents"), case)
+    presentation_config = load_presentation_config(models_path.with_name("presentation.yaml"))
+    comparisons = compare_all_appearances(case, presentation_config).comparisons
     return InvestigationContext(
         case=case,
         evidence_root=working_directory,
         models=load_model_settings(models_path),
         document_captures=captures,
+        presentation_comparison=comparisons[-1].as_json() if comparisons else None,
     )
