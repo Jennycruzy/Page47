@@ -26,3 +26,4 @@ runtime:
       - agentcore.yaml
       - agents.yaml
       - models.yaml
+      - presentation.yaml
