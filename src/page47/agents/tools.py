@@ -95,15 +95,23 @@ def list_attachment_documents(tool_context: ToolContext) -> str:
     context = _context(tool_context)
     documents = []
     for attachment in context.case.unique_attachments():
+        capture = (
+            context.document_captures.get(attachment.attachment_id)
+            if context.document_captures is not None
+            else None
+        )
+        if capture is None:
+            capture = attachment.document_capture()
+        if capture is None:
+            continue
+        _, source = capture
         documents.append(
             {
                 "attachment_id": attachment.attachment_id,
                 "document_name": attachment.name,
                 "page_count": attachment.page_count,
                 "reading_status": attachment.reading_status,
-                "source": attachment.reading_source.as_json()
-                if attachment.reading_source is not None
-                else attachment.source.as_json(),
+                "source": source.as_json(),
             }
         )
     return json.dumps({"documents": documents}, sort_keys=True)
