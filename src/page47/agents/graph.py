@@ -18,7 +18,7 @@ from page47.agents.schemas import (
     BriefWriterReport,
     ProcessReport,
     SkepticReport,
-    SubstanceReport,
+    SubstanceAgentReport,
 )
 from page47.agents.tools import (
     list_attachment_documents,
@@ -123,7 +123,7 @@ def build_investigation_graph() -> Graph:
         settings,
         prompts,
         "substance",
-        SubstanceReport,
+        SubstanceAgentReport,
         [list_attachment_documents, read_attachment_document],
     )
     process = _make_agent(

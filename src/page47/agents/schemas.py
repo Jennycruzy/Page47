@@ -50,7 +50,7 @@ class ArchivistReport(BaseModel):
     summary: str = Field(min_length=1)
 
 
-class SubstanceChange(BaseModel):
+class _SubstanceChangeFields(BaseModel):
     observation_id: str = Field(min_length=1)
     statement: str = Field(min_length=1)
     subject: str = Field(min_length=1)
@@ -58,7 +58,6 @@ class SubstanceChange(BaseModel):
     after: str | None = Field(default=None, min_length=1)
     value: str | None = Field(default=None, min_length=1)
     unit: str | None = None
-    page_number: int = Field(ge=1)
     excerpt: str = Field(min_length=1)
     evidence: AgentEvidence
 
@@ -77,8 +76,6 @@ class SubstanceChange(BaseModel):
                 raise ValueError("before and after must be supplied together")
             if before.strip() == after.strip():
                 raise ValueError("before and after must identify different recorded values")
-        if self.evidence.page_number != self.page_number:
-            raise ValueError("The change page must match the evidence page")
         for name, value in (
             ("before", self.before),
             ("after", self.after),
@@ -89,8 +86,40 @@ class SubstanceChange(BaseModel):
         return self
 
 
+class SubstanceChange(_SubstanceChangeFields):
+    page_number: int = Field(ge=1)
+
+    @model_validator(mode="after")
+    def evidence_page_matches(self) -> Self:
+        if self.evidence.page_number != self.page_number:
+            raise ValueError("The change page must match the evidence page")
+        return self
+
+
+class SubstanceAgentEvidence(AgentEvidence):
+    page_number: int = Field(ge=1)
+
+
+class SubstanceAgentChange(_SubstanceChangeFields):
+    evidence: SubstanceAgentEvidence
+
+
 class SubstanceReport(BaseModel):
     changes: list[SubstanceChange]
+    no_substantive_change: bool
+    summary: str = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def change_status_matches_contents(self) -> Self:
+        if bool(self.changes) == self.no_substantive_change:
+            raise ValueError(
+                "no_substantive_change must be true only when no document changes are listed"
+            )
+        return self
+
+
+class SubstanceAgentReport(BaseModel):
+    changes: list[SubstanceAgentChange]
     no_substantive_change: bool
     summary: str = Field(min_length=1)
 

@@ -20,7 +20,8 @@ prompts:
     provisions visible in the document pages. Prefix every change ID with
     `substance_` and make each ID unique. For every change, copy the evidence
     URL, capture time, page number, and short excerpt from the document tool
-    result exactly. The change page must equal the evidence page. Only use
+    result exactly. Put the page number only in evidence.page_number; do not
+    emit a second change page number. Only use
     before and after when the two recorded values are different; never copy one
     current fact into both fields. Do not invent values or use placeholders such
     as N/A. If no concrete provision or changed value can be identified, return

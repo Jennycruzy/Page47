@@ -22,6 +22,8 @@ from page47.agents.schemas import (
     BriefWriterReport,
     ProcessReport,
     SkepticReport,
+    SubstanceAgentReport,
+    SubstanceChange,
     SubstanceReport,
 )
 from page47.analysis.case import InvestigationContext, MatterCase, load_matter_case
@@ -545,9 +547,10 @@ def _payload_report[ReportModel: BaseModel](
 
 
 def _reports_from_graph(graph: GraphResult) -> InvestigationReports:
+    substance = _node_report(graph, "substance", SubstanceAgentReport)
     return (
         _node_report(graph, "archivist", ArchivistReport),
-        _node_report(graph, "substance", SubstanceReport),
+        _canonical_substance_report(substance),
         _node_report(graph, "process", ProcessReport),
         _node_report(graph, "skeptic", SkepticReport),
         _node_report(graph, "brief_writer", BriefWriterReport),
@@ -555,12 +558,38 @@ def _reports_from_graph(graph: GraphResult) -> InvestigationReports:
 
 
 def _reports_from_payload(payload: JSONObject) -> InvestigationReports:
+    substance = _payload_report(payload, "substance", SubstanceAgentReport)
     return (
         _payload_report(payload, "archivist", ArchivistReport),
-        _payload_report(payload, "substance", SubstanceReport),
+        _canonical_substance_report(substance),
         _payload_report(payload, "process", ProcessReport),
         _payload_report(payload, "skeptic", SkepticReport),
         _payload_report(payload, "brief_writer", BriefWriterReport),
+    )
+
+
+def _canonical_substance_report(report: SubstanceAgentReport) -> SubstanceReport:
+    """Derive the comparison page from the single cited evidence page."""
+
+    changes = [
+        SubstanceChange(
+            observation_id=change.observation_id,
+            statement=change.statement,
+            subject=change.subject,
+            before=change.before,
+            after=change.after,
+            value=change.value,
+            unit=change.unit,
+            page_number=change.evidence.page_number,
+            excerpt=change.excerpt,
+            evidence=change.evidence,
+        )
+        for change in report.changes
+    ]
+    return SubstanceReport(
+        changes=changes,
+        no_substantive_change=report.no_substantive_change,
+        summary=report.summary,
     )
 
 
