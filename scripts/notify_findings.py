@@ -11,7 +11,10 @@ from pathlib import Path
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPOSITORY_ROOT / "src"))
 
-from page47.notifications.delivery import deliver_finding  # noqa: E402, I001
+from page47.notifications.delivery import (  # noqa: E402, I001
+    ALERTABLE_FINDING_STATES,
+    deliver_finding,
+)
 from page47.records.store import RecordStore  # noqa: E402, I001
 from page47.snapshotter.config import as_json_value  # noqa: E402, I001
 from page47.web.config import load_web_settings  # noqa: E402, I001
@@ -41,7 +44,10 @@ def main() -> int:
         with RecordStore(city.database) as store:
             findings = store.finding_rows(city.name, 10000)
             for finding in findings:
-                if finding.get("publish") is not True:
+                if (
+                    finding.get("publish") is not True
+                    or finding.get("state") not in ALERTABLE_FINDING_STATES
+                ):
                     continue
                 finding_id = finding.get("finding_id")
                 if not isinstance(finding_id, str) or not finding_id:

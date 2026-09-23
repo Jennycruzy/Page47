@@ -72,3 +72,31 @@ the candidate's two capture keys, hashes, capture times, and source links with
 the resulting investigation and finding. Until the report says
 `forward_positive_case_found`, describe the real-data result as abstention or
 awaiting observation.
+
+## Live scan — 23 September 2026
+
+A read-only scan of the VPS records found three qualifying Seattle candidates
+and no Denver candidates. Seattle reported `forward_positive_case_found` after
+checking 8,476 matters and skipping 57 orphaned appearances; its evidence
+integrity root was
+`cf46e4ab8b1ec77220218643bee393afc9ce66a5fce1ab1fea52e526329bd4b4`. Denver
+reported `awaiting_real_transition` after checking 18 matters and skipping 76
+orphaned appearances; its integrity root was
+`df923e39b946d04eaad4f1ea9c86510cb3a0fd874df9dccc1e4ca8c2f572b5d2`.
+
+One named Seattle candidate is matter `17316`, an ordinance amending the
+Seattle Comprehensive Plan as part of the 2026 annual amendment process. The
+Page 47 comparator labels the transition `less_clear` between event items
+`125807` and `126048`. Its evidence links carry distinct capture keys,
+response hashes, ordered capture times, and scheduled collector-run IDs:
+
+| Captured state | Capture key | Captured at (UTC) | Collector run | Response SHA-256 | Source |
+|---|---|---|---|---|---|
+| Earlier committee agenda | `5e82deebbde0c5941dfd660f89d1e8b64f0d462c6ed34736eb13bac31e9ac5d9` | `2026-09-15T20:31:32.233538Z` | `2026-09-15T20:30:10.356465Z` | `5b39f707a5afdf0a73d0306d1f3b03c4374fb09b490b8e32a60a8893d6dfafc5` | [Seattle Land Use and Sustainability Committee agenda](https://legistar2.granicus.com/seattle/meetings/2026/9/6887_A_Land_Use_and_Sustainability_Committee_26-09-16_Committee_Agenda.pdf) |
+| Later City Council agenda | `5f724c1b7613f49c2aad02e4256153db7ea0801ced982442627c8c7748378828` | `2026-09-22T10:31:11.010299Z` | `2026-09-22T10:30:15.381224Z` | `705862e690f7a3a815c388bdaa546f2f822d0f73143df1ab0b3492aa1ae373c0` | [Seattle City Council full meeting agenda](https://legistar2.granicus.com/seattle/meetings/2026/9/6894_A_City_Council_26-09-22_Full_Council_Meeting_Agenda.pdf) |
+
+This establishes a Page 47 forward-observed transition. It does not yet
+establish a resident-facing finding: at the time of the scan, matter `17316`
+had no saved investigation or finding and no notification outcome. Investigate
+this matter and retain the resulting run and finding before claiming the full
+watch-to-finding path.

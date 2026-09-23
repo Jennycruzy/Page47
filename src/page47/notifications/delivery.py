@@ -70,6 +70,7 @@ BANNED_HUMAN_WORDS = frozenset(
         "agentic",
     }
 )
+ALERTABLE_FINDING_STATES = frozenset({"clearer", "less_clear", "mixed"})
 
 
 def _json_object(value: object, context: str) -> JSONObject:
@@ -307,6 +308,9 @@ def _finding_for_delivery(
     finding = dict(matches[0])
     if finding.get("publish") is not True:
         raise ValueError(f"Finding {finding_id} is not marked for delivery")
+    state = finding.get("state")
+    if not isinstance(state, str) or state not in ALERTABLE_FINDING_STATES:
+        raise ValueError(f"Finding {finding_id} does not have an alertable directional state")
     finding["recipient"] = recipient
     return finding
 

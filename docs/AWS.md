@@ -56,7 +56,7 @@ The two-stage document route is already measured on the stored Seattle run: 20 a
 5. Send collector output to CloudWatch Logs and alarm on a missed run. **Partial:** the agent is active, both log groups have active streams, and the metric filter plus two-hour alarm exist in `eu-north-1`; the alarm is awaiting its initial evaluation windows and a deliberate-miss test remains.
 6. Export one real post-activation review trace and retain its trace identifier. **Complete:** runtime version 16 uses `opentelemetry-instrument app.py`; run `dea939b750ec412ca0921b4a31422037` produced searchable trace `6aa2f721063b98043b31e7b86ca47cfb`, with 51 span events and one complete X-Ray summary.
 
-The collector's delivery step does not create a message by itself. It loads only saved reviews marked for delivery, matches them against active watches, records one outcome for each watch and review pair, and calls SES only for a confirmed area match. A failed SES call is retained as a failed delivery and is retried on the next scheduled run.
+The collector's delivery step does not create a message by itself. It loads only saved reviews marked for delivery whose post-Skeptic state is `clearer`, `less_clear`, or `mixed`, matches them against active watches, records one outcome for each watch and review pair, and calls SES only for a confirmed area match. Successful delivery is deduplicated per watch and finding; each message includes a private watch-management link. A failed SES call is retained as a failed delivery and is retried on the next scheduled run.
 
 ## Evidence backup
 

@@ -54,3 +54,22 @@ Systems Manager Parameter Store, and the local web health check returned
 ordinary consented recipients. The controlled message and mailbox receipt
 above remain the historical delivery evidence; no email address or credential
 is stored in this audit.
+
+## Live production-path check
+
+Date: 23 September 2026.
+
+A read-only VPS check at `2026-09-23T05:13:26Z` confirmed `page47-web.service`
+was active and enabled. The public homepage and `/healthz` both returned HTTP
+200. SES in `eu-west-2` reported `SendingEnabled=true`,
+`ProductionAccessEnabled=true`, `Max24HourSend=50000`, and `MaxSendRate=14`; the
+`page47.xcover.online` domain identity remained verified. The fifteen-minute
+collector cron entry was present and its log had been updated at
+`2026-09-23T05:06:47Z`; that timestamp confirms recent log activity, not by
+itself a successful full collector cycle.
+
+A read-only query of the Seattle and Denver notification tables for records
+dated on or after 15 September found seven Seattle outcomes, all `skipped`, and
+no Denver outcomes. No post-approval `sent` or `failed` application delivery is
+recorded. The last retained mailbox receipt remains the 10 September sandbox
+test above; no production mailbox receipt is claimed.
